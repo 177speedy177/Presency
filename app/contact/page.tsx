@@ -7,19 +7,19 @@ import Link from "next/link"
 // Module-level constants — no recreation on every render
 const INPUT_CLS = "w-full font-body text-sm px-4 py-3 rounded-lg outline-none transition-all duration-200"
 const inputStyle = {
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(201,168,76,0.15)",
+  background: "rgba(255,255,255,0.9)",
+  border: "1px solid rgba(201,168,76,0.25)",
   color: "var(--text-primary)",
 } as React.CSSProperties
 
 type FocusEvt = React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
 const onFocus = (e: FocusEvt) => {
   e.target.style.borderColor = "var(--gold)"
-  e.target.style.background = "rgba(255,255,255,0.07)"
+  e.target.style.background = "white"
 }
 const onBlur = (e: FocusEvt) => {
-  e.target.style.borderColor = "rgba(201,168,76,0.15)"
-  e.target.style.background = "rgba(255,255,255,0.04)"
+  e.target.style.borderColor = "rgba(201,168,76,0.25)"
+  e.target.style.background = "rgba(255,255,255,0.9)"
 }
 
 function Field({
@@ -48,6 +48,8 @@ function Field({
 
 export default function ContactPage() {
   const [selectedPackage, setSelectedPackage] = useState("")
+  const [contactMethod, setContactMethod] = useState<"call" | "email" | "">("")
+  const [callType, setCallType] = useState<"video" | "phone" | "">("")
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -56,8 +58,10 @@ export default function ContactPage() {
     setLoading(true)
     const data = new FormData(e.currentTarget)
     if (selectedPackage) data.set("package", selectedPackage)
+    if (contactMethod) data.set("contactMethod", contactMethod)
+    if (contactMethod === "call" && callType) data.set("callType", callType)
     try {
-      await fetch("https://formspree.io/f/xaqkqezg", {
+      await fetch("https://formspree.io/f/mkoeqqyn", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: data,
@@ -71,7 +75,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main style={{ background: "var(--ink)" }}>
+    <main data-theme="light" style={{ background: "var(--ink)" }}>
       <Nav />
 
       <div className="min-h-screen pt-28 pb-20">
@@ -90,7 +94,7 @@ export default function ContactPage() {
                 </em>
               </h1>
               <p className="font-body text-lg mb-10" style={{ color: "var(--text-secondary)" }}>
-                No pitch, no pressure. Just a 15-minute call to see if we&apos;re a fit.
+                No pitch, no pressure. Tell us how you&apos;d like to connect and we&apos;ll make it work.
               </p>
 
               {submitted ? (
@@ -189,6 +193,116 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  <div>
+                    <p className="font-mono-label text-xs mb-3" style={{ color: "var(--text-muted)" }}>
+                      HOW WOULD YOU LIKE TO CONNECT?
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        { id: "call" as const, label: "15-min call", desc: "Quick intro over video or phone" },
+                        { id: "email" as const, label: "Email thread", desc: "No calls — keep it in writing" },
+                      ].map(({ id, label, desc }) => {
+                        const active = contactMethod === id
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            onClick={() => {
+                              const next = active ? "" : id
+                              setContactMethod(next)
+                              if (next !== "call") setCallType("")
+                            }}
+                            className="flex items-start gap-3 cursor-pointer transition-all duration-200 rounded-lg px-4 py-3 text-left"
+                            style={{
+                              background: active ? "rgba(201,168,76,0.12)" : "transparent",
+                              border: `1px solid ${active ? "rgba(201,168,76,0.5)" : "rgba(201,168,76,0.18)"}`,
+                              minWidth: "160px",
+                            }}
+                          >
+                            <div
+                              className="w-4 h-4 rounded-full border flex items-center justify-center shrink-0 mt-0.5"
+                              style={{ borderColor: active ? "var(--gold)" : "rgba(201,168,76,0.4)" }}
+                            >
+                              {active && <div className="w-2 h-2 rounded-full" style={{ background: "var(--gold)" }} />}
+                            </div>
+                            <div>
+                              <p className="font-body text-sm font-medium leading-snug" style={{ color: active ? "var(--gold-light)" : "var(--text-primary)" }}>
+                                {label}
+                              </p>
+                              <p className="font-body text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
+                                {desc}
+                              </p>
+                            </div>
+                          </button>
+                        )
+                      })}
+                    </div>
+
+                    {/* Sub-row: video vs phone — slides in when "call" is selected */}
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateRows: contactMethod === "call" ? "1fr" : "0fr",
+                        transition: "grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      }}
+                    >
+                      <div style={{ overflow: "hidden" }}>
+                        <div
+                          className="flex flex-wrap gap-2 pt-3 pl-1"
+                          style={{
+                            opacity: contactMethod === "call" ? 1 : 0,
+                            transition: "opacity 0.25s ease 0.1s",
+                          }}
+                        >
+                          <p className="font-mono-label text-xs w-full mb-1" style={{ color: "var(--text-muted)", letterSpacing: "0.12em" }}>
+                            VIDEO OR PHONE?
+                          </p>
+                          {[
+                            {
+                              id: "video" as const,
+                              label: "Video call",
+                              icon: (
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                  <rect x="2" y="6" width="14" height="12" rx="2" stroke="currentColor" strokeWidth="1.8" />
+                                  <path d="M16 10l6-4v12l-6-4V10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                                </svg>
+                              ),
+                            },
+                            {
+                              id: "phone" as const,
+                              label: "Phone call",
+                              icon: (
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                  <path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1L6.6 10.8z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              ),
+                            },
+                          ].map(({ id, label, icon }) => {
+                            const active = callType === id
+                            return (
+                              <button
+                                key={id}
+                                type="button"
+                                onClick={() => setCallType(active ? "" : id)}
+                                className="flex items-center gap-2 cursor-pointer transition-all duration-200 rounded-lg px-3 py-2"
+                                style={{
+                                  background: active ? "rgba(201,168,76,0.12)" : "rgba(255,255,255,0.8)",
+                                  border: `1px solid ${active ? "rgba(201,168,76,0.5)" : "rgba(201,168,76,0.2)"}`,
+                                  color: active ? "var(--gold)" : "var(--text-muted)",
+                                }}
+                              >
+                                {icon}
+                                <span className="font-body text-sm" style={{ color: active ? "var(--gold-light)" : "var(--text-secondary)" }}>
+                                  {label}
+                                </span>
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <button
                     type="submit"
                     disabled={loading}
@@ -221,8 +335,20 @@ export default function ContactPage() {
                 <div className="space-y-8">
                   {[
                     { num: "1", title: "You submit", desc: "Fill out the form. Takes about 3 minutes." },
-                    { num: "2", title: "We review in 24 hrs", desc: "We look at your business, check your current Google presence, and prep for the call." },
-                    { num: "3", title: "We hop on a call", desc: "15 minutes. We show you exactly what we'd do for your business and what to expect." },
+                    {
+                      num: "2",
+                      title: "We review in 24 hrs",
+                      desc: contactMethod === "email"
+                        ? "We look at your business and your current Google presence, then put together a clear plan."
+                        : "We look at your business, check your current Google presence, and prep for the call.",
+                    },
+                    {
+                      num: "3",
+                      title: contactMethod === "email" ? "We follow up by email" : "We hop on a call",
+                      desc: contactMethod === "email"
+                        ? "We'll send you a clear breakdown of what we'd do for your business — no call needed."
+                        : "15 minutes. We show you exactly what we'd do for your business and what to expect.",
+                    },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-5">
                       <div
@@ -246,17 +372,32 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(201,168,76,0.08)" }}>
-                  <p className="font-body text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                    Prefer to skip straight to a call?{" "}
-                    <Link
-                      href="https://calendly.com/397jtc/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="link-gold-light"
-                    >
-                      Book directly on Calendly →
-                    </Link>
-                  </p>
+                  {contactMethod !== "email" && (
+                    <p className="font-body text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                      Prefer to skip straight to a call?{" "}
+                      <Link
+                        href="https://calendly.com/397jtc/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="link-gold-light"
+                      >
+                        Book directly on Calendly →
+                      </Link>
+                    </p>
+                  )}
+                  {contactMethod === "email" && (
+                    <p className="font-body text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                      Changed your mind?{" "}
+                      <button
+                        type="button"
+                        onClick={() => setContactMethod("call")}
+                        className="link-gold-light cursor-pointer"
+                        style={{ background: "none", border: "none", padding: 0 }}
+                      >
+                        Switch to a call instead →
+                      </button>
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

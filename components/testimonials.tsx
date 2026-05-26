@@ -53,8 +53,9 @@ const StarRow = ({ count }: { count: number }) => (
 export function Testimonials() {
   return (
     <section
+      data-theme="light"
       className="section-pad relative overflow-hidden"
-      style={{ background: "#0d0c0a" }}
+      style={{ background: "var(--ink)" }}
     >
       {/* Subtle gold radial */}
       <div
@@ -77,14 +78,11 @@ export function Testimonials() {
             }}
           >
             What Philly business owners{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
               actually say.
             </em>
           </h2>
         </RevealDiv>
-
-        {/* Cards + marquee in light-theme context so card backgrounds stay cream */}
-        <div data-theme="light">
 
         {/* Mobile: horizontal scroll snap / Desktop: grid */}
         <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none -mx-6 md:mx-0 px-6 md:px-0">
@@ -94,9 +92,9 @@ export function Testimonials() {
               delay={i * 120}
               className="flex flex-col rounded-2xl p-7 shrink-0 md:shrink snap-start"
               style={{
-                background: "var(--surface-card)",
-                border: "1px solid rgba(201,168,76,0.15)",
-                boxShadow: "0 2px 20px rgba(0,0,0,0.06)",
+                background: "rgba(255,255,255,0.9)",
+                border: "1px solid rgba(201,168,76,0.18)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)",
                 width: "min(85vw, 360px)",
                 minWidth: "min(85vw, 360px)",
               }}
@@ -156,8 +154,6 @@ export function Testimonials() {
             </RevealDiv>
           ))}
         </div>
-
-        </div>{/* end data-theme="light" wrapper */}
 
         {/* Scrolling business type strip */}
         <RevealDiv delay={300} className="mt-12 overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>

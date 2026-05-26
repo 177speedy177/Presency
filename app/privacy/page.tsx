@@ -29,7 +29,7 @@ const sections = [
   },
   {
     heading: "Your Rights",
-    body: "You may request access to, correction of, or deletion of your personal data at any time by contacting us at hello@presency.com. We will respond within 30 days.",
+    body: "You may request access to, correction of, or deletion of your personal data at any time by contacting us at hello@getpresency.com. We will respond within 30 days.",
   },
   {
     heading: "Changes to This Policy",
@@ -37,13 +37,13 @@ const sections = [
   },
   {
     heading: "Contact",
-    body: "Questions about this privacy policy? Reach us at hello@presency.com.",
+    body: "Questions about this privacy policy? Reach us at hello@getpresency.com.",
   },
 ]
 
 export default function PrivacyPage() {
   return (
-    <main style={{ background: "var(--ink)" }}>
+    <main data-theme="light" style={{ background: "var(--ink)" }}>
       <Nav />
       <div className="min-h-screen pt-28 pb-20">
         <div className="max-w-2xl mx-auto px-6 lg:px-8">
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
             style={{
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
               fontSize: "0.85rem",
-              color: "rgba(247,244,239,0.4)",
+              color: "var(--text-muted)",
               marginBottom: "3rem",
             }}
           >
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
                     fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                     fontSize: "0.95rem",
                     lineHeight: 1.7,
-                    color: "rgba(247,244,239,0.6)",
+                    color: "var(--text-secondary)",
                   }}
                 >
                   {s.body}

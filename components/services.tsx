@@ -171,11 +171,11 @@ export function Services() {
                 </span>
               </div>
               <p className="font-body text-sm italic mb-4" style={{ color: "var(--text-secondary)" }}>
-                Your reputation, managed automatically.
+                Your reputation, handled for you.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 We handle your Google review responses so every customer feels heard
-                and your ranking keeps climbing. Set it up once and it runs itself.
+                and your ranking keeps climbing. Set it up once, we do the rest.
               </p>
             </div>
 
@@ -194,7 +194,7 @@ export function Services() {
               </p>
               <ul className="flex flex-col gap-2.5">
                 {[
-                  "Every Google review responded to automatically",
+                  "Every Google review responded to, on your behalf",
                   "Responses posted within 4 minutes",
                   "Custom brand voice that sounds like you",
                   "5-star and negative review handling",

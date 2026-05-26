@@ -15,7 +15,7 @@ export function CTA() {
     setLoading(true)
     setError(false)
     try {
-      const res = await fetch("https://formspree.io/f/xaqkqezg", {
+      const res = await fetch("https://formspree.io/f/mkoeqqyn", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ email }),
@@ -82,29 +82,7 @@ export function CTA() {
           </p>
         </RevealDiv>
 
-        {/* Urgency / scarcity */}
         <RevealDiv delay={200}>
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-8"
-            style={{
-              background: "rgba(201,168,76,0.08)",
-              border: "1px solid rgba(201,168,76,0.22)",
-            }}
-          >
-            <div
-              className="w-2 h-2 rounded-full shrink-0"
-              style={{ background: "#f97316", boxShadow: "0 0 6px #f97316" }}
-            />
-            <span
-              className="font-mono-label text-xs"
-              style={{ color: "var(--text-secondary)", letterSpacing: "0.1em" }}
-            >
-              LIMITED SPOTS AVAILABLE FOR PHILADELPHIA BUSINESSES THIS MONTH
-            </span>
-          </div>
-        </RevealDiv>
-
-        <RevealDiv delay={240}>
           {submitted ? (
             <div
               className="rounded-xl py-5 px-8"
@@ -173,8 +151,8 @@ export function CTA() {
             {error && (
               <p className="font-body text-sm text-center mt-3" style={{ color: "rgba(255,120,120,0.8)" }}>
                 Something went wrong. Email us directly at{" "}
-                <a href="mailto:hello@presency.com" className="underline" style={{ color: "rgba(255,150,150,0.9)" }}>
-                  hello@presency.com
+                <a href="mailto:hello@getpresency.com" className="underline" style={{ color: "rgba(255,150,150,0.9)" }}>
+                  hello@getpresency.com
                 </a>
               </p>
             )}

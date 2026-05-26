@@ -264,24 +264,24 @@ export function Hero() {
           {/* Corner accents */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {[
-              { top: "8%", left: "6%", rotate: "0deg" },
-              { top: "8%", right: "6%", left: "auto", rotate: "90deg" },
-              { bottom: "8%", left: "6%", top: "auto", rotate: "270deg" },
-              { bottom: "8%", right: "6%", top: "auto", left: "auto", rotate: "180deg" },
+              { top: "5%", left: "4%", rotate: "0deg" },
+              { top: "5%", right: "4%", left: "auto", rotate: "90deg" },
+              { bottom: "5%", left: "4%", top: "auto", rotate: "270deg" },
+              { bottom: "5%", right: "4%", top: "auto", left: "auto", rotate: "180deg" },
             ].map((pos, i) => (
               <div
                 key={i}
                 style={{
                   position: "absolute",
-                  width: "36px",
-                  height: "36px",
+                  width: "56px",
+                  height: "56px",
                   ...pos,
-                  opacity: phase >= 1 ? 0.45 : 0,
+                  opacity: phase >= 1 ? 0.5 : 0,
                   transition: `opacity 0.8s ease-out ${200 + i * 80}ms`,
                 }}
               >
-                <svg viewBox="0 0 36 36" fill="none" style={{ transform: `rotate(${pos.rotate})` }}>
-                  <path d="M2 34 L2 2 L34 2" stroke="rgba(201,168,76,0.6)" strokeWidth="1" fill="none" strokeLinecap="round" />
+                <svg viewBox="0 0 56 56" fill="none" style={{ transform: `rotate(${pos.rotate})` }}>
+                  <path d="M3 53 L3 3 L53 3" stroke="rgba(201,168,76,0.6)" strokeWidth="1.2" fill="none" strokeLinecap="round" />
                 </svg>
               </div>
             ))}
@@ -295,7 +295,7 @@ export function Hero() {
               flexDirection: "column",
               alignItems: "center",
               textAlign: "center",
-              gap: 0,
+              gap: "1rem",
             }}
           >
             {/* Brand reveal — appears first */}
@@ -327,7 +327,7 @@ export function Hero() {
                 style={{
                   fontFamily: "var(--font-fraunces), serif",
                   fontWeight: 300,
-                  fontSize: "clamp(4.5rem, 13vw, 9.5rem)",
+                  fontSize: "clamp(5rem, 28vw, 9.5rem)",
                   letterSpacing: "-0.045em",
                   lineHeight: 1.1,
                   paddingBottom: "0.08em",
@@ -351,7 +351,7 @@ export function Hero() {
                 height: "1px",
                 width: phase >= 2 ? "80px" : "0px",
                 background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.55), transparent)",
-                margin: "1.1em auto",
+                margin: "0.5rem auto",
                 transition: "width 0.9s cubic-bezier(0.4, 0, 0.2, 1)",
                 transitionDelay: "100ms",
               }}
@@ -363,7 +363,7 @@ export function Hero() {
                 style={{
                   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                   fontWeight: 600,
-                  fontSize: "clamp(1.2rem, 3.5vw, 2.2rem)",
+                  fontSize: "clamp(1.4rem, 5.5vw, 2.2rem)",
                   color: "rgba(255,251,240,0.92)",
                   letterSpacing: "-0.01em",
                   opacity: phase >= 2 ? 1 : 0,
@@ -378,7 +378,7 @@ export function Hero() {
                 style={{
                   fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(1.2rem, 3.5vw, 2.2rem)",
+                  fontSize: "clamp(1.4rem, 5.5vw, 2.2rem)",
                   letterSpacing: "-0.01em",
                   marginTop: "0.08em",
                   background: "linear-gradient(120deg, #f5dfa0 0%, #c9a84c 45%, #e8d08a 80%)",

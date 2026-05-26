@@ -17,7 +17,7 @@ const sections = [
   },
   {
     heading: "Cancellation",
-    body: "You may cancel the Online Presence Plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@presency.com.",
+    body: "You may cancel the Online Presence Plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@getpresency.com.",
   },
   {
     heading: "Your Responsibilities",
@@ -41,13 +41,13 @@ const sections = [
   },
   {
     heading: "Contact",
-    body: "Questions about these terms? Reach us at hello@presency.com.",
+    body: "Questions about these terms? Reach us at hello@getpresency.com.",
   },
 ]
 
 export default function TermsPage() {
   return (
-    <main style={{ background: "var(--ink)" }}>
+    <main data-theme="light" style={{ background: "var(--ink)" }}>
       <Nav />
       <div className="min-h-screen pt-28 pb-20">
         <div className="max-w-2xl mx-auto px-6 lg:px-8">
@@ -79,7 +79,7 @@ export default function TermsPage() {
             style={{
               fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
               fontSize: "0.85rem",
-              color: "rgba(247,244,239,0.4)",
+              color: "var(--text-muted)",
               marginBottom: "3rem",
             }}
           >
@@ -105,7 +105,7 @@ export default function TermsPage() {
                     fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
                     fontSize: "0.95rem",
                     lineHeight: 1.7,
-                    color: "rgba(247,244,239,0.6)",
+                    color: "var(--text-secondary)",
                   }}
                 >
                   {s.body}

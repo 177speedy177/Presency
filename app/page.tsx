@@ -3,7 +3,6 @@ import { Hero } from "@/components/hero"
 import { Results } from "@/components/results"
 import { BeforeAfter } from "@/components/before-after"
 import { Process } from "@/components/process"
-import { ClientTypes } from "@/components/client-types"
 import { VideoIntro } from "@/components/video-intro"
 import { Testimonials } from "@/components/testimonials"
 import { Services } from "@/components/services"
@@ -22,7 +21,6 @@ export default function Home() {
       <Services />
       <BeforeAfter />
       <Process />
-      <ClientTypes />
       <VideoIntro />
       <Testimonials />
       <FAQ />

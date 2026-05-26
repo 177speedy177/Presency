@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
@@ -20,6 +20,12 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
   display: "swap",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+}
 
 export const metadata: Metadata = {
   title: "Presency | AI-Powered Online Performance for Local Businesses",
@@ -60,9 +66,9 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Presency",
   description: "AI-powered website design and Google review management for local businesses in Philadelphia.",
-  url: "https://presency.com",
+  url: "https://getpresency.com",
   telephone: "",
-  email: "hello@presency.com",
+  email: "hello@getpresency.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Philadelphia",

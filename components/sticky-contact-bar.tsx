@@ -49,6 +49,7 @@ export function StickyContactBar() {
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
           boxShadow: "0 -4px 32px rgba(0,0,0,0.5)",
+          paddingBottom: "env(safe-area-inset-bottom, 0px)",
         }}
       >
         <div
@@ -76,7 +77,7 @@ export function StickyContactBar() {
                 QUESTIONS?
               </p>
               <a
-                href="mailto:hello@presency.com"
+                href="mailto:hello@getpresency.com"
                 className="font-body text-sm font-medium truncate block transition-colors duration-200"
                 style={{ color: "var(--text-secondary)" }}
                 onMouseEnter={(e) =>
@@ -86,7 +87,7 @@ export function StickyContactBar() {
                   ((e.currentTarget as HTMLElement).style.color = "var(--text-secondary)")
                 }
               >
-                hello@presency.com
+                hello@getpresency.com
               </a>
             </div>
 
