@@ -1,4 +1,5 @@
 "use client"
+import { useRef, useEffect } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
 
 const steps = [
@@ -10,7 +11,7 @@ const steps = [
   {
     num: "02",
     title: "We build or connect",
-    desc: "For websites, we design and deliver in 2 weeks. For review responses, we connect to your Google Business Profile through the official Google API. No passwords, no login sharing.",
+    desc: "For websites, we design and deliver in 2 weeks. For review responses, we connect to your Google Business Profile securely. You authorize in two clicks, no password or tech knowledge needed.",
   },
   {
     num: "03",
@@ -20,6 +21,33 @@ const steps = [
 ]
 
 export function Process() {
+  const lineRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = lineRef.current
+    if (!el) return
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (reduced) return
+
+    el.style.transformOrigin = "left center"
+    el.style.transform = "scaleX(0)"
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            el.style.transition = "transform 1s cubic-bezier(0.4, 0, 0.2, 1)"
+            el.style.transform = "scaleX(1)"
+          }, 300)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.4 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section
       data-theme="light"
@@ -38,7 +66,7 @@ export function Process() {
             }}
           >
             Simple to start.{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
               Built to last.
             </em>
           </h2>
@@ -47,9 +75,10 @@ export function Process() {
         <div className="relative grid md:grid-cols-3 gap-8 lg:gap-12">
           {/* Connecting line: spans from center of col-1 to center of col-3 */}
           <div
+            ref={lineRef}
             className="hidden md:block absolute pointer-events-none"
             style={{
-              top: "calc(3rem + 2px)", /* aligns with center of the large step number */
+              top: "calc(3rem + 2px)",
               left: "calc(100% / 6)",
               right: "calc(100% / 6)",
               height: "1px",

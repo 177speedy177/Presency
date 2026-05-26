@@ -74,7 +74,7 @@ export function FAQ() {
             }}
           >
             Common{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
               questions,
             </em>{" "}
             straight answers.

@@ -89,7 +89,7 @@ export default function ContactPage() {
                 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 300, color: "var(--text-primary)" }}
               >
                 Let&apos;s talk about{" "}
-                <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+                <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
                   your business.
                 </em>
               </h1>
@@ -102,11 +102,11 @@ export default function ContactPage() {
                   className="rounded-xl py-10 px-8 text-center"
                   style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.3)" }}
                 >
-                  <p className="font-display text-2xl mb-2" style={{ color: "var(--gold-light)", fontWeight: 300 }}>
+                  <p className="font-display text-2xl mb-2" style={{ color: "var(--gold)", fontWeight: 300 }}>
                     Message received.
                   </p>
                   <p className="font-body text-sm" style={{ color: "var(--text-secondary)" }}>
-                    We&apos;ll be in touch within 24 hours.
+                    You&apos;ll hear from Joey directly within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -184,7 +184,7 @@ export default function ContactPage() {
                             >
                               {active && <div className="w-2 h-2 rounded-full" style={{ background: "var(--gold)" }} />}
                             </div>
-                            <span className="font-body text-sm" style={{ color: active ? "var(--gold-light)" : "var(--text-secondary)" }}>
+                            <span className="font-body text-sm" style={{ color: active ? "var(--gold)" : "var(--text-secondary)" }}>
                               {pkg}
                             </span>
                           </button>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                               {active && <div className="w-2 h-2 rounded-full" style={{ background: "var(--gold)" }} />}
                             </div>
                             <div>
-                              <p className="font-body text-sm font-medium leading-snug" style={{ color: active ? "var(--gold-light)" : "var(--text-primary)" }}>
+                              <p className="font-body text-sm font-medium leading-snug" style={{ color: active ? "var(--gold)" : "var(--text-primary)" }}>
                                 {label}
                               </p>
                               <p className="font-body text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
@@ -292,7 +292,7 @@ export default function ContactPage() {
                                 }}
                               >
                                 {icon}
-                                <span className="font-body text-sm" style={{ color: active ? "var(--gold-light)" : "var(--text-secondary)" }}>
+                                <span className="font-body text-sm" style={{ color: active ? "var(--gold)" : "var(--text-secondary)" }}>
                                   {label}
                                 </span>
                               </button>

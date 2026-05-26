@@ -36,8 +36,8 @@ function useCountUp(target: number, decimals = 0, duration = 1800) {
   return { count, ref }
 }
 
-function AnimatedStat({ num, suffix, decimals = 0, label, source }: {
-  num: number; suffix: string; decimals?: number; label: string; source: string
+function AnimatedStat({ num, suffix, decimals = 0, label, source, sourceHref }: {
+  num: number; suffix: string; decimals?: number; label: string; source: string; sourceHref: string
 }) {
   const { count, ref } = useCountUp(num, decimals)
   return (
@@ -48,6 +48,17 @@ function AnimatedStat({ num, suffix, decimals = 0, label, source }: {
         background: "var(--surface-card)",
         border: "1px solid rgba(201,168,76,0.18)",
         boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
+        transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-3px)"
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.45)"
+        e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.1), 0 0 16px rgba(201,168,76,0.08)"
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(0)"
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"
+        e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.05)"
       }}
     >
       <div
@@ -59,9 +70,17 @@ function AnimatedStat({ num, suffix, decimals = 0, label, source }: {
       <p className="font-body text-sm leading-snug mb-3" style={{ color: "var(--text-secondary)" }}>
         {label}
       </p>
-      <p className="font-mono-label" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
-        {source}
-      </p>
+      <a
+        href={sourceHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-mono-label transition-colors duration-200"
+        style={{ fontSize: "10px", color: "var(--text-muted)" }}
+        onMouseEnter={(e) => { e.currentTarget.style.color = "var(--gold)" }}
+        onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)" }}
+      >
+        {source} ↗
+      </a>
     </div>
   )
 }
@@ -71,21 +90,25 @@ const primaryStats = [
     num: 35, suffix: "%", decimals: 0,
     label: "more revenue earned by businesses that respond to reviews",
     source: "Harvard Business School",
+    sourceHref: "https://hbswk.hbs.edu",
   },
   {
     num: 75, suffix: "%", decimals: 0,
     label: "of consumers judge a company's credibility based on its website design",
     source: "Stanford Web Credibility Research",
+    sourceHref: "https://credibility.stanford.edu/guidelines/index.html",
   },
   {
     num: 1.7, suffix: "×", decimals: 1,
-    label: "more trustworthy, per Google's ranking of businesses that respond to reviews",
-    source: "Google Research",
+    label: "more trustworthy: how actively responding to reviews changes how customers perceive your business",
+    source: "Podium: State of Online Reviews",
+    sourceHref: "https://www.podium.com/resources/",
   },
   {
-    num: 61, suffix: "%", decimals: 0,
-    label: "of mobile users leave a site that isn't mobile-friendly and go straight to a competitor",
-    source: "Google",
+    num: 58, suffix: "%", decimals: 0,
+    label: "of all website traffic comes from mobile — a non-mobile site is invisible to most of your customers",
+    source: "Statista, 2024",
+    sourceHref: "https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/",
   },
 ]
 
@@ -99,7 +122,8 @@ const researchCards = [
     ),
     headline: "First impressions are instant.",
     body: "Visitors form an opinion about your website in 50 milliseconds. An outdated or slow site signals an unprofessional business before a single word is read.",
-    source: "Google UX Research",
+    source: "Behaviour & Information Technology, Lindgaard et al.",
+    sourceHref: "https://doi.org/10.1080/01449290500330448",
   },
   {
     icon: (
@@ -110,6 +134,7 @@ const researchCards = [
     headline: "Reviews directly drive ranking.",
     body: "Online reviews and owner responses account for roughly 17% of Google's local search ranking algorithm, more than your website or backlinks.",
     source: "Moz Local Search Ranking Factors",
+    sourceHref: "https://moz.com/local-search-ranking-factors",
   },
   {
     icon: (
@@ -121,6 +146,7 @@ const researchCards = [
     headline: "Buyers check before they visit.",
     body: "87% of consumers used Google to evaluate a local business in the past year. Your reviews, responses, and profile are your real storefront.",
     source: "BrightLocal Consumer Survey",
+    sourceHref: "https://www.brightlocal.com/research/local-consumer-review-survey/",
   },
 ]
 
@@ -132,7 +158,7 @@ export function Results() {
       className="section-pad relative overflow-hidden"
       style={{ background: "var(--ink)" }}
     >
-      {/* Ambient gold glows — bridges warmly from the hero */}
+      {/* Ambient gold glows */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: "radial-gradient(ellipse at 70% 15%, rgba(201,168,76,0.13) 0%, transparent 55%)",
       }} />
@@ -156,7 +182,7 @@ export function Results() {
             }}
           >
             Your presence{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
               pays.
             </em>
           </h2>
@@ -165,7 +191,7 @@ export function Results() {
             style={{ color: "var(--text-secondary)" }}
           >
             This isn&apos;t opinion. It&apos;s documented across peer-reviewed studies,
-            consumer surveys, and published UX research.
+            consumer surveys, and published research.
           </p>
         </RevealDiv>
 
@@ -187,6 +213,17 @@ export function Results() {
                 background: "var(--surface-card)",
                 border: "1px solid rgba(201,168,76,0.2)",
                 boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
+                transition: "opacity 0.7s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-3px)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.45)"
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.1), 0 0 16px rgba(201,168,76,0.08)"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.2)"
+                e.currentTarget.style.boxShadow = "0 2px 16px rgba(0,0,0,0.05)"
               }}
             >
               <div
@@ -207,12 +244,17 @@ export function Results() {
               >
                 {card.body}
               </p>
-              <p
-                className="font-mono-label"
+              <a
+                href={card.sourceHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono-label transition-colors duration-200"
                 style={{ fontSize: "10px", color: "var(--text-muted)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--gold)" }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)" }}
               >
-                {card.source}
-              </p>
+                {card.source} ↗
+              </a>
             </RevealDiv>
           ))}
         </div>

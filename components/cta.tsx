@@ -3,22 +3,31 @@ import { useState } from "react"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
 
+const inputStyle = {
+  background: "var(--surface-card)",
+  border: "1px solid rgba(201,168,76,0.25)",
+  color: "var(--text-primary)",
+} as React.CSSProperties
+
+const inputCls = "w-full font-body text-sm px-5 py-3.5 rounded-lg outline-none transition-all duration-200"
+
 export function CTA() {
   const [email, setEmail] = useState("")
+  const [businessName, setBusinessName] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
+    if (!email || !businessName) return
     setLoading(true)
     setError(false)
     try {
       const res = await fetch("https://formspree.io/f/mkoeqqyn", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, businessName }),
       })
       if (!res.ok) throw new Error()
       setSubmitted(true)
@@ -63,7 +72,7 @@ export function CTA() {
             <em
               style={{
                 fontStyle: "italic",
-                color: "var(--gold-light)",
+                color: "var(--gold)",
                 fontWeight: 400,
               }}
             >
@@ -93,7 +102,7 @@ export function CTA() {
             >
               <p
                 className="font-display text-lg mb-1"
-                style={{ color: "var(--gold-light)", fontWeight: 300 }}
+                style={{ color: "var(--gold)", fontWeight: 300 }}
               >
                 You&apos;re on the list.
               </p>
@@ -107,29 +116,44 @@ export function CTA() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3 mb-6"
+              className="flex flex-col gap-3 mb-6"
             >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your business email"
-                required
-                className="flex-1 font-body text-sm px-5 py-3.5 rounded-lg outline-none transition-all duration-200"
-                style={{
-                  background: "var(--surface-card)",
-                  border: "1px solid rgba(201,168,76,0.25)",
-                  color: "var(--text-primary)",
-                }}
-                onFocus={(e) => {
-                  e.target.style.borderColor = "var(--gold)"
-                  e.target.style.background = "rgba(255,255,255,0.95)"
-                }}
-                onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(201,168,76,0.25)"
-                  e.target.style.background = "var(--surface-card)"
-                }}
-              />
+              <div className="grid sm:grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  value={businessName}
+                  onChange={(e) => setBusinessName(e.target.value)}
+                  placeholder="Business name"
+                  required
+                  className={inputCls}
+                  style={inputStyle}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = "var(--gold)"
+                    e.target.style.background = "rgba(255,255,255,0.95)"
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = "rgba(201,168,76,0.25)"
+                    e.target.style.background = "var(--surface-card)"
+                  }}
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Business email"
+                  required
+                  className={inputCls}
+                  style={inputStyle}
+                  onFocus={(e) => {
+                    e.target.style.borderColor = "var(--gold)"
+                    e.target.style.background = "rgba(255,255,255,0.95)"
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.borderColor = "rgba(201,168,76,0.25)"
+                    e.target.style.background = "var(--surface-card)"
+                  }}
+                />
+              </div>
               <button
                 type="submit"
                 disabled={loading}
@@ -146,16 +170,16 @@ export function CTA() {
                   e.currentTarget.style.boxShadow = "none"
                 }}
               >
-                {loading ? "Sending..." : "Start free, 14 days"}
-            </button>
-            {error && (
-              <p className="font-body text-sm text-center mt-3" style={{ color: "rgba(255,120,120,0.8)" }}>
-                Something went wrong. Email us directly at{" "}
-                <a href="mailto:hello@getpresency.com" className="underline" style={{ color: "rgba(255,150,150,0.9)" }}>
-                  hello@getpresency.com
-                </a>
-              </p>
-            )}
+                {loading ? "Sending..." : "Claim your spot"}
+              </button>
+              {error && (
+                <p className="font-body text-sm text-center" style={{ color: "rgba(255,120,120,0.8)" }}>
+                  Something went wrong. Email us directly at{" "}
+                  <a href="mailto:hello@getpresency.com" className="underline" style={{ color: "rgba(255,150,150,0.9)" }}>
+                    hello@getpresency.com
+                  </a>
+                </p>
+              )}
             </form>
           )}
         </RevealDiv>
@@ -175,7 +199,7 @@ export function CTA() {
 
         <RevealDiv delay={400}>
           <div className="flex flex-wrap justify-center gap-5">
-            {["No card required", "Cancel anytime", "Setup in 10 minutes"].map(
+            {["No card required", "Cancel anytime", "10-min setup"].map(
               (t) => (
                 <div key={t} className="flex items-center gap-2">
                   <svg

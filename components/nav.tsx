@@ -5,6 +5,7 @@ import Link from "next/link"
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -12,10 +13,33 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handler)
   }, [])
 
+  useEffect(() => {
+    const ids = ["services", "results", "faq", "founder"]
+    const visible = new Set<string>()
+
+    const observers = ids.map((id) => {
+      const el = document.getElementById(id)
+      if (!el) return null
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) visible.add(id)
+          else visible.delete(id)
+          setActiveSection(ids.find((s) => visible.has(s)) ?? "")
+        },
+        { threshold: 0.15, rootMargin: "-64px 0px -35% 0px" }
+      )
+      obs.observe(el)
+      return obs
+    })
+
+    return () => observers.forEach((o) => o?.disconnect())
+  }, [])
+
   const links = [
     { href: "#services", label: "Services" },
     { href: "#results", label: "Results" },
     { href: "#faq", label: "FAQ" },
+    { href: "#founder", label: "About" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -60,11 +84,19 @@ export function Nav() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} className="font-body text-sm nav-link">
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const isActive = l.href.startsWith("#") && l.href === `#${activeSection}`
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="font-body text-sm nav-link transition-colors duration-200"
+                  style={isActive ? { color: "var(--gold)" } : undefined}
+                >
+                  {l.label}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -133,17 +165,20 @@ export function Nav() {
         }}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-body text-sm py-1 cursor-pointer"
-              style={{ color: "var(--text-secondary)" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const isActive = l.href.startsWith("#") && l.href === `#${activeSection}`
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="font-body text-sm py-1 cursor-pointer transition-colors duration-200"
+                style={{ color: isActive ? "var(--gold)" : "var(--text-secondary)" }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {l.label}
+              </Link>
+            )
+          })}
           <Link
             href="/contact"
             className="font-body text-sm px-5 py-2.5 rounded-lg border text-center transition-all duration-200 cursor-pointer"

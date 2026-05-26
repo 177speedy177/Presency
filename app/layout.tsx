@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -30,7 +31,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Presency | AI-Powered Online Performance for Local Businesses",
   description:
-    "Presency builds modern websites and manages Google review responses for local businesses. Website redesigns from $1,199 and automated review management from $199/month.",
+    "Presency builds modern websites and manages Google review responses for local businesses. Website redesigns from $1,199 and review management from $199/month.",
   keywords: [
     "website redesign for local business",
     "google review responses",
@@ -39,17 +40,21 @@ export const metadata: Metadata = {
     "small business website builder",
     "local SEO",
   ],
+  alternates: {
+    canonical: "https://getpresency.com",
+  },
   openGraph: {
     title: "Presency | Online Performance for Local Businesses",
     description:
-      "Website redesigns and automated Google review responses for local businesses. From $199/month.",
+      "Website redesigns and Google review management for local businesses. From $199/month.",
     type: "website",
+    url: "https://getpresency.com",
     images: [
       {
-        url: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        url: "https://getpresency.com/presency-og.png",
         width: 1200,
         height: 630,
-        alt: "Presency — Online Performance for Local Businesses",
+        alt: "Presency — Putting Philly on the map, one business at a time",
       },
     ],
   },
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Presency | Online Performance for Local Businesses",
     description: "Website redesigns and Google review management for local businesses. From $199/month.",
-    images: ["https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200"],
+    images: ["https://getpresency.com/presency-og.png"],
   },
 }
 
@@ -67,8 +72,8 @@ const jsonLd = {
   name: "Presency",
   description: "AI-powered website design and Google review management for local businesses in Philadelphia.",
   url: "https://getpresency.com",
-  telephone: "",
   email: "hello@getpresency.com",
+  foundingDate: "2026",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Philadelphia",
@@ -116,6 +121,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ScrollProgress />
         {children}
       </body>
     </html>

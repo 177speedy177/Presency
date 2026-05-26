@@ -31,12 +31,16 @@ export function RevealDiv({
       }, delay ?? 0)
     }
 
-    // If already in or near viewport (handles direct anchor navigation), reveal immediately
+    // If already in or near viewport, reveal immediately (handles direct anchor nav)
     const rect = el.getBoundingClientRect()
     if (rect.top < window.innerHeight * 1.1) {
       reveal()
       return
     }
+
+    // Off-viewport: hide imperatively (element is off-screen, user won't see this)
+    el.style.opacity = "0"
+    el.style.transform = "translateY(24px)"
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,8 +60,6 @@ export function RevealDiv({
       ref={ref}
       className={className}
       style={{
-        opacity: 0,
-        transform: "translateY(24px)",
         transition: "opacity 0.7s ease, transform 0.7s ease",
         ...style,
       }}

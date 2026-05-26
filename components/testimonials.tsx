@@ -1,36 +1,34 @@
 "use client"
+import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
 
-const testimonials = [
+const samples = [
   {
-    quote:
-      "I was getting maybe one review a month and never had time to respond. Now every review gets answered faster than I can even read it. My Google rating went from 4.1 to 4.7 in four months.",
-    name: "Tony Russo",
-    role: "Owner, Russo's Plumbing & Heating",
-    location: "Northeast Philadelphia",
-    initials: "TR",
+    business: "Joe's Cuts",
+    location: "Fishtown",
+    type: "Barbershop",
+    reviewer: "Marcus T.",
     stars: 5,
-    date: "4 months ago",
+    review: "Best cuts in Fishtown. Been coming here for years — always packed but always worth the wait.",
+    response: "Marcus, that means everything to us. Worth the wait is exactly what we shoot for. We'll keep the chairs hot. See you soon. Joe and the crew",
   },
   {
-    quote:
-      "My clients started mentioning they found me because of my reviews. That never happened before. Presency made my shop look active and professional online even when I'm slammed on a Saturday.",
-    name: "Keisha Williams",
-    role: "Owner, Style by Keisha",
-    location: "West Philadelphia",
-    initials: "KW",
-    stars: 5,
-    date: "2 months ago",
+    business: "Bella Vista Bistro",
+    location: "South Philly",
+    type: "Restaurant",
+    reviewer: "Sarah K.",
+    stars: 3,
+    review: "Food was great but waited 45 minutes for our table even with a reservation. Frustrating.",
+    response: "Sarah, thank you for being honest. A 45-minute wait with a reservation is not okay, and we know it. We're adjusting our system this week. We'd love to make it right on your next visit.",
   },
   {
-    quote:
-      "We were nervous about AI writing responses for us. But the voice they set up sounds exactly like our front desk. We've gotten three new patients who specifically mentioned our Google reviews.",
-    name: "Dr. Marco Gentile",
-    role: "Owner, Gentile Family Dental",
-    location: "South Philadelphia",
-    initials: "MG",
+    business: "Fishtown Dental",
+    location: "Fishtown",
+    type: "Dental Office",
+    reviewer: "David R.",
     stars: 5,
-    date: "6 weeks ago",
+    review: "Dr. Kim made my kids actually excited about going to the dentist. Thought that was impossible.",
+    response: "David, turning dentist anxiety into dentist excitement is our favorite kind of win. We love having your family — see you at the next visit!",
   },
 ]
 
@@ -41,9 +39,10 @@ const businessCategories = [
 ]
 
 const StarRow = ({ count }: { count: number }) => (
-  <div className="flex gap-0.5 mb-4">
-    {Array.from({ length: count }).map((_, i) => (
-      <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#c9a84c" aria-hidden="true">
+  <div className="flex gap-0.5">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <svg key={i} width="12" height="12" viewBox="0 0 14 14"
+        fill={i < count ? "#c9a84c" : "rgba(201,168,76,0.2)"} aria-hidden="true">
         <path d="M7 1l1.5 4.5H14l-4 2.8 1.5 4.7L7 10l-4.5 3 1.5-4.7-4-2.8h5.5z" />
       </svg>
     ))}
@@ -61,14 +60,13 @@ export function Testimonials() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%)",
         }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
-          <p className="eyebrow mb-4">REAL RESULTS</p>
+          <p className="eyebrow mb-4">SEE THE WORK</p>
           <h2
             className="font-display"
             style={{
@@ -77,20 +75,23 @@ export function Testimonials() {
               color: "var(--text-primary)",
             }}
           >
-            What Philly business owners{" "}
+            What we&apos;d write{" "}
             <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              actually say.
+              for your business.
             </em>
           </h2>
+          <p className="font-body text-sm mt-3" style={{ color: "var(--text-muted)" }}>
+            Sample responses — the same quality we&apos;d craft for you.
+          </p>
         </RevealDiv>
 
-        {/* Mobile: horizontal scroll snap / Desktop: grid */}
+        {/* Cards — mobile scroll / desktop grid */}
         <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none -mx-6 md:mx-0 px-6 md:px-0">
-          {testimonials.map((t, i) => (
+          {samples.map((s, i) => (
             <RevealDiv
-              key={t.name}
+              key={s.business}
               delay={i * 120}
-              className="flex flex-col rounded-2xl p-7 shrink-0 md:shrink snap-start"
+              className="flex flex-col rounded-2xl overflow-hidden shrink-0 md:shrink snap-start"
               style={{
                 background: "rgba(255,255,255,0.9)",
                 border: "1px solid rgba(201,168,76,0.18)",
@@ -99,57 +100,53 @@ export function Testimonials() {
                 minWidth: "min(85vw, 360px)",
               }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <StarRow count={t.stars} />
-                <span className="font-body text-xs" style={{ color: "var(--text-muted)" }}>{t.date}</span>
-              </div>
-
-              {/* Quote mark */}
-              <div
-                className="font-display mb-3 leading-none select-none"
-                style={{ fontSize: "2.5rem", color: "rgba(201,168,76,0.25)", lineHeight: 1 }}
-                aria-hidden="true"
-              >
-                &ldquo;
-              </div>
-
-              <p
-                className="font-body text-base leading-relaxed flex-1 mb-6"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {t.quote}
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    background: "rgba(201,168,76,0.15)",
-                    border: "1px solid rgba(201,168,76,0.3)",
-                  }}
-                >
-                  <span
-                    className="font-display text-xs"
-                    style={{ color: "var(--gold)", fontWeight: 500, letterSpacing: "0.05em" }}
+              {/* Review half */}
+              <div className="p-6 pb-4">
+                {/* Business + Google badge */}
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <div>
+                    <p className="font-body text-sm font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>
+                      {s.business}
+                    </p>
+                    <p className="font-mono-label" style={{ fontSize: "9px", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                      {s.type.toUpperCase()} · {s.location.toUpperCase()}
+                    </p>
+                  </div>
+                  <div
+                    className="shrink-0 rounded-full px-2 py-0.5 font-mono-label"
+                    style={{ background: "rgba(201,168,76,0.1)", fontSize: "9px", color: "var(--gold)", letterSpacing: "0.08em" }}
                   >
-                    {t.initials}
+                    GOOGLE
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mb-2">
+                  <StarRow count={s.stars} />
+                  <span className="font-body text-xs" style={{ color: "var(--text-muted)" }}>{s.reviewer}</span>
+                </div>
+
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  &ldquo;{s.review}&rdquo;
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div style={{ height: "1px", background: "rgba(201,168,76,0.12)", margin: "0 1.5rem" }} />
+
+              {/* Response half */}
+              <div
+                className="p-6 pt-4 flex-1"
+                style={{ background: "rgba(201,168,76,0.04)" }}
+              >
+                <div className="flex items-center gap-1.5 mb-2">
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--gold)" }} />
+                  <span className="font-mono-label" style={{ fontSize: "9px", color: "var(--gold)", letterSpacing: "0.1em" }}>
+                    OWNER RESPONSE · via Presency
                   </span>
                 </div>
-                <div>
-                  <p
-                    className="font-body text-sm font-medium leading-snug"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {t.name}
-                  </p>
-                  <p
-                    className="font-body text-xs leading-snug"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {t.role} · {t.location}
-                  </p>
-                </div>
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  {s.response}
+                </p>
               </div>
             </RevealDiv>
           ))}
@@ -180,28 +177,33 @@ export function Testimonials() {
           `}</style>
         </RevealDiv>
 
-        {/* Aggregate credibility bar */}
-        <RevealDiv delay={400} className="mt-10 flex flex-wrap justify-center gap-8">
-          {[
-            { value: "4.8★", label: "avg Google rating after 6 months" },
-            { value: "40+", label: "Philadelphia businesses served" },
-            { value: "100%", label: "reviews responded to, every time" },
-          ].map((item) => (
-            <div key={item.label} className="text-center">
-              <div
-                className="font-display text-2xl mb-1"
-                style={{ fontWeight: 300, color: "var(--gold)" }}
-              >
-                {item.value}
-              </div>
-              <div
-                className="font-body text-xs"
-                style={{ color: "var(--text-muted)" }}
-              >
-                {item.label}
-              </div>
+        {/* "Be one of the first" callout */}
+        <RevealDiv delay={400}>
+          <div
+            className="mt-10 rounded-2xl px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-5"
+            style={{
+              background: "rgba(201,168,76,0.07)",
+              border: "1px solid rgba(201,168,76,0.2)",
+            }}
+          >
+            <div>
+              <p className="font-display text-lg font-light mb-1" style={{ color: "var(--text-primary)" }}>
+                Be one of the first in your neighborhood.
+              </p>
+              <p className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
+                We&apos;re actively building our Philadelphia roster — spots are limited by area.
+              </p>
             </div>
-          ))}
+            <Link
+              href="/contact"
+              className="font-body font-medium text-sm px-6 py-3 rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+              style={{ background: "var(--gold)", color: "var(--ink)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "var(--gold-dark)"; e.currentTarget.style.color = "#fff" }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.color = "var(--ink)" }}
+            >
+              Claim your spot →
+            </Link>
+          </div>
         </RevealDiv>
       </div>
     </section>

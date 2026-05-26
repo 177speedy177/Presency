@@ -74,38 +74,17 @@ export function Footer() {
             ))}
           </div>
 
-          {/* Social */}
+          {/* Contact */}
           <div>
             <p className="eyebrow mb-3" style={{ color: "var(--text-muted)", fontSize: "10px" }}>
-              FOLLOW US
+              REACH US
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer icon-btn-gold"
-                aria-label="Instagram"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="#c9a84c" strokeWidth="1.5"/>
-                  <circle cx="12" cy="12" r="5" stroke="#c9a84c" strokeWidth="1.5"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="#c9a84c"/>
-                </svg>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer icon-btn-gold"
-                aria-label="LinkedIn"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="#c9a84c" strokeWidth="1.5"/>
-                  <path d="M7 10v7M7 7v1M12 10v7m0-5a3 3 0 0 1 6 0v5" stroke="#c9a84c" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              </a>
-            </div>
+            <a
+              href="mailto:hello@getpresency.com"
+              className="font-body text-sm link-gold"
+            >
+              hello@getpresency.com
+            </a>
           </div>
         </div>
 
@@ -115,7 +94,7 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(201,168,76,0.06)" }}
         >
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)" }}>
-            © 2026 Presency. Made in Pennsylvania.
+            © 2026 Presency. Made in Philadelphia, PA.
           </p>
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)", opacity: 0.6 }}>
             From $199/month · No contracts

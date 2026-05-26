@@ -129,7 +129,7 @@ export function BeforeAfter() {
             }}
           >
             Your Google profile{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
               before and after.
             </em>
           </h2>
@@ -326,11 +326,11 @@ export function BeforeAfter() {
                       className="font-display text-xl"
                       style={{ fontWeight: 300, color: "var(--gold)" }}
                     >
-                      4.8
+                      4.2
                     </span>
-                    <StarRow count={5} />
+                    <StarRow count={4} />
                     <span className="font-body text-xs" style={{ color: "var(--text-muted)" }}>
-                      (94 reviews)
+                      (28 reviews)
                     </span>
                   </div>
                   <p className="font-body text-xs" style={{ color: "var(--text-muted)" }}>
@@ -348,11 +348,11 @@ export function BeforeAfter() {
                 response="Hey Mike, thanks for the honest feedback! We hear you. We've added a third chair and wait times are way down. Come back and we'll make it right. Joe"
               />
               <ReviewItem
-                author="Sarah K."
-                text="The fade my son got was perfect. Definitely our new spot."
+                author="Emily R."
+                text="Finally a barbershop that actually responds. Booked for my husband and he loved it."
                 stars={5}
                 timeAgo="1 week ago"
-                response="Sarah, we love hearing that! Tell your son we'll have him looking sharp every time. See you both soon! Joe & the crew"
+                response="Emily, thanks for giving us a shot! Glad your husband had a great visit. We will have him looking sharp every time. See you both soon. Joe and the crew"
               />
 
               {/* Impact note */}
@@ -364,7 +364,7 @@ export function BeforeAfter() {
                 }}
               >
                 <p className="font-body text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  <strong style={{ color: "var(--gold-light)" }}>Result:</strong> Every review responded to within 4 minutes. Rating climbs. Google ranks you higher. New customers see an active, trustworthy business.
+                  <strong style={{ color: "var(--gold)" }}>Result:</strong> Every review responded to within 4 minutes. Rating climbs. Google ranks you higher. New customers see an active, trustworthy business.
                 </p>
               </div>
             </div>

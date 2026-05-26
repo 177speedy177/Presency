@@ -4,6 +4,11 @@ import { Footer } from "@/components/footer"
 
 export const metadata = {
   title: "Privacy Policy | Presency",
+  description:
+    "Presency's privacy policy. How we collect, use, and protect your information when you use our website and services.",
+  alternates: {
+    canonical: "https://getpresency.com/privacy",
+  },
 }
 
 const sections = [

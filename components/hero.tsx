@@ -22,23 +22,36 @@ type Phase = 0 | 1 | 2 | 3 | 4 | 5
 // A simulated review response card shown in the hero right column
 function ReviewMockup({ visible }: { visible: boolean }) {
   return (
-    <div
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.98)",
-        transition: "opacity 0.7s ease-out 0.2s, transform 0.7s ease-out 0.2s",
-      }}
-    >
+    <div style={{ perspective: "1200px" }}>
       <div
-        className="rounded-2xl p-5 max-w-sm ml-auto"
         style={{
-          background: "rgba(13,12,10,0.75)",
-          border: "1px solid rgba(201,168,76,0.22)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.08)",
+          animation: visible ? "cardFlyIn 0.9s cubic-bezier(0.2, 0.8, 0.3, 1) 0.2s both" : "none",
+          opacity: visible ? undefined : 0,
         }}
       >
+        <div
+          className="rounded-2xl p-5 max-w-sm ml-auto relative overflow-hidden"
+          style={{
+            background: "rgba(13,12,10,0.75)",
+            border: "1px solid rgba(201,168,76,0.22)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.08)",
+          }}
+        >
+          {visible && (
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%)",
+                animation: "glassShimmer 0.75s ease-out 0.95s both",
+                pointerEvents: "none",
+                zIndex: 10,
+              }}
+            />
+          )}
         {/* Google header */}
         <div className="flex items-center gap-2 mb-4">
           <div
@@ -133,8 +146,8 @@ function ReviewMockup({ visible }: { visible: boolean }) {
             </div>
           ))}
         </div>
+        </div>
       </div>
-
     </div>
   )
 }
@@ -411,7 +424,7 @@ export function Hero() {
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <div data-animate style={enterStyle}>
-              <span className="eyebrow mb-6 block">Bringing Philadelphia the AI advantage</span>
+              <span className="eyebrow mb-6 block">Putting Philly on the map, one business at a time</span>
             </div>
 
             {/* H1 */}
@@ -448,39 +461,6 @@ export function Hero() {
               </p>
             </div>
 
-            {/* Social proof */}
-            <div data-animate style={enterStyle}>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="flex -space-x-1.5">
-                  {["TR", "KW", "MG"].map((init) => (
-                    <div
-                      key={init}
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium border-2"
-                      style={{
-                        background: "rgba(201,168,76,0.15)",
-                        borderColor: "var(--ink)",
-                        color: "var(--gold)",
-                        fontSize: "9px",
-                      }}
-                    >
-                      {init}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} width="10" height="10" viewBox="0 0 14 14" fill="#c9a84c" aria-hidden="true">
-                        <path d="M7 1l1.5 4.5H14l-4 2.8 1.5 4.7L7 10l-4.5 3 1.5-4.7-4-2.8h5.5z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="font-body text-sm" style={{ color: "var(--text-secondary)" }}>
-                    Trusted by <strong style={{ color: "var(--text-primary)" }}>40+ Philly businesses</strong>
-                  </span>
-                </div>
-              </div>
-            </div>
 
             {/* CTAs */}
             <div data-animate style={enterStyle}>
@@ -582,6 +562,17 @@ export function Hero() {
         @keyframes textShimmer {
           0%   { background-position: 200% center; }
           100% { background-position: -100% center; }
+        }
+        @keyframes cardFlyIn {
+          0%   { opacity: 0; transform: translateY(56px) translateX(18px) scale(0.87) rotateX(16deg) rotateY(-10deg); filter: blur(12px); }
+          55%  { opacity: 1; transform: translateY(-8px) translateX(-2px) scale(1.02) rotateX(-2deg) rotateY(0.5deg); filter: blur(0); }
+          75%  { transform: translateY(4px) translateX(1px) scale(0.997) rotateX(0.5deg); }
+          100% { opacity: 1; transform: translateY(0) translateX(0) scale(1) rotateX(0) rotateY(0); filter: blur(0); }
+        }
+        @keyframes glassShimmer {
+          0%   { transform: translateX(-120%) skewX(-20deg); opacity: 0; }
+          15%  { opacity: 1; }
+          100% { transform: translateX(300%) skewX(-20deg); opacity: 0; }
         }
         @media (prefers-reduced-motion: reduce) {
           * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }

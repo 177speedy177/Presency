@@ -40,7 +40,8 @@ export function VideoIntro() {
               your block, the dentist your family loves, the spot that&apos;s
               been there for decades. They all do better work than the
               competition. They just don&apos;t show it online. I built
-              Presency to fix that.
+              Presency to fix that. Presency is just getting started, let us
+              earn your trust!
             </p>
 
             {/* Trust signals */}

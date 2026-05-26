@@ -29,7 +29,7 @@ export function Services() {
             }}
           >
             Choose your level of{" "}
-            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold-light)" }}>growth.</em>
+            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold)" }}>growth.</em>
           </h2>
           <p
             className="font-body text-lg max-w-xl mx-auto"
@@ -280,7 +280,7 @@ export function Services() {
                 Website Redesign + Online Presence Plan
               </p>
               <p className="font-body text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
-                Get both services together and save $50 on your first month.
+                Get both services together at one bundled rate. Less than paying for each separately.
               </p>
             </div>
             <div className="text-center sm:text-right shrink-0">
