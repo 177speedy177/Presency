@@ -1,0 +1,393 @@
+"use client"
+import { useState } from "react"
+import Link from "next/link"
+import { Nav } from "@/components/nav"
+import { Footer } from "@/components/footer"
+
+const INPUT_CLS =
+  "w-full font-body text-sm px-4 py-3.5 rounded-lg outline-none transition-all duration-200"
+const inputStyle = {
+  background: "rgba(0,0,0,0.04)",
+  border: "1px solid rgba(201,168,76,0.3)",
+  color: "var(--text-primary)",
+} as React.CSSProperties
+
+type InputEvt = React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+const onFocus = (e: InputEvt) => {
+  e.target.style.borderColor = "var(--gold)"
+  e.target.style.background = "rgba(0,0,0,0.06)"
+}
+const onBlur = (e: InputEvt) => {
+  e.target.style.borderColor = "rgba(201,168,76,0.3)"
+  e.target.style.background = "rgba(0,0,0,0.04)"
+}
+
+const auditItems = [
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" />
+        <path d="M7 10l2 2 4-4" stroke="#c9a84c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Google review audit",
+    desc: "How many reviews go unanswered, how your rating compares to competitors nearby, and what it's costing you.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <rect x="2" y="4" width="16" height="11" rx="2" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" />
+        <path d="M7 18h6M10 15v3" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+    title: "Website check",
+    desc: "Mobile experience, load speed, and whether your site is actually driving customers to contact you.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="10" cy="8" r="3.5" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" />
+        <path d="M3 17c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+    title: "Google Business Profile",
+    desc: "Profile completeness, keyword gaps, and quick wins that improve your local search ranking this week.",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 15l4-8 4 5 2-2.5 4 5.5" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Competitor snapshot",
+    desc: "A side-by-side look at how your top 3 local competitors are performing online versus where you stand.",
+  },
+]
+
+export default function FreeAuditPage() {
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(false)
+    const data = new FormData(e.currentTarget)
+    try {
+      const res = await fetch("https://formspree.io/f/mkoeqqyn", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      })
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div style={{ background: "var(--surface)", minHeight: "100vh" }}>
+      <Nav />
+
+      <main className="relative overflow-hidden" data-theme="light">
+        {/* Ambient glows */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 60% 20%, rgba(201,168,76,0.09) 0%, transparent 55%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 50%)",
+          }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-24">
+          {/* Header */}
+          <div className="max-w-2xl mb-16">
+            <p
+              className="font-mono-label mb-4"
+              style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}
+            >
+              FREE · NO SALES CALL REQUIRED
+            </p>
+            <h1
+              className="font-display mb-5 leading-tight"
+              style={{
+                fontSize: "clamp(2.4rem, 5.5vw, 4rem)",
+                fontWeight: 300,
+                color: "var(--text-primary)",
+              }}
+            >
+              Find out exactly what your{" "}
+              <em
+                className="font-display"
+                style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}
+              >
+                business looks like online.
+              </em>
+            </h1>
+            <p
+              className="font-body text-lg leading-relaxed"
+              style={{ color: "var(--text-secondary)", maxWidth: "520px" }}
+            >
+              We audit your Google profile, review response rate, website, and local competition.
+              You get a clear report back within 48 hours. No fluff, no pitch.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-14 items-start">
+            {/* Left: What's included */}
+            <div>
+              <p
+                className="font-mono-label mb-8"
+                style={{ fontSize: "10px", color: "var(--text-muted)", letterSpacing: "0.14em" }}
+              >
+                WHAT WE CHECK
+              </p>
+              <div className="flex flex-col gap-8">
+                {auditItems.map((item) => (
+                  <div key={item.title} className="flex gap-4">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.15)" }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p
+                        className="font-body text-sm font-semibold mb-1"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="font-body text-sm leading-relaxed"
+                        style={{ color: "var(--text-secondary)" }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Trust block */}
+              <div
+                className="mt-10 rounded-xl px-5 py-4"
+                style={{
+                  background: "rgba(201,168,76,0.05)",
+                  border: "1px solid rgba(201,168,76,0.15)",
+                }}
+              >
+                <div className="flex items-start gap-3">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="mt-0.5 shrink-0">
+                    <path d="M8 1l1.5 4.5H14l-4 2.8 1.5 4.7L8 10l-4.5 3 1.5-4.7-4-2.8h5.5z" fill="rgba(201,168,76,0.4)" />
+                  </svg>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    This is a real, manual audit done by a person. Not a generic report.
+                    We look at your actual business before we send anything back.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Form */}
+            <div>
+              <div
+                className="rounded-2xl p-8"
+                style={{
+                  background: "rgba(255,255,255,0.8)",
+                  border: "1px solid rgba(201,168,76,0.18)",
+                  boxShadow: "0 4px 32px rgba(0,0,0,0.07)",
+                }}
+              >
+                {submitted ? (
+                  <div className="py-8 text-center">
+                    <div
+                      className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
+                      style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)" }}
+                    >
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                        <path d="M4.5 11l4 4 9-9" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                    <p
+                      className="font-display text-2xl mb-2"
+                      style={{ fontWeight: 300, color: "var(--text-primary)" }}
+                    >
+                      Audit request received.
+                    </p>
+                    <p className="font-body text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+                      We&apos;ll review your business and send your audit back within 48 hours.
+                    </p>
+                    <Link
+                      href="/"
+                      className="font-body text-sm"
+                      style={{ color: "var(--gold)" }}
+                    >
+                      Back to home →
+                    </Link>
+                  </div>
+                ) : (
+                  <>
+                    <p
+                      className="font-display text-xl mb-1"
+                      style={{ fontWeight: 300, color: "var(--text-primary)" }}
+                    >
+                      Request your free audit
+                    </p>
+                    <p className="font-body text-sm mb-7" style={{ color: "var(--text-muted)" }}>
+                      Takes 60 seconds. Results back in 48 hours.
+                    </p>
+
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                      <div>
+                        <label htmlFor="businessName" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                          BUSINESS NAME *
+                        </label>
+                        <input
+                          id="businessName"
+                          name="businessName"
+                          type="text"
+                          required
+                          placeholder="Joe's Barbershop"
+                          className={INPUT_CLS}
+                          style={inputStyle}
+                          onFocus={onFocus}
+                          onBlur={onBlur}
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                          BUSINESS EMAIL *
+                        </label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="you@yourbusiness.com"
+                          className={INPUT_CLS}
+                          style={inputStyle}
+                          onFocus={onFocus}
+                          onBlur={onBlur}
+                        />
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="city" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                            CITY / NEIGHBORHOOD
+                          </label>
+                          <input
+                            id="city"
+                            name="city"
+                            type="text"
+                            placeholder="Fishtown, Philadelphia"
+                            className={INPUT_CLS}
+                            style={inputStyle}
+                            onFocus={onFocus}
+                            onBlur={onBlur}
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="businessType" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                            BUSINESS TYPE
+                          </label>
+                          <input
+                            id="businessType"
+                            name="businessType"
+                            type="text"
+                            placeholder="Barbershop, dental, restaurant..."
+                            className={INPUT_CLS}
+                            style={inputStyle}
+                            onFocus={onFocus}
+                            onBlur={onBlur}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label htmlFor="website" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                          WEBSITE URL
+                        </label>
+                        <input
+                          id="website"
+                          name="website"
+                          type="url"
+                          placeholder="https://yourbusiness.com"
+                          className={INPUT_CLS}
+                          style={inputStyle}
+                          onFocus={onFocus}
+                          onBlur={onBlur}
+                        />
+                      </div>
+
+                      {/* Hidden field to identify source */}
+                      <input type="hidden" name="_subject" value="Free Presence Audit Request" />
+
+                      {error && (
+                        <p className="font-body text-sm text-center" style={{ color: "rgba(255,120,120,0.8)" }}>
+                          Something went wrong. Email us at{" "}
+                          <a href="mailto:hello@getpresency.com" className="underline">
+                            hello@getpresency.com
+                          </a>
+                        </p>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="font-body font-medium text-sm py-4 rounded-lg transition-all duration-200 cursor-pointer mt-1"
+                        style={{ background: "var(--gold)", color: "#0d0c0a" }}
+                        onMouseEnter={(e) => {
+                          if (!loading) {
+                            e.currentTarget.style.background = "#d4b05a"
+                            e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = "var(--gold)"
+                          e.currentTarget.style.boxShadow = "none"
+                        }}
+                      >
+                        {loading ? "Sending..." : "Request my free audit"}
+                      </button>
+                    </form>
+
+                    <p
+                      className="font-mono-label text-center mt-5"
+                      style={{ fontSize: "9px", color: "rgba(201,168,76,0.35)", letterSpacing: "0.1em" }}
+                    >
+                      WE NEVER ASK FOR YOUR GOOGLE PASSWORD · NO CONTRACTS
+                    </p>
+                  </>
+                )}
+              </div>
+
+              {/* Already know what you need? */}
+              <p className="font-body text-sm text-center mt-5" style={{ color: "var(--text-muted)" }}>
+                Already know what you need?{" "}
+                <Link href="/contact" className="link-gold">
+                  Skip to the contact page →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

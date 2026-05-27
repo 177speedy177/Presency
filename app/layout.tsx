@@ -29,24 +29,26 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Presency | AI-Powered Online Performance for Local Businesses",
+  title: "Presency | Google Review Responses & Website Redesign for Local Businesses",
   description:
-    "Presency builds modern websites and manages Google review responses for local businesses. Website redesigns from $1,199 and review management from $199/month.",
+    "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month. 14-day free trial.",
   keywords: [
-    "website redesign for local business",
-    "google review responses",
-    "local business website",
-    "reputation management",
-    "small business website builder",
-    "local SEO",
+    "google review responses for local business",
+    "website redesign philadelphia",
+    "google review management",
+    "local business website design",
+    "reputation management philadelphia",
+    "google business profile management",
+    "small business website philadelphia",
+    "online presence management",
   ],
   alternates: {
     canonical: "https://getpresency.com",
   },
   openGraph: {
-    title: "Presency | Online Performance for Local Businesses",
+    title: "Presency | Google Review Responses & Website Redesign",
     description:
-      "Website redesigns and Google review management for local businesses. From $199/month.",
+      "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month.",
     type: "website",
     url: "https://getpresency.com",
     images: [
@@ -54,23 +56,40 @@ export const metadata: Metadata = {
         url: "https://getpresency.com/presency-og.png",
         width: 1200,
         height: 630,
-        alt: "Presency — Putting Philly on the map, one business at a time",
+        alt: "Presency: Putting Philly on the map, one business at a time",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presency | Online Performance for Local Businesses",
-    description: "Website redesigns and Google review management for local businesses. From $199/month.",
+    title: "Presency | Google Review Responses & Website Redesign",
+    description: "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month.",
     images: ["https://getpresency.com/presency-og.png"],
   },
 }
 
-const jsonLd = {
+const webSiteSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "WebSite",
   name: "Presency",
-  description: "AI-powered website design and Google review management for local businesses in Philadelphia.",
+  url: "https://getpresency.com",
+  description:
+    "Google review responses and website redesigns for local businesses in Philadelphia.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://getpresency.com/?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+}
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Presency",
+  description: "Google review management and website redesign for local businesses in Philadelphia.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
@@ -94,16 +113,72 @@ const jsonLd = {
         name: "Website Redesign",
         price: "1199",
         priceCurrency: "USD",
+        description: "Custom mobile-first website design and development, delivered in 2 weeks.",
       },
       {
         "@type": "Offer",
         name: "Online Presence Plan",
         price: "199",
         priceCurrency: "USD",
-        description: "Monthly Google review management",
+        description: "Monthly Google review response management and Google Business Profile optimization.",
       },
     ],
   },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does Presency do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. We write and post owner responses to your Google reviews within minutes, and we design and build fast, mobile-first websites.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need to give you my Google password?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. We connect to your Google Business Profile through Google's official API. We never ask for or store your password.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How quickly do you respond to Google reviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We respond to new Google reviews within 4 minutes of them being posted.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does the Online Presence Plan cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Online Presence Plan is $199 per month with no contracts. You can cancel anytime. We also offer a free 14-day trial.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does a website redesign cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Website redesigns start at $1,199, a one-time fee. This includes custom design, mobile-first development, SEO-ready structure, and 2 rounds of revisions, delivered in 2 weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there a free trial?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Your first 14 days are completely free. No credit card required.",
+      },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -119,7 +194,15 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col antialiased overflow-x-hidden">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <ScrollProgress />
         {children}

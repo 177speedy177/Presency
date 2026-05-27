@@ -33,9 +33,9 @@ export function Footer() {
               </span>
             </div>
             <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Online performance for local businesses.
+              Google review responses and website redesigns
               <br />
-              Websites built. Reviews handled.
+              for local businesses in Philadelphia.
             </p>
           </div>
 
@@ -45,14 +45,16 @@ export function Footer() {
               {
                 heading: "SERVICES",
                 links: [
-                  { href: "#services", label: "Pricing" },
-                  { href: "#results", label: "Results" },
-                  { href: "#faq", label: "FAQ" },
+                  { href: "/free-audit", label: "Free Audit" },
+                  { href: "/#services", label: "Pricing" },
+                  { href: "/#results", label: "Results" },
+                  { href: "/#faq", label: "FAQ" },
                 ],
               },
               {
                 heading: "COMPANY",
                 links: [
+                  { href: "/about", label: "About" },
                   { href: "/contact", label: "Contact" },
                   { href: "/privacy", label: "Privacy Policy" },
                   { href: "/terms", label: "Terms of Service" },
@@ -79,12 +81,22 @@ export function Footer() {
             <p className="eyebrow mb-3" style={{ color: "var(--text-muted)", fontSize: "10px" }}>
               REACH US
             </p>
-            <a
-              href="mailto:hello@getpresency.com"
-              className="font-body text-sm link-gold"
-            >
-              hello@getpresency.com
-            </a>
+            <div className="flex flex-col gap-2">
+              <a
+                href="mailto:hello@getpresency.com"
+                className="font-body text-sm link-gold"
+              >
+                hello@getpresency.com
+              </a>
+              <a
+                href="https://calendly.com/397jtc/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-sm link-gold"
+              >
+                Book a free 15-min call
+              </a>
+            </div>
           </div>
         </div>
 

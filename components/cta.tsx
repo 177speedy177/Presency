@@ -56,7 +56,7 @@ export function CTA() {
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
         <RevealDiv>
-          <p className="eyebrow mb-6">GET STARTED FREE</p>
+          <p className="eyebrow mb-6">FREE FOR 14 DAYS</p>
         </RevealDiv>
 
         <RevealDiv delay={80}>
@@ -165,7 +165,7 @@ export function CTA() {
                   e.currentTarget.style.boxShadow = "none"
                 }}
               >
-                {loading ? "Sending..." : "Claim your spot"}
+                {loading ? "Sending..." : "Start my free trial"}
               </button>
               {error && (
                 <p className="font-body text-sm text-center" style={{ color: "rgba(255,120,120,0.8)" }}>

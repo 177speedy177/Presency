@@ -12,7 +12,7 @@ const GoldenMesh = dynamic(
   Intro animation phases (tightened to ~3.2s total):
   0 → overlay visible, content blank
   1 → "Optimizing Your" focuses in
-  2 → "Social Presence" follows
+  2 → "Online Presence" follows
   3 → brand reveal ("Presency")
   4 → overlay fades out, hero content fades in
   5 → overlay unmounted
@@ -124,7 +124,7 @@ function GoogleReviewCard({ visible }: { visible: boolean }) {
             className="font-mono-label"
             style={{ marginTop: "14px", fontSize: "8px", color: "rgba(201,168,76,0.3)", letterSpacing: "0.12em", textAlign: "right" }}
           >
-            RESPONDED VIA PRESENCY
+            SAMPLE RESPONSE · WRITTEN BY PRESENCY
           </p>
         </div>
       </div>
@@ -142,10 +142,10 @@ export function Hero() {
 
     const timers = [
       setTimeout(() => setPhase(1),  120),   // "Presency" brand reveal
-      setTimeout(() => setPhase(2), 1900),   // "Optimizing Your" appears below
-      setTimeout(() => setPhase(3), 2150),   // "Social Presence" staggers in
-      setTimeout(() => setPhase(4), 3400),   // overlay fades
-      setTimeout(() => setPhase(5), 4400),   // overlay unmounts
+      setTimeout(() => setPhase(2),  950),   // "Optimizing Your" appears below
+      setTimeout(() => setPhase(3), 1200),   // "Online Presence" staggers in
+      setTimeout(() => setPhase(4), 2450),   // overlay fades
+      setTimeout(() => setPhase(5), 3450),   // overlay unmounts
     ]
     return () => timers.forEach(clearTimeout)
   }, [])
@@ -227,32 +227,6 @@ export function Hero() {
             }}
           />
 
-          {/* Skip button — visible and prominent */}
-          <button
-            onClick={() => setPhase(5)}
-            className="absolute bottom-8 right-8 font-mono-label text-xs cursor-pointer transition-all duration-200 rounded-lg px-4 py-2"
-            style={{
-              color: "rgba(247,244,239,0.75)",
-              letterSpacing: "0.1em",
-              opacity: phase >= 1 ? 1 : 0,
-              transition: "opacity 0.4s ease, background 0.2s ease, color 0.2s ease",
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.1)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "var(--gold)"
-              e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"
-              e.currentTarget.style.background = "rgba(201,168,76,0.08)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "rgba(247,244,239,0.75)"
-              e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"
-              e.currentTarget.style.background = "rgba(255,255,255,0.06)"
-            }}
-            aria-label="Skip intro"
-          >
-            SKIP ↓
-          </button>
 
           {/* Brand first, tagline below — single flex column, no overlap */}
           <div
@@ -358,7 +332,7 @@ export function Hero() {
                   transition: "opacity 0.65s ease-out, transform 0.65s ease-out, filter 0.65s ease-out",
                 }}
               >
-                Social Presence
+                Online Presence
               </p>
             </div>
           </div>
@@ -391,7 +365,7 @@ export function Hero() {
                   color: "var(--text-primary)",
                 }}
               >
-                We build your website{" "}
+                Your customers check Google before they call.{" "}
                 <em
                   className="font-display"
                   style={{
@@ -400,7 +374,7 @@ export function Hero() {
                     fontWeight: 400,
                   }}
                 >
-                  and handle your reviews.
+                  Make sure they like what they see.
                 </em>
               </h1>
             </div>
@@ -411,15 +385,15 @@ export function Hero() {
                 className="font-body text-xl leading-relaxed mb-8 max-w-lg"
                 style={{ color: "var(--text-secondary)" }}
               >
-                More customers, better first impressions, no extra work on your end.
+                We redesign websites, write your Google review responses, and manage your online presence. No tech work on your end.
               </p>
             </div>
 
             {/* CTAs */}
             <div data-animate style={enterStyle}>
-              <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex flex-wrap gap-4 mb-3">
                 <Link
-                  href="/contact"
+                  href="/free-audit"
                   className="font-body font-medium px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
                   style={{ background: "var(--gold)", color: "var(--ink)" }}
                   onMouseEnter={(e) => {
@@ -433,28 +407,18 @@ export function Hero() {
                     e.currentTarget.style.boxShadow = "none"
                   }}
                 >
-                  Start free, 14 days
+                  Get my free presence audit
                 </Link>
-                <a
-                  href="#results"
-                  className="font-body font-medium px-7 py-3.5 rounded-lg border transition-all duration-200 cursor-pointer"
-                  style={{
-                    borderColor: "rgba(201,168,76,0.35)",
-                    color: "var(--text-primary)",
-                    background: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--gold)"
-                    e.currentTarget.style.background = "rgba(201,168,76,0.06)"
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(201,168,76,0.35)"
-                    e.currentTarget.style.background = "transparent"
-                  }}
-                >
-                  See the results ↓
-                </a>
               </div>
+              <p className="font-body text-sm mb-4" style={{ color: "var(--text-secondary)" }}>
+                Or{" "}
+                <Link href="/contact" className="link-gold-light">
+                  start your free 14-day trial →
+                </Link>
+              </p>
+              <p className="font-body text-xs" style={{ color: "var(--text-muted)" }}>
+                No Google password required. Cancel anytime.
+              </p>
             </div>
           </div>
 

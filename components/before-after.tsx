@@ -119,7 +119,7 @@ export function BeforeAfter() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
-          <p className="eyebrow mb-4">THE DIFFERENCE</p>
+          <p className="eyebrow mb-4">BEFORE &amp; AFTER</p>
           <h2
             className="font-display mb-4"
             style={{
@@ -134,10 +134,13 @@ export function BeforeAfter() {
             </em>
           </h2>
           <p
-            className="font-body text-base max-w-lg mx-auto"
+            className="font-body text-base max-w-lg mx-auto mb-3"
             style={{ color: "var(--text-secondary)" }}
           >
             This is what customers see when they search for you. Which business would you choose?
+          </p>
+          <p className="font-mono-label" style={{ fontSize: "9px", color: "rgba(201,168,76,0.35)", letterSpacing: "0.1em" }}>
+            ILLUSTRATIVE EXAMPLE · NOT REAL DATA
           </p>
         </RevealDiv>
 

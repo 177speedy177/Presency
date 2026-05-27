@@ -30,15 +30,15 @@ export function Services() {
             }}
           >
             <WordReveal segments={[
-              { text: "Choose your level of" },
-              { text: "growth.", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "Two services." },
+              { text: "Fully managed.", italic: true, color: "var(--gold)", fontWeight: 400 },
             ]} />
           </h2>
           <p
             className="font-body text-lg max-w-xl mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            Two services, fully managed. You run your business. We handle everything online.
+            We handle your website and your Google reviews. You focus on your business.
           </p>
         </RevealDiv>
 
@@ -80,11 +80,11 @@ export function Services() {
                 </span>
               </div>
               <p className="font-body text-sm italic mb-4" style={{ color: "var(--text-secondary)" }}>
-                A modern, high-converting website. Built once, yours forever.
+                A site that gets you found. Built once, yours forever.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                We design and build a fast, mobile-first website that actually converts
-                visitors into customers. Clean, professional, and tailored to your business.
+                We design and build a fast, mobile-first website tailored to your business.
+                Clean code, zero monthly fees, delivered in 2 weeks.
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export function Services() {
               Get a free quote
             </Link>
             <p className="font-body text-xs italic text-center mt-3" style={{ color: "var(--gold)" }}>
-              Freelancers charge $2,000–$5,000 for this. Not here.
+              Comparable agencies charge $3,000+. F that.
             </p>
           </RevealDiv>
 
@@ -182,47 +182,13 @@ export function Services() {
               </p>
             </div>
 
-            <div
-              className="rounded-xl p-4 mb-4"
-              style={{
-                background: "rgba(201,168,76,0.07)",
-                border: "1px solid rgba(201,168,76,0.2)",
-              }}
-            >
-              <p
-                className="font-mono-label mb-3"
-                style={{ fontSize: "10px", letterSpacing: "0.14em", color: "var(--gold)" }}
-              >
-                CORE SERVICE: REVIEW RESPONSES
-              </p>
-              <ul className="flex flex-col gap-2.5">
-                {[
-                  "Every Google review responded to, on your behalf",
-                  "Responses posted within 4 minutes",
-                  "Custom brand voice that sounds like you",
-                  "5-star and negative review handling",
-                  "Professionally written, never robotic",
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <CheckIcon />
-                    <span className="font-body text-sm leading-snug" style={{ color: "var(--text-secondary)" }}>
-                      {f}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mb-4" style={{ borderTop: "1px solid rgba(201,168,76,0.12)" }} />
-
-            <p
-              className="font-mono-label mb-3"
-              style={{ fontSize: "10px", letterSpacing: "0.14em", color: "var(--text-muted)" }}
-            >
-              ALSO INCLUDED
-            </p>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
+                "Every Google review responded to, on your behalf",
+                "Responses posted within 4 minutes",
+                "Custom brand voice that sounds like you",
+                "5-star and negative review handling",
+                "Professionally written, never robotic",
                 "Monthly performance report",
                 "Google Business Profile optimization",
                 "Cancel anytime, no contracts",
@@ -252,13 +218,21 @@ export function Services() {
           </RevealDiv>
         </div>
 
+        {/* Google API trust note */}
+        <div className="text-center mb-4 mt-2">
+          <p className="font-mono-label" style={{ fontSize: "9px", color: "rgba(201,168,76,0.4)", letterSpacing: "0.1em" }}>
+            WE CONNECT VIA GOOGLE&apos;S OFFICIAL API &nbsp;·&nbsp; WE NEVER ASK FOR YOUR PASSWORD
+          </p>
+        </div>
+
         {/* Not sure CTA */}
         <div className="text-center mb-5">
           <p className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
             Not sure which fits?{" "}
             <Link href="/contact" className="link-gold-light">
-              Book a free 15-min call
+              Book a free 15-min call.
             </Link>
+            {" "}We&apos;ll tell you exactly what your business needs.
           </p>
         </div>
 

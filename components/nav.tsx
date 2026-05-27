@@ -14,7 +14,7 @@ export function Nav() {
   }, [])
 
   useEffect(() => {
-    const ids = ["services", "results", "faq", "founder"]
+    const ids = ["services", "results", "faq"]
     const visible = new Set<string>()
 
     const observers = ids.map((id) => {
@@ -39,7 +39,7 @@ export function Nav() {
     { href: "#services", label: "Services" },
     { href: "#results", label: "Results" },
     { href: "#faq", label: "FAQ" },
-    { href: "#founder", label: "About" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -102,7 +102,7 @@ export function Nav() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/contact"
+              href="/free-audit"
               className="font-body text-sm px-5 py-2 rounded-lg border transition-all duration-200 cursor-pointer"
               style={{
                 borderColor: "var(--gold)",
@@ -120,7 +120,7 @@ export function Nav() {
                 el.style.color = "var(--cream)"
               }}
             >
-              Get started
+              Free audit
             </Link>
           </div>
 
@@ -180,7 +180,7 @@ export function Nav() {
             )
           })}
           <Link
-            href="/contact"
+            href="/free-audit"
             className="font-body text-sm px-5 py-2.5 rounded-lg border text-center transition-all duration-200 cursor-pointer"
             style={{
               borderColor: "var(--gold)",
@@ -189,7 +189,7 @@ export function Nav() {
             }}
             onClick={() => setMenuOpen(false)}
           >
-            Get started
+            Free audit
           </Link>
         </div>
       </div>

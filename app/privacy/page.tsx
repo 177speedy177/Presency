@@ -14,7 +14,7 @@ export const metadata = {
 const sections = [
   {
     heading: "Information We Collect",
-    body: "We collect information you provide directly — such as your name, business name, email address, and phone number when you fill out a contact form or sign up for our services. We also collect basic usage data (pages visited, browser type) through standard web analytics.",
+    body: "We collect information you provide directly: your name, business name, email address, and phone number when you fill out a contact form or sign up for our services. We also collect basic usage data (pages visited, browser type) through standard web analytics.",
   },
   {
     heading: "How We Use Your Information",

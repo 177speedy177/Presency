@@ -25,9 +25,9 @@ export function VideoIntro() {
                 color: "var(--text-primary)",
               }}
             >
-              Meet the team...{" "}
+              Philly-built.{" "}
               <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                Me!
+                For Philly businesses.
               </em>
             </h2>
 
@@ -40,8 +40,7 @@ export function VideoIntro() {
               your block, the dentist your family loves, the spot that&apos;s
               been there for decades. They all do better work than the
               competition. They just don&apos;t show it online. I built
-              Presency to fix that. Presency is just getting started, let us
-              earn your trust!
+              Presency to fix that.
             </p>
 
             {/* Trust signals */}

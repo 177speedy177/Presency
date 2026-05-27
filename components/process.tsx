@@ -6,7 +6,7 @@ const steps = [
   {
     num: "01",
     title: "Tell us about your business",
-    desc: "Fill out a short form about your goals, your brand, and which service fits. Takes about 10 minutes. No technical knowledge needed.",
+    desc: "Fill out a short form about your goals, your brand, and which service fits. No technical knowledge needed.",
   },
   {
     num: "02",

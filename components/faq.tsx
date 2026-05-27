@@ -1,5 +1,4 @@
 "use client"
-import { useState } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
 import {
   Accordion,
@@ -52,9 +51,6 @@ const faqs = [
 ]
 
 export function FAQ() {
-  const [showAll, setShowAll] = useState(false)
-  const visibleFaqs = showAll ? faqs : faqs.slice(0, 5)
-
   return (
     <section
       id="faq"
@@ -83,7 +79,7 @@ export function FAQ() {
 
         <RevealDiv delay={100}>
           <Accordion className="space-y-2">
-            {visibleFaqs.map((faq, i) => (
+            {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={i}
@@ -111,19 +107,6 @@ export function FAQ() {
           </Accordion>
         </RevealDiv>
 
-        {!showAll && (
-          <div className="text-center mt-6">
-            <button
-              onClick={() => setShowAll(true)}
-              className="font-body text-sm cursor-pointer transition-colors duration-200"
-              style={{ color: "var(--text-muted)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = "var(--gold)" }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)" }}
-            >
-              Show {faqs.length - 5} more questions ↓
-            </button>
-          </div>
-        )}
       </div>
     </section>
   )

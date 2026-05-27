@@ -10,7 +10,7 @@ const samples = [
     type: "Barbershop",
     reviewer: "Marcus T.",
     stars: 5,
-    review: "Best cuts in Fishtown. Been coming here for years — always packed but always worth the wait.",
+    review: "Best cuts in Fishtown. Been coming here for years. Always packed but always worth the wait.",
     response: "Marcus, that means everything to us. Worth the wait is exactly what we shoot for. We'll keep the chairs hot. See you soon. Joe and the crew",
   },
   {
@@ -20,7 +20,7 @@ const samples = [
     reviewer: "Sarah K.",
     stars: 3,
     review: "Food was great but waited 45 minutes for our table even with a reservation. Frustrating.",
-    response: "Sarah, thank you for being honest. A 45-minute wait with a reservation is not okay, and we know it. We're adjusting our system this week. We'd love to make it right on your next visit.",
+    response: "Sarah, a 45-minute wait with a reservation is not acceptable and we sincerely apologize. We are correcting how we manage reservations this week. If you are willing to give us another chance, please contact us directly before your next visit and we will make sure your experience reflects the standard you deserved the first time.",
   },
   {
     business: "Fishtown Dental",
@@ -29,7 +29,7 @@ const samples = [
     reviewer: "David R.",
     stars: 5,
     review: "Dr. Kim made my kids actually excited about going to the dentist. Thought that was impossible.",
-    response: "David, turning dentist anxiety into dentist excitement is our favorite kind of win. We love having your family — see you at the next visit!",
+    response: "David, turning dentist anxiety into dentist excitement is our favorite kind of win. We love having your family. See you at the next visit!",
   },
 ]
 
@@ -67,7 +67,7 @@ export function Testimonials() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
-          <p className="eyebrow mb-4">SEE THE WORK</p>
+          <p className="eyebrow mb-4">SAMPLE RESPONSES</p>
           <h2
             className="font-display"
             style={{
@@ -77,8 +77,8 @@ export function Testimonials() {
             }}
           >
             <WordReveal segments={[
-              { text: "What we'd write" },
-              { text: "for your business.", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "Read the responses" },
+              { text: "we'd write for you.", italic: true, color: "var(--gold)", fontWeight: 400 },
             ]} />
           </h2>
           <p className="font-body text-sm mt-3" style={{ color: "var(--text-muted)" }}>
@@ -192,7 +192,7 @@ export function Testimonials() {
                 Be one of the first in your neighborhood.
               </p>
               <p className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
-                We&apos;re actively building our Philadelphia roster — spots are limited by area.
+                We&apos;re actively building our Philadelphia roster. Spots are limited by area.
               </p>
             </div>
             <Link
