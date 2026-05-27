@@ -340,7 +340,7 @@ export function Hero() {
                 style={{
                   fontFamily: "var(--font-fraunces), serif",
                   fontWeight: 300,
-                  fontSize: "clamp(5rem, 28vw, 9.5rem)",
+                  fontSize: "clamp(3.8rem, 21vw, 9.5rem)",
                   letterSpacing: "-0.045em",
                   lineHeight: 1.1,
                   paddingBottom: "0.08em",

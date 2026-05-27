@@ -28,7 +28,7 @@ export function SeePlansButton() {
       aria-hidden={!visible}
       style={{
         position: "fixed",
-        bottom: "72px",   // 56px bar + 16px gap
+        bottom: "calc(72px + env(safe-area-inset-bottom, 0px))",
         left: "50%",
         transform: `translateX(-50%) translateY(${visible ? "0px" : "12px"})`,
         opacity: visible ? 1 : 0,
