@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { WordReveal } from "@/components/ui/word-reveal"
 
 const CheckIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
@@ -28,8 +29,10 @@ export function Services() {
               color: "var(--text-primary)",
             }}
           >
-            Choose your level of{" "}
-            <em style={{ fontStyle: "italic", fontWeight: 400, color: "var(--gold)" }}>growth.</em>
+            <WordReveal segments={[
+              { text: "Choose your level of" },
+              { text: "growth.", italic: true, color: "var(--gold)", fontWeight: 400 },
+            ]} />
           </h2>
           <p
             className="font-body text-lg max-w-xl mx-auto"

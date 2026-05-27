@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { WordReveal } from "@/components/ui/word-reveal"
 
 const inputStyle = {
   background: "var(--surface-card)",
@@ -68,17 +69,11 @@ export function CTA() {
               lineHeight: 1.1,
             }}
           >
-            Your first{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                color: "var(--gold)",
-                fontWeight: 400,
-              }}
-            >
-              14 days
-            </em>{" "}
-            are free.
+            <WordReveal segments={[
+              { text: "Your first" },
+              { text: "14 days", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "are free." },
+            ]} />
           </h2>
         </RevealDiv>
 

@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { WordReveal } from "@/components/ui/word-reveal"
 
 const samples = [
   {
@@ -75,13 +76,13 @@ export function Testimonials() {
               color: "var(--text-primary)",
             }}
           >
-            What we&apos;d write{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              for your business.
-            </em>
+            <WordReveal segments={[
+              { text: "What we'd write" },
+              { text: "for your business.", italic: true, color: "var(--gold)", fontWeight: 400 },
+            ]} />
           </h2>
           <p className="font-body text-sm mt-3" style={{ color: "var(--text-muted)" }}>
-            Sample responses — the same quality we&apos;d craft for you.
+            Sample responses, the same quality we&apos;d craft for you.
           </p>
         </RevealDiv>
 

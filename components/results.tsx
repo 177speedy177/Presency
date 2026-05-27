@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { WordReveal } from "@/components/ui/word-reveal"
 
 function useCountUp(target: number, decimals = 0, duration = 1800) {
   const [count, setCount] = useState(0)
@@ -181,10 +182,10 @@ export function Results() {
               color: "var(--text-primary)",
             }}
           >
-            Your presence{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              pays.
-            </em>
+            <WordReveal segments={[
+              { text: "Your presence" },
+              { text: "pays.", italic: true, color: "var(--gold)", fontWeight: 400 },
+            ]} />
           </h2>
           <p
             className="font-body text-base max-w-lg mx-auto"
