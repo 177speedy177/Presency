@@ -87,10 +87,10 @@ function AnimatedStat({ num, suffix, decimals = 0, label, source, sourceHref }: 
 
 const primaryStats = [
   {
-    num: 35, suffix: "%", decimals: 0,
-    label: "more revenue earned by businesses that respond to reviews",
-    source: "Harvard Business School",
-    sourceHref: "https://hbswk.hbs.edu",
+    num: 97, suffix: "%", decimals: 0,
+    label: "of consumers go online to find a local business, making your Google presence their first impression",
+    source: "BrightLocal Consumer Survey",
+    sourceHref: "https://www.brightlocal.com/research/local-consumer-review-survey/",
   },
   {
     num: 75, suffix: "%", decimals: 0,
@@ -99,10 +99,10 @@ const primaryStats = [
     sourceHref: "https://credibility.stanford.edu/guidelines/index.html",
   },
   {
-    num: 1.7, suffix: "×", decimals: 1,
-    label: "more trustworthy: how actively responding to reviews changes how customers perceive your business",
-    source: "Podium: State of Online Reviews",
-    sourceHref: "https://www.podium.com/resources/",
+    num: 76, suffix: "%", decimals: 0,
+    label: "of local mobile searches result in a store visit within 24 hours",
+    source: "Think with Google",
+    sourceHref: "https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/local-search-mobile/",
   },
   {
     num: 58, suffix: "%", decimals: 0,
@@ -153,7 +153,7 @@ export function Results() {
             className="font-body text-base max-w-lg mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            Based on research from Harvard Business School, Stanford Web Credibility Lab, BrightLocal, and Podium.
+            Based on research from BrightLocal, Stanford Web Credibility Lab, Think with Google, and Statista.
           </p>
         </RevealDiv>
 

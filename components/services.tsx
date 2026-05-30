@@ -38,7 +38,7 @@ export function Services() {
             className="font-body text-lg max-w-xl mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            We handle your website and your Google reviews. You focus on your business.
+            We handle your website and your entire Google presence. You focus on your business.
           </p>
         </RevealDiv>
 
@@ -177,20 +177,20 @@ export function Services() {
                 Your reputation, handled for you.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                We handle your Google review responses so every customer feels heard
-                and your ranking keeps climbing. Set it up once, we do the rest.
+                We manage your entire Google online presence: Business Profile optimization,
+                review responses, and local search visibility. Set it up once, we do the rest.
               </p>
             </div>
 
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
-                "Every Google review responded to, on your behalf",
+                "Google Business Profile management and optimization",
+                "Every review responded to on your behalf",
                 "Responses posted within 4 minutes",
                 "Custom brand voice that sounds like you",
-                "5-star and negative review handling",
-                "Professionally written, never robotic",
+                "Local search visibility improvements",
+                "Negative review handling with human oversight",
                 "Monthly performance report",
-                "Google Business Profile optimization",
                 "Cancel anytime, no contracts",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">

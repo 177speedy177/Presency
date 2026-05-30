@@ -9,44 +9,36 @@ import {
 
 const faqs = [
   {
-    q: "Will the responses sound like me or like a robot?",
-    a: "Not like a robot at all. During onboarding, we capture your business's voice, tone, and personality. Every response is crafted to match how you naturally speak: warm, professional, or casual, depending on your brand. You can review and approve samples before we go live.",
+    q: "What exactly is the Online Presence Plan?",
+    a: "The Online Presence Plan is a fully managed monthly service that covers everything your Google presence needs: Business Profile optimization, review responses posted on your behalf, local search visibility improvements, and a monthly performance report. We handle it all so you can focus on running your business.",
   },
   {
     q: "Do I have to give you my Google password?",
-    a: "Never. We connect to your Google Business Profile through the official Google API, using a secure authorization flow that you control. You authorize access with a few clicks, no password sharing required. You can revoke access at any time.",
+    a: "Never. We connect to your Google Business Profile through Google's official API using a secure authorization flow you control. You grant access with a few clicks. No password sharing, ever. You can revoke access at any time.",
   },
   {
-    q: "How quickly does it respond after a review is posted?",
-    a: "On the Online Presence Plan, responses go out within 4 minutes of a review being posted. You're far ahead of the industry average of 3+ days (or never).",
+    q: "Will the review responses sound like me or like a robot?",
+    a: "They will sound like you. During onboarding we capture your voice, tone, and brand personality. Every response is crafted to match how you naturally communicate. Warm, professional, or direct. You can review samples before we go live.",
   },
   {
-    q: "What if I get a very serious negative review?",
-    a: "Serious or sensitive reviews are flagged for human review before a response is posted. We also use a de-escalation approach: acknowledge the concern, offer a path to resolution, and keep the tone professional. You'll be notified immediately for any review below 3 stars.",
-  },
-  {
-    q: "Can I cancel anytime?",
-    a: "Yes, absolutely. There are no long-term contracts. If you cancel, your service continues through the end of your billing period. No cancellation fees, no runaround.",
+    q: "What if I get a serious negative review?",
+    a: "Any review below 3 stars is flagged for human review before a response goes out. We take a measured approach: acknowledge the concern, offer a path to resolution, and keep the tone professional. You are notified immediately so you are never caught off guard.",
   },
   {
     q: "What's included in the website redesign?",
-    a: "The Website Redesign includes a full custom website: professional design (not a template), mobile-first development, fast load times, clear calls-to-action, and integration with your Google Business Profile. Delivered in 2 weeks with 2 rounds of revisions included.",
+    a: "A fully custom website built for your business: professional design (never a template), mobile-first development, fast load times, SEO-ready structure, clear calls-to-action, and Google Business Profile integration. Delivered in 2 weeks with 2 rounds of revisions included.",
   },
   {
-    q: "Do you help with SEO?",
-    a: "Yes. As part of the Online Presence Plan, we optimize your Google Business Profile for local search terms. It's one of the highest-impact things a local business can do for visibility. Ask us about it on a call.",
+    q: "Do you help with local SEO?",
+    a: "Yes. Google Business Profile optimization is a core part of the Online Presence Plan. We keep your profile complete, accurate, and actively managed, which is one of the highest-impact things a local business can do for search visibility.",
   },
   {
-    q: "Do you work with businesses outside Pennsylvania?",
-    a: "Yes. While we started in Pennsylvania, we work with local businesses across the US. Our services are entirely online and work regardless of where you're located.",
-  },
-  {
-    q: "What does the website redesign process look like?",
-    a: "We start with a short brief: your goals, your brand, and a few examples of sites you like. From there we design and build your site, send you a preview, take your feedback, and deliver the final version. Two rounds of revisions are included. Most sites are done in 2 weeks.",
+    q: "Can I cancel anytime?",
+    a: "Yes. No long-term contracts, no cancellation fees. If you cancel, your service runs through the end of your current billing period. No runaround.",
   },
   {
     q: "Do I own my website after the redesign?",
-    a: "Yes, completely. You own the code, the domain, and the hosting account. We hand everything over when the project is done. There are no ongoing fees unless you choose to add the Online Presence Plan.",
+    a: "Yes, completely. You own the code, the domain, and the hosting account. We hand everything over when the project is complete. There are no ongoing fees unless you choose to add the Online Presence Plan.",
   },
 ]
 

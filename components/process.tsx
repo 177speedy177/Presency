@@ -11,7 +11,7 @@ const steps = [
   {
     num: "02",
     title: "We build or connect",
-    desc: "For websites, we design and deliver in 2 weeks. For review responses, we connect to your Google Business Profile securely. You authorize in two clicks, no password or tech knowledge needed.",
+    desc: "For websites, we design and deliver in 2 weeks. For the Online Presence Plan, we connect to your Google Business Profile securely. You authorize in two clicks, no password or tech knowledge needed.",
   },
   {
     num: "03",
@@ -146,7 +146,7 @@ export function Process() {
               className="font-body text-sm"
               style={{ color: "var(--text-secondary)" }}
             >
-              Websites delivered in 2 weeks · Review responses live in 10 minutes
+              Websites delivered in 2 weeks · Online Presence Plan live in 10 minutes
             </span>
           </div>
         </RevealDiv>

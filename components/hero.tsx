@@ -352,7 +352,7 @@ export function Hero() {
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <div data-animate style={enterStyle}>
-              <span className="eyebrow mb-6 block">Putting Philly on the map, one business at a time</span>
+              <span className="eyebrow mb-6 block">Bringing Philly Businesses the Exposure They Deserve</span>
             </div>
 
             {/* H1 */}
@@ -365,7 +365,7 @@ export function Hero() {
                   color: "var(--text-primary)",
                 }}
               >
-                Your customers check Google before they call.{" "}
+                Your customers look you up before they call.{" "}
                 <em
                   className="font-display"
                   style={{
@@ -385,7 +385,7 @@ export function Hero() {
                 className="font-body text-xl leading-relaxed mb-8 max-w-lg"
                 style={{ color: "var(--text-secondary)" }}
               >
-                We redesign websites, write your Google review responses, and manage your online presence. No tech work on your end.
+                We build modern websites and keep your Google presence looking active, professional, and trustworthy. No tech work on your end.
               </p>
             </div>
 
@@ -412,8 +412,8 @@ export function Hero() {
               </div>
               <p className="font-body text-sm mb-4" style={{ color: "var(--text-secondary)" }}>
                 Or{" "}
-                <Link href="/contact" className="link-gold-light">
-                  start your free 14-day trial →
+                <Link href="/#services" className="link-gold-light">
+                  see what&apos;s included →
                 </Link>
               </p>
               <p className="font-body text-xs" style={{ color: "var(--text-muted)" }}>

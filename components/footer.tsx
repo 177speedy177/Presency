@@ -33,7 +33,7 @@ export function Footer() {
               </span>
             </div>
             <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Google review responses and website redesigns
+              Online presence management and website redesigns
               <br />
               for local businesses in Philadelphia.
             </p>

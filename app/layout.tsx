@@ -29,26 +29,26 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Presency | Google Review Responses & Website Redesign for Local Businesses",
+  title: "Presency | Online Presence Management & Website Redesign for Local Businesses",
   description:
-    "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month. 14-day free trial.",
+    "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Google Business Profile optimization, review responses, local SEO. Plans from $199/month. 14-day free trial.",
   keywords: [
-    "google review responses for local business",
-    "website redesign philadelphia",
-    "google review management",
-    "local business website design",
-    "reputation management philadelphia",
+    "online presence management philadelphia",
     "google business profile management",
+    "website redesign philadelphia",
+    "local seo philadelphia",
+    "local business website design",
+    "google review management",
+    "reputation management philadelphia",
     "small business website philadelphia",
-    "online presence management",
   ],
   alternates: {
     canonical: "https://getpresency.com",
   },
   openGraph: {
-    title: "Presency | Google Review Responses & Website Redesign",
+    title: "Presency | Online Presence Management & Website Redesign",
     description:
-      "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month.",
+      "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Plans from $199/month.",
     type: "website",
     url: "https://getpresency.com",
     images: [
@@ -56,14 +56,14 @@ export const metadata: Metadata = {
         url: "https://getpresency.com/presency-og.png",
         width: 1200,
         height: 630,
-        alt: "Presency: Putting Philly on the map, one business at a time",
+        alt: "Presency: Bringing Philly Businesses the Exposure They Deserve",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presency | Google Review Responses & Website Redesign",
-    description: "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. Plans from $199/month.",
+    title: "Presency | Online Presence Management & Website Redesign",
+    description: "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Plans from $199/month.",
     images: ["https://getpresency.com/presency-og.png"],
   },
 }
@@ -74,7 +74,7 @@ const webSiteSchema = {
   name: "Presency",
   url: "https://getpresency.com",
   description:
-    "Google review responses and website redesigns for local businesses in Philadelphia.",
+    "Online presence management and website redesigns for local businesses in Philadelphia.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -89,7 +89,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Presency",
-  description: "Google review management and website redesign for local businesses in Philadelphia.",
+  description: "Online presence management and website redesign for local businesses in Philadelphia.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
@@ -120,7 +120,7 @@ const localBusinessSchema = {
         name: "Online Presence Plan",
         price: "199",
         priceCurrency: "USD",
-        description: "Monthly Google review response management and Google Business Profile optimization.",
+        description: "Monthly Google Business Profile management, review responses, and local search optimization.",
       },
     ],
   },
@@ -132,10 +132,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What does Presency do?",
+      name: "What is the Online Presence Plan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Presency manages Google review responses and builds high-converting websites for local businesses in Philadelphia. We write and post owner responses to your Google reviews within minutes, and we design and build fast, mobile-first websites.",
+        text: "The Online Presence Plan is a fully managed monthly service that covers everything your Google presence needs: Business Profile optimization, review responses posted on your behalf, local search visibility improvements, and a monthly performance report.",
       },
     },
     {
@@ -144,14 +144,6 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "No. We connect to your Google Business Profile through Google's official API. We never ask for or store your password.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How quickly do you respond to Google reviews?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We respond to new Google reviews within 4 minutes of them being posted.",
       },
     },
     {
@@ -168,6 +160,14 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Website redesigns start at $1,199, a one-time fee. This includes custom design, mobile-first development, SEO-ready structure, and 2 rounds of revisions, delivered in 2 weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you help with local SEO?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Google Business Profile optimization is a core part of the Online Presence Plan. We keep your profile complete, accurate, and actively managed, which is one of the highest-impact things a local business can do for search visibility.",
       },
     },
     {

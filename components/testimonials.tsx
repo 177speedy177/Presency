@@ -67,7 +67,7 @@ export function Testimonials() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
-          <p className="eyebrow mb-4">SAMPLE RESPONSES</p>
+          <p className="eyebrow mb-4">PRESENCY IN ACTION</p>
           <h2
             className="font-display"
             style={{
@@ -77,12 +77,12 @@ export function Testimonials() {
             }}
           >
             <WordReveal segments={[
-              { text: "Read the responses" },
-              { text: "we'd write for you.", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "Review responses" },
+              { text: "handled for you.", italic: true, color: "var(--gold)", fontWeight: 400 },
             ]} />
           </h2>
           <p className="font-body text-sm mt-3" style={{ color: "var(--text-muted)" }}>
-            Sample responses, the same quality we&apos;d craft for you.
+            One part of the Online Presence Plan. Sample quality shown below.
           </p>
         </RevealDiv>
 
