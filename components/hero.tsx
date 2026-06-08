@@ -281,7 +281,7 @@ export function Hero() {
             </p>
 
             <h1
-              className="font-display hero-item"
+              className="font-display hero-item text-center lg:text-left"
               style={{ fontSize: "clamp(2rem,5vw,4rem)", fontWeight: 300, color: "#7a5c10", lineHeight: 1.1, letterSpacing: "-0.025em", marginBottom: "1.1rem", animationDelay: "70ms" }}
             >
               Make your local business<br />
@@ -317,7 +317,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/#services"
-                className="hidden lg:inline-block font-body font-medium px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
+                className="font-body font-medium block lg:inline-block text-center px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer w-full lg:w-auto"
                 style={{ background: "transparent", color: "var(--ink)", fontSize: "0.95rem", border: "1px solid rgba(13,12,10,0.18)" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.38)"; e.currentTarget.style.background = "rgba(13,12,10,0.04)" }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.18)"; e.currentTarget.style.background = "transparent" }}
