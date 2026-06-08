@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import Link from "next/link"
 
 // ── Card 1: SMS Text-Back — missed call conversation ─────────────────────────
@@ -211,19 +211,51 @@ function AuditCard() {
 export function Hero() {
   const [activeCard, setActiveCard] = useState(0)
   const CARD_COUNT = 3
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCard(prev => (prev + 1) % CARD_COUNT)
-    }, 3500)
-    return () => clearInterval(interval)
-  }, [])
-
   const cardLabels = ["Missed call follow-up", "Website redesign", "Free audit"]
+  const mobileCards = [<SMSCard key="s" />, <WebsiteCard key="w" />, <AuditCard key="a" />]
 
-  const enterStyle: React.CSSProperties = {
-    opacity: 0,
-    transform: "translateY(22px)",
+  // ── Swipe detection ──────────────────────────────────────────────────────────
+  const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    const dy = e.changedTouches[0].clientY - touchStartY.current
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 38) {
+      if (dx < 0) setActiveCard(p => (p + 1) % CARD_COUNT)
+      else setActiveCard(p => (p - 1 + CARD_COUNT) % CARD_COUNT)
+    }
+  }
+
+  // ── Per-card position in the stacked deck ───────────────────────────────────
+  const deckStyle = (i: number): React.CSSProperties => {
+    const rel = (i - activeCard + CARD_COUNT) % CARD_COUNT
+    if (rel === 0) return {  // front
+      position: "absolute", top: 0, left: "50%",
+      transform: "translateX(-50%) rotate(0deg)",
+      zIndex: 10,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+      willChange: "transform",
+    }
+    if (rel === 1) return {  // back-right
+      position: "absolute", top: "12px", left: "50%",
+      transform: "translateX(-50%) rotate(7deg)",
+      zIndex: 5,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+      willChange: "transform",
+    }
+    return {                 // back-left
+      position: "absolute", top: "12px", left: "50%",
+      transform: "translateX(-50%) rotate(-7deg)",
+      zIndex: 3,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+      willChange: "transform",
+    }
   }
 
   return (
@@ -301,36 +333,23 @@ export function Hero() {
               WEBSITE REDESIGNS&nbsp;&nbsp;·&nbsp;&nbsp;LEAD RECOVERY&nbsp;&nbsp;·&nbsp;&nbsp;NO CONTRACTS
             </p>
 
-            {/* ── Mobile peek carousel ── */}
-            <div className="lg:hidden mt-10" style={{ overflow: "hidden", marginLeft: "-1.5rem", marginRight: "-1.5rem" }}>
-              {/* Sliding strip — cards are 82vw wide, 9vw peeks on each side */}
+            {/* ── Mobile stacked deck (swipe to change) ── */}
+            <div className="lg:hidden mt-10">
+              {/* Stack container — overflow visible so rotated corners peek out */}
               <div
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  transform: `translateX(calc(${-activeCard} * (82vw + 12px) + 9vw))`,
-                  transition: "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
-                  willChange: "transform",
-                }}
+                style={{ position: "relative", height: "380px", touchAction: "pan-y" }}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
               >
-                {[<SMSCard key="s" />, <WebsiteCard key="w" />, <AuditCard key="a" />].map((card, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      flex: "0 0 82vw",
-                      transition: "opacity 0.4s ease, transform 0.4s ease",
-                      opacity: activeCard === i ? 1 : 0.55,
-                      transform: activeCard === i ? "scale(1)" : "scale(0.93)",
-                      transformOrigin: "center top",
-                    }}
-                  >
+                {mobileCards.map((card, i) => (
+                  <div key={i} style={{ width: "min(300px, 86vw)", ...deckStyle(i) }}>
                     {card}
                   </div>
                 ))}
               </div>
 
               {/* Dots */}
-              <div role="tablist" aria-label="Card navigation" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginTop: "16px" }}>
+              <div role="tablist" aria-label="Card navigation" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginTop: "20px" }}>
                 {cardLabels.map((label, i) => (
                   <button
                     key={i}
