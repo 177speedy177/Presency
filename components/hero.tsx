@@ -305,10 +305,10 @@ export function Hero() {
               Presency redesigns outdated websites and makes sure every missed call gets an instant follow-up, so Philly customers find you, trust you, and book with you.
             </p>
 
-            <div className="hero-item flex flex-wrap gap-3 items-center" style={{ marginBottom: "1.5rem", animationDelay: "280ms" }}>
+            <div className="hero-item flex gap-3 items-center" style={{ marginBottom: "1.5rem", animationDelay: "280ms" }}>
               <Link
                 href="/free-audit"
-                className="font-body font-medium block lg:inline-block text-center px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer w-full lg:w-auto"
+                className="font-body font-medium flex-1 lg:flex-none text-center px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "var(--gold)", color: "#0d0c0a", fontSize: "0.95rem" }}
                 onMouseEnter={e => { e.currentTarget.style.background = "#d4b05a"; e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.32)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none" }}
@@ -317,7 +317,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/#services"
-                className="font-body font-medium block lg:inline-block text-center px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer w-full lg:w-auto"
+                className="font-body font-medium flex-1 lg:flex-none text-center px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "transparent", color: "var(--ink)", fontSize: "0.95rem", border: "1px solid rgba(13,12,10,0.18)" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.38)"; e.currentTarget.style.background = "rgba(13,12,10,0.04)" }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.18)"; e.currentTarget.style.background = "transparent" }}
