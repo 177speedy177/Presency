@@ -165,7 +165,7 @@ export default function ContactPage() {
                       PACKAGE INTEREST
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {["Website Redesign ($1,199 one-time)", "Online Presence Plan ($199/month)", "Both", "Not sure yet"].map((pkg) => {
+                      {["Website Redesign ($1,199 one-time)", "Lead Recovery ($199/month)", "Both", "Not sure yet"].map((pkg) => {
                         const active = selectedPackage === pkg
                         return (
                           <button

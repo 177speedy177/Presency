@@ -138,20 +138,6 @@ export default function AboutPage() {
                         "linear-gradient(to bottom, transparent 55%, rgba(13,12,10,0.5) 100%)",
                     }}
                   />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <p
-                      className="font-body text-sm font-medium"
-                      style={{ color: "rgba(247,244,239,0.95)" }}
-                    >
-                      Joey
-                    </p>
-                    <p
-                      className="font-mono-label"
-                      style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.1em" }}
-                    >
-                      FOUNDER · PRESENCY · PHILADELPHIA
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

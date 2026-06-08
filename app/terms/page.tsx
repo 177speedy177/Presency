@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Terms of Service | Presency",
   description:
-    "Presency's terms of service. What you can expect from us and what we ask of you when using our website design and review management services.",
+    "Presency's terms of service. What you can expect from us and what we ask of you when using our website design and lead follow-up services.",
   alternates: {
     canonical: "https://getpresency.com/terms",
   },
@@ -14,23 +14,23 @@ export const metadata = {
 const sections = [
   {
     heading: "Services",
-    body: "Presency provides website design and Google review management services for local businesses. The specific scope of services is outlined in your service agreement or onboarding materials. We reserve the right to modify or discontinue any service with reasonable notice.",
+    body: "Presency provides website design and lead follow-up services for local businesses. The specific scope of services is outlined in your service agreement or onboarding materials. We reserve the right to modify or discontinue any service with reasonable notice.",
   },
   {
     heading: "Payment",
-    body: "Website redesign services are billed as a one-time payment upon project completion. The Online Presence Plan is billed monthly. All payments are non-refundable unless otherwise stated in your service agreement.",
+    body: "Website redesign services are billed as a one-time payment upon project completion. The Lead Recovery plan is billed monthly. All payments are non-refundable unless otherwise stated in your service agreement.",
   },
   {
     heading: "Cancellation",
-    body: "You may cancel the Online Presence Plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@getpresency.com.",
+    body: "You may cancel the Lead Recovery plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@getpresency.com.",
   },
   {
     heading: "Your Responsibilities",
-    body: "You are responsible for providing accurate information about your business, maintaining access to your Google Business Profile, and reviewing the responses we post on your behalf. You agree not to use our services for any unlawful purpose.",
+    body: "You are responsible for providing accurate information about your business, maintaining access to your phone number and messaging system, and reviewing the conversations and responses sent on your behalf. You agree not to use our services for any unlawful purpose.",
   },
   {
-    heading: "Google API Use",
-    body: "Our review management service operates through the official Google Business Profile API. Your use of this feature is also subject to Google's Terms of Service. We act as your authorized representative when posting responses and will do so in good faith based on the brand voice you provide.",
+    heading: "Messaging and Phone Use",
+    body: "Our Lead Recovery service sends and receives text messages using your existing business phone number. You are responsible for ensuring you have the right to send messages to your customers under applicable law. We act as your authorized representative when communicating on your behalf and will do so in good faith based on the brand voice you provide.",
   },
   {
     heading: "Intellectual Property",

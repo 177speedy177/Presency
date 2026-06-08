@@ -30,15 +30,15 @@ export function Services() {
             }}
           >
             <WordReveal segments={[
-              { text: "Two services." },
-              { text: "Fully managed.", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "Website redesign." },
+              { text: "Lead recovery.", italic: true, color: "var(--gold)", fontWeight: 400 },
             ]} />
           </h2>
           <p
             className="font-body text-lg max-w-xl mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            We handle your website and your entire Google presence. You focus on your business.
+            We build your website and make sure every lead that contacts you gets an instant, smart follow-up. You focus on your business.
           </p>
         </RevealDiv>
 
@@ -130,7 +130,7 @@ export function Services() {
             </p>
           </RevealDiv>
 
-          {/* ── Card 2: Online Presence Plan (featured) ── */}
+          {/* ── Card 2: Lead Recovery (featured) ── */}
           <RevealDiv
             delay={120}
             dataTheme="dark"
@@ -160,7 +160,7 @@ export function Services() {
 
             <div className="mb-5">
               <p className="eyebrow mb-3" style={{ color: "var(--gold)" }}>
-                ONLINE PRESENCE PLAN
+                LEAD RECOVERY
               </p>
               <div className="flex items-baseline gap-1.5 mb-1">
                 <span
@@ -173,23 +173,27 @@ export function Services() {
                   /month
                 </span>
               </div>
-              <p className="font-body text-sm italic mb-4" style={{ color: "var(--text-secondary)" }}>
-                Your reputation, handled for you.
-              </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                We manage your entire Google online presence: Business Profile optimization,
-                review responses, and local search visibility. Set it up once, we do the rest.
-              </p>
+              <div className="flex flex-col gap-0.5 mt-3 mb-4">
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  Every missed call gets an instant text.
+                </p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  Every reply lands in one inbox.
+                </p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  Your system works for you 24/7.
+                </p>
+              </div>
             </div>
 
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {[
-                "Google Business Profile management and optimization",
-                "Every review responded to on your behalf",
-                "Responses posted within 4 minutes",
-                "Custom brand voice that sounds like you",
-                "Local search visibility improvements",
-                "Negative review handling with human oversight",
+                "Instant text-back on every missed call, after-hours, and busy line",
+                "Every reply captured in one inbox. No lead falls through the cracks.",
+                "Review request texts sent after appointments or jobs",
+                "Monthly reactivation texts to past customers",
+                "Works alongside your existing phone number",
+                "Messages feel personal, not robotic",
                 "Monthly performance report",
                 "Cancel anytime, no contracts",
               ].map((f) => (
@@ -215,13 +219,16 @@ export function Services() {
             >
               Start free, 14 days
             </Link>
+            <p className="font-body text-xs italic text-center mt-3" style={{ color: "rgba(201,168,76,0.55)" }}>
+              Industry standard price of $500.
+            </p>
           </RevealDiv>
         </div>
 
-        {/* Google API trust note */}
+        {/* Trust note */}
         <div className="text-center mb-4 mt-2">
           <p className="font-mono-label" style={{ fontSize: "9px", color: "rgba(201,168,76,0.4)", letterSpacing: "0.1em" }}>
-            WE CONNECT VIA GOOGLE&apos;S OFFICIAL API &nbsp;·&nbsp; WE NEVER ASK FOR YOUR PASSWORD
+            WORKS WITH YOUR EXISTING NUMBER &nbsp;·&nbsp; NO NEW EQUIPMENT NEEDED &nbsp;·&nbsp; LIVE IN MINUTES
           </p>
         </div>
 
@@ -254,10 +261,10 @@ export function Services() {
                 BUNDLE OFFER
               </p>
               <p className="font-display text-lg" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
-                Website Redesign + Online Presence Plan
+                Website Redesign + Lead Recovery
               </p>
               <p className="font-body text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
-                Get both services together at one bundled rate. Less than paying for each separately.
+                Get both services together at one bundled rate. A brand-new site and a lead follow-up system that starts working from day one.
               </p>
             </div>
             <div className="text-center sm:text-right shrink-0">

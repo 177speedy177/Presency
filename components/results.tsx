@@ -87,10 +87,10 @@ function AnimatedStat({ num, suffix, decimals = 0, label, source, sourceHref }: 
 
 const primaryStats = [
   {
-    num: 97, suffix: "%", decimals: 0,
-    label: "of consumers go online to find a local business, making your Google presence their first impression",
-    source: "BrightLocal Consumer Survey",
-    sourceHref: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+    num: 98, suffix: "%", decimals: 0,
+    label: "of text messages are opened. Only 21% of emails are ever read, making texts the most reliable way to reach a customer instantly",
+    source: "Forbes",
+    sourceHref: "https://www.forbes.com/advisor/business/sms-marketing-statistics/",
   },
   {
     num: 75, suffix: "%", decimals: 0,
@@ -99,10 +99,10 @@ const primaryStats = [
     sourceHref: "https://credibility.stanford.edu/guidelines/index.html",
   },
   {
-    num: 76, suffix: "%", decimals: 0,
-    label: "of local mobile searches result in a store visit within 24 hours",
-    source: "Think with Google",
-    sourceHref: "https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/local-search-mobile/",
+    num: 85, suffix: "%", decimals: 0,
+    label: "of callers who can't reach a business on the first try will not call back. That lead is gone unless you reach out first.",
+    source: "Invoca",
+    sourceHref: "https://www.invoca.com/blog/missed-call-statistics/",
   },
   {
     num: 58, suffix: "%", decimals: 0,
@@ -153,7 +153,7 @@ export function Results() {
             className="font-body text-base max-w-lg mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            Based on research from BrightLocal, Stanford Web Credibility Lab, Think with Google, and Statista.
+            Based on research from Forbes, Stanford Web Credibility Lab, Invoca, and Statista.
           </p>
         </RevealDiv>
 

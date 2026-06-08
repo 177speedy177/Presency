@@ -21,8 +21,8 @@ const sections = [
     body: "We use your information to respond to inquiries, deliver and improve our services, send service-related updates, and communicate with you about your account. We do not sell your personal information to third parties.",
   },
   {
-    heading: "Google Business Profile Access",
-    body: "Our review management service connects to your Google Business Profile via the official Google API. We request only the permissions necessary to read reviews and post responses on your behalf. You can revoke this access at any time through your Google account settings.",
+    heading: "Phone Number and Messaging",
+    body: "Our Lead Recovery service operates using your existing business phone number. We configure a layer on top of your number to send and receive text messages on your behalf when calls are missed. Message content is logged so you can review every conversation. You can disconnect the service at any time.",
   },
   {
     heading: "Data Storage and Security",

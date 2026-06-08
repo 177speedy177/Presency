@@ -30,26 +30,26 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Presency | Online Presence Management & Website Redesign for Local Businesses",
+  title: "Presency | Website Redesign & Missed Call Follow-Up for Philadelphia Businesses",
   description:
-    "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Google Business Profile optimization, review responses, local SEO. Plans from $199/month. 14-day free trial.",
+    "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. Never lose a lead again. From $199/month. 14-day free trial.",
   keywords: [
-    "online presence management philadelphia",
-    "google business profile management",
     "website redesign philadelphia",
-    "local seo philadelphia",
+    "missed call text back philadelphia",
+    "lead follow-up system philadelphia",
     "local business website design",
-    "google review management",
-    "reputation management philadelphia",
+    "never miss a lead",
+    "missed call follow up",
     "small business website philadelphia",
+    "local business marketing philadelphia",
   ],
   alternates: {
     canonical: "https://getpresency.com",
   },
   openGraph: {
-    title: "Presency | Online Presence Management & Website Redesign",
+    title: "Presency | Website Redesign & Missed Call Follow-Up",
     description:
-      "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Plans from $199/month.",
+      "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. From $199/month.",
     type: "website",
     url: "https://getpresency.com",
     images: [
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presency | Online Presence Management & Website Redesign",
-    description: "Presency manages your entire Google online presence and builds modern websites for local businesses in Philadelphia. Plans from $199/month.",
+    title: "Presency | Website Redesign & Missed Call Follow-Up",
+    description: "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. From $199/month.",
     images: ["https://getpresency.com/presency-og.png"],
   },
 }
@@ -75,7 +75,7 @@ const webSiteSchema = {
   name: "Presency",
   url: "https://getpresency.com",
   description:
-    "Online presence management and website redesigns for local businesses in Philadelphia.",
+    "Website redesigns and missed call follow-up systems for local businesses in Philadelphia.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -90,7 +90,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Presency",
-  description: "Online presence management and website redesign for local businesses in Philadelphia.",
+  description: "Website redesigns and lead follow-up systems for local businesses in Philadelphia. Never miss a lead.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
@@ -118,10 +118,10 @@ const localBusinessSchema = {
       },
       {
         "@type": "Offer",
-        name: "Online Presence Plan",
+        name: "Lead Recovery",
         price: "199",
         priceCurrency: "USD",
-        description: "Monthly Google Business Profile management, review responses, and local search optimization.",
+        description: "Missed call text-back, booking via text, review requests, and customer reactivation. Works with your existing phone number.",
       },
     ],
   },
@@ -133,26 +133,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is the Online Presence Plan?",
+      name: "What happens when someone calls my business and I don't answer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Online Presence Plan is a fully managed monthly service that covers everything your Google presence needs: Business Profile optimization, review responses posted on your behalf, local search visibility improvements, and a monthly performance report.",
+        text: "Within seconds, your caller receives a text message from your business number. It introduces your business by name and asks how you can help. From there, the conversation continues over text until the customer is scheduled, their question is answered, or they are connected to you directly.",
       },
     },
     {
       "@type": "Question",
-      name: "Do I need to give you my Google password?",
+      name: "Does this work with my existing phone number?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. We connect to your Google Business Profile through Google's official API. We never ask for or store your password.",
+        text: "Yes. You keep your current number. We set up a smart layer on top of it so that when a call is missed, the follow-up text goes out from that same number. No new app, no second phone.",
       },
     },
     {
       "@type": "Question",
-      name: "How much does the Online Presence Plan cost?",
+      name: "How long does setup take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The Online Presence Plan is $199 per month with no contracts. You can cancel anytime. We also offer a free 14-day trial.",
+        text: "For most businesses, your system is live within minutes of setup. You do not need to install anything or learn any new software.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does the Lead Recovery plan cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lead Recovery is $199 per month with no contracts. You can cancel anytime. We also offer a free 14-day trial.",
       },
     },
     {
@@ -161,14 +169,6 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Website redesigns start at $1,199, a one-time fee. This includes custom design, mobile-first development, SEO-ready structure, and 2 rounds of revisions, delivered in 2 weeks.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you help with local SEO?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Google Business Profile optimization is a core part of the Online Presence Plan. We keep your profile complete, accurate, and actively managed, which is one of the highest-impact things a local business can do for search visibility.",
       },
     },
     {

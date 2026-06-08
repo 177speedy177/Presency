@@ -9,28 +9,32 @@ import {
 
 const faqs = [
   {
-    q: "What exactly is the Online Presence Plan?",
-    a: "The Online Presence Plan is a fully managed monthly service that covers everything your Google presence needs: Business Profile optimization, review responses posted on your behalf, local search visibility improvements, and a monthly performance report. We handle it all so you can focus on running your business.",
+    q: "What happens when someone calls my business and I don't answer?",
+    a: "Within seconds, your caller receives a text message from your business number. It introduces your business by name and asks how you can help. From there, the conversation continues over text until the customer is scheduled, their question is answered, or they are connected to you directly. It works the same way after hours, on weekends, and during busy periods when you can't pick up.",
   },
   {
-    q: "Do I have to give you my Google password?",
-    a: "Never. We connect to your Google Business Profile through Google's official API using a secure authorization flow you control. You grant access with a few clicks. No password sharing, ever. You can revoke access at any time.",
+    q: "Does this work with my existing phone number?",
+    a: "Yes. You keep your current number. We set up a smart layer on top of it so that when a call is missed, the follow-up text goes out from that same number. Your customers see one consistent number at all times. No new app, no second phone, no changes to how you already operate.",
   },
   {
-    q: "Will the review responses sound like me or like a robot?",
-    a: "They will sound like you. During onboarding we capture your voice, tone, and brand personality. Every response is crafted to match how you naturally communicate. Warm, professional, or direct. You can review samples before we go live.",
+    q: "How long does setup take?",
+    a: "For most businesses, your system is live within minutes of setup. We handle the configuration on our end. You do not need to install anything or learn any new software. We walk you through a short onboarding, confirm the messaging sounds like you, and you are ready to go.",
   },
   {
-    q: "What if I get a serious negative review?",
-    a: "Any review below 3 stars is flagged for human review before a response goes out. We take a measured approach: acknowledge the concern, offer a path to resolution, and keep the tone professional. You are notified immediately so you are never caught off guard.",
+    q: "Will my customers know it's not me personally sending the texts?",
+    a: "Most do not notice, and many assume it is you or a member of your team. During onboarding we capture your tone and voice so the messages feel personal and natural, not scripted. For businesses that prefer full transparency, we can include a short line noting that responses are handled by your team's system. Either way, the experience feels attentive and human.",
+  },
+  {
+    q: "What if a customer texts back? Who handles that conversation?",
+    a: "The system handles the follow-up intelligently to move the conversation toward a booking or answer. If a situation requires a personal touch or a judgment call, it flags the message so you can step in directly. You stay in the loop without needing to monitor every exchange.",
+  },
+  {
+    q: "What kinds of businesses does this work best for?",
+    a: "Any local service business that relies on phone calls and appointments: barbershops, dental offices, auto shops, contractors, salons, med spas, gyms, restaurants, law offices, and more. If missed calls cost you customers, this system fixes that.",
   },
   {
     q: "What's included in the website redesign?",
     a: "A fully custom website built for your business: professional design (never a template), mobile-first development, fast load times, SEO-ready structure, clear calls-to-action, and Google Business Profile integration. Delivered in 2 weeks with 2 rounds of revisions included.",
-  },
-  {
-    q: "Do you help with local SEO?",
-    a: "Yes. Google Business Profile optimization is a core part of the Online Presence Plan. We keep your profile complete, accurate, and actively managed, which is one of the highest-impact things a local business can do for search visibility.",
   },
   {
     q: "Can I cancel anytime?",
@@ -38,7 +42,7 @@ const faqs = [
   },
   {
     q: "Do I own my website after the redesign?",
-    a: "Yes, completely. You own the code, the domain, and the hosting account. We hand everything over when the project is complete. There are no ongoing fees unless you choose to add the Online Presence Plan.",
+    a: "Yes, completely. You own the code, the domain, and the hosting account. We hand everything over when the project is complete. There are no ongoing fees unless you choose to add the Lead Recovery plan.",
   },
 ]
 

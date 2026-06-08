@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
-// ── Card 1: Google Business Profile — real dark-mode map ──────────────────────
-function GoogleCard() {
+// ── Card 1: SMS Text-Back — missed call conversation ─────────────────────────
+function SMSCard() {
   return (
     <div
       style={{
@@ -15,47 +15,58 @@ function GoogleCard() {
         fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
       }}
     >
-      {/* Real Google Maps screenshot */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <div style={{ height: "80px", borderRadius: "12px", overflow: "hidden", marginBottom: "12px" }}>
-        <img
-          src="/map-philly.png"
-          alt="Philadelphia area Google Maps view"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center", display: "block" }}
-        />
+      {/* Phone header */}
+      <div style={{ background: "#f7f4ef", borderRadius: "12px", padding: "8px 10px", marginBottom: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
+        <div style={{ width: "26px", height: "26px", borderRadius: "50%", background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M9.5 8.5c-.8.8-1.7 1.5-2.5 1.5C5.5 10 3.5 8 2.5 6.5 1.5 4.8 1 3.5 2 2.5l1-1c.3-.3.8-.3 1 0l1.5 2c.3.3.3.7 0 1L4.7 5.3C5.2 6.3 6 7.2 7 7.7l.8-.8c.3-.3.7-.3 1 0l2 1.5c.3.3.3.7 0 1l-1.3.1z" fill="#c9a84c" />
+          </svg>
+        </div>
+        <div>
+          <p style={{ fontSize: "11px", fontWeight: 700, color: "#1a1a1a", margin: 0, lineHeight: 1.2 }}>River Blvd Auto</p>
+          <p style={{ fontSize: "9px", color: "rgba(0,0,0,0.4)", margin: 0 }}>Missed call · 7:02 PM</p>
+        </div>
       </div>
 
-      {/* Business name + Google G */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
-        <p style={{ fontSize: "13px", fontWeight: 700, color: "#1a1a1a", lineHeight: 1.2 }}>Fishtown Dental Studio</p>
-        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style={{ flexShrink: 0, opacity: 0.55, marginTop: "1px" }}>
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-      </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "4px" }}>
-        <div style={{ display: "flex", gap: "1px" }}>
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#fbbc04" aria-hidden="true">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          ))}
-        </div>
-        <span style={{ fontSize: "11px", fontWeight: 600, color: "#1a1a1a" }}>4.8</span>
-        <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.42)" }}>· Dentist · Philadelphia, PA</span>
-      </div>
-      <p style={{ fontSize: "11px", color: "#1e8c4a", fontWeight: 500, marginBottom: "10px" }}>Open today</p>
-      <div style={{ display: "flex", gap: "6px", marginBottom: "12px" }}>
-        {["Website", "Directions", "Call"].map(label => (
-          <div key={label} style={{ flex: 1, textAlign: "center", padding: "5px 0", borderRadius: "8px", background: "rgba(32,31,27,0.05)", border: "1px solid rgba(32,31,27,0.08)", fontSize: "10px", fontWeight: 500, color: "#1a1a1a" }}>
-            {label}
+      {/* SMS bubbles */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "10px" }}>
+        {/* Business text */}
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <div style={{ maxWidth: "88%", background: "rgba(201,168,76,0.12)", borderRadius: "4px 12px 12px 12px", padding: "6px 9px" }}>
+            <p style={{ fontSize: "10px", color: "#1a1a1a", margin: 0, lineHeight: 1.4 }}>Hey! Sorry we missed you. Still looking to get your car in?</p>
           </div>
-        ))}
+        </div>
+        {/* Customer reply */}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div style={{ maxWidth: "72%", background: "rgba(13,12,10,0.07)", borderRadius: "12px 4px 12px 12px", padding: "6px 9px" }}>
+            <p style={{ fontSize: "10px", color: "#1a1a1a", margin: 0, lineHeight: 1.4 }}>Yes! Need an oil change ASAP</p>
+          </div>
+        </div>
+        {/* Business */}
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <div style={{ maxWidth: "88%", background: "rgba(201,168,76,0.12)", borderRadius: "4px 12px 12px 12px", padding: "6px 9px" }}>
+            <p style={{ fontSize: "10px", color: "#1a1a1a", margin: 0, lineHeight: 1.4 }}>We have tomorrow at 9am or 11am. Which works?</p>
+          </div>
+        </div>
+        {/* Customer */}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div style={{ maxWidth: "60%", background: "rgba(13,12,10,0.07)", borderRadius: "12px 4px 12px 12px", padding: "6px 9px" }}>
+            <p style={{ fontSize: "10px", color: "#1a1a1a", margin: 0, lineHeight: 1.4 }}>9am! Thanks</p>
+          </div>
+        </div>
       </div>
+
+      {/* Result strip */}
+      <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "10px", padding: "5px 8px", background: "rgba(30,140,74,0.07)", borderRadius: "8px", border: "1px solid rgba(30,140,74,0.15)" }}>
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2 6l3 3 5-5" stroke="#1e8c4a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <span style={{ fontSize: "9px", fontWeight: 600, color: "#1e8c4a" }}>Booked in 3 minutes</span>
+      </div>
+
+      {/* Badge */}
       <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)" }}>
-        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>GOOGLE PRESENCE</span>
+        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>LEAD RECOVERY</span>
       </div>
     </div>
   )
@@ -121,15 +132,19 @@ function WebsiteCard() {
   )
 }
 
-// ── Card 3: Audit Score ───────────────────────────────────────────────────────
+// ── Card 3: Free Audit Score ──────────────────────────────────────────────────
 function AuditCard() {
-  const metrics = [
-    { label: "Website clarity", value: "92/100", bar: 92 },
-    { label: "Mobile experience", value: "Fast" },
-    { label: "Google profile",   value: "Optimized" },
-    { label: "Trust signals",    value: "Improved" },
+  const rows = [
+    { label: "Mobile experience",  value: "Fast",      color: "#1e8c4a" },
+    { label: "Lead follow-up",     value: "Active",    color: "#1e8c4a" },
+    { label: "Trust signals",      value: "Improved",  color: "#1e8c4a" },
   ]
-  const checks = ["Clear first impression", "Better mobile layout", "Stronger calls to action", "Google profile aligned"]
+  const checks = [
+    "Clear first impression",
+    "Better mobile layout",
+    "Stronger calls to action",
+    "Instant lead follow-up",
+  ]
 
   return (
     <div
@@ -142,29 +157,38 @@ function AuditCard() {
         fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
       }}
     >
-      {/* Header: Score + 92 circle */}
-      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-        <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(201,168,76,0.12)", border: "2px solid rgba(201,168,76,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-          <span style={{ fontSize: "11px", fontWeight: 700, color: "#7a5c10" }}>92</span>
+      {/* Score header */}
+      <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
+        <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "rgba(201,168,76,0.10)", border: "2px solid rgba(201,168,76,0.45)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <span style={{ fontSize: "12px", fontWeight: 700, color: "#7a5c10" }}>92</span>
         </div>
-        <p style={{ fontSize: "12px", fontWeight: 700, color: "#1a1a1a" }}>Score</p>
+        <p style={{ fontSize: "13px", fontWeight: 700, color: "#1a1a1a" }}>Score</p>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "12px" }}>
-        {metrics.map(m => (
-          <div key={m.label}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
-              <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.48)" }}>{m.label}</span>
-              <span style={{ fontSize: "10px", fontWeight: 600, color: "#1e8c4a" }}>{m.value}</span>
-            </div>
-            {m.bar && (
-              <div style={{ height: "3px", borderRadius: "999px", background: "rgba(32,31,27,0.07)" }}>
-                <div style={{ height: "100%", width: `${m.bar}%`, borderRadius: "999px", background: "linear-gradient(90deg,#c9a84c,#e8c96d)" }} />
-              </div>
-            )}
+
+      {/* Website clarity bar */}
+      <div style={{ marginBottom: "10px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
+          <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.48)" }}>Website clarity</span>
+          <span style={{ fontSize: "10px", fontWeight: 600, color: "#7a5c10" }}>92/100</span>
+        </div>
+        <div style={{ height: "3px", borderRadius: "999px", background: "rgba(32,31,27,0.07)" }}>
+          <div style={{ height: "100%", width: "92%", borderRadius: "999px", background: "linear-gradient(90deg,#c9a84c,#e8c96d)" }} />
+        </div>
+      </div>
+
+      {/* Status rows */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "7px", marginBottom: "12px" }}>
+        {rows.map(r => (
+          <div key={r.label} style={{ display: "flex", justifyContent: "space-between" }}>
+            <span style={{ fontSize: "10px", color: "rgba(0,0,0,0.48)" }}>{r.label}</span>
+            <span style={{ fontSize: "10px", fontWeight: 600, color: r.color }}>{r.value}</span>
           </div>
         ))}
       </div>
+
       <div style={{ height: "1px", background: "rgba(32,31,27,0.07)", marginBottom: "10px" }} />
+
+      {/* Checklist */}
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "12px" }}>
         {checks.map(item => (
           <div key={item} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
@@ -173,9 +197,10 @@ function AuditCard() {
           </div>
         ))}
       </div>
-      {/* Golden bubble badge */}
+
+      {/* Badge */}
       <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)" }}>
-        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>PRESENCE AUDIT</span>
+        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>FREE AUDIT</span>
       </div>
     </div>
   )
@@ -193,7 +218,7 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [])
 
-  const cardLabels = ["Google presence", "Website redesign", "Audit score"]
+  const cardLabels = ["Missed call follow-up", "Website redesign", "Free audit"]
 
   const enterStyle: React.CSSProperties = {
     opacity: 0,
@@ -244,7 +269,7 @@ export function Hero() {
               className="font-body hero-item"
               style={{ fontSize: "clamp(0.92rem,1.6vw,1rem)", color: "rgba(13,12,10,0.50)", marginBottom: "2.5rem", lineHeight: 1.7, maxWidth: "460px", animationDelay: "210ms" }}
             >
-              Presency redesigns outdated websites and improves your Google presence so Philly customers trust you before they ever walk in.
+              Presency redesigns outdated websites and makes sure every missed call gets an instant follow-up, so Philly customers find you, trust you, and book with you.
             </p>
 
             <div className="hero-item flex flex-wrap gap-3 items-center" style={{ marginBottom: "1.5rem", animationDelay: "280ms" }}>
@@ -255,7 +280,7 @@ export function Hero() {
                 onMouseEnter={e => { e.currentTarget.style.background = "#d4b05a"; e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.32)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none" }}
               >
-                Get my free presence audit
+                Get my free audit
               </Link>
               <Link
                 href="/#services"
@@ -264,7 +289,7 @@ export function Hero() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.38)"; e.currentTarget.style.background = "rgba(13,12,10,0.04)" }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.18)"; e.currentTarget.style.background = "transparent" }}
               >
-                See what we fix
+                See how it works
               </Link>
             </div>
 
@@ -272,23 +297,30 @@ export function Hero() {
               className="font-mono-label hero-item"
               style={{ fontSize: "0.64rem", letterSpacing: "0.09em", color: "rgba(13,12,10,0.30)", lineHeight: 1.6, animationDelay: "350ms" }}
             >
-              WEBSITE REDESIGNS&nbsp;&nbsp;·&nbsp;&nbsp;GOOGLE PRESENCE CLEANUP&nbsp;&nbsp;·&nbsp;&nbsp;NO CONTRACTS
+              WEBSITE REDESIGNS&nbsp;&nbsp;·&nbsp;&nbsp;LEAD RECOVERY&nbsp;&nbsp;·&nbsp;&nbsp;NO CONTRACTS
             </p>
 
-            {/* ── Mobile carousel ── */}
-            <div className="lg:hidden mt-12">
-              {/* Grid stack — all cards overlap, opacity controls visibility */}
-              <div style={{ display: "grid" }}>
-                {[<GoogleCard key="g" />, <WebsiteCard key="w" />, <AuditCard key="a" />].map((card, i) => (
+            {/* ── Mobile peek carousel ── */}
+            <div className="lg:hidden mt-10" style={{ overflow: "hidden", marginLeft: "-1.5rem", marginRight: "-1.5rem" }}>
+              {/* Sliding strip — cards are 82vw wide, 9vw peeks on each side */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  transform: `translateX(calc(${-activeCard} * (82vw + 12px) + 9vw))`,
+                  transition: "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
+                  willChange: "transform",
+                }}
+              >
+                {[<SMSCard key="s" />, <WebsiteCard key="w" />, <AuditCard key="a" />].map((card, i) => (
                   <div
                     key={i}
                     style={{
-                      gridColumn: 1,
-                      gridRow: 1,
-                      opacity: activeCard === i ? 1 : 0,
-                      transform: activeCard === i ? "translateY(0)" : "translateY(8px)",
-                      transition: "opacity 0.5s ease, transform 0.5s ease",
-                      pointerEvents: activeCard === i ? "auto" : "none",
+                      flex: "0 0 82vw",
+                      transition: "opacity 0.4s ease, transform 0.4s ease",
+                      opacity: activeCard === i ? 1 : 0.55,
+                      transform: activeCard === i ? "scale(1)" : "scale(0.93)",
+                      transformOrigin: "center top",
                     }}
                   >
                     {card}
@@ -297,7 +329,7 @@ export function Hero() {
               </div>
 
               {/* Dots */}
-              <div role="tablist" aria-label="Card navigation" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginTop: "14px" }}>
+              <div role="tablist" aria-label="Card navigation" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginTop: "16px" }}>
                 {cardLabels.map((label, i) => (
                   <button
                     key={i}
@@ -322,17 +354,19 @@ export function Hero() {
           </div>
 
           {/* ── Right: floating cards (desktop only) ──────────────────── */}
-          <div className="hidden lg:block relative" style={{ height: "560px" }}>
+          {/* Exact original layout — SMS replaces the old Google Maps card */}
+          {/* Height = SMS (~300px) + 80px gap + Website (~244px) = 624px min → 660px */}
+          <div className="hidden lg:block relative" style={{ height: "660px" }}>
             <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ background: "radial-gradient(circle at 58% 52%,rgba(203,174,78,0.13) 0%,transparent 60%)" }} />
-            {/* Google card — top right */}
+            {/* SMS card — top right (same slot/size as old Google card) */}
             <div className="float-card float-card-google" style={{ position: "absolute", top: 0, right: 0, width: "278px", zIndex: 2 }}>
-              <GoogleCard />
+              <SMSCard />
             </div>
-            {/* Audit card — middle left */}
+            {/* Audit card — middle left (same slot as old Audit card) */}
             <div className="float-card float-card-audit" style={{ position: "absolute", top: "195px", left: 0, width: "208px", zIndex: 3 }}>
               <AuditCard />
             </div>
-            {/* Website card — bottom right */}
+            {/* Website card — bottom right (unchanged) */}
             <div className="float-card float-card-website" style={{ position: "absolute", bottom: 0, right: "20px", width: "215px", zIndex: 1 }}>
               <WebsiteCard />
             </div>

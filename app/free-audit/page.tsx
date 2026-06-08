@@ -26,12 +26,11 @@ const auditItems = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <circle cx="10" cy="10" r="8.5" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" />
-        <path d="M7 10l2 2 4-4" stroke="#c9a84c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13.5 11.5c-1.1 1.1-2.3 2-3.5 2-2 0-4.5-2.5-5.7-4.5C3.1 7.1 2.3 5.5 3.5 4.3l1.4-1.4c.4-.4 1-.4 1.4 0l2.1 2.8c.4.4.4 1 0 1.4l-1 1C8 9 9 10 10.1 10.6l1.1-1.1c.4-.4 1-.4 1.4 0l2.8 2.1c.4.4.4 1 0 1.4l-2 1.5" stroke="#c9a84c" strokeOpacity="0.6" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Google review audit",
-    desc: "How many reviews go unanswered, how your rating compares to competitors nearby, and what it's costing you.",
+    title: "Missed call check",
+    desc: "We estimate how many calls your business misses each week and what share of those callers book with a competitor instead.",
   },
   {
     icon: (
@@ -46,12 +45,12 @@ const auditItems = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <circle cx="10" cy="8" r="3.5" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" />
-        <path d="M3 17c0-3.5 3.1-6 7-6s7 2.5 7 6" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M4 14l3-1 7-7a1.41 1.41 0 1 0-2-2L5 11l-1 3z" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 5l2 2" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Google Business Profile",
-    desc: "Profile completeness, keyword gaps, and quick wins that improve your local search ranking this week.",
+    title: "Lead follow-up audit",
+    desc: "Whether your business has any system catching after-hours calls, slow responses, and dormant customers before they move on.",
   },
   {
     icon: (
@@ -139,8 +138,8 @@ export default function FreeAuditPage() {
               className="font-body text-lg leading-relaxed"
               style={{ color: "var(--text-secondary)", maxWidth: "520px" }}
             >
-              We audit your Google profile, review response rate, website, and local competition.
-              You get a clear report back within 48 hours. No fluff, no pitch.
+              We check your website, your missed call exposure, how your local competition compares,
+              and whether your business has a system to follow up leads. You get a clear report back within 48 hours. No fluff, no pitch.
             </p>
           </div>
 
@@ -334,7 +333,7 @@ export default function FreeAuditPage() {
                       </div>
 
                       {/* Hidden field to identify source */}
-                      <input type="hidden" name="_subject" value="Free Presence Audit Request" />
+                      <input type="hidden" name="_subject" value="Free Business Audit Request" />
 
                       {error && (
                         <p className="font-body text-sm text-center" style={{ color: "rgba(255,120,120,0.8)" }}>
@@ -369,7 +368,7 @@ export default function FreeAuditPage() {
                       className="font-mono-label text-center mt-5"
                       style={{ fontSize: "9px", color: "rgba(201,168,76,0.35)", letterSpacing: "0.1em" }}
                     >
-                      WE NEVER ASK FOR YOUR GOOGLE PASSWORD · NO CONTRACTS
+                      WORKS WITH YOUR EXISTING PHONE NUMBER · NO CONTRACTS
                     </p>
                   </>
                 )}

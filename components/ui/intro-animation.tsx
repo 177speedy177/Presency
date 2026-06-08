@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 
 type Phase = "enter" | "show" | "exit" | "done"
 
-const SHEET_COUNT = 4  // number of echo layers
+const SHEET_COUNT = 8  // number of echo layers
 
 const KEYFRAMES = `
 @keyframes intro-shimmer {
@@ -37,8 +37,8 @@ export function IntroAnimation() {
 
     const t1 = setTimeout(() => setPhase("show"),  40)
     const t2 = setTimeout(() => setPhase("exit"),  1060)
-    // Last sheet (i=3) starts flying at delay 225 ms, flight lasts 500 ms → done ~850 ms after exit
-    const t3 = setTimeout(() => setPhase("done"),  1060 + 950)
+    // Last sheet (i=7) starts flying at delay 7*55=385 ms, flight 500 ms → done ~950 ms after exit
+    const t3 = setTimeout(() => setPhase("done"),  1060 + 1050)
 
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3) }
   }, [])
@@ -65,7 +65,7 @@ export function IntroAnimation() {
       sheets.forEach((el, i) => {
         if (!el) return
         el.style.animation       = "none"
-        el.style.transitionDelay = `${i * 80}ms`
+        el.style.transitionDelay = `${i * 55}ms`
         el.style.transition      = [
           "transform 0.50s cubic-bezier(0.22, 1, 0.36, 1)",
           "opacity   0.36s ease",

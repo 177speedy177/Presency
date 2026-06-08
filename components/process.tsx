@@ -10,13 +10,13 @@ const steps = [
   },
   {
     num: "02",
-    title: "We build or connect",
-    desc: "For websites, we design and deliver in 2 weeks. For the Online Presence Plan, we connect to your Google Business Profile securely. You authorize in two clicks, no password or tech knowledge needed.",
+    title: "We get everything live",
+    desc: "For websites, we design and deliver in 2 weeks. For Lead Recovery, your system goes live in minutes using your existing phone number. No new equipment, no app downloads.",
   },
   {
     num: "03",
-    title: "Your online presence works for you",
-    desc: "A website that converts. Reviews that get answered in minutes. Monthly reports so you can see exactly what's improving.",
+    title: "Every lead gets followed up",
+    desc: "Missed calls get instant texts. Conversations move toward bookings. Review requests go out after jobs. You see every result in a monthly report.",
   },
 ]
 
@@ -73,7 +73,7 @@ export function Process() {
         </RevealDiv>
 
         <div className="relative grid md:grid-cols-3 gap-8 lg:gap-12">
-          {/* Connecting line: spans from center of col-1 to center of col-3 */}
+          {/* Connecting line */}
           <div
             ref={lineRef}
             className="hidden md:block absolute pointer-events-none"
@@ -90,7 +90,6 @@ export function Process() {
 
           {steps.map((step, i) => (
             <RevealDiv key={step.num} delay={i * 150} className="relative text-center">
-              {/* Step number */}
               <div className="mb-5 relative">
                 <span
                   className="font-display leading-none block"
@@ -103,7 +102,6 @@ export function Process() {
                 >
                   {step.num}
                 </span>
-                {/* Gold dot */}
                 <div
                   className="mx-auto w-3 h-3 rounded-full -mt-3 relative z-10"
                   style={{
@@ -146,7 +144,7 @@ export function Process() {
               className="font-body text-sm"
               style={{ color: "var(--text-secondary)" }}
             >
-              Websites delivered in 2 weeks · Online Presence Plan live in 10 minutes
+              Websites delivered in 2 weeks · Lead Recovery live in minutes
             </span>
           </div>
         </RevealDiv>
