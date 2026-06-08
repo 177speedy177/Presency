@@ -206,6 +206,7 @@ function AuditCard() {
   )
 }
 
+
 // ── Main Hero ─────────────────────────────────────────────────────────────────
 export function Hero() {
   const [activeCard, setActiveCard] = useState(0)
@@ -249,24 +250,24 @@ export function Hero() {
 
             <h1
               className="font-display hero-item"
-              style={{ fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 300, color: "#7a5c10", lineHeight: 1.1, letterSpacing: "-0.025em", marginBottom: "1.1rem", animationDelay: "70ms" }}
+              style={{ fontSize: "clamp(2rem,5vw,4rem)", fontWeight: 300, color: "#7a5c10", lineHeight: 1.1, letterSpacing: "-0.025em", marginBottom: "1.1rem", animationDelay: "70ms" }}
             >
               Make your local business<br />
               look like the obvious choice
             </h1>
 
             <p
-              className="font-body hero-item"
+              className="hidden lg:block font-body hero-item"
               style={{ fontSize: "clamp(0.92rem,1.6vw,1.05rem)", fontStyle: "italic", color: "rgba(13,12,10,0.46)", marginBottom: "0.85rem", lineHeight: 1.55, animationDelay: "140ms" }}
             >
               Before customers call, book, or visit, they judge what they see.
             </p>
 
             {/* Thin separator */}
-            <div className="hero-item" style={{ height: "1px", background: "rgba(13,12,10,0.10)", maxWidth: "460px", marginBottom: "0.85rem", animationDelay: "175ms" }} />
+            <div className="hidden lg:block hero-item" style={{ height: "1px", background: "rgba(13,12,10,0.10)", maxWidth: "460px", marginBottom: "0.85rem", animationDelay: "175ms" }} />
 
             <p
-              className="font-body hero-item"
+              className="hidden lg:block font-body hero-item"
               style={{ fontSize: "clamp(0.92rem,1.6vw,1rem)", color: "rgba(13,12,10,0.50)", marginBottom: "2.5rem", lineHeight: 1.7, maxWidth: "460px", animationDelay: "210ms" }}
             >
               Presency redesigns outdated websites and makes sure every missed call gets an instant follow-up, so Philly customers find you, trust you, and book with you.
@@ -275,7 +276,7 @@ export function Hero() {
             <div className="hero-item flex flex-wrap gap-3 items-center" style={{ marginBottom: "1.5rem", animationDelay: "280ms" }}>
               <Link
                 href="/free-audit"
-                className="font-body font-medium inline-block px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
+                className="font-body font-medium block lg:inline-block text-center px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer w-full lg:w-auto"
                 style={{ background: "var(--gold)", color: "#0d0c0a", fontSize: "0.95rem" }}
                 onMouseEnter={e => { e.currentTarget.style.background = "#d4b05a"; e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.32)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none" }}
@@ -284,7 +285,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/#services"
-                className="font-body font-medium inline-block px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
+                className="hidden lg:inline-block font-body font-medium px-5 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "transparent", color: "var(--ink)", fontSize: "0.95rem", border: "1px solid rgba(13,12,10,0.18)" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.38)"; e.currentTarget.style.background = "rgba(13,12,10,0.04)" }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(13,12,10,0.18)"; e.currentTarget.style.background = "transparent" }}
@@ -294,7 +295,7 @@ export function Hero() {
             </div>
 
             <p
-              className="font-mono-label hero-item"
+              className="font-mono-label hero-item text-center lg:text-left"
               style={{ fontSize: "0.64rem", letterSpacing: "0.09em", color: "rgba(13,12,10,0.30)", lineHeight: 1.6, animationDelay: "350ms" }}
             >
               WEBSITE REDESIGNS&nbsp;&nbsp;·&nbsp;&nbsp;LEAD RECOVERY&nbsp;&nbsp;·&nbsp;&nbsp;NO CONTRACTS
