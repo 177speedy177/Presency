@@ -52,7 +52,8 @@ export function ScrollProgress() {
         transform: "scaleX(0)",
         transformOrigin: "left center",
         background: "linear-gradient(90deg, #c9a84c, #f5dfa0 50%, #c9a84c)",
-        boxShadow: "0 0 8px rgba(201,168,76,0.55)",
+        filter: "drop-shadow(0 0 3px rgba(201,168,76,0.6))",
+        willChange: "transform",
       }}
     />
   )
