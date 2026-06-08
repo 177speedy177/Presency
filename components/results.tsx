@@ -146,7 +146,7 @@ export function Results() {
           >
             <WordReveal segments={[
               { text: "The numbers behind" },
-              { text: "why this matters.", italic: true, color: "var(--gold)", fontWeight: 400 },
+              { text: "why it matters.", italic: true, color: "var(--gold)", fontWeight: 400 },
             ]} />
           </h2>
           <p
