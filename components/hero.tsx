@@ -15,6 +15,11 @@ function SMSCard() {
         fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
       }}
     >
+      {/* Badge */}
+      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)", marginBottom: "10px" }}>
+        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>LEAD RECOVERY</span>
+      </div>
+
       {/* Phone header */}
       <div style={{ background: "#f7f4ef", borderRadius: "12px", padding: "8px 10px", marginBottom: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
         <div style={{ width: "26px", height: "26px", borderRadius: "50%", background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -57,16 +62,11 @@ function SMSCard() {
       </div>
 
       {/* Result strip */}
-      <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "10px", padding: "5px 8px", background: "rgba(30,140,74,0.07)", borderRadius: "8px", border: "1px solid rgba(30,140,74,0.15)" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "5px", padding: "5px 8px", background: "rgba(30,140,74,0.07)", borderRadius: "8px", border: "1px solid rgba(30,140,74,0.15)" }}>
         <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
           <path d="M2 6l3 3 5-5" stroke="#1e8c4a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <span style={{ fontSize: "9px", fontWeight: 600, color: "#1e8c4a" }}>Booked in 3 minutes</span>
-      </div>
-
-      {/* Badge */}
-      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)" }}>
-        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>LEAD RECOVERY</span>
       </div>
     </div>
   )
@@ -85,6 +85,11 @@ function WebsiteCard() {
         fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
       }}
     >
+      {/* Badge */}
+      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)", marginBottom: "10px" }}>
+        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>WEBSITE REDESIGN</span>
+      </div>
+
       {/* Mini website preview — inset, rounded corners */}
       <div style={{ borderRadius: "14px", overflow: "hidden", marginBottom: "10px" }}>
 
@@ -124,10 +129,6 @@ function WebsiteCard() {
         </div>
       </div>
 
-      {/* Golden bubble badge */}
-      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)" }}>
-        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>WEBSITE REDESIGN</span>
-      </div>
     </div>
   )
 }
@@ -157,6 +158,11 @@ function AuditCard() {
         fontFamily: "var(--font-dm-sans), system-ui, sans-serif",
       }}
     >
+      {/* Badge */}
+      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)", marginBottom: "12px" }}>
+        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>FREE AUDIT</span>
+      </div>
+
       {/* Score header */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
         <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "rgba(201,168,76,0.10)", border: "2px solid rgba(201,168,76,0.45)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -198,10 +204,6 @@ function AuditCard() {
         ))}
       </div>
 
-      {/* Badge */}
-      <div style={{ display: "inline-flex", alignItems: "center", padding: "3px 9px", borderRadius: "999px", background: "rgba(201,168,76,0.11)", border: "1px solid rgba(201,168,76,0.28)" }}>
-        <span style={{ fontSize: "8px", letterSpacing: "0.08em", fontWeight: 600, color: "#7a5c10" }}>FREE AUDIT</span>
-      </div>
     </div>
   )
 }
