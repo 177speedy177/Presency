@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
+import { IntroAnimation } from "@/components/ui/intro-animation"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -204,6 +205,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
+        <IntroAnimation />
         <ScrollProgress />
         {children}
       </body>

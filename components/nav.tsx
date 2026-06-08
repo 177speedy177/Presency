@@ -66,6 +66,7 @@ export function Nav() {
             onClick={() => setMenuOpen(false)}
           >
             <span
+              data-nav-logo
               className="font-display leading-none"
               style={{
                 fontWeight: 400,
