@@ -73,6 +73,7 @@ export default function WelcomePage() {
                 src="/welcome-video.mp4"
                 controls
                 playsInline
+                controlsList="nofullscreen"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
             </div>
