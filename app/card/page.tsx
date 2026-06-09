@@ -47,9 +47,7 @@ export default function WelcomePage() {
               className="font-body text-base leading-relaxed"
               style={{ color: "var(--text-secondary)", maxWidth: "480px", margin: "0 auto" }}
             >
-              My worst nightmare as a stutterer is being on camera. The fact that this video
-              exists means I genuinely believe Presency is worth 4 minutes of your time.
-              You&apos;re welcome, and I&apos;m sorry in advance.
+              As a person who stutters, this video was a nightmare to make. Very raw; enjoy!
             </p>
           </div>
         </section>
