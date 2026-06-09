@@ -112,20 +112,15 @@ function WebsiteCard() {
 
         {/* Fake content section below — on-brand cream/gold palette */}
         <div style={{ background: "#f7f4ec", padding: "12px 14px" }}>
-          {/* Fake section title */}
-          <div style={{ height: "7px", width: "45%", background: "rgba(122,92,16,0.22)", borderRadius: "4px", marginBottom: "10px" }} />
-          {/* Fake text lines */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-            <div style={{ height: "5px", width: "100%", background: "rgba(122,92,16,0.10)", borderRadius: "3px" }} />
-            <div style={{ height: "5px", width: "88%", background: "rgba(122,92,16,0.10)", borderRadius: "3px" }} />
-            <div style={{ height: "5px", width: "74%", background: "rgba(122,92,16,0.10)", borderRadius: "3px" }} />
-          </div>
-          {/* Fake service blocks */}
-          <div style={{ display: "flex", gap: "5px", marginTop: "10px" }}>
-            {[0, 1, 2].map(i => (
-              <div key={i} style={{ flex: 1, height: "22px", borderRadius: "6px", background: "rgba(201,168,76,0.10)", border: "1px solid rgba(201,168,76,0.20)" }} />
-            ))}
-          </div>
+          {/* Fake section title bar */}
+          <div style={{ height: "6px", width: "40%", background: "rgba(122,92,16,0.22)", borderRadius: "4px", marginBottom: "10px" }} />
+          {/* Checklist items */}
+          {["Custom design", "Fast on any device", "SEO-ready structure", "Built to convert"].map(item => (
+            <div key={item} style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
+              <span style={{ fontSize: "8px", color: "#c9a84c", fontWeight: 700, flexShrink: 0 }}>✓</span>
+              <span style={{ fontSize: "9px", color: "rgba(13,12,10,0.55)", fontFamily: "var(--font-dm-sans), sans-serif" }}>{item}</span>
+            </div>
+          ))}
         </div>
       </div>
 
