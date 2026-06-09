@@ -67,7 +67,7 @@ export function Nav() {
           >
             <span
               data-nav-logo
-              className="font-display leading-none"
+              className="font-display"
               style={{
                 fontWeight: 400,
                 fontSize: "1.55rem",
@@ -77,6 +77,7 @@ export function Nav() {
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
                 filter: "drop-shadow(0 0 10px rgba(201,168,76,0.28))",
+                paddingBottom: "3px",
               }}
             >
               Presency

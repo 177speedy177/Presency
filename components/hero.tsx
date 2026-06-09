@@ -101,7 +101,7 @@ function WebsiteCard() {
           {/* Grain */}
           <div style={{ position: "absolute", inset: 0, opacity: 0.15, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")`, backgroundSize: "120px 120px" }} />
           {/* Wordmark */}
-          <span className="mini-text-shimmer" style={{ position: "relative", fontFamily: "var(--font-fraunces), serif", fontWeight: 300, fontSize: "22px", letterSpacing: "-0.04em", lineHeight: 1, background: "linear-gradient(105deg, #c9a84c 0%, #f5dfa0 22%, #fff8e7 38%, #e8c96d 52%, #c9a84c 65%, #f0dfa0 82%, #b8922e 100%)", backgroundSize: "300% auto", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", marginBottom: "5px" }}>
+          <span className="mini-text-shimmer" style={{ position: "relative", fontFamily: "var(--font-fraunces), serif", fontWeight: 300, fontSize: "22px", letterSpacing: "-0.04em", lineHeight: 1, background: "linear-gradient(105deg, #c9a84c 0%, #f5dfa0 22%, #fff8e7 38%, #e8c96d 52%, #c9a84c 65%, #f0dfa0 82%, #b8922e 100%)", backgroundSize: "300% auto", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", paddingBottom: "3px", marginBottom: "5px" }}>
             Presency
           </span>
           {/* Sub-header */}
