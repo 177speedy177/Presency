@@ -30,18 +30,18 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Presency | Patient-Capture System for Dental Practices in Philadelphia",
+  title: "Presency | Patient-Capture System for Dental Practices",
   description:
-    "Presency makes sure every missed call, after-hours call, and web inquiry to your dental practice gets an instant follow-up, so the patients you already paid to attract actually book. Built for independent practices in Philadelphia.",
+    "Presency makes sure every missed call, after-hours call, and web inquiry to your dental practice gets an instant follow-up, so the patients you already paid to attract actually book. Built for independent practices.",
   keywords: [
-    "dental patient capture philadelphia",
+    "dental patient capture",
     "missed call follow-up dental practice",
     "dental practice lead recovery",
     "after hours dental follow-up",
     "dental appointment follow-up system",
-    "independent dental practice marketing philadelphia",
+    "independent dental practice marketing",
     "dental missed call text back",
-    "patient capture system philadelphia",
+    "patient capture system for dental practices",
   ],
   alternates: {
     canonical: "https://getpresency.com",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "https://getpresency.com/presency-og.png",
         width: 1200,
         height: 630,
-        alt: "Presency: Patient-capture systems for independent dental practices in Philadelphia",
+        alt: "Presency: Patient-capture systems for independent dental practices",
       },
     ],
   },
@@ -76,7 +76,7 @@ const webSiteSchema = {
   name: "Presency",
   url: "https://getpresency.com",
   description:
-    "Patient-capture systems for independent dental practices in Philadelphia.",
+    "Patient-capture systems for independent dental practices nationwide.",
 }
 
 const localBusinessSchema = {
@@ -84,19 +84,17 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "Presency",
   description:
-    "Patient-capture systems for independent dental practices in Philadelphia. Instant follow-up on missed calls, after-hours calls, and web inquiries.",
+    "Patient-capture systems for independent dental practices nationwide. Instant follow-up on missed calls, after-hours calls, and web inquiries.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Philadelphia",
-    addressRegion: "PA",
     addressCountry: "US",
   },
   areaServed: {
-    "@type": "City",
-    name: "Philadelphia",
+    "@type": "Country",
+    name: "United States",
   },
 }
 

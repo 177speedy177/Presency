@@ -237,7 +237,7 @@ export default function FreeAuditPage() {
                             id="city"
                             name="city"
                             type="text"
-                            placeholder="Center City, Philadelphia"
+                            placeholder="City, State"
                             className={INPUT_CLS}
                             style={inputStyle}
                             onFocus={onFocus}

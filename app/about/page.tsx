@@ -44,15 +44,15 @@ export default function AboutPage() {
                   className="font-display mb-6 leading-tight"
                   style={{ fontSize: "clamp(2.4rem,5vw,3.8rem)", fontWeight: 300, color: "var(--text-primary)" }}
                 >
-                  Philly-built.{" "}
+                  Founder-built.{" "}
                   <em className="font-display" style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                    For Philly practices.
+                    For independent practices.
                   </em>
                 </h1>
 
                 <div className="space-y-5 font-body text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
                   <p>
-                    I study Biomedical Engineering at Penn State, where I spend my time learning how high-performing systems are designed, measured, and improved. Exploring the operational side of healthcare, I kept seeing the same failure in my home city: great independent practices losing patients to bigger groups, not because the clinical care was worse, but because the phone went to voicemail or the web form sat unanswered for a day.
+                    I study Biomedical Engineering at Penn State, where I spend my time learning how high-performing systems are designed, measured, and improved. Exploring the operational side of healthcare, I kept seeing the same failure everywhere I looked: great independent practices losing patients to bigger groups, not because the clinical care was worse, but because the phone went to voicemail or the web form sat unanswered for a day.
                   </p>
                   <p>
                     I built Presency specifically for independent dental practices that do excellent work and should not be losing new patients to a process failure. The dentist your family loves, the practice that has been on that block for decades. They deserve the same capture capability that the large groups have.
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
-                  {["Philadelphia-based", "BAA included", "Direct founder access"].map((t) => (
+                  {["Serving practices nationwide", "BAA included", "Direct founder access"].map((t) => (
                     <div key={t} className="flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <circle cx="7" cy="7" r="6.5" stroke="#c9a84c" strokeOpacity="0.5" />

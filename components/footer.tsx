@@ -35,7 +35,7 @@ export function Footer() {
             <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
               Patient-capture systems for independent
               <br />
-              dental practices in Philadelphia.
+              dental practices nationwide.
             </p>
           </div>
 
@@ -103,10 +103,10 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(201,168,76,0.06)" }}
         >
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)" }}>
-            &copy; {new Date().getFullYear()} Presency. Made in Philadelphia, PA.
+            &copy; {new Date().getFullYear()} Presency. All rights reserved.
           </p>
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)", opacity: 0.6 }}>
-            Independent dental practices &nbsp;·&nbsp; Philadelphia
+            Independent dental practices &nbsp;·&nbsp; Nationwide
           </p>
         </div>
       </div>

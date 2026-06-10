@@ -21,7 +21,7 @@ export default function WelcomePage() {
           <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 pt-28 pb-10 text-center">
             <p
               className="font-mono-label mb-5"
-              style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}
+              style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.14em" }}
             >
               WELCOME
             </p>
@@ -96,7 +96,7 @@ export default function WelcomePage() {
           >
             <p
               className="font-mono-label mb-4"
-              style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}
+              style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.14em" }}
             >
               READY TO START?
             </p>
@@ -109,16 +109,16 @@ export default function WelcomePage() {
                 color: "var(--text-primary)",
               }}
             >
-              See exactly where your business stands online.
+              See exactly where your practice is losing patients.
             </h2>
 
             <p
               className="font-body text-sm leading-relaxed mb-8"
               style={{ color: "var(--text-secondary)" }}
             >
-              We&apos;ll audit your website, your missed call situation, and your local presence
-              for free. No pitch, no pressure. Just an honest look at what&apos;s working and
-              what&apos;s costing you customers.
+              The free Patient Capture Audit maps your missed-call exposure, after-hours gaps,
+              web inquiry response, and review presence. No pitch, no pressure. Just an honest
+              look at what&apos;s working and what&apos;s costing you patients.
             </p>
 
             <Link
@@ -143,7 +143,7 @@ export default function WelcomePage() {
               className="font-mono-label mt-5"
               style={{ fontSize: "9px", color: "rgba(201,168,76,0.4)", letterSpacing: "0.1em" }}
             >
-              FREE · NO CREDIT CARD · NO CONTRACTS
+              FREE · NO CREDIT CARD · NO COMMITMENT
             </p>
           </div>
         </section>

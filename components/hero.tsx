@@ -189,7 +189,7 @@ export function Hero() {
               className="font-mono-label hero-item"
               style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10", marginBottom: "1.5rem", animationDelay: "0ms" }}
             >
-              FOR INDEPENDENT DENTAL PRACTICES · PHILADELPHIA
+              FOR INDEPENDENT DENTAL PRACTICES · NATIONWIDE
             </p>
 
             <h1
