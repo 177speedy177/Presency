@@ -37,7 +37,7 @@ export default function AboutPage() {
 
               {/* Left: Text */}
               <div className="max-w-xl">
-                <p className="font-mono-label mb-5" style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}>
+                <p className="font-mono-label mb-5" style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.14em" }}>
                   FROM THE FOUNDER
                 </p>
                 <h1
@@ -99,7 +99,7 @@ export default function AboutPage() {
         {/* What we believe */}
         <section className="py-20 relative" data-theme="light" style={{ background: "var(--ink)" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <p className="font-mono-label mb-12" style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}>
+            <p className="font-mono-label mb-12" style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.14em" }}>
               HOW WE THINK ABOUT THIS
             </p>
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
         {/* CTA */}
         <section className="py-20" data-theme="light" style={{ background: "var(--ink)" }}>
           <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
-            <p className="font-mono-label mb-6" style={{ fontSize: "10px", color: "var(--gold)", letterSpacing: "0.14em" }}>
+            <p className="font-mono-label mb-6" style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.14em" }}>
               READY TO START
             </p>
             <h2 className="font-display text-3xl mb-5" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="font-body font-medium text-sm px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "var(--gold)", color: "#0d0c0a" }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "#d4b05a" }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "#b8922e" }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
               >
                 Book a free 30-min audit

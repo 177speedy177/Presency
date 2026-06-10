@@ -126,7 +126,7 @@ export default function WelcomePage() {
               className="font-body font-medium inline-block px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
               style={{ background: "var(--gold)", color: "#0d0c0a", fontSize: "0.95rem" }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "#d4b05a"
+                e.currentTarget.style.background = "#b8922e"
                 e.currentTarget.style.transform = "translateY(-1px)"
                 e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
               }}

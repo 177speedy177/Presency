@@ -1,16 +1,20 @@
 "use client"
+import { useState } from "react"
 import Image from "next/image"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 
 export function FounderNote() {
+  const [expanded, setExpanded] = useState(false)
   return (
     <section
       id="founder"
       data-theme="light"
-      className="section-pad"
+      className="section-pad relative overflow-hidden"
       style={{ background: "#faf7f2" }}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <ToothPattern variant={2} />
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: Text */}
@@ -21,7 +25,7 @@ export function FounderNote() {
 
             <h2
               className="font-display mb-5 leading-tight"
-              style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 300, color: "#1c1810" }}
+              style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
               Built because good care deserves better systems.
             </h2>
@@ -30,15 +34,39 @@ export function FounderNote() {
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
                 As a Biomedical Engineering student at Penn State, I've spent years learning how high-performing systems are designed, measured, and improved. While exploring the operational side of healthcare, I kept noticing the same issue: exceptional practices losing opportunities not because of the care they provide, but because inquiries weren't being captured or followed up with consistently.
               </p>
-              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
+              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
                 A missed call. A delayed response. A prospective patient choosing another office.
               </p>
-              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
+              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
                 Presency exists to help solve that gap. We build practical, reliable follow-up systems that help independent practices respond faster, stay organized, and create a better experience from the very first interaction.
               </p>
-              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
+              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
                 When you work with Presency, you work directly with me, the founder. The goal isn't to sell another marketing service. It's to build systems that support the quality of care your practice already provides.
               </p>
+              <button
+                onClick={() => setExpanded(e => !e)}
+                aria-expanded={expanded}
+                className="sm:hidden font-mono-label cursor-pointer self-center"
+                style={{
+                  fontSize: "10px",
+                  letterSpacing: "0.13em",
+                  color: "#7a5c10",
+                  background: "transparent",
+                  border: "none",
+                  padding: "4px 8px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+              >
+                {expanded ? "READ LESS" : "READ MORE"}
+                <svg
+                  width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"
+                  style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+                >
+                  <path d="M2 4l4 4 4-4" stroke="#7a5c10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
 
             <div className="flex items-center gap-2 mt-6">

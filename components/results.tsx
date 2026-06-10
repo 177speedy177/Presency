@@ -1,5 +1,45 @@
 "use client"
+import { useEffect, useRef, useState } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
+
+// Counts up from 0 to the numeric part of `value` when scrolled into view.
+// "85%" -> animates 0..85 with "%" suffix; "7x" -> 0..7 with "x" suffix.
+function CountUp({ value }: { value: string }) {
+  const match = value.match(/^(\d+)(.*)$/)
+  const target = match ? Number(match[1]) : 0
+  const suffix = match ? match[2] : value
+  const ref = useRef<HTMLSpanElement>(null)
+  const [display, setDisplay] = useState(target)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    setDisplay(0)
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || started.current) return
+        started.current = true
+        io.disconnect()
+        const t0 = performance.now()
+        const dur = 1400
+        const tick = (now: number) => {
+          const p = Math.min((now - t0) / dur, 1)
+          const eased = 1 - Math.pow(1 - p, 3)
+          setDisplay(Math.round(eased * target))
+          if (p < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.6 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [target])
+
+  return <span ref={ref}>{display}{suffix}</span>
+}
 
 const stats = [
   {
@@ -27,14 +67,14 @@ function StatBlock({ num, label, source, sourceHref, last }: {
 }) {
   return (
     <div
-      className="flex gap-6 lg:gap-8 items-start py-7"
+      className="flex gap-4 sm:gap-6 lg:gap-8 items-start py-5 sm:py-7"
       style={{ borderBottom: last ? "none" : "1px solid rgba(28,24,16,0.1)" }}
     >
       <div
-        className="font-display leading-none shrink-0"
-        style={{ fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)", fontWeight: 300, color: "#1c1810", letterSpacing: "-0.03em", minWidth: "140px" }}
+        className="font-display leading-none shrink-0 min-w-[84px] sm:min-w-[140px]"
+        style={{ fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)", fontWeight: 300, color: "#1c1810", letterSpacing: "-0.03em" }}
       >
-        {num}
+        <CountUp value={num} />
       </div>
       <div className="pt-1">
         <p className="font-body text-sm leading-relaxed mb-3" style={{ color: "rgba(28,24,16,0.65)" }}>
@@ -64,6 +104,7 @@ export function Problem() {
       className="section-pad relative overflow-hidden"
       style={{ background: "#f7f4ef" }}
     >
+      <ToothPattern variant={3} />
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 

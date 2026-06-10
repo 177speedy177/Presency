@@ -1,4 +1,4 @@
-import Link from "next/link"
+﻿import Link from "next/link"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 
@@ -56,9 +56,9 @@ export default function PrivacyPage() {
             style={{
               fontFamily: "var(--font-jetbrains), monospace",
               fontSize: "11px",
-              color: "var(--gold)",
+              color: "#7a5c10",
               textTransform: "uppercase",
-              letterSpacing: "0.15em",
+              letterSpacing: "0.14em",
               marginBottom: "1.25rem",
             }}
           >
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
                 textDecoration: "none",
               }}
             >
-              ← Back to home
+              â† Back to home
             </Link>
           </div>
         </div>

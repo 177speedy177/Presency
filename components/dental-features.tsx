@@ -1,5 +1,6 @@
 "use client"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 import { SITE_CONFIG } from "@/lib/content"
 
 const features = [
@@ -43,6 +44,7 @@ export function DentalFeatures() {
     >
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 55% 50% at 8% 100%, rgba(201,168,76,0.07) 0%, transparent 55%)" }} />
+        <ToothPattern variant={0} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -55,14 +57,14 @@ export function DentalFeatures() {
             </p>
             <h2
               className="font-display mb-6 leading-tight"
-              style={{ fontSize: "clamp(1.75rem,3.5vw,2.75rem)", fontWeight: 300, color: "#1c1810" }}
+              style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
               Fits your practice{" "}
               <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
                 as it already runs.
               </em>
             </h2>
-            <p className="font-body text-base leading-relaxed mb-10" style={{ color: "rgba(28,24,16,0.62)" }}>
+            <p className="font-body text-base leading-relaxed mb-10" style={{ color: "rgba(28,24,16,0.65)" }}>
               Independent dental practices have existing workflows, existing software, and staff who are already stretched. This system is designed to add capability without adding complexity.
             </p>
 
@@ -91,7 +93,7 @@ export function DentalFeatures() {
                       ? "Built on HIPAA-compliant infrastructure. Business Associate Agreement provided to every practice."
                       : "Built around HIPAA requirements."}
                   </p>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.62)" }}>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
                     {SITE_CONFIG.COMPLIANCE_LIVE
                       ? "The system operates on HIPAA-compliant infrastructure. A signed Business Associate Agreement is included with every engagement. No patient health information travels through automated messages. Anything involving clinical details is handled by your front desk."
                       : "The system is designed to keep patient health information out of automated messages. Every workflow is built around this principle. Practices handling protected health information should confirm compliance requirements with their own counsel."}
@@ -118,7 +120,7 @@ export function DentalFeatures() {
                   <p className="font-body text-sm font-semibold mb-1" style={{ color: "#1c1810" }}>
                     {f.title}
                   </p>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.62)" }}>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
                     {f.body}
                   </p>
                 </div>

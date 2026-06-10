@@ -1,5 +1,6 @@
 "use client"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 import { PLANS, PRICING, SITE_CONFIG } from "@/lib/content"
 
 const CheckIcon = () => (
@@ -13,10 +14,11 @@ export function Plans() {
     <section
       id="plans"
       data-theme="light"
-      className="section-pad"
+      className="section-pad relative overflow-hidden"
       style={{ background: "#faf7f2" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <ToothPattern variant={1} />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
           <p className="font-mono-label mb-4" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
             PLANS
@@ -27,7 +29,7 @@ export function Plans() {
           >
             Two plans. One goal.
           </h2>
-          <p className="font-body text-base max-w-lg mx-auto" style={{ color: "rgba(28,24,16,0.62)" }}>
+          <p className="font-body text-base max-w-lg mx-auto" style={{ color: "rgba(28,24,16,0.65)" }}>
             Both start with a free Patient Capture Audit so you know exactly what you are getting before anything is set up.
           </p>
         </RevealDiv>
@@ -43,7 +45,7 @@ export function Plans() {
               <RevealDiv
                 key={plan.id}
                 delay={i * 120}
-                className="relative flex flex-col rounded-2xl p-8"
+                className={`relative flex flex-col rounded-2xl p-8${isFeatured ? " glow-breathe" : ""}`}
                 style={{
                   background: isFeatured ? "#13110e" : "#ffffff",
                   border: isFeatured ? "1px solid rgba(201,168,76,0.55)" : "1px solid rgba(201,168,76,0.2)",
@@ -119,7 +121,7 @@ export function Plans() {
                   href="https://calendly.com/397jtc/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center font-body font-medium text-sm py-3 rounded-lg transition-all duration-200 cursor-pointer"
+                  className={`block text-center font-body font-medium text-sm py-3 rounded-lg transition-all duration-200 cursor-pointer${isFeatured ? " btn-shimmer" : ""}`}
                   style={
                     isFeatured
                       ? { background: "#c9a84c", color: "#0d0c0a" }

@@ -311,7 +311,7 @@ export default function ContactPage() {
                     style={{ background: "var(--gold)", color: "#0d0c0a" }}
                     onMouseEnter={(e) => {
                       if (!loading) {
-                        e.currentTarget.style.background = "#d4b05a"
+                        e.currentTarget.style.background = "#b8922e"
                         e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
                       }
                     }}

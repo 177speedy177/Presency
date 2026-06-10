@@ -8,6 +8,7 @@ export function SeePlansButton() {
   useEffect(() => {
     const plansEl = document.getElementById("plans")
     if (!plansEl) return
+    const firstSection = document.getElementById("what-we-do")
 
     let scrolledEnough = false
     let plansInView = false
@@ -15,14 +16,26 @@ export function SeePlansButton() {
     const update = () => setShow(scrolledEnough && !plansInView)
 
     const onScroll = () => {
-      scrolledEnough = window.scrollY > window.innerHeight * 0.4
       const rect = plansEl.getBoundingClientRect()
       setAbove(rect.top > window.innerHeight * 0.5)
-      update()
     }
-
     window.addEventListener("scroll", onScroll, { passive: true })
     onScroll()
+
+    // Appear only once the first section below the hero is scrolled past.
+    // The shrunken root (top 40% of the viewport) means "past" = the section's
+    // bottom has cleared the top 40% of the screen.
+    const passObs = firstSection
+      ? new IntersectionObserver(
+          ([entry]) => {
+            scrolledEnough =
+              !entry.isIntersecting && entry.boundingClientRect.bottom < window.innerHeight * 0.4
+            update()
+          },
+          { rootMargin: "0px 0px -60% 0px" }
+        )
+      : null
+    if (passObs && firstSection) passObs.observe(firstSection)
 
     const obs = new IntersectionObserver(
       ([entry]) => {
@@ -35,6 +48,7 @@ export function SeePlansButton() {
 
     return () => {
       window.removeEventListener("scroll", onScroll)
+      passObs?.disconnect()
       obs.disconnect()
     }
   }, [])

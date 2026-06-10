@@ -1,9 +1,41 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 
 function fmt(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })
+}
+
+// Tweens the displayed number toward the target whenever it changes
+function useAnimatedNumber(target: number) {
+  const [val, setVal] = useState(target)
+  const valRef = useRef(target)
+  const raf = useRef(0)
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      valRef.current = target
+      setVal(target)
+      return
+    }
+    const from = valRef.current
+    const t0 = performance.now()
+    const dur = 500
+    cancelAnimationFrame(raf.current)
+    const tick = (now: number) => {
+      const p = Math.min((now - t0) / dur, 1)
+      const eased = 1 - Math.pow(1 - p, 3)
+      const v = Math.round(from + (target - from) * eased)
+      valRef.current = v
+      setVal(v)
+      if (p < 1) raf.current = requestAnimationFrame(tick)
+    }
+    raf.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf.current)
+  }, [target])
+
+  return val
 }
 
 export function MissedCallCalculator() {
@@ -14,26 +46,29 @@ export function MissedCallCalculator() {
   const monthlyMissed = missedPerWeek * (52 / 12)
   const monthlyLost = Math.round(monthlyMissed * avgValue * 0.85)
   const annualLost = monthlyLost * 12
+  const displayMonthly = useAnimatedNumber(monthlyLost)
+  const displayAnnual = useAnimatedNumber(annualLost)
 
   return (
     <section
       id="calculator"
       data-theme="light"
-      className="section-pad"
+      className="section-pad relative overflow-hidden"
       style={{ background: "#f0ece3" }}
     >
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <ToothPattern variant={2} />
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-10">
           <p className="font-mono-label mb-4" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
             MISSED-CALL COST ESTIMATOR
           </p>
           <h2
             className="font-display"
-            style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", fontWeight: 300, color: "#1c1810", lineHeight: 1.2, marginBottom: "0.75rem" }}
+            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810", lineHeight: 1.2, marginBottom: "0.75rem" }}
           >
             See what your missed calls are worth.
           </h2>
-          <p className="font-body text-sm" style={{ color: "rgba(28,24,16,0.6)", maxWidth: "440px", margin: "0 auto" }}>
+          <p className="font-body text-sm" style={{ color: "rgba(28,24,16,0.65)", maxWidth: "440px", margin: "0 auto" }}>
             Adjust the numbers to match your practice. All estimates are calculated in your browser, no data is stored or sent.
           </p>
         </RevealDiv>
@@ -119,14 +154,14 @@ export function MissedCallCalculator() {
               <div className="flex items-center justify-center gap-10 flex-wrap">
                 <div>
                   <p className="font-display leading-none" style={{ fontSize: "clamp(2.5rem,5vw,3.5rem)", fontWeight: 300, color: "#c9a84c", letterSpacing: "-0.02em" }}>
-                    {fmt(monthlyLost)}
+                    {fmt(displayMonthly)}
                   </p>
                   <p className="font-body text-sm mt-1" style={{ color: "rgba(247,244,239,0.55)" }}>per month</p>
                 </div>
                 <div style={{ width: "1px", height: "48px", background: "rgba(201,168,76,0.2)", flexShrink: 0 }} />
                 <div>
                   <p className="font-display leading-none" style={{ fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 300, color: "rgba(201,168,76,0.7)", letterSpacing: "-0.02em" }}>
-                    {fmt(annualLost)}
+                    {fmt(displayAnnual)}
                   </p>
                   <p className="font-body text-sm mt-1" style={{ color: "rgba(247,244,239,0.45)" }}>per year</p>
                 </div>
@@ -141,7 +176,7 @@ export function MissedCallCalculator() {
                 href="https://calendly.com/397jtc/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body font-medium text-sm px-8 py-3.5 rounded-lg transition-all duration-200 cursor-pointer inline-block"
+                className="btn-shimmer font-body font-medium text-sm px-8 py-3.5 rounded-lg transition-all duration-200 cursor-pointer inline-block"
                 style={{ background: "#c9a84c", color: "#0d0c0a", boxShadow: "0 4px 18px rgba(201,168,76,0.28)" }}
                 onMouseEnter={e => { e.currentTarget.style.background = "#b8922e"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(201,168,76,0.38)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "#c9a84c"; e.currentTarget.style.boxShadow = "0 4px 18px rgba(201,168,76,0.28)" }}

@@ -205,7 +205,7 @@ export function Hero() {
               }}
             >
               Every missed call is a patient walking into{" "}
-              <em style={{ fontStyle: "italic", fontWeight: 400, color: "#7a5c10" }}>
+              <em className="gold-text-sheen" style={{ fontStyle: "italic", fontWeight: 400, color: "#7a5c10" }}>
                 another office.
               </em>
             </h1>
@@ -234,7 +234,7 @@ export function Hero() {
                 href="https://calendly.com/397jtc/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body font-medium text-center px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
+                className="btn-shimmer font-body font-medium text-center px-7 py-3.5 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "#c9a84c", color: "#0d0c0a", fontSize: "0.95rem", boxShadow: "0 4px 20px rgba(201,168,76,0.3)" }}
                 onMouseEnter={e => { e.currentTarget.style.background = "#b8922e"; e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(201,168,76,0.38)" }}
                 onMouseLeave={e => { e.currentTarget.style.background = "#c9a84c"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(201,168,76,0.3)" }}

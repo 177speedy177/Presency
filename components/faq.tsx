@@ -1,5 +1,6 @@
 "use client"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 import {
   Accordion,
   AccordionContent,
@@ -13,10 +14,11 @@ export function FAQ() {
     <section
       id="faq"
       data-theme="light"
-      className="section-pad"
+      className="section-pad relative overflow-hidden"
       style={{ background: "#f7f4ef" }}
     >
-      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <ToothPattern variant={3} />
+      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
         <RevealDiv className="text-center mb-14">
           <p className="font-mono-label mb-4" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
             FAQ

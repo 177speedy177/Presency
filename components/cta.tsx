@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import { ToothPattern } from "@/components/ui/tooth-pattern"
 import { CONTACT } from "@/lib/content"
 
 export function AuditCTA() {
@@ -14,6 +15,7 @@ export function AuditCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 60%)" }}
       />
+      <ToothPattern variant={1} />
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-8 text-center">
         <RevealDiv>
@@ -28,14 +30,14 @@ export function AuditCTA() {
             style={{ fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 300, color: "#1c1810", lineHeight: 1.1 }}
           >
             Find out where your practice is{" "}
-            <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
+            <em className="gold-text-sheen" style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
               losing patients.
             </em>
           </h2>
         </RevealDiv>
 
         <RevealDiv delay={160}>
-          <p className="font-body text-base mb-8" style={{ color: "rgba(28,24,16,0.62)" }}>
+          <p className="font-body text-base mb-8" style={{ color: "rgba(28,24,16,0.65)" }}>
             The Patient Capture Audit maps every place a new-patient opportunity could be slipping through. Missed calls, after-hours gaps, web inquiry response time, review presence. You get a clear picture in a 30-minute call.
           </p>
         </RevealDiv>
@@ -46,7 +48,7 @@ export function AuditCTA() {
               href={CONTACT.calendly}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body font-medium text-sm px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
+              className="btn-shimmer font-body font-medium text-sm px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
               style={{ background: "#c9a84c", color: "#0d0c0a" }}
               onMouseEnter={e => { e.currentTarget.style.background = "#b8922e"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)" }}
               onMouseLeave={e => { e.currentTarget.style.background = "#c9a84c"; e.currentTarget.style.boxShadow = "none" }}

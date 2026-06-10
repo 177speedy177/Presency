@@ -293,7 +293,7 @@ export default function FreeAuditPage() {
                         disabled={loading}
                         className="font-body font-medium text-sm py-4 rounded-lg transition-all duration-200 cursor-pointer mt-1"
                         style={{ background: "var(--gold)", color: "#0d0c0a" }}
-                        onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.background = "#d4b05a"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)" } }}
+                        onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.background = "#b8922e"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)" } }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.boxShadow = "none" }}
                       >
                         {loading ? "Sending..." : "Request my free Patient Capture Audit"}

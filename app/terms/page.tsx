@@ -56,9 +56,9 @@ export default function TermsPage() {
             style={{
               fontFamily: "var(--font-jetbrains), monospace",
               fontSize: "11px",
-              color: "var(--gold)",
+              color: "#7a5c10",
               textTransform: "uppercase",
-              letterSpacing: "0.15em",
+              letterSpacing: "0.14em",
               marginBottom: "1.25rem",
             }}
           >
