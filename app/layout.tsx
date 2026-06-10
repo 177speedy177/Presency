@@ -117,7 +117,7 @@ const faqSchema = {
       name: "Does the Presency patient-capture system work with our existing phone number?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. You keep your current number. The system works alongside it with no forwarding, no new phones, and no new apps for your staff.",
+        text: "Yes. Your practice number stays the same. We configure one simple call-handling setting so unanswered calls trigger the follow-up. No new phones and no new apps for your staff.",
       },
     },
     {

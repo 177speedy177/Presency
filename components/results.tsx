@@ -9,8 +9,8 @@ const stats = [
     sourceHref: "https://www.invoca.com/blog/missed-call-statistics/",
   },
   {
-    num: "5 min",
-    label: "is the window before a new-patient lead goes cold. Businesses that follow up within 5 minutes are 100 times more likely to make contact. After 30 minutes, the opportunity is effectively gone.",
+    num: "7x",
+    label: "more likely to have a meaningful conversation with a new lead when you respond within the first hour. Most practices take far longer, if they respond at all. Speed is the whole game.",
     source: "Harvard Business Review",
     sourceHref: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads",
   },
@@ -45,9 +45,9 @@ function StatBlock({ num, label, source, sourceHref, last }: {
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono-label transition-colors duration-200"
-          style={{ fontSize: "10px", letterSpacing: "0.1em", color: "rgba(28,24,16,0.38)" }}
+          style={{ fontSize: "10px", letterSpacing: "0.1em", color: "rgba(28,24,16,0.55)" }}
           onMouseEnter={e => { e.currentTarget.style.color = "#7a5c10" }}
-          onMouseLeave={e => { e.currentTarget.style.color = "rgba(28,24,16,0.38)" }}
+          onMouseLeave={e => { e.currentTarget.style.color = "rgba(28,24,16,0.55)" }}
         >
           SOURCE: {source.toUpperCase()} ↗
         </a>
@@ -70,7 +70,7 @@ export function Problem() {
           {/* Left: editorial copy */}
           <RevealDiv>
             <p className="font-mono-label mb-5" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
-              THE PROBLEM
+              WHY IT MATTERS
             </p>
             <h2
               className="font-display mb-6 leading-tight"

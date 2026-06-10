@@ -131,8 +131,8 @@ export function MissedCallCalculator() {
                   <p className="font-body text-sm mt-1" style={{ color: "rgba(247,244,239,0.45)" }}>per year</p>
                 </div>
               </div>
-              <p className="font-body text-xs mt-4" style={{ color: "rgba(247,244,239,0.35)" }}>
-                Based on 85% callback abandonment rate. Source: Invoca.
+              <p className="font-body text-xs mt-4" style={{ color: "rgba(247,244,239,0.6)" }}>
+                Based on 85% callback abandonment (Invoca). Assumes missed calls are new-patient inquiries. Your audit gives you the real number.
               </p>
             </div>
 
@@ -148,7 +148,7 @@ export function MissedCallCalculator() {
               >
                 Book a free Patient Capture Audit
               </a>
-              <p className="font-body text-xs mt-3" style={{ color: "rgba(28,24,16,0.4)" }}>
+              <p className="font-body text-xs mt-3" style={{ color: "rgba(28,24,16,0.55)" }}>
                 30 minutes. No commitment.
               </p>
             </div>

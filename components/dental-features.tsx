@@ -10,7 +10,7 @@ const features = [
       </svg>
     ),
     title: "Works with your existing phone number",
-    body: "No call forwarding, no new phone lines, no hardware. The system layers on top of your current number so your patients always see the same number they already have.",
+    body: "Your practice phone number stays the same. No new phone lines, no hardware. We handle the setup, and your patients see your practice number on every follow-up message.",
   },
   {
     icon: (
@@ -20,7 +20,7 @@ const features = [
       </svg>
     ),
     title: "Works alongside your practice software",
-    body: "Dentrix, Open Dental, Eaglesoft, or anything else. Because the system operates at the phone and web-form layer, it doesn't touch your PMS and requires no integration or IT work.",
+    body: "Dentrix, Open Dental, Eaglesoft, or anything else. Patient Capture operates at the phone and web-form layer, so it needs no integration or IT work. Growth campaigns run on a secure patient list export that you review and approve.",
   },
   {
     icon: (
@@ -88,7 +88,7 @@ export function DentalFeatures() {
                 <div>
                   <p className="font-body text-sm font-semibold mb-1" style={{ color: "#1c1810" }}>
                     {SITE_CONFIG.COMPLIANCE_LIVE
-                      ? "HIPAA-compliant. Business Associate Agreement provided to every practice."
+                      ? "Built on HIPAA-compliant infrastructure. Business Associate Agreement provided to every practice."
                       : "Built around HIPAA requirements."}
                   </p>
                   <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.62)" }}>

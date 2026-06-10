@@ -111,7 +111,7 @@ export default function FreeAuditPage() {
               </em>
             </h1>
             <p className="font-body text-lg leading-relaxed" style={{ color: "var(--text-secondary)", maxWidth: "520px" }}>
-              The Patient Capture Audit maps every gap in your new-patient follow-up: missed calls, after-hours coverage, web inquiry response, and review presence. You get a clear report back within 48 hours.
+              The Patient Capture Audit maps every gap in your new-patient follow-up: missed calls, after-hours coverage, web inquiry response, and review presence. You get a clear report back within 2 business days.
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export default function FreeAuditPage() {
                       Audit request received.
                     </p>
                     <p className="font-body text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
-                      We will review your practice and send your Patient Capture Audit back within 48 hours.
+                      We will review your practice and send your Patient Capture Audit back within 2 business days.
                     </p>
                     <Link href="/" className="font-body text-sm" style={{ color: "var(--gold)" }}>
                       Back to home →
@@ -190,7 +190,7 @@ export default function FreeAuditPage() {
                       Request your free audit
                     </p>
                     <p className="font-body text-sm mb-7" style={{ color: "var(--text-muted)" }}>
-                      Takes 60 seconds. Report back within 48 hours.
+                      Takes 60 seconds. Report back within 2 business days.
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -203,7 +203,7 @@ export default function FreeAuditPage() {
                           name="practiceName"
                           type="text"
                           required
-                          placeholder="Philadelphia Family Dental"
+                          placeholder="Your practice name"
                           className={INPUT_CLS}
                           style={inputStyle}
                           onFocus={onFocus}
@@ -300,7 +300,7 @@ export default function FreeAuditPage() {
                       </button>
                     </form>
 
-                    <p className="font-mono-label text-center mt-5" style={{ fontSize: "9px", color: "rgba(201,168,76,0.35)", letterSpacing: "0.1em" }}>
+                    <p className="font-mono-label text-center mt-5" style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.1em" }}>
                       DO NOT ENTER PATIENT NAMES OR HEALTH INFORMATION
                     </p>
                   </>

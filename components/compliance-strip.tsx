@@ -9,7 +9,7 @@ const badges = [
         <path d="M5 7l1.5 1.5L9 5.5" stroke="#c9a84c" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "HIPAA-Compliant",
+    label: "HIPAA-Compliant Infrastructure",
   },
   {
     icon: (

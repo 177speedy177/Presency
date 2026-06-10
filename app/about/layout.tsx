@@ -3,14 +3,14 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About | Presency",
   description:
-    "Meet Joey, the founder of Presency. A Philadelphia-built agency helping local businesses look as good online as they do in person.",
+    "Meet Joey, the founder of Presency. A Penn State Biomedical Engineering student building patient-capture systems for independent dental practices in Philadelphia.",
   alternates: {
     canonical: "https://getpresency.com/about",
   },
   openGraph: {
-    title: "About Presency | Built in Philadelphia for Local Businesses",
+    title: "About Presency | Patient Capture for Philadelphia Dental Practices",
     description:
-      "Meet the founder of Presency and learn why we started helping local Philadelphia businesses win online.",
+      "Why Presency exists: independent practices doing excellent work should not lose new patients to a missed call or an unanswered web form.",
     url: "https://getpresency.com/about",
   },
 }

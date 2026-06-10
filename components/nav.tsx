@@ -31,8 +31,8 @@ export function Nav() {
   }, [])
 
   const links = [
-    { href: "#plans", label: "Plans" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#plans", label: "Plans" },
+    { href: "/#faq", label: "FAQ" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ]
@@ -77,7 +77,7 @@ export function Nav() {
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => {
-              const isActive = l.href.startsWith("#") && l.href === `#${activeSection}`
+              const isActive = l.href.includes("#") && l.href === `/#${activeSection}`
               return (
                 <Link
                   key={l.href}

@@ -12,7 +12,7 @@ const beliefs = [
   },
   {
     title: "A missed call is not a small problem.",
-    body: "For a practice where a new patient is worth thousands of dollars over their lifetime, a missed call that books at a competing practice is a real loss. The problem is not that the practice does not care. It is that no system exists to catch the call when staff are occupied.",
+    body: "For a practice where a new patient is worth thousands of dollars over their lifetime, a missed call that books at a competing practice is a real loss. The problem is not that the practice does not care. It is that most practices have no system in place to catch the call when staff are occupied.",
   },
   {
     title: "Technology should work for your staff, not the other way around.",
@@ -52,7 +52,7 @@ export default function AboutPage() {
 
                 <div className="space-y-5 font-body text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
                   <p>
-                    Growing up in Philadelphia, I watched great independent practices lose patients to bigger groups with better follow-up systems. Not because the clinical care was worse. Because the phone went to voicemail, or the web form sat unanswered for a day, and the patient had already booked somewhere else.
+                    I study Biomedical Engineering at Penn State, where I spend my time learning how high-performing systems are designed, measured, and improved. Exploring the operational side of healthcare, I kept seeing the same failure in my home city: great independent practices losing patients to bigger groups, not because the clinical care was worse, but because the phone went to voicemail or the web form sat unanswered for a day.
                   </p>
                   <p>
                     I built Presency specifically for independent dental practices that do excellent work and should not be losing new patients to a process failure. The dentist your family loves, the practice that has been on that block for decades. They deserve the same capture capability that the large groups have.
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
-                  {["Philadelphia-based", "No contracts", "Direct founder access"].map((t) => (
+                  {["Philadelphia-based", "BAA included", "Direct founder access"].map((t) => (
                     <div key={t} className="flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <circle cx="7" cy="7" r="6.5" stroke="#c9a84c" strokeOpacity="0.5" />

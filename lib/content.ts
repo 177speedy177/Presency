@@ -3,7 +3,6 @@
 
 // ── Feature flags ─────────────────────────────────────────────────────────────
 export const SITE_CONFIG = {
-  HIPAA_ACTIVE: false,
   SHOW_PRICES: true,
   // COMPLIANCE_LIVE: flip to true once BAA + GHL HIPAA add-on are live.
   // Controls the compliance badge strip and HIPAA trust block wording.
@@ -62,18 +61,16 @@ export const PLANS = [
     badge: null as string | null,
     featured: false,
     description:
-      "Everything in Patient Capture, plus active campaigns and a full online presence build-out.",
+      "Everything in Patient Capture, plus active campaigns that work your existing records and keep your online presence running.",
     includes: [
       "Everything in Patient Capture",
-      "Recall campaigns",
-      "Reactivation campaigns",
-      "Google Business Profile optimization",
-      "Competitor tracking",
-      "Reputation growth program",
-      "Website redesign with monthly optimization",
-      "Multi-location support",
+      "Recall & reactivation campaigns",
+      "Google Business Profile management",
+      "Done-for-you review responses, HIPAA-safe",
+      "Unscheduled treatment follow-up",
+      "No-show & cancellation rebooking",
     ],
-    note: "Recall and reactivation require active compliance setup and express patient consent. Website work is scoped during your audit.",
+    note: "Campaigns require active compliance setup and express patient consent.",
     cta: "Book a free Patient Capture Audit",
   },
 ] as const
@@ -86,7 +83,7 @@ export const FAQS = [
   },
   {
     q: "Does this work with our existing phone number and practice software?",
-    a: "Yes. You keep your current number. The system works alongside it with no forwarding, no new phones, and no new apps for your staff. It operates at the phone and web-form layer, so it works independently of your practice management software: Dentrix, Open Dental, Eaglesoft, or anything else.",
+    a: "Yes. Your practice number stays the same. We configure one simple call-handling setting so unanswered calls trigger the follow-up, and we handle that setup for you. No new phones, no new apps for your staff. Patient Capture requires no integration with your practice management software: Dentrix, Open Dental, Eaglesoft, or anything else. Practice Growth campaigns use a secure patient list export that you review and approve.",
   },
   {
     q: "How is patient privacy handled?",
@@ -117,7 +114,7 @@ export const FAQS = [
     a: "No. No new phone, no new hardware, no app your staff needs to download. It works through your existing number and a simple web-based inbox your team accesses from any browser.",
   },
   {
-    q: "Can we cancel?",
-    a: "Yes, any time, with no cancellation fee. If you cancel, your service runs through the end of the current billing period.",
+    q: "What are the terms?",
+    a: "Plans run on a straightforward service agreement. All terms, including cancellation, are laid out clearly during your free audit, before anything is signed. No hidden fees, no surprise renewals.",
   },
 ] as const

@@ -47,7 +47,7 @@ export function Footer() {
                 links: [
                   { href: "/free-audit", label: "Patient Capture Audit" },
                   { href: "/#plans", label: "Plans" },
-                  { href: "/#how-it-works", label: "How It Works" },
+                  { href: "/#what-we-do", label: "What We Do" },
                   { href: "/#faq", label: "FAQ" },
                 ],
               },

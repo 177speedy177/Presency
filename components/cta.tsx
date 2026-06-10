@@ -67,7 +67,7 @@ export function AuditCTA() {
 
         <RevealDiv delay={300}>
           <div className="flex flex-wrap justify-center gap-6">
-            {["No commitment required", "Results in 48 hours"].map(t => (
+            {["No commitment required", "Results in 2 business days"].map(t => (
               <div key={t} className="flex items-center gap-2">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <circle cx="7" cy="7" r="6.5" stroke="#c9a84c" strokeOpacity="0.6" />

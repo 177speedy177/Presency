@@ -144,7 +144,7 @@ export function Plans() {
         <RevealDiv delay={260} className="text-center mt-8">
           <p className="font-body text-sm" style={{ color: "rgba(28,24,16,0.48)" }}>
             {SITE_CONFIG.SHOW_PRICES
-              ? "Setup fees apply. No long-term contracts required."
+              ? "Setup fees apply. All terms are laid out clearly during your free audit, before anything is signed."
               : `Plans start at $${SITE_CONFIG.STARTING_AT_PRICE}/month. Exact pricing is set during your free audit, no surprises.`}
           </p>
         </RevealDiv>

@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Terms of Service | Presency",
   description:
-    "Presency's terms of service. What you can expect from us and what we ask of you when using our website design and lead follow-up services.",
+    "Presency's terms of service. What you can expect from us and what we ask of you when using our patient-capture services.",
   alternates: {
     canonical: "https://getpresency.com/terms",
   },

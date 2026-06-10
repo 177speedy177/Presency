@@ -32,38 +32,32 @@ const patientCaptureServices = [
 const practiceGrowthServices = [
   {
     num: "05",
-    title: "Recall campaigns",
-    body: "Patients who haven't booked a follow-up visit in a set window get a personalized outreach sequence from your practice's number. Timed and worded to feel like a reminder from a practice that cares, not a marketing blast.",
+    title: "Recall & reactivation",
+    body: "Patients overdue for their next visit get a personalized outreach sequence. Dormant records get a re-engagement message. Your existing patient list is your highest-ROI pipeline. This works it systematically.",
     badge: "Practice Growth",
   },
   {
     num: "06",
-    title: "Reactivation campaigns",
-    body: "Patients who went dormant in your records get a targeted re-engagement message. A patient who already chose your practice once is your easiest conversion. This turns a stagnant contact list into a live pipeline.",
+    title: "Google Business Profile management",
+    body: "Monthly posts, photo updates, service descriptions, Q&A management, and local search tuning. Your GBP listing is the first thing most prospective patients see before they ever call your office.",
     badge: "Practice Growth",
   },
   {
     num: "07",
-    title: "Google Business Profile optimization",
-    body: "Your GBP listing is often the first thing a prospective patient sees before they ever call. We optimize your profile, manage photos, write service descriptions, and ensure your practice ranks well for local dental searches.",
+    title: "Done-for-you review responses",
+    body: "Every Google review your practice receives gets a prompt, professionally written response in HIPAA-safe language. Consistent responses signal to Google and prospective patients that your practice is attentive and credible.",
     badge: "Practice Growth",
   },
   {
     num: "08",
-    title: "Competitor tracking",
-    body: "We monitor your top local competitors' review volume, ratings, and visibility so you always know where your practice stands. When a gap opens or a competitor gains ground, you know before your patients notice.",
+    title: "Unscheduled treatment follow-up",
+    body: "Every practice has a backlog of patients who accepted a treatment plan and never scheduled. Automated, consent-based follow-up on that list turns dormant plans into booked procedures, often the highest per-conversion value in the practice.",
     badge: "Practice Growth",
   },
   {
     num: "09",
-    title: "Reputation growth program",
-    body: "Beyond automated review requests, this is an active program: response strategy, review volume targets, platform diversification, and a systematic approach to making your practice's reputation a durable competitive advantage.",
-    badge: "Practice Growth",
-  },
-  {
-    num: "10",
-    title: "Website redesign + monthly optimization",
-    body: "We design a fast, SEO-optimized practice website and keep it current with monthly updates. New services, updated hours, treatment landing pages, and ongoing performance tuning. Includes multi-location support.",
+    title: "No-show & cancellation rebooking",
+    body: "When a patient cancels or doesn't show, an immediate sequence works to refill the slot and rebook them. Same infrastructure as speed-to-lead capture, applied directly to your existing schedule. Empty chairs get filled before the day ends.",
     badge: "Practice Growth",
   },
 ]
@@ -137,7 +131,7 @@ function ServiceCard({ s, delay }: { s: (typeof allServices)[number]; delay: num
 
 function ServiceDeck() {
   const [active, setActive] = useState(0)
-  const COUNT = allServices.length
+  const COUNT = patientCaptureServices.length
   const touchStartX = useRef(0)
   const touchStartY = useRef(0)
 
@@ -186,7 +180,7 @@ function ServiceDeck() {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {allServices.map((s, i) => (
+        {patientCaptureServices.map((s, i) => (
           <div key={s.num} style={{ width: "min(300px, 82vw)", ...cardStyle(i) }}>
             <div
               className="rounded-2xl p-6 flex flex-col relative"
@@ -202,7 +196,7 @@ function ServiceDeck() {
         ))}
       </div>
       <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "12px" }}>
-        {allServices.map((_, i) => (
+        {patientCaptureServices.map((_, i) => (
           <div
             key={i}
             onClick={() => setActive(i)}
@@ -215,6 +209,46 @@ function ServiceDeck() {
               cursor: "pointer",
             }}
           />
+        ))}
+      </div>
+
+      {/* Practice Growth: compact stacked list on mobile */}
+      <div className="flex items-center gap-4 mt-12 mb-6">
+        <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
+        <span
+          className="font-mono-label shrink-0"
+          style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#7a5c10" }}
+        >
+          PRACTICE GROWTH ADDS
+        </span>
+        <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
+      </div>
+      <div className="flex flex-col gap-3">
+        {practiceGrowthServices.map(s => (
+          <div
+            key={s.num}
+            className="rounded-xl p-5"
+            style={{
+              background: "#ffffff",
+              border: "1px solid rgba(201,168,76,0.18)",
+              boxShadow: "0 2px 10px rgba(28,24,16,0.04)",
+            }}
+          >
+            <div className="flex items-baseline gap-3 mb-1.5">
+              <span
+                className="font-display shrink-0"
+                style={{ fontSize: "1.1rem", fontWeight: 300, color: "rgba(201,168,76,0.6)", letterSpacing: "-0.02em" }}
+              >
+                {s.num}
+              </span>
+              <h3 className="font-display text-base" style={{ fontWeight: 400, color: "#1c1810" }}>
+                {s.title}
+              </h3>
+            </div>
+            <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
+              {s.body}
+            </p>
+          </div>
         ))}
       </div>
     </div>
@@ -245,7 +279,7 @@ export function WhatWeDo() {
             Everything inside the system.
           </h2>
           <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.62)", maxWidth: "520px" }}>
-            Two plans, ten services. Patient Capture covers the core. Practice Growth adds active campaigns and a full online presence build-out.
+            Patient Capture secures every new opportunity coming in. Practice Growth adds campaigns that work your existing records and keep your online presence running.
           </p>
         </RevealDiv>
 

@@ -13,7 +13,7 @@ function MissedCallCard() {
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9.5 8.5c-.8.8-1.7 1.5-2.5 1.5C5.5 10 3.5 8 2.5 6.5 1.5 4.8 1 3.5 2 2.5l1-1c.3-.3.8-.3 1 0l1.5 2c.3.3.3.7 0 1L4.7 5.3C5.2 6.3 6 7.2 7 7.7l.8-.8c.3-.3.7-.3 1 0l2 1.5c.3.3.3.7 0 1l-1.3.1z" fill="#c9a84c" /></svg>
         </div>
         <div>
-          <p style={{ fontSize: "11px", fontWeight: 700, color: "#1a1a1a", margin: 0, lineHeight: 1.2 }}>Philadelphia Dental Group</p>
+          <p style={{ fontSize: "11px", fontWeight: 700, color: "#1a1a1a", margin: 0, lineHeight: 1.2 }}>Your Practice</p>
           <p style={{ fontSize: "9px", color: "rgba(0,0,0,0.4)", margin: 0 }}>Missed call · 6:48 PM</p>
         </div>
       </div>
@@ -108,7 +108,7 @@ function ReviewCard() {
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.5 3.5H13l-3.5 2.5 1.3 4L7 9 3.2 11l1.3-4L1 4.5h4.5z" fill="#c9a84c" fillOpacity="0.7" /></svg>
         </div>
         <div>
-          <p style={{ fontSize: "11px", fontWeight: 700, color: "#1a1a1a", margin: 0, lineHeight: 1.2 }}>Philadelphia Dental Group</p>
+          <p style={{ fontSize: "11px", fontWeight: 700, color: "#1a1a1a", margin: 0, lineHeight: 1.2 }}>Your Practice</p>
           <p style={{ fontSize: "9px", color: "rgba(0,0,0,0.4)", margin: 0 }}>Review request sent · After visit</p>
         </div>
       </div>
