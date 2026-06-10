@@ -1,26 +1,27 @@
 "use client"
 import { useRef, useEffect } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
+import Link from "next/link"
 
 const steps = [
   {
     num: "01",
-    title: "Tell us about your business",
-    desc: "Fill out a short form about your goals, your brand, and which service fits. No technical knowledge needed.",
+    title: "Free Patient Capture Audit",
+    desc: "We map exactly where your practice is losing new-patient opportunities: missed calls, after-hours gaps, web inquiry response time, and review presence. You get a clear picture before anything else.",
   },
   {
     num: "02",
-    title: "We get everything live",
-    desc: "For websites, we design and deliver in 2 weeks. For Lead Recovery, your system goes live in minutes using your existing phone number. No new equipment, no app downloads.",
+    title: "We set everything up",
+    desc: "Connected to your existing phone number and practice software. No new equipment, no app downloads for your staff. Most practices are live within about 10 business days, with a 30-minute walkthrough for your front desk.",
   },
   {
     num: "03",
-    title: "Every lead gets followed up",
-    desc: "Missed calls get instant texts. Conversations move toward bookings. Review requests go out after jobs. You see every result in a monthly report.",
+    title: "Every opportunity gets captured",
+    desc: "Missed calls, after-hours calls, and web inquiries all get instant follow-up. Reviews go out automatically after visits. You see every result in a monthly report.",
   },
 ]
 
-export function Process() {
+export function HowItWorks() {
   const lineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -50,6 +51,7 @@ export function Process() {
 
   return (
     <section
+      id="how-it-works"
       data-theme="light"
       className="section-pad relative"
       style={{ background: "var(--ink)" }}
@@ -59,15 +61,11 @@ export function Process() {
           <p className="eyebrow mb-4">HOW IT WORKS</p>
           <h2
             className="font-display"
-            style={{
-              fontSize: "clamp(1.75rem, 4vw, 3rem)",
-              fontWeight: 300,
-              color: "var(--text-primary)",
-            }}
+            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "var(--text-primary)" }}
           >
             Simple to start.{" "}
             <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              Built to last.
+              Live in 10 days.
             </em>
           </h2>
         </RevealDiv>
@@ -82,8 +80,7 @@ export function Process() {
               left: "calc(100% / 6)",
               right: "calc(100% / 6)",
               height: "1px",
-              background:
-                "linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 15%, rgba(201,168,76,0.3) 85%, transparent)",
+              background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.3) 15%, rgba(201,168,76,0.3) 85%, transparent)",
             }}
             aria-hidden="true"
           />
@@ -93,60 +90,50 @@ export function Process() {
               <div className="mb-5 relative">
                 <span
                   className="font-display leading-none block"
-                  style={{
-                    fontSize: "clamp(3.5rem, 8vw, 6rem)",
-                    fontWeight: 100,
-                    color: "rgba(201,168,76,0.25)",
-                    letterSpacing: "-0.02em",
-                  }}
+                  style={{ fontSize: "clamp(3.5rem,8vw,6rem)", fontWeight: 100, color: "rgba(201,168,76,0.25)", letterSpacing: "-0.02em" }}
                 >
                   {step.num}
                 </span>
                 <div
                   className="mx-auto w-3 h-3 rounded-full -mt-3 relative z-10"
-                  style={{
-                    background: "var(--gold)",
-                    boxShadow: "0 0 12px rgba(201,168,76,0.5)",
-                  }}
+                  style={{ background: "var(--gold)", boxShadow: "0 0 12px rgba(201,168,76,0.5)" }}
                 />
               </div>
 
-              <h3
-                className="font-display text-xl mb-3"
-                style={{ fontWeight: 400, color: "var(--text-primary)" }}
-              >
+              <h3 className="font-display text-xl mb-3" style={{ fontWeight: 400, color: "var(--text-primary)" }}>
                 {step.title}
               </h3>
-              <p
-                className="font-body text-sm leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                 {step.desc}
               </p>
             </RevealDiv>
           ))}
         </div>
 
-        {/* Bottom note */}
         <RevealDiv delay={450} className="mt-16 text-center">
-          <div
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full"
-            style={{
-              background: "rgba(201,168,76,0.06)",
-              border: "1px solid rgba(201,168,76,0.15)",
+          <a
+            href="https://calendly.com/397jtc/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body font-medium text-sm px-8 py-3.5 rounded-lg transition-all duration-200 cursor-pointer inline-block"
+            style={{ background: "var(--gold)", color: "#0d0c0a" }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#d4b05a"
+              e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "var(--gold)"
+              e.currentTarget.style.boxShadow = "none"
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <circle cx="8" cy="8" r="7" stroke="#c9a84c" strokeOpacity="0.5" />
-              <path d="M8 5v3l2 2" stroke="#c9a84c" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-            <span
-              className="font-body text-sm"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              Websites delivered in 2 weeks · Lead Recovery live in minutes
-            </span>
-          </div>
+            Start with a free Patient Capture Audit
+          </a>
+          <p className="font-body text-sm mt-4" style={{ color: "var(--text-muted)" }}>
+            Takes 15 minutes. No commitment required.{" "}
+            <Link href="/contact" className="link-gold">
+              Or send us a message instead.
+            </Link>
+          </p>
         </RevealDiv>
       </div>
     </section>

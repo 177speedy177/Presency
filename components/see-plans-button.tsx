@@ -5,12 +5,11 @@ export function SeePlansButton() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const section = document.getElementById("services")
+    const section = document.getElementById("plans")
     if (!section) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Show only when section has scrolled fully above the viewport
         setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0)
       },
       { threshold: 0 }
@@ -20,7 +19,7 @@ export function SeePlansButton() {
   }, [])
 
   const scrollToPlans = () => {
-    document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" })
+    document.getElementById("plans")?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
   return (
@@ -65,7 +64,7 @@ export function SeePlansButton() {
           e.currentTarget.style.background = "rgba(13,12,10,0.9)"
           e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.4)"
         }}
-        aria-label="Scroll back to pricing plans"
+        aria-label="Scroll back to plans"
       >
         <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
           <path d="M5.5 9.5V1.5M1.5 5.5l4-4 4 4" stroke="#c9a84c" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />

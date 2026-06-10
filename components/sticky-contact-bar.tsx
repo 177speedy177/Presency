@@ -1,22 +1,17 @@
 "use client"
 import { useState, useEffect } from "react"
-import Link from "next/link"
+import { CONTACT } from "@/lib/content"
 
 export function StickyContactBar() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
 
   useEffect(() => {
-    // Don't show if dismissed this session
     if (sessionStorage.getItem("stickyBarDismissed")) {
       setDismissed(true)
       return
     }
-
-    const handler = () => {
-      // Show after scrolling past ~80% of first viewport height
-      setVisible(window.scrollY > window.innerHeight * 0.8)
-    }
+    const handler = () => setVisible(window.scrollY > window.innerHeight * 0.8)
     window.addEventListener("scroll", handler, { passive: true })
     return () => window.removeEventListener("scroll", handler)
   }, [])
@@ -58,7 +53,6 @@ export function StickyContactBar() {
         >
           {/* Left: contact info */}
           <div className="flex items-center gap-4 flex-1 min-w-0 overflow-hidden">
-            {/* Mail icon */}
             <div
               className="shrink-0 hidden sm:flex w-8 h-8 rounded-lg items-center justify-center"
               style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}
@@ -70,53 +64,34 @@ export function StickyContactBar() {
             </div>
 
             <div className="min-w-0">
-              <p
-                className="font-mono-label truncate"
-                style={{ fontSize: "10px", letterSpacing: "0.1em", color: "var(--text-muted)" }}
-              >
+              <p className="font-mono-label truncate" style={{ fontSize: "10px", letterSpacing: "0.1em", color: "var(--text-muted)" }}>
                 QUESTIONS?
               </p>
               <a
-                href="mailto:hello@getpresency.com"
+                href={`mailto:${CONTACT.email}`}
                 className="font-body text-sm font-medium truncate block transition-colors duration-200"
                 style={{ color: "var(--text-secondary)" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--gold)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--text-secondary)")
-                }
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--gold)" }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)" }}
               >
-                hello@getpresency.com
+                {CONTACT.email}
               </a>
             </div>
 
-            {/* Divider */}
-            <div
-              className="hidden md:block h-7 w-px shrink-0"
-              style={{ background: "rgba(201,168,76,0.12)" }}
-            />
+            <div className="hidden md:block h-7 w-px shrink-0" style={{ background: "rgba(201,168,76,0.12)" }} />
 
-            {/* Calendly */}
             <div className="hidden md:block min-w-0">
-              <p
-                className="font-mono-label"
-                style={{ fontSize: "10px", letterSpacing: "0.1em", color: "var(--text-muted)" }}
-              >
-                FREE 15-MIN CALL
+              <p className="font-mono-label" style={{ fontSize: "10px", letterSpacing: "0.1em", color: "var(--text-muted)" }}>
+                FREE AUDIT
               </p>
               <a
-                href="https://calendly.com/397jtc/30min"
+                href={CONTACT.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm font-medium transition-colors duration-200"
                 style={{ color: "var(--text-secondary)" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--gold)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "var(--text-secondary)")
-                }
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--gold)" }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)" }}
               >
                 Book on Calendly →
               </a>
@@ -125,36 +100,24 @@ export function StickyContactBar() {
 
           {/* Right: CTA + dismiss */}
           <div className="flex items-center gap-2 shrink-0">
-            <Link
-              href="/contact"
+            <a
+              href={CONTACT.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-body font-medium text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap"
-              style={{ background: "var(--gold)", color: "var(--ink)" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--gold-light)"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "var(--gold)"
-              }}
+              style={{ background: "var(--gold)", color: "#0d0c0a" }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "var(--gold-light)" }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
             >
-              Start free trial
-            </Link>
+              Get free audit
+            </a>
 
             <button
               onClick={handleDismiss}
               className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 cursor-pointer"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                color: "var(--text-muted)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.08)"
-                e.currentTarget.style.color = "var(--text-secondary)"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.04)"
-                e.currentTarget.style.color = "var(--text-muted)"
-              }}
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", color: "var(--text-muted)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "var(--text-secondary)" }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.color = "var(--text-muted)" }}
               aria-label="Dismiss"
             >
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">

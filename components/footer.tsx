@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import { CONTACT } from "@/lib/content"
 
 export function Footer() {
   return (
@@ -33,9 +34,9 @@ export function Footer() {
               </span>
             </div>
             <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Website redesigns and lead follow-up systems
+              Patient-capture systems for independent
               <br />
-              for local businesses in Philadelphia.
+              dental practices in Philadelphia.
             </p>
           </div>
 
@@ -45,9 +46,9 @@ export function Footer() {
               {
                 heading: "SERVICES",
                 links: [
-                  { href: "/free-audit", label: "Free Audit" },
-                  { href: "/#services", label: "Pricing" },
-                  { href: "/#results", label: "Results" },
+                  { href: "/free-audit", label: "Patient Capture Audit" },
+                  { href: "/#plans", label: "Plans" },
+                  { href: "/#how-it-works", label: "How It Works" },
                   { href: "/#faq", label: "FAQ" },
                 ],
               },
@@ -82,14 +83,11 @@ export function Footer() {
               REACH US
             </p>
             <div className="flex flex-col gap-2">
-              <a
-                href="mailto:hello@getpresency.com"
-                className="font-body text-sm link-gold"
-              >
-                hello@getpresency.com
+              <a href={`mailto:${CONTACT.email}`} className="font-body text-sm link-gold">
+                {CONTACT.email}
               </a>
               <a
-                href="https://calendly.com/397jtc/30min"
+                href={CONTACT.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm link-gold"
@@ -106,10 +104,10 @@ export function Footer() {
           style={{ borderTop: "1px solid rgba(201,168,76,0.06)" }}
         >
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)" }}>
-            © 2026 Presency. Made in Philadelphia, PA.
+            &copy; {new Date().getFullYear()} Presency. Made in Philadelphia, PA.
           </p>
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)", opacity: 0.6 }}>
-            From $199/month · No contracts
+            Independent dental practices &nbsp;·&nbsp; Philadelphia
           </p>
         </div>
       </div>

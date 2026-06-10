@@ -30,26 +30,26 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Presency | Website Redesign & Missed Call Follow-Up for Philadelphia Businesses",
+  title: "Presency | Patient-Capture System for Dental Practices in Philadelphia",
   description:
-    "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. Never lose a lead again. From $199/month. 14-day free trial.",
+    "Presency makes sure every missed call, after-hours call, and web inquiry to your dental practice gets an instant follow-up, so the patients you already paid to attract actually book. Built for independent practices in Philadelphia.",
   keywords: [
-    "website redesign philadelphia",
-    "missed call text back philadelphia",
-    "lead follow-up system philadelphia",
-    "local business website design",
-    "never miss a lead",
-    "missed call follow up",
-    "small business website philadelphia",
-    "local business marketing philadelphia",
+    "dental patient capture philadelphia",
+    "missed call follow-up dental practice",
+    "dental practice lead recovery",
+    "after hours dental follow-up",
+    "dental appointment follow-up system",
+    "independent dental practice marketing philadelphia",
+    "dental missed call text back",
+    "patient capture system philadelphia",
   ],
   alternates: {
     canonical: "https://getpresency.com",
   },
   openGraph: {
-    title: "Presency | Website Redesign & Missed Call Follow-Up",
+    title: "Presency | Patient-Capture System for Dental Practices",
     description:
-      "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. From $199/month.",
+      "Every missed call is a patient walking into another office. Presency makes sure every missed call, after-hours call, and web inquiry to your practice gets an instant follow-up.",
     type: "website",
     url: "https://getpresency.com",
     images: [
@@ -57,14 +57,15 @@ export const metadata: Metadata = {
         url: "https://getpresency.com/presency-og.png",
         width: 1200,
         height: 630,
-        alt: "Presency: Bringing Philly Businesses the Exposure They Deserve",
+        alt: "Presency: Patient-capture systems for independent dental practices in Philadelphia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presency | Website Redesign & Missed Call Follow-Up",
-    description: "Presency builds modern websites and makes sure every missed call gets an instant text follow-up for local businesses in Philadelphia. From $199/month.",
+    title: "Presency | Patient-Capture System for Dental Practices",
+    description:
+      "Every missed call is a patient walking into another office. Presency makes sure every missed call, after-hours call, and web inquiry to your practice gets an instant follow-up.",
     images: ["https://getpresency.com/presency-og.png"],
   },
 }
@@ -75,22 +76,15 @@ const webSiteSchema = {
   name: "Presency",
   url: "https://getpresency.com",
   description:
-    "Website redesigns and missed call follow-up systems for local businesses in Philadelphia.",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://getpresency.com/?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
-  },
+    "Patient-capture systems for independent dental practices in Philadelphia.",
 }
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   name: "Presency",
-  description: "Website redesigns and lead follow-up systems for local businesses in Philadelphia. Never miss a lead.",
+  description:
+    "Patient-capture systems for independent dental practices in Philadelphia. Instant follow-up on missed calls, after-hours calls, and web inquiries.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
@@ -104,27 +98,6 @@ const localBusinessSchema = {
     "@type": "City",
     name: "Philadelphia",
   },
-  priceRange: "$$",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Presency Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Website Redesign",
-        price: "1199",
-        priceCurrency: "USD",
-        description: "Custom mobile-first website design and development, delivered in 2 weeks.",
-      },
-      {
-        "@type": "Offer",
-        name: "Lead Recovery",
-        price: "199",
-        priceCurrency: "USD",
-        description: "Missed call text-back, booking via text, review requests, and customer reactivation. Works with your existing phone number.",
-      },
-    ],
-  },
 }
 
 const faqSchema = {
@@ -133,18 +106,26 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What happens when someone calls my business and I don't answer?",
+      name: "What happens when a patient calls a dental practice and no one answers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Within seconds, your caller receives a text message from your business number. It introduces your business by name and asks how you can help. From there, the conversation continues over text until the customer is scheduled, their question is answered, or they are connected to you directly.",
+        text: "Within seconds, your practice's number sends an automatic text to the caller. The message introduces the practice by name and invites them to reply or book. It goes out whether the call came in during lunch, after hours, or when the front desk was on another line.",
       },
     },
     {
       "@type": "Question",
-      name: "Does this work with my existing phone number?",
+      name: "Does the Presency patient-capture system work with our existing phone number?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. You keep your current number. We set up a smart layer on top of it so that when a call is missed, the follow-up text goes out from that same number. No new app, no second phone.",
+        text: "Yes. You keep your current number. The system works alongside it with no forwarding, no new phones, and no new apps for your staff.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is patient privacy handled?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Automated messages are designed to contain no patient health information. They are appointment-invitation messages, not clinical communications. Anything involving personal health details is routed to your front desk to handle directly.",
       },
     },
     {
@@ -152,31 +133,7 @@ const faqSchema = {
       name: "How long does setup take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For most businesses, your system is live within minutes of setup. You do not need to install anything or learn any new software.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does the Lead Recovery plan cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lead Recovery is $199 per month with no contracts. You can cancel anytime. We also offer a free 14-day trial.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does a website redesign cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Website redesigns start at $1,199, a one-time fee. This includes custom design, mobile-first development, SEO-ready structure, and 2 rounds of revisions, delivered in 2 weeks.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is there a free trial?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Your first 14 days are completely free. No credit card required.",
+        text: "Most practices are live within about 10 business days. We handle the configuration. Your team does a brief 30-minute walkthrough to get familiar with the inbox and handoff process.",
       },
     },
   ],

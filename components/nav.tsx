@@ -14,7 +14,7 @@ export function Nav() {
   }, [])
 
   useEffect(() => {
-    const ids = ["services", "results", "faq"]
+    const ids = ["plans", "how-it-works", "faq"]
     const visible = new Set<string>()
 
     const observers = ids.map((id) => {
@@ -36,8 +36,8 @@ export function Nav() {
   }, [])
 
   const links = [
-    { href: "#services", label: "Services" },
-    { href: "#results", label: "Results" },
+    { href: "#plans", label: "Plans" },
+    { href: "#how-it-works", label: "How It Works" },
     { href: "#faq", label: "FAQ" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },

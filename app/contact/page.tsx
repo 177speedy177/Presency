@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import { CONTACT } from "@/lib/content"
 
 // Module-level constants — no recreation on every render
 const INPUT_CLS = "w-full font-body text-sm px-4 py-3 rounded-lg outline-none transition-all duration-200"
@@ -61,7 +62,7 @@ export default function ContactPage() {
     if (contactMethod) data.set("contactMethod", contactMethod)
     if (contactMethod === "call" && callType) data.set("callType", callType)
     try {
-      await fetch("https://formspree.io/f/mkoeqqyn", {
+      await fetch(CONTACT.formspree, {
         method: "POST",
         headers: { Accept: "application/json" },
         body: data,
@@ -90,11 +91,11 @@ export default function ContactPage() {
               >
                 Let&apos;s talk about{" "}
                 <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                  your business.
+                  your practice.
                 </em>
               </h1>
               <p className="font-body text-lg mb-10" style={{ color: "var(--text-secondary)" }}>
-                No pitch, no pressure. Tell us how you&apos;d like to connect and we&apos;ll make it work.
+                No pitch, no pressure. Tell us how you&apos;d like to connect and we&apos;ll make it simple.
               </p>
 
               {submitted ? (
@@ -112,28 +113,28 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
-                    <Field id="fullName" label="FULL NAME *" required />
-                    <Field id="businessName" label="BUSINESS NAME *" required />
+                    <Field id="fullName" label="YOUR NAME *" required />
+                    <Field id="practiceName" label="PRACTICE NAME *" required />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="businessType" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
-                        BUSINESS TYPE *
+                      <label htmlFor="practiceType" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
+                        PRACTICE TYPE
                       </label>
                       <select
-                        id="businessType" name="businessType" required
+                        id="practiceType" name="practiceType"
                         className={INPUT_CLS + " cursor-pointer"}
                         style={{ ...inputStyle, appearance: "none" } as React.CSSProperties}
                         onFocus={onFocus} onBlur={onBlur}
                       >
-                        <option value="" style={{ background: "var(--ink-2)" }}>Select type...</option>
-                        {["Restaurant", "Salon / Barbershop", "Dental / Medical", "Auto Shop", "Gym / Fitness", "Other"].map((t) => (
+                        <option value="" style={{ background: "var(--ink-2)" }}>Select...</option>
+                        {["General Dentistry", "Pediatric Dentistry", "Orthodontics", "Oral Surgery", "Periodontics", "Other Dental"].map((t) => (
                           <option key={t} value={t} style={{ background: "var(--ink-2)" }}>{t}</option>
                         ))}
                       </select>
                     </div>
-                    <Field id="city" label="CITY *" required />
+                    <Field id="city" label="CITY / NEIGHBORHOOD" />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
@@ -151,7 +152,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="challenge" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
-                      WHAT&apos;S YOUR BIGGEST CHALLENGE RIGHT NOW?
+                      WHAT&apos;S YOUR BIGGEST CHALLENGE AT YOUR PRACTICE?
                     </label>
                     <textarea
                       id="challenge" name="challenge" rows={4}
@@ -162,10 +163,10 @@ export default function ContactPage() {
 
                   <div>
                     <p className="font-mono-label text-xs mb-3" style={{ color: "var(--text-muted)" }}>
-                      PACKAGE INTEREST
+                      PLAN INTEREST
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {["Website Redesign ($1,199 one-time)", "Lead Recovery ($199/month)", "Both", "Not sure yet"].map((pkg) => {
+                      {["Patient Capture", "Practice Growth", "Not sure yet"].map((pkg) => {
                         const active = selectedPackage === pkg
                         return (
                           <button
@@ -307,10 +308,10 @@ export default function ContactPage() {
                     type="submit"
                     disabled={loading}
                     className="w-full font-body font-medium text-sm py-4 rounded-lg transition-all duration-200 cursor-pointer"
-                    style={{ background: "var(--gold)", color: "var(--ink)" }}
+                    style={{ background: "var(--gold)", color: "#0d0c0a" }}
                     onMouseEnter={(e) => {
                       if (!loading) {
-                        e.currentTarget.style.background = "var(--gold-light)"
+                        e.currentTarget.style.background = "#d4b05a"
                         e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
                       }
                     }}
@@ -334,20 +335,20 @@ export default function ContactPage() {
                 <p className="eyebrow mb-6" style={{ color: "var(--gold)" }}>WHAT HAPPENS NEXT</p>
                 <div className="space-y-8">
                   {[
-                    { num: "1", title: "You submit", desc: "Fill out the form. Takes about 3 minutes." },
+                    { num: "1", title: "You submit", desc: "Fill out the form. Takes about 2 minutes." },
                     {
                       num: "2",
-                      title: "We review in 24 hrs",
+                      title: "We review your practice",
                       desc: contactMethod === "email"
-                        ? "We look at your business and your current Google presence, then put together a clear plan."
-                        : "We look at your business, check your current Google presence, and prep for the call.",
+                        ? "We look at your current missed-call exposure, web presence, and review profile, then put together a clear picture."
+                        : "We look at your current missed-call exposure, web presence, and review profile before the call.",
                     },
                     {
                       num: "3",
                       title: contactMethod === "email" ? "We follow up by email" : "We hop on a call",
                       desc: contactMethod === "email"
-                        ? "We'll send you a clear breakdown of what we'd do for your business. No call needed."
-                        : "15 minutes. We show you exactly what we'd do for your business and what to expect.",
+                        ? "We send you a clear breakdown of where your practice is losing patients and what we would do about it."
+                        : "15 minutes. We walk through exactly where your practice is losing patients and what Presency would fix.",
                     },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-5">
@@ -376,7 +377,7 @@ export default function ContactPage() {
                     <p className="font-body text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
                       Prefer to skip straight to a call?{" "}
                       <Link
-                        href="https://calendly.com/397jtc/30min"
+                        href={CONTACT.calendly}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-gold-light"

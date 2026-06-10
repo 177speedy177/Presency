@@ -14,27 +14,23 @@ export const metadata = {
 const sections = [
   {
     heading: "Services",
-    body: "Presency provides website design and lead follow-up services for local businesses. The specific scope of services is outlined in your service agreement or onboarding materials. We reserve the right to modify or discontinue any service with reasonable notice.",
+    body: "Presency provides patient-capture systems for independent dental practices. The specific scope of services is outlined in your service agreement or onboarding materials. We reserve the right to modify or discontinue any service with reasonable notice.",
   },
   {
     heading: "Payment",
-    body: "Website redesign services are billed as a one-time payment upon project completion. The Lead Recovery plan is billed monthly. All payments are non-refundable unless otherwise stated in your service agreement.",
+    body: "Setup is billed as a one-time payment at the start of the engagement. Monthly service fees are billed on a recurring basis. All payments are non-refundable unless otherwise stated in your service agreement.",
   },
   {
     heading: "Cancellation",
-    body: "You may cancel the Lead Recovery plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@getpresency.com.",
+    body: "You may cancel your plan at any time. Cancellation takes effect at the end of your current billing period. No partial refunds are issued for unused time. To cancel, contact us at hello@getpresency.com.",
   },
   {
     heading: "Your Responsibilities",
-    body: "You are responsible for providing accurate information about your business, maintaining access to your phone number and messaging system, and reviewing the conversations and responses sent on your behalf. You agree not to use our services for any unlawful purpose.",
+    body: "You are responsible for providing accurate information about your practice, maintaining access to your phone number and messaging system, and reviewing the conversations and responses sent on your behalf. You agree not to use our services for any unlawful purpose. You must not instruct us to include protected health information (PHI) in any automated message.",
   },
   {
     heading: "Messaging and Phone Use",
-    body: "Our Lead Recovery service sends and receives text messages using your existing business phone number. You are responsible for ensuring you have the right to send messages to your customers under applicable law. We act as your authorized representative when communicating on your behalf and will do so in good faith based on the brand voice you provide.",
-  },
-  {
-    heading: "Intellectual Property",
-    body: "Websites we design for you become your property upon final payment. We retain the right to display completed work in our portfolio unless you request otherwise in writing. You retain all rights to your business name, logo, and content.",
+    body: "Our service sends and receives text messages using your existing practice phone number. You are responsible for ensuring you have the right to send messages to your patients under applicable law. We act as your authorized representative when communicating on your behalf and will do so in good faith. Our automated messages are not designed to carry, transmit, or store PHI.",
   },
   {
     heading: "Limitation of Liability",

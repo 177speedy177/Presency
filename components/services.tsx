@@ -1,282 +1,145 @@
 "use client"
-import Link from "next/link"
 import { RevealDiv } from "@/components/ui/reveal-div"
-import { WordReveal } from "@/components/ui/word-reveal"
 
-const CheckIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 mt-0.5">
-    <path d="M3 8l3.5 3.5 6.5-7" stroke="#c9a84c" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
+const services = [
+  {
+    num: "01",
+    title: "Never miss a new patient",
+    body: "Every missed call and after-hours call gets an instant, automatic text follow-up from your practice's own number. The patient stays in your funnel instead of calling the practice next door.",
+    note: null,
+  },
+  {
+    num: "02",
+    title: "Turn web inquiries into appointments",
+    body: "Every contact form submission gets an immediate follow-up text. All replies, whether from a missed call or a web form, land in one unified inbox your front desk can manage from any browser.",
+    note: null,
+  },
+  {
+    num: "03",
+    title: "Build a 5-star reputation automatically",
+    body: "After every visit, your practice sends a warm, automatic review request. Reviews accumulate without anyone on your team having to remember to ask.",
+    note: null,
+  },
+  {
+    num: "04",
+    title: "Bring patients back",
+    body: "Recall and reactivation campaigns reach patients who are due for their next visit or who have not been in for a while, turning a dormant record into a booked appointment.",
+    note: "Part of the Practice Growth plan. Requires patient consent and active compliance setup.",
+  },
+  {
+    num: "05",
+    title: "Built for dental practices",
+    body: "The system works with your existing phone number and practice management software. No new equipment, no new apps for staff, and no patient health information in any automated message.",
+    note: null,
+  },
+]
 
-export function Services() {
+export function WhatWeDo() {
   return (
     <section
-      id="services"
+      id="what-we-do"
       data-theme="light"
       className="section-pad"
       style={{ background: "var(--ink)" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <RevealDiv className="text-center mb-16">
+        <RevealDiv className="mb-16">
           <p className="eyebrow mb-4">WHAT WE DO</p>
           <h2
-            className="font-display mb-4"
-            style={{
-              fontSize: "clamp(1.75rem, 4vw, 3rem)",
-              fontWeight: 300,
-              color: "var(--text-primary)",
-            }}
+            className="font-display mb-4 max-w-2xl"
+            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "var(--text-primary)" }}
           >
-            <WordReveal segments={[
-              { text: "Website redesign." },
-              { text: "Lead recovery.", italic: true, color: "var(--gold)", fontWeight: 400 },
-            ]} />
+            Five outcomes.{" "}
+            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
+              Zero patient leaks.
+            </em>
           </h2>
-          <p
-            className="font-body text-lg max-w-xl mx-auto"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            We build your website and make sure every lead that contacts you gets an instant, smart follow-up. You focus on your business.
+          <p className="font-body text-base max-w-xl" style={{ color: "var(--text-secondary)" }}>
+            Each outcome is a specific place your practice was losing new patients. We close all of them.
           </p>
         </RevealDiv>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-6 max-w-4xl mx-auto">
-
-          {/* ── Card 1: Website Redesign ── */}
-          <RevealDiv
-            delay={0}
-            className="relative flex flex-col rounded-2xl p-8 cursor-pointer"
-            style={{
-              background: "rgba(255,255,255,0.85)",
-              border: "1px solid rgba(201,168,76,0.22)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              transition: "opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease, border-color 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "rgba(201,168,76,0.5)"
-              e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.12), 0 0 20px rgba(201,168,76,0.1)"
-              e.currentTarget.style.transform = "translateY(-3px)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(201,168,76,0.22)"
-              e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.08)"
-              e.currentTarget.style.transform = "translateY(0)"
-            }}
-          >
-            <div className="mb-5">
-              <p className="eyebrow mb-3">WEBSITE REDESIGN</p>
-              <div className="flex items-baseline gap-1.5 mb-1">
-                <span
-                  className="font-display text-4xl"
-                  style={{ fontWeight: 300, color: "var(--text-primary)" }}
-                >
-                  $1,199
-                </span>
-                <span className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
-                  one-time
-                </span>
-              </div>
-              <p className="font-body text-sm italic mb-4" style={{ color: "var(--text-secondary)" }}>
-                A site that gets you found. Built once, yours forever.
-              </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                We design and build a fast, mobile-first website tailored to your business.
-                Clean code, zero monthly fees, delivered in 2 weeks.
-              </p>
-            </div>
-
-            <ul className="flex flex-col gap-3 mb-8 flex-1">
-              {[
-                "Custom design matched to your brand",
-                "Mobile-first, fast-loading build",
-                "SEO-ready structure and metadata",
-                "Contact form and Google Maps integration",
-                "2 rounds of revisions",
-                "Delivered in 2 weeks",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <CheckIcon />
-                  <span className="font-body text-sm leading-snug" style={{ color: "var(--text-secondary)" }}>
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/contact"
-              className="block text-center font-body font-medium text-sm py-3 rounded-lg transition-all duration-200 cursor-pointer"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.slice(0, 3).map((s, i) => (
+            <RevealDiv
+              key={s.num}
+              delay={i * 100}
+              className="rounded-2xl p-7 flex flex-col"
               style={{
-                background: "transparent",
-                color: "var(--gold)",
-                border: "1px solid rgba(201,168,76,0.35)",
+                background: "var(--surface-card)",
+                border: "1px solid rgba(201,168,76,0.15)",
+                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(201,168,76,0.1)"
-                e.currentTarget.style.borderColor = "var(--gold)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.06)"
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent"
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.35)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)"
+                e.currentTarget.style.boxShadow = "none"
               }}
             >
-              Get a free quote
-            </Link>
-            <p className="font-body text-xs italic text-center mt-3" style={{ color: "var(--gold)" }}>
-              Comparable agencies charge $3,000+. F that.
-            </p>
-          </RevealDiv>
-
-          {/* ── Card 2: Lead Recovery (featured) ── */}
-          <RevealDiv
-            delay={120}
-            dataTheme="dark"
-            className="relative flex flex-col rounded-2xl p-8 cursor-pointer"
-            style={{
-              background: "#0d0c0a",
-              border: "2px solid var(--gold)",
-              boxShadow: "0 0 40px rgba(201,168,76,0.12), 0 8px 32px rgba(0,0,0,0.4)",
-              transition: "opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 60px rgba(201,168,76,0.2), 0 12px 48px rgba(0,0,0,0.5)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 40px rgba(201,168,76,0.12), 0 8px 32px rgba(0,0,0,0.4)"
-            }}
-          >
-            {/* Most Popular badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span
-                className="font-mono-label text-xs px-3 py-1 rounded-full"
-                style={{ background: "var(--gold)", color: "#0d0c0a" }}
+                className="font-display mb-4 block"
+                style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.25)", lineHeight: 1 }}
               >
-                MOST POPULAR
+                {s.num}
               </span>
-            </div>
-
-            <div className="mb-5">
-              <p className="eyebrow mb-3" style={{ color: "var(--gold)" }}>
-                LEAD RECOVERY
+              <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "var(--text-primary)" }}>
+                {s.title}
+              </h3>
+              <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
+                {s.body}
               </p>
-              <div className="flex items-baseline gap-1.5 mb-1">
-                <span
-                  className="font-display text-4xl"
-                  style={{ fontWeight: 300, color: "var(--text-primary)" }}
-                >
-                  $199
-                </span>
-                <span className="font-body text-sm" style={{ color: "var(--text-secondary)" }}>
-                  /month
-                </span>
-              </div>
-              <div className="flex flex-col gap-0.5 mt-3 mb-4">
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  Every missed call gets an instant text.
-                </p>
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  Every reply lands in one inbox.
-                </p>
-                <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  Your system works for you 24/7.
-                </p>
-              </div>
-            </div>
+            </RevealDiv>
+          ))}
 
-            <ul className="flex flex-col gap-2.5 mb-8 flex-1">
-              {[
-                "Instant text-back on every missed call, after-hours, and busy line",
-                "Every reply captured in one inbox. No lead falls through the cracks.",
-                "Review request texts sent after appointments or jobs",
-                "Monthly reactivation texts to past customers",
-                "Works alongside your existing phone number",
-                "Messages feel personal, not robotic",
-                "Monthly performance report",
-                "Cancel anytime, no contracts",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <CheckIcon />
-                  <span className="font-body text-sm leading-snug" style={{ color: "var(--text-secondary)" }}>
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              href="/contact"
-              className="block text-center font-body font-medium text-sm py-3 rounded-lg transition-all duration-200 cursor-pointer"
-              style={{ background: "var(--gold)", color: "#0d0c0a" }}
+          {/* Row 2: items 4 and 5 centered */}
+          {services.slice(3).map((s, i) => (
+            <RevealDiv
+              key={s.num}
+              delay={(i + 3) * 100}
+              className="rounded-2xl p-7 flex flex-col"
+              style={{
+                background: "var(--surface-card)",
+                border: "1px solid rgba(201,168,76,0.15)",
+                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
+              }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--gold-light)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.06)"
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "var(--gold)"
+                e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)"
+                e.currentTarget.style.boxShadow = "none"
               }}
             >
-              Start free, 14 days
-            </Link>
-            <p className="font-body text-xs italic text-center mt-3" style={{ color: "rgba(201,168,76,0.55)" }}>
-              Industry standard price of $500.
-            </p>
-          </RevealDiv>
-        </div>
-
-        {/* Trust note */}
-        <div className="text-center mb-4 mt-2">
-          <p className="font-mono-label" style={{ fontSize: "9px", color: "rgba(201,168,76,0.4)", letterSpacing: "0.1em" }}>
-            WORKS WITH YOUR EXISTING NUMBER &nbsp;·&nbsp; NO NEW EQUIPMENT NEEDED &nbsp;·&nbsp; LIVE IN MINUTES
-          </p>
-        </div>
-
-        {/* Not sure CTA */}
-        <div className="text-center mb-5">
-          <p className="font-body text-sm" style={{ color: "var(--text-muted)" }}>
-            Not sure which fits?{" "}
-            <Link href="/contact" className="link-gold-light">
-              Book a free 15-min call.
-            </Link>
-            {" "}We&apos;ll tell you exactly what your business needs.
-          </p>
-        </div>
-
-        {/* Bundle callout */}
-        <RevealDiv
-          delay={250}
-          className="max-w-4xl mx-auto rounded-2xl p-6 mt-2"
-          style={{
-            background: "rgba(201,168,76,0.05)",
-            border: "1px solid rgba(201,168,76,0.2)",
-          }}
-        >
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <p
-                className="font-mono-label mb-1"
-                style={{ fontSize: "10px", letterSpacing: "0.14em", color: "var(--gold)" }}
+              <span
+                className="font-display mb-4 block"
+                style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.25)", lineHeight: 1 }}
               >
-                BUNDLE OFFER
+                {s.num}
+              </span>
+              <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "var(--text-primary)" }}>
+                {s.title}
+              </h3>
+              <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
+                {s.body}
               </p>
-              <p className="font-display text-lg" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
-                Website Redesign + Lead Recovery
-              </p>
-              <p className="font-body text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
-                Get both services together at one bundled rate. A brand-new site and a lead follow-up system that starts working from day one.
-              </p>
-            </div>
-            <div className="text-center sm:text-right shrink-0">
-              <p className="font-display text-3xl" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
-                $1,350
-              </p>
-              <p className="font-body text-xs" style={{ color: "var(--text-muted)" }}>
-                first month · then $199/mo
-              </p>
-            </div>
-          </div>
-        </RevealDiv>
+              {s.note && (
+                <p
+                  className="font-body text-xs italic mt-4 pt-4"
+                  style={{
+                    color: "var(--text-muted)",
+                    borderTop: "1px solid rgba(201,168,76,0.1)",
+                  }}
+                >
+                  {s.note}
+                </p>
+              )}
+            </RevealDiv>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -22,7 +22,7 @@ const sections = [
   },
   {
     heading: "Phone Number and Messaging",
-    body: "Our Lead Recovery service operates using your existing business phone number. We configure a layer on top of your number to send and receive text messages on your behalf when calls are missed. Message content is logged so you can review every conversation. You can disconnect the service at any time.",
+    body: "Our patient-capture service operates using your existing practice phone number. We configure a layer on top of your number to send and receive text messages on your behalf when calls are missed. Message content is logged so you can review every conversation. You can disconnect the service at any time. We do not collect, store, or transmit patient health information (PHI) through our automated messaging.",
   },
   {
     heading: "Data Storage and Security",

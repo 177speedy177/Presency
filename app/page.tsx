@@ -1,30 +1,30 @@
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
-import { Results } from "@/components/results"
-import { BeforeAfter } from "@/components/before-after"
-import { Process } from "@/components/process"
-import { VideoIntro } from "@/components/video-intro"
-import { Testimonials } from "@/components/testimonials"
-import { Services } from "@/components/services"
+import { Problem } from "@/components/results"
+import { WhatWeDo } from "@/components/services"
+import { HowItWorks } from "@/components/process"
+import { Plans } from "@/components/plans"
+import { DentalFeatures } from "@/components/dental-features"
+import { FounderNote } from "@/components/video-intro"
 import { FAQ } from "@/components/faq"
-import { CTA } from "@/components/cta"
+import { AuditCTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
-import { StickyContactBar } from "@/components/sticky-contact-bar"
 import { SeePlansButton } from "@/components/see-plans-button"
+import { StickyContactBar } from "@/components/sticky-contact-bar"
 
 export default function Home() {
   return (
     <main>
       <Nav />
       <Hero />
-      <Results />
-      <Services />
-      <BeforeAfter />
-      <Process />
-      <VideoIntro />
-      <Testimonials />
+      <Problem />
+      <WhatWeDo />
+      <HowItWorks />
+      <Plans />
+      <DentalFeatures />
+      <FounderNote />
       <FAQ />
-      <CTA />
+      <AuditCTA />
       <Footer />
       <SeePlansButton />
       <StickyContactBar />
