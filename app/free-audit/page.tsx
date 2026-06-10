@@ -310,7 +310,7 @@ export default function FreeAuditPage() {
               <p className="font-body text-sm text-center mt-5" style={{ color: "var(--text-muted)" }}>
                 Prefer a call?{" "}
                 <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer" className="link-gold">
-                  Book 15 minutes on Calendly →
+                  Book 30 minutes on Calendly →
                 </a>
               </p>
             </div>

@@ -131,7 +131,7 @@ export default function AboutPage() {
               Start with a free Patient Capture Audit.
             </h2>
             <p className="font-body text-base mb-8" style={{ color: "var(--text-secondary)" }}>
-              A 15-minute call where we map every gap in your new-patient follow-up and show you exactly what can be captured. No commitment required.
+              A 30-minute call where we map every gap in your new-patient follow-up and show you exactly what can be captured. No commitment required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 onMouseEnter={(e) => { e.currentTarget.style.background = "#d4b05a" }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
               >
-                Book a free 15-min call
+                Book a free 30-min audit
               </a>
               <Link
                 href="/contact"

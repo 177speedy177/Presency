@@ -200,7 +200,7 @@ export default function ContactPage() {
                     </p>
                     <div className="flex flex-wrap gap-3">
                       {[
-                        { id: "call" as const, label: "15-min call", desc: "Quick intro over video or phone" },
+                        { id: "call" as const, label: "30-min audit", desc: "Walk through your practice gaps over video or phone" },
                         { id: "email" as const, label: "Email thread", desc: "No calls. Keep it in writing." },
                       ].map(({ id, label, desc }) => {
                         const active = contactMethod === id
@@ -348,7 +348,7 @@ export default function ContactPage() {
                       title: contactMethod === "email" ? "We follow up by email" : "We hop on a call",
                       desc: contactMethod === "email"
                         ? "We send you a clear breakdown of where your practice is losing patients and what we would do about it."
-                        : "15 minutes. We walk through exactly where your practice is losing patients and what Presency would fix.",
+                        : "30 minutes. We walk through exactly where your practice is losing patients and what Presency would fix.",
                     },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-5">

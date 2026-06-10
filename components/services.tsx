@@ -4,140 +4,129 @@ import { RevealDiv } from "@/components/ui/reveal-div"
 const services = [
   {
     num: "01",
-    title: "Never miss a new patient",
-    body: "Every missed call and after-hours call gets an instant, automatic text follow-up from your practice's own number. The patient stays in your funnel instead of calling the practice next door.",
-    note: null,
+    title: "Speed-to-lead capture",
+    body: "Every missed call, after-hours call, and web form gets an instant, no-PHI text follow-up from your practice's own number. The patient hears back in seconds, not the next business day.",
+    badge: null,
   },
   {
     num: "02",
-    title: "Turn web inquiries into appointments",
-    body: "Every contact form submission gets an immediate follow-up text. All replies, whether from a missed call or a web form, land in one unified inbox your front desk can manage from any browser.",
-    note: null,
+    title: "One unified inbox",
+    body: "All replies from every channel land in one place your front desk manages from any browser. When a conversation turns clinical, staff take it from there. No app to download, no new system to learn.",
+    badge: null,
   },
   {
     num: "03",
-    title: "Build a 5-star reputation automatically",
-    body: "After every visit, your practice sends a warm, automatic review request. Reviews accumulate without anyone on your team having to remember to ask.",
-    note: null,
+    title: "Reputation engine",
+    body: "After every visit, a warm review request goes out automatically. Google reviews accumulate without anyone on your team having to remember to ask. This compounds into an asset the practice won't want to lose.",
+    badge: null,
   },
   {
     num: "04",
-    title: "Bring patients back",
-    body: "Recall and reactivation campaigns reach patients who are due for their next visit or who have not been in for a while, turning a dormant record into a booked appointment.",
-    note: "Part of the Practice Growth plan. Requires patient consent and active compliance setup.",
+    title: "Recall and reactivation",
+    body: "Patients due for their next visit or dormant in your records get a personal outreach campaign. A patient who already chose your practice is your easiest conversion. This turns silent records into booked chairs.",
+    badge: "Practice Growth",
   },
   {
     num: "05",
-    title: "Built for dental practices",
-    body: "The system works with your existing phone number and practice management software. No new equipment, no new apps for staff, and no patient health information in any automated message.",
-    note: null,
+    title: "Monthly ROI report",
+    body: "Every month you receive a report showing missed calls recovered, conversations started, appointments booked, reviews added, and estimated revenue recovered. This single artifact makes the ROI undeniable.",
+    badge: null,
   },
 ]
+
+function ServiceCard({ s, delay }: { s: (typeof services)[number]; delay: number }) {
+  return (
+    <RevealDiv
+      delay={delay}
+      className="rounded-2xl p-7 flex flex-col cursor-default relative"
+      style={{
+        background: "#ffffff",
+        border: "1px solid rgba(201,168,76,0.18)",
+        boxShadow: "0 2px 12px rgba(28,24,16,0.05)",
+        transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.5)"
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(28,24,16,0.1)"
+        e.currentTarget.style.transform = "translateY(-3px)"
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"
+        e.currentTarget.style.boxShadow = "0 2px 12px rgba(28,24,16,0.05)"
+        e.currentTarget.style.transform = "translateY(0)"
+      }}
+    >
+      {s.badge && (
+        <div className="absolute top-5 right-5">
+          <span
+            className="font-mono-label"
+            style={{
+              fontSize: "9px",
+              letterSpacing: "0.1em",
+              color: "#7a5c10",
+              background: "rgba(201,168,76,0.1)",
+              border: "1px solid rgba(201,168,76,0.3)",
+              borderRadius: "999px",
+              padding: "2px 8px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {s.badge.toUpperCase()}
+          </span>
+        </div>
+      )}
+      <span
+        className="font-display mb-5 block"
+        style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.4)", lineHeight: 1, letterSpacing: "-0.02em" }}
+      >
+        {s.num}
+      </span>
+      <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "#1c1810" }}>
+        {s.title}
+      </h3>
+      <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "rgba(28,24,16,0.65)" }}>
+        {s.body}
+      </p>
+    </RevealDiv>
+  )
+}
 
 export function WhatWeDo() {
   return (
     <section
       id="what-we-do"
       data-theme="light"
-      className="section-pad"
-      style={{ background: "var(--ink)" }}
+      className="section-pad relative overflow-hidden"
+      style={{ background: "#faf7f2" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <RevealDiv className="mb-16">
-          <p className="eyebrow mb-4">WHAT WE DO</p>
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 65% 50% at 90% 0%, rgba(201,168,76,0.07) 0%, transparent 55%)" }} />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <RevealDiv className="text-center mb-14">
+          <p className="font-mono-label mb-4" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
+            WHAT WE DO
+          </p>
           <h2
-            className="font-display mb-4 max-w-2xl"
-            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "var(--text-primary)" }}
+            className="font-display mb-4 mx-auto"
+            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810", maxWidth: "640px" }}
           >
-            Five outcomes.{" "}
-            <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-              Zero patient leaks.
-            </em>
+            Everything inside the system.
           </h2>
-          <p className="font-body text-base max-w-xl" style={{ color: "var(--text-secondary)" }}>
-            Each outcome is a specific place your practice was losing new patients. We close all of them.
+          <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.62)", maxWidth: "520px" }}>
+            Five recurring services running in the background. From the first missed call to a reactivated patient record, every step is covered.
           </p>
         </RevealDiv>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.slice(0, 3).map((s, i) => (
-            <RevealDiv
-              key={s.num}
-              delay={i * 100}
-              className="rounded-2xl p-7 flex flex-col"
-              style={{
-                background: "var(--surface-card)",
-                border: "1px solid rgba(201,168,76,0.15)",
-                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"
-                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.06)"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)"
-                e.currentTarget.style.boxShadow = "none"
-              }}
-            >
-              <span
-                className="font-display mb-4 block"
-                style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.25)", lineHeight: 1 }}
-              >
-                {s.num}
-              </span>
-              <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "var(--text-primary)" }}>
-                {s.title}
-              </h3>
-              <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
-                {s.body}
-              </p>
-            </RevealDiv>
+            <ServiceCard key={s.num} s={s} delay={i * 80} />
           ))}
-
-          {/* Row 2: items 4 and 5 centered */}
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 mt-6 lg:max-w-2xl lg:mx-auto">
           {services.slice(3).map((s, i) => (
-            <RevealDiv
-              key={s.num}
-              delay={(i + 3) * 100}
-              className="rounded-2xl p-7 flex flex-col"
-              style={{
-                background: "var(--surface-card)",
-                border: "1px solid rgba(201,168,76,0.15)",
-                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"
-                e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.06)"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)"
-                e.currentTarget.style.boxShadow = "none"
-              }}
-            >
-              <span
-                className="font-display mb-4 block"
-                style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.25)", lineHeight: 1 }}
-              >
-                {s.num}
-              </span>
-              <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "var(--text-primary)" }}>
-                {s.title}
-              </h3>
-              <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
-                {s.body}
-              </p>
-              {s.note && (
-                <p
-                  className="font-body text-xs italic mt-4 pt-4"
-                  style={{
-                    color: "var(--text-muted)",
-                    borderTop: "1px solid rgba(201,168,76,0.1)",
-                  }}
-                >
-                  {s.note}
-                </p>
-              )}
-            </RevealDiv>
+            <ServiceCard key={s.num} s={s} delay={(i + 3) * 80} />
           ))}
         </div>
       </div>

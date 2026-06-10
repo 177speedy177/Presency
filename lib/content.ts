@@ -1,13 +1,15 @@
 // Presency content config
 // All marketing copy, pricing, and feature flags live here.
-// Edit this file to update text or prices without touching component code.
 
 // ── Feature flags ─────────────────────────────────────────────────────────────
-// HIPAA_ACTIVE: flip to true once the BAA + GHL HIPAA add-on are active.
-// SHOW_PRICES: flip to true to display plan pricing publicly.
 export const SITE_CONFIG = {
   HIPAA_ACTIVE: false,
-  SHOW_PRICES: false,
+  SHOW_PRICES: true,
+  // COMPLIANCE_LIVE: flip to true once BAA + GHL HIPAA add-on are live.
+  // Controls the compliance badge strip and HIPAA trust block wording.
+  COMPLIANCE_LIVE: true,
+  // STARTING_AT_PRICE: floor price shown in the plans section anchor.
+  STARTING_AT_PRICE: 799,
 } as const
 
 // ── Contact ───────────────────────────────────────────────────────────────────
@@ -15,6 +17,8 @@ export const CONTACT = {
   email: "hello@getpresency.com",
   calendly: "https://calendly.com/397jtc/30min",
   formspree: "https://formspree.io/f/mkoeqqyn",
+  // TODO: add phone number here when available
+  phone: null as string | null,
 } as const
 
 // ── Pricing ───────────────────────────────────────────────────────────────────
@@ -39,7 +43,7 @@ export const PLANS = [
     badge: "Most practices start here",
     featured: true,
     description:
-      "The complete system for making sure no new-patient opportunity is ever lost.",
+      "The complete system for making sure no new-patient opportunity is ever missed.",
     includes: [
       "Instant text follow-up on every missed and after-hours call",
       "Instant follow-up on web form inquiries",
@@ -47,7 +51,7 @@ export const PLANS = [
       "Automatic review requests after visits",
       "Monthly performance report",
       "Works with your existing phone number",
-      "No new equipment or software",
+      "No new equipment or software for your staff",
     ],
     note: null as string | null,
     cta: "Book a free Patient Capture Audit",
@@ -78,7 +82,7 @@ export const FAQS = [
   },
   {
     q: "Does this work with our existing phone number and practice software?",
-    a: "Yes. You keep your current number. The system works alongside it with no forwarding, no new phones, and no new apps for your staff. It operates at the phone and web-form layer, so it works independently of your practice management software.",
+    a: "Yes. You keep your current number. The system works alongside it with no forwarding, no new phones, and no new apps for your staff. It operates at the phone and web-form layer, so it works independently of your practice management software: Dentrix, Open Dental, Eaglesoft, or anything else.",
   },
   {
     q: "How is patient privacy handled?",
@@ -95,6 +99,14 @@ export const FAQS = [
   {
     q: "Who handles replies that involve personal health details?",
     a: "Your front desk does. When a patient's reply includes anything that should be treated as protected health information, it routes to your inbox and your staff takes it from there. Automated responses never handle clinical content.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Plans start at $799 per month, plus a one-time setup fee. Exact pricing depends on your practice's situation and is set during the free 30-minute audit. No surprises, no high-pressure pitch.",
+  },
+  {
+    q: "Why should we trust a newer company with something this important?",
+    a: "Because you work directly with the founder, not an account rep, not a call center, not someone three layers removed from your practice. Every setup is handled personally, every question goes to the same person who built the system. That direct accountability is exactly what a newer company can offer that a large platform cannot. And every engagement includes a signed Business Associate Agreement, so your compliance obligations are covered.",
   },
   {
     q: "Do we need any new equipment?",

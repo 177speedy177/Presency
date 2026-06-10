@@ -5,11 +5,10 @@ import { CONTACT } from "@/lib/content"
 export function Footer() {
   return (
     <footer
-      data-theme="light"
       className="py-14"
       style={{
-        background: "var(--ink-2)",
-        borderTop: "1px solid rgba(201,168,76,0.2)",
+        background: "#0a0908",
+        borderTop: "1px solid rgba(201,168,76,0.15)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -92,7 +91,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-body text-sm link-gold"
               >
-                Book a free 15-min call
+                Book a free 30-min audit
               </a>
             </div>
           </div>

@@ -190,7 +190,7 @@ export function Testimonials() {
               onMouseEnter={(e) => { e.currentTarget.style.background = "#d4b05a" }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
             >
-              Book a free 15-min call
+              Book a free 30-min audit
             </a>
           </div>
         </RevealDiv>
