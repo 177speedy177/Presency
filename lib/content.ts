@@ -62,14 +62,18 @@ export const PLANS = [
     badge: null as string | null,
     featured: false,
     description:
-      "Everything in Patient Capture, plus campaigns that bring patients back.",
+      "Everything in Patient Capture, plus active campaigns and a full online presence build-out.",
     includes: [
       "Everything in Patient Capture",
-      "Recall and reactivation campaigns",
+      "Recall campaigns",
+      "Reactivation campaigns",
       "Google Business Profile optimization",
-      "Priority support",
+      "Competitor tracking",
+      "Reputation growth program",
+      "Website redesign with monthly optimization",
+      "Multi-location support",
     ],
-    note: "Recall and reactivation involve patient contact lists and require active compliance setup and express patient consent.",
+    note: "Recall and reactivation require active compliance setup and express patient consent. Website work is scoped during your audit.",
     cta: "Book a free Patient Capture Audit",
   },
 ] as const

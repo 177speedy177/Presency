@@ -39,6 +39,20 @@ const badges = [
   },
 ]
 
+function BadgeItem({ b }: { b: (typeof badges)[number] }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "7px", flexShrink: 0 }}>
+      {b.icon}
+      <span
+        className="font-mono-label"
+        style={{ fontSize: "10px", letterSpacing: "0.1em", color: "rgba(201,168,76,0.85)", whiteSpace: "nowrap" }}
+      >
+        {b.label.toUpperCase()}
+      </span>
+    </div>
+  )
+}
+
 export function ComplianceStrip() {
   if (!SITE_CONFIG.COMPLIANCE_LIVE) return null
 
@@ -50,22 +64,29 @@ export function ComplianceStrip() {
         background: "#13110e",
         borderTop: "1px solid rgba(201,168,76,0.15)",
         borderBottom: "1px solid rgba(201,168,76,0.15)",
-        padding: "10px 24px",
-        overflowX: "auto",
+        padding: "10px 0",
+        overflow: "hidden",
       }}
     >
-      <div className="max-w-7xl mx-auto" style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", gap: "24px 36px" }}>
-        {badges.map((b) => (
-          <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "7px", flexShrink: 0 }}>
-            {b.icon}
-            <span
-              className="font-mono-label"
-              style={{ fontSize: "10px", letterSpacing: "0.1em", color: "rgba(201,168,76,0.85)", whiteSpace: "nowrap" }}
-            >
-              {b.label.toUpperCase()}
-            </span>
-          </div>
-        ))}
+      {/* Desktop: static centered row */}
+      <div
+        className="hidden sm:flex max-w-7xl mx-auto px-6"
+        style={{ alignItems: "center", justifyContent: "center", flexWrap: "wrap", gap: "24px 36px" }}
+      >
+        {badges.map((b) => <BadgeItem key={b.label} b={b} />)}
+      </div>
+
+      {/* Mobile: infinite marquee */}
+      <div className="sm:hidden" style={{ position: "relative" }}>
+        <div style={{ display: "flex", gap: "36px", animation: "complianceMarquee 18s linear infinite", width: "max-content" }}>
+          {[...badges, ...badges].map((b, i) => <BadgeItem key={i} b={b} />)}
+        </div>
+        <style>{`
+          @keyframes complianceMarquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </div>
     </div>
   )

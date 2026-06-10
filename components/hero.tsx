@@ -252,33 +252,6 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Trust badges */}
-            <div className="hero-item flex flex-wrap gap-2 justify-center" style={{ animationDelay: "340ms" }}>
-              {[
-                "Free audit first",
-                "HIPAA-aware system",
-                "BAA included",
-                "Live in 10 days",
-                "Direct founder access",
-              ].map(badge => (
-                <span
-                  key={badge}
-                  className="font-mono-label"
-                  style={{
-                    fontSize: "9.5px",
-                    letterSpacing: "0.08em",
-                    color: "rgba(28,24,16,0.5)",
-                    background: "rgba(201,168,76,0.06)",
-                    border: "1px solid rgba(201,168,76,0.22)",
-                    borderRadius: "999px",
-                    padding: "4px 10px",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {badge.toUpperCase()}
-                </span>
-              ))}
-            </div>
 
             {/* Mobile swipeable deck */}
             <div className="lg:hidden mt-10 w-full">

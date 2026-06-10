@@ -1,7 +1,8 @@
 "use client"
+import { useRef, useState } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
 
-const services = [
+const patientCaptureServices = [
   {
     num: "01",
     title: "Speed-to-lead capture",
@@ -22,40 +23,56 @@ const services = [
   },
   {
     num: "04",
-    title: "Recall and reactivation",
-    body: "Patients due for their next visit or dormant in your records get a personal outreach campaign. A patient who already chose your practice is your easiest conversion. This turns silent records into booked chairs.",
-    badge: "Practice Growth",
-  },
-  {
-    num: "05",
     title: "Monthly ROI report",
     body: "Every month you receive a report showing missed calls recovered, conversations started, appointments booked, reviews added, and estimated revenue recovered. This single artifact makes the ROI undeniable.",
     badge: null,
   },
 ]
 
-function ServiceCard({ s, delay }: { s: (typeof services)[number]; delay: number }) {
+const practiceGrowthServices = [
+  {
+    num: "05",
+    title: "Recall campaigns",
+    body: "Patients who haven't booked a follow-up visit in a set window get a personalized outreach sequence from your practice's number. Timed and worded to feel like a reminder from a practice that cares, not a marketing blast.",
+    badge: "Practice Growth",
+  },
+  {
+    num: "06",
+    title: "Reactivation campaigns",
+    body: "Patients who went dormant in your records get a targeted re-engagement message. A patient who already chose your practice once is your easiest conversion. This turns a stagnant contact list into a live pipeline.",
+    badge: "Practice Growth",
+  },
+  {
+    num: "07",
+    title: "Google Business Profile optimization",
+    body: "Your GBP listing is often the first thing a prospective patient sees before they ever call. We optimize your profile, manage photos, write service descriptions, and ensure your practice ranks well for local dental searches.",
+    badge: "Practice Growth",
+  },
+  {
+    num: "08",
+    title: "Competitor tracking",
+    body: "We monitor your top local competitors' review volume, ratings, and visibility so you always know where your practice stands. When a gap opens or a competitor gains ground, you know before your patients notice.",
+    badge: "Practice Growth",
+  },
+  {
+    num: "09",
+    title: "Reputation growth program",
+    body: "Beyond automated review requests, this is an active program: response strategy, review volume targets, platform diversification, and a systematic approach to making your practice's reputation a durable competitive advantage.",
+    badge: "Practice Growth",
+  },
+  {
+    num: "10",
+    title: "Website redesign + monthly optimization",
+    body: "We design a fast, SEO-optimized practice website and keep it current with monthly updates. New services, updated hours, treatment landing pages, and ongoing performance tuning. Includes multi-location support.",
+    badge: "Practice Growth",
+  },
+]
+
+const allServices = [...patientCaptureServices, ...practiceGrowthServices]
+
+function CardContent({ s }: { s: (typeof allServices)[number] }) {
   return (
-    <RevealDiv
-      delay={delay}
-      className="rounded-2xl p-7 flex flex-col cursor-default relative"
-      style={{
-        background: "#ffffff",
-        border: "1px solid rgba(201,168,76,0.18)",
-        boxShadow: "0 2px 12px rgba(28,24,16,0.05)",
-        transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = "rgba(201,168,76,0.5)"
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(28,24,16,0.1)"
-        e.currentTarget.style.transform = "translateY(-3px)"
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"
-        e.currentTarget.style.boxShadow = "0 2px 12px rgba(28,24,16,0.05)"
-        e.currentTarget.style.transform = "translateY(0)"
-      }}
-    >
+    <>
       {s.badge && (
         <div className="absolute top-5 right-5">
           <span
@@ -87,7 +104,120 @@ function ServiceCard({ s, delay }: { s: (typeof services)[number]; delay: number
       <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "rgba(28,24,16,0.65)" }}>
         {s.body}
       </p>
+    </>
+  )
+}
+
+function ServiceCard({ s, delay }: { s: (typeof allServices)[number]; delay: number }) {
+  return (
+    <RevealDiv
+      delay={delay}
+      className="rounded-2xl p-7 flex flex-col cursor-default relative"
+      style={{
+        background: "#ffffff",
+        border: "1px solid rgba(201,168,76,0.18)",
+        boxShadow: "0 2px 12px rgba(28,24,16,0.05)",
+        transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.5)"
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(28,24,16,0.1)"
+        e.currentTarget.style.transform = "translateY(-3px)"
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"
+        e.currentTarget.style.boxShadow = "0 2px 12px rgba(28,24,16,0.05)"
+        e.currentTarget.style.transform = "translateY(0)"
+      }}
+    >
+      <CardContent s={s} />
     </RevealDiv>
+  )
+}
+
+function ServiceDeck() {
+  const [active, setActive] = useState(0)
+  const COUNT = allServices.length
+  const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    const dy = e.changedTouches[0].clientY - touchStartY.current
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 36) {
+      if (dx < 0) setActive(p => (p + 1) % COUNT)
+      else setActive(p => (p - 1 + COUNT) % COUNT)
+    }
+  }
+
+  const cardStyle = (i: number): React.CSSProperties => {
+    const rel = (i - active + COUNT) % COUNT
+    if (rel === 0) return {
+      position: "absolute", top: 0, left: "50%",
+      transform: "translateX(-50%) rotate(0deg)", zIndex: 10,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+    }
+    if (rel === 1) return {
+      position: "absolute", top: "14px", left: "50%",
+      transform: "translateX(-44%) rotate(4deg)", zIndex: 5,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+    }
+    if (rel === 2) return {
+      position: "absolute", top: "24px", left: "50%",
+      transform: "translateX(-56%) rotate(-3deg)", zIndex: 3,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+    }
+    return {
+      position: "absolute", top: "30px", left: "50%",
+      transform: "translateX(-50%) rotate(5deg)", zIndex: 1,
+      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1)",
+    }
+  }
+
+  return (
+    <div className="sm:hidden mt-8">
+      <div
+        style={{ position: "relative", height: "360px", touchAction: "pan-y" }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {allServices.map((s, i) => (
+          <div key={s.num} style={{ width: "min(300px, 82vw)", ...cardStyle(i) }}>
+            <div
+              className="rounded-2xl p-6 flex flex-col relative"
+              style={{
+                background: "#ffffff",
+                border: "1px solid rgba(201,168,76,0.18)",
+                boxShadow: "0 4px 20px rgba(28,24,16,0.08)",
+              }}
+            >
+              <CardContent s={s} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "12px" }}>
+        {allServices.map((_, i) => (
+          <div
+            key={i}
+            onClick={() => setActive(i)}
+            style={{
+              width: i === active ? "20px" : "6px",
+              height: "6px",
+              borderRadius: "999px",
+              background: i === active ? "#c9a84c" : "rgba(201,168,76,0.3)",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
 
@@ -115,20 +245,41 @@ export function WhatWeDo() {
             Everything inside the system.
           </h2>
           <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.62)", maxWidth: "520px" }}>
-            Five recurring services running in the background. From the first missed call to a reactivated patient record, every step is covered.
+            Two plans, ten services. Patient Capture covers the core. Practice Growth adds active campaigns and a full online presence build-out.
           </p>
         </RevealDiv>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(0, 3).map((s, i) => (
-            <ServiceCard key={s.num} s={s} delay={i * 80} />
-          ))}
+        {/* Desktop grid */}
+        <div className="hidden sm:block">
+          {/* Patient Capture group */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {patientCaptureServices.map((s, i) => (
+              <ServiceCard key={s.num} s={s} delay={i * 60} />
+            ))}
+          </div>
+
+          {/* Practice Growth divider */}
+          <RevealDiv className="flex items-center gap-4 my-10">
+            <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
+            <span
+              className="font-mono-label shrink-0"
+              style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#7a5c10" }}
+            >
+              PRACTICE GROWTH ADDS
+            </span>
+            <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
+          </RevealDiv>
+
+          {/* Practice Growth group */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {practiceGrowthServices.map((s, i) => (
+              <ServiceCard key={s.num} s={s} delay={i * 60} />
+            ))}
+          </div>
         </div>
-        <div className="grid sm:grid-cols-2 gap-6 mt-6 lg:max-w-2xl lg:mx-auto">
-          {services.slice(3).map((s, i) => (
-            <ServiceCard key={s.num} s={s} delay={(i + 3) * 80} />
-          ))}
-        </div>
+
+        {/* Mobile swipe deck */}
+        <ServiceDeck />
       </div>
     </section>
   )
