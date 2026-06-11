@@ -38,19 +38,19 @@ const practiceGrowthServices = [
     badge: "Practice Growth",
   },
   {
-    num: "07",
+    num: "06",
     title: "Done-for-you review responses",
     body: "Every Google review your practice receives gets a prompt, professionally written response in HIPAA-safe language. Consistent responses signal to Google and prospective patients that your practice is attentive and credible.",
     badge: "Practice Growth",
   },
   {
-    num: "08",
+    num: "07",
     title: "Unscheduled treatment follow-up",
     body: "Every practice has a backlog of patients who accepted a treatment plan and never scheduled. Automated, consent-based follow-up on that list turns dormant plans into booked procedures, often the highest per-conversion value in the practice.",
     badge: "Practice Growth",
   },
   {
-    num: "09",
+    num: "08",
     title: "No-show & cancellation rebooking",
     body: "When a patient cancels or doesn't show, an immediate sequence works to refill the slot and rebook them. Same infrastructure as speed-to-lead capture, applied directly to your existing schedule. Empty chairs get filled before the day ends.",
     badge: "Practice Growth",
