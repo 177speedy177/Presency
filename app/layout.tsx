@@ -30,6 +30,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   title: "Presency | Patient-Capture System for Dental Practices",
   description:
     "Presency makes sure every missed call, after-hours call, and web inquiry to your dental practice gets an instant follow-up, so the patients you already paid to attract actually book. Built for independent practices.",
@@ -54,7 +59,7 @@ export const metadata: Metadata = {
     url: "https://getpresency.com",
     images: [
       {
-        url: "https://getpresency.com/presency-og.png",
+        url: "https://getpresency.com/og.png",
         width: 1200,
         height: 630,
         alt: "Presency: Patient-capture systems for independent dental practices",
@@ -66,7 +71,7 @@ export const metadata: Metadata = {
     title: "Presency | Patient-Capture System for Dental Practices",
     description:
       "Every missed call is a patient walking into another office. Presency makes sure every missed call, after-hours call, and web inquiry to your practice gets an instant follow-up.",
-    images: ["https://getpresency.com/presency-og.png"],
+    images: ["https://getpresency.com/og.png"],
   },
 }
 

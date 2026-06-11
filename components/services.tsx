@@ -38,12 +38,6 @@ const practiceGrowthServices = [
     badge: "Practice Growth",
   },
   {
-    num: "06",
-    title: "Google Business Profile management",
-    body: "Monthly posts, photo updates, service descriptions, Q&A management, and local search tuning. Your GBP listing is the first thing most prospective patients see before they ever call your office.",
-    badge: "Practice Growth",
-  },
-  {
     num: "07",
     title: "Done-for-you review responses",
     body: "Every Google review your practice receives gets a prompt, professionally written response in HIPAA-safe language. Consistent responses signal to Google and prospective patients that your practice is attentive and credible.",
@@ -222,7 +216,7 @@ function ServiceDeck() {
         </span>
         <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
       </div>
-      <MobileDeck items={practiceGrowthServices} height={400} />
+      <MobileDeck items={practiceGrowthServices} height={360} />
     </div>
   )
 }
@@ -278,7 +272,7 @@ export function WhatWeDo() {
           </RevealDiv>
 
           {/* Practice Growth group */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {practiceGrowthServices.map((s, i) => (
               <ServiceCard key={s.num} s={s} delay={i * 60} />
             ))}

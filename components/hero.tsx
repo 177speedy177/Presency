@@ -205,8 +205,8 @@ export function Hero() {
               }}
             >
               Every missed call is a patient walking into{" "}
-              <em className="gold-text-sheen" style={{ fontStyle: "italic", fontWeight: 400, color: "#7a5c10" }}>
-                another office.
+              <em style={{ fontStyle: "italic", fontWeight: 400, color: "#7a5c10" }}>
+                another office
               </em>
             </h1>
 

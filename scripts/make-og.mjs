@@ -1,4 +1,4 @@
-// Regenerates public/presency-og.png (1200x630 link-preview card).
+// Regenerates public/og.png (1200x630 link-preview card).
 // Run from the presency folder: node scripts/make-og.mjs
 import sharp from "sharp"
 import { fileURLToPath } from "url"
@@ -58,6 +58,6 @@ const wm = await sharp(wordmark).metadata()
 await sharp(Buffer.from(bg))
   .composite([{ input: wordmark, left: Math.round((1200 - 620) / 2), top: Math.round(330 - wm.height) }])
   .png()
-  .toFile(pub("presency-og.png"))
+  .toFile(pub("og.png"))
 
-console.log("wrote public/presency-og.png")
+console.log("wrote public/og.png")
