@@ -65,7 +65,6 @@ export const PLANS = [
     includes: [
       "Everything in Patient Capture",
       "Recall & reactivation campaigns",
-      "Google Business Profile management",
       "Done-for-you review responses, HIPAA-safe",
       "Unscheduled treatment follow-up",
       "No-show & cancellation rebooking",
@@ -80,6 +79,10 @@ export const FAQS = [
   {
     q: "What happens when a patient calls and we can't answer?",
     a: "Within seconds, your practice's number sends an automatic text to the caller. The message is friendly, introduces the practice by name, and invites them to reply or book. It goes out whether the call came in during lunch, after hours, or when the front desk was on another line.",
+  },
+  {
+    q: "We already have voicemail. Why do we need this?",
+    a: "Voicemail works for the patients who already know you and are willing to wait. New and urgent callers are not. Industry research (Hiya, Invoca, RingCentral) finds that most people who reach a business voicemail hang up without leaving a message, and that first-time and urgent callers abandon at the highest rates of all. Those are the exact new-patient calls your marketing spent money to generate. Even the messages that do get left often go unheard, since voicemails from unknown numbers are the least likely to be listened to. A caller who gives up on your voicemail rarely tries again. They call the next practice on the list. Presency closes that gap the moment a call goes unanswered: the caller gets a warm text from your practice's own number inviting them to reply or book, so a missed call becomes a conversation instead of a lost patient. Voicemail still has its place for your established patients. This makes sure the new ones do not slip through.",
   },
   {
     q: "Does this work with our existing phone number and practice software?",

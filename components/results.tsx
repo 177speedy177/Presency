@@ -44,7 +44,7 @@ function CountUp({ value }: { value: string }) {
 const stats = [
   {
     num: "85%",
-    label: "of callers who can't reach a business on the first try will not call back. That patient is gone unless someone follows up first.",
+    label: "of callers who get sent to your voicemail never call back. For a new or urgent patient, voicemail is not a fallback. It is the moment they move on to the next practice.",
     source: "Invoca",
     sourceHref: "https://www.invoca.com/blog/missed-call-statistics/",
   },
@@ -89,7 +89,7 @@ function StatBlock({ num, label, source, sourceHref, last }: {
           onMouseEnter={e => { e.currentTarget.style.color = "#7a5c10" }}
           onMouseLeave={e => { e.currentTarget.style.color = "rgba(28,24,16,0.55)" }}
         >
-          SOURCE: {source.toUpperCase()} ↗
+          {source.toUpperCase()} ↗
         </a>
       </div>
     </div>
@@ -124,10 +124,10 @@ export function Problem() {
             </h2>
             <div className="flex flex-col gap-4">
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                Every ad, every referral, every Google search that ends with someone calling your practice is money you already spent. When that call goes to voicemail, or rings through during lunch, or comes in at 7pm after the front desk has left, that caller almost never tries again.
+                Most practices count on voicemail to catch the calls they cannot answer. It does not. Industry research (Hiya, Invoca, RingCentral) finds that the majority of callers who reach a voicemail hang up without leaving a message, and the new and urgent patients you most want to reach are the least likely to wait for the beep.
               </p>
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                They call the practice listed right below you. The one that picked up, or followed up within minutes. The new-patient opportunity was yours. You paid for it. You just did not capture it.
+                Every ad, every referral, every Google search that ends in a call is money you already spent. When that call lands in a voicemail box, the caller almost never tries again. They call the practice listed right below you, the one that followed up within minutes. The opportunity was yours. You paid for it. Voicemail just quietly let it go.
               </p>
             </div>
           </RevealDiv>

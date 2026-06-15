@@ -117,6 +117,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "We already have voicemail. Why do we need a patient-capture system?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Voicemail works for the patients who already know you and are willing to wait. New and urgent callers are not. Industry research (Hiya, Invoca, RingCentral) finds that most people who reach a business voicemail hang up without leaving a message, and that first-time and urgent callers abandon at the highest rates of all. Even the messages that do get left often go unheard, since voicemails from unknown numbers are the least likely to be listened to. A caller who gives up on your voicemail rarely tries again, so they call the next practice on the list. Presency closes that gap the moment a call goes unanswered: the caller gets a warm text from your practice's own number inviting them to reply or book. Voicemail still has its place for your established patients. This makes sure the new ones do not slip through.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Does the Presency patient-capture system work with our existing phone number?",
       acceptedAnswer: {
         "@type": "Answer",
