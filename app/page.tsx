@@ -2,16 +2,15 @@ import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { ComplianceStrip } from "@/components/compliance-strip"
 import { WhatWeDo } from "@/components/services"
-import { MissedCallCalculator } from "@/components/cost-calculator"
+import { ContactSection } from "@/components/contact-section"
 import { Problem } from "@/components/results"
 import { Plans } from "@/components/plans"
-import { DentalFeatures } from "@/components/dental-features"
+import { BuiltForLocal } from "@/components/built-for"
 import { FounderNote } from "@/components/video-intro"
 import { FAQ } from "@/components/faq"
 import { AuditCTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 import { StickyContactBar } from "@/components/sticky-contact-bar"
-import { SeePlansButton } from "@/components/see-plans-button"
 
 export default function Home() {
   return (
@@ -20,16 +19,15 @@ export default function Home() {
       <Hero />
       <ComplianceStrip />
       <WhatWeDo />
-      <MissedCallCalculator />
       <Problem />
       <Plans />
-      <DentalFeatures />
+      <BuiltForLocal />
       <FounderNote />
       <FAQ />
       <AuditCTA />
+      <ContactSection />
       <Footer />
       <StickyContactBar />
-      <SeePlansButton />
     </main>
   )
 }

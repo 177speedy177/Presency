@@ -8,7 +8,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const pub = p => path.join(root, "public", p)
 
 const TOOTH =
-  "M12 2C9.5 2 8.7 3 7 3C5 3 3 4.5 3 7.5C3 10 4 11.5 4.8 14C5.5 16.5 5.8 22 7.5 22C9.5 22 8.5 16 12 16C15.5 16 14.5 22 16.5 22C18.2 22 18.5 16.5 19.2 14C20 11.5 21 10 21 7.5C21 4.5 19 3 17 3C15.3 3 14.5 2 12 2Z"
+  "M12 1.5C12.4 6.8 17.2 11.6 22.5 12C17.2 12.4 12.4 17.2 12 22.5C11.6 17.2 6.8 12.4 1.5 12C6.8 11.6 11.6 6.8 12 1.5Z"
 
 const tooth = (x, y, size, rot, op) =>
   `<g transform="translate(${x} ${y}) rotate(${rot} 12 12) scale(${size / 24})">
@@ -41,7 +41,7 @@ const bg = `
 
   <text x="600" y="412" text-anchor="middle"
         font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#e9e4da" letter-spacing="0.5">
-    Patient capture for independent dental practices
+    Websites, Google, and reputation for local businesses
   </text>
 
   <text x="600" y="478" text-anchor="middle"

@@ -1,5 +1,4 @@
 "use client"
-import { SITE_CONFIG } from "@/lib/content"
 
 const badges = [
   {
@@ -9,7 +8,7 @@ const badges = [
         <path d="M5 7l1.5 1.5L9 5.5" stroke="#c9a84c" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "HIPAA-Compliant Infrastructure",
+    label: "Locally Focused",
   },
   {
     icon: (
@@ -18,7 +17,7 @@ const badges = [
         <path d="M5 5V3.5a2 2 0 0 1 4 0V5" stroke="#c9a84c" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
-    label: "BAA Provided to Every Practice",
+    label: "Built for Small Business",
   },
   {
     icon: (
@@ -27,7 +26,7 @@ const badges = [
         <path d="M5 7l1.5 1.5L9 5.5" stroke="#c9a84c" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "No PHI in Automated Messages",
+    label: "Done-for-You, Start to Finish",
   },
   {
     icon: (
@@ -35,7 +34,7 @@ const badges = [
         <path d="M7 2C4.24 2 2 4.24 2 7s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2.5v2.75l1.75 1.75" stroke="#c9a84c" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "Patient Data Encrypted",
+    label: "Direct Founder Access",
   },
 ]
 
@@ -54,12 +53,10 @@ function BadgeItem({ b }: { b: (typeof badges)[number] }) {
 }
 
 export function ComplianceStrip() {
-  if (!SITE_CONFIG.COMPLIANCE_LIVE) return null
-
   return (
     <div
       role="region"
-      aria-label="Compliance and trust"
+      aria-label="Why Presency"
       style={{
         background: "#13110e",
         borderTop: "1px solid rgba(201,168,76,0.15)",

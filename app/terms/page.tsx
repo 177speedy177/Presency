@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Terms of Service | Presency",
   description:
-    "Presency's terms of service. What you can expect from us and what we ask of you when using our patient-capture services.",
+    "Presency's terms of service. What you can expect from us and what we ask of you when using our digital agency services.",
   alternates: {
     canonical: "https://getpresency.com/terms",
   },
@@ -14,7 +14,7 @@ export const metadata = {
 const sections = [
   {
     heading: "Services",
-    body: "Presency provides patient-capture systems for independent dental practices. The specific scope of services is outlined in your service agreement or onboarding materials. We reserve the right to modify or discontinue any service with reasonable notice.",
+    body: "Presency is a local digital agency. We provide website design and hosting, Google Business Profile optimization, review and reputation management, social media management, and related digital services for local businesses. The specific scope of any engagement is defined in your service agreement or proposal. We reserve the right to modify or discontinue any service with reasonable notice.",
   },
   {
     heading: "Payment",
@@ -26,11 +26,11 @@ const sections = [
   },
   {
     heading: "Your Responsibilities",
-    body: "You are responsible for providing accurate information about your practice, maintaining access to your phone number and messaging system, and reviewing the conversations and responses sent on your behalf. You agree not to use our services for any unlawful purpose. You must not instruct us to include protected health information (PHI) in any automated message.",
+    body: "You are responsible for providing accurate information about your business, supplying the content, brand assets, and account access we need to deliver the services, and reviewing the work we produce on your behalf. You agree to use our services only for lawful purposes and to ensure you have the rights to any materials you provide to us.",
   },
   {
-    heading: "Messaging and Phone Use",
-    body: "Our service sends and receives text messages using your existing practice phone number. You are responsible for ensuring you have the right to send messages to your patients under applicable law. We act as your authorized representative when communicating on your behalf and will do so in good faith. Our automated messages are not designed to carry, transmit, or store PHI.",
+    heading: "Ownership",
+    body: "You own your website and the content you provide to us. On full payment for an engagement, the deliverables we produce for you under that engagement become yours. We may retain rights to our own underlying tools, templates, and know-how, and we may reference completed work in our portfolio unless you ask us not to.",
   },
   {
     heading: "Limitation of Liability",

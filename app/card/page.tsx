@@ -109,16 +109,17 @@ export default function WelcomePage() {
                 color: "var(--text-primary)",
               }}
             >
-              See exactly where your practice is losing patients.
+              See exactly how your local business shows up online.
             </h2>
 
             <p
               className="font-body text-sm leading-relaxed mb-8"
               style={{ color: "var(--text-secondary)" }}
             >
-              The free Patient Capture Audit maps your missed-call exposure, after-hours gaps,
-              web inquiry response, and review presence. No pitch, no pressure. Just an honest
-              look at what&apos;s working and what&apos;s costing you patients.
+              The free local presence audit reviews your website, Google Business Profile,
+              reviews, and how easily customers find you in search and AI answers. No pitch,
+              no pressure. Just an honest look at what&apos;s working and where you&apos;re
+              losing customers to competitors.
             </p>
 
             <Link

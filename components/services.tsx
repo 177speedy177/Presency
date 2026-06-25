@@ -1,225 +1,6 @@
 "use client"
-import { useRef, useState } from "react"
 import { RevealDiv } from "@/components/ui/reveal-div"
 import { ToothPattern } from "@/components/ui/tooth-pattern"
-
-const patientCaptureServices = [
-  {
-    num: "01",
-    title: "Speed-to-lead capture",
-    body: "Every missed call, after-hours call, and web form gets an instant, no-PHI text follow-up from your practice's own number. The patient hears back in seconds, not the next business day.",
-    badge: null,
-  },
-  {
-    num: "02",
-    title: "One unified inbox",
-    body: "All replies from every channel land in one place your front desk manages from any browser. When a conversation turns clinical, staff take it from there. No app to download, no new system to learn.",
-    badge: null,
-  },
-  {
-    num: "03",
-    title: "Reputation engine",
-    body: "After every visit, a warm review request goes out automatically. Google reviews accumulate without anyone on your team having to remember to ask. This compounds into an asset the practice won't want to lose.",
-    badge: null,
-  },
-  {
-    num: "04",
-    title: "Monthly ROI report",
-    body: "Every month you receive a report showing missed calls recovered, conversations started, appointments booked, reviews added, and estimated revenue recovered. This single artifact makes the ROI undeniable.",
-    badge: null,
-  },
-]
-
-const practiceGrowthServices = [
-  {
-    num: "05",
-    title: "Recall & reactivation",
-    body: "Patients overdue for their next visit get a personalized outreach sequence. Dormant records get a re-engagement message. Your existing patient list is your highest-ROI pipeline. This works it systematically.",
-    badge: "Practice Growth",
-  },
-  {
-    num: "06",
-    title: "Done-for-you review responses",
-    body: "Every Google review your practice receives gets a prompt, professionally written response in HIPAA-safe language. Consistent responses signal to Google and prospective patients that your practice is attentive and credible.",
-    badge: "Practice Growth",
-  },
-  {
-    num: "07",
-    title: "Unscheduled treatment follow-up",
-    body: "Every practice has a backlog of patients who accepted a treatment plan and never scheduled. Automated, consent-based follow-up on that list turns dormant plans into booked procedures, often the highest per-conversion value in the practice.",
-    badge: "Practice Growth",
-  },
-  {
-    num: "08",
-    title: "No-show & cancellation rebooking",
-    body: "When a patient cancels or doesn't show, an immediate sequence works to refill the slot and rebook them. Same infrastructure as speed-to-lead capture, applied directly to your existing schedule. Empty chairs get filled before the day ends.",
-    badge: "Practice Growth",
-  },
-]
-
-const allServices = [...patientCaptureServices, ...practiceGrowthServices]
-
-function CardContent({ s }: { s: (typeof allServices)[number] }) {
-  return (
-    <>
-      {s.badge && (
-        <div className="absolute top-5 right-5">
-          <span
-            className="font-mono-label"
-            style={{
-              fontSize: "9px",
-              letterSpacing: "0.1em",
-              color: "#7a5c10",
-              background: "rgba(201,168,76,0.1)",
-              border: "1px solid rgba(201,168,76,0.3)",
-              borderRadius: "999px",
-              padding: "2px 8px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {s.badge.toUpperCase()}
-          </span>
-        </div>
-      )}
-      <span
-        className="font-display mb-5 block"
-        style={{ fontSize: "3rem", fontWeight: 100, color: "rgba(201,168,76,0.4)", lineHeight: 1, letterSpacing: "-0.02em" }}
-      >
-        {s.num}
-      </span>
-      <h3 className="font-display text-lg mb-3" style={{ fontWeight: 400, color: "#1c1810" }}>
-        {s.title}
-      </h3>
-      <p className="font-body text-sm leading-relaxed flex-1" style={{ color: "rgba(28,24,16,0.65)" }}>
-        {s.body}
-      </p>
-    </>
-  )
-}
-
-function ServiceCard({ s, delay }: { s: (typeof allServices)[number]; delay: number }) {
-  return (
-    <RevealDiv
-      delay={delay}
-      className="rounded-2xl p-7 flex flex-col cursor-default relative"
-      style={{
-        background: "#ffffff",
-        border: "1px solid rgba(201,168,76,0.18)",
-        boxShadow: "0 2px 12px rgba(28,24,16,0.05)",
-        transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = "rgba(201,168,76,0.5)"
-        e.currentTarget.style.boxShadow = "0 8px 32px rgba(28,24,16,0.1)"
-        e.currentTarget.style.transform = "translateY(-3px)"
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = "rgba(201,168,76,0.18)"
-        e.currentTarget.style.boxShadow = "0 2px 12px rgba(28,24,16,0.05)"
-        e.currentTarget.style.transform = "translateY(0)"
-      }}
-    >
-      <CardContent s={s} />
-    </RevealDiv>
-  )
-}
-
-// Centered swipe deck, same interaction as the hero cards
-function MobileDeck({ items, height }: { items: typeof allServices; height: number }) {
-  const [active, setActive] = useState(0)
-  const COUNT = items.length
-  const touchStartX = useRef(0)
-  const touchStartY = useRef(0)
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-    touchStartY.current = e.touches[0].clientY
-  }
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    const dx = e.changedTouches[0].clientX - touchStartX.current
-    const dy = e.changedTouches[0].clientY - touchStartY.current
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 36) {
-      if (dx < 0) setActive(p => (p + 1) % COUNT)
-      else setActive(p => (p - 1 + COUNT) % COUNT)
-    }
-  }
-
-  const cardStyle = (i: number): React.CSSProperties => {
-    const rel = (i - active + COUNT) % COUNT
-    const base: React.CSSProperties = {
-      position: "absolute", left: "50%",
-      transition: "transform 0.42s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease",
-    }
-    if (rel === 0) return { ...base, top: 0, transform: "translateX(-50%) rotate(0deg)", zIndex: 10 }
-    if (rel === 1) return { ...base, top: "14px", transform: "translateX(-44%) rotate(4deg)", zIndex: 5 }
-    if (rel === 2) return { ...base, top: "24px", transform: "translateX(-56%) rotate(-3deg)", zIndex: 3 }
-    return { ...base, top: "30px", transform: "translateX(-50%) rotate(5deg)", zIndex: 1, opacity: rel === COUNT - 1 ? 1 : 0 }
-  }
-
-  return (
-    <div>
-      <div
-        style={{ position: "relative", height: `${height}px`, touchAction: "pan-y" }}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        {items.map((s, i) => (
-          <div key={s.num} style={{ width: "min(300px, 82vw)", ...cardStyle(i) }}>
-            <div
-              className="rounded-2xl p-6 flex flex-col relative"
-              style={{
-                background: "#ffffff",
-                border: "1px solid rgba(201,168,76,0.18)",
-                boxShadow: "0 4px 20px rgba(28,24,16,0.08)",
-              }}
-            >
-              <CardContent s={s} />
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "12px" }}>
-        {items.map((_, i) => (
-          <div
-            key={i}
-            onClick={() => setActive(i)}
-            style={{
-              width: i === active ? "20px" : "6px",
-              height: "6px",
-              borderRadius: "999px",
-              background: i === active ? "#c9a84c" : "rgba(201,168,76,0.3)",
-              transition: "all 0.3s ease",
-              cursor: "pointer",
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function ServiceDeck() {
-  return (
-    <div className="sm:hidden mt-8">
-      {/* Patient Capture deck */}
-      <MobileDeck items={patientCaptureServices} height={360} />
-
-      {/* Practice Growth deck */}
-      <div className="flex items-center gap-4 mt-10 mb-6">
-        <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
-        <span
-          className="font-mono-label shrink-0"
-          style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#7a5c10" }}
-        >
-          PRACTICE GROWTH ADDS
-        </span>
-        <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
-      </div>
-      <MobileDeck items={practiceGrowthServices} height={360} />
-    </div>
-  )
-}
 
 export function WhatWeDo() {
   return (
@@ -241,46 +22,105 @@ export function WhatWeDo() {
           </p>
           <h2
             className="font-display mb-4 mx-auto"
-            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810", maxWidth: "640px" }}
+            style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810", maxWidth: "680px" }}
           >
-            Everything inside the system.
+            Everything your business needs to show up and win online.
           </h2>
-          <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.65)", maxWidth: "520px" }}>
-            Patient Capture secures every new opportunity coming in. Practice Growth adds campaigns that work your existing records and keep your online presence running.
+          <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.65)", maxWidth: "560px" }}>
+            Websites, Google, and reputation for local businesses. We start where it matters most and grow with you from there.
           </p>
         </RevealDiv>
 
-        {/* Desktop grid */}
-        <div className="hidden sm:block">
-          {/* Patient Capture group */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {patientCaptureServices.map((s, i) => (
-              <ServiceCard key={s.num} s={s} delay={i * 60} />
-            ))}
-          </div>
-
-          {/* Practice Growth divider */}
-          <RevealDiv className="flex items-center gap-4 my-10">
-            <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
-            <span
-              className="font-mono-label shrink-0"
-              style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#7a5c10" }}
-            >
-              PRACTICE GROWTH ADDS
-            </span>
-            <div className="flex-1 h-px" style={{ background: "rgba(201,168,76,0.18)" }} />
+        <div className="max-w-3xl mx-auto">
+          <RevealDiv>
+            <p className="font-body" style={{ fontSize: "1.25rem", lineHeight: 1.7, color: "#1c1810", marginBottom: "1.75rem", fontWeight: 300 }}>
+              It begins with a website you are proud to send people to. Clean, fast, and built to turn a visit into a phone call or a booking. For most local businesses, that single change does more than anything else, so it is where we start.
+            </p>
           </RevealDiv>
 
-          {/* Practice Growth group */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {practiceGrowthServices.map((s, i) => (
-              <ServiceCard key={s.num} s={s} delay={i * 60} />
-            ))}
-          </div>
-        </div>
+          <RevealDiv delay={80}>
+            <p className="font-body" style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "rgba(28,24,16,0.78)", marginBottom: "1.5rem" }}>
+              From there, we layer on the rest of your local presence as you are ready for it. We optimize and manage your Google Business Profile so you show up when nearby customers are searching. We build a steady stream of fresh reviews and look after your reputation, responding on your behalf so every rating works in your favor. We keep your social media active with regular, on-brand posts. And we tune your whole presence for AI search and modern visibility, so the new ways people find businesses point them to you.
+            </p>
+          </RevealDiv>
 
-        {/* Mobile swipe deck */}
-        <ServiceDeck />
+          <RevealDiv delay={140}>
+            <p className="font-body" style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "rgba(28,24,16,0.78)", marginBottom: "1.5rem" }}>
+              When it helps, we add a website chat widget with an AI agent that answers questions and captures leads around the clock, plus ongoing hosting and management so the whole thing stays fast, secure, and current without you lifting a finger.
+            </p>
+          </RevealDiv>
+
+          <RevealDiv delay={200}>
+            <div
+              className="rounded-2xl"
+              style={{
+                background: "#ffffff",
+                border: "1px solid rgba(201,168,76,0.18)",
+                boxShadow: "0 2px 12px rgba(28,24,16,0.05)",
+                padding: "1.75rem 2rem",
+                margin: "2.5rem 0",
+              }}
+            >
+              <p className="font-mono-label mb-5" style={{ fontSize: "10px", letterSpacing: "0.14em", color: "#7a5c10" }}>
+                THE FULL SCOPE
+              </p>
+              <ul className="font-body" style={{ display: "grid", gap: "0.85rem", color: "rgba(28,24,16,0.82)", fontSize: "1rem", listStyle: "none", padding: 0, margin: 0 }}>
+                {[
+                  "Website design and builds",
+                  "Google Business Profile optimization and management",
+                  "Review and reputation management",
+                  "Social media posting and management",
+                  "AI-search and visibility optimization",
+                  "Website chat widget with an AI agent (add-on)",
+                  "Ongoing hosting and management (add-on)",
+                ].map((item) => (
+                  <li key={item} style={{ display: "flex", alignItems: "baseline", gap: "0.75rem" }}>
+                    <span aria-hidden="true" style={{ color: "#c9a84c", fontSize: "0.9rem", lineHeight: 1.6 }}>
+                      &#9670;
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </RevealDiv>
+
+          <RevealDiv delay={260}>
+            <p className="font-body" style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "rgba(28,24,16,0.78)", marginBottom: "2rem" }}>
+              Start small with a website, or step into a full local-presence partner. There are no tiers to decode and no pressure. We figure out the right starting point together, in a free conversation about your business.
+            </p>
+          </RevealDiv>
+
+          <RevealDiv delay={320} className="text-center">
+            <a
+              href="#contact"
+              className="font-mono-label inline-flex items-center justify-center"
+              style={{
+                fontSize: "12px",
+                letterSpacing: "0.12em",
+                color: "#1c1810",
+                background: "#c9a84c",
+                borderRadius: "999px",
+                padding: "0.9rem 2rem",
+                textDecoration: "none",
+                transition: "background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease",
+                boxShadow: "0 2px 12px rgba(201,168,76,0.25)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#d8b95e"
+                e.currentTarget.style.transform = "translateY(-2px)"
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#c9a84c"
+                e.currentTarget.style.transform = "translateY(0)"
+                e.currentTarget.style.boxShadow = "0 2px 12px rgba(201,168,76,0.25)"
+              }}
+            >
+              NOT SURE WHERE TO START? TELL US ABOUT YOUR BUSINESS
+            </a>
+          </RevealDiv>
+        </div>
       </div>
     </section>
   )

@@ -33,9 +33,9 @@ export function Footer() {
               </span>
             </div>
             <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-              Patient-capture systems for independent
+              Websites, Google, and reputation for
               <br />
-              dental practices nationwide.
+              local businesses.
             </p>
           </div>
 
@@ -45,10 +45,10 @@ export function Footer() {
               {
                 heading: "SERVICES",
                 links: [
-                  { href: "/free-audit", label: "Patient Capture Audit" },
-                  { href: "/#plans", label: "Plans" },
-                  { href: "/#what-we-do", label: "What We Do" },
-                  { href: "/#faq", label: "FAQ" },
+                  { href: "/#what-we-do", label: "Websites" },
+                  { href: "/#what-we-do", label: "Google Business Profile" },
+                  { href: "/#what-we-do", label: "Reviews & Reputation" },
+                  { href: "/#contact", label: "Contact" },
                 ],
               },
               {
@@ -67,7 +67,7 @@ export function Footer() {
                 </p>
                 <nav className="flex flex-col gap-2">
                   {group.links.map((l) => (
-                    <Link key={l.href} href={l.href} className="font-body text-sm link-gold">
+                    <Link key={l.label} href={l.href} className="font-body text-sm link-gold">
                       {l.label}
                     </Link>
                   ))}
@@ -91,7 +91,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-body text-sm link-gold"
               >
-                Book a free 30-min audit
+                Book a quick intro call
               </a>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Presency. All rights reserved.
           </p>
           <p className="font-mono-label text-xs" style={{ color: "var(--text-muted)", opacity: 0.6 }}>
-            Independent dental practices &nbsp;·&nbsp; Nationwide
+            For local businesses
           </p>
         </div>
       </div>

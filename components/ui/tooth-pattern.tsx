@@ -1,8 +1,10 @@
 "use client"
 import { useLayoutEffect, useRef, useState } from "react"
 
+// Soft four-point sparkle motif (premium, neutral). Drives the faint
+// drifting background ornament used across sections.
 const TOOTH_PATH =
-  "M12 2C9.5 2 8.7 3 7 3C5 3 3 4.5 3 7.5C3 10 4 11.5 4.8 14C5.5 16.5 5.8 22 7.5 22C9.5 22 8.5 16 12 16C15.5 16 14.5 22 16.5 22C18.2 22 18.5 16.5 19.2 14C20 11.5 21 10 21 7.5C21 4.5 19 3 17 3C15.3 3 14.5 2 12 2Z"
+  "M12 1.5C12.4 6.8 17.2 11.6 22.5 12C17.2 12.4 12.4 17.2 12 22.5C11.6 17.2 6.8 12.4 1.5 12C6.8 11.6 11.6 6.8 12 1.5Z"
 
 const DRIFT_CLASSES = ["tooth-drift-a", "tooth-drift-b", "tooth-drift-c"]
 

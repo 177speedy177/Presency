@@ -91,7 +91,7 @@ export default function ContactPage() {
               >
                 Let&apos;s talk about{" "}
                 <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                  your practice.
+                  your business.
                 </em>
               </h1>
               <p className="font-body text-lg mb-10" style={{ color: "var(--text-secondary)" }}>
@@ -114,22 +114,22 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <Field id="fullName" label="YOUR NAME *" required />
-                    <Field id="practiceName" label="PRACTICE NAME *" required />
+                    <Field id="businessName" label="BUSINESS NAME *" required />
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="practiceType" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
-                        PRACTICE TYPE
+                      <label htmlFor="businessType" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
+                        TYPE OF BUSINESS
                       </label>
                       <select
-                        id="practiceType" name="practiceType"
+                        id="businessType" name="businessType"
                         className={INPUT_CLS + " cursor-pointer"}
                         style={{ ...inputStyle, appearance: "none" } as React.CSSProperties}
                         onFocus={onFocus} onBlur={onBlur}
                       >
                         <option value="" style={{ background: "var(--ink-2)" }}>Select...</option>
-                        {["General Dentistry", "Pediatric Dentistry", "Orthodontics", "Oral Surgery", "Periodontics", "Other Dental"].map((t) => (
+                        {["Restaurant or cafe", "Retail or shop", "Home services or trades", "Salon, spa, or wellness", "Professional services", "Other"].map((t) => (
                           <option key={t} value={t} style={{ background: "var(--ink-2)" }}>{t}</option>
                         ))}
                       </select>
@@ -152,7 +152,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="challenge" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)" }}>
-                      WHAT&apos;S YOUR BIGGEST CHALLENGE AT YOUR PRACTICE?
+                      WHAT&apos;S YOUR BIGGEST CHALLENGE ONLINE?
                     </label>
                     <textarea
                       id="challenge" name="challenge" rows={4}
@@ -166,7 +166,7 @@ export default function ContactPage() {
                       PLAN INTEREST
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {["Patient Capture", "Practice Growth", "Not sure yet"].map((pkg) => {
+                      {["Website", "Google & reviews", "Not sure yet"].map((pkg) => {
                         const active = selectedPackage === pkg
                         return (
                           <button
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     </p>
                     <div className="flex flex-wrap gap-3">
                       {[
-                        { id: "call" as const, label: "30-min audit", desc: "Walk through your practice gaps over video or phone" },
+                        { id: "call" as const, label: "Free conversation", desc: "A relaxed, no-pressure chat about your online presence over video or phone" },
                         { id: "email" as const, label: "Email thread", desc: "No calls. Keep it in writing." },
                       ].map(({ id, label, desc }) => {
                         const active = contactMethod === id
@@ -338,17 +338,17 @@ export default function ContactPage() {
                     { num: "1", title: "You submit", desc: "Fill out the form. Takes about 2 minutes." },
                     {
                       num: "2",
-                      title: "We review your practice",
+                      title: "We look at your online presence",
                       desc: contactMethod === "email"
-                        ? "We look at your current missed-call exposure, web presence, and review profile, then put together a clear picture."
-                        : "We look at your current missed-call exposure, web presence, and review profile before the call.",
+                        ? "We review your website, Google Business Profile, and reviews, then put together a clear picture."
+                        : "We review your website, Google Business Profile, and reviews before the conversation.",
                     },
                     {
                       num: "3",
-                      title: contactMethod === "email" ? "We follow up by email" : "We hop on a call",
+                      title: contactMethod === "email" ? "We follow up by email" : "We have a conversation",
                       desc: contactMethod === "email"
-                        ? "We send you a clear breakdown of where your practice is losing patients and what we would do about it."
-                        : "30 minutes. We walk through exactly where your practice is losing patients and what Presency would fix.",
+                        ? "We send you a clear, no-pressure breakdown of where your online presence could be stronger and how we would help."
+                        : "A free, no-pressure conversation about where your online presence could be stronger, your goals, and how Presency would help.",
                     },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-5">

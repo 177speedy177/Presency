@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Privacy Policy | Presency",
   description:
-    "Presency's privacy policy. How we collect, use, and protect your information when you use our website and services.",
+    "Presency's privacy policy. How we collect, use, and protect the information you share when you work with our agency or visit our website.",
   alternates: {
     canonical: "https://getpresency.com/privacy",
   },
@@ -14,15 +14,15 @@ export const metadata = {
 const sections = [
   {
     heading: "Information We Collect",
-    body: "We collect information you provide directly: your name, business name, email address, and phone number when you fill out a contact form or sign up for our services. We also collect basic usage data (pages visited, browser type) through standard web analytics.",
+    body: "We collect information you provide directly: your name, business name, email address, phone number, and website when you fill out a form, request a quote, or hire us for our services. We also collect basic usage data (pages visited, browser type, referring site) from website visitors through standard web analytics.",
   },
   {
     heading: "How We Use Your Information",
-    body: "We use your information to respond to inquiries, deliver and improve our services, send service-related updates, and communicate with you about your account. We do not sell your personal information to third parties.",
+    body: "We use your information to respond to inquiries, prepare proposals, deliver and improve our services, send service-related updates, and communicate with you about your projects and account. We do not sell your personal information to third parties.",
   },
   {
-    heading: "Phone Number and Messaging",
-    body: "Our patient-capture service operates using your existing practice phone number. We configure a layer on top of your number to send and receive text messages on your behalf when calls are missed. Message content is logged so you can review every conversation. You can disconnect the service at any time. We do not collect, store, or transmit patient health information (PHI) through our automated messaging.",
+    heading: "Website Analytics",
+    body: "When you visit our website, we collect anonymous, aggregate usage data such as pages viewed, time on site, browser type, and the site that referred you. We use this to understand what is useful and to improve the experience. This data is not used to identify individual visitors.",
   },
   {
     heading: "Data Storage and Security",

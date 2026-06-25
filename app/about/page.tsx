@@ -1,22 +1,20 @@
 "use client"
 import Image from "next/image"
-import Link from "next/link"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { CONTACT } from "@/lib/content"
 
 const beliefs = [
   {
-    title: "Independent practices deserve better tools.",
-    body: "Most patient-capture software is built for large groups. It is expensive, hard to implement, and not designed for a two-person front desk at an independent practice. Presency is built specifically for the independent practice that wants the same capability without the enterprise overhead.",
+    title: "Local businesses deserve better online.",
+    body: "Most marketing help is built for big brands with big budgets, or it is a cheap template that never gets managed. Presency is built specifically for the local business that wants a sharp website, a strong Google presence, and real reviews, done for them without the big-agency overhead.",
   },
   {
-    title: "A missed call is not a small problem.",
-    body: "For a practice where a new patient is worth thousands of dollars over their lifetime, a missed call that books at a competing practice is a real loss. The problem is not that the practice does not care. It is that most practices have no system in place to catch the call when staff are occupied.",
+    title: "Showing up better wins the customer.",
+    body: "When a customer searches, they choose the business that simply shows up better: a cleaner website, a fuller Google profile, more recent reviews. The work being done is rarely the difference. The presence is. Most great local businesses lose customers to a competitor who is easier to find and easier to trust online.",
   },
   {
-    title: "Technology should work for your staff, not the other way around.",
-    body: "If a front desk coordinator has to learn a new software system, remember to check another inbox, or change how they handle calls, the tool will not get used. Every workflow we build is designed to be invisible to your staff and obvious in its results.",
+    title: "It should be done for you, and obvious in its results.",
+    body: "You should not have to learn another dashboard, chase another login, or manage another vendor. We build and manage your website, Google Business Profile, reviews, social, and AI-search visibility for you. Every month you see exactly what changed and what it earned.",
   },
 ]
 
@@ -46,24 +44,24 @@ export default function AboutPage() {
                 >
                   Founder-built.{" "}
                   <em className="font-display" style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                    For independent practices.
+                    For local businesses.
                   </em>
                 </h1>
 
                 <div className="space-y-5 font-body text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
                   <p>
-                    I study Biomedical Engineering at Penn State, where I spend my time learning how high-performing systems are designed, measured, and improved. Exploring the operational side of healthcare, I kept seeing the same failure everywhere I looked: great independent practices losing patients to bigger groups, not because the clinical care was worse, but because the phone went to voicemail or the web form sat unanswered for a day.
+                    I study Biomedical Engineering at Penn State, where I spend my time learning how high-performing systems are designed, measured, and improved. The more I looked at local businesses, the more I saw the same pattern: excellent shops, studios, and trades losing customers to competitors who simply show up better online. A sharper website, a stronger Google presence, more reviews. Not better work, just a better presence.
                   </p>
                   <p>
-                    I built Presency specifically for independent dental practices that do excellent work and should not be losing new patients to a process failure. The dentist your family loves, the practice that has been on that block for decades. They deserve the same capture capability that the large groups have.
+                    I built Presency to give small local businesses that same edge, done for them. The cafe your neighborhood loves, the contractor who has been on that street for decades. They deserve a website, a Google profile, and a reputation online that match the quality of their work.
                   </p>
                   <p>
-                    Presency is small by design. Every practice gets a real setup, not a software login and a good luck. Every month you see exactly what the system captured.
+                    Presency is founder-led by design. You get a real person who builds and manages your presence, not a login and a good luck. Every month you see exactly what changed and what it earned.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-3">
-                  {["Serving practices nationwide", "BAA included", "Direct founder access"].map((t) => (
+                  {["Founder-led", "Done-for-you", "Direct founder access"].map((t) => (
                     <div key={t} className="flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <circle cx="7" cy="7" r="6.5" stroke="#c9a84c" strokeOpacity="0.5" />
@@ -128,32 +126,21 @@ export default function AboutPage() {
               READY TO START
             </p>
             <h2 className="font-display text-3xl mb-5" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
-              Start with a free Patient Capture Audit.
+              Start the conversation.
             </h2>
             <p className="font-body text-base mb-8" style={{ color: "var(--text-secondary)" }}>
-              A 30-minute call where we map every gap in your new-patient follow-up and show you exactly what can be captured. No commitment required.
+              A free, no-pressure conversation about your website, your Google presence, and how customers find you. We will show you where you can win, with no commitment required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={CONTACT.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="font-body font-medium text-sm px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
                 style={{ background: "var(--gold)", color: "#0d0c0a" }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = "#b8922e" }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
               >
-                Book a free 30-min audit
+                Start the conversation
               </a>
-              <Link
-                href="/contact"
-                className="font-body font-medium text-sm px-8 py-4 rounded-lg transition-all duration-200 cursor-pointer"
-                style={{ background: "transparent", color: "var(--text-primary)", border: "1px solid rgba(201,168,76,0.3)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(201,168,76,0.6)" }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(201,168,76,0.3)" }}
-              >
-                Send a message
-              </Link>
             </div>
           </div>
         </section>

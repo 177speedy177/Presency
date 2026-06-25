@@ -27,21 +27,21 @@ export function FounderNote() {
               className="font-display mb-5 leading-tight"
               style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
-              Built because good care deserves better systems.
+              Built so local businesses can compete online.
             </h2>
 
             <div className="flex flex-col gap-4">
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                As a Biomedical Engineering student at Penn State, I've spent years learning how high-performing systems are designed, measured, and improved. While exploring the operational side of healthcare, I kept noticing the same issue: exceptional practices losing opportunities not because of the care they provide, but because inquiries weren't being captured or followed up with consistently.
+                As a Biomedical Engineering student at Penn State, I've spent years learning how high-performing systems are designed, measured, and improved. The more I studied that, the more I kept seeing the same thing in my own town: excellent local businesses losing customers to competitors who simply showed up better online.
               </p>
               <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                A missed call. A delayed response. A prospective patient choosing another office.
+                A sharper website. A stronger Google presence. More reviews. Not better work, just a better first impression where people were already looking.
               </p>
               <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                Presency exists to help solve that gap. We build practical, reliable follow-up systems that help independent practices respond faster, stay organized, and create a better experience from the very first interaction.
+                I built Presency to give small local businesses that same edge, done for them, without the runaround of a big agency. We build the website, sharpen your Google Business Profile, and keep your reviews and reputation working in your favor.
               </p>
               <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                When you work with Presency, you work directly with me, the founder. The goal isn't to sell another marketing service. It's to build systems that support the quality of care your practice already provides.
+                When you work with Presency, you work directly with me, the founder. The goal isn't to sell another marketing service. It's to help good local businesses get the online presence their work deserves.
               </p>
               <button
                 onClick={() => setExpanded(e => !e)}

@@ -29,8 +29,8 @@ const auditItems = [
         <path d="M13.5 11.5c-1.1 1.1-2.3 2-3.5 2-2 0-4.5-2.5-5.7-4.5C3.1 7.1 2.3 5.5 3.5 4.3l1.4-1.4c.4-.4 1-.4 1.4 0l2.1 2.8c.4.4.4 1 0 1.4l-1 1C8 9 9 10 10.1 10.6l1.1-1.1c.4-.4 1-.4 1.4 0l2.8 2.1c.4.4.4 1 0 1.4l-2 1.5" stroke="#c9a84c" strokeOpacity="0.6" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Missed call exposure",
-    desc: "We map how many calls your practice misses each week: during lunch, after hours, when the front desk is occupied. Every gap is a new-patient opportunity that currently goes uncaptured.",
+    title: "Website quality and mobile experience",
+    desc: "We look at how your site loads on a phone, how clearly it explains what you do, and how easy it is to contact you. A slow or confusing site quietly sends customers to a competitor.",
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const auditItems = [
         <path d="M3 5h14M3 10h10M3 15h7" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Web inquiry response time",
-    desc: "How quickly your practice responds to web form submissions. A patient who fills out a contact form and hears nothing within a few hours will typically call someone else.",
+    title: "Google Business Profile and local search visibility",
+    desc: "We check whether your profile is complete, accurate, and showing up when nearby customers search. Gaps here are often the single biggest reason a business gets passed over in local results.",
   },
   {
     icon: (
@@ -47,8 +47,8 @@ const auditItems = [
         <path d="M10 2l1.8 5.4H17l-4.5 3.3 1.7 5.3L10 13l-4.2 3 1.7-5.3L3 7.4h5.2z" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Review presence",
-    desc: "How many reviews your practice has, how recent they are, and whether you have a consistent process for collecting them. Reviews are the first thing a prospective new patient checks.",
+    title: "Reviews and reputation",
+    desc: "We look at how many reviews you have, how recent they are, how you respond, and whether you have a steady way to collect more. Reviews are the first thing most customers check before they choose you.",
   },
   {
     icon: (
@@ -57,8 +57,8 @@ const auditItems = [
         <path d="M7 4V2M13 4V2M3 9h14" stroke="#c9a84c" strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "After-hours coverage",
-    desc: "What a patient experiences when they call outside your office hours. Does anything follow up, or does the opportunity disappear until the next business day?",
+    title: "Getting found in AI search",
+    desc: "More customers now ask AI assistants for recommendations instead of scrolling search results. We check whether your business shows up clearly and correctly when those tools answer for your area.",
   },
 ]
 
@@ -105,13 +105,13 @@ export default function FreeAuditPage() {
               className="font-display mb-5 leading-tight"
               style={{ fontSize: "clamp(2.4rem,5.5vw,4rem)", fontWeight: 300, color: "var(--text-primary)" }}
             >
-              Find out exactly where your practice is{" "}
+              Find out exactly where your business is{" "}
               <em className="font-display" style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                losing new patients.
+                losing customers online.
               </em>
             </h1>
             <p className="font-body text-lg leading-relaxed" style={{ color: "var(--text-secondary)", maxWidth: "520px" }}>
-              The Patient Capture Audit maps every gap in your new-patient follow-up: missed calls, after-hours coverage, web inquiry response, and review presence. You get a clear report back within 2 business days.
+              The Local Presence Audit is a hands-on review of your website, Google Business Profile, reviews, and AI search visibility. We send back an honest breakdown of what is costing you customers and what to fix first, within 2 business days.
             </p>
           </div>
 
@@ -148,14 +148,10 @@ export default function FreeAuditPage() {
                     <path d="M8 1l1.5 4.5H14l-4 2.8 1.5 4.7L8 10l-4.5 3 1.5-4.7-4-2.8h5.5z" fill="rgba(201,168,76,0.4)" />
                   </svg>
                   <p className="font-body text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                    This is a real, manual audit done by a person. Not an automated report. We look at your actual practice before we send anything back.
+                    This is a real, manual audit done by a person. Not an automated report. A real person reviews your actual website and Google presence before we send anything back.
                   </p>
                 </div>
               </div>
-
-              <p className="font-body text-xs italic mt-5" style={{ color: "var(--text-muted)" }}>
-                Do not enter any patient names, health information, or appointment details in this form.
-              </p>
             </div>
 
             {/* Right: Form */}
@@ -178,7 +174,7 @@ export default function FreeAuditPage() {
                       Audit request received.
                     </p>
                     <p className="font-body text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
-                      We will review your practice and send your Patient Capture Audit back within 2 business days.
+                      We will review your business and send your Local Presence Audit back within 2 business days.
                     </p>
                     <Link href="/" className="font-body text-sm" style={{ color: "var(--gold)" }}>
                       Back to home →
@@ -195,15 +191,15 @@ export default function FreeAuditPage() {
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                       <div>
-                        <label htmlFor="practiceName" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
-                          PRACTICE NAME *
+                        <label htmlFor="businessName" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
+                          BUSINESS NAME *
                         </label>
                         <input
-                          id="practiceName"
-                          name="practiceName"
+                          id="businessName"
+                          name="businessName"
                           type="text"
                           required
-                          placeholder="Your practice name"
+                          placeholder="Your business name"
                           className={INPUT_CLS}
                           style={inputStyle}
                           onFocus={onFocus}
@@ -213,14 +209,14 @@ export default function FreeAuditPage() {
 
                       <div>
                         <label htmlFor="email" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
-                          PRACTICE EMAIL *
+                          EMAIL *
                         </label>
                         <input
                           id="email"
                           name="email"
                           type="email"
                           required
-                          placeholder="you@yourpractice.com"
+                          placeholder="you@yourbusiness.com"
                           className={INPUT_CLS}
                           style={inputStyle}
                           onFocus={onFocus}
@@ -263,13 +259,13 @@ export default function FreeAuditPage() {
 
                       <div>
                         <label htmlFor="website" className="font-mono-label text-xs block mb-2" style={{ color: "var(--text-muted)", letterSpacing: "0.1em" }}>
-                          PRACTICE WEBSITE
+                          WEBSITE (if you have one)
                         </label>
                         <input
                           id="website"
                           name="website"
                           type="url"
-                          placeholder="https://yourpractice.com"
+                          placeholder="https://yourbusiness.com"
                           className={INPUT_CLS}
                           style={inputStyle}
                           onFocus={onFocus}
@@ -277,7 +273,7 @@ export default function FreeAuditPage() {
                         />
                       </div>
 
-                      <input type="hidden" name="_subject" value="Patient Capture Audit Request" />
+                      <input type="hidden" name="_subject" value="Free Local Presence Audit Request" />
 
                       {error && (
                         <p className="font-body text-sm text-center" style={{ color: "rgba(255,120,120,0.8)" }}>
@@ -296,13 +292,9 @@ export default function FreeAuditPage() {
                         onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.background = "#b8922e"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,168,76,0.35)" } }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)"; e.currentTarget.style.boxShadow = "none" }}
                       >
-                        {loading ? "Sending..." : "Request my free Patient Capture Audit"}
+                        {loading ? "Sending..." : "Request my free audit"}
                       </button>
                     </form>
-
-                    <p className="font-mono-label text-center mt-5" style={{ fontSize: "11px", color: "#7a5c10", letterSpacing: "0.1em" }}>
-                      DO NOT ENTER PATIENT NAMES OR HEALTH INFORMATION
-                    </p>
                   </>
                 )}
               </div>

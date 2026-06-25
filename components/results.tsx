@@ -43,22 +43,22 @@ function CountUp({ value }: { value: string }) {
 
 const stats = [
   {
-    num: "85%",
-    label: "of callers who get sent to your voicemail never call back. For a new or urgent patient, voicemail is not a fallback. It is the moment they move on to the next practice.",
-    source: "Invoca",
-    sourceHref: "https://www.invoca.com/blog/missed-call-statistics/",
-  },
-  {
-    num: "7x",
-    label: "more likely to have a meaningful conversation with a new lead when you respond within the first hour. Most practices take far longer, if they respond at all. Speed is the whole game.",
-    source: "Harvard Business Review",
-    sourceHref: "https://hbr.org/2011/03/the-short-life-of-online-sales-leads",
-  },
-  {
     num: "98%",
-    label: "of text messages are opened. Only 21% of emails are ever read, making a text the most reliable way to recover a missed caller instantly.",
-    source: "Forbes",
-    sourceHref: "https://www.forbes.com/advisor/business/sms-marketing-statistics/",
+    label: "of consumers searched online to find a local business in the past year. If you are hard to find, you are losing them before the first call.",
+    source: "BrightLocal",
+    sourceHref: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+  },
+  {
+    num: "76%",
+    label: "of people who run a local \"near me\" search on their phone visit a business within a day. That intent moves fast, and it goes to whoever shows up first.",
+    source: "Think with Google",
+    sourceHref: "https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/local-search-to-store-visit-statistics/",
+  },
+  {
+    num: "93%",
+    label: "of customers read online reviews to judge a local business before choosing it. Your rating is your first impression.",
+    source: "BrightLocal",
+    sourceHref: "https://www.brightlocal.com/research/local-consumer-review-survey-2024/",
   },
 ]
 
@@ -117,17 +117,17 @@ export function Problem() {
               className="font-display mb-6 leading-tight"
               style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
-              Your marketing budget earns the call.{" "}
+              Customers decide online,{" "}
               <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
-                Your response earns the patient.
+                before they ever call you.
               </em>
             </h2>
             <div className="flex flex-col gap-4">
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                Most practices count on voicemail to catch the calls they cannot answer. It does not. Industry research (Hiya, Invoca, RingCentral) finds that the majority of callers who reach a voicemail hang up without leaving a message, and the new and urgent patients you most want to reach are the least likely to wait for the beep.
+                Long before anyone picks up the phone, they have already searched your name, scanned your Google listing, and read what other people said about you. By the time they decide whether to call, the decision is mostly made. Your website, your profile, and your reviews are the first impression, and often the only one you get.
               </p>
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                Every ad, every referral, every Google search that ends in a call is money you already spent. When that call lands in a voicemail box, the caller almost never tries again. They call the practice listed right below you, the one that followed up within minutes. The opportunity was yours. You paid for it. Voicemail just quietly let it go.
+                If you are invisible in search, your site looks dated, or your reviews are thin, customers do not give you the benefit of the doubt. They quietly move to the competitor who looks trustworthy, current, and easy to choose. The work that wins local business now happens online, before the conversation ever starts. That is exactly the ground we cover for you.
               </p>
             </div>
           </RevealDiv>

@@ -14,7 +14,7 @@ export function Nav() {
   }, [])
 
   useEffect(() => {
-    const ids = ["plans", "faq"]
+    const ids = ["what-we-do", "problem", "faq", "contact"]
     const visible = new Set<string>()
     const observers = ids.map(id => {
       const el = document.getElementById(id)
@@ -31,10 +31,11 @@ export function Nav() {
   }, [])
 
   const links = [
-    { href: "/#plans", label: "Plans" },
+    { href: "/#what-we-do", label: "What We Do" },
+    { href: "/#problem", label: "Why It Matters" },
     { href: "/#faq", label: "FAQ" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#contact", label: "Contact" },
   ]
 
   const bg = scrolled || menuOpen
@@ -96,13 +97,13 @@ export function Nav() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/free-audit"
+              href="/#contact"
               className="font-body text-sm px-5 py-2 rounded-lg border transition-all duration-200 cursor-pointer"
               style={{ borderColor: "#c9a84c", color: "#1c1810", background: "transparent" }}
               onMouseEnter={e => { e.currentTarget.style.background = "#c9a84c"; e.currentTarget.style.color = "#0d0c0a" }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#1c1810" }}
             >
-              Free audit
+              Get in touch
             </Link>
           </div>
 
@@ -154,12 +155,12 @@ export function Nav() {
             </Link>
           ))}
           <Link
-            href="/free-audit"
+            href="/#contact"
             className="font-body text-sm px-5 py-2.5 rounded-lg border text-center transition-all duration-200 cursor-pointer"
             style={{ borderColor: "#c9a84c", color: "#1c1810", background: "transparent" }}
             onClick={() => setMenuOpen(false)}
           >
-            Free audit
+            Get in touch
           </Link>
         </div>
       </div>

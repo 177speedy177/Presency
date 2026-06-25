@@ -82,18 +82,16 @@ export function StickyContactBar() {
 
             <div className="hidden md:block min-w-0">
               <p className="font-mono-label" style={{ fontSize: "10px", letterSpacing: "0.1em", color: "var(--text-muted)" }}>
-                FREE AUDIT
+                START A CONVERSATION
               </p>
               <a
-                href={CONTACT.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="font-body text-sm font-medium transition-colors duration-200"
                 style={{ color: "var(--text-secondary)" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--gold)" }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)" }}
               >
-                Book on Calendly →
+                Send a message →
               </a>
             </div>
           </div>
@@ -101,15 +99,13 @@ export function StickyContactBar() {
           {/* Right: CTA + dismiss */}
           <div className="flex items-center gap-2 shrink-0">
             <a
-              href={CONTACT.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="font-body font-medium text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap"
               style={{ background: "var(--gold)", color: "#0d0c0a" }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--gold-light)" }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "var(--gold)" }}
             >
-              Get free audit
+              Get in touch
             </a>
 
             <button

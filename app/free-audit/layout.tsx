@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Free Patient Capture Audit | Presency",
+  title: "Free Local Presence Audit | Presency",
   description:
-    "Request a free Patient Capture Audit for your dental practice. We map missed-call exposure, after-hours gaps, web inquiry response, and review presence. Report back within 2 business days.",
+    "Request a free Local Presence Audit for your business. We review your website, Google Business Profile, reviews, and AI search visibility, then send an honest breakdown of what is costing you customers. Report back within 2 business days.",
   alternates: {
     canonical: "https://getpresency.com/free-audit",
   },

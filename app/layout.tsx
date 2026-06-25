@@ -35,26 +35,26 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
   },
-  title: "Presency | Patient-Capture System for Dental Practices",
+  title: "Presency | Websites, Google, and Reviews for Local Businesses",
   description:
-    "Presency makes sure every missed call, after-hours call, and web inquiry to your dental practice gets an instant follow-up, so the patients you already paid to attract actually book. Built for independent practices.",
+    "Presency is a local digital agency. We build your website, optimize your Google Business Profile, and manage your reviews, so local customers find you, trust you, and choose you.",
   keywords: [
-    "dental patient capture",
-    "missed call follow-up dental practice",
-    "dental practice lead recovery",
-    "after hours dental follow-up",
-    "dental appointment follow-up system",
-    "independent dental practice marketing",
-    "dental missed call text back",
-    "patient capture system for dental practices",
+    "local business website design",
+    "Google Business Profile optimization",
+    "review management for local business",
+    "local SEO agency",
+    "small business web design",
+    "reputation management",
+    "get found on Google",
+    "local digital marketing agency",
   ],
   alternates: {
     canonical: "https://getpresency.com",
   },
   openGraph: {
-    title: "Presency | Patient-Capture System for Dental Practices",
+    title: "Presency | Websites, Google, and Reviews for Local Businesses",
     description:
-      "Every missed call is a patient walking into another office. Presency makes sure every missed call, after-hours call, and web inquiry to your practice gets an instant follow-up.",
+      "Presency builds your website, runs your Google presence, and manages your reviews, so local customers find you, trust you, and choose you.",
     type: "website",
     url: "https://getpresency.com",
     images: [
@@ -62,15 +62,15 @@ export const metadata: Metadata = {
         url: "https://getpresency.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Presency: Patient-capture systems for independent dental practices",
+        alt: "Presency: websites, Google, and reputation for local businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presency | Patient-Capture System for Dental Practices",
+    title: "Presency | Websites, Google, and Reviews for Local Businesses",
     description:
-      "Every missed call is a patient walking into another office. Presency makes sure every missed call, after-hours call, and web inquiry to your practice gets an instant follow-up.",
+      "Presency builds your website, runs your Google presence, and manages your reviews, so local customers find you, trust you, and choose you.",
     images: ["https://getpresency.com/og.png"],
   },
 }
@@ -81,7 +81,7 @@ const webSiteSchema = {
   name: "Presency",
   url: "https://getpresency.com",
   description:
-    "Patient-capture systems for independent dental practices nationwide.",
+    "Websites, Google Business Profile optimization, and reputation management for local businesses.",
 }
 
 const localBusinessSchema = {
@@ -89,7 +89,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "Presency",
   description:
-    "Patient-capture systems for independent dental practices nationwide. Instant follow-up on missed calls, after-hours calls, and web inquiries.",
+    "A local digital agency. Presency builds websites, optimizes Google Business Profiles, and manages reviews and reputation for local businesses.",
   url: "https://getpresency.com",
   email: "hello@getpresency.com",
   foundingDate: "2026",
@@ -109,42 +109,34 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What happens when a patient calls a dental practice and no one answers?",
+      name: "What exactly does Presency do?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Within seconds, your practice's number sends an automatic text to the caller. The message introduces the practice by name and invites them to reply or book. It goes out whether the call came in during lunch, after hours, or when the front desk was on another line.",
+        text: "Presency is a local digital agency. We build your website, optimize and manage your Google Business Profile, run your review and reputation building, handle your social posting, and make sure your business shows up when people search. You can start with one piece and add the rest over time.",
       },
     },
     {
       "@type": "Question",
-      name: "We already have voicemail. Why do we need a patient-capture system?",
+      name: "Do I have to buy everything at once?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Voicemail works for the patients who already know you and are willing to wait. New and urgent callers are not. Industry research (Hiya, Invoca, RingCentral) finds that most people who reach a business voicemail hang up without leaving a message, and that first-time and urgent callers abandon at the highest rates of all. Even the messages that do get left often go unheard, since voicemails from unknown numbers are the least likely to be listened to. A caller who gives up on your voicemail rarely tries again, so they call the next practice on the list. Presency closes that gap the moment a call goes unanswered: the caller gets a warm text from your practice's own number inviting them to reply or book. Voicemail still has its place for your established patients. This makes sure the new ones do not slip through.",
+        text: "No. Most businesses start with the foundation, usually a professional website, and grow from there. We recommend the smallest first step that moves the needle, then layer on Google, reviews, and social as it makes sense. There is no pressure to take it all on day one.",
       },
     },
     {
       "@type": "Question",
-      name: "Does the Presency patient-capture system work with our existing phone number?",
+      name: "How does pricing work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Your practice number stays the same. We configure one simple call-handling setting so unanswered calls trigger the follow-up. No new phones and no new apps for your staff.",
+        text: "Pricing depends on what your business actually needs, so we set it during a free conversation rather than posting fixed tiers. You will know exactly what you are getting and what it costs before anything starts.",
       },
     },
     {
       "@type": "Question",
-      name: "How is patient privacy handled?",
+      name: "Do you build the website, or just advise?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Automated messages are designed to contain no patient health information. They are appointment-invitation messages, not clinical communications. Anything involving personal health details is routed to your front desk to handle directly.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does setup take?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most practices are live within about 10 business days. We handle the configuration. Your team does a brief 30-minute walkthrough to get familiar with the inbox and handoff process.",
+        text: "We build it, host it, and manage it. You do not touch the technical side. You get a fast, modern, mobile-ready site, and when something needs to change, you tell us and we handle it.",
       },
     },
   ],

@@ -1,7 +1,6 @@
 "use client"
 import { RevealDiv } from "@/components/ui/reveal-div"
 import { ToothPattern } from "@/components/ui/tooth-pattern"
-import { SITE_CONFIG } from "@/lib/content"
 
 const features = [
   {
@@ -10,8 +9,8 @@ const features = [
         <path d="M11 2a9 9 0 1 0 0 18A9 9 0 0 0 11 2zM11 6v5l3 3" stroke="#7a5c10" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Works with your existing phone number",
-    body: "Your practice phone number stays the same. No new phone lines, no hardware. We handle the setup, and your patients see your practice number on every follow-up message.",
+    title: "We do the work, you do not touch the tech",
+    body: "Presency builds, hosts, and manages everything. Your website, your Google profile, your reviews and reputation. There is nothing to install and no new system for you to learn. You stay focused on running your business.",
   },
   {
     icon: (
@@ -20,8 +19,8 @@ const features = [
         <path d="M7 9h8M7 13h5" stroke="#7a5c10" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    title: "Works alongside your practice software",
-    body: "Dentrix, Open Dental, Eaglesoft, or anything else. Patient Capture operates at the phone and web-form layer, so it needs no integration or IT work. Growth campaigns run on a secure patient list export that you review and approve.",
+    title: "Start with what matters most, add the rest over time",
+    body: "We begin where it moves the needle for you, then layer on the rest as you are ready. Website, Google presence, reviews, social, AI visibility. There is no pressure and no oversized package you do not need.",
   },
   {
     icon: (
@@ -29,15 +28,15 @@ const features = [
         <path d="M11 3l1.8 5.4H18l-4.5 3.3 1.7 5.3L11 14l-4.2 3 1.7-5.3L4 8.4h5.2z" stroke="#7a5c10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "No new equipment or extended staff training",
-    body: "Your team doesn't download an app or learn a new system. They access the unified inbox from any browser. Onboarding is a 30-minute walkthrough, not a week of training.",
+    title: "Direct access to the founder",
+    body: "You work with the founder, not a ticket queue or an account rotation. Questions get answered by the person who builds and manages your presence. Founder-led and locally focused.",
   },
 ]
 
-export function DentalFeatures() {
+export function BuiltForLocal() {
   return (
     <section
-      id="dental-features"
+      id="built-for"
       data-theme="light"
       className="section-pad relative overflow-hidden"
       style={{ background: "#f0ece3" }}
@@ -50,25 +49,25 @@ export function DentalFeatures() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          {/* Left: heading + compliance block */}
+          {/* Left: heading + trust block */}
           <RevealDiv>
             <p className="font-mono-label mb-5" style={{ fontSize: "11px", letterSpacing: "0.14em", color: "#7a5c10" }}>
-              BUILT FOR DENTAL PRACTICES
+              BUILT FOR LOCAL BUSINESS
             </p>
             <h2
               className="font-display mb-6 leading-tight"
               style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
-              Fits your practice{" "}
+              Fits how your business{" "}
               <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
-                as it already runs.
+                already runs.
               </em>
             </h2>
             <p className="font-body text-base leading-relaxed mb-10" style={{ color: "rgba(28,24,16,0.65)" }}>
-              Independent dental practices have existing workflows, existing software, and staff who are already stretched. This system is designed to add capability without adding complexity.
+              Local businesses are busy and stretched thin. You are already running the day. Presency adds real capability to your online presence without adding work for you, so the gains show up while the effort stays off your plate.
             </p>
 
-            {/* Compliance & Trust block — single home for all compliance claims */}
+            {/* Trust block */}
             <div
               className="rounded-xl p-6"
               style={{
@@ -89,19 +88,15 @@ export function DentalFeatures() {
                 </div>
                 <div>
                   <p className="font-body text-sm font-semibold mb-1" style={{ color: "#1c1810" }}>
-                    {SITE_CONFIG.COMPLIANCE_LIVE
-                      ? "Built on HIPAA-compliant infrastructure. Business Associate Agreement provided to every practice."
-                      : "Built around HIPAA requirements."}
+                    Done-for-you, start to finish.
                   </p>
                   <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                    {SITE_CONFIG.COMPLIANCE_LIVE
-                      ? "The system operates on HIPAA-compliant infrastructure. A signed Business Associate Agreement is included with every engagement. No patient health information travels through automated messages. Anything involving clinical details is handled by your front desk."
-                      : "The system is designed to keep patient health information out of automated messages. Every workflow is built around this principle. Practices handling protected health information should confirm compliance requirements with their own counsel."}
+                    Presency builds, hosts, and manages everything. Your website, your Google presence, your reviews and reputation. Founder-led and locally focused, so you can stay on what you do best, which is running your business.
                   </p>
                 </div>
               </div>
               <p className="font-body text-xs italic" style={{ color: "rgba(28,24,16,0.4)", paddingTop: "0.75rem", borderTop: "1px solid rgba(28,24,16,0.08)" }}>
-                Practices handling protected health information should confirm compliance requirements with their own counsel.
+                One partner for your website, your Google profile, and your reputation.
               </p>
             </div>
           </RevealDiv>

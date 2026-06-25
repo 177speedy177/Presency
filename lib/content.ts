@@ -77,47 +77,43 @@ export const PLANS = [
 // ── FAQ ───────────────────────────────────────────────────────────────────────
 export const FAQS = [
   {
-    q: "What happens when a patient calls and we can't answer?",
-    a: "Within seconds, your practice's number sends an automatic text to the caller. The message is friendly, introduces the practice by name, and invites them to reply or book. It goes out whether the call came in during lunch, after hours, or when the front desk was on another line.",
+    q: "What exactly does Presency do?",
+    a: "We are a local digital agency. We build your website, optimize and manage your Google Business Profile, run your review and reputation building, handle your social posting, and make sure your business shows up when people search, including in AI tools like ChatGPT and Gemini. You can start with one piece and add the rest over time.",
   },
   {
-    q: "We already have voicemail. Why do we need this?",
-    a: "Voicemail works for the patients who already know you and are willing to wait. New and urgent callers are not. Industry research (Hiya, Invoca, RingCentral) finds that most people who reach a business voicemail hang up without leaving a message, and that first-time and urgent callers abandon at the highest rates of all. Those are the exact new-patient calls your marketing spent money to generate. Even the messages that do get left often go unheard, since voicemails from unknown numbers are the least likely to be listened to. A caller who gives up on your voicemail rarely tries again. They call the next practice on the list. Presency closes that gap the moment a call goes unanswered: the caller gets a warm text from your practice's own number inviting them to reply or book, so a missed call becomes a conversation instead of a lost patient. Voicemail still has its place for your established patients. This makes sure the new ones do not slip through.",
+    q: "Do I have to buy everything at once?",
+    a: "No. Most businesses start with the foundation, usually a professional website, and grow from there. We recommend the smallest first step that moves the needle, then layer on Google, reviews, and social as it makes sense for you. There is no pressure to take it all on day one.",
   },
   {
-    q: "Does this work with our existing phone number and practice software?",
-    a: "Yes. Your practice number stays the same. We configure one simple call-handling setting so unanswered calls trigger the follow-up, and we handle that setup for you. No new phones, no new apps for your staff. Patient Capture requires no integration with your practice management software: Dentrix, Open Dental, Eaglesoft, or anything else. Practice Growth campaigns use a secure patient list export that you review and approve.",
+    q: "How does pricing work?",
+    a: "Pricing depends on what your business actually needs, so we set it during a free conversation rather than posting fixed tiers. You will know exactly what you are getting and what it costs before anything starts. No surprises, no hard sell.",
   },
   {
-    q: "How is patient privacy handled?",
-    a: "Automated messages are designed to contain no patient health information. They are appointment-invitation messages, not clinical communications. Anything involving personal health details is routed to your front desk to handle directly. The system is built around this principle from day one.",
+    q: "Do you build the website, or just advise?",
+    a: "We build it, host it, and manage it. You do not touch the technical side. You get a fast, modern, mobile-ready site, and when something needs to change, you tell us and we handle it.",
   },
   {
-    q: "How long does setup take?",
-    a: "Most practices are live within about 10 business days. We handle the configuration. Your team does a brief 30-minute walkthrough to get familiar with the inbox and handoff process, and that is it.",
+    q: "What if I already have a website?",
+    a: "Then we either redesign and modernize it, or leave it as is and focus on what will move the needle most, often your Google Business Profile, reviews, and visibility. We start with whatever gives you the biggest return.",
   },
   {
-    q: "Will patients know the first message is automated?",
-    a: "Most won't notice. The message goes out under your practice's name and number and is written to sound human and warm. For practices that want full transparency, we can add a short note in the message. Either approach works.",
+    q: "How does Google Business Profile optimization actually help?",
+    a: "Your Google Business Profile is what shows up in the map and local results when someone searches for what you do. We set the right categories, add photos, post regularly, answer questions, and build reviews, so you rank higher and look like the obvious choice. For most local businesses it is the single highest-impact place to be found.",
   },
   {
-    q: "Who handles replies that involve personal health details?",
-    a: "Your front desk does. When a patient's reply includes anything that should be treated as protected health information, it routes to your inbox and your staff takes it from there. Automated responses never handle clinical content.",
+    q: "Will customers know a review request came from a system?",
+    a: "The request goes out under your business name and is written to sound human and warm. Most people simply see a friendly note asking about their experience. We never write or fake reviews. We just make it easy for happy customers to leave a real one.",
   },
   {
-    q: "How much does it cost?",
-    a: "Plans start at $799 per month, plus a one-time setup fee. Exact pricing depends on your practice's situation and is set during the free 30-minute audit. No surprises, no high-pressure pitch.",
+    q: "How long until I see results?",
+    a: "A new website can be live in a couple of weeks. Google and review improvements build over the following weeks and months as your profile strengthens and reviews accumulate. We focus on steady, real progress, not overnight promises.",
   },
   {
-    q: "Why should we trust a newer company with something this important?",
-    a: "Because you work directly with the founder, not an account rep, not a call center, not someone three layers removed from your practice. Every setup is handled personally, every question goes to the same person who built the system. That direct accountability is exactly what a newer company can offer that a large platform cannot. And every engagement includes a signed Business Associate Agreement, so your compliance obligations are covered.",
+    q: "Do I own my website?",
+    a: "Yes. The website is yours. We build, host, and maintain it for you, and if you ever decide to part ways, you keep your site and your content.",
   },
   {
-    q: "Do we need any new equipment?",
-    a: "No. No new phone, no new hardware, no app your staff needs to download. It works through your existing number and a simple web-based inbox your team accesses from any browser.",
-  },
-  {
-    q: "What are the terms?",
-    a: "Plans run on a straightforward service agreement. All terms, including cancellation, are laid out clearly during your free audit, before anything is signed. No hidden fees, no surprise renewals.",
+    q: "Why should I trust a newer, smaller agency?",
+    a: "Because you work directly with the founder, not an account rep or a call center. Every project is handled personally by the person who built Presency, which means faster answers, real accountability, and work that actually gets done. That direct access is something a large agency cannot give you.",
   },
 ] as const
