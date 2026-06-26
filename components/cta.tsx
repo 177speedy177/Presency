@@ -30,7 +30,7 @@ export function AuditCTA() {
           >
             Let's talk about getting your business{" "}
             <em className="gold-text-sheen" style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
-              found online.
+              found online
             </em>
           </h2>
         </RevealDiv>

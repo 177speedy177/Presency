@@ -39,7 +39,7 @@ export default function WelcomePage() {
                 className="font-display"
                 style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}
               >
-                what we do.
+                what we do
               </em>
             </h1>
 
@@ -109,7 +109,7 @@ export default function WelcomePage() {
                 color: "var(--text-primary)",
               }}
             >
-              See exactly how your local business shows up online.
+              See exactly how your local business shows up online
             </h2>
 
             <p

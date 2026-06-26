@@ -37,7 +37,7 @@ export default function NotFound() {
         >
           Page not{" "}
           <em style={{ fontStyle: "italic", color: "var(--gold-light)", fontWeight: 400 }}>
-            found.
+            found
           </em>
         </h1>
         <p

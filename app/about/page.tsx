@@ -42,9 +42,9 @@ export default function AboutPage() {
                   className="font-display mb-6 leading-tight"
                   style={{ fontSize: "clamp(2.4rem,5vw,3.8rem)", fontWeight: 300, color: "var(--text-primary)" }}
                 >
-                  Founder-built.{" "}
+                  Founder-built,{" "}
                   <em className="font-display" style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                    For local businesses.
+                    for local businesses
                   </em>
                 </h1>
 
@@ -126,7 +126,7 @@ export default function AboutPage() {
               READY TO START
             </p>
             <h2 className="font-display text-3xl mb-5" style={{ fontWeight: 300, color: "var(--text-primary)" }}>
-              Start the conversation.
+              Start the conversation
             </h2>
             <p className="font-body text-base mb-8" style={{ color: "var(--text-secondary)" }}>
               A free, no-pressure conversation about your website, your Google presence, and how customers find you. We will show you where you can win, with no commitment required.

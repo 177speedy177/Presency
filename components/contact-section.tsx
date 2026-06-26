@@ -82,7 +82,7 @@ export function ContactSection() {
             >
               Tell us about your{" "}
               <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
-                business.
+                business
               </em>
             </h2>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: "rgba(28,24,16,0.65)" }}>
@@ -131,7 +131,7 @@ export function ContactSection() {
                     </svg>
                   </div>
                   <h3 className="font-display text-xl mb-2" style={{ fontWeight: 400, color: "#1c1810" }}>
-                    Message sent.
+                    Message sent
                   </h3>
                   <p className="font-body text-sm" style={{ color: "rgba(28,24,16,0.6)" }}>
                     Thanks for reaching out. You will hear back from Joey shortly.

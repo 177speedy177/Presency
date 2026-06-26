@@ -119,7 +119,7 @@ export function Problem() {
             >
               Customers decide online,{" "}
               <em style={{ fontStyle: "italic", color: "#7a5c10", fontWeight: 400 }}>
-                before they ever call you.
+                before they ever call you
               </em>
             </h2>
             <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)", maxWidth: "30ch" }}>

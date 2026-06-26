@@ -55,7 +55,7 @@ export function WhatWeDo() {
             className="font-display mb-4 mx-auto"
             style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810", maxWidth: "640px" }}
           >
-            Everything your business needs to show up and win online.
+            Everything your business needs to show up and win online
           </h2>
           <p className="font-body text-base mx-auto" style={{ color: "rgba(28,24,16,0.65)" }}>
             Start with a website. Add the rest as you grow.

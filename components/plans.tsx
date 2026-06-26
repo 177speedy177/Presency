@@ -38,7 +38,7 @@ export function Plans() {
             className="font-display mb-4"
             style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
           >
-            Start small. <span style={{ fontStyle: "italic", color: "#c9a84c" }}>Grow into the rest.</span>
+            Start small, <span style={{ fontStyle: "italic", color: "#c9a84c" }}>grow into the rest</span>
           </h2>
           <p className="font-body text-base max-w-lg mx-auto" style={{ color: "rgba(28,24,16,0.65)" }}>
             Every engagement begins with a free, no-pressure conversation about your goals.

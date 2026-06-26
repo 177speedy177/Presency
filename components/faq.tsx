@@ -27,7 +27,7 @@ export function FAQ() {
             className="font-display"
             style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
           >
-            Common questions, straight answers.
+            Common questions, straight answers
           </h2>
         </RevealDiv>
 

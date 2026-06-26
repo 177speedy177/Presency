@@ -91,7 +91,7 @@ export default function ContactPage() {
               >
                 Let&apos;s talk about{" "}
                 <em style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                  your business.
+                  your business
                 </em>
               </h1>
               <p className="font-body text-lg mb-10" style={{ color: "var(--text-secondary)" }}>

@@ -107,7 +107,7 @@ export default function FreeAuditPage() {
             >
               Find out exactly where your business is{" "}
               <em className="font-display" style={{ fontStyle: "italic", color: "var(--gold)", fontWeight: 400 }}>
-                losing customers online.
+                losing customers online
               </em>
             </h1>
             <p className="font-body text-lg leading-relaxed" style={{ color: "var(--text-secondary)", maxWidth: "520px" }}>

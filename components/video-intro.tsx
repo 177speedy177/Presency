@@ -25,7 +25,7 @@ export function FounderNote() {
               className="font-display mb-5 leading-tight"
               style={{ fontSize: "clamp(1.75rem,4vw,3rem)", fontWeight: 300, color: "#1c1810" }}
             >
-              Built so local businesses can compete online.
+              Why I built this
             </h2>
 
             <div className="flex flex-col gap-4">
