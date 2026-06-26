@@ -122,14 +122,9 @@ export function Problem() {
                 before they ever call you.
               </em>
             </h2>
-            <div className="flex flex-col gap-4">
-              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                Long before anyone picks up the phone, they have already searched your name, scanned your Google listing, and read what other people said about you. By the time they decide whether to call, the decision is mostly made. Your website, your profile, and your reviews are the first impression, and often the only one you get.
-              </p>
-              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                If you are invisible in search, your site looks dated, or your reviews are thin, customers do not give you the benefit of the doubt. They quietly move to the competitor who looks trustworthy, current, and easy to choose. The work that wins local business now happens online, before the conversation ever starts. That is exactly the ground we cover for you.
-              </p>
-            </div>
+            <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)", maxWidth: "30ch" }}>
+              Your website, your Google listing, and your reviews are the first impression, and usually the only one you get.
+            </p>
           </RevealDiv>
 
           {/* Right: editorial stats */}

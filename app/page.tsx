@@ -5,7 +5,6 @@ import { WhatWeDo } from "@/components/services"
 import { ContactSection } from "@/components/contact-section"
 import { Problem } from "@/components/results"
 import { Plans } from "@/components/plans"
-import { BuiltForLocal } from "@/components/built-for"
 import { FounderNote } from "@/components/video-intro"
 import { FAQ } from "@/components/faq"
 import { AuditCTA } from "@/components/cta"
@@ -21,7 +20,6 @@ export default function Home() {
       <WhatWeDo />
       <Problem />
       <Plans />
-      <BuiltForLocal />
       <FounderNote />
       <FAQ />
       <AuditCTA />

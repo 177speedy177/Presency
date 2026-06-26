@@ -1,11 +1,9 @@
 "use client"
-import { useState } from "react"
 import Image from "next/image"
 import { RevealDiv } from "@/components/ui/reveal-div"
 import { ToothPattern } from "@/components/ui/tooth-pattern"
 
 export function FounderNote() {
-  const [expanded, setExpanded] = useState(false)
   return (
     <section
       id="founder"
@@ -32,41 +30,11 @@ export function FounderNote() {
 
             <div className="flex flex-col gap-4">
               <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
-                As a Biomedical Engineering student at Penn State, I've spent years learning how high-performing systems are designed, measured, and improved. The more I studied that, the more I kept seeing the same thing in my own town: excellent local businesses losing customers to competitors who simply showed up better online.
+                I kept watching great local businesses lose customers to ones that simply showed up better online. Not better work, just a sharper website, a stronger Google presence, more reviews.
               </p>
-              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                A sharper website. A stronger Google presence. More reviews. Not better work, just a better first impression where people were already looking.
+              <p className="font-body text-base leading-relaxed" style={{ color: "rgba(28,24,16,0.65)" }}>
+                Presency gives you that same edge, done for you. And you work directly with me, the founder, not a ticket queue.
               </p>
-              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                I built Presency to give small local businesses that same edge, done for them, without the runaround of a big agency. We build the website, sharpen your Google Business Profile, and keep your reviews and reputation working in your favor.
-              </p>
-              <p className={`font-body text-base leading-relaxed${expanded ? "" : " hidden sm:block"}`} style={{ color: "rgba(28,24,16,0.65)" }}>
-                When you work with Presency, you work directly with me, the founder. The goal isn't to sell another marketing service. It's to help good local businesses get the online presence their work deserves.
-              </p>
-              <button
-                onClick={() => setExpanded(e => !e)}
-                aria-expanded={expanded}
-                className="sm:hidden font-mono-label cursor-pointer self-center"
-                style={{
-                  fontSize: "10px",
-                  letterSpacing: "0.13em",
-                  color: "#7a5c10",
-                  background: "transparent",
-                  border: "none",
-                  padding: "4px 8px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                }}
-              >
-                {expanded ? "READ LESS" : "READ MORE"}
-                <svg
-                  width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true"
-                  style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
-                >
-                  <path d="M2 4l4 4 4-4" stroke="#7a5c10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
             </div>
 
             <div className="flex items-center gap-2 mt-6">

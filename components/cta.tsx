@@ -37,7 +37,7 @@ export function AuditCTA() {
 
         <RevealDiv delay={160}>
           <p className="font-body text-base mb-8" style={{ color: "rgba(28,24,16,0.65)" }}>
-            Tell us about your business and where you want it to go. We will recommend the right place to start, often a website that earns trust, and map out where to grow from there. No pressure, just a clear plan.
+            Tell us about your business. We will point you to the right first step, free.
           </p>
         </RevealDiv>
 
