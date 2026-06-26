@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roofing Contractor in Conshohocken, PA | Joseph Del Buono Inc | (610) 828-0473</title>
+<meta name="description" content="Joseph Del Buono Inc, a licensed and insured roofing contractor in Conshohocken, PA. Roof replacement, repairs, storm and leak work, gutters and inspections. Locally owned. Call (610) 828-0473.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==================================================================
+   JOSEPH DEL BUONO INC  ::  concept "THE RIDGELINE / BUILT FOR WEATHER"
+   Roofing identity from the roof's own geometry: ridge line, overlapping
+   shingle courses, weatherproof solidity, mill-town industrial bones.
+   Parchment base, deep slate bands, one terracotta-clay signature.
+   Motif: shingle-tab divider, COURSE tags, gable mark, pitch chevrons.
+   Single editable file. Light-dominant + deep bands. No em dashes.
+   ================================================================== */
+:root{
+  --ink:#211F1C;           /* warm near-black text */
+  --ink-2:#3B3833;
+  --paper:#F7F3EA;         /* parchment base */
+  --paper-2:#FFFFFF;
+  --sand:#ECE3D2;          /* warm tint */
+  --sand-2:#E2D6BF;
+  --slate:#282C2E;         /* deep accent band */
+  --slate-2:#1B1E1F;       /* footer / darkest */
+  --clay:#C0502E;          /* signature accent */
+  --clay-dk:#9A3C20;       /* clay for text/links on light */
+  --clay-lt:#E1916A;       /* clay for text on dark */
+  --clay-soft:rgba(192,80,46,.1);
+  --stone:#736C61;         /* muted secondary text */
+  --line:#DED3BE;
+  --line-d:rgba(247,243,234,.16);
+  --ok:#6E8E5E;
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --fd:"Big Shoulders Display",Impact,sans-serif;
+  --fb:"Public Sans",system-ui,sans-serif;
+  --fm:"DM Mono",ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--fb);color:var(--ink);background:var(--paper);line-height:1.62;
+  font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;line-height:.96;margin:0;letter-spacing:.005em;text-transform:uppercase;}
+p{margin:0 0 1rem;}
+img{max-width:100%;display:block;}
+a{color:var(--clay-dk);}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+.sec{padding-block:clamp(64px,9vw,116px);position:relative;}
+
+/* ---------------- signature primitives ---------------- */
+/* COURSE tag (mono section label with shingle glyph) */
+.tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--clay-dk);}
+.tag svg{width:18px;height:13px;flex:none;}
+.tag.on-dark{color:var(--clay-lt);}
+/* hand-drawn shingle underline */
+.uline{position:relative;white-space:nowrap;}
+.uline::after{content:"";position:absolute;left:-2px;right:-2px;bottom:-.1em;height:.36em;z-index:-1;
+  background:no-repeat center/100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='12'%3E%3Cpath d='M3 8C55 3 90 10 130 6s80-6 107 3' fill='none' stroke='%23C0502E' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");}
+/* pitch chevron bullet */
+.chev{display:inline-block;width:14px;height:14px;flex:none;}
+/* shingle-tab divider strip */
+.shingles{display:block;width:100%;height:16px;line-height:0;color:var(--clay);}
+.shingles svg{width:100%;height:100%;display:block;}
+
+/* buttons / sticker */
+.cta{display:inline-flex;align-items:center;gap:11px;font-family:var(--fd);font-weight:700;font-size:1.04rem;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;background:var(--clay);color:#fff;padding:13px 26px;border-radius:2px;
+  border:2px solid var(--clay);transition:transform .22s var(--ease),background .22s var(--ease),box-shadow .22s var(--ease);
+  box-shadow:0 2px 0 var(--clay-dk);}
+.cta svg{width:18px;height:18px;}
+.cta:hover{background:var(--clay-dk);border-color:var(--clay-dk);transform:translateY(-2px);box-shadow:0 10px 24px rgba(154,60,32,.32);}
+.cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink);box-shadow:none;}
+.cta.ghost:hover{background:var(--ink);color:var(--paper);}
+.cta.on-dark.ghost{color:var(--paper);border-color:rgba(247,243,234,.4);}
+.cta.on-dark.ghost:hover{background:rgba(247,243,234,.1);border-color:var(--paper);}
+.numsticker{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-weight:500;font-size:.98rem;
+  letter-spacing:.01em;text-decoration:none;color:var(--ink);transition:color .2s var(--ease);}
+.numsticker svg{width:17px;height:17px;color:var(--clay);flex:none;}
+.numsticker:hover{color:var(--clay-dk);}
+.numsticker .lbl{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:block;line-height:1;margin-bottom:3px;}
+.numsticker.on-dark{color:var(--paper);}
+.numsticker.on-dark .lbl{color:rgba(247,243,234,.55);}
+
+/* placeholder pill: [PLACEHOLDER] short note of what to confirm */
+.ph{display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:.6rem;font-weight:500;
+  letter-spacing:.01em;text-transform:none;color:var(--clay-dk);background:var(--clay-soft);
+  border:1px solid rgba(192,80,46,.4);border-radius:999px;padding:2px 9px 2px 3px;line-height:1.4;vertical-align:middle;}
+.ph::before{content:"Placeholder";font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.54rem;
+  background:var(--clay);color:#fff;padding:3px 7px;border-radius:999px;}
+
+/* a11y */
+.skip{position:absolute;left:-999px;background:var(--slate);color:#fff;padding:12px 16px;z-index:200;border-radius:3px;}
+.skip:focus{left:8px;top:8px;}
+:where(a,button,input,textarea,summary):focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:2px;}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease);}
+.rv.in{opacity:1;transform:none;}
+
+/* section heading block */
+.head{max-width:58ch;margin-bottom:46px;}
+.head h2{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;margin:14px 0 14px;letter-spacing:.004em;}
+.head p{color:var(--stone);font-size:1.07rem;margin:0;font-family:var(--fb);}
+
+/* ============================================================ HEADER */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(247,243,234,.9);backdrop-filter:saturate(150%) blur(11px);
+  border-bottom:1px solid var(--line);}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px;}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);}
+.brand .mk{width:46px;height:46px;flex:none;}
+.brand b{font-family:var(--fd);font-weight:800;font-size:1.3rem;letter-spacing:.01em;line-height:.9;text-transform:uppercase;}
+.brand small{display:block;font-family:var(--fm);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-top:4px;}
+.hdr-r{display:flex;align-items:center;gap:22px;}
+.hdr .numsticker{display:none;}
+nav.main{display:none;gap:26px;}
+nav.main a{font-family:var(--fm);font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink);position:relative;padding:5px 0;}
+nav.main a::after{content:"";position:absolute;left:0;right:100%;bottom:-1px;height:2px;background:var(--clay);transition:right .28s var(--ease);}
+nav.main a:hover::after,nav.main a.active::after{right:0;}
+
+/* ============================================================ HERO (offset, oversized headline, inset photo lower-right) */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 70% at 8% 0%, var(--sand) 0%, transparent 55%),
+    radial-gradient(90% 80% at 100% 100%, #EFE7D6 0%, transparent 55%),
+    var(--paper);
+  border-bottom:1px solid var(--line);}
+/* faint roofline silhouette + shingle courses backdrop */
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='600'%3E%3Cg fill='none' stroke='%23C9BC9E' stroke-width='1.4' stroke-opacity='0.5'%3E%3Cpath d='M-20 250 280 90 620 270'/%3E%3Cpath d='M540 320 860 150 1200 330 1460 200'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:1400px 600px;background-position:center top;background-repeat:no-repeat;}
+.hero-top{position:relative;padding-block:clamp(48px,7vw,86px) clamp(40px,6vw,70px);}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,44px);}
+.hero-ey{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:22px;}
+.hero h1{font-size:clamp(3rem,11vw,7rem);font-weight:800;letter-spacing:.004em;line-height:.9;}
+.hero h1 .big{display:block;font-size:1.16em;}
+.hero h1 .li{color:var(--clay-dk);}
+.hero-sub{font-size:clamp(1.08rem,1.7vw,1.24rem);color:var(--ink-2);max-width:44ch;margin:22px 0 0;}
+.hero-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;margin-top:30px;}
+.hero-inset{position:relative;justify-self:start;max-width:460px;width:100%;}
+.hero-inset .frame{position:relative;border:1px solid var(--ink);background:var(--paper-2);padding:8px;
+  box-shadow:18px 18px 0 rgba(40,44,46,.1);}
+.hero-inset img{width:100%;height:clamp(220px,32vw,300px);object-fit:cover;}
+.hero-inset .tab{position:absolute;left:-1px;top:18px;background:var(--clay);color:#fff;font-family:var(--fm);
+  font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;display:flex;align-items:center;gap:8px;}
+.hero-inset .tab svg{width:14px;height:14px;}
+.hero-inset .cap{margin-top:9px;font-family:var(--fm);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--stone);display:flex;gap:8px;align-items:center;}
+.hero-inset .cap svg{width:13px;height:13px;color:var(--clay);}
+
+/* ============================================================ TRUST BAR (dark band) */
+.trust{background:var(--slate);color:var(--paper);position:relative;}
+.trust .shingles{position:absolute;top:-15px;left:0;transform:scaleY(-1);}
+.trust-in{display:grid;grid-template-columns:1fr;gap:2px;padding-block:30px;}
+.trust-it{display:flex;gap:13px;align-items:center;padding:14px 0;}
+.trust-it .ic{width:42px;height:42px;flex:none;border:1.5px solid var(--clay);border-radius:3px;display:grid;place-items:center;color:var(--clay-lt);}
+.trust-it .ic svg{width:22px;height:22px;}
+.trust-it b{font-family:var(--fd);font-weight:700;font-size:1.3rem;text-transform:uppercase;display:block;line-height:.95;}
+.trust-it span{font-size:.86rem;color:rgba(247,243,234,.66);}
+
+/* ============================================================ SERVICES (alternating image/text rows) */
+.svc{background:var(--paper);}
+.svc-rows{display:flex;flex-direction:column;gap:clamp(40px,6vw,76px);}
+.svc-row{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
+.svc-media{position:relative;}
+.svc-media .frame{position:relative;border:1px solid var(--ink);background:var(--paper-2);padding:8px;overflow:hidden;}
+.svc-media img{width:100%;height:clamp(230px,34vw,340px);object-fit:cover;transition:transform .6s var(--ease);}
+.svc-row:hover .svc-media img{transform:scale(1.04);}
+.svc-media .num{position:absolute;left:-1px;top:18px;background:var(--slate);color:var(--paper);font-family:var(--fm);
+  font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;z-index:2;}
+/* styled NO-PHOTO variant */
+.svc-media.nophoto .frame{background:
+    repeating-linear-gradient(180deg,var(--sand) 0 26px,var(--sand-2) 26px 28px),
+    var(--sand);display:grid;place-items:center;min-height:clamp(246px,34vw,356px);text-align:center;border-style:solid;}
+.svc-media.nophoto .npi{position:relative;z-index:1;max-width:24ch;padding:20px;}
+.svc-media.nophoto svg.bigic{width:46px;height:46px;color:var(--clay);margin-bottom:10px;}
+.svc-media.nophoto b{font-family:var(--fd);font-weight:700;font-size:1.2rem;text-transform:uppercase;display:block;margin-bottom:4px;}
+.svc-media.nophoto p{font-size:.86rem;color:var(--stone);margin:0;}
+.svc-text .scourse{font-family:var(--fm);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dk);}
+.svc-text h3{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;margin:10px 0 12px;text-transform:uppercase;}
+.svc-text p{color:var(--ink-2);font-size:1.02rem;margin:0 0 16px;max-width:46ch;}
+.svc-text .specs{display:grid;gap:8px;margin:0;padding:0;list-style:none;}
+.svc-text .specs li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;color:var(--ink);}
+.svc-text .specs svg{width:16px;height:16px;color:var(--clay);flex:none;margin-top:4px;}
+
+/* ============================================================ WHY US (numbered specs + stats) */
+.why{background:var(--sand);border-block:1px solid var(--line);position:relative;overflow:hidden;}
+.why-grid{display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,56px);align-items:start;}
+.specs-list{counter-reset:s;display:grid;gap:0;border-top:1px solid var(--ink);}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start;}
+.spec .n{font-family:var(--fd);font-weight:800;font-size:2rem;color:var(--clay);line-height:.8;min-width:1.6em;}
+.spec h3{font-size:1.32rem;font-weight:700;margin-bottom:6px;text-transform:uppercase;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.spec p{color:var(--stone);font-size:.96rem;margin:0;max-width:48ch;}
+.statbox{background:var(--slate);color:var(--paper);padding:30px 28px;position:relative;overflow:hidden;}
+.statbox::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:repeating-linear-gradient(180deg,rgba(247,243,234,.05) 0 22px,transparent 22px 24px);}
+.statbox .sh{position:relative;font-family:var(--fm);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-lt);margin-bottom:18px;}
+.stat{position:relative;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line-d);}
+.stat:first-of-type{border-top:none;}
+.stat b{font-family:var(--fd);font-weight:800;font-size:clamp(2.2rem,5vw,3rem);line-height:.85;color:var(--paper);}
+.stat span{color:rgba(247,243,234,.72);font-size:.9rem;}
+.stat span .ph{margin-top:5px;}
+
+/* ============================================================ PROCESS (dark band, numbered steps) */
+.proc{background:var(--slate-2);color:var(--paper);position:relative;}
+.proc .shingles{position:absolute;top:-15px;left:0;transform:scaleY(-1);}
+.proc::after{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:repeating-linear-gradient(180deg,rgba(247,243,234,.04) 0 30px,transparent 30px 32px);}
+.proc .wrap{position:relative;}
+.proc .head h2{color:var(--paper);}
+.proc .head p{color:rgba(247,243,234,.72);}
+.steps{display:grid;grid-template-columns:1fr;gap:0;}
+.step{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--line-d);align-items:start;}
+.step:last-child{border-bottom:1px solid var(--line-d);}
+.step .no{font-family:var(--fd);font-weight:800;font-size:2.6rem;color:var(--clay-lt);line-height:.75;}
+.step h3{font-size:1.4rem;font-weight:700;text-transform:uppercase;color:var(--paper);margin-bottom:6px;}
+.step p{color:rgba(247,243,234,.72);margin:0;max-width:54ch;font-size:.98rem;}
+
+/* ============================================================ WORK (gallery + watermark slots) */
+.work{background:var(--paper);}
+.gal{display:grid;grid-template-columns:1fr;gap:16px;}
+.shot{position:relative;border:1px solid var(--ink);overflow:hidden;background:var(--sand);aspect-ratio:4/3;}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease);}
+.shot:hover img{transform:scale(1.05);}
+.shot .cap{position:absolute;left:0;bottom:0;background:rgba(27,30,31,.82);color:var(--paper);
+  font-family:var(--fm);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;}
+.shot.wm{display:grid;place-items:center;text-align:center;padding:24px;border:2px dashed var(--clay);background:var(--sand);}
+.shot.wm::after{content:"";position:absolute;inset:0;pointer-events:none;background-repeat:repeat;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='130'%3E%3Ctext x='6' y='84' font-family='monospace' font-size='17' fill='%23211F1C' fill-opacity='0.14' transform='rotate(-30 110 65)'%3EPLACEHOLDER%3C/text%3E%3C/svg%3E");}
+.shot.wm .wmi{position:relative;z-index:1;max-width:24ch;}
+.shot.wm svg{width:36px;height:36px;color:var(--clay-dk);margin-bottom:8px;}
+.shot.wm b{font-family:var(--fd);font-size:1.16rem;text-transform:uppercase;display:block;margin-bottom:5px;}
+.shot.wm p{font-size:.82rem;color:var(--stone);margin:0 0 10px;}
+
+/* ============================================================ CONTACT (form + area towns) */
+.contact{background:var(--sand);border-top:1px solid var(--line);}
+.cwrap{display:grid;grid-template-columns:1fr;gap:34px;}
+.form{background:var(--paper-2);border:1px solid var(--ink);padding:28px 26px;box-shadow:14px 14px 0 rgba(40,44,46,.09);}
+.form .lab{display:block;font-family:var(--fm);font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin:14px 0 6px;}
+.form input,.form textarea{width:100%;font-family:var(--fb);font-size:1rem;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line);border-radius:2px;padding:12px 14px;}
+.form input:focus,.form textarea:focus{border-color:var(--clay);outline:none;}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form .cta{width:100%;justify-content:center;margin-top:18px;cursor:pointer;font-size:1.04rem;}
+.caside h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:800;margin:14px 0 14px;text-transform:uppercase;}
+.caside .lead{color:var(--ink-2);font-size:1.04rem;}
+.cbits{margin-top:22px;display:grid;gap:15px;}
+.cbit{display:flex;gap:13px;align-items:flex-start;}
+.cbit svg{width:20px;height:20px;color:var(--clay);flex:none;margin-top:3px;}
+.cbit b{font-family:var(--fd);font-weight:700;font-size:1.1rem;text-transform:uppercase;display:block;line-height:1;}
+.cbit span{color:var(--stone);font-size:.92rem;}
+.cbit a{color:var(--ink);text-decoration:none;font-weight:600;}
+.cbit a:hover{color:var(--clay-dk);}
+.towns{margin-top:24px;}
+.towns h4{font-family:var(--fm);font-size:.66rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dk);margin:0 0 12px;}
+.towns ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;}
+.towns li{display:flex;gap:9px;align-items:center;font-size:.94rem;font-weight:500;}
+.towns li svg{width:14px;height:14px;color:var(--clay);flex:none;}
+
+/* ============================================================ FINAL CTA (clay band) */
+.final{background:var(--clay);color:#fff;position:relative;overflow:hidden;}
+.final::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:repeating-linear-gradient(180deg,rgba(255,255,255,.06) 0 28px,transparent 28px 30px);}
+.final-in{position:relative;display:grid;grid-template-columns:1fr;gap:26px;align-items:center;}
+.final h2{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;text-transform:uppercase;line-height:.92;}
+.final p{color:rgba(255,255,255,.86);max-width:46ch;margin:14px 0 0;}
+.final .cta{background:var(--paper);color:var(--ink);border-color:var(--paper);box-shadow:0 2px 0 rgba(0,0,0,.18);}
+.final .cta:hover{background:var(--slate);color:#fff;border-color:var(--slate);}
+
+/* ============================================================ FOOTER (themed: roof with shingle edge) */
+.ft{background:var(--slate-2);color:rgba(247,243,234,.72);padding-block:0 96px;position:relative;}
+.ft .shingles{transform:scaleY(-1);color:var(--clay);}
+.ft-pad{padding-top:52px;}
+.ft-top{display:grid;grid-template-columns:1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid var(--line-d);}
+.ft .brand b{color:var(--paper);}
+.ft .brand small{color:rgba(247,243,234,.55);}
+.ft-about{max-width:36ch;font-size:.92rem;margin-top:14px;}
+.ft-col h4{font-family:var(--fm);font-size:.64rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--clay-lt);margin:0 0 13px;}
+.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.ft-col li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;}
+.ft-col svg{width:16px;height:16px;color:var(--clay-lt);flex:none;margin-top:3px;}
+.ft-col a{color:var(--paper);text-decoration:none;}
+.ft-col a:hover{color:var(--clay-lt);}
+.ft-legal{margin-top:24px;font-family:var(--fm);font-size:.62rem;letter-spacing:.03em;color:rgba(247,243,234,.42);line-height:1.85;}
+
+/* ============================================================ MOBILE STICKY NUMBER BAR */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;gap:10px;
+  padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(247,243,234,.97);
+  backdrop-filter:blur(9px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(27,30,31,.13);}
+.callbar a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  font-family:var(--fd);font-weight:700;font-size:1.04rem;text-transform:uppercase;border-radius:2px;letter-spacing:.03em;}
+.callbar .num{background:var(--ink);color:var(--paper);}
+.callbar .quote{background:var(--clay);color:#fff;}
+.callbar svg{width:17px;height:17px;}
+
+/* ============================================================ RESPONSIVE */
+@media(min-width:680px){
+  .trust-in{grid-template-columns:repeat(3,1fr);gap:18px;}
+  .gal{grid-template-columns:repeat(2,1fr);}
+  .towns ul{grid-template-columns:repeat(3,1fr);}
+}
+@media(min-width:920px){
+  .hero-grid{grid-template-columns:1.12fr .88fr;align-items:center;}
+  .hero-inset{justify-self:end;margin-top:20px;}
+  .svc-row{grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,60px);}
+  .svc-row:nth-child(even) .svc-media{order:2;}
+  .why-grid{grid-template-columns:1.25fr .75fr;}
+  .gal{grid-template-columns:repeat(4,1fr);}
+  .gal .shot.big{grid-column:span 2;grid-row:span 1;aspect-ratio:16/9;}
+  .cwrap{grid-template-columns:.95fr 1.05fr;gap:54px;align-items:start;}
+  .final-in{grid-template-columns:1.3fr auto;gap:40px;}
+  .ft-top{grid-template-columns:1.7fr 1fr 1fr;}
+  nav.main{display:flex;}
+  .hdr .numsticker{display:inline-flex;}
+  .callbar{display:none;}
+  body{padding-bottom:0;}
+}
+@media(max-width:919px){ body{padding-bottom:72px;} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;}
+  html{scroll-behavior:auto;}
+  .rv{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Joseph Del Buono Inc, home">
+      <svg class="mk" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="45" height="45" rx="9" fill="#282C2E"/>
+        <path d="M9 28 24 14 39 28" stroke="#F7F3EA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+        <path d="M24 14V9.5" stroke="#C0502E" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M12.5 32H35.5M14.5 36H33.5" stroke="#F7F3EA" stroke-opacity=".5" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="24" cy="14" r="1.7" fill="#C0502E"/>
+      </svg>
+      <span><b>Del Buono</b><small>Roofing &middot; Conshohocken PA</small></span>
+    </a>
+    <div class="hdr-r">
+      <nav class="main" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="numsticker" href="tel:6108280473">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span><span class="lbl">Call the office</span>(610) 828-0473</span>
+      </a>
+      <a class="cta" href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="main"><span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-ey">
+          <span class="tag"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Conshohocken, PA &middot; Roofing</span>
+        </div>
+        <h1 id="h1">Roofing <span class="big">Contractor in</span> <span class="li uline">Conshohocken</span></h1>
+        <p class="hero-sub">Licensed, insured, and locally owned. We replace it, repair it, and weatherproof it, then leave your property cleaner than we found it.</p>
+        <div class="hero-act">
+          <a class="cta" href="#contact">Get a Free Quote</a>
+          <a class="numsticker" href="tel:6108280473">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <span><span class="lbl">Call the office</span>(610) 828-0473</span>
+          </a>
+        </div>
+      </div>
+      <figure class="hero-inset rv">
+        <div class="frame">
+          <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 13 9-8 9 8"/><path d="M5 11v8h14v-8"/></svg> On the roof</span>
+          <img src="assets/hero.jpg" alt="A roofer kneeling on a roof installing asphalt shingles." loading="eager" width="940" height="650">
+        </div>
+        <figcaption class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Representative stock photo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR (dark band) ============ -->
+<section class="trust" aria-label="Credentials">
+  <span class="shingles" aria-hidden="true"><svg viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M0 8V3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10v5z" fill="#C0502E"/></svg></span>
+  <div class="wrap trust-in">
+    <div class="trust-it">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <div><b>Licensed &amp; Insured <span class="ph">verify license + insurance</span></b><span>Covered, and by the book</span></div>
+    </div>
+    <div class="trust-it">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 13 9-8 9 8"/><path d="M5 11v8h14v-8"/><path d="M10 19v-5h4v5"/></svg></span>
+      <div><b>Locally Owned</b><span>Family owned and operated</span></div>
+    </div>
+    <div class="trust-it">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <div><b>Fast Response</b><span>Calls returned same day</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES (alternating rows) ============ -->
+<section class="sec svc" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="tag"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Course 01 / Services</span>
+      <h2 id="svc-h">What we put on top.</h2>
+      <p>From a full tear-off to a fast leak fix, one local crew handles it start to finish. <span class="ph">confirm &amp; trim this service list</span></p>
+    </div>
+    <div class="svc-rows">
+      <!-- 1 Roof replacement -->
+      <article class="svc-row rv">
+        <div class="svc-media"><span class="num">Service 01</span><div class="frame"><img src="assets/svc-replace.jpg" alt="A roofing crew installing a new roof on a brick house." loading="lazy" width="940" height="650"></div></div>
+        <div class="svc-text">
+          <span class="scourse">01 / Replacement</span>
+          <h3>Roof Replacement</h3>
+          <p>When patching stops paying off, we strip it to the deck and build it back right: underlayment, flashing, ventilation, and shingles that hold the line for decades.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Full tear-off, deck inspected before new work</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Architectural or designer shingle options <span class="ph">confirm materials</span></li>
+          </ul>
+        </div>
+      </article>
+      <!-- 2 Roof repair -->
+      <article class="svc-row rv">
+        <div class="svc-media"><span class="num">Service 02</span><div class="frame"><img src="assets/svc-repair.jpg" alt="Roofers repairing a section of roof." loading="lazy" width="940" height="650"></div></div>
+        <div class="svc-text">
+          <span class="scourse">02 / Repair</span>
+          <h3>Roof Repair</h3>
+          <p>Missing shingles, popped nails, worn flashing around a chimney or vent. We find the real source and fix it so the problem stays fixed, not just covered up.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Honest call: repair if we can, replace only if we should</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Matched to your existing shingle where possible</li>
+          </ul>
+        </div>
+      </article>
+      <!-- 3 Storm & leak -->
+      <article class="svc-row rv">
+        <div class="svc-media"><span class="num">Service 03</span><div class="frame"><img src="assets/svc-storm.jpg" alt="A roofer on a lift working on a tile roof after weather damage." loading="lazy" width="940" height="650"></div></div>
+        <div class="svc-text">
+          <span class="scourse">03 / Storm &amp; Leak</span>
+          <h3>Storm &amp; Leak Repair</h3>
+          <p>Wind, ice, and a hard Pennsylvania winter find every weak spot. We track down active leaks fast, tarp what needs it, and can walk you through the insurance side.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Leak traced to the source, not just the stain</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Storm-damage documentation for claims <span class="ph">confirm</span></li>
+          </ul>
+        </div>
+      </article>
+      <!-- 4 Gutter install (NO PHOTO) -->
+      <article class="svc-row rv">
+        <div class="svc-media nophoto">
+          <span class="num">Service 04</span>
+          <div class="frame"><div class="npi">
+            <svg class="bigic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18l-1 6a3 3 0 0 1-3 2.5H7A3 3 0 0 1 4 13Z"/><path d="M3 7 4 4h16l1 3"/><path d="M9 19v2M15 19v2"/></svg>
+            <b>Gutters &amp; Downspouts</b>
+            <p>Add a real project photo here once you have one.</p>
+          </div></div>
+        </div>
+        <div class="svc-text">
+          <span class="scourse">04 / Gutters</span>
+          <h3>Gutter Install</h3>
+          <p>A great roof still fails if the water has nowhere to go. We hang seamless gutters and downspouts that move water away from your fascia, foundation, and basement.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Seamless aluminum, sized to your roof's runoff</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Guards available to cut the ladder trips <span class="ph">confirm</span></li>
+          </ul>
+        </div>
+      </article>
+      <!-- 5 Inspections -->
+      <article class="svc-row rv">
+        <div class="svc-media"><span class="num">Service 05</span><div class="frame"><img src="assets/svc-inspect.jpg" alt="A view inside an attic showing roof rafters and structure." loading="lazy" width="940" height="650"></div></div>
+        <div class="svc-text">
+          <span class="scourse">05 / Inspections</span>
+          <h3>Roof Inspections</h3>
+          <p>Buying, selling, or just not sure how many winters you have left? We get up there, check it top to attic, and give you a straight read with photos, not a sales pitch.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Photo report you can actually understand</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Real estate and pre-sale checks <span class="ph">confirm</span></li>
+          </ul>
+        </div>
+      </article>
+      <!-- 6 Siding (NO PHOTO) -->
+      <article class="svc-row rv">
+        <div class="svc-media nophoto">
+          <span class="num">Service 06</span>
+          <div class="frame"><div class="npi">
+            <svg class="bigic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18v16H3z"/><path d="M3 8h18M3 12h18M3 16h18"/></svg>
+            <b>Siding &amp; Exterior</b>
+            <p>Add a real project photo here once you have one.</p>
+          </div></div>
+        </div>
+        <div class="svc-text">
+          <span class="scourse">06 / Siding</span>
+          <h3>Siding</h3>
+          <p>Since we are already working the exterior, we can button up the walls too: siding repair and replacement that matches the roof and keeps the whole envelope tight.</p>
+          <ul class="specs">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Roof and siding handled by one crew</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Trim, fascia, and soffit work <span class="ph">confirm scope</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US (specs + stats) ============ -->
+<section class="sec why" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="tag"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Course 02 / Why Del Buono</span>
+      <h2 id="why-h">A roofer who shows up.</h2>
+      <p>Roofing is half craft and half just doing what you said you would. We are built on the second half.</p>
+    </div>
+    <div class="why-grid">
+      <div class="specs-list rv">
+        <div class="spec"><span class="n">01</span><div><h3>Straight pricing</h3><p>A clear written quote before we start, with the materials spelled out. No vague allowances, no surprise line items at the end.</p></div></div>
+        <div class="spec"><span class="n">02</span><div><h3>Fast, real responses</h3><p>You call, a person calls back the same day. Active leaks and storm damage move to the front of the line.</p></div></div>
+        <div class="spec"><span class="n">03</span><div><h3>Clean jobsite</h3><p>Tarps down, magnet rolled over the lawn and driveway for stray nails, debris hauled off. We leave it tidy, not torn up.</p></div></div>
+        <div class="spec"><span class="n">04</span><div><h3>Workmanship backed</h3><p>We stand behind the install, not just the shingle wrapper. Confirm exact warranty length and terms before this goes live. <span class="ph">confirm warranty</span></p></div></div>
+      </div>
+      <aside class="statbox rv">
+        <div class="sh">By the numbers</div>
+        <div class="stat"><b data-count="1">1</b><span>Local crew, start to finish, no subbed-out strangers</span></div>
+        <div class="stat"><b data-count="24">24</b><span>Hour callback on storm and leak calls <span class="ph">confirm</span></span></div>
+        <div class="stat"><b><span data-count="100">100</span>%</b><span>Cleanup with a nail-sweep on every job</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (dark band) ============ -->
+<section class="sec proc" id="process" aria-labelledby="proc-h">
+  <span class="shingles" aria-hidden="true"><svg viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M0 8V3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10v5z" fill="#C0502E"/></svg></span>
+  <div class="wrap">
+    <div class="head rv">
+      <span class="tag on-dark"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Course 03 / How it works</span>
+      <h2 id="proc-h">Four steps, no mystery.</h2>
+      <p>You always know what is happening, what it costs, and when it is done.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="no">1</span><div><h3>Get up &amp; look</h3><p>We inspect the roof and attic, find the real condition, and take photos so you see what we see.</p></div></div>
+      <div class="step rv"><span class="no">2</span><div><h3>Written quote</h3><p>A clear scope and price in writing, with your material options laid out. Questions answered before any commitment.</p></div></div>
+      <div class="step rv"><span class="no">3</span><div><h3>Build it right</h3><p>Tear-off, deck check, underlayment, flashing, and shingles, installed to spec by our own crew, weather watched the whole way.</p></div></div>
+      <div class="step rv"><span class="no">4</span><div><h3>Clean &amp; sign off</h3><p>Full cleanup, magnet sweep, a final walk with you, and the warranty paperwork in your hands.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK (gallery + watermark slots) ============ -->
+<section class="sec work" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="tag"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Course 04 / Our work</span>
+      <h2 id="work-h">Roofs that <span class="uline">hold the line.</span></h2>
+      <p>A look at the kind of work we do. Swap these for real photos of your jobs, that is the single biggest trust builder on the page.</p>
+      <div style="margin-top:8px"><span class="ph">owner to supply real job photos</span></div>
+    </div>
+    <div class="gal">
+      <div class="shot big rv"><img src="assets/work1.jpg" alt="A crew mid roof replacement on a suburban home." loading="lazy" width="1000" height="667"><span class="cap">Stock &middot; full replacement</span></div>
+      <div class="shot wm rv"><div class="wmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg><b>Your roof here</b><p>A finished job, crew, or truck.</p><span class="ph">owner photo</span></div></div>
+      <div class="shot rv"><img src="assets/work3.jpg" alt="Close up of a roofer fastening shingles with a nail gun." loading="lazy" width="1000" height="667"><span class="cap">Stock &middot; shingle detail</span></div>
+      <div class="shot rv"><img src="assets/work2.jpg" alt="A large home being re-roofed by a crew." loading="lazy" width="1000" height="667"><span class="cap">Stock &middot; tear-off &amp; rebuild</span></div>
+      <div class="shot rv"><img src="assets/exterior.jpg" alt="Clean finished rooflines on a modern home." loading="lazy" width="1000" height="667"><span class="cap">Stock &middot; finished lines</span></div>
+      <div class="shot wm rv"><div class="wmi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg><b>Before &amp; after</b><p>Your best transformation pair.</p><span class="ph">owner photo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT (form + area) ============ -->
+<section class="sec contact" id="contact" aria-labelledby="con-h">
+  <div class="wrap cwrap">
+    <div class="caside rv">
+      <span class="tag"><svg viewBox="0 0 18 13" fill="none" aria-hidden="true"><path d="M1 5h4V1h4v4h4V1h4v4" stroke="currentColor" stroke-width="1.4"/><path d="M1 9h16" stroke="currentColor" stroke-width="1.4"/></svg> Course 05 / Get a quote</span>
+      <h2 id="con-h">Let's look at your roof.</h2>
+      <p class="lead">Tell us what is going on and we will get you a clear, written estimate. Fastest way to reach us is a phone call.</p>
+      <div class="cbits">
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><div><b><a href="tel:6108280473">(610) 828-0473</a></b><span>Call or text, we answer</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><b>216 E 4th Ave</b><span>Conshohocken, PA 19428</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Hours <span class="ph">confirm hours</span></b><span>Mon to Sat, plus storm calls</span></div></div>
+      </div>
+      <div class="towns">
+        <h4>Service area <span class="ph">confirm towns</span></h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Conshohocken</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> West Conshohocken</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Plymouth Meeting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Lafayette Hill</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Whitemarsh</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Norristown</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Bridgeport</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Gulph Mills</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Spring Mill</li>
+        </ul>
+      </div>
+    </div>
+    <form class="form rv" onsubmit="return false">
+      <span class="ph">wire form up to email before launch</span>
+      <span class="lab">Name</span><input type="text" name="name" placeholder="Your name" autocomplete="name">
+      <div class="row">
+        <div><span class="lab">Phone</span><input type="tel" name="phone" placeholder="(610) 000-0000" autocomplete="tel"></div>
+        <div><span class="lab">Email</span><input type="email" name="email" placeholder="you@email.com" autocomplete="email"></div>
+      </div>
+      <span class="lab">What's going on up there?</span><textarea name="msg" rows="4" placeholder="Leak, missing shingles, full replacement, an inspection. Tell us the basics and your address."></textarea>
+      <button class="cta" type="submit">Send my request</button>
+      <p style="font-size:.82rem;color:var(--stone);margin:12px 0 0;">Prefer to talk it through? Call <a href="tel:6108280473">(610) 828-0473</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (clay band) ============ -->
+<section class="sec final" aria-labelledby="final-h">
+  <div class="wrap final-in">
+    <div class="rv">
+      <h2 id="final-h">Roof on your mind? Let's fix that.</h2>
+      <p>Free, no-pressure quote. We will tell you straight whether it needs a repair, a replacement, or just a watchful eye.</p>
+    </div>
+    <div class="rv">
+      <a class="cta" href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <span class="shingles" aria-hidden="true"><svg viewBox="0 0 120 8" preserveAspectRatio="none"><path d="M0 8V3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10V0h10v3h10v5z" fill="#C0502E"/></svg></span>
+  <div class="wrap ft-pad">
+    <div class="ft-top">
+      <div>
+        <a class="brand" href="#top" aria-label="Joseph Del Buono Inc, back to top">
+          <svg class="mk" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="45" height="45" rx="9" fill="#10201A" fill-opacity="0"/>
+            <rect x="1.5" y="1.5" width="45" height="45" rx="9" fill="#23282A"/>
+            <path d="M9 28 24 14 39 28" stroke="#F7F3EA" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M24 14V9.5" stroke="#C0502E" stroke-width="2.3" stroke-linecap="round"/>
+            <path d="M12.5 32H35.5M14.5 36H33.5" stroke="#F7F3EA" stroke-opacity=".5" stroke-width="1.7" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="1.7" fill="#C0502E"/>
+          </svg>
+          <span><b>Joseph Del Buono Inc</b><small>Roofing Contractor &middot; Conshohocken PA</small></span>
+        </a>
+        <p class="ft-about">A family owned, licensed and insured roofing contractor serving Conshohocken and the surrounding towns. Built for weather, finished clean.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:6108280473">(610) 828-0473</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>216 E 4th Ave, Conshohocken, PA 19428</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg><a href="https://www.google.com/maps?cid=13506746437999652962" target="_blank" rel="noopener">Read our Google reviews</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Service area</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>Conshohocken, West Conshohocken, Plymouth Meeting</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>Lafayette Hill, Whitemarsh, Norristown <span class="ph">confirm towns</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ft-legal">&copy; Joseph Del Buono Inc &middot; Family owned &middot; Conshohocken, PA. Speculative website mock-up. Imagery is generic stock for illustration and does not show the business's own staff, trucks, or completed jobs. Every "Placeholder" item, including services, license and insurance, hours, warranty, and service-area towns, is to be confirmed with the owner before publishing.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="callbar">
+  <a class="num" href="tel:6108280473"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> (610) 828-0473</a>
+  <a class="quote" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var rvs = document.querySelectorAll(".rv");
+  if(reduce){ rvs.forEach(function(el){ el.classList.add("in"); }); }
+  else{
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{threshold:.12, rootMargin:"0px 0px -8% 0px"});
+    rvs.forEach(function(el,i){ el.style.transitionDelay=(i%4*70)+"ms"; io.observe(el); });
+  }
+  // count-ups
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute("data-count"));
+    if(reduce){ el.textContent = target; return; }
+    var start=null, dur=1100;
+    function step(ts){ if(!start) start=ts; var p=Math.min((ts-start)/dur,1); var e=1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*e); if(p<1) requestAnimationFrame(step); else el.textContent=target; }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
+  },{threshold:.6});
+  document.querySelectorAll("[data-count]").forEach(function(el){ cio.observe(el); });
+  // nav active state
+  var navlinks = Array.prototype.slice.call(document.querySelectorAll("nav.main a"));
+  var sections = navlinks.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if(sections.length){
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ navlinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href")==="#"+e.target.id); }); } });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    sections.forEach(function(s){ sio.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>General Contractor in Morrisville, PA | Green Grass Landscape Services Inc</title>
+<meta name="description" content="Green Grass Landscape Services Inc — licensed &amp; insured general contractor serving Morrisville, PA and surrounding areas. Kitchen &amp; bath remodels, additions, decks, basements, and repairs. Call (215) 295-4881.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     GREEN GRASS LANDSCAPE SERVICES INC — "The Working Drawing"
+     Editorial architectural-drafting art direction. Single file.
+     ============================================================ */
+  :root{
+    --ink:#1C1E1A;
+    --ink-soft:#41463C;
+    --bone:#F2EEE4;
+    --kraft:#E5DDCC;
+    --paper:#FBFAF5;
+    --forest:#22402F;
+    --forest-dk:#182E22;
+    --moss:#3C6B4C;
+    --timber:#B26B33;
+    --timber-dk:#90521F;
+    --line:#CFC7B5;
+    --line-soft:rgba(28,30,26,.07);
+    --maxw:1180px;
+    --r:4px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+
+    --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+    --f-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    --f-mono:"Space Mono", ui-monospace, "Courier New", monospace;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;font-family:var(--f-body);color:var(--ink);
+    background:var(--bone);line-height:1.65;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;line-height:1.06;margin:0;letter-spacing:-.015em;}
+  p{margin:0 0 1rem;}
+  a{color:var(--forest);}
+  img{max-width:100%;display:block;}
+
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px;}
+  section{position:relative;}
+
+  /* ---------- drafting primitives ---------- */
+  .mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--ink-soft);}
+  .sheet-tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.18em;color:var(--timber-dk);text-transform:uppercase;}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);text-transform:uppercase;
+    letter-spacing:.2em;font-size:.72rem;color:var(--moss);}
+  .eyebrow::before{content:"";width:34px;height:0;border-top:1.5px solid var(--timber);}
+
+  /* dimension line: tick | rule | label | rule | tick */
+  .dim{display:flex;align-items:center;gap:14px;color:var(--ink-soft);}
+  .dim::before,.dim::after{content:"";flex:1;height:9px;border-bottom:1.5px solid var(--line);
+    position:relative;}
+  .dim::before{border-left:1.5px solid var(--timber);}
+  .dim::after{border-right:1.5px solid var(--timber);}
+  .dim span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;}
+
+  /* L-shaped registration corner ticks on a framed element */
+  .ticks{position:relative;}
+  .ticks::before,.ticks::after{content:"";position:absolute;width:16px;height:16px;pointer-events:none;
+    transition:width .35s var(--ease),height .35s var(--ease);}
+  .ticks::before{top:-1px;left:-1px;border-top:2px solid var(--timber);border-left:2px solid var(--timber);}
+  .ticks::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--timber);border-right:2px solid var(--timber);}
+
+  .grid-bg{background-image:
+      linear-gradient(var(--line-soft) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:30px 30px;}
+
+  /* placeholder pill (visible, strip the class to finalize) */
+  .ph{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.62rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--timber-dk);
+    background:rgba(178,107,51,.12);border:1px dashed var(--timber);border-radius:999px;
+    padding:3px 9px;vertical-align:middle;line-height:1.2;}
+  .ph::before{content:"▲";font-size:.6em;}
+
+  /* ---------- accessibility ---------- */
+  :where(a,button,[tabindex]):focus-visible{outline:3px solid var(--timber);outline-offset:3px;border-radius:3px;}
+  .skip{position:absolute;left:-999px;top:0;background:var(--forest);color:#fff;padding:12px 18px;z-index:200;}
+  .skip:focus{left:0;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* ---------- buttons ---------- */
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+    text-decoration:none;padding:15px 26px;min-height:50px;border:2px solid transparent;border-radius:var(--r);
+    cursor:pointer;overflow:hidden;transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);}
+  .btn svg{width:18px;height:18px;flex:none;}
+  .btn-primary{background:var(--forest);color:#fff;}
+  .btn-primary:hover{background:var(--forest-dk);}
+  .btn-timber{background:var(--timber);color:var(--ink);}
+  .btn-timber:hover{background:var(--timber-dk);color:#fff;}
+  .btn-outline{background:transparent;color:var(--forest);border-color:var(--forest);}
+  .btn-outline:hover{background:var(--forest);color:#fff;}
+  .btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+  .btn-sm{padding:10px 18px;min-height:42px;font-size:.72rem;}
+
+  /* ============================================================ HEADER */
+  .site-header{position:sticky;top:0;z-index:80;background:rgba(242,238,228,.92);
+    backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line);}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;}
+  .logo{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);}
+  .logo-mark{width:42px;height:42px;flex:none;border:2px solid var(--forest);border-radius:3px;
+    display:grid;place-items:center;background:var(--forest);color:var(--bone);position:relative;}
+  .logo-mark svg{width:24px;height:24px;}
+  .logo-mark::after{content:"A-00";position:absolute;bottom:-7px;right:-7px;font-family:var(--f-mono);
+    font-size:.5rem;letter-spacing:.05em;background:var(--timber);color:var(--ink);padding:1px 4px;border-radius:2px;}
+  .logo-name{font-family:var(--f-display);font-weight:600;font-size:1.12rem;line-height:1.02;letter-spacing:-.02em;}
+  .logo-sub{font-family:var(--f-mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .header-phone{display:none;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:700;font-family:var(--f-mono);font-size:.95rem;}
+  .header-phone svg{width:17px;height:17px;color:var(--forest);}
+  .header-phone:hover{color:var(--forest);}
+
+  /* ============================================================ HERO */
+  .hero{background:var(--bone);overflow:hidden;border-bottom:1px solid var(--line);}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:38px;padding-block:46px 54px;align-items:center;}
+  .hero-copy .eyebrow{margin-bottom:22px;}
+  .hero h1{font-size:clamp(2.5rem,8vw,4.6rem);letter-spacing:-.03em;}
+  .hero h1 em{font-style:italic;color:var(--moss);}
+  .hero-rule{margin:22px 0;max-width:380px;}
+  .hero-sub{font-size:clamp(1.02rem,2.4vw,1.2rem);color:var(--ink-soft);max-width:46ch;margin-bottom:30px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:13px;}
+  .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;}
+  .hero-meta div{display:flex;align-items:center;gap:9px;font-size:.9rem;color:var(--ink-soft);font-weight:500;}
+  .hero-meta svg{width:18px;height:18px;color:var(--moss);flex:none;}
+
+  /* hero image styled as a drawing sheet w/ title block */
+  .sheet{background:var(--paper);border:1px solid var(--ink);padding:10px;box-shadow:14px 14px 0 rgba(34,64,47,.10);
+    transform:rotate(-1.1deg);transition:transform .5s var(--ease);}
+  .sheet:hover{transform:rotate(0deg);}
+  .sheet-frame{position:relative;border:1px solid var(--line);overflow:hidden;}
+  .sheet-frame img{width:100%;height:clamp(260px,42vw,440px);object-fit:cover;}
+  .sheet-titleblock{display:grid;grid-template-columns:1.4fr .8fr .8fr;border:1px solid var(--ink);border-top:none;
+    font-family:var(--f-mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+  .sheet-titleblock div{padding:7px 9px;border-right:1px solid var(--line);}
+  .sheet-titleblock div:last-child{border-right:none;}
+  .sheet-titleblock b{display:block;color:var(--ink);font-size:.72rem;letter-spacing:.02em;}
+  .sheet-cap{margin-top:12px;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.06em;color:var(--ink-soft);
+    text-transform:uppercase;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+
+  /* ============================================================ TRUST BAR */
+  .trust{background:var(--forest);color:var(--bone);}
+  .trust-in{display:grid;grid-template-columns:1fr;gap:2px;padding-block:0;}
+  .trust-row{display:grid;grid-template-columns:1fr;}
+  .trust-item{display:flex;align-items:center;gap:14px;padding:24px 4px;border-top:1px solid rgba(242,238,228,.16);}
+  .trust-item:first-child{border-top:none;}
+  .trust-ico{width:44px;height:44px;flex:none;border:1.5px solid var(--timber);border-radius:3px;display:grid;place-items:center;color:var(--timber);}
+  .trust-ico svg{width:24px;height:24px;}
+  .trust-item b{display:block;font-family:var(--f-display);font-size:1.16rem;font-weight:500;letter-spacing:-.01em;}
+  .trust-item span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,238,228,.7);}
+  .trust-note{padding:14px 4px 22px;}
+
+  /* ============================================================ section heads */
+  .sec{padding-block:clamp(56px,9vw,104px);}
+  .sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:42px;max-width:62ch;}
+  .sec-head .toprow{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  .sec-head h2{font-size:clamp(1.9rem,4.6vw,3rem);}
+  .sec-head p{color:var(--ink-soft);margin:0;font-size:1.05rem;}
+  .underline{position:relative;display:inline-block;}
+  .underline::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:7px;
+    background:no-repeat center/100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='8' viewBox='0 0 200 8'%3E%3Cpath d='M1 5 C 50 2, 90 8, 130 4 S 190 2, 199 5' fill='none' stroke='%23B26B33' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");}
+
+  /* ============================================================ SERVICES */
+  .services{background:var(--paper);border-block:1px solid var(--line);}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .card{position:relative;background:var(--bone);border:1px solid var(--ink);display:flex;flex-direction:column;
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+  .card:hover{transform:translateY(-4px);box-shadow:10px 12px 0 rgba(34,64,47,.10);}
+  .card:hover.ticks::before,.card:hover.ticks::after{width:24px;height:24px;}
+  .card-media{position:relative;overflow:hidden;border-bottom:1px solid var(--ink);}
+  .card-media img{width:100%;height:200px;object-fit:cover;transition:transform .5s var(--ease);}
+  .card:hover .card-media img{transform:scale(1.05);}
+  .card-num{position:absolute;top:0;left:0;background:var(--forest);color:var(--bone);font-family:var(--f-mono);
+    font-size:.62rem;letter-spacing:.12em;padding:5px 9px;z-index:2;}
+  .card-body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column;}
+  .card h3{font-size:1.34rem;margin-bottom:8px;}
+  .card p{color:var(--ink-soft);font-size:.96rem;margin:0;}
+  .card-foot{margin-top:16px;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--moss);display:inline-flex;align-items:center;gap:7px;}
+  .card-foot svg{width:15px;height:15px;}
+  /* drafting (no-photo) card variant */
+  .card-draft .card-media{height:200px;background:var(--forest);display:grid;place-items:center;}
+  .card-draft .card-media .blue{width:100%;height:100%;background-image:
+      linear-gradient(rgba(242,238,228,.16) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(242,238,228,.16) 1px,transparent 1px);
+    background-size:22px 22px;display:grid;place-items:center;}
+  .card-draft .card-media .blue svg{width:60px;height:60px;color:var(--timber);}
+  .svc-note{margin-top:30px;}
+
+  /* ============================================================ WHY / VALUE specs */
+  .why{background:var(--bone);}
+  .spec-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink);}
+  .spec{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;padding:26px 4px;border-bottom:1px solid var(--line);}
+  .spec-no{font-family:var(--f-mono);font-size:.78rem;color:var(--timber-dk);letter-spacing:.1em;padding-top:5px;}
+  .spec-ico{width:42px;height:42px;flex:none;color:var(--forest);}
+  .spec-ico svg{width:42px;height:42px;}
+  .spec-txt h3{font-size:1.3rem;margin-bottom:5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .spec-txt p{color:var(--ink-soft);margin:0;font-size:.98rem;max-width:54ch;}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
+
+  /* ============================================================ PROCESS */
+  .process{background:var(--forest);color:var(--bone);}
+  .process .sec-head h2{color:var(--bone);}
+  .process .sec-head p{color:rgba(242,238,228,.75);}
+  .step-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+  .step{border:1px solid rgba(242,238,228,.22);background:rgba(242,238,228,.04);}
+  .step-media{height:180px;overflow:hidden;border-bottom:1px solid rgba(242,238,228,.22);position:relative;}
+  .step-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.02);}
+  .step-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(24,46,34,.55));}
+  .step-body{padding:22px;}
+  .step-body .mono{color:var(--timber);}
+  .step h3{color:var(--bone);font-size:1.4rem;margin:8px 0 8px;}
+  .step p{color:rgba(242,238,228,.78);margin:0;font-size:.95rem;}
+
+  /* ============================================================ CREW placeholder (watermarked owner-photo slot) */
+  .crew{background:var(--paper);border-block:1px solid var(--line);}
+  .crew-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center;}
+  .wm-slot{position:relative;border:2px dashed var(--timber);background:var(--kraft);min-height:300px;
+    display:grid;place-items:center;text-align:center;padding:30px;}
+  .wm-slot::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.9;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='150'%3E%3Ctext x='10' y='95' font-family='monospace' font-size='20' fill='%231C1E1A' fill-opacity='0.15' transform='rotate(-30 125 75)'%3EPLACEHOLDER%3C/text%3E%3C/svg%3E");}
+  .wm-inner{position:relative;z-index:1;max-width:34ch;}
+  .wm-inner svg{width:46px;height:46px;color:var(--timber-dk);margin-bottom:12px;}
+  .wm-inner h3{font-size:1.3rem;margin-bottom:8px;}
+  .wm-inner p{font-size:.92rem;color:var(--ink-soft);margin:0 0 14px;}
+
+  /* ============================================================ REVIEWS */
+  .reviews{background:var(--bone);}
+  .rev-card{border:1px solid var(--ink);background:var(--paper);padding:clamp(30px,5vw,54px);
+    display:grid;grid-template-columns:1fr;gap:26px;align-items:center;position:relative;}
+  .rev-card .gico{width:54px;height:54px;border:1.5px solid var(--line);border-radius:3px;display:grid;place-items:center;background:#fff;}
+  .rev-card .gico svg{width:30px;height:30px;}
+  .rev-card h2{font-size:clamp(1.6rem,3.6vw,2.3rem);margin-bottom:10px;}
+  .rev-card p{color:var(--ink-soft);margin:0;max-width:52ch;}
+
+  /* ============================================================ SERVICE AREA */
+  .area{background:var(--paper);border-block:1px solid var(--line);}
+  .area-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:start;}
+  .town-list{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
+  .town-list li{display:flex;align-items:center;gap:10px;padding:13px 4px;border-bottom:1px solid var(--line);font-weight:500;font-size:.98rem;}
+  .town-list li:nth-child(odd){border-right:1px solid var(--line);padding-right:16px;}
+  .town-list svg{width:15px;height:15px;color:var(--timber);flex:none;}
+  .area-aside{border:1px solid var(--ink);background:var(--bone);padding:28px;}
+  .area-aside h3{font-size:1.3rem;margin-bottom:10px;}
+  .area-aside p{color:var(--ink-soft);font-size:.95rem;}
+  .addr{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;color:var(--ink);line-height:1.7;
+    display:flex;gap:10px;align-items:flex-start;margin-top:6px;}
+  .addr svg{width:18px;height:18px;color:var(--forest);flex:none;margin-top:2px;}
+
+  /* ============================================================ FINAL CTA */
+  .finalcta{background:var(--forest);color:var(--bone);text-align:center;overflow:hidden;}
+  .finalcta .eyebrow{color:var(--timber);justify-content:center;}
+  .finalcta .eyebrow::before{border-color:var(--timber);}
+  .finalcta h2{color:var(--bone);font-size:clamp(2rem,5.4vw,3.4rem);margin:18px 0 14px;}
+  .finalcta p{color:rgba(242,238,228,.8);max-width:48ch;margin:0 auto 30px;}
+  .finalcta .hero-cta{justify-content:center;}
+  .finalcta .bigphone{display:inline-block;margin-top:26px;font-family:var(--f-display);font-size:clamp(1.6rem,4vw,2.2rem);
+    color:var(--bone);text-decoration:none;border-bottom:2px solid var(--timber);}
+  .finalcta .bigphone:hover{color:#fff;}
+
+  /* ============================================================ FOOTER (title block) */
+  .site-footer{background:var(--forest-dk);color:rgba(242,238,228,.82);font-size:.92rem;padding-block:50px 92px;}
+  .tb{border:1px solid rgba(242,238,228,.3);display:grid;grid-template-columns:1fr;}
+  .tb-cell{padding:22px;border-bottom:1px solid rgba(242,238,228,.18);}
+  .tb-cell:last-child{border-bottom:none;}
+  .tb-cell .mono{color:var(--timber);font-size:.62rem;display:block;margin-bottom:9px;}
+  .tb-cell a{color:var(--bone);text-decoration:none;}
+  .tb-cell a:hover{text-decoration:underline;}
+  .tb-list{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+  .tb-list li{display:flex;gap:9px;align-items:flex-start;}
+  .tb-list svg{width:16px;height:16px;color:var(--moss);flex:none;margin-top:3px;}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .foot-brand .logo-mark{border-color:var(--timber);}
+  .foot-name{font-family:var(--f-display);font-size:1.15rem;color:var(--bone);}
+  .foot-legal{margin-top:24px;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.06em;
+    text-transform:uppercase;color:rgba(242,238,228,.55);line-height:1.8;}
+
+  /* ============================================================ MOBILE TAP-TO-CALL BAR */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(242,238,228,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(28,30,26,.14);}
+  .callbar a{flex:1;background:var(--timber);color:var(--ink);text-decoration:none;font-family:var(--f-mono);font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;font-size:.86rem;border-radius:var(--r);min-height:52px;
+    display:flex;align-items:center;justify-content:center;gap:10px;}
+  .callbar a svg{width:19px;height:19px;}
+  .callbar a:active{background:var(--timber-dk);color:#fff;}
+
+  /* ============================================================ RESPONSIVE */
+  @media (min-width:620px){
+    .trust-row{grid-template-columns:repeat(3,1fr);}
+    .trust-item{border-top:none;border-left:1px solid rgba(242,238,228,.16);padding:30px 22px;}
+    .trust-item:first-child{border-left:none;}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .step-grid{grid-template-columns:repeat(3,1fr);}
+    .town-list{grid-template-columns:1fr 1fr 1fr;}
+    .town-list li:nth-child(odd){border-right:none;}
+    .town-list li{border-right:1px solid var(--line);padding-right:16px;}
+  }
+  @media (min-width:880px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:54px;padding-block:64px 76px;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);}
+    .why-grid{grid-template-columns:.85fr 1.15fr;}
+    .crew-grid{grid-template-columns:1.1fr .9fr;}
+    .rev-card{grid-template-columns:auto 1fr auto;}
+    .area-grid{grid-template-columns:1.2fr .8fr;gap:54px;}
+    .tb{grid-template-columns:1.5fr 1fr 1fr;}
+    .tb-cell{border-bottom:none;border-right:1px solid rgba(242,238,228,.18);}
+    .tb-cell:last-child{border-right:none;}
+    .header-phone{display:flex;}
+    .callbar{display:none;}
+    body{padding-bottom:0;}
+  }
+  @media (max-width:879px){ body{padding-bottom:76px;} }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{transition:none!important;animation:none!important;}
+    .sheet{transform:none;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Green Grass Landscape Services — home">
+      <span class="logo-mark" aria-hidden="true">
+        <!-- compass/drafting mark -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M10.5 6.8 4 20"/><path d="M13.5 6.8 20 20"/><path d="M7.7 14h8.6"/></svg>
+      </span>
+      <span>
+        <span class="logo-name">Green Grass</span>
+        <span class="logo-sub">Contracting · Morrisville PA</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:2152954881">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        (215) 295-4881
+      </a>
+      <a class="btn btn-primary btn-sm" href="tel:2152954881">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero grid-bg" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">A-01 · General Contractor</span>
+      <h1 id="hero-title">General Contractor in <em>Morrisville</em></h1>
+      <div class="dim hero-rule"><span>Plan · Build · Finish</span></div>
+      <p class="hero-sub">Licensed &amp; insured remodeling and repairs — kitchens, baths, additions, decks and more. Straight answers, clean job sites, and work finished on schedule for Morrisville and the surrounding area.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="tel:2152954881">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Call (215) 295-4881
+        </a>
+        <a class="btn btn-outline" href="#contact">Get a Free Quote</a>
+      </div>
+      <div class="hero-meta">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Licensed &amp; insured</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Free written estimates</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Locally owned</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <figure class="sheet" style="margin:0;">
+        <div class="sheet-frame ticks">
+          <img src="assets/svc-kitchen.jpg" alt="A bright, freshly remodeled kitchen with white cabinetry, stone countertops and stainless appliances — representative of finished remodeling work.">
+        </div>
+        <div class="sheet-titleblock" aria-hidden="true">
+          <div>Project<b>Whole-Home Remodel</b></div>
+          <div>Sheet<b>A-01</b></div>
+          <div>Scale<b>N.T.S.</b></div>
+        </div>
+        <figcaption class="sheet-cap">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/><path d="M14 19l1.9-1.9a2 2 0 0 1 2.8 0L21 19"/><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
+          Representative stock image <span class="ph">PLACEHOLDER — confirm: swap for your real project photo</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section class="trust" aria-label="Why homeowners trust Green Grass">
+  <div class="wrap trust-in">
+    <div class="trust-row">
+      <div class="trust-item">
+        <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span><b>Licensed &amp; Insured</b><span>Covered, qualified work</span></span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></span>
+        <span><b>Locally Owned</b><span>Family-owned &amp; operated</span></span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <span><b>Fast Response</b><span>Prompt, reliable scheduling</span></span>
+      </div>
+    </div>
+    <div class="trust-note">
+      <!-- PLACEHOLDER: confirm license #, insurance carrier & coverage before publishing -->
+      <span class="ph">PLACEHOLDER — confirm license # &amp; insurance details</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="sec services" id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="toprow"><span class="sheet-tag">A-02 / Scope of Work</span></div>
+      <h2 id="svc-title">What we <span class="underline">build &amp; fix</span></h2>
+      <p>From full remodels to the punch-list repairs other contractors skip — one accountable crew, start to finish.</p>
+      <!-- PLACEHOLDER: confirm & trim the exact service list with the owner -->
+      <div><span class="ph">PLACEHOLDER — confirm &amp; trim services with owner</span></div>
+    </div>
+
+    <div class="svc-grid">
+      <!-- 01 Kitchen -->
+      <article class="card ticks">
+        <div class="card-media"><span class="card-num">A-02.1</span>
+          <img src="assets/svc-kitchen.jpg" alt="Renovated kitchen with white shaker cabinets and granite countertops.">
+        </div>
+        <div class="card-body">
+          <h3>Kitchen Remodels</h3>
+          <p>Layouts, cabinetry, counters, lighting and plumbing — coordinated into one clean build with a hard finish date.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Design to install</span>
+        </div>
+      </article>
+
+      <!-- 02 Bath -->
+      <article class="card ticks">
+        <div class="card-media"><span class="card-num">A-02.2</span>
+          <img src="assets/svc-bathroom.jpg" alt="Modern bathroom remodel with tiled walls, a freestanding tub and a wood-front vanity.">
+        </div>
+        <div class="card-body">
+          <h3>Bathroom Remodels</h3>
+          <p>Tile, fixtures, vanities and waterproofing done right the first time — from powder rooms to full primary baths.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Tile &amp; fixtures</span>
+        </div>
+      </article>
+
+      <!-- 03 Decks -->
+      <article class="card ticks">
+        <div class="card-media"><span class="card-num">A-02.3</span>
+          <img src="assets/svc-deck.jpg" alt="A modern home with a large wooden deck and pergola overlooking a green lawn.">
+        </div>
+        <div class="card-body">
+          <h3>Decks &amp; Patios</h3>
+          <p>Outdoor living built to last — framing, decking, railings and hardscape that hold up to seasons of use.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Build to last</span>
+        </div>
+      </article>
+
+      <!-- 04 Additions -->
+      <article class="card ticks">
+        <div class="card-media"><span class="card-num">A-02.4</span>
+          <img src="assets/svc-framing.jpg" alt="Interior framing of a home addition with exposed wood studs and roof trusses.">
+        </div>
+        <div class="card-body">
+          <h3>Additions</h3>
+          <p>More room, done properly — from foundation and framing through finishes, tied cleanly into your existing home.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Foundation to finish</span>
+        </div>
+      </article>
+
+      <!-- 05 Basement (drafting card) -->
+      <article class="card card-draft ticks">
+        <div class="card-media"><span class="card-num">A-02.5</span>
+          <div class="blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 12h18"/><path d="M9 21v-5h6v5"/><path d="M7 8h.01M11 8h.01"/></svg></div>
+        </div>
+        <div class="card-body">
+          <h3>Basement Finishing</h3>
+          <p>Turn unused square footage into living space — framing, insulation, egress, electrical and finishes to code.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Code-compliant</span>
+        </div>
+      </article>
+
+      <!-- 06 Repairs (drafting card) -->
+      <article class="card card-draft ticks">
+        <div class="card-media"><span class="card-num">A-02.6</span>
+          <div class="blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9 9a3 3 0 0 1-4-4l9-9a4 4 0 0 0-1-1Z"/></svg></div>
+        </div>
+        <div class="card-body">
+          <h3>General Repairs</h3>
+          <p>Drywall, doors, trim, rot, water damage and the long-ignored fix-it list — handled by one reliable crew.</p>
+          <span class="card-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Punch-list pros</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="svc-note dim"><span>End of scope · A-02</span></div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="sec why" id="why" aria-labelledby="why-title">
+  <div class="wrap why-grid">
+    <div class="sec-head" style="margin-bottom:0;">
+      <div class="toprow"><span class="sheet-tag">A-03 / Standards</span></div>
+      <h2 id="why-title">Built on <span class="underline">straight dealing</span></h2>
+      <p>A general contractor you can actually reach — with the habits that make a remodel painless.</p>
+    </div>
+
+    <div class="spec-list">
+      <div class="spec">
+        <span class="spec-no">01</span>
+        <span class="spec-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div class="spec-txt">
+          <h3>Fast, real response</h3>
+          <p>Calls and quote requests answered promptly — no chasing, no ghosting. You'll know where things stand.</p>
+        </div>
+      </div>
+      <div class="spec">
+        <span class="spec-no">02</span>
+        <span class="spec-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h6"/><path d="M9 11h6"/><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 15h4"/></svg></span>
+        <div class="spec-txt">
+          <h3>Upfront, written pricing</h3>
+          <p>Clear written estimates before work starts — scope, materials and cost on paper, so there are no surprise change-orders.</p>
+        </div>
+      </div>
+      <div class="spec">
+        <span class="spec-no">03</span>
+        <span class="spec-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div class="spec-txt">
+          <h3>Local &amp; accountable</h3>
+          <p>Family-owned and based in the Morrisville area — your neighbors stand behind the work and the schedule.</p>
+        </div>
+      </div>
+      <div class="spec">
+        <span class="spec-no">04</span>
+        <span class="spec-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div class="spec-txt">
+          <h3>Workmanship guarantee <span class="ph">PLACEHOLDER — confirm terms</span></h3>
+          <!-- PLACEHOLDER: confirm whether a workmanship warranty is offered and its exact terms/length -->
+          <p>We stand behind our work. Confirm the exact warranty length and terms with the owner before this goes live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="sec process grid-bg" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="toprow"><span class="sheet-tag" style="color:var(--timber);">A-04 / Method</span></div>
+      <h2 id="proc-title">From drawing to done</h2>
+      <p>A simple, predictable process — so you always know what's happening and what's next.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step ticks">
+        <div class="step-media"><img src="assets/blueprint.jpg" alt="Architectural floor-plan drawing with dimension callouts."></div>
+        <div class="step-body">
+          <span class="mono">Step 01 · Plan</span>
+          <h3>Walkthrough &amp; estimate</h3>
+          <p>We look at the job in person, talk through options, and put a clear written scope and price in front of you.</p>
+        </div>
+      </div>
+      <div class="step ticks">
+        <div class="step-media"><img src="assets/svc-framing.jpg" alt="Carpenter working inside a wood-framed home under construction."></div>
+        <div class="step-body">
+          <span class="mono">Step 02 · Build</span>
+          <h3>Clean, on-schedule work</h3>
+          <p>One accountable crew, tidy job sites, and steady updates — built to code and built to last.</p>
+        </div>
+      </div>
+      <div class="step ticks">
+        <div class="step-media"><img src="assets/svc-kitchen.jpg" alt="Completed bright kitchen after remodeling."></div>
+        <div class="step-body">
+          <span class="mono">Step 03 · Finish</span>
+          <h3>Walk it &amp; sign off</h3>
+          <p>We finish the punch list, clean up, and walk the result with you — done means done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CREW (watermarked owner-photo placeholder) ===================== -->
+<section class="sec crew" aria-labelledby="crew-title">
+  <div class="wrap crew-grid">
+    <div class="sec-head" style="margin-bottom:0;">
+      <div class="toprow"><span class="sheet-tag">A-05 / The Crew</span></div>
+      <h2 id="crew-title">The people behind <span class="underline">the work</span></h2>
+      <p>Green Grass is a family-owned and operated general contractor serving Morrisville and the surrounding area. Add a real photo of your team, truck or a recent project here — it's the single biggest trust-builder on the page.</p>
+      <div><span class="ph">PLACEHOLDER — confirm owner/company bio &amp; team details</span></div>
+    </div>
+    <!-- Owner's REAL photo slot — watermarked placeholder until supplied -->
+    <div class="wm-slot">
+      <div class="wm-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/><path d="M14 19l1.9-1.9a2 2 0 0 1 2.8 0L21 19"/><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
+        <h3>Your team photo goes here</h3>
+        <p>Crew, truck, or a finished job. We'll drop in your real image — this placeholder is never published as-is.</p>
+        <span class="ph">PLACEHOLDER — owner to supply real photo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="sec reviews" id="reviews" aria-labelledby="rev-title">
+  <div class="wrap">
+    <div class="rev-card ticks">
+      <span class="gico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M21.6 12.2c0-.6-.1-1.3-.2-1.9H12v3.6h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.2Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.7-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 13.9a6 6 0 0 1 0-3.8V7.5H3.1a10 10 0 0 0 0 9l3.3-2.6Z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.5l3.3 2.6C7.2 7.6 9.4 5.9 12 5.9Z"/></svg>
+      </span>
+      <div>
+        <h2 id="rev-title">See our reviews on Google</h2>
+        <p>We'd rather you hear it from our customers than from us. Read genuine, verified feedback on our Google profile.</p>
+      </div>
+      <div>
+        <a class="btn btn-timber" href="https://maps.google.com/?cid=11072682920520568128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+          Read Google reviews
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE AREA ===================== -->
+<section class="sec area" id="area" aria-labelledby="area-title">
+  <div class="wrap area-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:16px;">
+        <div class="toprow"><span class="sheet-tag">A-06 / Service Area</span></div>
+        <h2 id="area-title">Serving Morrisville <span class="underline">&amp; nearby</span></h2>
+        <p>Based at our Morrisville address, we work throughout Lower Bucks County and the neighboring river towns.</p>
+      </div>
+      <!-- PLACEHOLDER: confirm exact list of towns served -->
+      <p style="margin:0 0 4px;"><span class="ph">PLACEHOLDER — confirm towns served</span></p>
+      <ul class="town-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Morrisville</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Yardley</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Lower Makefield</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Falls Township</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Levittown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Newtown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Langhorne</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Tullytown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Fairless Hills</li>
+      </ul>
+      <p class="area-aside" style="border:none;background:none;padding:14px 0 0;color:var(--ink-soft);font-size:.92rem;">Not sure if you're in range? Give us a call — we're happy to let you know.</p>
+    </div>
+
+    <aside class="area-aside" id="contact" aria-label="Request a free quote">
+      <span class="sheet-tag">Free Estimate</span>
+      <h3 style="margin-top:8px;">Get a free quote</h3>
+      <p>Tell us about your project and we'll get you a clear, written estimate. The fastest way to reach us is by phone.</p>
+      <a class="btn btn-primary" href="tel:2152954881" style="width:100%;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call (215) 295-4881
+      </a>
+      <p class="addr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 65 W M Y Ln,<br>Morrisville, PA 19067</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="sec finalcta grid-bg" aria-labelledby="cta-title">
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2 id="cta-title">Let's price your project</h2>
+    <p>Kitchen, bath, addition, deck, basement or a stubborn repair list — call for a free, no-pressure written estimate.</p>
+    <div class="hero-cta">
+      <a class="btn btn-timber" href="tel:2152954881">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call Now
+      </a>
+      <a class="btn btn-ghost-light" href="https://maps.google.com/?cid=11072682920520568128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+    </div>
+    <a class="bigphone" href="tel:2152954881">(215) 295-4881</a>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER (title block) ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-brand">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M10.5 6.8 4 20"/><path d="M13.5 6.8 20 20"/><path d="M7.7 14h8.6"/></svg></span>
+      <span class="foot-name">Green Grass Landscape Services Inc</span>
+    </div>
+
+    <div class="tb">
+      <div class="tb-cell">
+        <span class="mono">Contact</span>
+        <ul class="tb-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:2152954881">(215) 295-4881</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>65 W M Y Ln, Morrisville, PA 19067, USA</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><a href="https://maps.google.com/?cid=11072682920520568128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener noreferrer">Find us on Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="tb-cell">
+        <span class="mono">Hours</span>
+        <!-- PLACEHOLDER: confirm business hours -->
+        <ul class="tb-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon–Sat, by appointment<br><span class="ph">PLACEHOLDER — confirm hours</span></span></li>
+        </ul>
+      </div>
+      <div class="tb-cell">
+        <span class="mono">Scope</span>
+        <ul class="tb-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>General contracting</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>Remodels · Additions · Repairs</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>Serving Morrisville &amp; surrounding areas</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="foot-legal">
+      © Green Grass Landscape Services Inc · Licensed &amp; insured general contractor · Morrisville, PA.<br>
+      Speculative website mock-up. Imagery is generic stock for illustration and does not depict the business's own staff, vehicles, or completed projects. All items marked “PLACEHOLDER — confirm” to be verified with the owner before publishing.
+    </p>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE TAP-TO-CALL BAR (CSS-only) ===================== -->
+<div class="callbar">
+  <a href="tel:2152954881">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Tap to Call · (215) 295-4881
+  </a>
+</div>
+
+</body>
+</html>

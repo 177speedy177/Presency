@@ -1,0 +1,16 @@
+Pexels stock, generic trade imagery (NOT the business's own work). Free per Pexels License.
+
+hero-electrician.jpg | photo by www.kaboompics.com | https://www.pexels.com/photo/photo-of-a-person-s-hands-holding-cables-7285965/
+  alt: A technician precisely cuts and organizes colorful wires using pliers, showcasing expertise in wiring tasks.
+svc-panel.jpg | photo by AV | https://www.pexels.com/photo/high-voltage-electricity-on-junction-boxes-10065200/
+  alt: Electrical meters attached to a graffiti-covered wall showcasing utility infrastructure.
+svc-lighting.jpg | photo by cottonbro studio | https://www.pexels.com/photo/lamps-on-white-ceiling-6333854/
+  alt: A modern room featuring circular ceiling lights creating a unique geometric pattern.
+svc-evcharger.jpg | photo by Ed Harvey | https://www.pexels.com/photo/black-charger-plugged-in-on-white-car-5391510/
+  alt: A white electric car charging at a station in Christchurch, New Zealand, showcasing modern eco-friendly transportation.
+atmos-tools.jpg | photo by Tymur Khakimov | https://www.pexels.com/photo/hand-holding-a-wire-clip-pliers-6412541/
+  alt: Detailed image of a hand using pliers to cut a blue wire on a gray background.
+svc-generator.jpg | photo by Ron Lach | https://www.pexels.com/photo/grandfather-chopping-wood-and-grandson-watching-10397717/
+  alt: Grandfather teaching grandson to chop wood in a backyard setting. Scenic summer day.
+atmos-wires.jpg | photo by Antonio Avanti | https://www.pexels.com/photo/close-up-of-cables-17072947/
+  alt: Multi-colored cables intertwined against a dark background, showing technology connections.

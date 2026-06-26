@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>General Contractor in King of Prussia, PA | Hillside Landscaping Inc | (610) 265-2739</title>
+<meta name="description" content="Hillside Landscaping Inc, a locally owned general contractor serving King of Prussia, PA. Kitchen and bath remodels, additions, decks, basements, and repairs. One crew, level work, a price in writing. Call (610) 265-2739.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ==================================================================
+   HILLSIDE LANDSCAPING INC  ::  concept "ON THE LEVEL / BENCHMARK"
+   A builder's survey identity. Limestone-paper base, deep forest
+   accent bands, one brass signature. Motif: benchmark medallion,
+   topographic contour lines, elevation tick rules, STA station tags.
+   Single editable file. Light-dominant, deep bands. No em dashes.
+   ================================================================== */
+:root{
+  --ink:#1C231E;            /* forest-charcoal text */
+  --ink-2:#334034;
+  --paper:#FBF8F1;          /* base */
+  --paper-2:#FFFFFF;
+  --sand:#ECE4D2;           /* warm tint band */
+  --sand-2:#E2D8C2;
+  --forest:#20352A;         /* deep accent band */
+  --forest-2:#172620;       /* footer / darkest */
+  --brass:#B07D2B;          /* signature accent */
+  --brass-dk:#8A5E1A;       /* brass for text/links on light */
+  --brass-lt:#D9A94A;       /* brass for text on dark */
+  --brass-soft:rgba(176,125,43,.12);
+  --stone:#6E7269;          /* muted secondary text */
+  --line:#DCD3BF;
+  --line-d:rgba(251,248,241,.16);
+  --ok:#3E6B49;
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --fd:"Fraunces",Georgia,serif;
+  --fb:"Hanken Grotesk",system-ui,sans-serif;
+  --fm:"JetBrains Mono",ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--fb);color:var(--ink);background:var(--paper);line-height:1.62;
+  font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:600;line-height:1.04;margin:0;letter-spacing:-.012em;}
+p{margin:0 0 1rem;}
+img{max-width:100%;display:block;}
+a{color:var(--brass-dk);}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+.sec{padding-block:clamp(64px,9vw,116px);position:relative;}
+
+/* ---------------- signature primitives ---------------- */
+/* mono survey station tag */
+.tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:.7rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--brass-dk);}
+.tag::before{content:"";width:11px;height:11px;flex:none;border:1.5px solid var(--brass);border-radius:50%;
+  background:radial-gradient(circle,var(--brass) 0 2px,transparent 2.5px);}
+.tag.on-dark{color:var(--brass-lt);}
+.tag.on-dark::before{border-color:var(--brass-lt);background:radial-gradient(circle,var(--brass-lt) 0 2px,transparent 2.5px);}
+/* hand-drawn contour underline */
+.uline{position:relative;white-space:nowrap;}
+.uline::after{content:"";position:absolute;left:-3px;right:-3px;bottom:-.16em;height:.42em;z-index:-1;
+  background:no-repeat center/100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='14'%3E%3Cpath d='M3 9C50 3 90 12 130 7s90-7 127 3' fill='none' stroke='%23B07D2B' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");}
+/* elevation tick / dimension rule */
+.tickrule{height:14px;display:block;width:100%;color:var(--line);
+  background:
+    linear-gradient(var(--brass),var(--brass)) left center/100% 1px no-repeat;
+  position:relative;}
+.tickrule::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(90deg,var(--brass) 0 1px,transparent 1px 28px);
+  opacity:.55;-webkit-mask:linear-gradient(#000,#000) top/100% 7px no-repeat;mask:linear-gradient(#000,#000) top/100% 7px no-repeat;}
+/* small caption marker */
+.cap-m{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);
+  display:inline-flex;gap:8px;align-items:center;}
+.cap-m svg{width:13px;height:13px;color:var(--brass);}
+
+/* buttons / sticker */
+.cta{display:inline-flex;align-items:center;gap:11px;font-family:var(--fb);font-weight:700;font-size:.96rem;
+  letter-spacing:.01em;text-decoration:none;background:var(--brass);color:#fff;padding:15px 26px;border-radius:2px;
+  border:1.5px solid var(--brass);transition:transform .22s var(--ease),background .22s var(--ease),box-shadow .22s var(--ease);
+  box-shadow:0 1.5px 0 var(--brass-dk);}
+.cta svg{width:17px;height:17px;}
+.cta:hover{background:var(--brass-dk);border-color:var(--brass-dk);transform:translateY(-2px);box-shadow:0 10px 24px rgba(138,94,26,.3);}
+.cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink);box-shadow:none;}
+.cta.ghost:hover{background:var(--ink);color:var(--paper);}
+.cta.on-dark.ghost{color:var(--paper);border-color:rgba(251,248,241,.4);}
+.cta.on-dark.ghost:hover{background:rgba(251,248,241,.1);border-color:var(--paper);}
+.numsticker{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-weight:700;font-size:.98rem;
+  letter-spacing:.01em;text-decoration:none;color:var(--ink);transition:color .2s var(--ease);}
+.numsticker svg{width:17px;height:17px;color:var(--brass);flex:none;}
+.numsticker:hover{color:var(--brass-dk);}
+.numsticker .lbl{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:block;line-height:1;margin-bottom:3px;}
+.numsticker.on-dark{color:var(--paper);}
+.numsticker.on-dark .lbl{color:rgba(251,248,241,.55);}
+
+/* placeholder pill: [PLACEHOLDER] short explanation of what to confirm */
+.ph{display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:.6rem;font-weight:500;
+  letter-spacing:.01em;text-transform:none;color:var(--brass-dk);background:var(--brass-soft);
+  border:1px solid rgba(176,125,43,.4);border-radius:999px;padding:2px 9px 2px 3px;line-height:1.4;vertical-align:middle;}
+.ph::before{content:"Placeholder";font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.54rem;
+  background:var(--brass);color:#fff;padding:3px 7px;border-radius:999px;}
+
+/* a11y */
+.skip{position:absolute;left:-999px;background:var(--forest);color:#fff;padding:12px 16px;z-index:200;border-radius:3px;}
+.skip:focus{left:8px;top:8px;}
+:where(a,button,input,textarea,summary):focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:3px;}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease);}
+.rv.in{opacity:1;transform:none;}
+
+/* section heading block */
+.head{max-width:60ch;margin-bottom:44px;}
+.head h2{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:600;margin:16px 0 14px;letter-spacing:-.02em;}
+.head p{color:var(--stone);font-size:1.06rem;margin:0;}
+
+/* ============================================================ HEADER */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(251,248,241,.88);backdrop-filter:saturate(150%) blur(11px);
+  border-bottom:1px solid var(--line);}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px;}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);}
+.brand .mk{width:46px;height:46px;flex:none;}
+.brand b{font-family:var(--fd);font-weight:700;font-size:1.16rem;letter-spacing:-.02em;line-height:1;}
+.brand small{display:block;font-family:var(--fm);font-size:.56rem;letter-spacing:.17em;text-transform:uppercase;color:var(--stone);margin-top:4px;}
+.hdr-r{display:flex;align-items:center;gap:22px;}
+.hdr .numsticker{display:none;}
+nav.main{display:none;gap:26px;}
+nav.main a{font-family:var(--fm);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink);position:relative;padding:5px 0;}
+nav.main a::after{content:"";position:absolute;left:0;right:100%;bottom:-1px;height:2px;background:var(--brass);transition:right .28s var(--ease);}
+nav.main a:hover::after,nav.main a.active::after{right:0;}
+
+/* ============================================================ HERO */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(130% 80% at 12% -8%, var(--sand) 0%, transparent 56%),
+    radial-gradient(120% 90% at 100% 0%, #F1ECDF 0%, transparent 50%),
+    var(--paper);
+  border-bottom:1px solid var(--line);}
+/* drifting contour backdrop */
+.hero .contours{position:absolute;inset:-12% -10% auto -10%;height:120%;width:120%;opacity:.5;pointer-events:none;
+  color:#C9BC9E;}
+.hero .contours svg{width:100%;height:100%;}
+.hero-top{position:relative;padding-block:clamp(52px,9vw,100px) clamp(40px,6vw,64px);}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(36px,5vw,56px);align-items:center;}
+.hero-inner{position:relative;max-width:26ch;}
+.hero-ey{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:26px;}
+.hero h1{font-size:clamp(2.7rem,7.4vw,5.2rem);font-weight:600;letter-spacing:-.028em;line-height:.97;}
+.hero h1 .li{font-style:italic;font-weight:500;color:var(--brass-dk);}
+.hero-sub{font-size:clamp(1.08rem,1.7vw,1.22rem);color:var(--ink-2);max-width:42ch;margin:26px 0 0;}
+.hero-act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;margin-top:30px;}
+/* hero feature photo (framed, with benchmark corner ticks) */
+.hero-feat{position:relative;border:1px solid var(--ink);background:var(--paper-2);padding:8px;
+  box-shadow:16px 16px 0 rgba(32,53,42,.09);max-width:540px;width:100%;}
+.hero-feat img{width:100%;height:clamp(300px,40vw,448px);object-fit:cover;}
+.hero-feat .corner{position:absolute;width:20px;height:20px;border:2px solid var(--brass);z-index:2;}
+.hero-feat .corner.tl{top:-2px;left:-2px;border-right:none;border-bottom:none;}
+.hero-feat .corner.br{bottom:-2px;right:-2px;border-left:none;border-top:none;}
+.hero-feat .badge{position:absolute;top:22px;left:22px;display:flex;align-items:center;gap:8px;
+  background:var(--forest);color:var(--paper);font-family:var(--fm);font-size:.6rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:2px;}
+.hero-feat .badge svg{width:15px;height:15px;color:var(--brass-lt);}
+.hero-feat figcaption{margin-top:9px;}
+/* hero photo strip */
+.strip{position:relative;padding-block:8px 0;}
+.strip-rail{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.strip figure{position:relative;margin:0;overflow:hidden;border:1px solid var(--ink);background:var(--sand);}
+.strip figure img{width:100%;height:clamp(150px,22vw,212px);object-fit:cover;transition:transform .7s var(--ease);}
+.strip figure:hover img{transform:scale(1.05);}
+.strip figcaption{position:absolute;left:0;bottom:0;background:rgba(28,35,30,.82);color:var(--paper);
+  font-family:var(--fm);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 9px;display:flex;gap:7px;align-items:center;}
+.strip figcaption svg{width:11px;height:11px;color:var(--brass-lt);}
+.strip-note{margin-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* ============================================================ TRUST BAR (dark band) */
+.trust{background:var(--forest);color:var(--paper);position:relative;overflow:hidden;}
+.trust::before{content:"";position:absolute;inset:0;opacity:.4;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1.5'%3E%3Cpath d='M-20 60C120 20 260 90 420 50s180-30 220-10'/%3E%3Cpath d='M-20 100C120 60 260 130 420 90s180-30 220-10'/%3E%3Cpath d='M-20 140C120 100 260 170 420 130s180-30 220-10'/%3E%3C/g%3E%3C/svg%3E");background-size:600px 200px;}
+.trust-in{position:relative;display:grid;grid-template-columns:1fr;gap:18px;padding-block:24px;align-items:center;}
+.trust-items{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 14px;}
+.trust-it{display:flex;gap:11px;align-items:center;}
+.trust-it svg{width:21px;height:21px;color:var(--brass-lt);flex:none;}
+.trust-it b{font-family:var(--fd);font-weight:600;font-size:1.02rem;display:block;line-height:1.1;}
+.trust-it span{font-size:.78rem;color:rgba(251,248,241,.66);}
+.trust-rating{display:flex;align-items:center;gap:13px;padding-top:18px;border-top:1px solid var(--line-d);}
+.stars{display:inline-flex;gap:2px;}
+.stars svg{width:18px;height:18px;}
+.trust-rating .rt{font-family:var(--fd);font-weight:700;font-size:1.5rem;line-height:1;}
+.trust-rating small{color:rgba(251,248,241,.66);font-size:.8rem;display:block;}
+
+/* ============================================================ ABOUT */
+.about{background:var(--paper);}
+.about-grid{display:grid;grid-template-columns:1fr;gap:40px;}
+.about-copy p{color:var(--ink-2);font-size:1.05rem;}
+.about-copy .lead{font-family:var(--fd);font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:500;color:var(--ink);line-height:1.32;margin-bottom:20px;letter-spacing:-.01em;}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:28px 0 6px;border-top:1px solid var(--line);}
+.about-stats .st{padding:18px 0 4px;border-bottom:3px solid var(--brass);}
+.about-stats .st b{font-family:var(--fd);font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);display:block;line-height:1;letter-spacing:-.02em;}
+.about-stats .st span{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);display:block;margin-top:8px;}
+/* about media: framed photo + owner watermark slot + before/after */
+.about-media{display:grid;grid-template-columns:1fr;gap:16px;}
+.framed{position:relative;border:1px solid var(--ink);background:var(--paper-2);padding:8px;box-shadow:16px 16px 0 rgba(32,53,42,.08);}
+.framed img{width:100%;height:clamp(220px,36vw,320px);object-fit:cover;}
+.framed .corner{position:absolute;width:18px;height:18px;border:2px solid var(--brass);}
+.framed .corner.tl{top:-2px;left:-2px;border-right:none;border-bottom:none;}
+.framed .corner.br{bottom:-2px;right:-2px;border-left:none;border-top:none;}
+.framed figcaption{margin-top:9px;}
+/* owner photo slot, watermarked */
+.ownerslot{position:relative;border:2px dashed var(--brass);background:var(--sand);display:grid;place-items:center;text-align:center;
+  padding:26px 22px;min-height:170px;overflow:hidden;}
+.ownerslot::after{content:"";position:absolute;inset:0;pointer-events:none;background-repeat:repeat;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='130'%3E%3Ctext x='6' y='84' font-family='monospace' font-size='17' fill='%231C231E' fill-opacity='0.14' transform='rotate(-30 110 65)'%3EPLACEHOLDER%3C/text%3E%3C/svg%3E");}
+.ownerslot .in{position:relative;z-index:1;max-width:26ch;}
+.ownerslot svg{width:36px;height:36px;color:var(--brass-dk);margin-bottom:9px;}
+.ownerslot b{font-family:var(--fd);font-size:1.06rem;display:block;margin-bottom:5px;}
+.ownerslot p{font-size:.84rem;color:var(--stone);margin:0 0 10px;}
+/* before & after pair */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ba figure{position:relative;margin:0;border:1px solid var(--ink);overflow:hidden;background:var(--sand);}
+.ba img{width:100%;height:clamp(130px,20vw,168px);object-fit:cover;}
+.ba .stamp{position:absolute;top:9px;left:9px;font-family:var(--fm);font-size:.55rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--forest);color:var(--paper);padding:4px 8px;border-radius:2px;}
+.ba .stamp.aft{background:var(--brass);}
+
+/* ============================================================ AREA */
+.area{background:var(--sand);border-block:1px solid var(--line);position:relative;overflow:hidden;}
+.area::before{content:"";position:absolute;right:-6%;top:-20%;width:60%;height:140%;opacity:.5;pointer-events:none;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='none' stroke='%23B07D2B' stroke-opacity='0.18' stroke-width='1.4'%3E%3Cpath d='M200 60c70 0 130 60 130 140s-70 140-130 140-130-50-130-140S130 60 200 60Z'/%3E%3Cpath d='M200 100c52 0 96 44 96 100s-48 100-96 100-96-40-96-100 44-100 96-100Z'/%3E%3Cpath d='M200 140c34 0 62 28 62 60s-30 60-62 60-62-26-62-60 28-60 62-60Z'/%3E%3Ccircle cx='200' cy='200' r='5' fill='%23B07D2B' fill-opacity='0.3' stroke='none'/%3E%3C/g%3E%3C/svg%3E");}
+.area-grid{position:relative;display:grid;grid-template-columns:1fr;gap:34px;align-items:start;}
+.towns{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px;margin:0;padding:0;list-style:none;}
+.towns li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:1rem;padding:8px 0;border-bottom:1px solid var(--line);}
+.towns li svg{width:15px;height:15px;color:var(--brass);flex:none;}
+.towns li.hub{color:var(--brass-dk);}
+.area-aside{background:var(--paper-2);border:1px solid var(--ink);padding:26px 24px;box-shadow:12px 12px 0 rgba(176,125,43,.12);}
+.area-aside h3{font-size:1.3rem;margin-bottom:8px;}
+.area-aside p{color:var(--stone);font-size:.96rem;margin:0 0 16px;}
+
+/* ============================================================ FAQ */
+.faq{background:var(--paper);}
+.faq-list{border-top:1px solid var(--ink);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:18px;align-items:flex-start;justify-content:space-between;
+  padding:24px 0;font-family:var(--fd);font-weight:600;font-size:clamp(1.12rem,2.2vw,1.34rem);color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary .qn{font-family:var(--fm);font-size:.7rem;font-weight:700;color:var(--brass-dk);padding-top:.45em;min-width:2.4em;flex:none;}
+.faq summary .qt{flex:1;}
+.faq summary .chev{width:24px;height:24px;flex:none;color:var(--brass);transition:transform .3s var(--ease);margin-top:.15em;}
+.faq details[open] summary .chev{transform:rotate(45deg);}
+.faq .ans{padding:0 0 26px calc(2.4em + 18px);color:var(--ink-2);max-width:66ch;}
+.faq .ans p{margin:0;}
+
+/* ============================================================ SERVICES (numbered list + sticky image) */
+.svc{background:var(--forest);color:var(--paper);position:relative;overflow:hidden;}
+.svc::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;background-size:560px 200px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1.4'%3E%3Cpath d='M-20 70C110 30 250 100 400 60s140-26 200-8'/%3E%3Cpath d='M-20 120C110 80 250 150 400 110s140-26 200-8'/%3E%3C/g%3E%3C/svg%3E");}
+.svc .wrap{position:relative;}
+.svc .head h2{color:var(--paper);}
+.svc .head p{color:rgba(251,248,241,.72);}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:40px;}
+.svc-list{counter-reset:s;border-top:1px solid var(--line-d);}
+.svc-row{display:grid;grid-template-columns:auto 1fr;gap:18px 20px;padding:24px 0;border-bottom:1px solid var(--line-d);
+  align-items:start;transition:padding-left .3s var(--ease);}
+.svc-row:hover{padding-left:10px;}
+.svc-row .sn{font-family:var(--fm);font-size:.72rem;font-weight:700;color:var(--brass-lt);padding-top:.55em;}
+.svc-row .sic{grid-row:span 2;display:none;}
+.svc-row h3{font-size:clamp(1.3rem,2.6vw,1.7rem);font-weight:600;color:var(--paper);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.svc-row h3 svg{width:26px;height:26px;color:var(--brass-lt);flex:none;}
+.svc-row p{grid-column:2;color:rgba(251,248,241,.72);font-size:.97rem;margin:8px 0 0;max-width:52ch;}
+.svc-sticky{position:relative;}
+.svc-fig{position:relative;border:1px solid rgba(251,248,241,.3);padding:8px;background:rgba(251,248,241,.05);}
+.svc-fig img{width:100%;height:clamp(240px,40vw,420px);object-fit:cover;}
+.svc-fig .badge{position:absolute;top:20px;right:20px;background:var(--paper);color:var(--forest);
+  font-family:var(--fm);font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;display:flex;gap:8px;align-items:center;border-radius:2px;}
+.svc-fig .badge svg{width:15px;height:15px;color:var(--brass);}
+.svc-fig figcaption{margin-top:10px;color:rgba(251,248,241,.6);}
+
+/* ============================================================ WHY US */
+.why{background:var(--paper);}
+.why-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.spec{position:relative;background:var(--paper-2);border:1px solid var(--ink);padding:26px 24px;overflow:hidden;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+.spec::before{content:"";position:absolute;top:0;left:0;width:0;height:3px;background:var(--brass);transition:width .35s var(--ease);}
+.spec:hover{transform:translateY(-5px);box-shadow:12px 14px 0 rgba(176,125,43,.13);}
+.spec:hover::before{width:100%;}
+.spec .sn{font-family:var(--fm);font-size:.66rem;font-weight:700;letter-spacing:.14em;color:var(--brass-dk);}
+.spec .ic{width:38px;height:38px;color:var(--brass);margin:14px 0 12px;}
+.spec h3{font-size:1.26rem;font-weight:600;margin-bottom:8px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;}
+.spec p{color:var(--stone);font-size:.95rem;margin:0;}
+
+/* ============================================================ FINAL CTA (dark band) */
+.final{background:var(--forest-2);color:var(--paper);position:relative;overflow:hidden;}
+.final .medallion-bg{position:absolute;right:-60px;bottom:-60px;width:320px;height:320px;opacity:.1;pointer-events:none;}
+.final-in{position:relative;display:grid;grid-template-columns:1fr;gap:26px;align-items:center;}
+.final h2{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:600;letter-spacing:-.02em;line-height:1.02;}
+.final h2 .li{font-style:italic;color:var(--brass-lt);font-weight:500;}
+.final p{color:rgba(251,248,241,.74);max-width:46ch;margin:14px 0 0;}
+.final-act{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center;}
+
+/* ============================================================ CONTACT */
+.contact{background:var(--sand);border-top:1px solid var(--line);}
+.cwrap{display:grid;grid-template-columns:1fr;gap:34px;}
+.form{background:var(--paper-2);border:1px solid var(--ink);padding:28px 26px;box-shadow:14px 14px 0 rgba(32,53,42,.08);}
+.form .lab{display:block;font-family:var(--fm);font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin:14px 0 6px;}
+.form input,.form textarea{width:100%;font-family:var(--fb);font-size:1rem;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line);border-radius:2px;padding:12px 14px;}
+.form input:focus,.form textarea:focus{border-color:var(--brass);outline:none;}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form .cta{width:100%;justify-content:center;margin-top:18px;border:none;cursor:pointer;font-size:1rem;}
+.caside h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:600;margin:14px 0 14px;letter-spacing:-.02em;}
+.caside .lead{color:var(--ink-2);font-size:1.04rem;}
+.cbits{margin-top:22px;display:grid;gap:15px;}
+.cbit{display:flex;gap:13px;align-items:flex-start;}
+.cbit svg{width:20px;height:20px;color:var(--brass);flex:none;margin-top:3px;}
+.cbit b{font-family:var(--fd);font-weight:600;display:block;font-size:1.04rem;}
+.cbit span{color:var(--stone);font-size:.92rem;}
+.cbit a{color:var(--ink);text-decoration:none;font-weight:600;}
+.cbit a:hover{color:var(--brass-dk);}
+
+/* ============================================================ FOOTER (themed: title-block plate) */
+.ft{background:var(--forest-2);color:rgba(251,248,241,.72);padding-block:54px 96px;position:relative;}
+.ft-top{display:grid;grid-template-columns:1fr;gap:30px;padding-bottom:28px;border-bottom:1px solid var(--line-d);}
+.ft .brand b{color:var(--paper);}
+.ft .brand small{color:rgba(251,248,241,.55);}
+.ft-about{max-width:38ch;font-size:.92rem;margin-top:14px;}
+.ft-col h4{font-family:var(--fm);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);margin:0 0 13px;}
+.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+.ft-col li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;}
+.ft-col svg{width:16px;height:16px;color:var(--brass-lt);flex:none;margin-top:3px;}
+.ft-col a{color:var(--paper);text-decoration:none;}
+.ft-col a:hover{color:var(--brass-lt);}
+.ft-plate{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:24px;
+  font-family:var(--fm);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(251,248,241,.5);}
+.ft-legal{margin-top:18px;font-family:var(--fm);font-size:.62rem;letter-spacing:.03em;color:rgba(251,248,241,.42);line-height:1.85;}
+
+/* ============================================================ MOBILE STICKY NUMBER BAR */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;gap:10px;
+  padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(251,248,241,.97);
+  backdrop-filter:blur(9px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(28,35,30,.13);}
+.callbar a{flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+  font-family:var(--fb);font-weight:700;border-radius:2px;font-size:.96rem;}
+.callbar .num{background:var(--ink);color:var(--paper);}
+.callbar .quote{background:var(--brass);color:#fff;}
+.callbar svg{width:17px;height:17px;}
+
+/* ============================================================ RESPONSIVE */
+@media(min-width:680px){
+  .strip-rail{grid-template-columns:repeat(4,1fr);}
+  .trust-items{grid-template-columns:repeat(4,1fr);}
+  .towns{grid-template-columns:repeat(3,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .about-media{grid-template-columns:1fr;}
+}
+@media(min-width:920px){
+  .hero-grid{grid-template-columns:1.04fr .96fr;}
+  .hero-feat{justify-self:end;}
+  .trust-in{grid-template-columns:1fr auto;gap:40px;}
+  .trust-rating{padding-top:0;border-top:none;padding-left:34px;border-left:1px solid var(--line-d);}
+  .about-grid{grid-template-columns:1.04fr .96fr;gap:56px;align-items:start;}
+  .area-grid{grid-template-columns:1.3fr .7fr;gap:48px;}
+  .svc-grid{grid-template-columns:1fr .82fr;gap:54px;align-items:start;}
+  .svc-sticky{position:sticky;top:96px;}
+  .why-grid{grid-template-columns:repeat(4,1fr);}
+  .final-in{grid-template-columns:1.2fr auto;gap:40px;}
+  .cwrap{grid-template-columns:.92fr 1.08fr;gap:54px;align-items:start;}
+  .ft-top{grid-template-columns:1.7fr 1fr 1fr;}
+  nav.main{display:flex;}
+  .hdr .numsticker{display:inline-flex;}
+  .callbar{display:none;}
+  body{padding-bottom:0;}
+}
+@media(max-width:919px){ body{padding-bottom:72px;} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;}
+  html{scroll-behavior:auto;}
+  .rv{opacity:1;transform:none;}
+  .hero .contours{display:none;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="Hillside Landscaping Inc, home">
+      <svg class="mk" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#20352A"/>
+        <circle cx="24" cy="24" r="16.5" fill="none" stroke="#D9A94A" stroke-width="1.4"/>
+        <path d="M24 13 33 31 H15 Z" fill="none" stroke="#FBF8F1" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M24 7v4M41 24h-4M24 41v-4M7 24h4" stroke="#FBF8F1" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="24" cy="26" r="2.1" fill="#B07D2B"/>
+      </svg>
+      <span><b>Hillside</b><small>Builders &middot; King of Prussia</small></span>
+    </a>
+    <div class="hdr-r">
+      <nav class="main" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#area">Service Area</a>
+        <a href="#faq">FAQ</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+      </nav>
+      <a class="numsticker" href="tel:6102652739">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span><span class="lbl">Call the shop</span>(610) 265-2739</span>
+      </a>
+      <a class="cta" href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="main"><span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="contours" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" stroke-width="1.3">
+      <path d="M-50 180C200 100 420 240 660 160s360-110 600-40"/>
+      <path d="M-50 250C200 170 420 310 660 230s360-110 600-40"/>
+      <path d="M-50 320C200 240 420 380 660 300s360-110 600-40"/>
+      <path d="M-50 390C200 310 420 450 660 370s360-110 600-40"/>
+      <path d="M-50 460C200 380 420 520 660 440s360-110 600-40"/>
+    </svg>
+  </div>
+  <div class="wrap hero-top">
+    <div class="hero-grid">
+      <div class="hero-inner">
+        <div class="hero-ey">
+          <span class="tag">King of Prussia, PA</span>
+          <!-- TRADE MISMATCH FLAG: name says "Landscaping", Google category says "general contractor" -->
+          <span class="ph">is general contracting the main trade?</span>
+        </div>
+        <h1 id="h1">General Contractor in <span class="li uline">King of Prussia</span></h1>
+        <p class="hero-sub">Locally owned. We build it level and put the price in writing, before the work starts.</p>
+        <div class="hero-act">
+          <a class="cta" href="#contact">Get a Free Quote</a>
+          <a class="numsticker" href="tel:6102652739">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <span><span class="lbl">Call the shop</span>(610) 265-2739</span>
+          </a>
+        </div>
+      </div>
+      <figure class="hero-feat rv">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 12 16 8" stroke-linecap="round"/></svg> On the level</span>
+        <img src="assets/hero-a.jpg" alt="A contractor and homeowner checking a wall with a level during a renovation." loading="eager" width="940" height="650">
+        <figcaption class="cap-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Representative stock photo</figcaption>
+      </figure>
+    </div>
+  </div>
+  <!-- thin photo strip -->
+  <div class="wrap strip">
+    <div class="strip-rail">
+      <figure class="rv"><img src="assets/hero-c.jpg" alt="A finished kitchen remodel with white cabinets and brass hardware." loading="lazy" width="940" height="650"><figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg>Stock &middot; kitchen</figcaption></figure>
+      <figure class="rv"><img src="assets/reno.jpg" alt="A room stripped to the studs before renovation." loading="lazy" width="1000" height="667"><figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg>Stock &middot; gut &amp; rebuild</figcaption></figure>
+      <figure class="rv"><img src="assets/deck.jpg" alt="A modern backyard deck and covered patio." loading="lazy" width="940" height="650"><figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg>Stock &middot; deck &amp; patio</figcaption></figure>
+      <figure class="rv"><img src="assets/services.jpg" alt="A bright newly finished room with a vaulted ceiling." loading="lazy" width="940" height="650"><figcaption><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg>Stock &middot; addition</figcaption></figure>
+    </div>
+    <div class="strip-note">
+      <span class="cap-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Representative stock, not the company's own jobs <span class="ph">real project photos go here</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR (dark band) ============ -->
+<section class="trust" aria-label="Credentials and rating">
+  <div class="wrap trust-in">
+    <div class="trust-items">
+      <div class="trust-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Licensed &amp; Insured <span class="ph">verify license + insurance</span></b><span>Covered, by the book</span></div></div>
+      <div class="trust-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg><div><b>Locally Owned</b><span>King of Prussia based</span></div></div>
+      <div class="trust-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Fast Response</b><span>Calls returned same day</span></div></div>
+      <div class="trust-it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><div><b>One Written Price</b><span>No surprise change orders</span></div></div>
+    </div>
+    <div class="trust-rating">
+      <span class="stars" role="img" aria-label="Rated 4.0 out of 5 on Google">
+        <svg viewBox="0 0 24 24" fill="#D9A94A" aria-hidden="true"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#D9A94A" aria-hidden="true"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#D9A94A" aria-hidden="true"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#D9A94A" aria-hidden="true"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="hg"><stop offset="0%" stop-color="#D9A94A"/><stop offset="0%" stop-color="rgba(251,248,241,.28)"/></linearGradient></defs><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1Z" fill="url(#hg)"/></svg>
+      </span>
+      <div><span class="rt" data-count="4.0">4.0</span> <small>on Google &middot; 5 reviews</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec about" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about-copy rv">
+      <span class="tag">STA 0+01 &middot; Who we are</span>
+      <h2 id="about-h" style="font-size:clamp(2.1rem,5.2vw,3.4rem);margin:16px 0 18px;">Family owned, and we sign our own work.</h2>
+      <p class="lead">Hillside is a small, locally owned building crew serving King of Prussia and the towns around it. The same people who quote your job are the ones who show up to build it.</p>
+      <p>We started where most good builders start: doing the work ourselves, learning that a clean jobsite and a straight answer earn more repeat customers than any ad. We keep the crew small on purpose, so nothing gets handed off to a stranger and nothing slips through the cracks.</p>
+      <p>No founding-year boasts and no salesman in a logo polo. Just licensed, insured work, a price you can hold us to, and a build that still looks right years later. <span class="ph">owner name + years in business</span></p>
+      <div class="about-stats">
+        <div class="st"><b data-count="4.0">4.0</b><span>Google rating</span></div>
+        <div class="st"><b data-count="6">6</b><span>Trades in-house <span class="ph">number of trades in-house</span></span></div>
+        <div class="st"><b>1</b><span>Crew, start to finish</span></div>
+      </div>
+    </div>
+    <div class="about-media rv">
+      <figure class="framed">
+        <span class="corner tl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <img src="assets/about.jpg" alt="A small contracting crew reviewing plans inside a home under renovation." loading="lazy" width="1200" height="800">
+        <figcaption class="cap-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Representative stock photo</figcaption>
+      </figure>
+      <div class="ownerslot">
+        <div class="in">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg>
+          <b>Your real photo here</b>
+          <p>A shot of the owner, the crew, or the truck. This is the single biggest trust builder on the page.</p>
+          <span class="ph">owner photo goes here</span>
+        </div>
+      </div>
+      <div class="ba">
+        <figure><span class="stamp">Before</span><img src="assets/reno.jpg" alt="A room stripped down before renovation." loading="lazy" width="1000" height="667"></figure>
+        <figure><span class="stamp aft">After</span><img src="assets/kitchen.jpg" alt="A finished, modern kitchen after remodel." loading="lazy" width="1000" height="562"></figure>
+      </div>
+      <div class="cap-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Before / after shown with stock <span class="ph">real before/after photos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="sec area" id="area" aria-labelledby="area-h">
+  <div class="wrap area-grid">
+    <div class="rv">
+      <span class="tag">STA 0+02 &middot; Where we work</span>
+      <h2 id="area-h" style="font-size:clamp(2.1rem,5.2vw,3.4rem);margin:16px 0 12px;">Serving King of Prussia <span class="uline">and the towns next door.</span></h2>
+      <p style="color:var(--stone);max-width:54ch;margin:0 0 26px;">If you are on this stretch of Montgomery and Chester County, we can get to you. Not sure if you are in range? Call and ask, the answer is usually yes. <span class="ph">exact towns served</span></p>
+      <ul class="towns">
+        <li class="hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> King of Prussia</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Wayne</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Radnor</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Bryn Mawr</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Villanova</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Gulph Mills</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Bridgeport</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Norristown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Valley Forge</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Audubon</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Devon</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Berwyn</li>
+      </ul>
+    </div>
+    <aside class="area-aside rv">
+      <h3>On the books</h3>
+      <p>Our shop and mailing address. Estimates happen at your place, not ours.</p>
+      <div class="cbits" style="margin-top:0">
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><b>197 Quarry Rd</b><span>King of Prussia, PA 19406</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Hours <span class="ph">business hours</span></b><span>Mon to Sat, by appointment</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><div><b><a href="tel:6102652739">(610) 265-2739</a></b><span>Call or text for a quote</span></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec faq" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">STA 0+03 &middot; Good to know</span><h2 id="faq-h">Questions, answered straight.</h2><p>The stuff people actually ask before they hire a contractor.</p></div>
+    <div class="faq-list rv">
+      <details open>
+        <summary><span class="qn">Q1</span><span class="qt">Do you handle the whole job, or just part of it?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="ans"><p>The whole job. As your general contractor we plan it, pull what needs pulling, run the trades, and hand it back finished and cleaned up. One point of contact from the first walk-through to the last touch-up. <span class="ph">full job scope</span></p></div>
+      </details>
+      <details>
+        <summary><span class="qn">Q2</span><span class="qt">How does pricing work?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="ans"><p>We come look, we listen, and we give you a clear written price before anyone picks up a tool. If the scope changes mid-job, you approve the change and the cost before we move on it. No surprise line items at the end.</p></div>
+      </details>
+      <details>
+        <summary><span class="qn">Q3</span><span class="qt">Are you licensed and insured?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="ans"><p>Yes. We carry the licensing and insurance the work calls for, and we are glad to show proof before you sign anything. <span class="ph">license # + insurance</span></p></div>
+      </details>
+      <details>
+        <summary><span class="qn">Q4</span><span class="qt">How soon can you start?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="ans"><p>Depends on the size of the job and where the calendar sits, but we return every call the same day and get you on the schedule fast. Small repairs often happen within the week. <span class="ph">typical start time</span></p></div>
+      </details>
+      <details>
+        <summary><span class="qn">Q5</span><span class="qt">Do you stand behind the work?</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="ans"><p>We do. If something we built is not right, we come back and make it right. <span class="ph">warranty length + terms</span></p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES (numbered list + sticky image, dark band) ============ -->
+<section class="sec svc" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="head rv"><span class="tag on-dark">STA 0+04 &middot; What we build</span><h2 id="svc-h">One crew, a long list of jobs.</h2><p>From a full gut remodel to the punch-list repair you have been putting off. <span class="ph">actual service list</span></p></div>
+    <div class="svc-grid">
+      <div class="svc-list rv">
+        <div class="svc-row">
+          <span class="sn">01</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M8 3v6M8 13v8"/></svg> Kitchen Remodels</h3>
+          <p>Cabinets, counters, lighting, and layout. We sequence the trades so your kitchen comes back better than the listing photos, on the date we promised.</p>
+        </div>
+        <div class="svc-row">
+          <span class="sn">02</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12V6a2 2 0 0 1 4 0v1"/><path d="M2 12h20v2a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 18v2M18 18v2"/></svg> Bathroom Remodels</h3>
+          <p>Tile that lines up, fixtures that seal right, and waterproofing done where you cannot see it. The details that decide whether a bath lasts five years or twenty.</p>
+        </div>
+        <div class="svc-row">
+          <span class="sn">03</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/><path d="M16 4h4v4"/></svg> Additions</h3>
+          <p>More room without moving. We tie new framing into the old structure so the addition reads like it was always there, inside and out.</p>
+        </div>
+        <div class="svc-row">
+          <span class="sn">04</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18M5 17V9m4 8V9m6 8V9m4 8V9M3 9l9-4 9 4"/></svg> Decks &amp; Patios</h3>
+          <p>Built level, flashed right at the house, and finished to take the weather. Outdoor space you actually use, not a wobble you worry about.</p>
+        </div>
+        <div class="svc-row">
+          <span class="sn">05</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V8l4-2v4l4-2v4l4-2v4l4-2v8Z"/></svg> Basement Finishing</h3>
+          <p>Turn the square footage you are already heating into a real room. Moisture handled first, then framing, then the finishes that make it feel like upstairs.</p>
+        </div>
+        <div class="svc-row">
+          <span class="sn">06</span>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2Z"/></svg> General Repairs</h3>
+          <p>The doors that stick, the trim that pulled away, the soft spot in the floor. The small list most contractors will not call you back about. We will.</p>
+        </div>
+      </div>
+      <div class="svc-sticky rv">
+        <figure class="svc-fig">
+          <img src="assets/services.jpg" alt="A newly finished interior with clean lines and a vaulted ceiling." loading="lazy" width="1100" height="733">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Finished right</span>
+          <figcaption class="cap-m"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L4 22"/></svg> Representative stock photo</figcaption>
+        </figure>
+        <div class="tickrule" aria-hidden="true" style="margin-top:18px"></div>
+        <p style="color:rgba(251,248,241,.74);font-size:.95rem;margin-top:16px;">Not on the list? Ask. If it is building, fixing, or finishing a home, it is probably something we do. <span class="ph">other services offered</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="sec why" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="head rv"><span class="tag">STA 0+05 &middot; Why Hillside</span><h2 id="why-h">Reasons people <span class="uline">call us back.</span></h2><p>The habits that turn a one-time job into a contractor you keep the number for.</p></div>
+    <div class="why-grid">
+      <article class="spec rv">
+        <span class="sn">01</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <h3>We pick up</h3>
+        <p>Calls returned the same day, appointments kept. You will never wonder whether someone is actually coming.</p>
+      </article>
+      <article class="spec rv">
+        <span class="sn">02</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+        <h3>Price in writing</h3>
+        <p>Scope and cost on paper before we start, so there is no sticker shock and no quiet change orders halfway through.</p>
+      </article>
+      <article class="spec rv">
+        <span class="sn">03</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 2l9 9"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+        <h3>Local and small</h3>
+        <p>Based in King of Prussia, owned by the people on your jobsite. Nothing gets handed off to a stranger.</p>
+      </article>
+      <article class="spec rv">
+        <span class="sn">04</span>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>We stand behind it <span class="ph">warranty terms</span></h3>
+        <p>If something we built is not right, we come back and fix it. Confirm the exact warranty length with the owner before launch.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (dark band) ============ -->
+<section class="sec final" aria-labelledby="final-h">
+  <svg class="medallion-bg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <circle cx="100" cy="100" r="92" stroke="#D9A94A" stroke-width="2"/>
+    <circle cx="100" cy="100" r="74" stroke="#D9A94A" stroke-width="1.2" stroke-dasharray="2 6"/>
+    <path d="M100 62 134 134 H66 Z" stroke="#D9A94A" stroke-width="2"/>
+    <path d="M100 30v12M170 100h-12M100 170v-12M30 100h12" stroke="#D9A94A" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap final-in">
+    <div class="rv">
+      <span class="tag on-dark">STA 0+06 &middot; Start here</span>
+      <h2 id="final-h" style="margin-top:14px;">Got a project? <span class="li">Let's get it on the level.</span></h2>
+      <p>Tell us what you are thinking. You will get a straight answer and a written price, no pressure and no runaround.</p>
+    </div>
+    <div class="final-act rv">
+      <a class="cta" href="#contact">Get a Free Quote</a>
+      <a class="numsticker on-dark" href="tel:6102652739">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <span><span class="lbl">Or call</span>(610) 265-2739</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact" id="contact" aria-labelledby="con-h">
+  <div class="wrap cwrap">
+    <div class="caside rv">
+      <span class="tag">STA 0+07 &middot; Get a quote</span>
+      <h2 id="con-h">Let's talk about your build.</h2>
+      <p class="lead">Send the details and we will get back to you with next steps and a clear estimate. Fastest way to reach us is the phone.</p>
+      <div class="cbits">
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><div><b><a href="tel:6102652739">(610) 265-2739</a></b><span>Call or text, we answer</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><b>197 Quarry Rd</b><span>King of Prussia, PA 19406</span></div></div>
+        <div class="cbit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Hours <span class="ph">business hours</span></b><span>Mon to Sat, plus scheduled estimates</span></div></div>
+      </div>
+    </div>
+    <form class="form rv" onsubmit="return false">
+      <span class="ph">wire form up to email before launch</span>
+      <span class="lab">Name</span><input type="text" name="name" placeholder="Your name" autocomplete="name">
+      <div class="row">
+        <div><span class="lab">Phone</span><input type="tel" name="phone" placeholder="(610) 000-0000" autocomplete="tel"></div>
+        <div><span class="lab">Email</span><input type="email" name="email" placeholder="you@email.com" autocomplete="email"></div>
+      </div>
+      <span class="lab">What are you thinking about?</span><textarea name="msg" rows="4" placeholder="Kitchen, bath, addition, deck, a repair list. Tell us the basics and your town."></textarea>
+      <button class="cta" type="submit">Send my request</button>
+      <p style="font-size:.82rem;color:var(--stone);margin:12px 0 0;">Prefer to talk it through? Call <a href="tel:6102652739">(610) 265-2739</a>.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:6px" aria-label="Hillside Landscaping Inc, back to top">
+          <svg class="mk" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" fill="#10201A"/>
+            <circle cx="24" cy="24" r="16.5" fill="none" stroke="#D9A94A" stroke-width="1.4"/>
+            <path d="M24 13 33 31 H15 Z" fill="none" stroke="#FBF8F1" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M24 7v4M41 24h-4M24 41v-4M7 24h4" stroke="#FBF8F1" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="24" cy="26" r="2.1" fill="#B07D2B"/>
+          </svg>
+          <span><b>Hillside Landscaping Inc</b><small>General Contractor &middot; King of Prussia</small></span>
+        </a>
+        <p class="ft-about">A family owned general contractor serving King of Prussia and the surrounding towns. Level work, a written price, and a crew that signs its own name to the job. <span class="ph">primary trade</span></p>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:6102652739">(610) 265-2739</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>197 Quarry Rd, King of Prussia, PA 19406</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg><a href="https://www.google.com/maps?cid=7896183167034832572" target="_blank" rel="noopener">Find us on Google</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Service area</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>King of Prussia, Wayne, Radnor, Bryn Mawr</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span>Valley Forge, Norristown, Devon, Berwyn <span class="ph">towns served</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-plate">
+      <span>Hillside Landscaping Inc</span>
+      <span>Bench Mark &middot; On The Level</span>
+      <span>King of Prussia, PA 19406</span>
+    </div>
+    <p class="ft-legal">&copy; Hillside Landscaping Inc &middot; Family owned &middot; King of Prussia, PA. Speculative website mock-up. Imagery is generic stock for illustration and does not show the business's own staff, trucks, or completed jobs. Every "PLACEHOLDER" item, including the primary trade, services, license and insurance, hours, and service-area towns, is to be confirmed with the owner before publishing.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="callbar">
+  <a class="num" href="tel:6102652739"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> (610) 265-2739</a>
+  <a class="quote" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // scroll reveal
+  var rvs = document.querySelectorAll(".rv");
+  if(reduce){ rvs.forEach(function(el){ el.classList.add("in"); }); }
+  else{
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{threshold:.12, rootMargin:"0px 0px -8% 0px"});
+    rvs.forEach(function(el,i){ el.style.transitionDelay=(i%4*70)+"ms"; io.observe(el); });
+  }
+
+  // number count-ups (run once on view)
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = (el.getAttribute("data-count").indexOf(".")>-1)?1:0;
+    if(reduce){ el.textContent = target.toFixed(decimals); return; }
+    var start = null, dur = 1100;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur, 1);
+      var eased = 1-Math.pow(1-p,3);
+      el.textContent = (target*eased).toFixed(decimals);
+      if(p<1) requestAnimationFrame(step); else el.textContent = target.toFixed(decimals);
+    }
+    requestAnimationFrame(step);
+  }
+  var counts = document.querySelectorAll("[data-count]");
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
+  },{threshold:.6});
+  counts.forEach(function(el){ cio.observe(el); });
+
+  // nav active state on scroll
+  var navlinks = Array.prototype.slice.call(document.querySelectorAll("nav.main a"));
+  var sections = navlinks.map(function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if(sections.length){
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          navlinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("href")==="#"+e.target.id); });
+        }
+      });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    sections.forEach(function(s){ sio.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

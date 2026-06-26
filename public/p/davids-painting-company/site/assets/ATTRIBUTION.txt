@@ -1,0 +1,16 @@
+Pexels stock, generic trade imagery (NOT the business's own work). Free per Pexels License.
+
+hero-painter.jpg | photo by Blue Bird | https://www.pexels.com/photo/woman-painting-the-wall-with-a-roller-brush-7218683/
+  alt: A woman stands on a ladder painting a wall white, part of a DIY home renovation.
+svc-interior.jpg | photo by Max Vakhtbovych | https://www.pexels.com/photo/clean-unfurnished-apartment-room-8146336/
+  alt: Wide-angle shot of a modern unfurnished apartment with wooden flooring and large windows.
+svc-exterior.jpg | photo by Warren Griffiths | https://www.pexels.com/photo/blue-and-red-wooden-house-facade-20542611/
+  alt: Brightly painted house facades in blue and red create a striking contrast against a clear blue sky.
+svc-cabinet.jpg | photo by Curtis Adams | https://www.pexels.com/photo/white-wooden-kitchen-cabinet-with-sink-6835136/
+  alt: Spacious modern kitchen with white cabinets and large windows providing natural light.
+atmos-rollers.jpg | photo by Nataliya Vaitkevich | https://www.pexels.com/photo/buckets-of-paint-on-the-floor-5641407/
+  alt: Top view of painting tools including brushes, rollers, and paint cans on paper.
+atmos-swatches.jpg | photo by Tima Miroshnichenko | https://www.pexels.com/photo/a-person-holding-colors-samples-6474450/
+  alt: Hands holding a colorful fan of swatches on a gray backdrop, ideal for design themes.
+svc-trim.jpg | photo by Sergey  Meshkov | https://www.pexels.com/photo/person-painting-white-wall-8481711/
+  alt: A person painting a wall with a brush, showcasing a home makeover process.

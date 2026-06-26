@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plumber in Levittown, PA | Finn Plumbing</title>
+<meta name="description" content="Finn Plumbing — licensed &amp; insured plumber serving Levittown, PA and surrounding areas. Drain cleaning, water heaters, leak repair, and emergency plumbing. Rated 4.0 on Google. Call (215) 547-5424.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     FINN PLUMBING — "Ride the Current" | ocean / shark-fin brand
+     Matched to the business's real van branding (blue + water).
+     ============================================================ */
+  :root{
+    --ink:#0E1C28; --navy:#0A3A63; --navy-2:#0B2B49; --abyss:#06233E;
+    --blue:#1773C0; --blue-dk:#0F5896; --azure:#2BA8E0; --aqua:#5BC6EE;
+    --foam:#EAF4FB; --foam-2:#DBEBF8; --white:#fff; --line:#CFE0EE;
+    --steel:#4A6072;
+    --maxw:1180px; --r:10px; --ease:cubic-bezier(.2,.7,.3,1);
+    --f-dpl:"Poppins", system-ui, sans-serif;
+    --f-bod:"Inter", system-ui, -apple-system, sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;font-family:var(--f-bod);color:var(--ink);background:var(--white);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:var(--f-dpl);font-weight:700;line-height:1.08;margin:0;letter-spacing:-.02em;}
+  p{margin:0 0 1rem;} a{color:var(--blue-dk);}
+  img{max-width:100%;display:block;}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px;}
+
+  /* ---- brand motifs ---- */
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--f-dpl);font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-dk);}
+  .eyebrow::before{content:"";width:24px;height:4px;border-radius:4px;background:var(--azure);}
+  .eyebrow.on-dark{color:var(--aqua);}
+  /* wave divider */
+  .wave-divide{line-height:0;background:transparent;}
+  .wave-divide svg{display:block;width:100%;height:54px;}
+  /* placeholder pill */
+  .ph{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-dpl);font-weight:700;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-dk);background:rgba(43,168,224,.14);border:1px dashed var(--azure);border-radius:999px;padding:3px 9px;line-height:1.3;vertical-align:middle;}
+  .ph::before{content:"●";font-size:.5em;}
+
+  /* ---- a11y ---- */
+  :where(a,button,[tabindex],input,textarea,select):focus-visible{outline:3px solid var(--azure);outline-offset:3px;border-radius:4px;}
+  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;z-index:200;} .skip:focus{left:0;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* ---- buttons ---- */
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--f-dpl);font-weight:700;font-size:.84rem;letter-spacing:.02em;text-decoration:none;padding:15px 26px;min-height:52px;border:2px solid transparent;border-radius:999px;cursor:pointer;transition:background-color .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease),transform .22s var(--ease),box-shadow .22s var(--ease);}
+  .btn svg{width:18px;height:18px;flex:none;}
+  .btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(10,58,99,.22);}
+  .btn-primary:hover{background:var(--abyss);transform:translateY(-2px);}
+  .btn-azure{background:var(--azure);color:var(--ink);}
+  .btn-azure:hover{background:var(--aqua);}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn-ghost:hover{background:rgba(255,255,255,.14);border-color:#fff;}
+  .btn-sm{padding:10px 18px;min-height:44px;font-size:.76rem;}
+
+  /* ---- logo ---- */
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+  .logo-mark{width:44px;height:44px;flex:none;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:0 4px 12px rgba(10,58,99,.22);}
+  .logo-mark svg{width:27px;height:27px;}
+  .logo-txt b{font-family:var(--f-dpl);font-weight:800;font-size:1.18rem;letter-spacing:-.02em;display:block;line-height:1;}
+  .logo-txt small{font-family:var(--f-dpl);font-weight:600;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);}
+
+  /* ============================================================ HEADER */
+  .site-header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line);}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px;}
+  .nav{display:flex;align-items:center;gap:6px;}
+  .nav a{font-family:var(--f-dpl);font-weight:600;font-size:.88rem;text-decoration:none;color:var(--ink);padding:9px 14px;border-radius:8px;position:relative;transition:color .2s var(--ease);}
+  .nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:3px;border-radius:3px;background:var(--azure);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease);}
+  .nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);}
+  .nav a[aria-current="page"]{color:var(--blue-dk);}
+  .header-cta{display:flex;align-items:center;gap:14px;}
+  .header-phone{display:none;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-family:var(--f-dpl);font-weight:700;font-size:.98rem;}
+  .header-phone svg{width:17px;height:17px;color:var(--blue);}
+  .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border:1px solid var(--line);border-radius:8px;background:var(--white);cursor:pointer;padding:0 12px;}
+  .nav-toggle span{height:2px;background:var(--navy);border-radius:2px;transition:.25s var(--ease);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ============================================================ HERO */
+  .hero{background:linear-gradient(158deg,var(--navy) 0%,var(--navy-2) 52%,var(--abyss) 100%);color:var(--foam);position:relative;overflow:hidden;}
+  .hero .bubbles{position:absolute;inset:0;pointer-events:none;opacity:.5;}
+  .hero .bubbles span{position:absolute;border-radius:50%;border:1.5px solid rgba(91,198,238,.4);}
+  .hero .bubbles span:nth-child(1){width:120px;height:120px;top:8%;right:14%;}
+  .hero .bubbles span:nth-child(2){width:46px;height:46px;top:30%;right:38%;}
+  .hero .bubbles span:nth-child(3){width:22px;height:22px;top:20%;right:30%;background:rgba(91,198,238,.25);}
+  .hero .bubbles span:nth-child(4){width:70px;height:70px;bottom:16%;right:8%;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:0;position:relative;z-index:1;}
+  .hero-copy{padding:54px 22px 60px;max-width:640px;margin-inline:auto;width:100%;}
+  .hero-copy .wrapc{max-width:560px;}
+  .hero h1{font-size:clamp(2.6rem,8.5vw,4.7rem);font-weight:800;letter-spacing:-.035em;margin:20px 0 0;}
+  .hero h1 .cu{color:var(--aqua);}
+  .hero-sub{font-size:clamp(1.04rem,2.3vw,1.22rem);color:#cfe2f0;margin:18px 0 30px;max-width:44ch;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:13px;}
+  .hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 24px;}
+  .hero-meta div{display:flex;align-items:center;gap:8px;font-size:.9rem;color:#cfe2f0;font-weight:500;}
+  .hero-meta svg{width:18px;height:18px;color:var(--aqua);flex:none;}
+  .hero-img{position:relative;min-height:300px;background:var(--abyss);}
+  .hero-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,58,99,.62),rgba(6,35,62,.18) 55%,transparent);}
+  .hero-tag{position:absolute;left:18px;bottom:18px;z-index:2;font-family:var(--f-dpl);font-weight:700;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--azure);padding:7px 13px;border-radius:999px;display:inline-flex;gap:7px;align-items:center;}
+  .hero-tag svg{width:14px;height:14px;}
+
+  /* ============================================================ TRUST BAR */
+  .trust{background:var(--navy-2);color:var(--foam);}
+  .trust-in{display:grid;grid-template-columns:1fr;}
+  .trust-item{display:flex;align-items:center;gap:13px;padding:22px 4px;border-bottom:1px solid rgba(234,244,251,.12);}
+  .trust-item:last-child{border-bottom:none;}
+  .trust-ico{width:42px;height:42px;flex:none;display:grid;place-items:center;color:var(--aqua);border:1.5px solid rgba(91,198,238,.4);border-radius:50%;}
+  .trust-ico svg{width:21px;height:21px;}
+  .trust-item b{display:block;font-family:var(--f-dpl);font-weight:700;font-size:1rem;letter-spacing:-.01em;}
+  .trust-item small{color:#a9c2d6;font-size:.82rem;}
+  .stars{display:inline-flex;gap:2px;vertical-align:middle;}
+  .stars svg{width:16px;height:16px;}
+  .star-f{fill:var(--aqua);} .star-e{fill:none;stroke:var(--aqua);stroke-width:1.5;}
+
+  /* ============================================================ sections */
+  .sec{padding-block:clamp(58px,9vw,108px);}
+  .sec-head{max-width:64ch;margin-bottom:44px;}
+  .sec-head .eyebrow{margin-bottom:16px;}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.03em;}
+  .sec-head p{color:var(--steel);margin:14px 0 0;font-size:1.08rem;max-width:56ch;}
+
+  /* ---- services ---- */
+  .services{background:var(--foam);}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .svc{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--azure),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);z-index:3;}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(10,58,99,.16);}
+  .svc:hover::before{transform:scaleX(1);}
+  .svc-media{height:188px;overflow:hidden;position:relative;background:var(--navy);}
+  .svc-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+  .svc:hover .svc-media img{transform:scale(1.06);}
+  .svc-ic{position:absolute;left:14px;bottom:-20px;width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:#fff;box-shadow:0 6px 16px rgba(10,58,99,.3);z-index:2;}
+  .svc-ic svg{width:23px;height:23px;}
+  .svc-body{padding:30px 22px 26px;flex:1;display:flex;flex-direction:column;}
+  .svc-body h3{font-size:1.26rem;margin-bottom:8px;}
+  .svc-body p{color:var(--steel);font-size:.96rem;margin:0;}
+  .svc-link{margin-top:16px;font-family:var(--f-dpl);font-weight:700;font-size:.78rem;letter-spacing:.02em;color:var(--blue-dk);text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+  .svc-link svg{width:15px;height:15px;transition:transform .2s var(--ease);}
+  .svc:hover .svc-link svg{transform:translateX(4px);}
+
+  /* ---- atmosphere band ---- */
+  .band{position:relative;background:var(--navy);color:var(--foam);overflow:hidden;}
+  .band-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:stretch;}
+  .band-img{position:relative;min-height:280px;}
+  .band-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .band-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,43,73,.4),transparent);}
+  .band-copy{padding:clamp(44px,7vw,84px) 22px;display:flex;flex-direction:column;justify-content:center;}
+  .band-copy h2{font-size:clamp(1.8rem,4.4vw,2.7rem);color:var(--foam);}
+  .band-copy p{color:#cfe2f0;max-width:46ch;}
+  .band-stats{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:20px;}
+  .band-stats div{display:flex;align-items:center;gap:9px;font-family:var(--f-dpl);font-weight:600;font-size:.95rem;color:var(--foam);}
+  .band-stats svg{width:20px;height:20px;color:var(--aqua);flex:none;}
+
+  /* ---- why / values ---- */
+  .why{background:var(--foam-2);}
+  .why-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .value{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;position:relative;}
+  .value .vn{font-family:var(--f-dpl);font-weight:800;font-size:.8rem;color:var(--blue-dk);letter-spacing:.06em;}
+  .value h3{font-size:1.2rem;margin:12px 0 7px;}
+  .value p{color:var(--steel);font-size:.95rem;margin:0;}
+  .value .vico{position:absolute;top:24px;right:22px;color:var(--azure);}
+  .value .vico svg{width:26px;height:26px;}
+
+  /* ---- service area ---- */
+  .area{background:var(--white);}
+  .area-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}
+  .town-list{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);}
+  .town-list li{display:flex;align-items:center;gap:10px;padding:13px 4px;border-bottom:1px solid var(--line);font-weight:500;font-size:.97rem;}
+  .town-list svg{width:14px;height:14px;color:var(--blue);flex:none;}
+  .area-card{background:linear-gradient(158deg,var(--navy),var(--abyss));color:var(--foam);border-radius:var(--r);padding:32px 28px;}
+  .area-card .eyebrow{margin-bottom:14px;}
+  .area-card h3{color:var(--foam);font-size:1.4rem;margin-bottom:10px;}
+  .area-card p{color:#cfe2f0;font-size:.96rem;}
+  .area-card .btn{width:100%;margin-top:6px;}
+
+  /* ---- final CTA ---- */
+  .finalcta{background:linear-gradient(158deg,var(--navy) 0%,var(--abyss) 100%);color:var(--foam);text-align:center;position:relative;overflow:hidden;}
+  .finalcta::before{content:"";position:absolute;inset:0;background:radial-gradient(680px 300px at 50% -10%,rgba(43,168,224,.3),transparent 70%);}
+  .finalcta .wrap{position:relative;}
+  .finalcta .eyebrow{justify-content:center;color:var(--aqua);}
+  .finalcta h2{font-size:clamp(2rem,5.4vw,3.4rem);color:var(--foam);margin:16px 0 12px;}
+  .finalcta p{color:#cfe2f0;max-width:48ch;margin:0 auto 28px;}
+  .finalcta .hero-cta{justify-content:center;}
+  .finalcta .bigphone{display:inline-block;margin-top:24px;font-family:var(--f-dpl);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--foam);text-decoration:none;letter-spacing:-.02em;}
+  .finalcta .bigphone:hover{color:var(--aqua);}
+
+  /* ============================================================ FOOTER */
+  .site-footer{background:var(--abyss);color:#a9c2d6;padding-block:54px 92px;font-size:.93rem;}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:30px;}
+  .foot-brand .logo{color:var(--foam);margin-bottom:12px;} .foot-brand .logo-txt b{color:var(--foam);} .foot-brand p{max-width:34ch;}
+  .site-footer h4{font-family:var(--f-dpl);color:var(--foam);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;}
+  .foot-list{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+  .foot-list a,.foot-list span{color:#a9c2d6;text-decoration:none;display:flex;gap:10px;align-items:flex-start;}
+  .foot-list a:hover{color:var(--foam);}
+  .foot-list svg{width:17px;height:17px;color:var(--aqua);flex:none;margin-top:3px;}
+  .foot-nav a{color:#a9c2d6;text-decoration:none;} .foot-nav a:hover{color:var(--foam);}
+  .google-link{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:.86rem;color:#a9c2d6;text-decoration:none;}
+  .google-link:hover{color:var(--foam);} .google-link svg{width:16px;height:16px;}
+  .foot-bottom{border-top:1px solid rgba(234,244,251,.12);margin-top:38px;padding-top:22px;font-size:.78rem;color:#7b96ab;}
+
+  /* ============================================================ MOBILE CALL BAR */
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:95;display:flex;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(6,35,62,.97);backdrop-filter:blur(8px);border-top:2px solid var(--azure);}
+  .callbar a{flex:1;background:var(--azure);color:var(--ink);text-decoration:none;font-family:var(--f-dpl);font-weight:700;letter-spacing:.02em;font-size:.9rem;border-radius:999px;min-height:52px;display:flex;align-items:center;justify-content:center;gap:10px;}
+  .callbar a svg{width:19px;height:19px;} .callbar a:active{background:var(--aqua);}
+
+  /* ============================================================ reveal */
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+  .js .reveal.in{opacity:1;transform:none;}
+
+  /* ============================================================ responsive */
+  @media (min-width:560px){
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .town-list{grid-template-columns:repeat(3,1fr);}
+  }
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;}
+    .hero-copy{padding:84px 0 92px;margin:0;max-width:none;display:flex;align-items:center;}
+    .hero-copy .wrapc{padding-left:max(22px,calc((100vw - var(--maxw))/2 + 22px));padding-right:40px;}
+    .hero-img{min-height:580px;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%);}
+    .trust-in{grid-template-columns:repeat(4,1fr);}
+    .trust-item{border-bottom:none;border-left:1px solid rgba(234,244,251,.12);padding:28px 22px;}
+    .trust-item:first-child{border-left:none;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);}
+    .band-grid{grid-template-columns:1fr 1fr;}
+    .band-img{min-height:auto;}
+    .why-grid{grid-template-columns:repeat(4,1fr);}
+    .area-grid{grid-template-columns:1.3fr .7fr;gap:54px;}
+    .foot-grid{grid-template-columns:1.6fr 1fr 1fr;}
+    .header-phone{display:flex;}
+    .nav-toggle{display:none;}
+    .callbar{display:none;}
+    body{padding-bottom:0;}
+  }
+  @media (max-width:899px){
+    body{padding-bottom:76px;}
+    .nav{position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);border-bottom:1px solid var(--line);padding:10px 22px 18px;transform:translateY(-130%);transition:transform .3s var(--ease);box-shadow:0 14px 30px rgba(10,58,99,.14);z-index:80;}
+    .nav.open{transform:translateY(0);}
+    .nav a{padding:14px 6px;border-bottom:1px solid var(--line);font-size:1rem;} .nav a::after{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{transition:none!important;animation:none!important;}
+    .js .reveal{opacity:1!important;transform:none!important;}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="Finn Plumbing — home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C6 11 12 5.5 20 4.5C15 8.5 12.2 13.5 12 19.5Z" fill="#fff"/><path d="M3.2 20.6c2.2 1.3 4.4 1.3 6.6 0 2.2-1.3 4.4-1.3 6.6 0" fill="none" stroke="#2BA8E0" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-txt"><b>Finn Plumbing</b><small>Levittown, PA</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="header-phone" href="tel:2155475424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        (215) 547-5424
+      </a>
+      <a class="btn btn-azure btn-sm" href="tel:2155475424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call Now
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="bubbles" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="wrapc">
+        <span class="eyebrow on-dark">Licensed &amp; Insured Plumbing</span>
+        <h1 id="hero-title">Plumber in <span class="cu">Levittown</span></h1>
+        <p class="hero-sub">Straightforward, dependable plumbing for homes across Levittown and the surrounding area — fixed right the first time, with up-front pricing.</p>
+        <div class="hero-cta">
+          <a class="btn btn-azure" href="tel:2155475424">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+            Call (215) 547-5424
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Get a Free Quote</a>
+        </div>
+        <div class="hero-meta">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Fast response</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Up-front pricing</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Locally owned</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="assets/hero-plumber.jpg" alt="A plumber's hands tightening a brass fitting on a chrome supply pipe under a sink." fetchpriority="high">
+      <span class="hero-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Service · Repairs · Emergencies</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<section class="trust" aria-label="Why homeowners trust Finn Plumbing">
+  <div class="wrap trust-in">
+    <div class="trust-item">
+      <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <span><b>Licensed &amp; Insured</b><small>Covered, qualified work</small></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></span>
+      <span><b>Locally Owned</b><small>Family-owned &amp; operated</small></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <span><b>Fast Response</b><small>Prompt, reliable service</small></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg></span>
+      <span><b><span class="stars" role="img" aria-label="Rated 4.0 out of 5 from 8 Google reviews">
+        <svg viewBox="0 0 24 24" class="star-f" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" class="star-f" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" class="star-f" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" class="star-f" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg>
+        <svg viewBox="0 0 24 24" class="star-e" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg>
+      </span> 4.0</b><small>From 8 Google reviews</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- wave divider: trust (dark) -> services (light) -->
+<div class="wave-divide" style="background:var(--navy-2);" aria-hidden="true">
+  <svg viewBox="0 0 1440 54" preserveAspectRatio="none"><path d="M0,28 C220,60 430,4 720,24 C1010,44 1240,62 1440,30 L1440,54 L0,54 Z" fill="#EAF4FB"/></svg>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="sec services" id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 id="svc-title">Plumbing services, handled properly</h2>
+      <p>From a dripping faucet to a failed water heater — one local plumber for the whole house.</p>
+      <!-- PLACEHOLDER: confirm & trim the exact service list with the owner -->
+      <div style="margin-top:14px;"><span class="ph">PLACEHOLDER — confirm &amp; trim services</span></div>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/svc-drain.jpg" alt="Water running from a chrome faucet into a stainless sink." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6a5 5 0 0 0 10 0V3"/><path d="M12 14v7"/><path d="M9 21h6"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Drain &amp; Sewer Cleaning</h3>
+          <p>Slow drains, stubborn clogs and main-line backups cleared and flowing again — fast.</p>
+          <a class="svc-link" href="services.html#drains">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/svc-waterheater.jpg" alt="A technician servicing a wall-mounted water heating unit." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="4"/><path d="M9 7h6"/><circle cx="12" cy="14" r="2.5"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Water Heater Repair &amp; Install</h3>
+          <p>Diagnosis, repair and replacement of tank and tankless units for steady hot water.</p>
+          <a class="svc-link" href="services.html#water-heaters">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/atmos-pipes.jpg" alt="Polished copper pipe fittings lined up in a row." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a6 6 0 0 0 6-6c0-4-6-11-6-11S6 12 6 16a6 6 0 0 0 6 6Z"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Leak Detection &amp; Repair</h3>
+          <p>Finding and fixing hidden leaks before they damage your home or run up the bill.</p>
+          <a class="svc-link" href="services.html#leaks">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/atmos-tools.jpg" alt="A row of plumbing wrenches laid out on a dark workbench." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Emergency Plumbing</h3>
+          <p>Burst pipes, major leaks and no-hot-water calls handled with prompt, reliable service.</p>
+          <a class="svc-link" href="services.html#emergency">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/svc-bathroom.jpg" alt="A clean brushed-nickel bathroom faucet on a white sink." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h5v5"/><path d="M20 4 4 20"/><path d="M9 4H4v5"/><path d="m4 4 6 6"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Fixture &amp; Faucet Installation</h3>
+          <p>Faucets, sinks, toilets and fixtures installed cleanly and tested to work right away.</p>
+          <a class="svc-link" href="services.html#fixtures">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-media"><img src="assets/hero-plumber.jpg" alt="Close-up of hands joining metal plumbing pipes." loading="lazy">
+          <span class="svc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 7v4a4 4 0 0 0 8 0V7"/><path d="M12 11a4 4 0 0 0 8 0V7"/><path d="M8 21v-4"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Repiping &amp; Remodels</h3>
+          <p>Whole-home repiping and the rough plumbing behind kitchen and bath remodels, built to last.</p>
+          <a class="svc-link" href="services.html#repiping">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ATMOSPHERE BAND ===================== -->
+<section class="band" aria-labelledby="band-title">
+  <div class="band-grid">
+    <div class="band-img"><img src="assets/atmos-pipes.jpg" alt="Polished copper plumbing fittings catching the light." loading="lazy"></div>
+    <div class="band-copy reveal">
+      <span class="eyebrow on-dark">Built on solid work</span>
+      <h2 id="band-title" style="margin-top:16px;">Done once, done right</h2>
+      <p>We treat your home like it's our own — clean job sites, honest answers, and repairs that hold. No upsells, no run-around.</p>
+      <div class="band-stats">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/></svg> Licensed &amp; insured</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 6.3 7 .9-5 4.7 1.3 6.8L12 17l-6.6 3.7L6.7 14 1.7 9.2l7-.9L12 2Z"/></svg> 4.0 on Google</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Local to Levittown</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="sec why" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Finn</span>
+      <h2 id="why-title">A plumber you can count on</h2>
+      <p>The habits that make a plumbing call painless — and a contractor worth keeping on speed dial.</p>
+    </div>
+    <div class="why-grid">
+      <div class="value reveal">
+        <span class="vico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <span class="vn">01</span>
+        <h3>Fast response</h3>
+        <p>Calls answered promptly and appointments that actually hold — because plumbing rarely waits.</p>
+      </div>
+      <div class="value reveal">
+        <span class="vico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+        <span class="vn">02</span>
+        <h3>Up-front pricing</h3>
+        <p>Clear pricing before the work starts — you approve the cost, so there are no surprises after.</p>
+      </div>
+      <div class="value reveal">
+        <span class="vico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span class="vn">03</span>
+        <h3>Local &amp; accountable</h3>
+        <p>Family-owned and based in the Levittown area — your neighbors stand behind the work.</p>
+      </div>
+      <div class="value reveal">
+        <span class="vico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span class="vn">04</span>
+        <h3>Workmanship guarantee <span class="ph">PLACEHOLDER — confirm terms</span></h3>
+        <!-- PLACEHOLDER: confirm whether a workmanship/labor warranty is offered and its exact terms -->
+        <p>We stand behind our work. Confirm the exact guarantee terms with the owner before publishing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE AREA ===================== -->
+<section class="sec area" id="area" aria-labelledby="area-title">
+  <div class="wrap area-grid">
+    <div class="reveal">
+      <span class="eyebrow">Service area</span>
+      <h2 id="area-title" style="margin-top:14px;font-size:clamp(1.9rem,4.6vw,2.8rem);">Serving Levittown &amp; nearby</h2>
+      <p style="color:var(--steel);margin:14px 0 0;max-width:52ch;">Based in Levittown, we cover the surrounding Lower Bucks County communities. Not sure if you're in range? Just give us a call.</p>
+      <!-- PLACEHOLDER: confirm exact list of towns served -->
+      <p style="margin:18px 0 0;"><span class="ph">PLACEHOLDER — confirm towns served</span></p>
+      <ul class="town-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Levittown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Bristol</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Fairless Hills</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Morrisville</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Langhorne</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Penndel</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Tullytown</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Yardley</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Fallsington</li>
+      </ul>
+    </div>
+    <aside class="area-card reveal" aria-label="Request service">
+      <span class="eyebrow on-dark">Free estimate</span>
+      <h3>Got a plumbing problem?</h3>
+      <p>Tell us what's going on and we'll get you a clear quote. The fastest way to reach us is by phone.</p>
+      <a class="btn btn-azure" href="tel:2155475424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call (215) 547-5424
+      </a>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="sec finalcta" aria-labelledby="cta-title">
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2 id="cta-title">Let's get it fixed</h2>
+    <p>Leak, clog, no hot water, or a fixture that needs swapping — call now for fast, friendly, up-front service.</p>
+    <div class="hero-cta">
+      <a class="btn btn-azure" href="tel:2155475424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        Call Now
+      </a>
+      <a class="btn btn-ghost" href="contact.html">Get a Free Quote</a>
+    </div>
+    <a class="bigphone" href="tel:2155475424">(215) 547-5424</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="index.html" aria-label="Finn Plumbing — home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C6 11 12 5.5 20 4.5C15 8.5 12.2 13.5 12 19.5Z" fill="#fff"/><path d="M3.2 20.6c2.2 1.3 4.4 1.3 6.6 0 2.2-1.3 4.4-1.3 6.6 0" fill="none" stroke="#2BA8E0" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span class="logo-txt"><b>Finn Plumbing</b><small>Levittown, PA</small></span>
+        </a>
+        <p>Licensed &amp; insured, family-owned plumbing serving Levittown and the surrounding areas.</p>
+        <!-- Single Google link on the entire site — footer only, clean cid URL -->
+        <a class="google-link" href="https://www.google.com/maps?cid=10022616911180694938" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find us on Google · read reviews
+        </a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="foot-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:2155475424">(215) 547-5424</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>22 Cloister Rd, Levittown, PA 19057</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Mon–Sat, by appointment<br><span class="ph">PLACEHOLDER — confirm hours</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-list foot-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-bottom">© Finn Plumbing · Licensed &amp; insured plumber · Serving Levittown and surrounding areas. Speculative website mock-up — imagery is generic stock for illustration and does not depict the business's own staff, vehicles, or completed jobs.</p>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE TAP-TO-CALL ===================== -->
+<div class="callbar">
+  <a href="tel:2155475424">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Tap to Call · (215) 547-5424
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  var t=document.getElementById('navToggle'), n=document.getElementById('nav');
+  if(t&&n){t.addEventListener('click',function(){var open=n.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');t.setAttribute('aria-label',open?'Close menu':'Open menu');});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});});}
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e);});
+  } else { els.forEach(function(e){e.classList.add('in');}); }
+</script>
+</body>
+</html>

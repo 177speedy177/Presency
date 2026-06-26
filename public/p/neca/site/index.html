@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrician in King of Prussia, PA | NECA Electrical</title>
+<meta name="description" content="NECA, a licensed and insured electrician serving King of Prussia, PA and surrounding areas. Panel upgrades, wiring, lighting, EV chargers, generators, and repairs. Rated 4.2 on Google. Call (610) 275-0909.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   NECA ELECTRICAL - "Wired Right."
+   Warm light paper + copper + petrol. Junction-node motif.
+   Shared style system across index/services/about/contact.
+   ============================================================ */
+:root{
+  --ink:#1A1815; --ink2:#3A352E; --slate:#5E574D;
+  --paper:#FBF8F3; --sand:#F4EEE3; --sand2:#EDE5D6; --line:#E4DACA;
+  --copper:#B4531C; --copper-dk:#8E3E12; --copper-tint:#F6E7D6;
+  --petrol:#14333F; --petrol2:#1C4350; --gold:#C9881F;
+  --maxw:1180px; --r:16px; --ease:cubic-bezier(.2,.7,.3,1);
+  --f-d:"Space Grotesk", system-ui, sans-serif;
+  --f-b:"IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --circuit:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%23B4531C' stroke-width='1.2'%3E%3Cpath d='M0 22 H30 V2'/%3E%3Cpath d='M84 54 H54 V84'/%3E%3Cpath d='M42 42 H84'/%3E%3Cpath d='M22 62 V84'/%3E%3Cpath d='M2 50 H22'/%3E%3C/g%3E%3Cg fill='%23B4531C'%3E%3Ccircle cx='30' cy='22' r='3'/%3E%3Ccircle cx='54' cy='54' r='3'/%3E%3Ccircle cx='42' cy='42' r='3'/%3E%3Ccircle cx='22' cy='62' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;font-family:var(--f-b);color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--f-d);font-weight:700;line-height:1.06;margin:0;letter-spacing:-.02em;}
+p{margin:0 0 1rem;} a{color:var(--copper-dk);}
+img{max-width:100%;display:block;}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+section{position:relative;}
+
+/* ---- motif: eyebrow with junction node ---- */
+.eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--f-d);font-weight:600;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-dk);}
+.eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--copper);box-shadow:-14px 0 0 -3px var(--copper);position:relative;}
+.eyebrow.on-dark{color:#E7B98F;} .eyebrow.on-dark::before{background:#E7B98F;box-shadow:-14px 0 0 -3px #E7B98F;}
+
+/* ---- section number ---- */
+.snum{font-family:var(--f-d);font-weight:500;font-size:.82rem;letter-spacing:.1em;color:var(--copper);font-variant-numeric:tabular-nums;}
+
+/* ---- placeholder pill ---- */
+.ph{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-d);font-weight:600;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;color:var(--copper-dk);background:var(--copper-tint);border:1px dashed var(--copper);border-radius:999px;padding:3px 9px;line-height:1.3;vertical-align:middle;white-space:nowrap;}
+.ph::before{content:"!";font-weight:700;font-size:.72em;}
+.ph.on-dark{color:#fff;background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.7);}
+
+/* ---- a11y ---- */
+:where(a,button,[tabindex],input,textarea,select,summary):focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:6px;}
+.skip{position:absolute;left:-999px;top:0;background:var(--copper);color:#fff;padding:12px 18px;z-index:300;border-radius:0 0 8px 0;}
+.skip:focus{left:0;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ---- rating stars ---- */
+.stars{display:inline-flex;gap:1px;vertical-align:middle;}
+.stars svg{width:16px;height:16px;}
+.star-f{fill:var(--gold);} .star-h stop{stop-color:var(--gold);} .star-e{fill:#D9CFBE;}
+
+/* ---- buttons (ONE cta style) ---- */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;white-space:nowrap;font-family:var(--f-d);font-weight:600;font-size:.92rem;text-decoration:none;padding:15px 26px;min-height:54px;border:2px solid transparent;border-radius:12px;cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);}
+.btn svg{width:18px;height:18px;flex:none;}
+.btn-cta{background:var(--copper);color:#fff;box-shadow:0 10px 24px rgba(180,83,28,.26);}
+.btn-cta:hover{background:var(--copper-dk);transform:translateY(-2px);box-shadow:0 14px 30px rgba(180,83,28,.32);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--ink);background:#fff;transform:translateY(-2px);}
+.btn-light{background:#fff;color:var(--copper-dk);} .btn-light:hover{background:var(--sand);transform:translateY(-2px);}
+
+/* ---- phone sticker (header / mobile bar / footer only) ---- */
+.phone-sticker{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-family:var(--f-d);font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.phone-sticker .ico{width:34px;height:34px;flex:none;border-radius:9px;background:var(--copper-tint);display:grid;place-items:center;transition:background-color .2s var(--ease);}
+.phone-sticker svg{width:16px;height:16px;color:var(--copper-dk);}
+.phone-sticker small{display:block;font-family:var(--f-b);font-weight:500;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);line-height:1;margin-bottom:3px;}
+.phone-sticker:hover .ico{background:var(--copper);} .phone-sticker:hover svg{color:#fff;}
+
+/* ---- logo ---- */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.logo-mark{width:44px;height:44px;flex:none;border-radius:11px;background:var(--ink);display:grid;place-items:center;position:relative;overflow:hidden;}
+.logo-mark::after{content:"";position:absolute;inset:0;background:var(--circuit);background-size:44px;opacity:.25;}
+.logo-mark svg{width:24px;height:24px;position:relative;z-index:1;}
+.logo-txt b{font-family:var(--f-d);font-weight:700;font-size:1.28rem;letter-spacing:.06em;display:block;line-height:1;}
+.logo-txt small{font-family:var(--f-d);font-weight:500;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);}
+
+/* ---- header ---- */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(251,248,243,.86);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line);}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px;}
+.nav{display:flex;align-items:center;gap:2px;}
+.nav a{font-family:var(--f-d);font-weight:500;font-size:.92rem;text-decoration:none;color:var(--ink);padding:9px 15px;border-radius:9px;position:relative;transition:color .2s var(--ease);}
+.nav a::after{content:"";position:absolute;left:15px;right:15px;bottom:5px;height:2px;border-radius:2px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .26s var(--ease);}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);}
+.nav a[aria-current="page"]{color:var(--copper-dk);}
+.header-cta{display:flex;align-items:center;gap:16px;}
+.header-cta .phone-sticker{display:none;}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;padding:0 13px;}
+.nav-toggle span{height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--ease);}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ============================================================ HERO */
+.hero{position:relative;overflow:hidden;padding-block:clamp(34px,5vw,64px);}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hero-bg .glow{position:absolute;border-radius:50%;filter:blur(80px);}
+.hero-bg .g1{width:460px;height:460px;top:-120px;right:-60px;background:radial-gradient(circle,rgba(180,83,28,.18),transparent 70%);animation:drift1 17s ease-in-out infinite alternate;}
+.hero-bg .g2{width:380px;height:380px;bottom:-140px;left:-80px;background:radial-gradient(circle,rgba(20,51,63,.12),transparent 70%);animation:drift2 21s ease-in-out infinite alternate;}
+.hero-bg .pattern{position:absolute;inset:0;background:var(--circuit);background-size:84px;opacity:.05;}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:0;}
+.hero-card{position:relative;z-index:2;background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(28px,3.4vw,46px);box-shadow:0 34px 70px rgba(26,24,21,.12);margin-right:-56px;}
+.hero-card::before{content:"";position:absolute;top:-1px;left:30px;width:64px;height:5px;border-radius:0 0 4px 4px;background:var(--copper);}
+.hero-card .eyebrow{margin-bottom:20px;}
+.hero h1{font-size:clamp(2.4rem,5.4vw,3.7rem);font-weight:700;letter-spacing:-.035em;}
+.hero h1 .acc{color:var(--copper);}
+.hero-sub{font-size:clamp(1.04rem,2vw,1.2rem);color:var(--slate);margin:20px 0 28px;max-width:44ch;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.hero-rate{display:flex;align-items:center;gap:13px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.hero-rate .rnum{font-family:var(--f-d);font-weight:700;font-size:1.16rem;font-variant-numeric:tabular-nums;}
+.hero-rate .rtxt{color:var(--slate);font-size:.86rem;}
+.hero-photo{position:relative;z-index:1;border-radius:20px;overflow:hidden;background:var(--sand2);min-height:480px;border:1px solid var(--line);box-shadow:0 30px 60px rgba(26,24,21,.14);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.hero-photo .tagchip{position:absolute;left:18px;bottom:18px;z-index:2;display:inline-flex;align-items:center;gap:8px;background:rgba(26,24,21,.82);color:#fff;font-family:var(--f-d);font-weight:500;font-size:.74rem;letter-spacing:.04em;padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px);}
+.hero-photo .tagchip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 3px rgba(180,83,28,.35);}
+
+/* ---- trust strip (light) ---- */
+.trust{background:#fff;border-block:1px solid var(--line);}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr);}
+.trust-item{display:flex;align-items:center;gap:12px;padding:22px;border-right:1px solid var(--line);}
+.trust-item:last-child{border-right:none;}
+.trust-item svg{width:21px;height:21px;color:var(--copper-dk);flex:none;}
+.trust-item b{font-family:var(--f-d);font-weight:500;font-size:.94rem;color:var(--ink);}
+.trust-item .stars svg{width:15px;height:15px;}
+
+/* ---- section shell ---- */
+.band{padding-block:clamp(58px,7vw,96px);}
+.band.tint{background:var(--sand);}
+.band.sand2{background:var(--sand2);}
+.shead{max-width:62ch;margin-bottom:clamp(34px,4vw,52px);}
+.shead .topline{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.shead h2{font-size:clamp(1.9rem,3.6vw,2.7rem);}
+.shead p{margin-top:14px;color:var(--slate);font-size:1.06rem;}
+.divider{height:1px;background:var(--line);position:relative;}
+.divider::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 5px var(--paper);}
+
+/* ---- why-us (offset numbered grid) ---- */
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.why-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);}
+.why-card:nth-child(even){transform:translateY(22px);}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(26,24,21,.1);border-color:var(--copper-tint);}
+.why-card:nth-child(even):hover{transform:translateY(18px);}
+.why-card .wnum{font-family:var(--f-d);font-weight:600;font-size:1rem;color:var(--copper);font-variant-numeric:tabular-nums;}
+.why-card .wicon{width:46px;height:46px;border-radius:11px;background:var(--copper-tint);display:grid;place-items:center;margin:14px 0 16px;}
+.why-card .wicon svg{width:24px;height:24px;color:var(--copper-dk);}
+.why-card h3{font-size:1.18rem;margin-bottom:8px;}
+.why-card p{color:var(--slate);font-size:.97rem;margin:0;}
+
+/* ---- service area ---- */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;}
+.area-map{position:relative;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,var(--copper-tint),var(--sand) 72%);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;}
+.area-map .ring{position:absolute;border:1.5px dashed rgba(180,83,28,.4);border-radius:50%;}
+.area-map .ring.r1{inset:14%;} .area-map .ring.r2{inset:28%;} .area-map .ring.r3{inset:42%;}
+.area-map .pin{position:relative;z-index:2;text-align:center;}
+.area-map .pin .dot{width:18px;height:18px;border-radius:50%;background:var(--copper);margin:0 auto 10px;box-shadow:0 0 0 6px rgba(180,83,28,.22);}
+.area-map .pin b{font-family:var(--f-d);font-weight:600;font-size:1.02rem;display:block;}
+.area-map .pin span{font-size:.8rem;color:var(--slate);}
+.area-pulse{position:absolute;width:18px;height:18px;border-radius:50%;border:2px solid var(--copper);animation:pulse 3s ease-out infinite;}
+.town-list{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none;}
+.town-list li{font-family:var(--f-d);font-weight:500;font-size:.9rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;display:inline-flex;align-items:center;gap:8px;transition:border-color .2s var(--ease),transform .2s var(--ease);}
+.town-list li:hover{border-color:var(--copper);transform:translateY(-2px);}
+.town-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--copper);}
+.town-list-wide{gap:12px;margin-top:30px;}
+.town-list-wide li{padding:13px 22px;font-size:1rem;}
+
+/* ---- faq ---- */
+.faq-list{max-width:840px;}
+.faq{border-bottom:1px solid var(--line);}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:22px 4px;font-family:var(--f-d);font-weight:600;font-size:1.08rem;color:var(--ink);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary .q{flex:1;}
+.faq summary .sign{width:30px;height:30px;flex:none;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;position:relative;transition:.25s var(--ease);}
+.faq summary .sign::before,.faq summary .sign::after{content:"";position:absolute;background:var(--copper-dk);border-radius:2px;}
+.faq summary .sign::before{width:13px;height:2px;} .faq summary .sign::after{width:2px;height:13px;transition:transform .25s var(--ease);}
+.faq[open] summary .sign{background:var(--copper);border-color:var(--copper);}
+.faq[open] summary .sign::before,.faq[open] summary .sign::after{background:#fff;}
+.faq[open] summary .sign::after{transform:scaleY(0);}
+.faq .ans{padding:0 4px 24px;color:var(--slate);max-width:70ch;}
+.faq .ans p{margin:0;}
+
+/* ---- guarantee band (petrol) ---- */
+.guarantee{background:var(--petrol);color:#EAF1F2;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 22px,100% 100%,0 calc(100% - 22px));}
+.guarantee .pattern{position:absolute;inset:0;background:var(--circuit);background-size:84px;opacity:.06;}
+.guarantee .wrap{position:relative;z-index:1;}
+.guarantee .gtop{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;}
+.guarantee h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.7rem);}
+.guarantee .glead{color:#B9Ccce;font-size:1.06rem;margin:14px 0 0;}
+.gstats{display:flex;gap:34px;flex-wrap:wrap;}
+.gstat .num{font-family:var(--f-d);font-weight:700;font-size:2.4rem;color:#fff;line-height:1;font-variant-numeric:tabular-nums;}
+.gstat .lab{font-size:.82rem;color:#9FB6B9;margin-top:8px;letter-spacing:.02em;}
+.gstat .num .star{color:var(--gold);}
+.gsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
+.gstep{position:relative;padding-top:26px;border-top:2px solid rgba(231,185,143,.34);}
+.gstep .gn{position:absolute;top:-15px;left:0;width:30px;height:30px;border-radius:50%;background:var(--copper);color:#fff;display:grid;place-items:center;font-family:var(--f-d);font-weight:600;font-size:.86rem;}
+.gstep h4{color:#fff;font-size:1.06rem;margin-bottom:7px;}
+.gstep p{color:#A9C0C2;font-size:.92rem;margin:0;}
+
+/* ---- services tile grid (light) ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.svc-tile{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);}
+.svc-tile:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(26,24,21,.12);border-color:var(--copper-tint);}
+.svc-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sand2);}
+.svc-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+.svc-tile:hover .svc-thumb img{transform:scale(1.06);}
+.svc-thumb .num{position:absolute;top:12px;left:12px;background:rgba(26,24,21,.78);color:#fff;font-family:var(--f-d);font-weight:600;font-size:.74rem;padding:5px 10px;border-radius:8px;font-variant-numeric:tabular-nums;backdrop-filter:blur(3px);}
+.svc-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;}
+.svc-body h3{font-size:1.16rem;margin-bottom:9px;display:flex;align-items:center;gap:9px;}
+.svc-body p{color:var(--slate);font-size:.95rem;margin:0 0 16px;flex:1;}
+.svc-link{font-family:var(--f-d);font-weight:600;font-size:.86rem;color:var(--copper-dk);text-decoration:none;display:inline-flex;align-items:center;gap:7px;align-self:flex-start;}
+.svc-link svg{width:15px;height:15px;transition:transform .2s var(--ease);}
+.svc-tile:hover .svc-link svg{transform:translateX(4px);}
+
+/* ---- final CTA band ---- */
+.cta-band{background:linear-gradient(135deg,var(--copper),var(--copper-dk));color:#fff;position:relative;overflow:hidden;}
+.cta-band .pattern{position:absolute;inset:0;background:var(--circuit);background-size:84px;opacity:.08;filter:brightness(0) invert(1);}
+.cta-band .wrap{position:relative;z-index:1;text-align:center;padding-block:clamp(54px,6vw,80px);}
+.cta-band .eyebrow{color:#FCE5D2;justify-content:center;display:inline-flex;}
+.cta-band .eyebrow::before{background:#FCE5D2;box-shadow:-14px 0 0 -3px #FCE5D2;}
+.cta-band h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);margin:16px auto 14px;max-width:18ch;}
+.cta-band p{color:#FBE2CF;max-width:50ch;margin:0 auto 30px;font-size:1.06rem;}
+
+/* ---- footer ---- */
+.site-footer{background:var(--ink);color:#CcC3B6;padding-block:60px 30px;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;align-items:start;}
+.foot-brand .logo-txt b{color:#fff;} .foot-brand .logo-mark{background:#2A2620;}
+.foot-brand p{margin:18px 0 20px;font-size:.94rem;max-width:34ch;color:#A89E90;}
+.foot-brand .phone-sticker{color:#fff;}
+.foot-brand .phone-sticker .ico{background:#2A2620;} .foot-brand .phone-sticker svg{color:#E7B98F;}
+.foot-brand .phone-sticker small{color:#A89E90;}
+.foot-col h4{font-family:var(--f-d);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px;}
+.foot-col ul{list-style:none;margin:0;padding:0;}
+.foot-col li{margin-bottom:11px;font-size:.94rem;}
+.foot-col a{color:#CcC3B6;text-decoration:none;transition:color .2s var(--ease);}
+.foot-col a:hover{color:#E7B98F;}
+.foot-col address{font-style:normal;color:#A89E90;font-size:.94rem;line-height:1.7;}
+.foot-google{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--f-d);font-weight:500;font-size:.86rem;color:#E7B98F;text-decoration:none;}
+.foot-google svg{width:15px;height:15px;}
+.foot-google:hover{text-decoration:underline;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:#8A8174;}
+.foot-bottom a{color:#8A8174;}
+
+/* ---- mobile sticky call bar ---- */
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;background:rgba(251,248,243,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(26,24,21,.08);}
+.mobile-bar .phone-sticker{width:100%;justify-content:center;}
+
+/* ---- scroll reveal ---- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0ms);}
+.reveal.in{opacity:1;transform:none;}
+
+/* ---- hero entrance ---- */
+.hero-card>*{opacity:0;transform:translateY(18px);animation:rise .7s var(--ease) forwards;}
+.hero-card>*:nth-child(1){animation-delay:.05s;}
+.hero-card>*:nth-child(2){animation-delay:.16s;}
+.hero-card>*:nth-child(3){animation-delay:.27s;}
+.hero-card>*:nth-child(4){animation-delay:.38s;}
+.hero-card>*:nth-child(5){animation-delay:.49s;}
+.hero-photo{opacity:0;animation:fade 1s var(--ease) .25s forwards;}
+
+@keyframes rise{to{opacity:1;transform:none;}}
+@keyframes fade{to{opacity:1;}}
+@keyframes drift1{to{transform:translate(-40px,30px) scale(1.1);}}
+@keyframes drift2{to{transform:translate(40px,-26px) scale(1.08);}}
+@keyframes pulse{0%{transform:scale(1);opacity:.8;}100%{transform:scale(5);opacity:0;}}
+
+/* ---- responsive ---- */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:0;}
+  .hero-card{margin-right:0;margin-bottom:-46px;}
+  .hero-photo{min-height:360px;margin-top:0;width:100%;}
+  .hero-grid{display:flex;flex-direction:column-reverse;align-items:stretch;}
+  .hero-card{margin-top:-46px;margin-bottom:0;width:92%;align-self:flex-start;}
+  .trust-in{grid-template-columns:1fr 1fr;}
+  .trust-item:nth-child(2){border-right:none;}
+  .trust-item:nth-child(1),.trust-item:nth-child(2){border-bottom:1px solid var(--line);}
+  .why-grid{grid-template-columns:1fr;}
+  .why-card:nth-child(even){transform:none;}
+  .why-card:nth-child(even):hover{transform:translateY(-4px);}
+  .area-grid{grid-template-columns:1fr;gap:34px;}
+  .area-map{max-width:380px;margin:0 auto;}
+  .guarantee .gtop{grid-template-columns:1fr;gap:26px;}
+  .gsteps{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .foot-brand{grid-column:1/-1;}
+}
+@media(max-width:680px){
+  body{font-size:16px;}
+  .nav{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 20px 22px;gap:2px;transform:translateY(-130%);transition:transform .3s var(--ease);box-shadow:0 18px 40px rgba(26,24,21,.12);max-height:calc(100vh - 78px);overflow:auto;}
+  .nav.open{transform:none;}
+  .nav a{padding:14px 12px;border-bottom:1px solid var(--line);border-radius:0;}
+  .nav a::after{display:none;}
+  .nav-toggle{display:inline-flex;}
+  .header-cta .btn-cta{display:none;}
+  .header-cta .phone-sticker{display:none;}
+  .svc-grid{grid-template-columns:1fr;}
+  .trust-in{grid-template-columns:1fr;}
+  .trust-item{border-right:none;border-bottom:1px solid var(--line);}
+  .trust-item:last-child{border-bottom:none;}
+  .foot-grid{grid-template-columns:1fr;}
+  .mobile-bar{display:block;}
+  body{padding-bottom:72px;}
+  .gstats{gap:24px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;}
+  .hero-card>*,.hero-photo{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html" aria-label="NECA Electrical home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 11-13h-7l0-7z" fill="#E7B98F" stroke="#E7B98F" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-txt"><b>NECA</b><small>Electrical</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="phone-sticker" href="tel:+16102750909"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Call the shop</small>(610) 275-0909</span></a>
+      <a class="btn btn-cta" href="contact.html">Get a Free Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-bg" aria-hidden="true"><span class="glow g1"></span><span class="glow g2"></span><span class="pattern"></span></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-card">
+        <span class="eyebrow">King of Prussia, PA &amp; nearby</span>
+        <h1 id="hero-h">Electrician in <span class="acc">King of Prussia</span></h1>
+        <p class="hero-sub">Clean, code-correct electrical work for homes and small businesses. Licensed, insured, and straight with you on price before the work starts.</p>
+        <div class="hero-cta">
+          <a class="btn btn-cta" href="contact.html">Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="hero-rate">
+          <span class="stars" role="img" aria-label="Rated 4.2 out of 5 on Google"></span>
+          <span class="rnum" data-count="4.2" data-dec="1">4.2</span>
+          <span class="rtxt">on Google &middot; <span data-count="6">6</span> reviews</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/hero-electrician.jpg" alt="An electrician uses a multimeter to test connections in an open electrical panel." width="800" height="1200" fetchpriority="high">
+        <span class="tagchip">Licensed &amp; insured work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST STRIP ===================== -->
+<section class="trust" aria-label="Why homeowners call us">
+  <div class="wrap"><div class="trust-in">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><b>Licensed &amp; Insured <span class="ph">PLACEHOLDER: confirm</span></b></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><b>Locally Owned</b></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 11-13h-7l0-7z"/></svg><b>Fast Response</b></div>
+    <div class="trust-item"><span class="stars" role="img" aria-label="4.2 stars on Google"></span><b>4.2 on Google</b></div>
+  </div></div>
+</section>
+
+<!-- ===================== WHY US (02) ===================== -->
+<section class="band" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="topline"><span class="snum">02</span><span class="eyebrow">Why choose us</span></div>
+      <h2 id="why-h">The kind of electrician you actually want to call back.</h2>
+      <p>No runaround, no surprise line items. Just careful work, a clean job site, and a number you can reach.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" style="--d:0ms"><span class="wnum">01</span>
+        <span class="wicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 11-13h-7l0-7z"/></svg></span>
+        <h3>Fast, real response</h3><p>You call, a person answers, and we get you scheduled. For true emergencies we move quickly. <span class="ph">PLACEHOLDER: confirm hours / emergency policy</span></p></div>
+      <div class="why-card reveal" style="--d:90ms"><span class="wnum">02</span>
+        <span class="wicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Upfront pricing</h3><p>You get the price before we start, not after. No vague estimates that balloon once the panel is open.</p></div>
+      <div class="why-card reveal" style="--d:180ms"><span class="wnum">03</span>
+        <span class="wicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Local to King of Prussia</h3><p>We work the neighborhoods around Renaissance Blvd and the wider area every week. Local means we show up.</p></div>
+      <div class="why-card reveal" style="--d:270ms"><span class="wnum">04</span>
+        <span class="wicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <h3>Done right, guaranteed</h3><p>Work that meets code and a clean site when we leave. We stand behind what we install. <span class="ph">PLACEHOLDER: confirm warranty terms</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE AREA (03) ===================== -->
+<section class="band tint" id="area" aria-labelledby="area-h">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="topline"><span class="snum">03</span><span class="eyebrow">Service area</span></div>
+      <h2 id="area-h">Serving King of Prussia and the towns around it.</h2>
+      <p>Based on Renaissance Blvd, we cover King of Prussia and the surrounding communities. If you are just outside the list, call and ask, we likely cover you.</p>
+    </div>
+    <ul class="town-list town-list-wide reveal" aria-label="Towns served">
+      <li>King of Prussia</li><li>Wayne</li><li>Bridgeport</li><li>Norristown</li><li>Radnor</li><li>Conshohocken</li><li>Wynnewood</li><li>Valley Forge</li><li>Gulph Mills</li>
+      <li><span class="ph">PLACEHOLDER: confirm towns</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== FAQ (04) ===================== -->
+<section class="band" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="topline"><span class="snum">04</span><span class="eyebrow">Good to know</span></div>
+      <h2 id="faq-h">A few quick answers.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal" open><summary><span class="q">Are you licensed and insured?</span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="ans"><p>Yes. We carry the proper license and insurance to work on homes and small businesses in the area. <span class="ph">PLACEHOLDER: confirm license # and insurance details</span></p></div></details>
+      <details class="faq reveal"><summary><span class="q">Do you give free quotes?</span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="ans"><p>We do. Tell us what you need and we will give you a clear price before any work starts. Use the Get a Free Quote button or call the shop.</p></div></details>
+      <details class="faq reveal"><summary><span class="q">How fast can you come out?</span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="ans"><p>For most jobs we can schedule you within a few days, and we prioritize urgent electrical issues. <span class="ph">PLACEHOLDER: confirm scheduling / emergency availability</span></p></div></details>
+      <details class="faq reveal"><summary><span class="q">What areas do you cover?</span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="ans"><p>King of Prussia and the surrounding towns. If you are nearby and not sure, just ask when you call.</p></div></details>
+      <details class="faq reveal"><summary><span class="q">Do you handle both repairs and installs?</span><span class="sign" aria-hidden="true"></span></summary>
+        <div class="ans"><p>Yes. From a single flickering circuit to a full panel upgrade or a new EV charger, we handle troubleshooting and new installs alike.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE BAND (05) ===================== -->
+<section class="guarantee band" id="guarantee" aria-labelledby="g-h">
+  <div class="pattern" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="gtop">
+      <div class="reveal">
+        <span class="eyebrow on-dark">Our promise</span>
+        <h2 id="g-h" style="margin-top:14px">What to expect when we show up.</h2>
+        <p class="glead">Same standard on every job: tidy work, honest pricing, and a finish that meets code. No mess left behind.</p>
+      </div>
+      <div class="gstats reveal">
+        <div class="gstat"><div class="num"><span data-count="4.2" data-dec="1">4.2</span><span class="star">&#9733;</span></div><div class="lab">Google rating</div></div>
+        <div class="gstat"><div class="num"><span data-count="6">6</span></div><div class="lab">Real reviews</div></div>
+        <div class="gstat"><div class="num">100<span class="star" style="color:#E7B98F">%</span></div><div class="lab">Cleaned up after</div></div>
+      </div>
+    </div>
+    <div class="gsteps">
+      <div class="gstep reveal" style="--d:0ms"><span class="gn">1</span><h4>You reach a person</h4><p>Call or request a quote. We talk through the problem and book a time that works.</p></div>
+      <div class="gstep reveal" style="--d:110ms"><span class="gn">2</span><h4>Clear price, then work</h4><p>You see the price before we start. We protect your space and keep the site clean.</p></div>
+      <div class="gstep reveal" style="--d:220ms"><span class="gn">3</span><h4>Done to code, stand behind it</h4><p>We test the work, walk you through it, and back what we install. <span class="ph on-dark">PLACEHOLDER: warranty</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES (06) ===================== -->
+<section class="band sand2" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div class="topline"><span class="snum">06</span><span class="eyebrow">What we do <span class="ph">PLACEHOLDER: confirm &amp; trim list</span></span></div>
+      <h2 id="svc-h">Residential and small commercial electrical.</h2>
+      <p>Six things we get called for most. Need something not listed? Ask, we probably do it.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-tile reveal" style="--d:0ms"><div class="svc-thumb"><span class="num">01</span><img src="assets/svc-panel.jpg" alt="An electrician examines a residential fuse box." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>Panel Upgrades</h3><p>Older or overloaded panel? We upgrade your service so the whole house runs safely and to current code.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+      <article class="svc-tile reveal" style="--d:80ms"><div class="svc-thumb"><span class="num">02</span><img src="assets/svc-wiring.jpg" alt="Hands sorting through colorful electrical wires." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>Wiring &amp; Rewiring</h3><p>New circuits, outlets, and full rewires for older homes. Clean runs done right behind the walls.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+      <article class="svc-tile reveal" style="--d:160ms"><div class="svc-thumb"><span class="num">03</span><img src="assets/svc-lighting.jpg" alt="A warm interior with a row of modern pendant lights." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>Lighting Installation</h3><p>Recessed cans, fixtures, under-cabinet, and outdoor lighting. The right light makes a room.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+      <article class="svc-tile reveal" style="--d:0ms"><div class="svc-thumb"><span class="num">04</span><img src="assets/svc-evcharger.jpg" alt="A home electric vehicle charger mounted on a brick garage wall." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>EV Charger Install</h3><p>Level 2 home charging wired to your panel and ready for your car. Faster charging, done safely.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+      <article class="svc-tile reveal" style="--d:80ms"><div class="svc-thumb"><span class="num">05</span><img src="assets/svc-troubleshoot.jpg" alt="An electrician uses a multimeter to diagnose control panel wiring." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>Troubleshooting &amp; Repair</h3><p>Dead outlets, tripping breakers, flickering lights. We track down the real cause and fix it.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+      <article class="svc-tile reveal" style="--d:160ms"><div class="svc-thumb"><span class="num">06</span><img src="assets/svc-generator.jpg" alt="An outdoor standby generator with piping and wiring." loading="lazy" width="600" height="375"></div>
+        <div class="svc-body"><h3>Generator Install</h3><p>Keep the lights on when the grid goes down. We size, install, and hook up backup generators.</p><a class="svc-link" href="services.html">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA (07) ===================== -->
+<section class="cta-band" id="contact" aria-labelledby="cta-h">
+  <div class="pattern" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2 id="cta-h">Let's get your electrical handled.</h2>
+    <p>Tell us what is going on and we will get you a clear, free quote. No pressure, no runaround.</p>
+    <a class="btn btn-light" href="contact.html">Get a Free Quote
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="index.html" aria-label="NECA Electrical home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 11-13h-7l0-7z" fill="#E7B98F" stroke="#E7B98F" stroke-width="1.2" stroke-linejoin="round"/></svg></span>
+          <span class="logo-txt"><b>NECA</b><small>Electrical</small></span>
+        </a>
+        <p>Licensed and insured electrical work for King of Prussia and the surrounding towns. Family owned and operated. <span class="ph on-dark">PLACEHOLDER: confirm</span></p>
+        <a class="phone-sticker" href="tel:+16102750909"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>Call the shop</small>(610) 275-0909</span></a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Visit / Hours</h4>
+        <address>
+          2003 Renaissance Blvd #3<br>King of Prussia, PA 19406<br>
+          <span style="display:inline-block;margin-top:10px">Mon&ndash;Fri: <span class="ph on-dark">PLACEHOLDER: hours</span></span>
+        </address>
+        <a class="foot-google" href="https://www.google.com/maps?cid=8930734100275554857" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find us on Google
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> NECA Electrical. All rights reserved.</span>
+      <span>King of Prussia, PA &middot; Licensed &amp; insured <span class="ph on-dark">PLACEHOLDER</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MOBILE STICKY CALL BAR ===================== -->
+<div class="mobile-bar">
+  <a class="phone-sticker" href="tel:+16102750909"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span>Call (610) 275-0909</span></a>
+</div>
+
+<script>
+/* year */
+document.getElementById('yr').textContent=new Date().getFullYear();
+/* star rating render (4.2 of 5) */
+(function(){
+  var rating=4.2;
+  document.querySelectorAll('.stars').forEach(function(box){
+    var html='';
+    for(var i=1;i<=5;i++){
+      var fill=Math.max(0,Math.min(1,rating-(i-1)));
+      if(fill>=1){html+='<svg viewBox="0 0 24 24"><path class="star-f" d="M12 2l3 6.5 7 .8-5.2 4.7 1.5 6.9L12 17.8 5.2 20.9l1.5-6.9L1.5 9.3l7-.8z"/></svg>';}
+      else if(fill<=0){html+='<svg viewBox="0 0 24 24"><path class="star-e" d="M12 2l3 6.5 7 .8-5.2 4.7 1.5 6.9L12 17.8 5.2 20.9l1.5-6.9L1.5 9.3l7-.8z"/></svg>';}
+      else{var id='g'+i+Math.floor(fill*100);html+='<svg viewBox="0 0 24 24"><defs><linearGradient id="'+id+'"><stop class="star-h" offset="'+(fill*100)+'%"/><stop offset="'+(fill*100)+'%" stop-color="#D9CFBE"/></linearGradient></defs><path fill="url(#'+id+')" d="M12 2l3 6.5 7 .8-5.2 4.7 1.5 6.9L12 17.8 5.2 20.9l1.5-6.9L1.5 9.3l7-.8z"/></svg>';}
+    }
+    box.innerHTML=html;
+  });
+})();
+/* mobile nav */
+(function(){
+  var t=document.getElementById('navToggle'),n=document.getElementById('nav');
+  if(t){t.addEventListener('click',function(){var o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',!o);n.classList.toggle('open',!o);t.setAttribute('aria-label',o?'Open menu':'Close menu');});
+  n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){t.setAttribute('aria-expanded','false');n.classList.remove('open');});});}
+})();
+/* reduced motion guard */
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* scroll reveal */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(RM||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+/* count-up */
+(function(){
+  var nums=document.querySelectorAll('[data-count]');
+  if(RM||!('IntersectionObserver'in window)){return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){
+    if(!e.isIntersecting)return;io.unobserve(e.target);
+    var el=e.target,end=parseFloat(el.getAttribute('data-count')),dec=parseInt(el.getAttribute('data-dec')||'0',10),t0=null,dur=1100;
+    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur),v=(end*(1-Math.pow(1-p,3)));el.textContent=v.toFixed(dec);if(p<1)requestAnimationFrame(step);else el.textContent=end.toFixed(dec);}
+    requestAnimationFrame(step);
+  });},{threshold:.6});
+  nums.forEach(function(n){io.observe(n);});
+})();
+</script>
+</body>
+</html>

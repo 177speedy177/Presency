@@ -1,0 +1,16 @@
+Pexels stock — generic trade imagery (NOT the business's own work). Free to use per Pexels License.
+
+hero-renovation.jpg | photo by Karl Solano | https://www.pexels.com/photo/a-room-under-renovation-5317154/
+  alt: Interior view of a home renovation with paint supplies on a wooden table.
+atmos-contractor.jpg | photo by Rodolfo Gaion | https://www.pexels.com/photo/construction-worker-building-foundation-outdoors-29735767/
+  alt: Male construction worker building a foundation outdoors in Londrina, Brazil.
+svc-kitchen.jpg | photo by Peter  Vang | https://www.pexels.com/photo/modern-bright-kitchen-with-granite-countertops-35493910/
+  alt: Sunlit modern kitchen featuring granite countertops and sleek white cabinetry.
+svc-bathroom.jpg | photo by Arshad Khan | https://www.pexels.com/photo/modern-minimalist-bathroom-interior-design-35868666/
+  alt: A sleek and stylish modern bathroom with minimalist design, featuring dual washbasins, marble tiles, and a glass shower enclosure.
+svc-deck.jpg | photo by Max Vakhtbovych | https://www.pexels.com/photo/terrace-in-house-7587879/
+  alt: Stylish outdoor space with wooden deck and dining set, surrounded by lush greenery.
+svc-framing.jpg | photo by Ryan  Stephens | https://www.pexels.com/photo/residential-home-construction-in-texas-33405084/
+  alt: Interior view of a residential home under construction in The Colony, Texas.
+blueprint.jpg | photo by Ivan S | https://www.pexels.com/photo/a-photo-of-a-floor-plan-4458205/
+  alt: High-resolution close-up of an architectural floor plan showcasing design details.

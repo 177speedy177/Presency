@@ -1,0 +1,19 @@
+Pexels stock, generic trade imagery (NOT the business's own work). Free per Pexels License.
+https://www.pexels.com/license/
+
+hero-electrician.jpg | photo by Bulat843 | https://www.pexels.com/photo/34054464/
+  alt: An electrician uses a multimeter to test and diagnose connections in an open electrical panel.
+svc-panel.jpg | photo by Kathleen Austin Kuhn | https://www.pexels.com/photo/32497160/
+  alt: An electrician carefully examines a residential fuse box indoors, ensuring electrical safety and compliance.
+svc-wiring.jpg | photo by cottonbro studio | https://www.pexels.com/photo/5090652/
+  alt: Hands sorting through a variety of colorful electrical wires on a table, illuminated by soft lighting.
+svc-lighting.jpg | photo by Orhan Pergel | https://www.pexels.com/photo/20015961/
+  alt: A warm interior featuring a row of modern pendant lights creating a cozy ambiance.
+svc-evcharger.jpg | photo by Andersen EV | https://www.pexels.com/photo/27355827/
+  alt: A woman using a home electric vehicle charger on a brick wall in a garage.
+svc-troubleshoot.jpg | photo by Onics Energy | https://www.pexels.com/photo/14319099/
+  alt: Electrician using a multimeter to fix industrial control panel wiring.
+svc-generator.jpg | photo by ezrah lane | https://www.pexels.com/photo/5693845/
+  alt: Outdoor view of an industrial generator with visible piping and wiring against a concrete wall.
+atmos-lighting.jpg | photo by Pavel Danilyuk | https://www.pexels.com/photo/7518747/
+  alt: Stylish glass ball light fixtures hanging indoors with soft lighting and wooden accents.

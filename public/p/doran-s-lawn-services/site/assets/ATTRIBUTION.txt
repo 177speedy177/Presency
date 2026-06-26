@@ -1,0 +1,20 @@
+Pexels stock, generic trade imagery (NOT the business's own work). Free per Pexels License.
+
+hero-reno.jpg | photo by Francesco Ungaro | https://www.pexels.com/photo/ladder-in-building-undergoing-refurbishment-15798786/
+  alt: An indoor space showing ongoing refurbishment with ladders and construction materials.
+hero-build.jpg | photo by Mikael Blomkvist | https://www.pexels.com/photo/construction-workers-in-a-construction-site-8961623/
+  alt: Construction workers on a job site reviewing work, generic trade stock.
+atmos-craft.jpg | photo by Cihan Yuce | https://www.pexels.com/photo/vintage-woodworking-chisels-on-leather-background-32599546/
+  alt: A set of woodworking chisels laid out on a leather roll, close-up craftsmanship detail.
+svc-kitchen.jpg | photo by Peter  Vang | https://www.pexels.com/photo/modern-bright-kitchen-with-granite-countertops-35493910/
+  alt: Sunlit modern kitchen featuring granite countertops and sleek white cabinetry.
+svc-bath.jpg | photo by Arshad Khan | https://www.pexels.com/photo/modern-minimalist-bathroom-interior-design-35868666/
+  alt: A sleek and stylish modern bathroom with minimalist design, featuring dual washbasins, marble tiles, and a glass shower enclosure.
+svc-exterior.jpg | photo by Max Vakhtbovych | https://www.pexels.com/photo/houses-in-village-7746914/
+  alt: Charming village houses under clear blue skies with a mountain backdrop.
+svc-deck.jpg | photo by Max Vakhtbovych | https://www.pexels.com/photo/terrace-in-house-7587879/
+  alt: Stylish outdoor space with wooden deck and dining set, surrounded by lush greenery.
+atmos-blueprint.jpg | photo by Ivan S | https://www.pexels.com/photo/a-photo-of-a-floor-plan-4458205/
+  alt: High-resolution close-up of an architectural floor plan showcasing design details.
+atmos-contractor.jpg | photo by Mikael Blomkvist | https://www.pexels.com/photo/man-in-black-shirt-holding-black-power-tool-8961401/
+  alt: A construction worker using a power drill on a building site, outdoors during the day.
