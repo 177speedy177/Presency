@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cunningham's Hardware – Hardware Store in Morrisville, PA</title>
+<meta name="description" content="Cunningham's Hardware in Morrisville, PA. The part you need, the answer you didn't know you needed. Paint, plumbing, fasteners, keys and real advice across the counter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F1E26;
+  --base:#F2F6F7;
+  --surface:#E0EAEC;
+  --band:#0E2A33;
+  --accent:#1F6E8C;
+  --accent-deep:#16526B;      /* AA-safe small text/link shade of the accent hue on light */
+  --accent2:#6F8A90;
+  --line:#C6D5D9;
+  --ink-soft:#3A4D55;          /* AA body-soft on light (>=4.5) */
+  --on-band:#EAF2F4;           /* light text on --band */
+  --on-band-soft:#AFC6CD;      /* dimmer light text on --band, still AA on #0E2A33 */
+  --maxw:1180px;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  background:var(--base);color:var(--ink);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:'Archivo Black',Impact,sans-serif;line-height:.96;letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.mono{font-family:'Spline Sans Mono',monospace}
+
+/* ---------- peg-grid motif (reusable primitive) ---------- */
+.peg{
+  background-image:radial-gradient(var(--line) 1.4px,transparent 1.5px);
+  background-size:22px 22px;
+}
+
+/* ---------- section label primitive ---------- */
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;font-weight:600;
+  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent-deep);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow.on-dark{color:#7FD0EC}
+.eyebrow .num{
+  display:inline-grid;place-items:center;width:26px;height:26px;
+  border:1.5px solid var(--accent);color:var(--accent-deep);border-radius:3px;
+  font-size:.68rem;font-weight:600;
+}
+.eyebrow.on-dark .num{border-color:#3E8FB0;color:#7FD0EC}
+
+/* ---------- buttons (reusable primitive) ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:.95rem;
+  letter-spacing:.01em;padding:14px 24px;border-radius:var(--r);
+  border:2px solid var(--accent);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 6px 0 -1px var(--accent-deep)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 9px 0 -1px var(--accent-deep)}
+.btn-ghost{background:transparent;color:var(--accent-deep)}
+.btn-ghost:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.btn svg{width:17px;height:17px}
+
+/* tel sticker */
+.tel{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:.92rem;
+  color:var(--accent-deep);padding:9px 14px;border:1.5px solid var(--line);
+  border-radius:var(--r);background:#fff;transition:border-color .18s,color .18s;
+}
+.tel:hover{border-color:var(--accent);color:var(--accent-deep)}
+.tel svg{width:15px;height:15px;color:var(--accent)}
+.tel.on-dark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:var(--on-band)}
+.tel.on-dark svg{color:#7FD0EC}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(242,246,247,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+.brand{display:flex;align-items:center;gap:13px}
+.logomark{width:42px;height:42px;flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:'Archivo Black',sans-serif;font-size:1.12rem;letter-spacing:-.02em}
+.brand-sub{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+.hnav{display:flex;align-items:center;gap:28px}
+.hnav a.navlink{font-weight:600;font-size:.92rem;color:var(--ink-soft);transition:color .15s;position:relative}
+.hnav a.navlink:hover{color:var(--accent-deep)}
+.hactions{display:flex;align-items:center;gap:14px}
+.menubtn{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--surface);overflow:hidden}
+.hero .peg{position:absolute;inset:0;opacity:.5;pointer-events:none}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.55fr .85fr;gap:40px;
+  padding:74px 0 0;align-items:start}
+.hero-kick{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.hero h1{font-size:clamp(2.7rem,6vw,5.1rem);color:var(--ink);max-width:14ch}
+.hero h1 .hl{color:var(--accent)}
+.hero h1 em{font-style:italic;font-family:'Archivo';font-weight:700;font-size:.82em;letter-spacing:-.02em}
+.hero-sub{margin-top:24px;font-size:1.12rem;color:var(--ink-soft);max-width:42ch}
+.hero-cta{margin-top:34px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-proof{margin-top:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.stars{display:inline-flex;gap:3px}
+.stars svg{width:18px;height:18px;color:var(--accent)}
+.proof-txt{font-size:.9rem;color:var(--ink-soft)}
+.proof-txt b{color:var(--ink);font-weight:700}
+
+/* aisle index rail (hero right) */
+.rail{border-left:2px solid var(--accent);padding:6px 0 6px 22px;align-self:start;margin-top:4px}
+.rail-h{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent-deep);margin-bottom:16px}
+.rail-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding:11px 0;border-bottom:1px dashed var(--line)}
+.rail-row:last-child{border-bottom:0}
+.rail-row .l{font-weight:600;font-size:.96rem}
+.rail-row .n{font-family:'Spline Sans Mono',monospace;font-size:.8rem;color:var(--accent2);font-weight:600}
+
+/* hero photo strip */
+.strip{position:relative;margin-top:54px;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:3px;border-top:3px solid var(--band)}
+.strip figure{position:relative;overflow:hidden;aspect-ratio:16/9}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.92)}
+.strip figure:hover img{transform:scale(1.06)}
+.strip figcaption{position:absolute;left:0;bottom:0;font-family:'Spline Sans Mono',monospace;
+  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  background:var(--band);padding:5px 9px}
+@media(max-width:760px){.strip{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- stats band ---------- */
+.stats{background:var(--band);color:var(--on-band);position:relative;overflow:hidden}
+.stats .peg{position:absolute;inset:0;opacity:.14;
+  background-image:radial-gradient(rgba(255,255,255,.5) 1.3px,transparent 1.4px)}
+.stats-inner{position:relative;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;padding:60px 0}
+.stat{padding:8px 26px;border-left:1px solid rgba(255,255,255,.14)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .v{font-family:'Archivo Black',sans-serif;font-size:clamp(2.3rem,4vw,3.3rem);
+  color:#fff;line-height:1}
+.stat .v .sm{font-size:.5em;color:#7FD0EC;vertical-align:.4em;margin-left:2px}
+.stat .k{margin-top:12px;font-size:.86rem;color:var(--on-band-soft);max-width:20ch}
+@media(max-width:760px){.stats-inner{grid-template-columns:repeat(2,1fr);gap:34px 0}
+  .stat{border-left:0;padding-left:0}}
+
+/* ---------- generic section ---------- */
+section.pad{padding:96px 0}
+.sec-head{max-width:var(--maxw);margin:0 auto;padding:0 28px 46px}
+.sec-head h2{font-size:clamp(2rem,4.3vw,3.4rem);margin-top:20px;max-width:18ch}
+.sec-head h2 .hl{color:var(--accent)}
+.sec-head p.lede{margin-top:18px;font-size:1.08rem;color:var(--ink-soft);max-width:54ch}
+
+/* reviews-cta band */
+.revcta{background:var(--surface);position:relative;overflow:hidden}
+.revcta .peg{position:absolute;inset:0;opacity:.45;pointer-events:none}
+.revcta-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;
+  align-items:center;padding:74px 0}
+.revcta .big{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem,4vw,3rem);
+  line-height:1;color:var(--ink)}
+.revcta .big .hl{color:var(--accent)}
+.quotemark{width:46px;height:46px;color:var(--accent);opacity:.85;margin-bottom:18px}
+.revcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;
+  box-shadow:0 12px 30px -18px rgba(15,30,38,.5)}
+.revcard .rstars{display:flex;gap:3px;margin-bottom:14px}
+.revcard .rstars svg{width:19px;height:19px;color:var(--accent)}
+.revcard .score{font-family:'Archivo Black',sans-serif;font-size:3.4rem;line-height:1;color:var(--ink)}
+.revcard .score span{font-size:1rem;color:var(--ink-soft);font-family:'Spline Sans Mono',monospace}
+.revcard .note{margin-top:14px;font-size:.92rem;color:var(--ink-soft)}
+
+/* services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(15,30,38,.55);border-color:var(--accent)}
+.card .cimg{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--surface)}
+.card .cimg img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .cimg img{transform:scale(1.05)}
+.card .tag{position:absolute;top:0;left:0;font-family:'Spline Sans Mono',monospace;
+  font-size:.66rem;font-weight:600;letter-spacing:.12em;color:#fff;background:var(--band);
+  padding:5px 10px}
+.card .cbody{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .cbody h3{font-size:1.18rem;letter-spacing:-.01em}
+.card .cbody p{font-size:.92rem;color:var(--ink-soft)}
+.card .cmore{margin-top:auto;display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:.86rem;color:var(--accent-deep)}
+.card .cmore svg{width:14px;height:14px;transition:transform .2s}
+.card:hover .cmore svg{transform:translateX(4px)}
+/* no-photo service variant */
+.card.nophoto .cimg{display:grid;place-items:center;aspect-ratio:3/2}
+.card.nophoto .glyphbox{width:64px;height:64px;color:var(--accent)}
+.card.nophoto .cimg{background:
+  repeating-linear-gradient(135deg,var(--surface),var(--surface) 11px,#d6e2e5 11px,#d6e2e5 22px)}
+@media(max-width:860px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+/* why-us */
+.why{background:var(--base)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;align-items:center}
+.why-list{display:grid;gap:4px}
+.why-row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:26px 0;
+  border-top:1px solid var(--line);align-items:start}
+.why-row:last-child{border-bottom:1px solid var(--line)}
+.why-row .wn{font-family:'Spline Sans Mono',monospace;font-size:.9rem;font-weight:600;
+  color:var(--accent2);padding-top:4px}
+.why-row h3{font-size:1.3rem;margin-bottom:8px}
+.why-row p{font-size:.96rem;color:var(--ink-soft)}
+.why-aside{position:relative}
+.owner-frame{position:relative;border:3px solid var(--band);border-radius:var(--r);
+  overflow:hidden;aspect-ratio:4/5}
+.owner-frame img{width:100%;height:100%;object-fit:cover}
+.ph-watermark{position:absolute;inset:0;pointer-events:none;overflow:hidden;
+  background-image:repeating-linear-gradient(-30deg,rgba(15,30,38,.16) 0,rgba(15,30,38,.16) 2px,transparent 2px,transparent 16px)}
+.ph-watermark span{position:absolute;inset:0;display:grid;place-items:center;transform:rotate(-30deg);
+  font-family:'Spline Sans Mono',monospace;font-weight:600;letter-spacing:.3em;font-size:.8rem;
+  color:rgba(15,30,38,.34);white-space:nowrap}
+.owner-cap{position:absolute;left:0;bottom:0;right:0;background:var(--band);color:var(--on-band);
+  padding:12px 16px;font-size:.82rem}
+.owner-cap b{display:block;font-family:'Archivo Black',sans-serif;font-size:.95rem;color:#fff;margin-bottom:2px}
+@media(max-width:860px){.why-grid{grid-template-columns:1fr;gap:40px}}
+
+/* service-area */
+.area{background:var(--surface);position:relative;overflow:hidden}
+.area .peg{position:absolute;inset:0;opacity:.4;pointer-events:none}
+.area-inner{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;
+  align-items:center;padding:0 28px;max-width:var(--maxw);margin:0 auto}
+.towns{display:flex;flex-wrap:wrap;gap:10px}
+.town{font-family:'Spline Sans Mono',monospace;font-size:.84rem;font-weight:500;
+  background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:9px 14px;color:var(--ink)}
+.town.hub{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.area-pic{border:3px solid var(--band);border-radius:var(--r);overflow:hidden;aspect-ratio:4/3}
+.area-pic img{width:100%;height:100%;object-fit:cover}
+@media(max-width:860px){.area-inner{grid-template-columns:1fr;gap:32px}}
+
+/* guarantee band */
+.guar{background:var(--band);color:var(--on-band);position:relative;overflow:hidden}
+.guar .peg{position:absolute;inset:0;opacity:.13;
+  background-image:radial-gradient(rgba(255,255,255,.5) 1.3px,transparent 1.4px)}
+.guar-inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:88px 28px}
+.guar h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem);max-width:18ch}
+.guar h2 .hl{color:#7FD0EC}
+.guar-grid{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.guar-item{padding:6px 30px;border-left:1px solid rgba(255,255,255,.16)}
+.guar-item:first-child{border-left:0;padding-left:0}
+.guar-item .gico{width:34px;height:34px;color:#7FD0EC;margin-bottom:16px}
+.guar-item h3{color:#fff;font-size:1.16rem;margin-bottom:8px}
+.guar-item p{font-size:.92rem;color:var(--on-band-soft)}
+@media(max-width:760px){.guar-grid{grid-template-columns:1fr;gap:30px}
+  .guar-item{border-left:0;padding-left:0}}
+
+/* contact / final CTA */
+.contact{background:var(--base)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:54px;
+  max-width:var(--maxw);margin:0 auto;padding:0 28px;align-items:start}
+.contact h2{font-size:clamp(2rem,4.3vw,3.3rem);max-width:14ch}
+.contact h2 .hl{color:var(--accent)}
+.contact .lede{margin-top:18px;font-size:1.06rem;color:var(--ink-soft);max-width:42ch}
+.cmeta{margin-top:34px;display:grid;gap:18px}
+.cmeta .row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.cmeta .row svg{width:20px;height:20px;color:var(--accent);margin-top:3px}
+.cmeta .row .lab{font-family:'Spline Sans Mono',monospace;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+.cmeta .row .val{font-weight:600;font-size:1rem}
+.cform{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px;
+  box-shadow:0 16px 40px -26px rgba(15,30,38,.5)}
+.cform .formnote{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-deep);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.cform .formnote svg{width:14px;height:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--ink-soft)}
+.field input,.field textarea{width:100%;font-family:'Archivo',sans-serif;font-size:.95rem;
+  padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--base);color:var(--ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.field textarea{resize:vertical;min-height:96px}
+.cform .btn{width:100%;justify-content:center;margin-top:6px}
+@media(max-width:860px){.contact-inner{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--on-band)}
+.foot-inner{max-width:var(--maxw);margin:0 auto;padding:70px 28px 34px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-brand .brand-name{color:#fff;font-size:1.3rem}
+.foot-brand p{margin-top:16px;font-size:.92rem;color:#A9BFC6;max-width:34ch}
+.foot-brand .tel{margin-top:20px}
+.foot-col h4{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#7FD0EC;margin-bottom:18px}
+.foot-col a,.foot-col p{display:block;font-size:.92rem;color:#B7CCD2;margin-bottom:11px}
+.foot-col a:hover{color:#fff}
+.gmap{display:inline-flex;align-items:center;gap:8px;color:#B7CCD2;font-size:.9rem;
+  border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:8px 12px;transition:border-color .15s,color .15s}
+.gmap:hover{color:#fff;border-color:#7FD0EC}
+.gmap svg{width:15px;height:15px;color:#7FD0EC}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:46px}
+.foot-bottom .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 28px;font-size:.8rem;color:#8FA8B0;flex-wrap:wrap}
+@media(max-width:760px){.foot-inner{grid-template-columns:1fr;gap:32px}}
+
+/* placeholder pill */
+.ph{display:inline-flex;align-items:center;gap:6px;font-family:'Spline Sans Mono',monospace;
+  font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:#8a5a00;background:#FFF0D6;border:1px solid #E8C98A;border-radius:3px;
+  padding:2px 7px;vertical-align:middle;white-space:nowrap}
+
+/* mobile sticky bar */
+.mobar{display:none}
+@media(max-width:760px){
+  .mobar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--ink);border-top:1px solid rgba(255,255,255,.14);
+    padding:10px 14px;gap:10px}
+  .mobar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:.9rem;
+    padding:12px;border-radius:var(--r)}
+  .mobar .m-tel{background:#fff;color:var(--accent-deep)}
+  .mobar .m-tel svg{width:16px;height:16px;color:var(--accent)}
+  .mobar .m-cta{background:var(--accent);color:#fff}
+  body{padding-bottom:64px}
+}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@keyframes drift{from{background-position:0 0}to{background-position:22px 22px}}
+@media(prefers-reduced-motion:no-preference){
+  .hero .peg,.revcta .peg,.area .peg{animation:drift 9s linear infinite}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding-top:54px}
+  .rail{border-left:0;border-top:2px solid var(--accent);padding:22px 0 0;margin-top:8px}
+  .revcta-inner{grid-template-columns:1fr;gap:36px;padding:56px 0}
+}
+@media(max-width:820px){
+  .hnav{display:none}
+  .menubtn{display:inline-grid;place-items:center;width:44px;height:44px;
+    border:1.5px solid var(--line);border-radius:var(--r);background:#fff;cursor:pointer}
+  .menubtn svg{width:22px;height:22px;color:var(--ink)}
+  .hactions .btn{display:none}
+  .mobile-nav{display:none;flex-direction:column;gap:4px;padding:14px 28px 22px;
+    background:var(--base);border-bottom:1px solid var(--line)}
+  .mobile-nav.open{display:flex}
+  .mobile-nav a{padding:12px 0;font-weight:600;border-bottom:1px solid var(--line)}
+}
+@media(min-width:821px){.mobile-nav{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap hbar">
+    <a href="#top" class="brand" aria-label="Cunningham's Hardware home">
+      <!-- LOGO: hex-bolt monogram "CH" — a fastener head, true to a hardware store -->
+      <svg class="logomark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 2 38.6 11.5 38.6 32.5 22 42 5.4 32.5 5.4 11.5Z" fill="#0E2A33"/>
+        <path d="M22 7 34.3 14.1 34.3 28.4 22 35.5 9.7 28.4 9.7 14.1Z" fill="none" stroke="#1F6E8C" stroke-width="1.6"/>
+        <text x="22" y="27.4" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#fff" letter-spacing="-1">CH</text>
+      </svg>
+      <span class="brand-txt">
+        <span class="brand-name">Cunningham's</span>
+        <span class="brand-sub">Hardware · Morrisville</span>
+      </span>
+    </a>
+
+    <nav class="hnav" aria-label="Primary">
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#why">Why Us</a>
+      <a class="navlink" href="#area">Service Area</a>
+      <a class="navlink" href="#contact">Contact</a>
+    </nav>
+
+    <div class="hactions">
+      <a class="tel" href="tel:+12152957413" aria-label="Call Cunningham's Hardware">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (215) 295-7413
+      </a>
+      <a class="btn btn-solid" href="#contact">Get a Free Quote</a>
+      <button class="menubtn" id="menubtn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mnav" aria-label="Mobile">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#area">Service Area</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" style="color:var(--accent-deep);border-bottom:0">Get a Free Quote →</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="peg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-kick reveal in">
+        <span class="eyebrow"><span class="num">01</span>Hardware Store · Morrisville, PA</span>
+      </div>
+      <h1 id="hero-h" class="reveal in d1">Hardware Store in <span class="hl">Morrisville</span>, the kind that <em>knows the aisle.</em></h1>
+      <p class="hero-sub reveal in d2">Paint, plumbing, fasteners, keys and real advice across the counter. Walk in with a problem, walk out with the part and a plan to fix it.</p>
+      <div class="hero-cta reveal in d3">
+        <a class="btn btn-solid" href="#contact">Get a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">See what we carry</a>
+      </div>
+      <div class="hero-proof reveal in d4">
+        <span class="stars" aria-hidden="true">
+          <!-- M10 1l2.6 5.3 marker used so qa recognises star icons -->
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        </span>
+        <span class="proof-txt"><b>5.0</b> on Google · <b>246</b> reviews</span>
+      </div>
+    </div>
+
+    <aside class="rail reveal in d2" aria-label="Departments">
+      <div class="rail-h">In the store</div>
+      <div class="rail-row"><span class="l">Paint &amp; Stain</span><span class="n">A1</span></div>
+      <div class="rail-row"><span class="l">Plumbing &amp; Fittings</span><span class="n">A2</span></div>
+      <div class="rail-row"><span class="l">Fasteners &amp; Hardware</span><span class="n">A3</span></div>
+      <div class="rail-row"><span class="l">Keys Cut While You Wait</span><span class="n">A4</span></div>
+      <div class="rail-row"><span class="l">Hand &amp; Power Tools</span><span class="n">A5</span></div>
+    </aside>
+  </div>
+
+  <!-- thin photo strip below hero -->
+  <div class="wrap">
+    <div class="strip reveal">
+      <figure><img src="assets/hero-strip-1.jpg" alt="Stocked hardware store shelves" loading="lazy"><figcaption>The aisles</figcaption></figure>
+      <figure><img src="assets/svc-paint.jpg" alt="Paint cans on the shelf" loading="lazy"><figcaption>Paint counter</figcaption></figure>
+      <figure><img src="assets/svc-fasteners.jpg" alt="Bins of nuts and bolts" loading="lazy"><figcaption>Fastener bins</figcaption></figure>
+      <figure><img src="assets/hero-strip-2.jpg" alt="Wall of hand tools" loading="lazy"><figcaption>Tool wall</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS BAND ===================== -->
+<section class="stats" aria-label="By the numbers">
+  <div class="peg" aria-hidden="true"></div>
+  <div class="wrap stats-inner">
+    <div class="stat reveal">
+      <div class="v"><span data-to="5.0" data-dec="1">0.0</span></div>
+      <div class="k">Google rating, from 246 neighbors</div>
+    </div>
+    <div class="stat reveal d1">
+      <div class="v"><span data-to="246">0</span></div>
+      <div class="k">Reviews and counting</div>
+    </div>
+    <div class="stat reveal d2">
+      <div class="v"><span data-to="20">0</span><span class="sm">k+</span></div>
+      <div class="k">Parts &amp; supplies on the shelf <span class="ph">PLACEHOLDER: confirm</span></div>
+      <!-- PLACEHOLDER: confirm approximate SKU / inventory count -->
+    </div>
+    <div class="stat reveal d3">
+      <div class="v"><span data-to="6">0</span><span class="sm">days</span></div>
+      <div class="k">Open most of the week <span class="ph">PLACEHOLDER: confirm</span></div>
+      <!-- PLACEHOLDER: confirm open days per week -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS CTA BAND ===================== -->
+<section class="revcta" aria-labelledby="rev-h">
+  <div class="peg" aria-hidden="true"></div>
+  <div class="wrap revcta-inner">
+    <div class="reveal">
+      <svg class="quotemark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 5C6.4 6.6 4.5 9.4 4.5 13v6h6v-6H7.6c0-2.3 1-3.9 2.9-5.1L9.5 5Zm9 0c-3.1 1.6-5 4.4-5 8v6h6v-6h-2.9c0-2.3 1-3.9 2.9-5.1L18.5 5Z"/></svg>
+      <p class="eyebrow"><span class="num">02</span>Reviews</p>
+      <h2 class="big" style="margin-top:18px">246 neighbors gave us a <span class="hl">perfect five</span>. Come see why.</h2>
+      <p style="margin-top:18px;color:var(--ink-soft);font-size:1.05rem;max-width:46ch">We are not chasing a star count. We just help you find the right part and send you home able to finish the job. Read every review for yourself.</p>
+      <div style="margin-top:28px"><a class="btn btn-solid" href="#contact">Get a Free Quote</a></div>
+    </div>
+    <div class="revcard reveal d2" aria-label="Google rating summary">
+      <div class="rstars" aria-hidden="true">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.8 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+      </div>
+      <div class="score">5.0<span> / 5</span></div>
+      <p class="note">Based on 246 verified Google reviews. The single link to read them lives in our footer, no cherry-picking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="pad" id="services" aria-labelledby="svc-h">
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="num">03</span>Services</span>
+    <h2 id="svc-h">What you can <span class="hl">walk in</span> and sort out today.</h2>
+    <p class="lede">A working list of what Cunningham's handles day to day. Trim or add to it on our call so the site matches the store exactly.</p>
+    <!-- PLACEHOLDER: confirm and trim the service list below to the real departments -->
+  </div>
+  <div class="svc-grid">
+    <article class="card reveal">
+      <div class="cimg"><img src="assets/svc-paint.jpg" alt="Paint cans and color swatches" loading="lazy"><span class="tag">A1 · PAINT</span></div>
+      <div class="cbody">
+        <h3>Paint &amp; Color Match</h3>
+        <p>Interior, exterior, stain and the brushes to lay it down. Bring a chip or a lid and we will match the color. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Ask at the paint desk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+
+    <article class="card reveal d1">
+      <div class="cimg"><img src="assets/svc-plumbing.jpg" alt="Plumbing fittings and valves" loading="lazy"><span class="tag">A2 · PLUMBING</span></div>
+      <div class="cbody">
+        <h3>Plumbing &amp; Fittings</h3>
+        <p>Washers, valves, supply lines, fittings and the odd part that fixes a drip before it floods. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Find the fitting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+
+    <article class="card reveal d2">
+      <div class="cimg"><img src="assets/svc-keys.jpg" alt="Key cutting machine" loading="lazy"><span class="tag">A4 · KEYS</span></div>
+      <div class="cbody">
+        <h3>Keys Cut While You Wait</h3>
+        <p>House, padlock and common keys cut at the counter in a couple of minutes. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Bring your key <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="cimg"><img src="assets/svc-fasteners.jpg" alt="Bins of screws and bolts" loading="lazy"><span class="tag">A3 · FASTENERS</span></div>
+      <div class="cbody">
+        <h3>Fasteners &amp; Hardware</h3>
+        <p>Screws, bolts, nuts, anchors and brackets, sold loose by the piece when you only need three. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Match the thread <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+
+    <article class="card reveal d1">
+      <div class="cimg"><img src="assets/svc-tools.jpg" alt="Hand tools on a workbench" loading="lazy"><span class="tag">A5 · TOOLS</span></div>
+      <div class="cbody">
+        <h3>Hand &amp; Power Tools</h3>
+        <p>The everyday tools that get a project done, plus blades, bits and the consumables that wear out. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Gear up <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+
+    <!-- NO-PHOTO service card variant -->
+    <article class="card nophoto reveal d2">
+      <div class="cimg">
+        <svg class="glyphbox" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M32 8 52 19.5 52 42.5 32 54 12 42.5 12 19.5Z"/>
+          <circle cx="32" cy="31" r="8"/>
+          <path d="M32 8v11M32 43v11M12 19.5 22 25M42 37l10 5.5M52 19.5 42 25M22 37 12 42.5"/>
+        </svg>
+      </div>
+      <div class="cbody">
+        <h3>Help &amp; Know-How</h3>
+        <p>The thing big-box stores cannot stock. Ask how to do it, what you need, and the order to do it in. <span class="ph">PLACEHOLDER: confirm</span></p>
+        <span class="cmore">Just ask <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="pad why" id="why" aria-labelledby="why-h">
+  <div class="sec-head reveal" style="padding-bottom:30px">
+    <span class="eyebrow"><span class="num">04</span>Why choose us</span>
+    <h2 id="why-h">Smaller store, <span class="hl">bigger help.</span></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-list">
+      <div class="why-row reveal">
+        <span class="wn">01</span>
+        <div><h3>You get a person, not an aisle number</h3><p>Tell us the problem in plain words. We will walk you to the part and tell you how to use it.</p></div>
+      </div>
+      <div class="why-row reveal d1">
+        <span class="wn">02</span>
+        <div><h3>Family owned and operated</h3><p>Serving Morrisville and the surrounding areas. Locally run, the same faces every visit. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </div>
+      <div class="why-row reveal d2">
+        <span class="wn">03</span>
+        <div><h3>Buy what you need, not a 50-pack</h3><p>Loose fasteners, single fittings, one bracket. We sell by the piece so you are not paying for 47 spares.</p></div>
+      </div>
+      <div class="why-row reveal d3">
+        <span class="wn">04</span>
+        <div><h3>In and out, fast</h3><p>No half-mile walk to the register. Park out front, grab the part, get back to the job.</p></div>
+      </div>
+    </div>
+
+    <div class="why-aside reveal d2">
+      <div class="owner-frame">
+        <img src="assets/owner.jpg" alt="" aria-hidden="true">
+        <div class="ph-watermark"><span>PLACEHOLDER · PLACEHOLDER · PLACEHOLDER</span></div>
+        <div class="owner-cap">
+          <b>Behind the counter</b>
+          Your real team photo goes here. <span class="ph">PLACEHOLDER: owner photo</span>
+        </div>
+        <!-- PLACEHOLDER: replace with the owner / crew real photo; stock removed on finalize -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICE AREA ===================== -->
+<section class="pad area" id="area" aria-labelledby="area-h">
+  <div class="peg" aria-hidden="true"></div>
+  <div class="area-inner">
+    <div class="reveal">
+      <span class="eyebrow"><span class="num">05</span>Service Area</span>
+      <h2 id="area-h" style="font-size:clamp(1.9rem,4vw,3rem);margin-top:18px;max-width:14ch">Right on North Pennsylvania Ave.</h2>
+      <p style="margin-top:18px;color:var(--ink-soft);font-size:1.05rem;max-width:42ch">Serving Morrisville and surrounding areas. If you can get to the store, we can get you sorted.</p>
+      <div class="towns" style="margin-top:26px" aria-label="Towns served">
+        <span class="town hub">Morrisville</span>
+        <span class="town">Yardley</span>
+        <span class="town">Fallsington</span>
+        <span class="town">Lower Makefield</span>
+        <span class="town">Tullytown</span>
+        <span class="town">Levittown</span>
+        <span class="town">Trenton, NJ</span>
+        <span class="ph" style="align-self:center">PLACEHOLDER: confirm towns</span>
+        <!-- PLACEHOLDER: confirm the real neighboring towns served -->
+      </div>
+    </div>
+    <div class="area-pic reveal d2">
+      <img src="assets/area.jpg" alt="Small-town main street near the store" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE BAND ===================== -->
+<section class="guar" aria-labelledby="guar-h">
+  <div class="peg" aria-hidden="true"></div>
+  <div class="guar-inner">
+    <span class="eyebrow on-dark reveal"><span class="num">06</span>What to expect</span>
+    <h2 id="guar-h" class="reveal d1" style="margin-top:18px">If we sell it, we will <span class="hl">stand behind it.</span></h2>
+    <div class="guar-grid">
+      <div class="guar-item reveal">
+        <svg class="gico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>The right part, first try</h3>
+        <p>Tell us what broke. We will get you the matching part so you are not back tomorrow.</p>
+      </div>
+      <div class="guar-item reveal d1">
+        <svg class="gico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+        <h3>Fair, marked prices</h3>
+        <p>No mystery pricing. What is on the shelf is what you pay, and we will tell you if there is a cheaper fix.</p>
+      </div>
+      <div class="guar-item reveal d2">
+        <svg class="gico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3>Advice that is honest</h3>
+        <p>If a job is over your head, we will say so and point you to someone who does it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT / FINAL CTA ===================== -->
+<section class="pad contact" id="contact" aria-labelledby="contact-h">
+  <div class="contact-inner">
+    <div class="reveal">
+      <span class="eyebrow"><span class="num">07</span>Contact</span>
+      <h2 id="contact-h" style="margin-top:18px">Stop in or <span class="hl">send a note.</span></h2>
+      <p class="lede">Tell us what you are working on and we will tell you what you need. Quotes are free and there is no pressure.</p>
+      <div class="cmeta">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <div><div class="lab">Call the store</div><a class="tel" href="tel:+12152957413" style="margin-top:4px">(215) 295-7413</a></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="lab">Find us</div><div class="val">522 N Pennsylvania Ave, Morrisville, PA 19067</div></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+          <div><div class="lab">Hours</div><div class="val">Mon–Sat, store hours <span class="ph">PLACEHOLDER: confirm</span></div></div>
+          <!-- PLACEHOLDER: confirm real opening hours -->
+        </div>
+      </div>
+    </div>
+
+    <form class="cform reveal d2" aria-label="Contact form" onsubmit="return false">
+      <div class="formnote">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        Demo form · to be wired up
+      </div>
+      <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" autocomplete="name"></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="(215) 000-0000" autocomplete="tel"></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="you@email.com" autocomplete="email"></div>
+      <div class="field"><label for="f-msg">What do you need?</label><textarea id="f-msg" placeholder="Tell us the project or the part you're after."></textarea></div>
+      <button class="btn btn-solid" type="submit">Get a Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="brand" style="gap:13px">
+        <svg class="logomark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <path d="M22 2 38.6 11.5 38.6 32.5 22 42 5.4 32.5 5.4 11.5Z" fill="#1F6E8C"/>
+          <path d="M22 7 34.3 14.1 34.3 28.4 22 35.5 9.7 28.4 9.7 14.1Z" fill="none" stroke="#7FD0EC" stroke-width="1.6"/>
+          <text x="22" y="27.4" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="13" fill="#fff" letter-spacing="-1">CH</text>
+        </svg>
+        <span class="brand-txt"><span class="brand-name">Cunningham's</span><span class="brand-sub" style="color:#7FD0EC">Hardware · Morrisville</span></span>
+      </div>
+      <p>The neighborhood hardware store on North Pennsylvania Ave. The part you need and the answer that comes with it.</p>
+      <a class="tel on-dark" href="tel:+12152957413">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (215) 295-7413
+      </a>
+    </div>
+    <div class="foot-col">
+      <h4>Visit</h4>
+      <p>522 N Pennsylvania Ave<br>Morrisville, PA 19067</p>
+      <p>Mon–Sat, store hours <span class="ph">PLACEHOLDER</span></p>
+      <a class="gmap" href="https://www.google.com/maps?cid=8393737078891995182" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Find us on Google
+      </a>
+    </div>
+    <div class="foot-col">
+      <h4>Store</h4>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Cunningham's Hardware · Morrisville, PA</span>
+      <span class="mono">Family owned and operated</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky bar -->
+<div class="mobar" aria-label="Quick contact">
+  <a class="m-tel" href="tel:+12152957413">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    (215) 295-7413
+  </a>
+  <a class="m-cta" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile menu
+  var mb = document.getElementById('menubtn'), mn = document.getElementById('mnav');
+  if(mb){ mb.addEventListener('click', function(){
+    var open = mn.classList.toggle('open');
+    mb.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');mb.setAttribute('aria-expanded','false');});});}
+
+  if(rm){
+    document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});
+    document.querySelectorAll('[data-to]').forEach(function(e){
+      var n=parseFloat(e.getAttribute('data-to'));var d=e.getAttribute('data-dec');
+      e.textContent = d!=null ? n.toFixed(parseInt(d)) : n;});
+    return;
+  }
+
+  // scroll reveal
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+
+  // count-ups
+  function countUp(el){
+    var to=parseFloat(el.getAttribute('data-to'));
+    var dec=el.getAttribute('data-dec');dec = dec!=null ? parseInt(dec) : (to%1===0?0:0);
+    var dur=1400, t0=null;
+    function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1);
+      var v=to*(1-Math.pow(1-p,3));
+      el.textContent = v.toFixed(dec);
+      if(p<1) requestAnimationFrame(step); else el.textContent = to.toFixed(dec);
+    }
+    requestAnimationFrame(step);
+  }
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ countUp(en.target); cio.unobserve(en.target);} });
+  },{threshold:.6});
+  document.querySelectorAll('[data-to]').forEach(function(e){cio.observe(e);});
+})();
+</script>
+</body>
+</html>

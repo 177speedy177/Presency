@@ -1,0 +1,31 @@
+{
+  "slug": "young-s-cheltenham-auto-service",
+  "business_name": "Young's Cheltenham Auto Service",
+  "trade": "car repair",
+  "city": "Jenkintown",
+  "phone": "(267) 205-1234",
+  "rating": "4.8",
+  "reviews": "168",
+  "show_star_rating": "Y",
+  "palette_name": "Crimson Slate",
+  "palette": {
+    "ink": "#181519",
+    "base": "#F5F4F5",
+    "surface": "#E6E4E7",
+    "band": "#1D1A22",
+    "accent": "#9E2A3C",
+    "accent2": "#6E7280"
+  },
+  "hero_style": "a centered hero with a wide light photo strip beneath the headline and CTAs",
+  "section_order": "hero > services > why-us > area > faq > contact",
+  "services_placeholder": "Service 1, Service 2, Service 3, Service 4",
+  "pexels_queries": [
+    "auto mechanic working",
+    "car engine repair",
+    "clean auto shop",
+    "car maintenance"
+  ],
+  "google_link": "https://www.google.com/maps?cid=12830163567338002809",
+  "address_bar_url": "www.youngscheltenhamautoservice.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Young's Cheltenham Auto Service offers (the list is a guess from 'car repair', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

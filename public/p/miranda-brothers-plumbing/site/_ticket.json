@@ -1,0 +1,32 @@
+{
+  "slug": "miranda-brothers-plumbing",
+  "business_name": "Miranda Brothers Plumbing",
+  "trade": "plumber",
+  "city": "Newtown",
+  "phone": "(267) 651-1533",
+  "rating": "4.8",
+  "reviews": "165",
+  "show_star_rating": "Y",
+  "palette_name": "Harbor Navy",
+  "palette": {
+    "ink": "#13202B",
+    "base": "#F4F6F8",
+    "surface": "#E7ECF1",
+    "band": "#13202B",
+    "accent": "#1E6F9E",
+    "accent2": "#6B7886"
+  },
+  "hero_style": "a split hero: bold headline and CTAs on the left, a framed photo on the right",
+  "section_order": "hero > faq > guarantee > stats > services > why-us > contact",
+  "services_placeholder": "Drain & sewer cleaning, Water heater repair & install, Leak detection & repair, Emergency plumbing, Fixture & faucet installation, Repiping & remodels",
+  "pexels_queries": [
+    "plumber working pipes",
+    "water heater installation",
+    "modern bathroom clean",
+    "plumbing tools",
+    "service van"
+  ],
+  "google_link": "https://www.google.com/maps?cid=15734024776330164786",
+  "address_bar_url": "www.mirandabrothersplumbing.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Miranda Brothers Plumbing offers (the list is a guess from 'plumber', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

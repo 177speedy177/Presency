@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heating and Air Conditioning | General Contractor in Langhorne, PA</title>
+<meta name="description" content="Family owned general contractor serving Langhorne and surrounding areas. Kitchen and bath remodels, additions, decks, basements and repairs. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F1A17; --base:#F6F2EC; --surface:#ECE4D7; --band:#2A2320;
+  --accent:#9C3B2E; --accent2:#6E7B5E;
+  --accent-deep:#7A2C22;        /* AA-safe ironwood for small text/labels on light */
+  --olive-deep:#4E5942;         /* AA-safe olive for small text on light */
+  --line:#D8CEBE;
+  --paper-2:#EFE8DC;
+  --ink-soft:#3A322D;
+  --on-band:#F1E8DB;            /* light text on dark band */
+  --on-band-soft:#C9BCA8;
+  --maxw:1200px;
+  --tick:#B6A98F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--base);color:var(--ink);
+  font-family:'Archivo',system-ui,sans-serif;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.04;
+  letter-spacing:-.01em;margin:0}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:700;font-size:12.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);
+  display:inline-flex;align-items:center;gap:10px}
+.eyebrow .num{color:var(--olive-deep);font-variant-numeric:tabular-nums}
+.eyebrow .bar{width:26px;height:2px;background:var(--accent);display:inline-block}
+
+/* ---- buttons ---- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo';
+  font-weight:700;font-size:15px;letter-spacing:.01em;text-decoration:none;
+  padding:15px 26px;border:2px solid var(--accent);background:var(--accent);
+  color:#fff;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  position:relative}
+.btn:hover{transform:translateY(-2px);box-shadow:6px 8px 0 rgba(31,26,23,.16)}
+.btn svg{transition:transform .18s ease}
+.btn:hover svg{transform:translateX(4px)}
+.btn.ghost{background:transparent;color:var(--accent-deep);border-color:var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#fff}
+
+/* phone sticker */
+.tel{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-family:'Archivo';font-weight:700;font-size:14.5px;color:var(--ink);
+  border:1.5px solid var(--line);padding:9px 14px 9px 12px;background:var(--paper-2);
+  transition:border-color .18s ease,transform .18s ease}
+.tel:hover{border-color:var(--accent);transform:translateY(-1px)}
+.tel .ph-ic{color:var(--accent)}
+.tel small{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--olive-deep);line-height:1}
+.tel b{font-size:15px;line-height:1.15;letter-spacing:.01em}
+
+/* placeholder pill */
+.ph{display:inline-block;font-family:'Archivo';font-weight:700;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--accent2);
+  padding:3px 9px;border-radius:2px;vertical-align:middle;white-space:nowrap}
+
+/* corner-tick frame primitive */
+.frame{position:relative}
+.frame::before,.frame::after{content:"";position:absolute;width:22px;height:22px;
+  pointer-events:none;z-index:3}
+.frame::before{top:-7px;left:-7px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.frame::after{bottom:-7px;right:-7px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+
+/* dimension-tick divider */
+.dim{display:flex;align-items:center;gap:14px;color:var(--tick)}
+.dim .rule{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--tick) 0 1px,transparent 1px 9px)}
+.dim .cap{font-family:'Archivo';font-weight:700;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--olive-deep)}
+
+/* ============ HEADER ============ */
+header{position:sticky;top:0;z-index:60;background:rgba(246,242,236,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:13px 28px;max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo{width:42px;height:42px;flex:none}
+.brand .wm{font-family:'Fraunces';font-weight:700;font-size:18px;line-height:.98;letter-spacing:-.01em}
+.brand .wm span{display:block;font-family:'Archivo';font-weight:700;font-size:9.5px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--accent-deep);margin-top:3px}
+nav.main{display:flex;gap:26px;margin-left:auto;margin-right:6px}
+nav.main a{text-decoration:none;font-family:'Archivo';font-weight:600;font-size:14.5px;
+  color:var(--ink-soft);position:relative;padding:4px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;
+  background:var(--accent);transition:width .2s ease}
+nav.main a:hover{color:var(--ink)}
+nav.main a:hover::after{width:100%}
+.hcta{display:flex;align-items:center;gap:12px}
+.menu-btn{display:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden;padding:62px 0 84px}
+.hero-grid-bg{position:absolute;inset:0;z-index:0;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:46px 46px;mask-image:radial-gradient(120% 90% at 30% 25%,#000 35%,transparent 78%);
+  -webkit-mask-image:radial-gradient(120% 90% at 30% 25%,#000 35%,transparent 78%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.hero-left{padding-top:14px}
+.trade-tag{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+  font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);padding:8px 14px}
+.trade-tag .dot{width:8px;height:8px;background:var(--accent);border-radius:50%}
+h1.head{font-size:clamp(2.9rem,6.4vw,5.6rem);font-weight:600;letter-spacing:-.02em}
+h1.head .red{color:var(--accent);font-style:italic;font-weight:600}
+.hero-sub{font-size:19px;color:var(--ink-soft);max-width:30ch;margin:22px 0 16px}
+.hero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:26px}
+.hero-note{display:flex;align-items:center;gap:9px;font-family:'Archivo';font-weight:600;
+  font-size:13.5px;color:var(--olive-deep)}
+.hero-note svg{color:var(--accent)}
+
+/* inset framed photo lower-right */
+.hero-photo{position:relative;align-self:end}
+.hero-photo .shot{position:relative;overflow:hidden;border:1px solid var(--line);
+  box-shadow:10px 14px 0 rgba(42,35,32,.10)}
+.hero-photo .shot img{width:100%;height:380px;object-fit:cover;
+  filter:saturate(.9) contrast(1.02)}
+.hero-photo .cap{position:absolute;left:0;bottom:0;background:var(--band);color:var(--on-band);
+  font-family:'Archivo';font-weight:700;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;padding:8px 14px;display:flex;align-items:center;gap:8px;z-index:4}
+.hero-photo .cap .sq{width:8px;height:8px;background:var(--accent)}
+.hero-watermark{position:absolute;inset:0;z-index:5;pointer-events:none;
+  background-image:repeating-linear-gradient(-30deg,rgba(31,26,23,.14) 0 1px,transparent 1px 116px);
+  display:none}
+
+/* ---- trust band (deep) ---- */
+.trust{background:var(--band);color:var(--on-band)}
+.trust .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;
+  padding:20px 28px}
+.trust-item{display:flex;align-items:center;gap:11px;font-family:'Archivo';
+  font-weight:600;font-size:15px}
+.trust-item svg{color:var(--accent);flex:none}
+.trust-sep{width:1px;height:26px;background:rgba(241,232,219,.18)}
+.stars{display:inline-flex;align-items:center;gap:7px}
+.stars .s{display:inline-flex;gap:2px}
+.stars .s svg{color:#E0A526}
+.stars b{font-family:'Fraunces';font-size:18px;font-weight:700;color:#fff}
+.stars span{font-size:13px;color:var(--on-band-soft)}
+
+/* ---- section scaffolding ---- */
+section{padding:84px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  margin-bottom:40px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3.4rem);max-width:16ch}
+.sec-head .lead{max-width:34ch;color:var(--ink-soft);font-size:16px}
+
+/* ---- WORK gallery ---- */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.gcard{position:relative;overflow:hidden;border:1px solid var(--line);background:#ddd}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gcard:hover img{transform:scale(1.05)}
+.gcard .tag{position:absolute;left:0;top:0;background:var(--base);color:var(--accent-deep);
+  font-family:'Archivo';font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 11px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);z-index:3}
+.gcard .num{position:absolute;right:10px;bottom:8px;font-family:'Fraunces';font-weight:700;
+  font-size:20px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);z-index:3}
+.g-a{grid-column:span 7;min-height:330px}
+.g-b{grid-column:span 5;min-height:330px}
+.g-c{grid-column:span 4;min-height:250px}
+.g-d{grid-column:span 4;min-height:250px}
+.g-e{grid-column:span 4;min-height:250px}
+.gwm{position:absolute;inset:0;z-index:4;pointer-events:none;
+  background-image:repeating-linear-gradient(-30deg,rgba(255,255,255,.16) 0 1px,transparent 1px 130px)}
+.gph{display:flex;align-items:flex-end;justify-content:flex-start;
+  background:linear-gradient(135deg,var(--surface),var(--paper-2))}
+.gph .lbl{position:relative;z-index:5;margin:14px;font-family:'Archivo';font-weight:700;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+
+/* ---- ABOUT ---- */
+.about{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center}
+.owner-slot{position:relative;border:1px solid var(--line);background:var(--paper-2);
+  aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:10px 14px 0 rgba(42,35,32,.10)}
+.owner-slot .inner{text-align:center;padding:24px;position:relative;z-index:2}
+.owner-slot .ico{color:var(--tick)}
+.owner-slot p{font-family:'Archivo';font-weight:700;font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--olive-deep);margin:14px 0 0}
+.owner-wm{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:repeating-linear-gradient(-30deg,rgba(31,26,23,.15) 0 1px,transparent 1px 120px)}
+.owner-wm span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);
+  font-family:'Archivo';font-weight:700;font-size:14px;letter-spacing:.4em;color:rgba(31,26,23,.16);white-space:nowrap}
+.about-copy h2{font-size:clamp(1.9rem,3.6vw,3rem);margin-bottom:8px}
+.about-copy .big{font-size:19px;color:var(--ink-soft);margin:18px 0}
+.specs{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
+.specs li{display:flex;gap:14px;align-items:flex-start}
+.specs .n{font-family:'Fraunces';font-weight:700;font-size:26px;color:var(--accent);
+  line-height:1;flex:none;font-variant-numeric:tabular-nums}
+.specs .t b{display:block;font-family:'Archivo';font-weight:700;font-size:15px}
+.specs .t span{font-size:14px;color:var(--ink-soft)}
+
+/* ---- SERVICES (alternating rows) ---- */
+.srv-row{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;
+  padding:34px 0;border-top:1px solid var(--line)}
+.srv-row:first-of-type{border-top:none}
+.srv-row.flip .srv-media{order:2}
+.srv-media{position:relative;overflow:hidden;border:1px solid var(--line);
+  box-shadow:8px 10px 0 rgba(42,35,32,.08)}
+.srv-media img{width:100%;height:300px;object-fit:cover;transition:transform .5s ease}
+.srv-row:hover .srv-media img{transform:scale(1.04)}
+.srv-media .idx{position:absolute;left:0;top:0;background:var(--accent);color:#fff;
+  font-family:'Fraunces';font-weight:700;font-size:18px;padding:8px 14px;z-index:3;
+  font-variant-numeric:tabular-nums}
+.srv-text .eyebrow{margin-bottom:14px}
+.srv-text h3{font-size:clamp(1.5rem,2.8vw,2.2rem);margin-bottom:10px}
+.srv-text p{color:var(--ink-soft);max-width:42ch}
+.srv-list{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.srv-list li{font-family:'Archivo';font-weight:600;font-size:13px;color:var(--accent-deep);
+  border:1px solid var(--line);background:var(--paper-2);padding:6px 12px}
+/* no-photo service variant */
+.srv-media.noimg{background:var(--band);min-height:300px;display:flex;align-items:center;justify-content:center;
+  box-shadow:8px 10px 0 rgba(42,35,32,.12)}
+.srv-media.noimg .np{text-align:center;color:var(--on-band);padding:24px}
+.srv-media.noimg .np svg{color:var(--accent)}
+.srv-media.noimg .np b{display:block;font-family:'Fraunces';font-weight:600;font-size:22px;margin:12px 0 4px}
+.srv-media.noimg .np span{font-family:'Archivo';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-band-soft)}
+
+/* ---- WHY US (deep band) ---- */
+.why{background:var(--band);color:var(--on-band)}
+.why .sec-head h2{color:#fff}
+.why .sec-head .lead{color:var(--on-band-soft)}
+.why .eyebrow{color:#E0A98F}
+.why .eyebrow .num{color:var(--on-band-soft)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(241,232,219,.14);
+  border:1px solid rgba(241,232,219,.14)}
+.why-card{background:var(--band);padding:30px 26px;transition:background .25s ease}
+.why-card:hover{background:#332925}
+.why-card .wi{width:44px;height:44px;border:1.5px solid var(--accent);display:flex;
+  align-items:center;justify-content:center;color:var(--accent);margin-bottom:18px}
+.why-card h3{color:#fff;font-size:1.35rem;margin-bottom:8px}
+.why-card p{color:var(--on-band-soft);font-size:14.5px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px;
+  border-top:1px solid rgba(241,232,219,.16);padding-top:40px}
+.stat .big{font-family:'Fraunces';font-weight:700;font-size:clamp(2.6rem,5vw,3.8rem);
+  color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.stat .big .u{color:var(--accent);font-size:.6em}
+.stat .lbl{font-family:'Archivo';font-weight:600;font-size:13.5px;letter-spacing:.04em;
+  color:var(--on-band-soft);margin-top:8px}
+.stat .ph{margin-top:8px}
+
+/* ---- SERVICE AREA ---- */
+.area{background:var(--surface)}
+.area-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.towns span{font-family:'Archivo';font-weight:600;font-size:14px;background:var(--base);
+  border:1px solid var(--line);padding:9px 15px;color:var(--ink-soft)}
+.towns span.home{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ---- CONTACT / final CTA ---- */
+.contact{background:var(--base)}
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+.cta-band{background:var(--accent);color:#fff;padding:44px 40px;position:relative;overflow:hidden}
+.cta-band::after{content:"";position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;
+  border:1px solid rgba(255,255,255,.22);border-radius:50%}
+.cta-band h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:14ch;position:relative;z-index:2}
+.cta-band p{color:rgba(255,255,255,.92);max-width:36ch;position:relative;z-index:2;margin:14px 0 26px}
+.cta-band .btn{background:#fff;color:var(--accent-deep);border-color:#fff;position:relative;z-index:2}
+.cta-band .btn:hover{box-shadow:6px 8px 0 rgba(0,0,0,.18)}
+.cta-band .ploc{display:flex;align-items:center;gap:11px;margin-top:26px;position:relative;z-index:2;
+  font-family:'Archivo';font-weight:600;font-size:14px;color:rgba(255,255,255,.95)}
+.cta-band .ploc svg{flex:none}
+
+form.quote{background:var(--surface);border:1px solid var(--line);padding:30px}
+form.quote .fnote{font-family:'Archivo';font-weight:700;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--olive-deep);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.field{margin-bottom:14px}
+.field label{display:block;font-family:'Archivo';font-weight:600;font-size:12.5px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.field input,.field textarea{width:100%;font-family:'Archivo';font-size:15px;color:var(--ink);
+  background:var(--base);border:1px solid var(--line);padding:12px 14px;outline:none;
+  transition:border-color .18s ease}
+.field input:focus,.field textarea:focus{border-color:var(--accent)}
+.field textarea{resize:vertical;min-height:90px}
+form.quote .btn{width:100%;justify-content:center;margin-top:6px}
+
+/* ---- FOOTER (artifact) ---- */
+footer{background:var(--band);color:var(--on-band)}
+.foot-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding:60px 28px 40px;
+  max-width:var(--maxw);margin:0 auto}
+.foot-brand .logo{width:46px;height:46px}
+.foot-brand .wm{font-family:'Fraunces';font-weight:700;font-size:22px;margin:16px 0 4px;color:#fff}
+.foot-brand .wm span{display:block;font-family:'Archivo';font-weight:700;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;color:#E0A98F;margin-top:5px}
+.foot-brand p{color:var(--on-band-soft);font-size:14px;max-width:34ch;margin-top:14px}
+.foot-col h4{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:#E0A98F;margin:0 0 16px}
+.foot-col a,.foot-col p{display:block;text-decoration:none;color:var(--on-band-soft);
+  font-size:14.5px;margin:0 0 9px;transition:color .18s ease}
+.foot-col a:hover{color:#fff}
+.foot-tel{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#fff;
+  font-family:'Archivo';font-weight:700;font-size:16px;border:1.5px solid rgba(241,232,219,.24);
+  padding:11px 16px;transition:border-color .18s ease}
+.foot-tel:hover{border-color:var(--accent)}
+.foot-tel .ph-ic{color:var(--accent)}
+.foot-bar{border-top:1px solid rgba(241,232,219,.14)}
+.foot-bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:18px 28px;flex-wrap:wrap}
+.foot-bar p{margin:0;font-size:12.5px;color:var(--on-band-soft)}
+.foot-bar a{color:var(--on-band-soft);font-size:12.5px;text-decoration:none}
+.foot-bar a:hover{color:#fff}
+.gmaps{display:inline-flex;align-items:center;gap:8px}
+.gmaps svg{color:#E0A98F}
+
+/* ---- mobile sticky bar ---- */
+.mobar{display:none}
+
+/* reveal anim */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.hero-left .trade-tag,.hero-left h1,.hero-left .hero-sub,.hero-left .hero-cta{opacity:0;transform:translateY(20px);animation:rise .8s ease forwards}
+.hero-left h1{animation-delay:.1s}
+.hero-left .hero-sub{animation-delay:.25s}
+.hero-left .hero-cta{animation-delay:.38s}
+.hero-photo{opacity:0;transform:translateY(24px) scale(.99);animation:rise .9s ease .25s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero-grid-bg{animation:drift 40s linear infinite}
+@keyframes drift{to{background-position:46px 46px,46px 46px}}
+
+@media (max-width:900px){
+  .hero-layout{grid-template-columns:1fr;gap:30px}
+  .hero-photo{max-width:440px}
+  .hero-photo .shot img{height:300px}
+  .about-grid,.area-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .owner-slot{max-width:360px;aspect-ratio:4/4}
+  .srv-row{grid-template-columns:1fr;gap:22px}
+  .srv-row.flip .srv-media{order:0}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(6,1fr)}
+  .g-a,.g-b,.g-c,.g-d,.g-e{grid-column:span 6;min-height:230px}
+  .stats{grid-template-columns:1fr 1fr}
+  nav.main{display:none}
+  .menu-btn{display:inline-flex}
+  .hcta .btn{display:none}
+}
+@media (max-width:560px){
+  .specs{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:28px}
+  .trust .trust-sep{display:none}
+  body{padding-bottom:70px}
+  .mobar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;
+    background:var(--band);border-top:2px solid var(--accent);
+    align-items:center;justify-content:space-between;gap:10px;padding:10px 16px}
+  .mobar a.call{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;
+    font-family:'Archivo';font-weight:700;font-size:15px}
+  .mobar a.call svg{color:var(--accent)}
+  .mobar a.call small{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--on-band-soft);font-weight:600}
+  .mobar a.q{background:var(--accent);color:#fff;text-decoration:none;font-family:'Archivo';
+    font-weight:700;font-size:13px;padding:11px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-left>*,.hero-photo{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="hbar">
+    <a class="brand" href="#top" aria-label="Heating and Air Conditioning home">
+      <!-- LOGO: ironwood compass-square monogram 'HA' tied to a builder's framing square -->
+      <svg class="logo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="43" height="43" rx="2" stroke="#1F1A17" stroke-width="2"/>
+        <path d="M11 37V11h7" stroke="#9C3B2E" stroke-width="3.4" stroke-linecap="square"/>
+        <path d="M11 24h6" stroke="#9C3B2E" stroke-width="3.4" stroke-linecap="square"/>
+        <path d="M37 11v26M37 11l-9 13 9 13" stroke="#1F1A17" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="24" cy="24" r="2.4" fill="#9C3B2E"/>
+      </svg>
+      <span class="wm">Heating &amp; Air<br>Conditioning<span>General Contractor</span></span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hcta">
+      <a class="tel" href="tel:+12675942205">
+        <svg class="ph-ic" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 5 5l1.4-2 4 1.6V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span><small>Call us</small><b>(267) 594-2205</b></span>
+      </a>
+      <a class="btn" href="#contact">Get a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <a class="btn menu-btn" href="#contact" style="padding:11px 16px">Quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-layout">
+      <div class="hero-left">
+        <!-- TRADE MISMATCH: name implies HVAC, Google category says general contractor. Confirm primary trade on the call. -->
+        <span class="trade-tag"><span class="dot"></span>General Contractor &nbsp;<span class="ph">PLACEHOLDER: confirm main trade</span></span>
+        <h1 class="head">Built right,<br>finished <span class="red">clean.</span></h1>
+        <p class="hero-sub">A family owned general contractor handling remodels, additions and repairs across Langhorne and the surrounding area.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Get a Free Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="hero-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            4.9 on Google, 19 reviews
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="shot frame">
+          <img src="assets/hero.jpg" alt="Contractor at work on a home renovation" width="600" height="380">
+          <span class="cap"><span class="sq"></span>On the job, Bucks County</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAND ============ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Licensed &amp; Insured <span class="ph">PLACEHOLDER: confirm</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Family Owned &amp; Operated
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+      Fast, Honest Response
+    </div>
+    <div class="trust-sep"></div>
+    <div class="stars">
+      <span class="s" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 21l-5.2 2.1 1-5.8L3.5 8.2l5.9-.9L12 2Z"/></svg>
+      </span>
+      <b>4.9</b><span>/ 19 Google reviews</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WORK / GALLERY ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow"><span class="num">01</span><span class="bar"></span>Our Work</span>
+        <h2 style="margin-top:14px">Recent projects from around the area</h2>
+      </div>
+      <p class="lead">A look at the kind of work we take on. Swap these for your own job photos once you are ready.</p>
+    </div>
+
+    <!-- WATERMARK RULE: these slots are reserved for the owner's REAL job photos. -->
+    <div class="gallery">
+      <div class="gcard g-a rv frame">
+        <img src="assets/kitchen.jpg" alt="Finished kitchen remodel" loading="lazy">
+        <span class="tag">Kitchen Remodel</span>
+        <span class="num">01</span>
+        <div class="gwm" aria-hidden="true"></div>
+      </div>
+      <div class="gcard g-b rv">
+        <img src="assets/bath.jpg" alt="Finished bathroom remodel" loading="lazy">
+        <span class="tag">Bath Remodel</span>
+        <span class="num">02</span>
+        <div class="gwm" aria-hidden="true"></div>
+      </div>
+      <div class="gcard g-c rv">
+        <img src="assets/deck.jpg" alt="New deck and patio" loading="lazy">
+        <span class="tag">Deck &amp; Patio</span>
+        <span class="num">03</span>
+        <div class="gwm" aria-hidden="true"></div>
+      </div>
+      <div class="gcard g-d gph rv" aria-label="Owner photo placeholder">
+        <span class="tag">Your Project</span>
+        <span class="lbl">PLACEHOLDER: your real before / after photo here</span>
+        <div class="gwm" aria-hidden="true"></div>
+      </div>
+      <div class="gcard g-e rv">
+        <img src="assets/basement.jpg" alt="Finished basement" loading="lazy">
+        <span class="tag">Basement Finish</span>
+        <span class="num">04</span>
+        <div class="gwm" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="rv">
+        <!-- Owner real-photo slot, watermarked placeholder -->
+        <div class="owner-slot frame">
+          <div class="inner">
+            <svg class="ico" width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <p>Owner / crew photo<br>goes here</p>
+            <span class="ph" style="margin-top:12px">PLACEHOLDER: add real photo</span>
+          </div>
+          <div class="owner-wm" aria-hidden="true"><span>PLACEHOLDER &nbsp; PLACEHOLDER &nbsp; PLACEHOLDER</span></div>
+        </div>
+      </div>
+      <div class="about-copy rv">
+        <span class="eyebrow"><span class="num">02</span><span class="bar"></span>About Us</span>
+        <h2 style="margin-top:14px">A local crew that treats your house like ours</h2>
+        <p class="big">We are a family owned general contractor working out of the Fairless Hills area. From a single repair to a full remodel, we show up on time, keep the site clean, and tell you straight what a job will take.</p>
+        <p>No surprise add ons, no disappearing after the deposit. You get one point of contact from the first walkthrough to the final punch list.</p>
+        <!-- Stats below are PLACEHOLDER until confirmed on the call. -->
+        <ul class="specs">
+          <li><span class="n">100%</span><span class="t"><b>Licensed &amp; insured <span class="ph">confirm</span></b><span>Coverage on every job site.</span></span></li>
+          <li><span class="n">4.9</span><span class="t"><b>Star rating</b><span>Across 19 Google reviews.</span></span></li>
+          <li><span class="n">1</span><span class="t"><b>Point of contact</b><span>Same person, start to finish.</span></span></li>
+          <li><span class="n">24h</span><span class="t"><b>Quote turnaround <span class="ph">confirm</span></b><span>We get back to you fast.</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES (alternating rows) ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow"><span class="num">03</span><span class="bar"></span>Services</span>
+        <h2 style="margin-top:14px">What we build, finish and fix</h2>
+      </div>
+      <p class="lead">A short list of common jobs. <span class="ph">PLACEHOLDER: confirm and trim this service list.</span></p>
+    </div>
+
+    <!-- Services list is PLACEHOLDER, confirm and trim on the call -->
+    <div class="srv-row rv">
+      <div class="srv-media frame"><span class="idx">01</span>
+        <img src="assets/kitchen.jpg" alt="Kitchen remodel" loading="lazy">
+      </div>
+      <div class="srv-text">
+        <span class="eyebrow"><span class="bar"></span>Remodels</span>
+        <h3>Kitchen &amp; bath remodels</h3>
+        <p>Tear out to tile out. Cabinets, counters, plumbing fixtures and the finish work that makes a room feel new.</p>
+        <ul class="srv-list"><li>Kitchen remodels</li><li>Bathroom remodels</li><li>Tile &amp; flooring</li></ul>
+      </div>
+    </div>
+
+    <div class="srv-row flip rv">
+      <div class="srv-media frame"><span class="idx">02</span>
+        <img src="assets/reno.jpg" alt="Home addition framing" loading="lazy">
+      </div>
+      <div class="srv-text">
+        <span class="eyebrow"><span class="bar"></span>Build outs</span>
+        <h3>Additions &amp; basement finishing</h3>
+        <p>More room without the move. We frame, finish and bring new space up to code, from a bonus room to a full basement build out.</p>
+        <ul class="srv-list"><li>Additions</li><li>Basement finishing</li><li>Bonus rooms</li></ul>
+      </div>
+    </div>
+
+    <div class="srv-row rv">
+      <div class="srv-media frame"><span class="idx">03</span>
+        <img src="assets/deck.jpg" alt="Deck and patio build" loading="lazy">
+      </div>
+      <div class="srv-text">
+        <span class="eyebrow"><span class="bar"></span>Outdoor</span>
+        <h3>Decks &amp; patios</h3>
+        <p>Outdoor space that lasts. Built level, sealed right, and ready for the first cookout of the season.</p>
+        <ul class="srv-list"><li>Decks</li><li>Patios</li><li>Railings</li></ul>
+      </div>
+    </div>
+
+    <div class="srv-row flip rv">
+      <!-- NO-PHOTO service variant -->
+      <div class="srv-media noimg">
+        <div class="np">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 21l4-1 11-11-3-3L4 17l-1 4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 6l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <b>General repairs</b>
+          <span>Punch lists &amp; honey-do</span>
+        </div>
+      </div>
+      <div class="srv-text">
+        <span class="eyebrow"><span class="bar"></span>Repairs</span>
+        <h3>General repairs &amp; punch lists</h3>
+        <p>The list of small jobs you keep putting off. Drywall, trim, doors, rot, the odd fix that needs a real carpenter. We knock it out in one trip where we can.</p>
+        <ul class="srv-list"><li>Drywall &amp; trim</li><li>Doors &amp; windows</li><li>Rot &amp; repair</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US (deep band) ============ -->
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow"><span class="num">04</span><span class="bar" style="background:#E0A98F"></span>Why Choose Us</span>
+        <h2 style="margin-top:14px">Reasons people call us back</h2>
+      </div>
+      <p class="lead">No gimmicks. Just the things that matter when a stranger is working in your home.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="wi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Fast response</h3>
+        <p>We answer, we show up, and we give you a real timeline instead of a maybe.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="wi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 14l2 2 3-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Upfront pricing</h3>
+        <p>A clear written quote before we start. What we say is what you pay.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="wi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Work that holds up</h3>
+        <p>Done to code, finished clean, and backed by our word. <span class="ph">PLACEHOLDER: warranty</span></p>
+      </div>
+      <div class="why-card rv">
+        <div class="wi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Local &amp; family run</h3>
+        <p>Based right here in Bucks County. Your neighbors, not a call center.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat rv">
+        <div class="big" data-count="4.9" data-dec="1">0</div>
+        <div class="lbl">Google rating, 19 reviews</div>
+      </div>
+      <div class="stat rv">
+        <div class="big" data-count="100"><span class="u"></span>0<span class="u">%</span></div>
+        <div class="lbl">Licensed &amp; insured</div>
+        <span class="ph">PLACEHOLDER: confirm</span>
+      </div>
+      <div class="stat rv">
+        <div class="big" data-count="1"><span class="u"></span>0<span class="u"> pt</span></div>
+        <div class="lbl">Point of contact, start to finish</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="area">
+  <div class="wrap">
+    <div class="area-grid">
+      <div class="rv">
+        <span class="eyebrow"><span class="num">05</span><span class="bar"></span>Service Area</span>
+        <h2 style="margin:14px 0 14px;font-size:clamp(1.9rem,3.6vw,2.8rem)">Serving Langhorne and the surrounding towns</h2>
+        <p style="color:var(--ink-soft);max-width:38ch">If you are in Bucks County or just over the line, give us a call. If we cannot help, we will point you to someone who can.</p>
+        <a class="btn ghost" href="#contact" style="margin-top:22px">Check your address
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="rv">
+        <div class="dim" style="margin-bottom:18px"><span class="cap">Towns we cover</span><span class="rule"></span></div>
+        <!-- Service-area towns are PLACEHOLDER, confirm coverage on the call -->
+        <div class="towns">
+          <span class="home">Langhorne</span>
+          <span>Fairless Hills</span>
+          <span>Levittown</span>
+          <span>Penndel</span>
+          <span>Middletown</span>
+          <span>Newtown</span>
+          <span>Yardley</span>
+          <span>Morrisville</span>
+          <span>Feasterville</span>
+          <span>Bristol</span>
+        </div>
+        <p style="margin-top:16px;font-size:13px"><span class="ph">PLACEHOLDER: confirm your real service-area towns</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + FINAL CTA ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="eyebrow"><span class="num">06</span><span class="bar"></span>Contact</span>
+        <h2 style="margin-top:14px">Let's talk about your project</h2>
+      </div>
+      <p class="lead">Tell us what you have in mind and we will get you a free, no pressure quote.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="cta-band rv">
+        <h2>Free quotes, straight answers.</h2>
+        <p>Send a few details and we will follow up to set a time to come look. No deposit to get a number.</p>
+        <a class="btn" href="#contact" onclick="document.getElementById('cf-name').focus();return false;">Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="ploc">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="2"/></svg>
+          471 S Oxford Valley Rd, Fairless Hills, PA 19030
+        </div>
+        <div class="ploc">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
+          Mon&ndash;Fri, hours <span class="ph" style="margin-left:6px">PLACEHOLDER: confirm hours</span>
+        </div>
+      </div>
+
+      <form class="quote rv" onsubmit="return false">
+        <div class="fnote">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--accent)" stroke-width="2"/><path d="M12 8v5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16" r="1" fill="var(--accent)"/></svg>
+          Placeholder form, to be wired up
+        </div>
+        <div class="field"><label for="cf-name">Name</label><input id="cf-name" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" type="tel" placeholder="(267) 000-0000" autocomplete="tel"></div>
+        <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="you@email.com" autocomplete="email"></div>
+        <div class="field"><label for="cf-msg">What do you need?</label><textarea id="cf-msg" placeholder="Kitchen remodel, deck repair, an addition..."></textarea></div>
+        <button class="btn" type="submit">Send my request
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <svg class="logo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="43" height="43" rx="2" stroke="#F1E8DB" stroke-width="2"/>
+        <path d="M11 37V11h7" stroke="#9C3B2E" stroke-width="3.4" stroke-linecap="square"/>
+        <path d="M11 24h6" stroke="#9C3B2E" stroke-width="3.4" stroke-linecap="square"/>
+        <path d="M37 11v26M37 11l-9 13 9 13" stroke="#F1E8DB" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="24" cy="24" r="2.4" fill="#9C3B2E"/>
+      </svg>
+      <div class="wm">Heating &amp; Air Conditioning<span>General Contractor</span></div>
+      <p>Family owned remodels, additions and repairs for Langhorne and the surrounding Bucks County area.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Get In Touch</h4>
+      <a class="foot-tel" href="tel:+12675942205">
+        <svg class="ph-ic" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 5 5l1.4-2 4 1.6V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        (267) 594-2205
+      </a>
+      <p style="margin-top:16px">471 S Oxford Valley Rd<br>Fairless Hills, PA 19030</p>
+      <p>Mon&ndash;Fri, hours <span class="ph">PLACEHOLDER</span></p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <div class="wrap">
+      <p>&copy; <span id="yr">2026</span> Heating and Air Conditioning. All rights reserved.</p>
+      <a class="gmaps" href="https://www.google.com/maps?cid=18139591793107375204" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="2"/></svg>
+        Find us on Google
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky bar -->
+<div class="mobar">
+  <a class="call" href="tel:+12675942205">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l1.6 4-2 1.4a12 12 0 0 0 5 5l1.4-2 4 1.6V18a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <span><small>Call us</small>(267) 594-2205</span>
+  </a>
+  <a class="q" href="#contact">Free Quote</a>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!rm){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  // count-ups
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target, end=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||'0',10);
+      var us=el.querySelectorAll('.u'), pre=us[0]?us[0].textContent:'', suf=us[1]?us[1].textContent:'';
+      var t0=null, dur=1100;
+      function step(ts){
+        if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var v=end*(1-Math.pow(1-p,3));
+        el.textContent=(dec?v.toFixed(dec):Math.round(v))+'';
+        if(pre||suf){el.innerHTML=(pre?'<span class="u">'+pre+'</span>':'')+(dec?v.toFixed(dec):Math.round(v))+(suf?'<span class="u">'+suf+'</span>':'');}
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step); cio.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+}else{
+  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "rating": 5.0,
+  "google_cid": "https://www.google.com/maps?cid=8393737078891995182",
+  "pairs": [
+    ["#0F1E26", "#F2F6F7"],
+    ["#0F1E26", "#E0EAEC"],
+    ["#3A4D55", "#F2F6F7"],
+    ["#3A4D55", "#E0EAEC"],
+    ["#16526B", "#F2F6F7"],
+    ["#16526B", "#E0EAEC"],
+    ["#16526B", "#FFFFFF"],
+    ["#FFFFFF", "#1F6E8C"],
+    ["#FFFFFF", "#0E2A33"],
+    ["#EAF2F4", "#0E2A33"],
+    ["#AFC6CD", "#0E2A33"],
+    ["#7FD0EC", "#0E2A33"],
+    ["#8a5a00", "#FFF0D6"],
+    ["#B7CCD2", "#0F1E26"],
+    ["#A9BFC6", "#0F1E26"],
+    ["#8FA8B0", "#0F1E26"],
+    ["#7FD0EC", "#0F1E26"],
+    ["#FFFFFF", "#0F1E26"]
+  ]
+}

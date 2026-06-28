@@ -1,0 +1,31 @@
+{
+  "slug": "servicemark-heating-cooling-plumbing",
+  "business_name": "ServiceMark Heating Cooling & Plumbing",
+  "trade": "general contractor",
+  "city": "Norristown",
+  "phone": "(610) 337-1465",
+  "rating": "4.9",
+  "reviews": "170",
+  "show_star_rating": "Y",
+  "palette_name": "Charcoal Mono",
+  "palette": {
+    "ink": "#17191C",
+    "base": "#F5F5F6",
+    "surface": "#E6E7E9",
+    "band": "#1A1C20",
+    "accent": "#3D5066",
+    "accent2": "#80868F"
+  },
+  "hero_style": "an offset hero with an oversized display headline and a small inset photo lower-right",
+  "section_order": "hero > reviews-cta > process > services > why-us > contact",
+  "services_placeholder": "Kitchen remodels, Bathroom remodels, Additions, Decks & patios, Basement finishing, General repairs",
+  "pexels_queries": [
+    "construction contractor",
+    "home renovation",
+    "kitchen remodel",
+    "contractor blueprint"
+  ],
+  "google_link": "https://www.google.com/maps?cid=17085764617020445960",
+  "address_bar_url": "www.servicemarkheatingcoolingandplumbing.com",
+  "confirm_checklist": "PRIMARY TRADE: name says 'plumber', Google says 'general contractor', confirm what they actually do before anything else. | Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services ServiceMark Heating Cooling & Plumbing offers (the list is a guess from 'general contractor', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

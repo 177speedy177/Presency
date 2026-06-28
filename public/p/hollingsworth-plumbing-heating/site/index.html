@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollingsworth Plumbing &amp; Heating | General Contractor in Langhorne, PA</title>
+<meta name="description" content="Hollingsworth Plumbing &amp; Heating builds kitchens, baths, additions and more for homeowners in Langhorne, PA. Licensed, insured, locally owned. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#13202B;
+  --base:#F4F6F8;
+  --surface:#E7ECF1;
+  --band:#13202B;
+  --accent:#1E6F9E;
+  --accent-deep:#145270;   /* AA-safe small text on light */
+  --accent2:#6B7886;
+  --line:#D2DAE2;
+  --white:#FFFFFF;
+  --maxw:1200px;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--base);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.04;font-weight:700;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.acc{color:var(--accent)}
+.serif-i{font-style:italic;font-weight:700}
+
+/* ---------- level-bubble motif ---------- */
+.bubble{display:inline-block;vertical-align:middle}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;
+  padding:.95rem 1.5rem;border-radius:999px;cursor:pointer;border:0;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 22px -8px rgba(30,111,158,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(30,111,158,.8);background:#1c6691}
+.btn-ghost{background:transparent;color:var(--accent-deep);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep);transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(0,0,0,.4)}
+
+/* phone sticker */
+.tel{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:600;font-size:.95rem;color:var(--accent-deep);
+  padding:.55rem .85rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;
+  transition:border-color .2s,transform .2s;
+}
+.tel:hover{border-color:var(--accent);transform:translateY(-1px)}
+.tel svg{flex:0 0 auto}
+
+/* eyebrow / section label */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.78rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);
+  margin-bottom:1.1rem;
+}
+.eyebrow .num{color:var(--accent2);font-variant-numeric:tabular-nums}
+.eyebrow.on-dark{color:#9ec9e0}
+.eyebrow.on-dark .num{color:#7e93a6}
+
+/* datum divider (level line) */
+.datum{height:0;border:0;border-top:2px solid var(--accent);max-width:var(--maxw);margin:0 auto;position:relative}
+.datum::after{content:"";position:absolute;left:50%;top:-5px;width:8px;height:8px;border-radius:50%;background:var(--accent);transform:translateX(-50%)}
+
+/* placeholder pill */
+.ph{
+  display:inline-block;font-family:'Inter',sans-serif;font-size:.66rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:#8a5a00;background:#fff4dd;
+  border:1px dashed #d9a441;border-radius:6px;padding:.12rem .45rem;vertical-align:middle;
+  margin-left:.4rem;
+}
+.ph.on-dark{color:#ffe0a3;background:rgba(255,200,90,.12);border-color:rgba(255,200,90,.45)}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(244,246,248,.9);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{flex:0 0 auto}
+.brand .name{font-family:'Fraunces',serif;font-weight:700;font-size:1.18rem;letter-spacing:-.01em;line-height:1}
+.brand .name small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:1.6rem}
+.nav-links a.lnk{font-weight:500;font-size:.95rem;color:var(--ink);position:relative;padding:.2rem 0}
+.nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--accent);transition:width .25s ease}
+.nav-links a.lnk:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:72px 0 88px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.4rem);font-weight:900;letter-spacing:-.025em}
+.hero h1 .lead{display:block}
+.hero .sub{font-size:1.18rem;color:#3a4b59;max-width:34ch;margin:1.5rem 0 .8rem;line-height:1.55}
+.hero .trade-flag{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.6rem;font-weight:600;font-size:.95rem;color:var(--accent-deep)}
+.hero-cta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.7rem}
+.hero-note{font-size:.9rem;color:var(--accent2);margin-top:1.2rem;display:flex;align-items:center;gap:.5rem}
+
+/* hero inset framed photo */
+.inset{position:relative;justify-self:end;width:100%;max-width:380px}
+.inset-frame{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -24px rgba(19,32,43,.45);aspect-ratio:4/5}
+.inset-frame img{width:100%;height:100%;object-fit:cover}
+.inset .tick{position:absolute;width:26px;height:26px;border:2.5px solid var(--accent);z-index:2}
+.inset .tick.tl{top:-9px;left:-9px;border-right:0;border-bottom:0}
+.inset .tick.br{bottom:-9px;right:-9px;border-left:0;border-top:0}
+.inset-cap{position:absolute;left:14px;bottom:14px;right:14px;z-index:2;color:#fff;font-size:.8rem;font-weight:600;display:flex;align-items:center;gap:.5rem;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.inset-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(19,32,43,.55),transparent 45%)}
+
+/* soft drifting bg shapes */
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.hero-bg .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+.b1{width:420px;height:420px;background:#cfe0ec;top:-120px;right:-80px}
+.b2{width:340px;height:340px;background:#dfe7ee;bottom:-120px;left:-120px}
+
+/* ---------- trust bar ---------- */
+.trust{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;padding:20px 0}
+.trust-item{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.97rem}
+.trust-item svg{flex:0 0 auto}
+.stars{display:flex;align-items:center;gap:.5rem;font-weight:700}
+.stars .rate{font-family:'Fraunces',serif;font-size:1.3rem}
+.stars-svg{display:flex;gap:1px}
+
+/* ---------- section base ---------- */
+section{padding:84px 0}
+.sec-head{max-width:62ch}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700}
+.sec-head p{color:#3a4b59;font-size:1.08rem;margin-top:1rem}
+
+/* ---------- why us (asymmetric) ---------- */
+.why{background:var(--base)}
+.why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start;margin-top:8px}
+.why-left h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+.why-left p{color:#3a4b59;margin-top:1.1rem;font-size:1.05rem}
+.why-stats{display:flex;gap:36px;margin-top:2rem;flex-wrap:wrap}
+.stat .n{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:900;color:var(--accent);line-height:1}
+.stat .l{font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--accent2);margin-top:.3rem}
+.vlist{display:grid;gap:14px}
+.vrow{display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.vrow:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(19,32,43,.4);border-color:#bcd2e2}
+.vrow .vico{width:46px;height:46px;border-radius:10px;background:var(--surface);display:grid;place-items:center;color:var(--accent)}
+.vrow h3{font-family:'Inter',sans-serif;font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
+.vrow p{font-size:.96rem;color:#3a4b59;margin-top:.25rem}
+
+/* ---------- reviews CTA band ---------- */
+.reviews{background:var(--band);color:#eef4f8;position:relative;overflow:hidden}
+.reviews .wrap{position:relative;z-index:2}
+.reviews-in{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.reviews h2{color:#fff;font-size:clamp(1.9rem,4vw,2.9rem)}
+.reviews .big-rate{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1rem}
+.reviews .big-rate b{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:900;color:#fff;line-height:1}
+.reviews .big-rate span{color:#9ec9e0;font-weight:600}
+.reviews p{color:#c4d3de;max-width:46ch;margin-top:.9rem;font-size:1.05rem}
+.reviews .qmark{position:absolute;right:-30px;top:-50px;font-family:'Fraunces',serif;font-size:22rem;font-weight:900;color:rgba(158,201,224,.07);line-height:1;z-index:1;pointer-events:none}
+
+/* ---------- process ---------- */
+.process{background:var(--surface)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:14px}
+.step{position:relative;padding-top:22px}
+.step .sn{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:900;color:var(--accent);line-height:.9;opacity:.95}
+.step h3{font-family:'Inter',sans-serif;font-size:1.12rem;font-weight:700;margin:.7rem 0 .4rem;letter-spacing:-.01em}
+.step p{font-size:.95rem;color:#3a4b59}
+.step::before{content:"";position:absolute;top:0;left:0;width:46px;height:2px;background:var(--accent)}
+
+/* ---------- services ---------- */
+.services{background:var(--base)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:14px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -26px rgba(19,32,43,.45)}
+.card-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--surface)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-img .tag{position:absolute;top:12px;left:12px;background:rgba(19,32,43,.82);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;padding:.3rem .6rem;border-radius:6px;backdrop-filter:blur(2px)}
+.card-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-family:'Inter',sans-serif;font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
+.card-body p{font-size:.95rem;color:#3a4b59;margin-top:.5rem;flex:1}
+.card-body .more{margin-top:1rem;font-weight:600;font-size:.9rem;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.4rem}
+/* no-photo service variant */
+.card-np .card-img{display:grid;place-items:center;background:linear-gradient(135deg,var(--band),#1d3344)}
+.card-np .np-art{color:#5e7d93}
+
+/* ---------- contact ---------- */
+.contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:14px}
+.contact-info h2{font-size:clamp(2rem,4.2vw,3rem)}
+.contact-info p{color:#3a4b59;margin-top:1rem;font-size:1.05rem;max-width:42ch}
+.ci-list{margin-top:1.8rem;display:grid;gap:1rem}
+.ci-row{display:flex;gap:.8rem;align-items:flex-start}
+.ci-row .ci-ic{color:var(--accent);flex:0 0 auto;margin-top:2px}
+.ci-row b{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+.ci-row span{font-size:1rem}
+form{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:0 24px 50px -30px rgba(19,32,43,.35)}
+.form-note{font-size:.8rem;color:#8a5a00;background:#fff4dd;border:1px dashed #d9a441;border-radius:8px;padding:.55rem .75rem;margin-bottom:1.2rem}
+.fld{margin-bottom:1rem}
+.fld label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.4rem}
+.fld input,.fld textarea{width:100%;font-family:'Inter',sans-serif;font-size:1rem;padding:.8rem .9rem;border:1.5px solid var(--line);border-radius:10px;background:var(--base);color:var(--ink);transition:border-color .2s}
+.fld input:focus,.fld textarea:focus{outline:0;border-color:var(--accent)}
+.fld textarea{resize:vertical;min-height:96px}
+
+/* ---------- final CTA ---------- */
+.final{background:var(--band);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final h2{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff}
+.final p{color:#c4d3de;font-size:1.12rem;margin:1.1rem auto 2rem;max-width:48ch}
+.final .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.22}
+.final .fb1{width:380px;height:380px;background:var(--accent);top:-140px;left:-80px}
+
+/* ---------- footer ---------- */
+footer{background:#0d161e;color:#aebccb;padding:60px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-brand .name{font-family:'Fraunces',serif;color:#fff;font-size:1.4rem;font-weight:700}
+.foot-brand p{margin-top:.9rem;font-size:.95rem;max-width:34ch;line-height:1.6}
+.foot-col h4{font-family:'Inter',sans-serif;color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.foot-col a,.foot-col span{display:block;font-size:.95rem;margin-bottom:.6rem;color:#aebccb}
+.foot-col a:hover{color:#fff}
+.tel-dark{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-weight:700;font-size:1.05rem}
+.tel-dark:hover{color:#9ec9e0}
+.foot-bottom{border-top:1px solid #1e2c38;margin-top:42px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:#7e8f9f}
+.foot-bottom a{color:#9ec9e0}
+
+/* ---------- mobile sticky bar ---------- */
+.mobile-bar{display:none}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .inset{justify-self:start;max-width:340px}
+  .why-grid{grid-template-columns:1fr;gap:36px}
+  .reviews-in{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr);gap:34px 26px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-cta .btn-primary{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding:48px 0 76px}
+  body{padding-bottom:64px}
+  .mobile-bar{
+    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--ink);color:#fff;align-items:center;justify-content:space-between;
+    padding:10px 16px;gap:12px;box-shadow:0 -6px 20px -8px rgba(0,0,0,.4);
+  }
+  .mobile-bar .mb-name{font-weight:600;font-size:.9rem;color:#c4d3de}
+  .mobile-bar a{display:inline-flex;align-items:center;gap:.45rem;background:var(--accent);color:#fff;font-weight:700;padding:.6rem 1rem;border-radius:999px;font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Hollingsworth Plumbing and Heating home">
+      <!-- level-bubble logo mark -->
+      <svg class="mark" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+        <rect x="2" y="14" width="38" height="14" rx="4" fill="none" stroke="#13202B" stroke-width="2.4"/>
+        <line x1="16" y1="14" x2="16" y2="28" stroke="#13202B" stroke-width="2"/>
+        <line x1="26" y1="14" x2="26" y2="28" stroke="#13202B" stroke-width="2"/>
+        <circle id="logoBub" cx="21" cy="21" r="3.6" fill="#1E6F9E"/>
+      </svg>
+      <span class="name">Hollingsworth<small>Plumbing &amp; Heating</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="lnk" href="#why">Why us</a>
+      <a class="lnk" href="#process">Process</a>
+      <a class="lnk" href="#services">Services</a>
+      <a class="lnk" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="tel" href="tel:+12157573456" aria-label="Call (215) 757-3456">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z" stroke="#145270" stroke-width="2" stroke-linejoin="round"/></svg>
+        (215) 757-3456
+      </a>
+      <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#13202B" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- mobile dropdown -->
+  <div id="mobileNav" style="display:none;border-top:1px solid var(--line);background:var(--base)">
+    <div class="wrap" style="padding:14px 28px 18px;display:flex;flex-direction:column;gap:2px">
+      <a class="lnk" href="#why" style="padding:.7rem 0">Why us</a>
+      <a class="lnk" href="#process" style="padding:.7rem 0">Process</a>
+      <a class="lnk" href="#services" style="padding:.7rem 0">Services</a>
+      <a class="lnk" href="#contact" style="padding:.7rem 0">Contact</a>
+      <a class="btn btn-primary" href="#contact" style="margin-top:.6rem;justify-content:center">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal"><span class="num">Langhorne, PA</span> · Family owned and operated</span>
+      <!-- TRADE MISMATCH: name says plumbing/heating, Google category says general contractor. Confirm primary trade on the call. -->
+      <div class="trade-flag reveal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21l4-1 11-11-3-3L4 17l-1 4Z" stroke="#145270" stroke-width="2" stroke-linejoin="round"/><path d="M14 6l3 3" stroke="#145270" stroke-width="2"/></svg>
+        General contracting, remodels &amp; repairs <span class="ph">PLACEHOLDER: confirm this is your main trade</span>
+      </div>
+      <h1 class="reveal">
+        <span class="lead">General <span class="acc">Contractor</span></span>
+        <span class="lead serif-i">in Langhorne, PA</span>
+      </h1>
+      <p class="sub reveal">Kitchens, baths, additions and the everyday repairs in between. Built straight, finished clean, done when we say.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#contact">Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">See what we build</a>
+      </div>
+      <p class="hero-note reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4 10-11" stroke="#6B7886" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Licensed &amp; insured <span class="ph">PLACEHOLDER: confirm license &amp; insurance</span>
+      </p>
+    </div>
+
+    <div class="inset reveal">
+      <span class="tick tl" aria-hidden="true"></span>
+      <span class="tick br" aria-hidden="true"></span>
+      <div class="inset-frame">
+        <img src="assets/hero-contractor.jpg" width="380" height="475" alt="A contractor framing and building interior work on a home renovation" loading="eager">
+      </div>
+      <div class="inset-cap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="9" width="20" height="7" rx="2" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12.5" r="1.8" fill="#1E6F9E"/></svg>
+        Built level, start to finish
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3Z" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L16 9" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Licensed &amp; Insured
+    </div>
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 11l9-7 9 7" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9h14v-9" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/></svg>
+      Locally Owned
+    </div>
+    <div class="trust-item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8Z" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/></svg>
+      Fast Response
+    </div>
+    <div class="stars" aria-label="Rated 4.6 out of 5 on Google from 18 reviews">
+      <span class="rate">4.6</span>
+      <span class="stars-svg" aria-hidden="true">
+        <!-- 4 full + 1 partial -->
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8L12 2Z" fill="#1E6F9E"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8L12 2Z" fill="#1E6F9E"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8L12 2Z" fill="#1E6F9E"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8L12 2Z" fill="#1E6F9E"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="60%" stop-color="#1E6F9E"/><stop offset="60%" stop-color="#C7D3DD"/></linearGradient></defs><path d="M12 2l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.8 6.1 20l1.3-6.5L2.5 8.9l6.6-.8L12 2Z" fill="url(#half)"/></svg>
+      </span>
+      <span style="font-weight:600;color:var(--accent2);font-size:.92rem">18 Google reviews</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHY US ===== -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div class="why-left reveal">
+      <span class="eyebrow"><span class="num">01</span> · Why choose us</span>
+      <h2>A contractor who shows up, then <span class="acc">finishes the job</span>.</h2>
+      <p>Most remodel headaches come down to the same thing: someone who disappears halfway. We give you a real timeline, an honest number, and the same crew from demo to the final walkthrough.</p>
+      <div class="why-stats">
+        <div class="stat"><div class="n" data-count="4.6" data-dec="1">0</div><div class="l">Google rating</div></div>
+        <div class="stat"><div class="n" data-count="18" data-suffix="">0</div><div class="l">Verified reviews</div></div>
+        <div class="stat"><div class="n" data-count="100" data-suffix="%">0</div><div class="l">Local &amp; family run</div></div>
+      </div>
+    </div>
+    <div class="vlist">
+      <div class="vrow reveal">
+        <div class="vico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#1E6F9E" stroke-width="2"/></svg></div>
+        <div><h3>Fast, real response</h3><p>You get a person, not a voicemail loop. We call back same day and book the walkthrough quick.</p></div>
+      </div>
+      <div class="vrow reveal">
+        <div class="vico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 8h7a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h8" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Upfront pricing</h3><p>A written quote you can hold us to. No surprise line items showing up at the end of the job.</p></div>
+      </div>
+      <div class="vrow reveal">
+        <div class="vico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v9h14v-9" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Local, family run</h3><p>We live and work around Langhorne. Our name is on the job and on the line in your neighborhood.</p></div>
+      </div>
+      <div class="vrow reveal">
+        <div class="vico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 6" stroke="#1E6F9E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Work we stand behind</h3><p>Clean job sites and workmanship we back after the truck pulls away. <span class="ph">PLACEHOLDER: confirm warranty terms</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="datum">
+
+<!-- ===== REVIEWS CTA BAND ===== -->
+<section class="reviews">
+  <span class="qmark" aria-hidden="true">&rdquo;</span>
+  <div class="wrap reviews-in">
+    <div class="reveal">
+      <span class="eyebrow on-dark"><span class="num">02</span> · Reviews</span>
+      <div class="big-rate"><b>4.6</b><span>out of 5 on Google · 18 reviews</span></div>
+      <h2>Neighbors rate us 4.6 on Google.</h2>
+      <p>The honest measure of a contractor is what people say after the job is done. Read the real reviews and see for yourself, the link is at the bottom of the page.</p>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:1rem;align-items:flex-start">
+      <a class="btn btn-light" href="#contact">Get a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#13202B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span style="color:#9ec9e0;font-size:.9rem">Find the Google reviews link in the footer.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="num">03</span> · How it works</span>
+      <h2>Four steps, no mystery.</h2>
+      <p>From the first call to the final walkthrough, you always know what is happening and what comes next.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="sn">01</div><h3>Talk it through</h3><p>Call or send the form. We listen to what you want and book a time to come look.</p></div>
+      <div class="step reveal"><div class="sn">02</div><h3>Walkthrough &amp; quote</h3><p>We measure, talk options, and hand you a clear written price. No pressure.</p></div>
+      <div class="step reveal"><div class="sn">03</div><h3>We build it</h3><p>One crew, a real schedule, a tidy site. You get updates as the work moves.</p></div>
+      <div class="step reveal"><div class="sn">04</div><h3>Final walkthrough</h3><p>We walk it together, fix any nitpicks, and you sign off happy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="num">04</span> · Services</span>
+      <h2>What we build <span class="ph">PLACEHOLDER: confirm &amp; trim this list</span></h2>
+      <p>A range of work for homeowners around Langhorne. Tell us your project and we will tell you straight whether it is in our lane.</p>
+    </div>
+    <!-- SERVICES PLACEHOLDER: confirm and trim this list on the call -->
+    <div class="svc-grid">
+      <article class="card reveal">
+        <div class="card-img"><span class="tag">Remodel</span><img src="assets/kitchen.jpg" alt="A renovated modern kitchen with new cabinets and counters" loading="lazy" width="380" height="260"></div>
+        <div class="card-body"><h3>Kitchen Remodels</h3><p>New cabinets, counters, and layouts that make the room actually work for how you cook and live.</p><span class="more">Ask about your kitchen
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><span class="tag">Remodel</span><img src="assets/bathroom.jpg" alt="A renovated bathroom with new tile and fixtures" loading="lazy" width="380" height="260"></div>
+        <div class="card-body"><h3>Bathroom Remodels</h3><p>Tile, fixtures, vanities and the plumbing behind the wall, done right so it lasts.</p><span class="more">Ask about your bath
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><span class="tag">Build</span><img src="assets/addition.jpg" alt="A home addition under construction with new framing" loading="lazy" width="380" height="260"></div>
+        <div class="card-body"><h3>Additions</h3><p>Need more room? We add square footage that matches the house and meets code.</p><span class="more">Plan an addition
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><span class="tag">Outdoor</span><img src="assets/deck.jpg" alt="A finished wood deck and patio space" loading="lazy" width="380" height="260"></div>
+        <div class="card-body"><h3>Decks &amp; Patios</h3><p>Outdoor space you will actually use, built to handle Pennsylvania winters.</p><span class="more">Talk decks
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="card reveal">
+        <div class="card-img"><span class="tag">Build</span><img src="assets/basement.jpg" alt="A finished basement living space" loading="lazy" width="380" height="260"></div>
+        <div class="card-body"><h3>Basement Finishing</h3><p>Turn the basement into a real room, a den, an office, a guest space, properly insulated.</p><span class="more">Finish your basement
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <!-- NO-PHOTO service variant -->
+      <article class="card card-np reveal">
+        <div class="card-img"><span class="tag">Repairs</span>
+          <svg class="np-art" width="76" height="76" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 6l4 4-8 8-4 1 1-4 7-9Z" stroke="#5e7d93" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 3l5 5" stroke="#5e7d93" stroke-width="1.6"/><path d="M3 21h7" stroke="#5e7d93" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><h3>General Repairs</h3><p>The punch-list stuff that never gets done. Drywall, trim, doors, the small fixes that add up.</p><span class="more">List your repairs
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#145270" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+    </div>
+
+    <!-- service area -->
+    <div class="reveal" style="margin-top:46px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 30px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:16px">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#1E6F9E" stroke-width="2"/></svg>
+        <div>
+          <div style="font-weight:700;font-family:'Inter',sans-serif">Serving Langhorne and surrounding areas</div>
+          <div style="color:var(--accent2);font-size:.92rem;margin-top:.2rem">Langhorne · Levittown · Newtown · Yardley · Penndel · Feasterville <span class="ph">PLACEHOLDER: confirm towns</span></div>
+        </div>
+      </div>
+      <a class="btn btn-ghost" href="#contact">Check your address</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:6px">
+      <span class="eyebrow"><span class="num">05</span> · Contact</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h2>Tell us about the <span class="acc">project</span>.</h2>
+        <p>Send a few details and we will get back to you, usually the same day, to set up a free walkthrough and quote.</p>
+        <div class="ci-list">
+          <div class="ci-row">
+            <span class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <div><b>Phone</b><span><a href="tel:+12157573456" style="color:var(--accent-deep);font-weight:600">(215) 757-3456</a></span></div>
+          </div>
+          <div class="ci-row">
+            <span class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" stroke="#1E6F9E" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#1E6F9E" stroke-width="2"/></svg></span>
+            <div><b>Address</b><span>216 Wells Ave, Langhorne, PA 19047</span></div>
+          </div>
+          <div class="ci-row">
+            <span class="ci-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1E6F9E" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#1E6F9E" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <div><b>Hours</b><span>Mon–Fri, by appointment <span class="ph">PLACEHOLDER: confirm hours</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="reveal" onsubmit="return false">
+        <div class="form-note">Placeholder form, not yet wired up. Connect this to email or a CRM before going live.</div>
+        <div class="fld"><label for="n">Name</label><input id="n" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="fld"><label for="p">Phone</label><input id="p" type="tel" placeholder="(215) 555-0123" autocomplete="tel"></div>
+        <div class="fld"><label for="e">Email</label><input id="e" type="email" placeholder="you@email.com" autocomplete="email"></div>
+        <div class="fld"><label for="m">Project details</label><textarea id="m" placeholder="Tell us what you are thinking about..."></textarea></div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Get a Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final">
+  <div class="blob fb1" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <h2>Let's build it right.</h2>
+    <p>One straight number, one solid crew, one job done on time. Start with a free quote.</p>
+    <a class="btn btn-light" href="#contact" style="font-size:1.05rem;padding:1.05rem 2rem">Get a Free Quote</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.2rem">
+          <svg width="38" height="38" viewBox="0 0 42 42" aria-hidden="true">
+            <rect x="2" y="14" width="38" height="14" rx="4" fill="none" stroke="#fff" stroke-width="2.4"/>
+            <line x1="16" y1="14" x2="16" y2="28" stroke="#fff" stroke-width="2"/>
+            <line x1="26" y1="14" x2="26" y2="28" stroke="#fff" stroke-width="2"/>
+            <circle cx="21" cy="21" r="3.6" fill="#1E6F9E"/>
+          </svg>
+          <span class="name">Hollingsworth</span>
+        </div>
+        <p>General contracting, remodels and repairs for homeowners in Langhorne, PA. Family owned and operated.</p>
+        <a class="tel-dark" href="tel:+12157573456" style="margin-top:1.2rem">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+          (215) 757-3456
+        </a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#why">Why us</a>
+        <a href="#process">Our process</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Get a quote</a>
+      </div>
+      <div class="foot-col">
+        <h4>Find us</h4>
+        <span>216 Wells Ave<br>Langhorne, PA 19047</span>
+        <span>Mon–Fri, by appointment <span class="ph on-dark">PLACEHOLDER: hours</span></span>
+        <a href="https://www.google.com/maps?cid=12348844007085643988" target="_blank" rel="noopener" style="color:#9ec9e0;font-weight:600">Find us on Google &rarr;</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Hollingsworth Plumbing &amp; Heating. All rights reserved.</span>
+      <span>Langhorne, Bucks County, PA</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky tel bar -->
+<div class="mobile-bar" aria-hidden="false">
+  <span class="mb-name">Hollingsworth P&amp;H</span>
+  <a href="tel:+12157573456">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+    (215) 757-3456
+  </a>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* mobile menu */
+var mb=document.getElementById('menuBtn'),mn=document.getElementById('mobileNav');
+if(mb){mb.addEventListener('click',function(){
+  var open=mn.style.display==='block';
+  mn.style.display=open?'none':'block';
+  mb.setAttribute('aria-expanded',(!open).toString());
+});
+mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.style.display='none';mb.setAttribute('aria-expanded','false');});});}
+
+var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* scroll reveal */
+if(!reduce && 'IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    el.style.transitionDelay=(Math.min(i%6,5)*60)+'ms';
+    io.observe(el);
+  });
+}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+
+/* count-ups */
+if(!reduce && 'IntersectionObserver' in window){
+  var co=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target,target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||'0'),suf=el.dataset.suffix||'',t0=null;
+      function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1100,1),v=target*(1-Math.pow(1-p,3));
+        el.textContent=(dec?v.toFixed(dec):Math.round(v))+suf;if(p<1)requestAnimationFrame(step);else el.textContent=(dec?target.toFixed(dec):target)+suf;}
+      requestAnimationFrame(step);co.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+}else{document.querySelectorAll('[data-count]').forEach(function(el){var d=parseInt(el.dataset.dec||'0');el.textContent=(d?parseFloat(el.dataset.count).toFixed(d):el.dataset.count)+(el.dataset.suffix||'');});}
+
+/* drifting logo bubble */
+if(!reduce){var bub=document.getElementById('logoBub'),s=0;
+  setInterval(function(){s+=.04;if(bub)bub.setAttribute('cx',(21+Math.sin(s)*1.6).toFixed(2));},40);}
+</script>
+</body>
+</html>

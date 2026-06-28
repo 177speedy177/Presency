@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fran Taylor Plumbing &amp; Heating | Plumber in Lansdale, PA</title>
+<meta name="description" content="Fran Taylor Plumbing & Heating. Commercial and residential plumbing serving Lansdale, PA and surrounding areas. Licensed, insured, locally owned. Call (215) 361-0111.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17191C;
+  --base:#F5F5F6;
+  --surface:#E6E7E9;
+  --band:#1A1C20;
+  --panel:#26282D;
+  --accent:#FCBE00;        /* real brand gold (large text / fills / dark bands only) */
+  --accent-deep:#6B5400;   /* text-safe amber for small gold-hued text on LIGHT */
+  --accent2:#80868F;
+  --muted:#4A4D52;         /* body-muted on light */
+  --band-text:#B9BCC2;     /* muted text on dark */
+  --line:#D4D6DA;
+  --maxw:1200px;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  color:var(--ink);background:var(--base);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.disp{font-family:'Saira Condensed',sans-serif;line-height:.94;letter-spacing:-.01em;text-transform:uppercase}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* ---------- plate label primitive ---------- */
+.label{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Archivo Narrow',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.18em;font-size:13px;
+  color:var(--accent-deep);
+}
+.label .num{
+  font-family:'Saira Condensed';font-weight:800;font-size:15px;
+  color:var(--ink);background:var(--accent);
+  padding:2px 7px 1px;letter-spacing:0;line-height:1;
+}
+.label.on-dark{color:var(--accent)}
+.label.on-dark .num{color:var(--band)}
+
+/* tally divider primitive (gold ticks) */
+.tally{display:flex;gap:5px;align-items:flex-end;height:18px}
+.tally i{width:3px;background:var(--accent);display:block;border-radius:1px}
+.tally i:nth-child(1){height:8px}.tally i:nth-child(2){height:14px}
+.tally i:nth-child(3){height:18px}.tally i:nth-child(4){height:11px}
+.tally i:nth-child(5){height:6px}
+
+/* riveted plate corner frame primitive */
+.plate{position:relative;background:var(--surface)}
+.plate::before,.plate::after{
+  content:"";position:absolute;width:13px;height:13px;border:2px solid var(--ink);
+}
+.plate::before{top:9px;left:9px;border-right:none;border-bottom:none}
+.plate::after{bottom:9px;right:9px;border-left:none;border-top:none}
+.rivet{position:absolute;width:7px;height:7px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #4a4d52, #1a1c20);}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Saira Condensed';font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;font-size:17px;text-decoration:none;cursor:pointer;
+  border:none;padding:15px 26px;transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-gold{background:var(--accent);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn-gold:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--base)}
+.btn svg{width:18px;height:18px}
+
+/* tel sticker */
+.tel{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-family:'Saira Condensed';font-weight:700;font-size:18px;letter-spacing:.02em;
+  color:var(--ink);
+}
+.tel .ico{width:30px;height:30px;flex:none;display:grid;place-items:center;
+  background:var(--accent);color:var(--ink);}
+.tel .ico svg{width:16px;height:16px}
+.tel small{display:block;font-family:'Archivo Narrow';font-weight:700;font-size:10px;
+  letter-spacing:.16em;color:var(--accent-deep);line-height:1}
+.tel .stk{display:flex;flex-direction:column;line-height:1.05}
+.tel.on-dark{color:#fff}
+.tel.on-dark small{color:var(--accent)}
+
+/* ---------- HEADER ---------- */
+header.site{
+  position:sticky;top:0;z-index:60;background:rgba(245,245,246,.92);
+  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);
+}
+.hd{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.mark{width:42px;height:42px;flex:none}
+.brand .nm{font-family:'Saira Condensed';font-weight:800;font-size:22px;
+  text-transform:uppercase;line-height:.88;letter-spacing:-.01em}
+.brand .nm b{color:var(--accent-deep)}
+.brand .sub{font-family:'Archivo Narrow';font-weight:700;font-size:9.5px;
+  letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+nav.main{display:flex;gap:24px}
+nav.main a{
+  text-decoration:none;font-family:'Archivo Narrow';font-weight:700;
+  text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--ink);
+  position:relative;padding:4px 0;
+}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--accent);transition:width .22s ease}
+nav.main a:hover::after,nav.main a:focus::after{width:100%}
+.hd .tel{padding-left:22px;border-left:1px solid var(--line)}
+.hd .cta-q{padding:12px 20px;font-size:15px}
+.burger{display:none;background:none;border:2px solid var(--ink);width:44px;height:40px;
+  cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.burger span{width:20px;height:2px;background:var(--ink);display:block}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:clamp(38px,6vw,76px) 0 clamp(60px,8vw,110px);overflow:hidden}
+.hero .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;
+  background:radial-gradient(circle,#FCBE00,transparent 70%);}
+.hero .orb.a{width:520px;height:520px;top:-160px;right:-120px;opacity:.28}
+.hero .orb.b{width:360px;height:360px;bottom:-160px;left:-120px;
+  background:radial-gradient(circle,#3a3d44,transparent 70%);opacity:.4}
+.hero-grid{position:relative;z-index:2;display:grid;
+  grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,44px);align-items:center}
+.hero .kick{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.hero h1{font-weight:800;font-size:clamp(54px,9vw,116px)}
+.hero h1 em{font-style:normal;color:var(--accent-deep)}
+.hero .lede{max-width:34ch;margin:22px 0 12px;font-size:clamp(16px,1.5vw,19px);color:var(--muted)}
+.hero .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.hero .trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;
+  padding-top:26px;border-top:1px solid var(--line)}
+.tchip{display:flex;align-items:center;gap:9px;font-family:'Archivo Narrow';
+  font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:13px;color:var(--ink)}
+.tchip svg{width:19px;height:19px;color:var(--accent-deep);flex:none}
+.tchip .rt{font-family:'Saira Condensed';font-weight:800;font-size:18px;color:var(--ink)}
+.stars{display:inline-flex;gap:1px;vertical-align:middle}
+.stars svg{width:15px;height:15px;color:var(--accent)}
+
+/* hero image stack */
+.hero-img{position:relative}
+.hero-img .shot{position:relative;aspect-ratio:4/5;background:#0e0f11;overflow:hidden;
+  box-shadow:18px 18px 0 var(--ink)}
+.hero-img .shot img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.35) contrast(1.06)}
+.hero-img .cap{position:absolute;left:0;bottom:0;background:var(--accent);color:var(--ink);
+  font-family:'Archivo Narrow';font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  font-size:11px;padding:8px 14px;z-index:3}
+.hero-img .badge{position:absolute;top:-24px;left:-24px;z-index:4;
+  width:118px;height:118px;background:var(--band);color:#fff;display:grid;place-content:center;
+  text-align:center;border:3px solid var(--accent);transform:rotate(-7deg)}
+.hero-img .badge .b1{font-family:'Saira Condensed';font-weight:800;font-size:40px;color:var(--accent);line-height:.8}
+.hero-img .badge .b2{font-family:'Archivo Narrow';font-weight:700;font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;margin-top:5px}
+
+/* generic section */
+section{padding:clamp(56px,8vw,104px) 0;position:relative}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;margin-bottom:clamp(30px,4vw,52px)}
+.shead h2{font-weight:800;font-size:clamp(34px,5.4vw,68px);max-width:18ch}
+.shead h2 em{font-style:normal;color:var(--accent-deep)}
+.shead.on-dark h2 em{color:var(--accent)}
+.shead p{max-width:38ch;color:var(--muted);font-size:16px}
+
+/* WHY band (dark) */
+.band{background:var(--band);color:#fff;position:relative;overflow:hidden}
+.band .deco{position:absolute;inset:0;opacity:.06;z-index:0;
+  background-image:repeating-linear-gradient(135deg,#fff 0 1px,transparent 1px 26px)}
+.band .wrap{position:relative;z-index:1}
+.band p{color:var(--band-text)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#34373d;
+  border:1px solid #34373d}
+.why-cell{background:var(--band);padding:clamp(26px,3vw,40px)}
+.why-cell .n{font-family:'Saira Condensed';font-weight:800;font-size:14px;color:var(--accent);
+  letter-spacing:.1em}
+.why-cell .ic{width:46px;height:46px;color:var(--accent);margin:14px 0 16px}
+.why-cell h3{color:#fff;font-size:25px;font-weight:700;margin-bottom:9px}
+.why-cell p{font-size:15px}
+
+/* WORK gallery */
+.work-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;
+  gap:16px}
+.wtile{position:relative;overflow:hidden;background:var(--surface);min-height:200px}
+.wtile.big{grid-row:span 2;min-height:420px}
+.wtile img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;
+  filter:grayscale(.2);transition:transform .5s ease}
+.wtile:hover img{transform:scale(1.06)}
+.wtile .tag{position:absolute;left:0;bottom:0;z-index:3;background:var(--ink);color:#fff;
+  font-family:'Archivo Narrow';font-weight:700;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 12px}
+.wm{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.wm::before{content:"PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER";
+  position:absolute;inset:-40%;transform:rotate(-30deg);font-family:'Archivo Narrow';
+  font-weight:700;font-size:17px;letter-spacing:.2em;color:rgba(23,25,28,.16);
+  line-height:2.9;word-spacing:8px}
+.wtile.ph{background:repeating-linear-gradient(135deg,#e6e7e9 0 14px,#dfe0e3 14px 28px)}
+.wtile .phnote{position:absolute;inset:0;display:grid;place-content:center;text-align:center;z-index:3;padding:18px}
+.wtile .phnote svg{width:34px;height:34px;color:var(--accent-deep);margin:0 auto 10px}
+.wtile .phnote span{font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;font-size:12px;color:var(--muted)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.about-photo{position:relative;aspect-ratio:3/4;background:var(--surface);overflow:hidden;
+  box-shadow:-14px 14px 0 var(--surface)}
+.about-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3)}
+.about-photo .cap{position:absolute;left:0;bottom:0;background:var(--accent);color:var(--ink);
+  font-family:'Archivo Narrow';font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  font-size:11px;padding:7px 13px}
+.about-body h2{font-weight:800;font-size:clamp(34px,5vw,62px);margin:18px 0}
+.about-body h2 em{font-style:normal;color:var(--accent-deep)}
+.about-body p{margin-bottom:16px;font-size:17px;color:#2c2f33}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:26px}
+.specs div{background:var(--base);padding:18px 16px}
+.specs .v{font-family:'Saira Condensed';font-weight:800;font-size:34px;color:var(--ink);line-height:.9}
+.specs .v em{font-style:normal;color:var(--accent-deep)}
+.specs .k{font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.09em;font-size:11px;color:var(--muted);margin-top:7px}
+
+/* AREA */
+.area{background:var(--surface)}
+.area-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,4vw,60px);align-items:center}
+.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.town{display:inline-flex;align-items:center;gap:8px;background:var(--base);
+  border:1px solid var(--line);padding:9px 15px;
+  font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;font-size:13px}
+.town i{width:6px;height:6px;background:var(--accent);display:block;transform:rotate(45deg)}
+.town.home{background:var(--ink);color:#fff;border-color:var(--ink)}
+.town.home i{background:var(--accent)}
+.area-map{position:relative;aspect-ratio:5/4;background:var(--band);overflow:hidden;
+  display:grid;place-content:center;border:1px solid var(--line)}
+.area-map svg{width:100%;height:100%}
+
+/* SERVICES alternating rows */
+.svc-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);
+  align-items:center;padding:clamp(30px,4vw,46px) 0;border-top:1px solid var(--line)}
+.svc-row:nth-child(even) .svc-media{order:2}
+.svc-media{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--surface)}
+.svc-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) contrast(1.04);
+  transition:transform .5s ease}
+.svc-row:hover .svc-media img{transform:scale(1.05)}
+.svc-media .num{position:absolute;top:0;left:0;background:var(--accent);color:var(--ink);
+  font-family:'Saira Condensed';font-weight:800;font-size:30px;padding:6px 16px;z-index:2;line-height:1}
+.svc-media.noimg{background:var(--ink);display:grid;place-content:center;color:var(--accent)}
+.svc-media.noimg svg{width:90px;height:90px}
+.svc-body h3{font-weight:800;font-size:clamp(26px,3.2vw,40px)}
+.svc-body h3 em{font-style:normal;color:var(--accent-deep)}
+.svc-body p{color:var(--muted);margin:12px 0 16px;font-size:16px}
+.svc-body ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px}
+.svc-body li{display:flex;align-items:center;gap:8px;font-family:'Archivo Narrow';
+  font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px;color:var(--ink)}
+.svc-body li svg{width:14px;height:14px;color:var(--accent-deep);flex:none}
+
+/* CONTACT + final CTA */
+.cta{background:var(--band);color:#fff;position:relative;overflow:hidden}
+.cta .deco{position:absolute;inset:0;z-index:0;opacity:.07;
+  background-image:repeating-linear-gradient(135deg,#fff 0 1px,transparent 1px 30px)}
+.cta-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(30px,5vw,70px);align-items:start}
+.cta h2{font-weight:800;font-size:clamp(40px,6.4vw,84px);color:#fff}
+.cta h2 em{font-style:normal;color:var(--accent)}
+.cta .lede{color:var(--band-text);max-width:36ch;margin:20px 0 28px;font-size:18px}
+.cta .info{margin-top:30px;display:grid;gap:16px}
+.cta .info .row{display:flex;gap:13px;align-items:flex-start}
+.cta .info svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:3px}
+.cta .info b{font-family:'Saira Condensed';font-weight:700;font-size:18px;display:block;color:#fff}
+.cta .info span{color:var(--band-text);font-size:14px}
+.form{background:#fff;color:var(--ink);padding:clamp(24px,3vw,38px);
+  box-shadow:14px 14px 0 rgba(252,190,0,.85)}
+.form .fnote{font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;font-size:11px;color:var(--accent-deep);margin-bottom:18px;
+  display:flex;align-items:center;gap:8px}
+.form label{display:block;font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;font-size:12px;margin:0 0 6px;color:var(--muted)}
+.form .fg{margin-bottom:16px}
+.form input,.form textarea{width:100%;border:2px solid var(--line);background:var(--base);
+  padding:12px 14px;font-family:'Archivo',sans-serif;font-size:15px;color:var(--ink)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--accent)}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form button{width:100%;justify-content:center;margin-top:6px}
+
+/* placeholder pill */
+.ph{display:inline-flex;align-items:center;gap:6px;background:rgba(107,84,0,.12);
+  color:var(--accent-deep);border:1px dashed var(--accent-deep);
+  font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;font-size:10.5px;padding:2px 8px;border-radius:2px;
+  vertical-align:middle;white-space:nowrap}
+.on-dark .ph{background:rgba(252,190,0,.16);color:var(--accent);border-color:var(--accent)}
+
+/* FOOTER */
+footer.site{background:var(--ink);color:#fff;padding:clamp(48px,6vw,76px) 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;align-items:start}
+.foot-brand .mark{width:54px;height:54px;margin-bottom:16px}
+.foot-brand .nm{font-family:'Saira Condensed';font-weight:800;font-size:26px;
+  text-transform:uppercase;line-height:.9}
+.foot-brand .nm b{color:var(--accent)}
+.foot-brand p{color:var(--band-text);font-size:14px;max-width:32ch;margin-top:12px}
+.fcol h4{font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;font-size:12px;color:var(--accent);margin-bottom:16px}
+.fcol a,.fcol p{display:block;color:#d7d9dd;text-decoration:none;font-size:14px;margin-bottom:10px}
+.fcol a:hover{color:var(--accent)}
+.glink{display:inline-flex;align-items:center;gap:8px}
+.glink svg{width:15px;height:15px}
+.foot-bot{border-top:1px solid #2c2f34;margin-top:40px;padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:var(--accent2)}
+.foot-bot .tally{order:2}
+
+/* mobile sticky bar */
+.mobar{display:none}
+
+/* reveal */
+.rev{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rev.in{opacity:1;transform:none}
+.stg>*{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.stg.in>*{opacity:1;transform:none}
+.stg.in>*:nth-child(2){transition-delay:.08s}
+.stg.in>*:nth-child(3){transition-delay:.16s}
+.stg.in>*:nth-child(4){transition-delay:.24s}
+.stg.in>*:nth-child(5){transition-delay:.32s}
+.stg.in>*:nth-child(6){transition-delay:.4s}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  nav.main,.hd .tel{display:none}
+  .burger{display:flex}
+  .hero-grid,.about-grid,.area-grid,.cta-grid{grid-template-columns:1fr}
+  .hero-img{max-width:440px;margin:10px auto 0}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .wtile.big{grid-row:auto;min-height:240px}
+  .svc-row{grid-template-columns:1fr}
+  .svc-row:nth-child(even) .svc-media{order:0}
+  .why-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  body{padding-bottom:66px}
+  .mobar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;
+    background:var(--ink);align-items:center;justify-content:space-between;
+    padding:10px 16px;border-top:2px solid var(--accent)}
+  .mobar a{text-decoration:none}
+  .mobar .q{background:var(--accent);color:var(--ink);font-family:'Saira Condensed';
+    font-weight:700;text-transform:uppercase;font-size:15px;padding:11px 18px;letter-spacing:.03em}
+  .mobar .ph-tel{display:flex;align-items:center;gap:9px;color:#fff;
+    font-family:'Saira Condensed';font-weight:700;font-size:17px}
+  .mobar .ph-tel svg{width:18px;height:18px;color:var(--accent)}
+  .work-grid{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .shead{flex-direction:column;align-items:flex-start}
+}
+.menu-open{display:none}
+@media(max-width:980px){
+  .menu-open{display:block;position:fixed;inset:74px 0 auto 0;z-index:55;
+    background:var(--base);border-bottom:1px solid var(--line);
+    padding:18px var(--pad) 26px;transform:translateY(-130%);transition:transform .3s ease}
+  .menu-open.show{transform:none}
+  .menu-open a{display:block;padding:13px 0;text-decoration:none;
+    font-family:'Saira Condensed';font-weight:700;text-transform:uppercase;
+    font-size:21px;border-bottom:1px solid var(--line)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rev,.stg>*{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site">
+  <div class="wrap hd">
+    <a class="brand" href="#top" aria-label="Fran Taylor Plumbing and Heating home">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <!-- riveted plate + pipe-elbow FT monogram -->
+        <rect x="2" y="2" width="44" height="44" fill="#17191C"/>
+        <rect x="2" y="2" width="44" height="44" fill="none" stroke="#FCBE00" stroke-width="2.5"/>
+        <circle cx="7" cy="7" r="1.7" fill="#FCBE00"/><circle cx="41" cy="7" r="1.7" fill="#FCBE00"/>
+        <circle cx="7" cy="41" r="1.7" fill="#FCBE00"/><circle cx="41" cy="41" r="1.7" fill="#FCBE00"/>
+        <path d="M15 14 H30 M22 14 V26 q0 8 8 8 H34" fill="none" stroke="#FCBE00" stroke-width="3.4" stroke-linecap="square"/>
+        <rect x="33" y="31" width="6" height="6" fill="#FCBE00"/>
+      </svg>
+      <span>
+        <span class="nm">Fran <b>Taylor</b></span>
+        <span class="sub">Plumbing &amp; Heating</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#why">Why Us</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#area">Area</a>
+      <a href="#services">Services</a>
+    </nav>
+    <a class="tel" href="tel:+12153610111">
+      <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 3l3 5-2 2a13 13 0 006 6l2-2 5 3v4a2 2 0 01-2 2A18 18 0 013 6a2 2 0 012-2z"/></svg></span>
+      <span class="stk"><small>Call the shop</small><span>(215) 361-0111</span></span>
+    </a>
+    <a class="btn btn-gold cta-q" href="#contact">Get a Free Quote</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="menu-open" id="mobmenu">
+    <a href="#why">Why Us</a><a href="#work">Work</a><a href="#about">About</a>
+    <a href="#area">Service Area</a><a href="#services">Services</a><a href="#contact">Get a Free Quote</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="orb a"></div><div class="orb b"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kick">
+        <span class="label"><span class="num">FT</span> Lansdale &amp; Surrounding Areas</span>
+        <span class="tally"><i></i><i></i><i></i><i></i><i></i></span>
+      </div>
+      <h1>Plumber in <em>Lansdale</em>, PA</h1>
+      <p class="lede">Commercial and residential plumbing done right the first time. Clogged drains, dead water heaters, hidden leaks. We show up and fix it.</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="#contact">Get a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#services">See What We Do</a>
+      </div>
+      <div class="trust">
+        <span class="tchip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          Licensed &amp; Insured
+        </span>
+        <span class="tchip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg>
+          Locally Owned
+        </span>
+        <span class="tchip">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.2l5.9-.9z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.2l5.9-.9z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.2l5.9-.9z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.2l5.9-.9z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.2l5.9-.9z"/></svg>
+          </span>
+          <span class="rt" id="rate" data-to="4.2" data-dec="1">4.2</span> on Google
+        </span>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="badge"><span class="b1">24/7</span><span class="b2">Emergency<br>Calls<span class="ph" style="margin-top:4px;display:inline-block">PLACEHOLDER: confirm hours</span></span></div>
+      <!-- PLACEHOLDER: hero is generic plumber stock, not the business's own crew/jobs -->
+      <div class="shot">
+        <img src="assets/hero.jpg" alt="Plumber working on copper supply lines" width="800" height="1000">
+      </div>
+      <span class="cap">On the job in Montgomery County</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== (dark band) -->
+<section class="band" id="why">
+  <div class="deco"></div>
+  <div class="wrap">
+    <div class="shead on-dark rev">
+      <div>
+        <span class="label on-dark"><span class="num">01</span> Why Choose Us</span>
+        <h2 style="color:#fff;margin-top:16px">Plumbing you don't have to <em>think about twice</em></h2>
+      </div>
+      <p>No upsells, no surprise line items, no ghosting. Just a clean fix and a fair price from a crew that lives nearby.</p>
+    </div>
+    <div class="why-grid stg">
+      <div class="why-cell">
+        <div class="n">/ 01</div>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+        <h3>Fast Response</h3>
+        <p>Burst pipe at 6am? We answer the phone and move quick to stop the damage. <span class="on-dark"></span></p>
+      </div>
+      <div class="why-cell">
+        <div class="n">/ 02</div>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
+        <h3>Upfront Pricing</h3>
+        <p>You hear the number before we pick up a wrench. The quote is the price.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">/ 03</div>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg>
+        <h3>Local &amp; Family Run</h3>
+        <p>Family owned and operated, serving Lansdale and the towns right around it.</p>
+      </div>
+      <div class="why-cell">
+        <div class="n">/ 04</div>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <h3>Work That Holds</h3>
+        <p>We back our repairs. <span class="ph">PLACEHOLDER: confirm warranty terms</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section id="work">
+  <div class="wrap">
+    <div class="shead rev">
+      <div>
+        <span class="label"><span class="num">02</span> Our Work</span>
+        <h2 style="margin-top:16px">Recent jobs around <em>the county</em></h2>
+      </div>
+      <p>Swap these tiles for your own photos before launch. The watermarked slots are reserved for real Fran Taylor job shots.</p>
+    </div>
+    <div class="work-grid stg">
+      <!-- PLACEHOLDER: owner real-photo slots, watermarked -->
+      <div class="wtile big ph">
+        <div class="wm"></div>
+        <div class="phnote">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2.4"/><path d="M3 17l5-4 4 3 3-2 6 4"/></svg>
+          <span>Owner photo<br>Repipe / remodel</span>
+        </div>
+        <span class="tag">Add your job photo</span>
+      </div>
+      <div class="wtile">
+        <img src="assets/detail.jpg" alt="Copper pipe fittings" loading="lazy">
+        <div class="wm"></div>
+        <span class="tag">Copper supply work</span>
+      </div>
+      <div class="wtile ph">
+        <div class="wm"></div>
+        <div class="phnote">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="11" r="2.4"/><path d="M3 17l5-4 4 3 3-2 6 4"/></svg>
+          <span>Owner photo</span>
+        </div>
+        <span class="tag">Add your job photo</span>
+      </div>
+      <div class="wtile">
+        <img src="assets/svc-heater.jpg" alt="Water heater installation" loading="lazy">
+        <div class="wm"></div>
+        <span class="tag">Water heater swap</span>
+      </div>
+      <div class="wtile">
+        <img src="assets/svc-bath.jpg" alt="Finished bathroom" loading="lazy">
+        <div class="wm"></div>
+        <span class="tag">Bathroom fixtures</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" style="background:var(--surface)">
+  <div class="wrap about-grid">
+    <div class="about-photo rev">
+      <!-- PLACEHOLDER: owner/crew real photo slot, watermarked -->
+      <div class="wm"></div>
+      <img src="assets/crew.jpg" alt="Plumber portrait placeholder">
+      <span class="cap">Owner photo goes here</span>
+    </div>
+    <div class="about-body rev">
+      <span class="label"><span class="num">03</span> About</span>
+      <h2>A local shop that <em>picks up the phone</em></h2>
+      <p>Fran Taylor Plumbing &amp; Heating handles commercial and residential plumbing across Lansdale and the surrounding towns. Drains, water heaters, leaks, repipes, fixtures. The kind of work that has to be done right, because the second time costs you more.</p>
+      <p>Family owned and operated. When you call, you talk to people who actually do the work and stand behind it.</p>
+      <div class="specs">
+        <div><div class="v">4.2<em>★</em></div><div class="k">Google rating, 22 reviews</div></div>
+        <div><div class="v">Lic<em>.</em></div><div class="k">Licensed &amp; insured <span class="ph">PLACEHOLDER: confirm license #</span></div></div>
+        <div><div class="v">Both</div><div class="k">Commercial &amp; residential</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AREA ===== -->
+<section class="area" id="area">
+  <div class="wrap area-grid">
+    <div class="rev">
+      <span class="label"><span class="num">04</span> Service Area</span>
+      <h2 class="disp" style="font-size:clamp(34px,5vw,60px);font-weight:800;margin:16px 0">Lansdale and the towns <em style="font-style:normal;color:var(--accent-deep)">next door</em></h2>
+      <p style="color:var(--muted);max-width:40ch">Based in Hatfield, working across Montgomery County. If you're nearby and you're not sure, just call. <span class="ph">PLACEHOLDER: confirm full service-area towns</span></p>
+      <div class="towns">
+        <span class="town home"><i></i>Lansdale</span>
+        <span class="town"><i></i>Hatfield</span>
+        <span class="town"><i></i>North Wales</span>
+        <span class="town"><i></i>Montgomeryville</span>
+        <span class="town"><i></i>Kulpsville</span>
+        <span class="town"><i></i>Towamencin</span>
+        <span class="town"><i></i>Souderton</span>
+        <span class="town"><i></i>Telford</span>
+      </div>
+    </div>
+    <div class="area-map rev" aria-hidden="true">
+      <svg viewBox="0 0 400 320">
+        <rect width="400" height="320" fill="#1A1C20"/>
+        <g stroke="#34373d" stroke-width="1">
+          <path d="M0 80 H400 M0 160 H400 M0 240 H400 M100 0 V320 M200 0 V320 M300 0 V320"/>
+        </g>
+        <path d="M70 90 Q150 60 230 110 T360 150 Q300 230 200 250 Q90 260 60 180 Z" fill="none" stroke="#FCBE00" stroke-width="2" opacity=".55" stroke-dasharray="5 5"/>
+        <circle cx="200" cy="160" r="9" fill="#FCBE00"/>
+        <circle cx="200" cy="160" r="18" fill="none" stroke="#FCBE00" stroke-width="2" opacity=".5"/>
+        <g fill="#FCBE00"><circle cx="120" cy="120" r="3.5"/><circle cx="270" cy="130" r="3.5"/><circle cx="150" cy="220" r="3.5"/><circle cx="280" cy="210" r="3.5"/><circle cx="320" cy="160" r="3.5"/></g>
+        <text x="200" y="190" fill="#fff" font-family="Archivo Narrow, sans-serif" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="2">LANSDALE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="shead rev">
+      <div>
+        <span class="label"><span class="num">05</span> Services</span>
+        <h2 style="margin-top:16px">What we <em>fix</em></h2>
+      </div>
+      <p>Confirm and trim this list with the owner before launch. <span class="ph">PLACEHOLDER: confirm services offered</span></p>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media"><span class="num">01</span>
+        <img src="assets/svc-tools.jpg" alt="Drain cleaning tools" loading="lazy"></div>
+      <div class="svc-body">
+        <h3>Drain &amp; <em>sewer cleaning</em></h3>
+        <p>Slow drains, backups, and clogs cleared, plus camera inspection on the lines that keep failing.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Kitchen &amp; bath drains</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Main sewer line</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Camera &amp; locating</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media"><span class="num">02</span>
+        <img src="assets/svc-heater.jpg" alt="Water heater" loading="lazy"></div>
+      <div class="svc-body">
+        <h3>Water heater <em>repair &amp; install</em></h3>
+        <p>No hot water, leaking tank, or just old and loud. We repair what we can and swap what we can't, tank or tankless.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Tank &amp; tankless</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Same-day options</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Haul-away</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media noimg" aria-hidden="true">
+        <span class="num">03</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2s6 7 6 12a6 6 0 01-12 0c0-5 6-12 6-12z"/><path d="M9 14a3 3 0 003 3" stroke-width="2"/></svg>
+      </div>
+      <div class="svc-body">
+        <h3>Leak detection <em>&amp; repair</em></h3>
+        <p>Mystery damp spot, climbing water bill, or a slab leak. We find the source and fix it without tearing up half the house.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Hidden &amp; slab leaks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Supply &amp; drain lines</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Pressure issues</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media"><span class="num">04</span>
+        <img src="assets/svc-faucet.jpg" alt="Faucet and fixtures" loading="lazy"></div>
+      <div class="svc-body">
+        <h3>Fixtures &amp; <em>faucets</em></h3>
+        <p>Faucets, toilets, garbage disposals, shower valves. New installs and the leaky ones that won't quit.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Sinks &amp; faucets</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Toilets &amp; disposals</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Shower valves</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media noimg" aria-hidden="true">
+        <span class="num">05</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h10v8H4z"/><path d="M14 11h4l2 2v3h-6"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+      </div>
+      <div class="svc-body">
+        <h3>Emergency <em>plumbing</em></h3>
+        <p>Burst pipe, sewage backup, no water. Call the number up top and we'll move on it. <span class="ph">PLACEHOLDER: confirm 24/7 availability</span></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Burst &amp; frozen pipes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Sewage backups</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Shutoff &amp; cleanup</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svc-row rev">
+      <div class="svc-media"><span class="num">06</span>
+        <img src="assets/detail.jpg" alt="Repiping work" loading="lazy"></div>
+      <div class="svc-body">
+        <h3>Repiping &amp; <em>remodels</em></h3>
+        <p>Old galvanized lines, kitchen and bath remodels, additions. New plumbing run clean and to code.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Whole-home repipe</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Kitchen &amp; bath</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>Code corrections</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / FINAL CTA ===== -->
+<section class="cta" id="contact">
+  <div class="deco"></div>
+  <div class="wrap cta-grid">
+    <div class="rev">
+      <span class="label on-dark"><span class="num">06</span> Get In Touch</span>
+      <h2 style="margin-top:16px">Get a <em>free quote</em></h2>
+      <p class="lede">Tell us what's going on. We'll get back to you with a straight answer and a fair price. No pressure.</p>
+      <div class="info">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l3 5-2 2a13 13 0 006 6l2-2 5 3v4a2 2 0 01-2 2A18 18 0 013 6a2 2 0 012-2z"/></svg>
+          <div><b>(215) 361-0111</b><span>Call or text the shop</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><b>33 Dawson St, Hatfield, PA 19440</b><span>Serving Lansdale &amp; surrounding areas</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Hours <span class="ph">PLACEHOLDER: confirm hours</span></b><span>Emergency calls by phone</span></div>
+        </div>
+      </div>
+    </div>
+    <form class="form rev" onsubmit="return false">
+      <div class="fnote">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        Placeholder form, wire it up before launch
+      </div>
+      <div class="row2">
+        <div class="fg"><label for="nm">Name</label><input id="nm" type="text" placeholder="Your name"></div>
+        <div class="fg"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(215) 000-0000"></div>
+      </div>
+      <div class="fg"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com"></div>
+      <div class="fg"><label for="msg">What's going on?</label><textarea id="msg" rows="4" placeholder="Tell us about the problem"></textarea></div>
+      <button class="btn btn-gold" type="submit">Send Request
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="2" y="2" width="44" height="44" fill="#26282D"/>
+          <rect x="2" y="2" width="44" height="44" fill="none" stroke="#FCBE00" stroke-width="2.5"/>
+          <circle cx="7" cy="7" r="1.7" fill="#FCBE00"/><circle cx="41" cy="7" r="1.7" fill="#FCBE00"/>
+          <circle cx="7" cy="41" r="1.7" fill="#FCBE00"/><circle cx="41" cy="41" r="1.7" fill="#FCBE00"/>
+          <path d="M15 14 H30 M22 14 V26 q0 8 8 8 H34" fill="none" stroke="#FCBE00" stroke-width="3.4" stroke-linecap="square"/>
+          <rect x="33" y="31" width="6" height="6" fill="#FCBE00"/>
+        </svg>
+        <div class="nm">Fran <b>Taylor</b><br>Plumbing &amp; Heating</div>
+        <p>Commercial and residential plumbing for Lansdale and the towns around it. Family owned and operated.</p>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <a class="tel on-dark" href="tel:+12153610111" style="margin-bottom:14px">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 3l3 5-2 2a13 13 0 006 6l2-2 5 3v4a2 2 0 01-2 2A18 18 0 013 6a2 2 0 012-2z"/></svg></span>
+          <span class="stk"><small>Call the shop</small><span>(215) 361-0111</span></span>
+        </a>
+        <p>33 Dawson St<br>Hatfield, PA 19440</p>
+        <p>Hours <span class="ph">PLACEHOLDER: confirm hours</span></p>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#why">Why Choose Us</a>
+        <a href="#services">Services</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Get a Free Quote</a>
+        <!-- single Google link on the whole site, clean cid only -->
+        <a class="glink" href="https://www.google.com/maps?cid=2925022882468902644" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Find us on Google
+        </a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; <span id="yr">2026</span> Fran Taylor Plumbing &amp; Heating. Licensed &amp; insured <span class="ph">PLACEHOLDER: confirm license #</span></span>
+      <span class="tally" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <span>Lansdale, PA &middot; Built by Presency</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky bar -->
+<div class="mobar" aria-label="Quick contact">
+  <a class="ph-tel" href="tel:+12153610111">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 3l3 5-2 2a13 13 0 006 6l2-2 5 3v4a2 2 0 01-2 2A18 18 0 013 6a2 2 0 012-2z"/></svg>
+    (215) 361-0111
+  </a>
+  <a class="q" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // mobile menu
+  var b=document.getElementById('burger'), m=document.getElementById('mobmenu');
+  if(b){b.addEventListener('click',function(){
+    var open=m.classList.toggle('show');
+    b.setAttribute('aria-expanded',open);
+  });
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('show');b.setAttribute('aria-expanded','false');});});}
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  if(rm){
+    document.querySelectorAll('.rev,.stg').forEach(function(e){e.classList.add('in');});
+    return;
+  }
+  // reveal
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rev,.stg').forEach(function(e){io.observe(e);});
+
+  // rating count-up
+  var rt=document.getElementById('rate');
+  if(rt){
+    var done=false;
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting && !done){ done=true;
+          var to=parseFloat(rt.getAttribute('data-to')), t0=null;
+          function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/900,1);
+            rt.textContent=(to*p).toFixed(1); if(p<1)requestAnimationFrame(step); else rt.textContent=to.toFixed(1);}
+          requestAnimationFrame(step);
+        }
+      });
+    },{threshold:.6});
+    ro.observe(rt);
+  }
+})();
+</script>
+</body>
+</html>

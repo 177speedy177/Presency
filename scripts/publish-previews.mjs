@@ -5,13 +5,15 @@
 // than MAX_LIVE client previews are live at once. Never publishes private
 // files (lead-data.md), zips, or the single-file review/preview exports.
 //
+// Source folders may carry a leading "DONE " marker (your finished flag) and
+// other casing/spacing; the slug is normalized from the folder name, so
+// "DONE finn-plumbing" publishes to /p/finn-plumbing/.
+//
 // Usage (run from the presency repo root):
 //   node scripts/publish-previews.mjs status            show what's live / available
 //   node scripts/publish-previews.mjs add-new           publish every client not yet live
 //   node scripts/publish-previews.mjs add <slug...>     publish/refresh specific clients
 //   node scripts/publish-previews.mjs remove <slug...>  take specific previews down
-//
-// After it runs, it prints the exact git commands to deploy.
 
 import fs from "node:fs/promises"
 import path from "node:path"
@@ -19,27 +21,20 @@ import { fileURLToPath } from "node:url"
 
 // ── Config ────────────────────────────────────────────────────────────────
 const CLIENTS_DIR = "C:/Users/397jt/presency-sites/clients" // where your source sites live
-const MAX_LIVE = 20                                         // hard cap of live client previews
+const MAX_LIVE = 100                                        // hard cap of live client previews
 const RESERVED = new Set(["test-preview"])                  // system pages that don't count
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const PREVIEWS_DIR = path.join(ROOT, "public", "p")
 
-// Clean display names for the tricky slugs; anything else is auto-prettified.
+// Clean display names for slugs the auto-prettifier gets wrong.
 const NAME_OVERRIDES = {
-  "davids-painting-company": "Davids Painting Company",
-  "doran-s-lawn-services": "Doran's Lawn Services",
-  "finn-plumbing": "Finn Plumbing",
-  "green-grass-landscape-services-inc": "Green Grass Landscape Services Inc",
-  "hillside-landscaping-inc": "Hillside Landscaping Inc",
-  "joseph-del-buono-inc": "Joseph Del Buono Inc",
-  "michael-j-moffa-electrical": "Michael J Moffa Electrical",
   "mjw-plumbing-heating": "MJW Plumbing & Heating",
   "neca": "NECA Electrical",
-  "quality-hvac-repair-glenside": "Quality HVAC Repair Glenside",
   "r-g-williams-plumbing-heating-drain": "R G Williams Plumbing-Heating & Drain",
-  "weber-plumbing": "Weber Plumbing",
 }
+
+const ACRONYMS = new Set(["llc", "hvac", "ac", "pa", "nj", "usa", "ii", "iii"])
 
 // Files that must NEVER be published.
 function isExcluded(srcPath) {
@@ -52,10 +47,32 @@ function isExcluded(srcPath) {
   )
 }
 
-// ── Helpers ─────────────────────────────────────────────────────────────────
+// ── Naming ───────────────────────────────────────────────────────────────────
 const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-const prettify = slug =>
-  slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())
+
+// Folder name -> URL slug. Strips a leading "DONE " marker and normalizes.
+function slugify(folder) {
+  return folder
+    .replace(/^done\s+/i, "")
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+}
+
+function prettify(slug) {
+  const out = []
+  for (const w of slug.split("-")) {
+    if (!w) continue
+    if (w === "s" && out.length) { out[out.length - 1] += "'s"; continue }
+    if (ACRONYMS.has(w)) { out.push(w.toUpperCase()); continue }
+    out.push(w.charAt(0).toUpperCase() + w.slice(1))
+  }
+  return out.join(" ")
+}
+
 const displayName = slug => NAME_OVERRIDES[slug] || prettify(slug)
 const domainFor = name => name.toLowerCase().replace(/[^a-z0-9]/g, "") + ".com"
 
@@ -68,8 +85,26 @@ async function dirsIn(dir) {
 async function liveSlugs() {
   return (await dirsIn(PREVIEWS_DIR)).filter(s => !RESERVED.has(s))
 }
-async function sourceSlugs() {
-  return (await dirsIn(CLIENTS_DIR)).filter(s => !RESERVED.has(s))
+
+// Valid source sites: { folder, slug, name }. Skips folders without an
+// index.html, and warns on any two folders that collide to the same slug.
+async function sourceEntries() {
+  const folders = await dirsIn(CLIENTS_DIR)
+  const bySlug = new Map()
+  const entries = []
+  for (const folder of folders.sort()) {
+    try { await fs.access(path.join(CLIENTS_DIR, folder, "index.html")) }
+    catch { continue }
+    const slug = slugify(folder)
+    if (!slug) continue
+    if (bySlug.has(slug)) {
+      console.log(`WARN: "${folder}" and "${bySlug.get(slug)}" both map to /p/${slug}/. Keeping the first.`)
+      continue
+    }
+    bySlug.set(slug, folder)
+    entries.push({ folder, slug, name: displayName(slug) })
+  }
+  return entries
 }
 
 // ── Wrapper template ─────────────────────────────────────────────────────────
@@ -174,20 +209,14 @@ function wrapperHtml(name, domain, slug) {
 }
 
 // ── Operations ────────────────────────────────────────────────────────────
-async function publishOne(slug) {
-  const src = path.join(CLIENTS_DIR, slug)
-  try { await fs.access(path.join(src, "index.html")) }
-  catch { throw new Error(`"${slug}" has no index.html in ${CLIENTS_DIR}`) }
-
+async function publishEntry({ folder, slug, name }) {
+  const src = path.join(CLIENTS_DIR, folder)
   const dest = path.join(PREVIEWS_DIR, slug)
   const site = path.join(dest, "site")
-  await fs.rm(dest, { recursive: true, force: true })       // clean slate
+  await fs.rm(dest, { recursive: true, force: true })
   await fs.mkdir(site, { recursive: true })
   await fs.cp(src, site, { recursive: true, filter: s => !isExcluded(s) })
-
-  const name = displayName(slug)
   await fs.writeFile(path.join(dest, "index.html"), wrapperHtml(name, domainFor(name), slug), "utf8")
-  return name
 }
 
 async function removeOne(slug) {
@@ -206,13 +235,14 @@ function gitHint() {
 
 async function status() {
   const live = (await liveSlugs()).sort()
-  const source = (await sourceSlugs()).sort()
-  const notLive = source.filter(s => !live.includes(s))
+  const src = await sourceEntries()
+  const liveSet = new Set(live)
+  const notLive = src.filter(e => !liveSet.has(e.slug))
   console.log(`\nLIVE (${live.length}/${MAX_LIVE}):`)
   for (const s of live) console.log(`  /p/${s}/   ->  ${displayName(s)}`)
   if (!live.length) console.log("  (none yet)")
   console.log(`\nAVAILABLE in clients/ but not live (${notLive.length}):`)
-  for (const s of notLive) console.log(`  ${s}   ->  ${displayName(s)}`)
+  for (const e of notLive) console.log(`  ${e.slug}   ->  ${e.name}`)
   if (!notLive.length) console.log("  (none)")
   console.log("")
 }
@@ -229,26 +259,31 @@ if (cmd === "remove") {
   }
   if (removed) gitHint()
 } else if (cmd === "add" || cmd === "add-new") {
-  const live = await liveSlugs()
+  const live = new Set(await liveSlugs())
+  const src = await sourceEntries()
   let targets = cmd === "add-new"
-    ? (await sourceSlugs()).filter(s => !live.includes(s))
-    : args
-  if (cmd === "add" && !targets.length) { console.log("Usage: add <slug...>"); process.exit(1) }
+    ? src.filter(e => !live.has(e.slug))
+    : src.filter(e => args.includes(e.slug))
+  if (cmd === "add") {
+    const found = new Set(targets.map(e => e.slug))
+    for (const a of args) if (!found.has(a)) console.log(`SKIP ${a}: no source folder maps to that slug`)
+    if (!targets.length) { console.log("Nothing to publish."); process.exit(1) }
+  }
 
-  // Enforce the cap (a refresh of an already-live slug does not use a new slot).
-  const room = MAX_LIVE - live.filter(s => !targets.includes(s)).length
+  const refreshing = targets.filter(e => live.has(e.slug)).length
+  const room = MAX_LIVE - (live.size - refreshing)
   const skipped = []
   if (targets.length > room) {
     skipped.push(...targets.slice(room))
     targets = targets.slice(0, room)
     console.log(`\nCap is ${MAX_LIVE}. Only room for ${room} more.`)
   }
-  for (const s of targets) {
-    try { const name = await publishOne(s); console.log(`published  /p/${s}/   ->  ${name}`) }
-    catch (e) { console.log(`SKIP ${s}: ${e.message}`) }
+  for (const e of targets) {
+    try { await publishEntry(e); console.log(`published  /p/${e.slug}/   ->  ${e.name}`) }
+    catch (err) { console.log(`SKIP ${e.slug}: ${err.message}`) }
   }
   if (skipped.length) {
-    console.log(`\nNot published (would exceed ${MAX_LIVE}): ${skipped.join(", ")}`)
+    console.log(`\nNot published (would exceed ${MAX_LIVE}): ${skipped.map(e => e.slug).join(", ")}`)
     console.log("Remove some first:  node scripts/publish-previews.mjs remove <slug...>")
   }
   if (targets.length) gitHint()

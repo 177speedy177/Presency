@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrician in Conshohocken, PA | D.C. Sassi Electrical Contractor</title>
+<meta name="description" content="D.C. Sassi Electrical Contractor is a licensed electrician serving Conshohocken, PA and nearby towns. Panel upgrades, wiring, lighting, EV chargers, generators. 5.0 on Google. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F0F2EF; --white:#FFFFFF; --line:#DBDED9; --mist:#E6E9E4;
+  --ink:#181C1A; --ink-soft:#58605B; --graphite:#14161B; --graphite-2:#1C1F26;
+  --copper:#157852; --copper-br:#34C28C; --copper-dk:#126A49; --volt:#46C892;
+  --f-disp:"Saira",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --wrap:1200px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--paper);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+/* faint trace-grid texture */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(25,28,34,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(25,28,34,.022) 1px,transparent 1px);
+  background-size:54px 54px;}
+h1,h2,h3,h4{font-family:var(--f-disp);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin:0;}
+p{margin:0 0 1rem;}
+a{color:var(--copper);text-decoration:none;}
+img{display:block;max-width:100%;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+/* ---- primitives ---- */
+.tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-weight:600;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper-dk);}
+.tag::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--copper);
+  box-shadow:0 0 0 3px rgba(70,200,146,.28);flex:none;}
+.tag.on-dark{color:var(--copper-br);}
+.tag.on-dark::before{background:var(--volt);box-shadow:0 0 0 3px rgba(70,200,146,.22);}
+
+.btn{display:inline-flex;align-items:center;gap:11px;font-family:var(--f-body);font-weight:600;
+  font-size:1rem;padding:15px 26px;border:none;cursor:pointer;border-radius:3px;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s;}
+.btn-copper{background:var(--copper);color:#fff;box-shadow:0 10px 26px -12px rgba(21,120,82,.85);}
+.btn-copper:hover{background:var(--copper-dk);transform:translateY(-3px);box-shadow:0 16px 30px -12px rgba(21,120,82,.9);}
+.btn-copper svg{transition:transform .25s var(--ease);}
+.btn-copper:hover svg{transform:translateX(4px);}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);border-radius:3px;}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-3px);}
+
+.ph{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-mono);font-size:.6rem;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--copper-dk);background:rgba(21,120,82,.09);
+  border:1px dashed var(--copper);border-radius:3px;padding:2px 7px;line-height:1.35;vertical-align:middle;white-space:nowrap;}
+
+.phone-sticker{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-weight:600;
+  font-size:.9rem;color:var(--ink);letter-spacing:.01em;padding:8px 13px;border:1.5px solid var(--line);
+  border-radius:3px;background:var(--white);transition:border-color .2s,transform .2s var(--ease);}
+.phone-sticker svg{width:15px;height:15px;color:var(--copper);flex:none;}
+.phone-sticker:hover{border-color:var(--copper);transform:translateY(-2px);}
+
+/* node-dot list marker */
+.node-li{display:flex;gap:14px;align-items:flex-start;}
+.node-li::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--copper);
+  box-shadow:0 0 0 3px rgba(70,200,146,.25);margin-top:7px;flex:none;}
+
+.section{padding:100px 0;position:relative;}
+.section-head{max-width:660px;margin-bottom:54px;}
+.section-head .tag{margin-bottom:18px;}
+.section-head h2{font-size:clamp(2.1rem,4.8vw,3.5rem);}
+.lead{font-size:1.12rem;color:var(--ink-soft);max-width:58ch;}
+
+/* trace divider */
+.trace-rule{display:flex;align-items:center;gap:0;}
+.trace-rule .ln{height:2px;background:var(--copper);flex:1;}
+.trace-rule .nd{width:11px;height:11px;border-radius:50%;background:var(--copper);flex:none;
+  box-shadow:0 0 0 3px rgba(70,200,146,.25);}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.stagger>*{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.stagger.in>*{opacity:1;transform:none;}
+.stagger.in>*:nth-child(2){transition-delay:.07s;}
+.stagger.in>*:nth-child(3){transition-delay:.14s;}
+.stagger.in>*:nth-child(4){transition-delay:.21s;}
+.stagger.in>*:nth-child(5){transition-delay:.28s;}
+.stagger.in>*:nth-child(6){transition-delay:.35s;}
+
+/* ============ HEADER ============ */
+.site-head{position:sticky;top:0;z-index:60;background:rgba(241,242,239,.86);
+  backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid var(--line);}
+.site-head::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;
+  background:linear-gradient(90deg,transparent,var(--copper) 18%,var(--volt) 50%,var(--copper) 82%,transparent);
+  opacity:.55;}
+.head-inner{display:flex;align-items:center;gap:24px;height:76px;}
+.logo{display:flex;align-items:center;gap:13px;color:var(--ink);}
+.logo .mark{width:44px;height:44px;flex:none;}
+.logo .wm{display:flex;flex-direction:column;line-height:1;}
+.logo .wm b{font-family:var(--f-disp);font-weight:800;font-size:1.18rem;letter-spacing:.01em;text-transform:uppercase;}
+.logo .wm span{font-family:var(--f-mono);font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:5px;}
+.nav{display:flex;gap:2px;margin-left:auto;}
+.nav a{font-family:var(--f-body);font-weight:500;font-size:.92rem;color:var(--ink);padding:8px 13px;position:relative;}
+.nav a .n{font-family:var(--f-mono);font-size:.62rem;color:var(--copper);margin-right:5px;}
+.nav a::after{content:"";position:absolute;left:13px;right:13px;bottom:4px;height:2px;background:var(--copper);
+  transform:scaleX(0);transform-origin:left;transition:transform .26s var(--ease);}
+.nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1);}
+.head-cta{display:flex;align-items:center;gap:14px;}
+.head-cta .phone-sticker{display:none;}
+.head-cta .btn{padding:12px 20px;font-size:.92rem;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto;}
+.nav-toggle span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--ease);}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:74px 0 88px;overflow:hidden;}
+.hero-glow{position:absolute;width:620px;height:620px;border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle,rgba(52,194,140,.16),transparent 66%);top:-180px;left:46%;
+  animation:drift 20s ease-in-out infinite alternate;}
+@keyframes drift{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,40px) scale(1.12);}}
+.hero-grid{display:grid;grid-template-columns:1.32fr .68fr;gap:48px;align-items:end;}
+.hero-copy{padding-bottom:6px;}
+.hero-copy .tag{margin-bottom:26px;}
+.hero h1{font-size:clamp(3rem,8vw,6.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:8px;text-transform:none;}
+.hero h1 .line2{display:block;color:var(--ink);}
+.hero h1 .ul{position:relative;color:var(--copper);white-space:nowrap;}
+.hero h1 .ul svg{position:absolute;left:0;bottom:-.1em;width:100%;height:.2em;overflow:visible;}
+.hero h1 .ul svg path{fill:none;stroke:var(--copper);stroke-width:6;stroke-linecap:round;
+  stroke-dasharray:760;stroke-dashoffset:760;animation:draw 1.2s var(--ease) .6s forwards;}
+.hero h1 .ul svg circle{fill:var(--volt);opacity:0;animation:pop .3s var(--ease) 1.7s forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes pop{to{opacity:1;}}
+.hero-sub{font-size:1.2rem;color:var(--ink-soft);max-width:42ch;margin:26px 0 32px;}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:40px;}
+.hero-trust{display:flex;gap:14px 26px;flex-wrap:wrap;align-items:center;
+  padding-top:26px;border-top:1px solid var(--line);}
+.hero-trust .t{display:flex;align-items:center;gap:9px;font-size:.88rem;font-weight:500;color:var(--ink);}
+.hero-trust svg{width:18px;height:18px;flex:none;color:var(--copper);}
+.stars{display:inline-flex;gap:2px;}
+.stars svg{width:15px;height:15px;color:#E3A92E;}
+/* inset photo lower-right */
+.hero-inset{position:relative;align-self:end;}
+.hero-frame{position:relative;background:var(--white);padding:11px 11px 0;border:1px solid var(--line);
+  box-shadow:0 30px 56px -28px rgba(20,22,27,.4);}
+.hero-frame::before,.hero-frame::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--copper);}
+.hero-frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.hero-frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.hero-frame img{width:100%;height:280px;object-fit:cover;}
+.hero-placard{display:flex;justify-content:space-between;align-items:center;padding:11px 3px;
+  font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+.hero-placard b{color:var(--copper-dk);}
+.hero-ckt{position:absolute;top:-14px;right:8px;font-family:var(--f-mono);font-size:.66rem;font-weight:600;
+  letter-spacing:.14em;color:var(--copper);background:var(--paper);padding:0 8px;}
+
+/* ============ STATS (dark) ============ */
+.stats{background:var(--graphite);color:#EAEBE7;}
+.stats .trace-rule{margin-bottom:40px;}
+.stats .trace-rule .ln{background:rgba(52,194,140,.4);}
+.stats .trace-rule .nd{background:var(--volt);box-shadow:0 0 0 3px rgba(70,200,146,.18);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+.stat{position:relative;padding-left:24px;}
+.stat::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:rgba(52,194,140,.45);}
+.stat .n{font-family:var(--f-disp);font-weight:800;font-size:clamp(2.6rem,5vw,4rem);line-height:1;color:#fff;display:flex;align-items:baseline;gap:5px;}
+.stat .n .star{color:var(--volt);font-size:.5em;}
+.stat .l{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+  color:#9BA0A8;margin-top:16px;line-height:1.55;}
+.stat .l .ph{background:rgba(70,200,146,.14);border-color:var(--copper-br);color:#A9E3C8;}
+
+/* ============ SERVICES (2-col list) ============ */
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:46px;}
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;border-top:1px solid var(--line);}
+.svc-row{display:flex;gap:20px;align-items:flex-start;padding:30px 0;border-bottom:1px solid var(--line);position:relative;}
+.svc-row::after{content:"";position:absolute;left:30px;bottom:-1px;height:2px;width:0;background:var(--copper);transition:width .4s var(--ease);}
+.svc-row:hover::after{width:60px;}
+.svc-ic{width:54px;height:54px;flex:none;border:1.5px solid var(--ink);border-radius:6px;display:grid;place-items:center;
+  position:relative;transition:.28s var(--ease);background:var(--white);}
+.svc-ic svg{width:26px;height:26px;color:var(--ink);transition:.28s var(--ease);}
+.svc-ic::after{content:"";position:absolute;top:-4px;right:-4px;width:9px;height:9px;border-radius:50%;
+  background:var(--volt);opacity:0;transform:scale(.4);transition:.28s var(--ease);}
+.svc-row:hover .svc-ic{border-color:var(--copper);background:var(--copper);transform:translateY(-3px);}
+.svc-row:hover .svc-ic svg{color:#fff;}
+.svc-row:hover .svc-ic::after{opacity:1;transform:scale(1);}
+.svc-num{font-family:var(--f-mono);font-size:.66rem;font-weight:600;color:var(--copper-dk);letter-spacing:.08em;}
+.svc-tx h3{font-family:var(--f-disp);font-weight:700;font-size:1.32rem;margin:6px 0 7px;letter-spacing:-.01em;}
+.svc-tx p{font-size:.96rem;color:var(--ink-soft);margin:0;}
+.svc-foot{margin-top:34px;font-size:.94rem;color:var(--ink-soft);}
+
+/* ============ WHY US ============ */
+.why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:start;}
+.why-values{display:flex;flex-direction:column;gap:2px;margin-top:8px;}
+.why-item{display:flex;gap:18px;padding:24px 0;border-bottom:1px solid var(--line);}
+.why-item:first-child{border-top:1px solid var(--line);}
+.why-k{font-family:var(--f-mono);font-size:.72rem;font-weight:600;color:var(--copper-dk);flex:none;width:34px;padding-top:5px;}
+.why-item h3{font-family:var(--f-disp);font-weight:700;font-size:1.26rem;margin:0 0 6px;}
+.why-item p{font-size:.96rem;color:var(--ink-soft);margin:0;}
+/* framed photo + crew slot */
+.why-media{display:flex;flex-direction:column;gap:24px;}
+.why-photo{position:relative;background:var(--white);padding:12px;border:1px solid var(--line);box-shadow:0 26px 50px -30px rgba(20,22,27,.4);}
+.why-photo img{width:100%;height:260px;object-fit:cover;}
+.why-photo .cap{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.6rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:10px 2px 2px;}
+.crew-slot{position:relative;height:230px;background:repeating-linear-gradient(135deg,var(--mist) 0 20px,#E0E2DC 20px 40px);
+  border:1px dashed var(--line);display:grid;place-items:center;text-align:center;overflow:hidden;}
+.crew-slot::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='230' height='150'><text x='10' y='90' transform='rotate(-30 115 75)' font-family='monospace' font-size='19' font-weight='700' fill='%23191C22' fill-opacity='0.14'>PLACEHOLDER</text></svg>");
+  background-repeat:repeat;}
+.crew-slot .si{position:relative;z-index:2;max-width:260px;padding:0 18px;}
+.crew-slot svg{width:38px;height:38px;color:var(--ink-soft);margin-bottom:12px;}
+.crew-slot b{font-family:var(--f-disp);font-weight:700;font-size:1.2rem;display:block;margin-bottom:5px;}
+.crew-slot span{font-size:.88rem;color:var(--ink-soft);}
+/* towns */
+.towns{margin-top:64px;padding-top:42px;border-top:1px solid var(--line);}
+.towns h3{font-family:var(--f-disp);font-weight:700;font-size:1.5rem;margin:14px 0 6px;}
+.town-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.town-list span{font-family:var(--f-mono);font-size:.76rem;color:var(--ink);background:var(--white);
+  border:1px solid var(--line);padding:8px 14px;border-radius:3px;}
+
+/* ============ GUARANTEE ============ */
+.guarantee{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.gtee-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start;}
+.gtee-promise h2{font-size:clamp(2rem,4vw,3rem);margin:16px 0 18px;}
+.gtee-seal{display:flex;align-items:center;gap:14px;margin-top:28px;padding:16px 20px;background:var(--white);
+  border:1px solid var(--line);border-left:4px solid var(--copper);}
+.gtee-seal svg{width:34px;height:34px;color:var(--copper);flex:none;}
+.gtee-seal b{font-family:var(--f-disp);font-weight:700;font-size:1.18rem;}
+.gtee-seal span{display:block;font-size:.84rem;color:var(--ink-soft);}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.spec{position:relative;padding:24px 22px;background:var(--white);border:1px solid var(--line);}
+.spec .sn{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.7rem;font-weight:600;color:var(--copper-dk);letter-spacing:.06em;}
+.spec .sn i{width:8px;height:8px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 3px rgba(70,200,146,.22);}
+.spec h3{font-family:var(--f-disp);font-weight:700;font-size:1.2rem;margin:14px 0 8px;}
+.spec p{font-size:.95rem;color:var(--ink-soft);margin:0;}
+
+/* ============ CONTACT + CTA ============ */
+.contact{background:var(--graphite);color:var(--paper);}
+.cta-band{text-align:left;max-width:780px;margin:0 0 60px;}
+.cta-band .tag{margin-bottom:22px;}
+.cta-band h2{font-size:clamp(2.3rem,5.4vw,4.2rem);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.02em;}
+.cta-band h2 em{font-style:normal;color:var(--copper-br);}
+.cta-band p{color:#A6ABB2;font-size:1.14rem;max-width:54ch;margin:0;}
+.contact-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:start;
+  background:var(--graphite-2);border:1px solid rgba(234,235,231,.1);padding:44px;}
+.form-note{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.04em;text-transform:uppercase;
+  color:#A9E3C8;background:rgba(70,200,146,.1);border:1px dashed var(--copper-br);padding:8px 12px;border-radius:3px;display:inline-block;margin-bottom:24px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#9BA0A8;margin-bottom:8px;}
+.field input,.field textarea{width:100%;background:rgba(234,235,231,.05);border:1px solid rgba(234,235,231,.18);
+  color:#fff;font-family:var(--f-body);font-size:1rem;padding:13px 15px;border-radius:3px;transition:border-color .2s;}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--copper-br);}
+.field textarea{resize:vertical;min-height:104px;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.contact-form .btn{width:100%;justify-content:center;margin-top:6px;}
+.contact-detail{display:flex;flex-direction:column;gap:24px;}
+.cd .k{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:#8B9098;margin-bottom:10px;}
+.cd .phone-sticker{background:rgba(234,235,231,.06);border-color:rgba(234,235,231,.2);color:#fff;}
+.cd .phone-sticker svg{color:var(--copper-br);}
+.cd address{font-style:normal;font-size:1.04rem;line-height:1.6;color:var(--paper);}
+.cd-trace{display:flex;align-items:center;gap:0;}
+.cd-trace .ln{height:2px;background:rgba(52,194,140,.4);flex:1;}
+.cd-trace .nd{width:9px;height:9px;border-radius:50%;background:var(--volt);}
+.next{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.next li{display:flex;gap:12px;font-size:.95rem;color:#C3C7CC;}
+.next .nq{font-family:var(--f-mono);font-weight:600;color:var(--copper-br);flex:none;}
+
+/* ============ FOOTER ============ */
+.foot{background:#0F1115;color:#A6ABB2;padding:0 0 32px;}
+.foot-trace{display:flex;align-items:center;height:6px;}
+.foot-trace i{flex:1;height:2px;background:linear-gradient(90deg,var(--copper),var(--volt));}
+.foot-trace b{width:8px;height:8px;border-radius:50%;background:var(--volt);flex:none;margin:0 2px;}
+.foot-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:42px;padding:64px 0 48px;}
+.foot-brand .logo{color:#fff;margin-bottom:18px;}
+.foot-brand .logo .wm b{color:#fff;}
+.foot-brand .logo .wm span{color:#7B808A;}
+.foot-brand p{font-size:.92rem;color:#7B808A;max-width:34ch;}
+.foot-col h4{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#6B7079;margin:0 0 18px;font-weight:600;}
+.foot-col a,.foot-col p{display:block;color:#A6ABB2;font-size:.93rem;margin:0 0 11px;font-family:var(--f-body);}
+.foot-col a:hover{color:var(--copper-br);}
+.foot-col .phone-sticker{background:rgba(234,235,231,.05);border-color:rgba(234,235,231,.16);color:#fff;margin-bottom:14px;}
+.foot-col .phone-sticker svg{color:var(--copper-br);}
+.foot-bar{border-top:1px solid rgba(234,235,231,.1);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;color:#6B7079;}
+.foot-bar a{color:#8B9098;}
+
+/* ============ MOBILE BAR ============ */
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--graphite);
+  padding:11px 16px;border-top:2px solid var(--copper);}
+.mobile-bar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;
+  font-family:var(--f-mono);font-weight:600;font-size:1rem;}
+.mobile-bar svg{width:17px;height:17px;color:var(--volt);}
+
+:where(a,button,input,textarea,[tabindex]):focus-visible{outline:3px solid var(--copper);outline-offset:3px;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1000px){
+  .hero-grid,.why-grid,.gtee-grid,.contact-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:28px;}
+  .svc-list{grid-template-columns:1fr;gap:0;}
+  .hero-inset{max-width:420px;}
+  .why-media{flex-direction:row;flex-wrap:wrap;}
+  .why-photo,.crew-slot{flex:1;min-width:260px;}
+}
+@media(max-width:760px){
+  .section{padding:72px 0;}
+  .nav,.head-cta .btn{display:none;}
+  .nav-toggle{display:flex;}
+  .nav.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 18px;}
+  .nav.open a{padding:13px 4px;border-bottom:1px solid var(--line);}
+  .stats-grid{grid-template-columns:1fr;gap:22px;}
+  .stat{border-top:1px solid rgba(234,235,231,.14);padding:18px 0 0 0;}
+  .stat::before{display:none;}
+  .specs{grid-template-columns:1fr;}
+  .row2{grid-template-columns:1fr;}
+  .contact-grid{padding:26px;}
+  .cta-band{text-align:left;}
+  .foot-inner{grid-template-columns:1fr;gap:34px;}
+  .mobile-bar{display:block;}
+  body{padding-bottom:60px;}
+  .hero-frame img{height:230px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .reveal,.stagger>*{opacity:1!important;transform:none!important;}
+  .hero h1 .ul svg path{stroke-dashoffset:0!important;}
+  .hero h1 .ul svg circle{opacity:1!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="D.C. Sassi Electrical Contractor, home">
+      <svg class="mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="42" height="42" rx="6" fill="#14161B"/>
+        <path d="M30 13H17a4 4 0 0 0 0 8h10a4 4 0 0 1 0 8H14" stroke="#34C28C" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="30" cy="13" r="3.4" fill="#46C892"/>
+        <circle cx="14" cy="31" r="3.4" fill="#46C892"/>
+      </svg>
+      <span class="wm"><b>D.C. Sassi</b><span>Electrical Contractor</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#stats">Track Record</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#guarantee">Guarantee</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="head-cta">
+      <a class="phone-sticker" href="tel:+16104203054" aria-label="Call D.C. Sassi at (610) 420-3054">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+        (610) 420-3054
+      </a>
+      <a class="btn btn-copper" href="#contact">Get a Free Quote</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy stagger">
+        <span class="tag">Conshohocken, PA &middot; Licensed Electricians</span>
+        <h1><span class="ul">Electrician<svg viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C90 6 250 6 326 12"/><circle cx="326" cy="12" r="6"/></svg></span><span class="line2">in Conshohocken.</span></h1>
+        <p class="hero-sub">Panels, wiring, lighting, EV chargers, and generators. Clean, code-correct work from a local crew that shows up and gets it done right.</p>
+        <div class="hero-actions">
+          <a class="btn btn-copper" href="#contact">Get a Free Quote
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#services">View services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="t"><span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          </span>5.0 on Google</div>
+          <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Licensed &amp; Insured <span class="ph" data-ph><!-- confirm -->PLACEHOLDER: confirm</span></div>
+          <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>Fast Response</div>
+        </div>
+      </div>
+
+      <div class="hero-inset reveal">
+        <div class="hero-frame">
+          <img src="assets/hero-inset.jpg" alt="A licensed electrician working on residential wiring" width="500" height="280">
+          <div class="hero-placard"><span>On the job / ref. only</span><b>Live work</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="section stats" id="stats">
+  <div class="wrap">
+    <div class="trace-rule reveal" aria-hidden="true"><span class="nd"></span><span class="ln"></span><span class="nd"></span><span class="ln"></span><span class="nd"></span></div>
+    <div class="stats-grid stagger">
+      <div class="stat"><div class="n"><span data-count="5.0" data-dec="1">5.0</span><span class="star">&#9733;</span></div><div class="l">Rating on Google<br>(real, 2 reviews)</div></div>
+      <div class="stat"><div class="n"><span class="ph" data-ph><!-- confirm years -->PLACEHOLDER: confirm</span></div><div class="l">Years wiring the<br>Conshohocken area</div></div>
+      <div class="stat"><div class="n"><span class="ph" data-ph><!-- confirm count -->PLACEHOLDER: confirm</span></div><div class="l">Panels &amp; installs<br>completed</div></div>
+      <div class="stat"><div class="n"><span class="ph" data-ph><!-- confirm -->PLACEHOLDER: confirm</span></div><div class="l">Licensed &amp; insured<br>coverage</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div class="section-head" style="margin:0;max-width:560px;">
+        <span class="tag">Services</span>
+        <h2 style="margin-top:18px;">What we wire, fix, and power up.</h2>
+      </div>
+      <p class="lead" style="max-width:34ch;margin:0;">Residential and light commercial work, done to code and left clean.</p>
+    </div>
+    <!-- service list is a PLACEHOLDER set, confirm and trim with owner -->
+    <div class="svc-list stagger">
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="1.5"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 01</span><h3>Panel Upgrades</h3><p>Old or overloaded service panels swapped for safe, modern capacity that handles today's load.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7c4 0 4 10 8 10s4-10 8-10"/><circle cx="4" cy="7" r="2"/><circle cx="20" cy="17" r="2"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 02</span><h3>Wiring &amp; Rewiring</h3><p>New circuits, outlets, and full rewires for older homes. Tidy runs, labeled and to code.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 03</span><h3>Lighting Installation</h3><p>Recessed, fixtures, under-cabinet, and outdoor lighting placed and switched the way you want it.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="11" height="18" rx="1.5"/><path d="M15 9h3a2 2 0 0 1 2 2v4a1.5 1.5 0 0 0 3 0"/><path d="M8 7v3M11 7v3"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 04</span><h3>EV Charger Install</h3><p>Level 2 home chargers wired to the right circuit so your car is full and ready every morning.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3l-2 7h4l-4 11 1-8H9z"/><path d="M3 12h3M18 12h3" stroke-linecap="round"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 05</span><h3>Troubleshooting &amp; Repair</h3><p>Dead outlets, tripping breakers, flickering lights. We find the real cause and fix it once.</p></div>
+      </div>
+      <div class="svc-row">
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="11" rx="1.5"/><path d="M7 7V5h10v2M8 12h3l-1 3 4-4h-3l1-3z"/></svg></div>
+        <div class="svc-tx"><span class="svc-num">N&deg; 06</span><h3>Generator Install</h3><p>Standby and portable generator hookups so the lights, heat, and fridge stay on when the grid drops.</p></div>
+      </div>
+    </div>
+    <p class="svc-foot reveal">Service list shown is a starting point. <span class="ph" data-ph><!-- confirm services -->PLACEHOLDER: confirm &amp; trim services with owner</span></p>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:24px;">
+          <span class="tag">Why D.C. Sassi</span>
+          <h2 style="margin-top:18px;font-size:clamp(2rem,4.2vw,3.2rem);">An electrician who picks up and shows up.</h2>
+        </div>
+        <div class="why-values stagger">
+          <div class="why-item"><div class="why-k">A/</div><div><h3>Fast response</h3><p>You reach a real person and get on the schedule quickly. Electrical problems do not wait, so we do not either.</p></div></div>
+          <div class="why-item"><div class="why-k">B/</div><div><h3>Upfront pricing</h3><p>A clear quote before any work starts. The number we give you is the number you pay.</p></div></div>
+          <div class="why-item"><div class="why-k">C/</div><div><h3>Local and family owned</h3><p>We work around Conshohocken and stand behind every job. Our name is on it.</p></div></div>
+          <div class="why-item"><div class="why-k">D/</div><div><h3>Code-correct, guaranteed</h3><p>Every install meets code and is backed by our workmanship guarantee. <span class="ph" data-ph><!-- confirm -->PLACEHOLDER: confirm guarantee</span></p></div></div>
+        </div>
+      </div>
+
+      <div class="why-media reveal">
+        <figure class="why-photo" style="margin:0;">
+          <img src="assets/why-photo.jpg" alt="Modern interior lighting installed in a finished room" loading="lazy">
+          <figcaption class="cap"><span>Finished lighting / ref. only</span><span>PLATE 02</span></figcaption>
+        </figure>
+        <div class="crew-slot">
+          <div class="si">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg>
+            <b>Your crew goes here</b>
+            <span>Reserved for a real photo of the team or van.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- service area -->
+    <div class="towns reveal">
+      <span class="tag">Service Area</span>
+      <h3>Conshohocken and the towns around it.</h3>
+      <p class="lead">Based at 108 E Germantown Pike, Plymouth Meeting. We cover Conshohocken and the surrounding area.</p>
+      <!-- town list is a PLACEHOLDER, confirm coverage with owner -->
+      <div class="town-list">
+        <span>Conshohocken</span><span>West Conshohocken</span><span>Plymouth Meeting</span>
+        <span>Lafayette Hill</span><span>Whitemarsh</span><span>Norristown</span>
+        <span>Bridgeport</span><span>Gulph Mills</span>
+        <span class="ph" data-ph style="font-size:.76rem;"><!-- confirm towns -->PLACEHOLDER: confirm service towns</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="section guarantee" id="guarantee">
+  <div class="wrap gtee-grid">
+    <div class="gtee-promise reveal">
+      <span class="tag">The Guarantee</span>
+      <h2>No mess, no mystery, no callbacks.</h2>
+      <p class="lead">You get a clear quote, clean work, and a tidy site. We protect your floors, label what we touch, and walk the job with you before we leave.</p>
+      <div class="gtee-seal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 9.5C7.5 19.5 4 16 4 11V5z"/><path d="M9 12l2 2 4-4" stroke-width="2"/></svg>
+        <div><b>Our work is guaranteed.</b><span><span class="ph" data-ph><!-- confirm warranty -->PLACEHOLDER: confirm warranty terms &amp; length</span></span></div>
+      </div>
+    </div>
+    <div class="specs stagger">
+      <div class="spec"><div class="sn"><i></i>STEP 01</div><h3>Call &amp; quote</h3><p>Tell us what is going on. We assess it and give you a clear, written quote with no guesswork.</p></div>
+      <div class="spec"><div class="sn"><i></i>STEP 02</div><h3>Schedule that works</h3><p>We book a time that fits your day and show up when we say. No all-day windows.</p></div>
+      <div class="spec"><div class="sn"><i></i>STEP 03</div><h3>Clean, code work</h3><p>Tidy runs, proper materials, and every connection to code. We protect the space the whole time.</p></div>
+      <div class="spec"><div class="sn"><i></i>STEP 04</div><h3>Walk &amp; guarantee</h3><p>We test it, walk it with you, clean up, and back the work. If something is off, we make it right.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + CTA ============ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <span class="tag on-dark">Get Started</span>
+      <h2>Need an electrician you can <em>count on?</em></h2>
+      <p>Tell us about the job and we will get you a clear, no pressure quote. Usually back to you within a day.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <form class="contact-form" onsubmit="return false;">
+        <span class="form-note"><!-- wire up form -->Placeholder form: connect to email or a form service before launch</span>
+        <div class="row2">
+          <div class="field"><label for="cf-name">Name</label><input id="cf-name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" type="tel" autocomplete="tel" placeholder="(610) 000-0000"></div>
+        </div>
+        <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        <div class="field"><label for="cf-msg">What do you need done?</label><textarea id="cf-msg" placeholder="Panel upgrade, EV charger, a few outlets..."></textarea></div>
+        <button class="btn btn-copper" type="submit">Send my request
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <div class="contact-detail">
+        <div class="cd"><div class="k">Call or text</div>
+          <a class="phone-sticker" href="tel:+16104203054">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+            (610) 420-3054
+          </a>
+        </div>
+        <div class="cd-trace" aria-hidden="true"><span class="nd"></span><span class="ln"></span><span class="nd"></span></div>
+        <div class="cd"><div class="k">Based in</div><address>108 E Germantown Pike<br>Plymouth Meeting, PA 19462</address></div>
+        <div class="cd"><div class="k">Hours</div><p style="margin:0;color:#C3C7CC;"><span class="ph" data-ph><!-- confirm hours -->PLACEHOLDER: confirm business hours</span></p></div>
+        <div class="cd"><div class="k">What happens next</div>
+          <ul class="next">
+            <li><span class="nq">01</span> We reach out to size up the job.</li>
+            <li><span class="nq">02</span> You get a clear written quote.</li>
+            <li><span class="nq">03</span> We schedule and get it done.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot-trace" aria-hidden="true"><i></i><b></b><i></i><b></b><i></i><b></b><i></i></div>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg class="mark" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="42" height="42" rx="6" fill="#1C1F26"/>
+            <path d="M30 13H17a4 4 0 0 0 0 8h10a4 4 0 0 1 0 8H14" stroke="#34C28C" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="30" cy="13" r="3.4" fill="#46C892"/>
+            <circle cx="14" cy="31" r="3.4" fill="#46C892"/>
+          </svg>
+          <span class="wm"><b>D.C. Sassi</b><span>Electrical Contractor</span></span>
+        </a>
+        <p>Licensed electricians serving Conshohocken and the surrounding towns. Family owned, code-correct, clean work.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a class="phone-sticker" href="tel:+16104203054">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+          (610) 420-3054
+        </a>
+        <p>108 E Germantown Pike<br>Plymouth Meeting, PA 19462</p>
+        <a href="https://www.google.com/maps?cid=12455800157075853832" target="_blank" rel="noopener">Find us on Google &rarr;</a>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#stats">Track Record</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why D.C. Sassi</a>
+        <a href="#guarantee">Guarantee</a>
+        <a href="#contact">Get a Free Quote</a>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; 2026 D.C. Sassi Electrical Contractor. Family owned.</span>
+      <span>Conshohocken, PA &middot; Licensed &amp; Insured <span class="ph" data-ph><!-- confirm -->PLACEHOLDER: confirm</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE BAR ============ -->
+<div class="mobile-bar">
+  <a href="tel:+16104203054">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+    Call (610) 420-3054
+  </a>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var t = document.getElementById('navToggle'), n = document.getElementById('nav');
+  t.addEventListener('click', function(){ var o = n.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  n.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); }); });
+
+  if(!rm && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.16, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal,.stagger').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal,.stagger').forEach(function(el){ el.classList.add('in'); }); }
+
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count')), dec = parseInt(el.getAttribute('data-dec')||'0',10);
+    if(rm){ el.textContent = target.toFixed(dec); return; }
+    var start=null, dur=1300;
+    function step(ts){ if(!start) start=ts; var p=Math.min((ts-start)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=(target*e).toFixed(dec); if(p<1) requestAnimationFrame(step); else el.textContent=target.toFixed(dec); }
+    requestAnimationFrame(step);
+  }
+  var cEls = document.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); } }); }, {threshold:.6});
+    cEls.forEach(function(el){ cio.observe(el); });
+  } else { cEls.forEach(countUp); }
+})();
+</script>
+</body>
+</html>

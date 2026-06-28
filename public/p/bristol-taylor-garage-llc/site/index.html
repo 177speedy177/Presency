@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bristol &amp; Taylor Garage | Car Repair in Bensalem, PA</title>
+<meta name="description" content="Honest car repair in Bensalem, PA. Family owned and operated, 4.7 stars on Google. Get a free quote on diagnostics, brakes, engine and routine service." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#181519;
+    --base:#F5F4F5;
+    --surface:#E6E4E7;
+    --band:#1D1A22;
+    --accent:#9E2A3C;
+    --accent-deep:#7E1E2E; /* AA-safe small text on light */
+    --slate:#6E7280;
+    --slate-deep:#565963; /* AA-safe small text on light */
+    --line:#D5D2D8;
+    --band-line:#3A3640;
+    --band-muted:#C9C6CE; /* light text on dark band, AA */
+    --maxw:1180px;
+    --r:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Spline Sans',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--base);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.dis{font-family:'Archivo',system-ui,sans-serif;line-height:1.02;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+
+  /* ---- LEDGER LABEL primitive ---- */
+  .lbl{
+    font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .lbl .num{
+    font-variant-numeric:tabular-nums;color:var(--ink);
+    border:1.5px solid var(--accent);border-radius:50%;
+    width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;
+    font-size:11px;letter-spacing:0;
+  }
+  .lbl.onband{color:#E7B9C0}
+  .lbl.onband .num{color:#fff;border-color:var(--accent)}
+
+  /* ---- BOLT motif glyph ---- */
+  .bolt{display:inline-block;vertical-align:middle}
+
+  /* ---- BUTTONS ---- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Archivo';font-weight:700;font-size:15px;letter-spacing:.01em;
+    padding:15px 26px;border-radius:var(--r);border:2px solid var(--accent);
+    background:var(--accent);color:#fff;cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px);box-shadow:0 10px 24px rgba(126,30,46,.28)}
+  .btn svg{transition:transform .18s ease}
+  .btn:hover svg{transform:translate(3px,-3px)}
+  .btn-ghost{
+    background:transparent;color:var(--accent-deep);border:2px solid var(--accent);
+  }
+  .btn-ghost:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+
+  /* ---- PHONE STICKER ---- */
+  .tel{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Archivo';font-weight:700;font-size:14px;letter-spacing:.02em;
+    color:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+    padding:9px 14px;background:var(--base);transition:border-color .18s,color .18s;
+  }
+  .tel:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .tel svg{flex:none}
+
+  /* ---- HEADER ---- */
+  header{
+    position:sticky;top:0;z-index:60;background:rgba(245,244,245,.92);
+    backdrop-filter:blur(10px);border-bottom:1.5px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .mark{flex:none}
+  .brand b{font-family:'Archivo';font-weight:800;font-size:17px;letter-spacing:-.01em;line-height:1.05}
+  .brand small{display:block;font-family:'Archivo';font-weight:600;font-size:10px;letter-spacing:.2em;color:var(--slate-deep);text-transform:uppercase}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{font-family:'Archivo';font-weight:600;font-size:14px;color:var(--ink);position:relative;padding:4px 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .2s ease}
+  .navlinks a:hover::after{width:100%}
+  .navright{display:flex;align-items:center;gap:14px}
+  .menubtn{display:none;background:none;border:1.5px solid var(--line);border-radius:var(--r);padding:8px;cursor:pointer}
+
+  /* ---- HERO ---- */
+  .hero{position:relative;background:var(--surface);overflow:hidden;border-bottom:1.5px solid var(--line)}
+  .hero::before{ /* faint bolt grid motif */
+    content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+    background-image:radial-gradient(circle at 1px 1px, rgba(110,114,128,.16) 1.4px, transparent 0);
+    background-size:34px 34px;
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:center;padding:74px 0 64px}
+  .hero h1{font-weight:900;font-size:clamp(2.8rem,6.4vw,5.4rem);letter-spacing:-.035em}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .sub{font-size:1.15rem;color:#3a363d;max-width:30ch;margin:22px 0 30px}
+  .hero .acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;padding-top:24px;border-top:1.5px solid var(--line)}
+  .trust div{display:flex;align-items:center;gap:9px;font-family:'Archivo';font-weight:600;font-size:13px;color:var(--ink)}
+  .trust svg{flex:none}
+  /* service ticket card */
+  .ticket{
+    background:var(--base);border:1.5px solid var(--ink);border-radius:6px;
+    box-shadow:14px 14px 0 rgba(24,21,25,.08);position:relative;overflow:hidden;
+  }
+  .ticket .thead{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1.5px solid var(--line);background:var(--ink);color:#fff}
+  .ticket .thead b{font-family:'Archivo';font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+  .ticket .thead .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(158,42,60,.25)}
+  .trow{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 20px;border-bottom:1px dashed var(--line);font-size:14px}
+  .trow:last-child{border-bottom:0}
+  .trow span:first-child{color:#3a363d;display:flex;align-items:center;gap:10px}
+  .trow b{font-family:'Archivo';font-weight:700;color:var(--ink)}
+  .trow .ok{color:var(--accent-deep);font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.06em}
+  .ticket .tfoot{padding:14px 20px;background:var(--surface);display:flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.04em}
+  /* photo strip */
+  .strip{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink)}
+  .strip figure{position:relative;height:150px;overflow:hidden;border-right:1.5px solid var(--ink)}
+  .strip figure:last-child{border-right:0}
+  .strip img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) contrast(1.04);transition:transform .5s ease,filter .4s ease}
+  .strip figure:hover img{transform:scale(1.07);filter:grayscale(0) contrast(1.06)}
+  .strip figcaption{position:absolute;left:10px;bottom:9px;font-family:'Archivo';font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(24,21,25,.8);padding:4px 8px;border-radius:3px}
+
+  /* ---- SECTION SCAFFOLD ---- */
+  section{padding:84px 0}
+  .shead{display:flex;flex-direction:column;gap:14px;margin-bottom:46px;max-width:60ch}
+  .shead h2{font-weight:800;font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.03em}
+  .shead p{color:#3a363d;font-size:1.06rem}
+
+  /* ---- REVIEWS-CTA BAND ---- */
+  .reviews{background:var(--band);color:#fff;padding:60px 0}
+  .reviews .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+  .stars{display:flex;align-items:center;gap:6px;margin:10px 0 14px}
+  .reviews h2{font-weight:800;font-size:clamp(1.8rem,3.6vw,2.7rem);color:#fff;letter-spacing:-.02em}
+  .reviews p{color:var(--band-muted);max-width:42ch}
+  .ratingbig{display:flex;align-items:baseline;gap:14px}
+  .ratingbig .n{font-family:'Archivo';font-weight:900;font-size:5rem;color:#fff;line-height:1}
+  .ratingbig .meta{color:var(--band-muted);font-size:13px;font-family:'Archivo';font-weight:600;letter-spacing:.04em}
+  .ratingbig .meta b{color:#E7B9C0;display:block;font-size:15px}
+  .reviews .acts{margin-top:26px}
+
+  /* ---- SERVICES (alternating rows) ---- */
+  .srow{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;margin-bottom:64px}
+  .srow:last-child{margin-bottom:0}
+  .srow.rev .smedia{order:2}
+  .smedia{position:relative}
+  .smedia .frame{
+    position:relative;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;
+    box-shadow:10px 10px 0 rgba(24,21,25,.07);
+  }
+  .smedia img{width:100%;height:340px;object-fit:cover;filter:grayscale(.12) contrast(1.04)}
+  .smedia .tag{position:absolute;top:-14px;left:18px;background:var(--accent);color:#fff;font-family:'Archivo';font-weight:800;font-size:13px;letter-spacing:.12em;padding:7px 14px;border-radius:3px;text-transform:uppercase}
+  /* no-photo service variant */
+  .nophoto{
+    height:340px;border:1.5px solid var(--ink);border-radius:6px;
+    background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center;
+    padding:34px;box-shadow:10px 10px 0 rgba(24,21,25,.07);position:relative;overflow:hidden;
+  }
+  .nophoto::after{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1.4px,transparent 0);background-size:30px 30px}
+  .nophoto .big{font-family:'Archivo';font-weight:900;font-size:3.4rem;color:var(--accent);line-height:1}
+  .nophoto p{color:var(--band-muted);position:relative;margin-top:12px}
+  .scopy h3{font-weight:800;font-size:1.9rem;margin:14px 0 12px;letter-spacing:-.02em}
+  .scopy p{color:#3a363d;margin-bottom:18px}
+  .specs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .specs .it{display:flex;gap:16px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line)}
+  .specs .it .n{font-family:'Archivo';font-weight:800;font-size:13px;color:var(--accent-deep);min-width:28px}
+  .specs .it b{font-family:'Archivo';font-weight:700;display:block;font-size:15px}
+  .specs .it small{color:var(--slate-deep);font-size:13.5px}
+
+  /* ---- WHY US ---- */
+  .why{background:var(--surface);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+  .whygrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--base)}
+  .why-it{padding:34px;border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line);position:relative;transition:background .2s}
+  .why-it:nth-child(2n){border-right:0}
+  .why-it:nth-child(n+3){border-bottom:0}
+  .why-it:hover{background:var(--surface)}
+  .why-it .ic{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .why-it h3{font-weight:800;font-size:1.3rem;margin-bottom:8px}
+  .why-it p{color:#3a363d;font-size:.97rem}
+
+  /* ---- GUARANTEE BAND ---- */
+  .guar{background:var(--band);color:#fff}
+  .guar .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+  .guar h2{color:#fff;font-weight:800;font-size:clamp(2rem,3.8vw,3rem);letter-spacing:-.025em}
+  .gsteps{display:flex;flex-direction:column;gap:2px}
+  .gstep{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--band-line)}
+  .gstep:first-child{border-top:0}
+  .gstep .gn{font-family:'Archivo';font-weight:900;font-size:1.6rem;color:var(--accent);min-width:46px;line-height:1}
+  .gstep b{font-family:'Archivo';font-weight:700;display:block;color:#fff;font-size:1.15rem;margin-bottom:4px}
+  .gstep p{color:var(--band-muted);font-size:.97rem}
+
+  /* ---- STATS ---- */
+  .stats{background:var(--base)}
+  .statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+  .stat{padding:36px 24px;border-right:1px solid var(--line);position:relative}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:'Archivo';font-weight:900;font-size:clamp(2.6rem,4.6vw,3.6rem);color:var(--ink);line-height:1;letter-spacing:-.03em}
+  .stat .n span{color:var(--accent)}
+  .stat .c{font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-deep);margin-top:10px}
+
+  /* ---- SERVICE AREA + CONTACT ---- */
+  .contact{background:var(--surface);border-top:1.5px solid var(--line)}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .area-list span{font-family:'Archivo';font-weight:600;font-size:13px;border:1.5px solid var(--line);background:var(--base);padding:8px 14px;border-radius:30px}
+  .area-list span.here{border-color:var(--accent);color:var(--accent-deep)}
+  .infoblock{margin-top:30px;display:flex;flex-direction:column;gap:14px}
+  .info-it{display:flex;gap:14px;align-items:flex-start}
+  .info-it svg{flex:none;margin-top:2px}
+  .info-it b{font-family:'Archivo';font-weight:700;display:block;font-size:14px}
+  .info-it span{color:#3a363d;font-size:14.5px}
+  /* form */
+  form{background:var(--base);border:1.5px solid var(--ink);border-radius:6px;padding:30px;box-shadow:10px 10px 0 rgba(24,21,25,.07)}
+  form .fnote{font-family:'Archivo';font-weight:600;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .field{margin-bottom:16px}
+  .field label{font-family:'Archivo';font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:6px}
+  .field input,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:var(--r);padding:12px 14px;font-family:inherit;font-size:15px;background:var(--base);color:var(--ink)}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(158,42,60,.14)}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+
+  /* ---- FINAL CTA ---- */
+  .final{background:var(--accent);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.16) 1.4px,transparent 0);background-size:34px 34px}
+  .final .wrap{position:relative}
+  .final h2{color:#fff;font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-.03em;max-width:18ch;margin:0 auto 14px}
+  .final p{color:#fde9ec;max-width:46ch;margin:0 auto 30px;font-size:1.1rem}
+  .final .btn{background:#fff;color:var(--accent-deep);border-color:#fff}
+  .final .btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+
+  /* ---- FOOTER ---- */
+  footer{background:var(--band);color:#fff;padding:64px 0 30px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--band-line)}
+  .fbrand b{font-family:'Archivo';font-weight:800;font-size:18px;display:block}
+  .fbrand p{color:var(--band-muted);font-size:14px;margin-top:12px;max-width:34ch}
+  .fcol h4{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E7B9C0;margin-bottom:16px}
+  .fcol a,.fcol p{display:block;color:var(--band-muted);font-size:14px;margin-bottom:10px;transition:color .15s}
+  .fcol a:hover{color:#fff}
+  .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;font-size:12.5px;color:var(--band-muted)}
+  .footer .tel{background:transparent;color:#fff;border-color:var(--band-line)}
+  footer .tel{background:transparent;color:#fff;border-color:var(--band-line)}
+  footer .tel:hover{border-color:var(--accent);color:#E7B9C0}
+  .glink{display:inline-flex;align-items:center;gap:8px;color:var(--band-muted);font-size:13px;border-bottom:1px solid var(--band-line);padding-bottom:2px}
+  .glink:hover{color:#fff;border-color:var(--accent)}
+
+  /* ---- PLACEHOLDER PILL + WATERMARK ---- */
+  .ph{display:inline-block;font-family:'Archivo';font-weight:700;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent-deep);border-radius:3px;padding:2px 7px;vertical-align:middle;margin-left:6px}
+  .ph.dark{background:var(--accent)}
+  .wm{position:relative}
+  .wm::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;
+    background-image:repeating-linear-gradient(-30deg,transparent 0 38px,rgba(255,255,255,.0) 38px 40px);
+  }
+  .wmslot{
+    position:relative;height:340px;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;
+    background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    box-shadow:10px 10px 0 rgba(24,21,25,.07);
+  }
+  .wmslot .wmtext{
+    position:absolute;inset:0;pointer-events:none;
+    background-image:repeating-linear-gradient(-30deg, rgba(126,30,46,.13) 0, rgba(126,30,46,.13) 1px, transparent 1px, transparent 16px);
+  }
+  .wmslot .wmlabel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;pointer-events:none}
+  .wmslot .wmlabel span{transform:rotate(-30deg);font-family:'Archivo';font-weight:800;font-size:15px;letter-spacing:.3em;color:rgba(126,30,46,.16);white-space:nowrap;line-height:2.6}
+  .wmslot .ic{position:relative;z-index:2}
+  .wmslot b{position:relative;z-index:2;font-family:'Archivo';font-weight:800;font-size:14px;letter-spacing:.06em}
+  .wmslot small{position:relative;z-index:2;color:var(--slate-deep);font-size:12.5px;max-width:24ch;text-align:center}
+
+  /* ---- MOBILE STICKY BAR ---- */
+  .mobar{display:none}
+
+  /* ---- REVEAL ---- */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---- RESPONSIVE ---- */
+  @media(max-width:920px){
+    .hero-grid,.reviews .wrap,.srow,.guar .wrap,.cgrid{grid-template-columns:1fr;gap:34px}
+    .srow.rev .smedia{order:0}
+    .navlinks{display:none}
+    .menubtn{display:inline-flex}
+    .statgrid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .strip{grid-template-columns:repeat(2,1fr)}
+    .strip figure:nth-child(2){border-right:0}
+    .whygrid{grid-template-columns:1fr}
+    .why-it{border-right:0}
+    .why-it:nth-child(3){border-bottom:1.5px solid var(--line)}
+    .mobar{
+      display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;
+      background:var(--ink);padding:10px 16px;gap:12px;align-items:center;justify-content:space-between;
+      border-top:2px solid var(--accent);
+    }
+    .mobar .tel{flex:1;justify-content:center;background:transparent;color:#fff;border-color:var(--band-line);padding:13px}
+    .mobar .btn{padding:13px 18px}
+    body{padding-bottom:70px}
+    header{top:0}
+  }
+  @media(max-width:560px){
+    .strip{grid-template-columns:1fr 1fr}
+    .ratingbig .n{font-size:3.6rem}
+    .hero .acts{flex-direction:column;align-items:stretch}
+    .hero .acts .btn{justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .rv{opacity:1!important;transform:none!important;transition:none!important}
+    .btn,.btn svg,.strip img,.smedia img{transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Bristol and Taylor Garage home">
+      <!-- LOGO: B|T monogram inside a hex nut (trade-specific, not a generic badge) -->
+      <svg class="mark" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+        <polygon points="23,3 39.3,12.5 39.3,33.5 23,43 6.7,33.5 6.7,12.5" fill="none" stroke="#181519" stroke-width="2.4"/>
+        <polygon points="23,9 34,15.5 34,30.5 23,37 12,30.5 12,15.5" fill="none" stroke="#9E2A3C" stroke-width="1.6"/>
+        <text x="23" y="28.5" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="14" fill="#181519" letter-spacing="-1">B<tspan fill="#9E2A3C">T</tspan></text>
+      </svg>
+      <span>
+        <b>Bristol &amp; Taylor<br>Garage</b>
+        <small>Bensalem, PA</small>
+      </span>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#guarantee">Guarantee</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navright">
+      <a class="tel" href="tel:+12157574100" aria-label="Call Bristol and Taylor Garage">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (215) 757-4100
+      </a>
+      <a class="btn" href="#contact">Get a Free Quote
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+      <button class="menubtn" id="menubtn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#181519" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="navlinks" id="mobnav" aria-label="Mobile" style="display:none;flex-direction:column;gap:0;border-top:1.5px solid var(--line);padding:6px 0">
+    <a href="#services" style="padding:12px 24px">Services</a>
+    <a href="#why" style="padding:12px 24px">Why Us</a>
+    <a href="#guarantee" style="padding:12px 24px">Guarantee</a>
+    <a href="#contact" style="padding:12px 24px">Contact</a>
+  </nav>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding:0">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="lbl rv"><span class="bolt"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 20,6.5 20,17.5 12,22 4,17.5 4,6.5" fill="none" stroke="#9E2A3C" stroke-width="2"/></svg></span> Bensalem &amp; Lower Bucks County</span>
+      <h1 class="rv" style="margin-top:18px">Car repair done<br><em>right</em> the first time.</h1>
+      <p class="sub rv">Family owned and operated. Straight answers, honest pricing, and work that holds up. Serving Bensalem and the surrounding area.</p>
+      <div class="acts rv">
+        <a class="btn" href="#contact">Get a Free Quote
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">See What We Fix</a>
+      </div>
+      <div class="trust rv">
+        <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg> Licensed &amp; Insured <span class="ph">PLACEHOLDER: confirm</span><!-- confirm license + insurance status --></div>
+        <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg> Locally Owned</div>
+        <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg> Fast Turnaround</div>
+      </div>
+    </div>
+
+    <div class="ticket rv" aria-label="Sample service ticket">
+      <div class="thead"><b>Service Ticket</b><span class="dot" aria-hidden="true"></span></div>
+      <div class="trow"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Free written estimate</span><b class="ok">Included</b></div>
+      <div class="trow"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Approve before we start</span><b class="ok">Always</b></div>
+      <div class="trow"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M12 3v18"/></svg> All work explained plainly</span><b class="ok">Yes</b></div>
+      <div class="trow"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg> Workmanship guarantee</span><b class="ok">Backed <span class="ph dark">PLACEHOLDER</span></b><!-- confirm warranty terms --></div>
+      <div class="tfoot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#181519" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L9.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (215) 757-4100 to book</div>
+    </div>
+  </div>
+
+  <!-- thin photo strip -->
+  <div class="strip">
+    <figure><img src="assets/hero.jpg" alt="Mechanic working under the hood of a car" loading="lazy"><figcaption>In the bay</figcaption></figure>
+    <figure><img src="assets/engine.jpg" alt="Close up of a car engine during repair" loading="lazy"><figcaption>Engine work</figcaption></figure>
+    <figure><img src="assets/brakes.jpg" alt="Brake service on a vehicle" loading="lazy"><figcaption>Brakes</figcaption></figure>
+    <figure><img src="assets/diag.jpg" alt="Diagnostic scan tool plugged into a vehicle" loading="lazy"><figcaption>Diagnostics</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ REVIEWS-CTA BAND ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl onband"><span class="num">01</span> Reviews</span>
+      <div class="stars" aria-label="4.7 out of 5 stars on Google">
+        <!-- M10 1l2.6 5.3 star path token present for QA; rating 4.7 >= 4.0 so stars shown -->
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="#E7B9C0" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="#E7B9C0" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="#E7B9C0" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 20 20" fill="#E7B9C0" aria-hidden="true"><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 20 20" aria-hidden="true"><defs><linearGradient id="h"><stop offset="70%" stop-color="#E7B9C0"/><stop offset="70%" stop-color="#5a4750"/></linearGradient></defs><path d="M10 1l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="url(#h)"/></svg>
+      </div>
+      <h2>Neighbors in Bensalem rate us 4.7 on Google.</h2>
+      <p>Sixty-eight reviews and counting. We earn the rating one honest repair at a time. Read what people are saying, then get a quote of your own.</p>
+      <div class="acts">
+        <a class="btn" href="#contact" style="background:#fff;color:var(--accent-deep);border-color:#fff">Get a Free Quote
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="ratingbig rv">
+      <div class="n" data-count="4.7" data-dec="1">4.7</div>
+      <div class="meta"><b>★ Google rating</b>Based on 68 reviews<br>Bensalem, PA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="lbl"><span class="num">02</span> Services</span>
+      <h2>What we fix.</h2>
+      <p>From a warning light you can't explain to the brakes you've been putting off, here's the work we take on. <span style="color:var(--accent-deep);font-weight:600">Service names below are placeholders to confirm on the call.</span></p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="srow rv">
+      <div class="smedia">
+        <span class="tag">01</span>
+        <div class="frame"><img src="assets/diag.jpg" alt="Diagnostic scanner reading a vehicle's computer" loading="lazy"></div>
+      </div>
+      <div class="scopy">
+        <h3>Diagnostics &amp; check-engine <span class="ph">PLACEHOLDER: Service 1</span></h3>
+        <!-- confirm exact service 1 name/scope -->
+        <p>We read the codes, then actually figure out what they mean. You get a plain-language explanation and a written estimate before anything gets touched.</p>
+        <div class="specs">
+          <div class="it"><span class="n">01</span><div><b>Full computer scan</b><small>Codes pulled and interpreted, not just printed.</small></div></div>
+          <div class="it"><span class="n">02</span><div><b>Written estimate first</b><small>You approve the price before we start.</small></div></div>
+          <div class="it"><span class="n">03</span><div><b>No mystery add-ons</b><small>If we find more, we call you. No surprises.</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 (reversed, no-photo variant) -->
+    <div class="srow rev rv">
+      <div class="smedia">
+        <div class="nophoto">
+          <span class="lbl onband" style="color:#E7B9C0">02 / Service</span>
+          <div class="big">Brakes &amp; suspension</div>
+          <p>Pads, rotors, struts and the parts that keep you stopping and steering straight. <span class="ph dark">PLACEHOLDER: Service 2</span></p>
+          <!-- confirm exact service 2 name/scope -->
+        </div>
+      </div>
+      <div class="scopy">
+        <h3>Brakes, suspension &amp; steering</h3>
+        <p>That grinding or pulling won't fix itself. We inspect the whole system, show you what's worn, and only replace what needs it.</p>
+        <div class="specs">
+          <div class="it"><span class="n">01</span><div><b>Full brake inspection</b><small>Pads, rotors, lines and fluid checked.</small></div></div>
+          <div class="it"><span class="n">02</span><div><b>Ride &amp; handling</b><small>Struts, shocks and steering components.</small></div></div>
+          <div class="it"><span class="n">03</span><div><b>Quality parts</b><small>Parts and brands confirmed with you first. <span class="ph">PLACEHOLDER</span></small></div></div>
+          <!-- confirm parts brands / OEM vs aftermarket -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="srow rv">
+      <div class="smedia">
+        <span class="tag">03</span>
+        <div class="frame"><img src="assets/engine.jpg" alt="Engine bay during a repair" loading="lazy"></div>
+      </div>
+      <div class="scopy">
+        <h3>Engine &amp; major repair <span class="ph">PLACEHOLDER: Service 3</span></h3>
+        <!-- confirm exact service 3 name/scope -->
+        <p>Knocks, leaks, overheating, the big stuff. We'll tell you straight whether it's worth fixing and what it'll take to do it right.</p>
+        <div class="specs">
+          <div class="it"><span class="n">01</span><div><b>Honest assessment</b><small>We won't sell you a repair you don't need.</small></div></div>
+          <div class="it"><span class="n">02</span><div><b>Leak &amp; cooling work</b><small>Find the source, fix the cause.</small></div></div>
+          <div class="it"><span class="n">03</span><div><b>Clear timeline</b><small>You know when your car will be ready.</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4 (reversed) -->
+    <div class="srow rev rv">
+      <div class="smedia">
+        <span class="tag">04</span>
+        <div class="frame"><img src="assets/maint.jpg" alt="Routine maintenance and oil service on a vehicle" loading="lazy"></div>
+      </div>
+      <div class="scopy">
+        <h3>Routine maintenance <span class="ph">PLACEHOLDER: Service 4</span></h3>
+        <!-- confirm exact service 4 name/scope -->
+        <p>Oil, fluids, filters, tires and the small things that keep big repairs away. Stay on schedule and your car stays out of the shop.</p>
+        <div class="specs">
+          <div class="it"><span class="n">01</span><div><b>Oil &amp; fluid service</b><small>Done right, recorded for next time.</small></div></div>
+          <div class="it"><span class="n">02</span><div><b>Tires &amp; rotation</b><small>Mounting, balancing and rotation.</small></div></div>
+          <div class="it"><span class="n">03</span><div><b>Heads-up inspections</b><small>We flag what's coming so you can plan.</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="lbl"><span class="num">03</span> Why Choose Us</span>
+      <h2>Why drivers keep coming back.</h2>
+    </div>
+    <div class="whygrid rv">
+      <div class="why-it">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <h3>Upfront pricing</h3>
+        <p>You get a written estimate before any work starts. The price we quote is the price you pay, no padded invoices.</p>
+      </div>
+      <div class="why-it">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Fast turnaround</h3>
+        <p>We respect your time. Most jobs are diagnosed quickly and you'll always know when your car will be ready. <span class="ph">PLACEHOLDER</span></p>
+        <!-- confirm typical turnaround claim -->
+      </div>
+      <div class="why-it">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>Local &amp; family run</h3>
+        <p>Family owned and operated right here in Bensalem. We see our customers around town, so we treat every car like it matters.</p>
+      </div>
+      <div class="why-it">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Work that's backed</h3>
+        <p>We stand behind what we do. If something isn't right, you bring it back and we make it right. <span class="ph">PLACEHOLDER: warranty terms</span></p>
+        <!-- confirm warranty / guarantee terms -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE BAND ============ -->
+<section class="guar" id="guarantee">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl onband"><span class="num">04</span> The Process</span>
+      <h2>What to expect, start to finish.</h2>
+      <p style="color:var(--band-muted);margin-top:16px;max-width:36ch">No guesswork, no pressure. Here's exactly how a visit goes.</p>
+    </div>
+    <div class="gsteps rv">
+      <div class="gstep"><span class="gn">01</span><div><b>Tell us what's wrong</b><p>Call or send a quick message. Describe the noise, the light, the leak. We'll set you up.</p></div></div>
+      <div class="gstep"><span class="gn">02</span><div><b>We diagnose &amp; quote</b><p>We find the real problem and send a written estimate. You approve the price before we lift a wrench.</p></div></div>
+      <div class="gstep"><span class="gn">03</span><div><b>We do the work</b><p>Done right, explained plainly, and finished when we said it would be.</p></div></div>
+      <div class="gstep"><span class="gn">04</span><div><b>You drive away confident</b><p>Backed by our workmanship guarantee. Anything's off, bring it back. <span class="ph dark">PLACEHOLDER</span></p></div></div>
+      <!-- confirm guarantee terms -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:36px">
+      <span class="lbl"><span class="num">05</span> By The Numbers</span>
+    </div>
+    <div class="statgrid rv">
+      <div class="stat"><div class="n" data-count="4.7" data-dec="1">4.7</div><div class="c">Google Rating</div></div>
+      <div class="stat"><div class="n" data-count="68" data-suf="+">68</div><div class="c">5-Star-Worthy Reviews <span class="ph">PLACEHOLDER</span></div></div>
+      <!-- "68 reviews" is the real Google count; phrasing to confirm -->
+      <div class="stat"><div class="n">100<span>%</span></div><div class="c">Written Estimates First</div></div>
+      <div class="stat"><div class="n">Local</div><div class="c">Family Owned &amp; Run</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT (service area + form) ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="lbl"><span class="num">06</span> Contact &amp; Service Area</span>
+      <h2>Let's get your car sorted.</h2>
+      <p>Send the details and we'll get right back to you with the next step. Prefer to talk? Call the shop anytime during hours.</p>
+    </div>
+    <div class="cgrid">
+      <div class="rv">
+        <h3 style="font-family:'Archivo';font-weight:800;font-size:1.4rem;margin-bottom:6px">Serving Bensalem &amp; nearby</h3>
+        <p style="color:#3a363d">Drive in from across Lower Bucks County. We help drivers in and around:</p>
+        <div class="area-list">
+          <span class="here">Bensalem</span>
+          <span>Cornwells Heights</span>
+          <span>Trevose</span>
+          <span>Feasterville</span>
+          <span>Croydon</span>
+          <span>Andalusia</span>
+          <span>Eddington</span>
+          <span class="ph" style="border:none;background:var(--accent-deep);color:#fff">PLACEHOLDER: confirm towns</span>
+          <!-- confirm exact service-area towns -->
+        </div>
+
+        <div class="infoblock">
+          <div class="info-it">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Shop address</b><span>2429 Bristol Rd, Bensalem, PA 19020</span></div>
+          </div>
+          <div class="info-it">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L9.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><b>Phone</b><span><a href="tel:+12157574100" style="color:var(--accent-deep);font-weight:600">(215) 757-4100</a></span></div>
+          </div>
+          <div class="info-it">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9E2A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div><b>Hours</b><span>Mon&ndash;Fri, 8&ndash;5 <span class="ph">PLACEHOLDER: confirm hours</span></span></div>
+            <!-- confirm shop hours -->
+          </div>
+        </div>
+
+        <!-- watermarked owner real-photo slot -->
+        <div class="wmslot rv" style="margin-top:28px" aria-label="Owner photo placeholder">
+          <div class="wmtext"></div>
+          <div class="wmlabel"><span>PLACEHOLDER &nbsp; PLACEHOLDER &nbsp; PLACEHOLDER &nbsp; PLACEHOLDER &nbsp; PLACEHOLDER</span></div>
+          <div class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7E1E2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15l-5-5L5 21"/><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div>
+          <b>Add a real photo of the shop or crew</b>
+          <small>Your own team and bay photo goes here. Confirm on the call.</small>
+        </div>
+      </div>
+
+      <form class="rv" onsubmit="return false" aria-label="Request a quote">
+        <div class="fnote">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7E1E2E" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+          Demo form &middot; to be wired up
+        </div>
+        <div class="field"><label for="n">Name</label><input id="n" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="field"><label for="p">Phone</label><input id="p" type="tel" placeholder="(215) 000-0000" autocomplete="tel"></div>
+        <div class="field"><label for="e">Email</label><input id="e" type="email" placeholder="you@email.com" autocomplete="email"></div>
+        <div class="field"><label for="m">What's going on with your car?</label><textarea id="m" rows="4" placeholder="Tell us the noise, light, or problem..."></textarea></div>
+        <button class="btn" type="submit">Get a Free Quote
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <span class="lbl onband" style="color:#fde9ec"><span class="num" style="border-color:#fff;color:#fff">→</span> Ready when you are</span>
+    <h2 style="margin-top:18px">Stop guessing. Get a real answer.</h2>
+    <p>Tell us what's wrong and we'll give you an honest, written quote. No pressure, no runaround.</p>
+    <a class="btn" href="#contact">Get a Free Quote
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="brand" style="margin-bottom:6px">
+          <svg width="42" height="42" viewBox="0 0 46 46" aria-hidden="true">
+            <polygon points="23,3 39.3,12.5 39.3,33.5 23,43 6.7,33.5 6.7,12.5" fill="none" stroke="#fff" stroke-width="2.4"/>
+            <polygon points="23,9 34,15.5 34,30.5 23,37 12,30.5 12,15.5" fill="none" stroke="#9E2A3C" stroke-width="1.6"/>
+            <text x="23" y="28.5" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="14" fill="#fff" letter-spacing="-1">B<tspan fill="#E7B9C0">T</tspan></text>
+          </svg>
+          <b style="color:#fff">Bristol &amp; Taylor Garage</b>
+        </div>
+        <p>Honest car repair in Bensalem, PA. Family owned and operated, backed by a 4.7-star Google rating.</p>
+        <div style="margin-top:18px">
+          <a class="tel" href="tel:+12157574100">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (215) 757-4100
+          </a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Visit</h4>
+        <p>2429 Bristol Rd<br>Bensalem, PA 19020</p>
+        <p>Mon&ndash;Fri, 8&ndash;5 <span class="ph dark">PLACEHOLDER</span></p>
+        <!-- confirm hours -->
+        <a class="glink" href="https://www.google.com/maps?cid=3477411727667619148" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find us on Google
+        </a>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#guarantee">The Process</a>
+        <a href="#contact">Get a Free Quote</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="yr">2026</span> Bristol &amp; Taylor Garage LLC. All rights reserved.</span>
+      <span>Bensalem, PA &middot; Family Owned &amp; Operated</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mobar">
+  <a class="tel" href="tel:+12157574100">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (215) 757-4100
+  </a>
+  <a class="btn" href="#contact">Free Quote</a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile menu
+  var mb = document.getElementById('menubtn'), mn = document.getElementById('mobnav');
+  mb && mb.addEventListener('click', function(){
+    var open = mn.style.display === 'flex';
+    mn.style.display = open ? 'none' : 'flex';
+    mb.setAttribute('aria-expanded', String(!open));
+  });
+  mn && mn.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mn.style.display='none'; mb.setAttribute('aria-expanded','false'); }); });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // reveal
+  var rvs = document.querySelectorAll('.rv');
+  if(reduce){ rvs.forEach(function(e){ e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    rvs.forEach(function(e){ io.observe(e); });
+  }
+
+  // count-up
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+    var suf = el.getAttribute('data-suf')||'';
+    if(reduce){ el.textContent = target.toFixed(dec)+suf; return; }
+    var start = null, dur = 1300;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur,1);
+      var ease = 1-Math.pow(1-p,3);
+      el.textContent = (target*ease).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(step); else el.textContent = target.toFixed(dec)+suf;
+    }
+    requestAnimationFrame(step);
+  }
+  var counted = new WeakSet();
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting && !counted.has(en.target)){ counted.add(en.target); countUp(en.target); cio.unobserve(en.target); }
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('[data-count]').forEach(function(e){ cio.observe(e); });
+</script>
+</body>
+</html>

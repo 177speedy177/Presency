@@ -1,0 +1,31 @@
+{
+  "slug": "h-a-complete-auto-repair",
+  "business_name": "H&A Complete Auto Repair",
+  "trade": "car repair",
+  "city": "Norristown",
+  "phone": "(610) 539-2905",
+  "rating": "4.8",
+  "reviews": "317",
+  "show_star_rating": "Y",
+  "palette_name": "Charcoal Mono",
+  "palette": {
+    "ink": "#17191C",
+    "base": "#F5F5F6",
+    "surface": "#E6E7E9",
+    "band": "#1A1C20",
+    "accent": "#3D5066",
+    "accent2": "#80868F"
+  },
+  "hero_style": "an asymmetric hero with a left CTA card overlapping a tall photo on the right",
+  "section_order": "hero > why-us > about > area > faq > services > contact",
+  "services_placeholder": "Service 1, Service 2, Service 3, Service 4",
+  "pexels_queries": [
+    "auto mechanic working",
+    "car engine repair",
+    "clean auto shop",
+    "car maintenance"
+  ],
+  "google_link": "https://www.google.com/maps?cid=1969666783213652049",
+  "address_bar_url": "www.handacompleteautorepair.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services H&A Complete Auto Repair offers (the list is a guess from 'car repair', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

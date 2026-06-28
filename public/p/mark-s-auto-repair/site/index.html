@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mark's Auto Repair – Car Repair in Abington, PA</title>
+<meta name="description" content="Car repair in Abington, PA. Straight talk, honest pricing, and a crew that fixes it right the first time. Get a free quote from Mark's Auto Repair." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#14181F;
+    --base:#F4F6F9;
+    --surface:#E4E9F0;
+    --band:#1A2330;
+    --accent:#1C6FB0;
+    --accent2:#6E7682;
+    --accent-deep:#155A92;
+    --accent2-deep:#565E69;
+    --grid: rgba(110,118,130,.16);
+    --accent-soft: rgba(28,111,176,.10);
+    --maxw:1200px;
+    --r:4px;
+    --shadow: 0 18px 50px -24px rgba(20,24,31,.45);
+    --sans:'Inter',system-ui,sans-serif;
+    --disp:'Archivo',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--base);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--disp);line-height:1.02;letter-spacing:-.02em}
+
+  /* ---- blueprint label system (the mono motif) ---- */
+  .tag{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .tag::before{
+    content:"";
+    width:26px;height:0;
+    border-top:2px solid var(--accent);
+  }
+  .tag .num{color:var(--accent2-deep)}
+  .tag.on-dark{color:#7FB6E0}
+  .tag.on-dark::before{border-top-color:#7FB6E0}
+  .tag.on-dark .num{color:#9aa4b2}
+
+  /* placeholder pill */
+  .ph{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:.62rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#8a5a00;
+    background:#FFF3D6;
+    border:1px dashed #C99A2E;
+    border-radius:3px;
+    padding:2px 7px;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+
+  /* buttons */
+  .btn{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 22px;
+    border-radius:var(--r);
+    background:var(--accent);
+    color:#fff;
+    border:2px solid var(--accent);
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .2s ease;
+    position:relative;
+  }
+  .btn svg{transition:transform .25s ease}
+  .btn:hover{background:#155a92;border-color:#155a92;transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(28,111,176,.7)}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn:focus-visible{outline:3px solid #7FB6E0;outline-offset:3px}
+  .btn.ghost{background:transparent;color:var(--accent-deep)}
+  .btn.ghost:hover{background:var(--accent-soft);color:#155a92}
+
+  /* tel sticker */
+  .tel{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:.84rem;
+    letter-spacing:.02em;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    color:var(--ink);
+    border:1.5px solid var(--surface);
+    background:#fff;
+    padding:10px 16px;
+    border-radius:var(--r);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .tel:hover{border-color:var(--accent-deep);color:var(--accent-deep)}
+  .tel svg{color:var(--accent-deep);flex:none}
+
+  /* ---- HEADER ---- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(244,246,249,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--surface);
+  }
+  .hbar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:900;font-size:1.18rem;letter-spacing:-.02em}
+  .brand .mark{flex:none}
+  .brand small{display:block;font-family:var(--mono);font-weight:500;font-size:.58rem;letter-spacing:.22em;color:var(--accent2-deep);text-transform:uppercase;margin-top:2px}
+  nav.main{display:flex;align-items:center;gap:28px}
+  nav.main a.nl{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.04em;color:var(--ink);position:relative;padding:4px 0}
+  nav.main a.nl::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .25s ease}
+  nav.main a.nl:hover::after,nav.main a.nl:focus-visible::after{width:100%}
+  .hactions{display:flex;align-items:center;gap:12px}
+  .menu-btn{display:none}
+  @media(max-width:980px){
+    nav.main .nl{display:none}
+    .header-tel{display:none}
+  }
+  @media(max-width:560px){
+    .hactions .btn .full{display:none}
+  }
+
+  /* ---- HERO ---- */
+  .hero{position:relative;padding:72px 0 90px;overflow:hidden}
+  .hero-grid{
+    position:absolute;inset:0;z-index:0;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(120% 90% at 70% 10%,#000 35%,transparent 78%);
+    mask-image:radial-gradient(120% 90% at 70% 10%,#000 35%,transparent 78%);
+    animation:drift 26s linear infinite;
+  }
+  @keyframes drift{from{background-position:0 0,0 0}to{background-position:46px 46px,46px 46px}}
+  @media(prefers-reduced-motion:reduce){.hero-grid{animation:none}}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+  .hero-copy{max-width:640px}
+  .hero h1{
+    font-weight:900;
+    font-size:clamp(2.9rem,7vw,5.4rem);
+    margin:18px 0 0;
+    text-transform:uppercase;
+  }
+  .hero h1 .blue{color:var(--accent-deep);position:relative;display:inline-block}
+  .ul-svg{display:block;width:100%;height:14px;color:var(--accent-deep);margin-top:2px}
+  .ul-svg path{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.1s ease forwards .5s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media(prefers-reduced-motion:reduce){.ul-svg path{animation:none;stroke-dashoffset:0}}
+  .hero p.sub{font-size:1.12rem;color:#3b4451;margin:22px 0 30px;max-width:520px}
+  .hero-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .hero-cta .meta{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--accent2-deep)}
+
+  /* hero specs row */
+  .hero-specs{display:flex;gap:0;margin-top:42px;border:1px solid var(--surface);background:#fff;border-radius:var(--r)}
+  .hero-specs .sp{flex:1;padding:18px 20px;border-right:1px solid var(--surface)}
+  .hero-specs .sp:last-child{border-right:0}
+  .hero-specs .sp .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2-deep)}
+  .hero-specs .sp .v{font-family:var(--disp);font-weight:800;font-size:1.5rem;margin-top:4px}
+  .hero-specs .sp .v small{font-family:var(--sans);font-weight:500;font-size:.72rem;color:var(--accent2-deep);display:block;letter-spacing:0;text-transform:none}
+  .stars{display:inline-flex;gap:2px;vertical-align:middle;margin-left:4px}
+  .stars svg{color:var(--accent-deep)}
+
+  /* inset framed photo lower-right */
+  .hero-fig{position:relative;align-self:end}
+  .frame{position:relative;border:1px solid var(--ink);background:#fff;padding:8px;border-radius:var(--r);box-shadow:var(--shadow)}
+  .frame::before,.frame::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--accent);z-index:3}
+  .frame::before{top:-6px;left:-6px;border-right:0;border-bottom:0}
+  .frame::after{bottom:-6px;right:-6px;border-left:0;border-top:0}
+  .frame img{border-radius:2px;width:100%;height:340px;object-fit:cover}
+  .frame .cap{
+    position:absolute;left:8px;bottom:8px;right:8px;
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#fff;background:rgba(20,24,31,.72);backdrop-filter:blur(2px);
+    padding:6px 9px;display:flex;justify-content:space-between;
+  }
+  @media(max-width:860px){
+    .hero-inner{grid-template-columns:1fr}
+    .hero-fig{max-width:420px;margin-top:8px}
+    .frame img{height:260px}
+  }
+
+  /* section scaffold */
+  section{padding:78px 0;position:relative}
+  .shead{margin-bottom:42px;max-width:720px}
+  .shead h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:800;text-transform:uppercase;margin-top:14px}
+  .shead p{color:#46505d;margin-top:14px;font-size:1.05rem}
+
+  /* dimension divider */
+  .dimline{display:flex;align-items:center;gap:0;color:var(--accent2-deep);margin:0 auto;max-width:var(--maxw);padding:0 24px}
+  .dimline .ln{flex:1;height:0;border-top:1px dashed var(--grid)}
+  .dimline .tick{width:1px;height:9px;background:var(--accent)}
+
+  /* FAQ */
+  .faq-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--surface)}
+  .faq{border-bottom:1px solid var(--surface)}
+  .faq button{
+    width:100%;text-align:left;background:none;border:0;cursor:pointer;
+    display:flex;align-items:center;gap:20px;padding:24px 8px;font-family:var(--disp);
+    font-weight:700;font-size:1.18rem;color:var(--ink);
+  }
+  .faq button .qn{font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--accent-deep);flex:none}
+  .faq button .ico{margin-left:auto;flex:none;color:var(--accent-deep);transition:transform .3s ease}
+  .faq[aria-expanded="true"] button .ico{transform:rotate(45deg)}
+  .faq .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq .ans p{padding:0 8px 24px 52px;color:#46505d;max-width:760px}
+  @media(prefers-reduced-motion:reduce){.faq .ans{transition:none}}
+  .faq button:focus-visible{outline:3px solid #7FB6E0;outline-offset:-3px}
+
+  /* GUARANTEE BAND (deep) */
+  .band{background:var(--band);color:#E7ECF3;position:relative;overflow:hidden}
+  .band .bgrid{
+    position:absolute;inset:0;
+    background-image:linear-gradient(rgba(127,182,224,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(127,182,224,.07) 1px,transparent 1px);
+    background-size:46px 46px;z-index:0;
+  }
+  .band .wrap{position:relative;z-index:2}
+  .band h2{color:#fff}
+  .band p{color:#aeb8c6}
+  .guar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:14px}
+  .gcard{
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(127,182,224,.18);
+    border-radius:var(--r);padding:26px 24px;position:relative;
+    transition:transform .3s ease,border-color .3s ease,background .3s ease;
+  }
+  .gcard:hover{transform:translateY(-4px);border-color:var(--accent-deep);background:rgba(28,111,176,.10)}
+  .gcard .gn{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:#7FB6E0}
+  .gcard .gi{color:#7FB6E0;margin:8px 0 14px}
+  .gcard h3{font-size:1.22rem;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-.01em}
+  .gcard p{margin-top:10px;font-size:.95rem;color:#b6c0cd}
+  @media(max-width:780px){.guar-grid{grid-template-columns:1fr}}
+
+  /* SERVICES (2-col list with line icons) */
+  .svc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+  .svc{
+    display:flex;gap:20px;padding:26px 4px;border-top:1px solid var(--surface);
+    position:relative;transition:padding-left .25s ease;
+  }
+  .svc:hover{padding-left:14px}
+  .svc::before{content:"";position:absolute;left:0;top:0;width:0;height:100%;background:var(--accent);transition:width .25s ease}
+  .svc:hover::before{width:3px}
+  .svc .sicon{flex:none;width:46px;height:46px;border:1.5px solid var(--surface);border-radius:var(--r);display:grid;place-items:center;color:var(--accent-deep);background:#fff;transition:border-color .25s ease,background .25s ease}
+  .svc:hover .sicon{border-color:var(--accent-deep);background:var(--accent-soft)}
+  .svc .sn{font-family:var(--mono);font-size:.66rem;color:var(--accent2-deep);letter-spacing:.12em}
+  .svc h3{font-size:1.18rem;font-weight:700;margin:3px 0 6px;text-transform:uppercase;letter-spacing:-.01em}
+  .svc p{font-size:.94rem;color:#46505d}
+  @media(max-width:760px){.svc-wrap{grid-template-columns:1fr;gap:0}}
+
+  /* WHY US (broken grid + oversized number motif) */
+  .why-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .why-photo{grid-column:span 5;position:relative}
+  .why-photo .frame img{height:100%;min-height:380px}
+  .ph-wm{position:relative}
+  .ph-wm .wm{
+    position:absolute;inset:8px;pointer-events:none;border-radius:2px;z-index:2;
+    background-image:repeating-linear-gradient(-30deg,rgba(20,24,31,.16) 0 2px,transparent 2px 150px);
+    overflow:hidden;
+  }
+  .ph-wm .wm span{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    transform:rotate(-30deg) scale(1.6);
+    font-family:var(--mono);font-weight:700;font-size:1rem;letter-spacing:.4em;
+    color:rgba(20,24,31,.16);white-space:nowrap;
+    background:repeating-linear-gradient(0deg,transparent 0 38px,transparent 38px 76px);
+  }
+  .ph-wm .wmtxt{
+    position:absolute;inset:0;pointer-events:none;z-index:3;opacity:.15;overflow:hidden;
+    background:repeating-linear-gradient(-30deg,transparent 0 60px, transparent 60px 120px);
+  }
+  .why-list{grid-column:span 7;display:flex;flex-direction:column;gap:2px}
+  .why-item{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--surface)}
+  .why-item:last-child{border-bottom:0}
+  .why-item .bignum{font-family:var(--disp);font-weight:900;font-size:2.6rem;color:var(--surface);line-height:.9;letter-spacing:-.04em;-webkit-text-stroke:1px var(--accent2)}
+  .why-item h3{font-size:1.18rem;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+  .why-item p{font-size:.95rem;color:#46505d;margin-top:6px}
+  @media(max-width:840px){
+    .why-photo,.why-list{grid-column:span 12}
+    .why-photo .frame img{min-height:300px}
+  }
+
+  /* SERVICE AREA */
+  .area{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .town{font-family:var(--mono);font-size:.78rem;letter-spacing:.03em;padding:8px 14px;border:1px solid var(--surface);border-radius:var(--r);background:#fff;color:var(--ink);transition:border-color .2s,color .2s}
+  .town:hover{border-color:var(--accent-deep);color:var(--accent-deep)}
+  .area-map{position:relative;border:1px solid var(--surface);border-radius:var(--r);background:#fff;padding:22px;overflow:hidden}
+  .area-map .gridbg{position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:30px 30px;opacity:.7}
+  @media(max-width:760px){.area{grid-template-columns:1fr}}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+  .cinfo .row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--surface)}
+  .cinfo .row .ci{flex:none;color:var(--accent-deep);width:40px;height:40px;border:1.5px solid var(--surface);border-radius:var(--r);display:grid;place-items:center}
+  .cinfo .row .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2-deep)}
+  .cinfo .row .val{font-weight:600;margin-top:2px}
+  form.cform{background:#fff;border:1px solid var(--surface);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+  form.cform .fnote{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--accent2-deep);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  form.cform label{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2-deep);margin:14px 0 6px}
+  form.cform input,form.cform textarea{
+    width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);
+    background:var(--base);border:1px solid var(--surface);border-radius:var(--r);padding:12px 14px;transition:border-color .2s,box-shadow .2s;
+  }
+  form.cform input:focus,form.cform textarea:focus{outline:0;border-color:var(--accent-deep);box-shadow:0 0 0 3px var(--accent-soft)}
+  form.cform textarea{resize:vertical;min-height:96px}
+  form.cform .btn{width:100%;justify-content:center;margin-top:20px}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+
+  /* FINAL CTA band */
+  .final{background:var(--band);color:#fff;text-align:left;position:relative;overflow:hidden}
+  .final-inner{display:grid;grid-template-columns:1.4fr auto;gap:30px;align-items:center}
+  .final h2{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;text-transform:uppercase;color:#fff}
+  .final p{color:#aeb8c6;margin-top:12px;max-width:520px}
+  @media(max-width:720px){.final-inner{grid-template-columns:1fr}}
+
+  /* FOOTER (themed as a title block) */
+  footer{background:var(--ink);color:#aab4c2;padding:0 0 96px;position:relative}
+  .titleblock{border:1px solid rgba(170,180,194,.2)}
+  .tb-top{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(170,180,194,.2)}
+  .tb-cell{padding:26px 24px;border-right:1px solid rgba(170,180,194,.2)}
+  .tb-cell:last-child{border-right:0}
+  .tb-cell .lbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2-deep);margin-bottom:10px}
+  .tb-cell .big{font-family:var(--disp);font-weight:900;color:#fff;font-size:1.5rem;letter-spacing:-.02em}
+  .tb-cell .big small{display:block;font-family:var(--mono);font-weight:500;font-size:.58rem;letter-spacing:.2em;color:var(--accent2-deep);margin-top:4px}
+  .tb-cell a.flink{color:#7FB6E0;font-family:var(--mono);font-size:.78rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:8px}
+  .tb-cell a.flink:hover{text-decoration:underline}
+  .tb-cell .tel{background:transparent;border-color:rgba(170,180,194,.3);color:#fff}
+  .tb-cell .tel svg{color:#7FB6E0}
+  .tb-cell .tel:hover{border-color:#7FB6E0;color:#7FB6E0}
+  .tb-bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 24px;flex-wrap:wrap}
+  .tb-bottom small{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--accent2-deep)}
+
+  /* mobile sticky bar */
+  .mobar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:80;
+    background:var(--ink);border-top:2px solid var(--accent);
+    padding:10px 14px;gap:10px;align-items:center;justify-content:space-between;
+  }
+  .mobar .tel{flex:1;justify-content:center;background:transparent;border-color:rgba(170,180,194,.3);color:#fff}
+  .mobar .tel svg{color:#7FB6E0}
+  .mobar .btn{flex:1;justify-content:center;padding:12px 10px}
+  @media(max-width:780px){.mobar{display:flex}body{padding-bottom:74px}}
+
+  /* mobile nav drawer */
+  .menu-btn{background:#fff;border:1.5px solid var(--surface);border-radius:var(--r);width:46px;height:46px;display:none;place-items:center;cursor:pointer;color:var(--ink)}
+  @media(max-width:980px){.menu-btn{display:grid}}
+  .drawer{position:fixed;inset:0;background:rgba(20,24,31,.6);z-index:90;opacity:0;visibility:hidden;transition:opacity .25s}
+  .drawer.open{opacity:1;visibility:visible}
+  .drawer-inner{position:absolute;right:0;top:0;bottom:0;width:min(320px,82vw);background:var(--base);padding:28px 24px;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;gap:6px}
+  .drawer.open .drawer-inner{transform:none}
+  .drawer a{font-family:var(--mono);font-size:1rem;padding:14px 0;border-bottom:1px solid var(--surface)}
+  .drawer .closeb{align-self:flex-end;background:none;border:0;cursor:pointer;color:var(--ink);margin-bottom:10px}
+  @media(prefers-reduced-motion:reduce){.drawer,.drawer-inner{transition:none}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="#top" aria-label="Mark's Auto Repair home">
+      <svg class="mark" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="3" stroke="#1C6FB0" stroke-width="2"/>
+        <path d="M9 27 L20 9 L31 27" stroke="#14181F" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M14 27 L20 18 L26 27" stroke="#1C6FB0" stroke-width="2.4" stroke-linejoin="round"/>
+        <circle cx="20" cy="31.5" r="2.2" fill="#1C6FB0"/>
+      </svg>
+      <span>Mark's Auto Repair<small>Abington · PA</small></span>
+    </a>
+
+    <nav class="main" aria-label="Primary">
+      <a class="nl" href="#faq">FAQ</a>
+      <a class="nl" href="#guarantee">Guarantee</a>
+      <a class="nl" href="#services">Services</a>
+      <a class="nl" href="#why">Why Us</a>
+      <a class="nl" href="#contact">Contact</a>
+      <div class="hactions">
+        <a class="tel header-tel" href="tel:+12156590322" aria-label="Call Mark's Auto Repair">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L17 14l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          (215) 659-0322
+        </a>
+        <a class="btn" href="#contact"><span class="full">Get a Free Quote</span><span aria-hidden="true" style="display:none" class="short">Quote</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <div class="drawer-inner">
+    <button class="closeb" id="closeb" aria-label="Close menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#faq" data-close>FAQ</a>
+    <a href="#guarantee" data-close>Guarantee</a>
+    <a href="#services" data-close>Services</a>
+    <a href="#why" data-close>Why Us</a>
+    <a href="#contact" data-close>Contact</a>
+    <a class="btn" href="#contact" data-close style="margin-top:16px;justify-content:center">Get a Free Quote</a>
+  </div>
+</div>
+
+<span id="top"></span>
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Intro">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="tag reveal"><span class="num">01</span>&nbsp;Car Repair · Abington, PA</span>
+        <h1 class="reveal">Car Repair<br>in <span class="blue">Abington</span>
+          <svg class="ul-svg" viewBox="0 0 320 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M2 9C70 3 250 3 318 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h1>
+        <p class="sub reveal">Straight answers, fair prices, and work that holds up. Bring us the noise, the light, or the slow morning start. We will tell you what is actually wrong and fix it right the first time.</p>
+        <div class="hero-cta reveal">
+          <a class="btn" href="#contact">Get a Free Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <span class="meta">No surprises. We call before we wrench.</span>
+        </div>
+
+        <div class="hero-specs reveal">
+          <div class="sp">
+            <div class="k">Google Rating</div>
+            <div class="v"><span class="countup" data-target="5.0" data-dec="1">0.0</span>
+              <span class="stars" aria-label="5 out of 5 stars">
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+                <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+              </span>
+              <small>15 reviews on Google</small>
+            </div>
+          </div>
+          <div class="sp">
+            <div class="k">Coverage</div>
+            <div class="v">Local<small>Abington & nearby towns</small></div>
+          </div>
+          <div class="sp">
+            <div class="k">Promise</div>
+            <div class="v">Honest<small>family owned & operated</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-fig reveal">
+        <figure class="frame">
+          <img src="assets/hero.jpg" alt="Mechanic working underneath a vehicle on a lift" width="480" height="340" />
+          <figcaption class="cap"><span>Fig · Under the lift</span><span>Abington, PA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust strip -->
+<div class="dimline" aria-hidden="true"><span class="tick"></span><span class="ln"></span><span class="tick"></span></div>
+<section style="padding:30px 0" aria-label="Trust">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;justify-content:space-between">
+    <span class="tag"><span class="num">·</span>&nbsp;Licensed &amp; Insured <span class="ph" style="margin-left:8px">PLACEHOLDER: confirm</span></span>
+    <!-- PLACEHOLDER: confirm license & insurance status before publishing -->
+    <span class="tag"><span class="num">·</span>&nbsp;Locally Owned</span>
+    <span class="tag"><span class="num">·</span>&nbsp;Fast Response</span>
+    <span class="tag"><span class="num">·</span>&nbsp;5.0&nbsp;Stars on Google</span>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" aria-label="Frequently asked questions">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="tag"><span class="num">02</span>&nbsp;FAQ</span>
+      <h2>Questions, answered straight</h2>
+      <p>The stuff people ask before they hand over the keys. No runaround.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq reveal" aria-expanded="false">
+        <button type="button"><span class="qn">Q1</span> Do you give estimates before you start the work?
+          <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+        <div class="ans"><p>Yes. We look it over, tell you what it needs, and quote it before any wrench turns. If something else turns up mid-job, we call you first. You approve the number, not a surprise on the invoice.</p></div>
+      </div>
+      <div class="faq reveal" aria-expanded="false">
+        <button type="button"><span class="qn">Q2</span> What kinds of vehicles do you work on?
+          <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+        <div class="ans"><p>Most cars, trucks, and SUVs, domestic and import. <span class="ph">PLACEHOLDER: confirm makes/models and any you do not service</span> Tell us what you drive and we will let you know straight away.</p></div>
+        <!-- PLACEHOLDER: confirm vehicle makes / models serviced -->
+      </div>
+      <div class="faq reveal" aria-expanded="false">
+        <button type="button"><span class="qn">Q3</span> How fast can you get me in?
+          <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+        <div class="ans"><p>For most jobs, same week, and we move fast on anything that leaves you stranded. <span class="ph">PLACEHOLDER: confirm typical turnaround &amp; whether you take walk-ins</span> Call and we will find you a slot.</p></div>
+        <!-- PLACEHOLDER: confirm turnaround time and walk-in policy -->
+      </div>
+      <div class="faq reveal" aria-expanded="false">
+        <button type="button"><span class="qn">Q4</span> What are your hours?
+          <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+        <div class="ans"><p>Open weekdays, roughly 8AM to 5PM. <span class="ph">PLACEHOLDER: confirm exact days &amp; hours</span> Closed weekends unless you have arranged a drop-off.</p></div>
+        <!-- PLACEHOLDER: confirm exact business hours and days -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE BAND ============ -->
+<section id="guarantee" class="band" aria-label="Our guarantee and what to expect">
+  <div class="bgrid" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead reveal" style="max-width:760px">
+      <span class="tag on-dark"><span class="num">03</span>&nbsp;Guarantee</span>
+      <h2>What you can count on</h2>
+      <p>Three things we hold ourselves to on every job. Simple, and we mean them.</p>
+    </div>
+    <div class="guar-grid">
+      <div class="gcard reveal">
+        <div class="gn">01 / Guarantee</div>
+        <div class="gi">
+          <svg width="34" height="34" viewBox="0 0 32 32" fill="none"><path d="M16 3l11 4v7c0 7-4.6 11.5-11 15-6.4-3.5-11-8-11-15V7l11-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 16l3.4 3.4L21 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Upfront Pricing</h3>
+        <p>You get the number before we start, and a call before anything changes. No padded invoices.</p>
+      </div>
+      <div class="gcard reveal">
+        <div class="gn">02 / Guarantee</div>
+        <div class="gi">
+          <svg width="34" height="34" viewBox="0 0 32 32" fill="none"><path d="M20 6l6 6-12 12-6 1 1-6 11-13z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 27h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Fixed Right</h3>
+        <p>We diagnose the real problem, not the easy guess, so it does not come back next week.</p>
+      </div>
+      <div class="gcard reveal">
+        <div class="gn">03 / Guarantee</div>
+        <div class="gi">
+          <svg width="34" height="34" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><path d="M16 9v7l5 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Quick Turnaround</h3>
+        <p>We respect your time. Most jobs go out fast, and we keep you posted on anything that takes longer.</p>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:26px;font-family:var(--mono);font-size:.74rem;color:#8a96a6">
+      <span class="ph">PLACEHOLDER: confirm any written warranty on parts &amp; labor</span>
+    </p>
+    <!-- PLACEHOLDER: confirm warranty terms on parts and labor -->
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" aria-label="Services">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="tag"><span class="num">04</span>&nbsp;Services</span>
+      <h2>What we handle in the bay</h2>
+      <p>A working list of the jobs that roll through most. <span class="ph">PLACEHOLDER: confirm &amp; trim this service list</span></p>
+      <!-- PLACEHOLDER: confirm and trim the service list below to the real menu -->
+    </div>
+    <div class="svc-wrap">
+      <div class="svc reveal">
+        <div class="sicon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 13a7.4 7.4 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.4 7.4 0 0 0-1.7-1l-.3-2.5H10.9l-.3 2.5a7.4 7.4 0 0 0-1.7 1l-2.3-1-2 3.4 2 1.5a7.4 7.4 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7.4 7.4 0 0 0 1.7 1l.3 2.5h4.2l.3-2.5a7.4 7.4 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="sn">01 / Service</div>
+          <h3>Service 1 <span class="ph">PLACEHOLDER: confirm</span></h3>
+          <p>Diagnostics and general repair. Swap in the real first service the shop wants up top here.</p>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: confirm service 1 -->
+      <div class="svc reveal">
+        <div class="sicon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l1.5-4A2 2 0 0 1 8.4 8h7.2a2 2 0 0 1 1.9 1l1.5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 13h16v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="15.5" r="1" fill="currentColor"/><circle cx="16.5" cy="15.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div class="sn">02 / Service</div>
+          <h3>Service 2 <span class="ph">PLACEHOLDER: confirm</span></h3>
+          <p>Brakes, suspension, or routine maintenance. Replace with the shop's second core service.</p>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: confirm service 2 -->
+      <div class="svc reveal">
+        <div class="sicon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14 4a4 4 0 0 1-5 5l-5 5 2 2 5-5a4 4 0 0 0 5-5l-2 2-2-.5-.5-2 2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="sn">03 / Service</div>
+          <h3>Service 3 <span class="ph">PLACEHOLDER: confirm</span></h3>
+          <p>Engine work, belts, or fluids. Drop the shop's third headline service into this slot.</p>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: confirm service 3 -->
+      <div class="svc reveal">
+        <div class="sicon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.7"/><circle cx="7" cy="14" r="1.2" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <div class="sn">04 / Service</div>
+          <h3>Service 4 <span class="ph">PLACEHOLDER: confirm</span></h3>
+          <p>Tires, alignment, or seasonal checks. Use this for the fourth service worth featuring.</p>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: confirm service 4 -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why" style="background:var(--surface)" aria-label="Why choose us">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="tag"><span class="num">05</span>&nbsp;Why Us</span>
+      <h2>Why drivers keep coming back</h2>
+      <p>A neighborhood shop that treats your car like it is going to be on the road a long time.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-photo reveal">
+        <figure class="frame ph-wm" style="height:100%">
+          <img src="assets/mech2.jpg" alt="Auto shop work area" style="height:100%" />
+          <div class="wm" aria-hidden="true"><span>PLACEHOLDER PLACEHOLDER PLACEHOLDER</span></div>
+          <figcaption class="cap"><span>Owner photo slot</span><span>Add real shot</span></figcaption>
+        </figure>
+        <!-- PLACEHOLDER: replace with a real photo of the owner / crew / shop -->
+      </div>
+      <div class="why-list">
+        <div class="why-item reveal">
+          <span class="bignum">01</span>
+          <div><h3>Fast Response</h3><p>We pick up, we get back to you, and we get you scheduled. No chasing the shop for an answer.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <span class="bignum">02</span>
+          <div><h3>Upfront Pricing</h3><p>You hear the number before the work. We explain what it needs and why, in plain English.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <span class="bignum">03</span>
+          <div><h3>Local &amp; Family Owned</h3><p>Family owned and operated, serving Abington and the towns around it. Your neighbors, not a chain.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <span class="bignum">04</span>
+          <div><h3>Work That Holds Up</h3><p>We fix the real problem the first time, so you are not back next week for the same thing.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- service area -->
+    <div class="area" style="margin-top:64px">
+      <div class="reveal">
+        <span class="tag"><span class="num">06</span>&nbsp;Service Area</span>
+        <h2 style="font-family:var(--disp);font-weight:800;font-size:clamp(1.7rem,3.4vw,2.4rem);text-transform:uppercase;margin:14px 0 8px">Abington &amp; nearby towns</h2>
+        <p style="color:#46505d">Based in Willow Grove, working across Abington and the surrounding area. <span class="ph">PLACEHOLDER: confirm exact towns served</span></p>
+        <!-- PLACEHOLDER: confirm the real service-area towns -->
+        <div class="towns">
+          <span class="town">Abington</span>
+          <span class="town">Willow Grove</span>
+          <span class="town">Jenkintown</span>
+          <span class="town">Glenside</span>
+          <span class="town">Roslyn</span>
+          <span class="town">Hatboro</span>
+          <span class="town">Horsham</span>
+          <span class="town">Rydal</span>
+        </div>
+      </div>
+      <div class="area-map reveal" aria-hidden="true">
+        <div class="gridbg"></div>
+        <svg viewBox="0 0 300 200" style="position:relative;width:100%;height:auto" fill="none">
+          <path d="M30 150 C70 120 120 160 160 110 C200 70 240 110 270 70" stroke="#6E7682" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <circle cx="160" cy="110" r="9" fill="#1C6FB0"/>
+          <circle cx="160" cy="110" r="16" stroke="#1C6FB0" stroke-width="1.5" opacity=".5"/>
+          <path d="M160 90 L160 110 L177 110" stroke="#14181F" stroke-width="1.6"/>
+          <text x="172" y="128" font-family="JetBrains Mono" font-size="9" fill="#14181F">Willow Grove</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" aria-label="Contact">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="tag"><span class="num">07</span>&nbsp;Contact</span>
+      <h2>Tell us what it is doing</h2>
+      <p>Send a quick note or call the shop. We will get back to you with a real answer, not a sales pitch.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="cinfo reveal">
+        <div class="row">
+          <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L17 14l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <div><div class="k">Phone</div><a class="val" href="tel:+12156590322" style="color:var(--accent-deep)">(215) 659-0322</a></div>
+        </div>
+        <div class="row">
+          <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="2"/></svg></span>
+          <div><div class="k">Address</div><div class="val">206 Cedar Ave #2503, Willow Grove, PA 19090</div></div>
+        </div>
+        <div class="row">
+          <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><div class="k">Hours</div><div class="val">Mon–Fri, 8AM–5PM <span class="ph">PLACEHOLDER: confirm</span></div></div>
+          <!-- PLACEHOLDER: confirm hours -->
+        </div>
+        <div class="row" style="border-bottom:0">
+          <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16 3l11 4" stroke="none"/><path d="M16 4l4 1M4 8h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 8l8-4 8 4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <div><div class="k">Ownership</div><div class="val">Family owned &amp; operated</div></div>
+        </div>
+      </div>
+
+      <form class="cform reveal" onsubmit="return false">
+        <div class="fnote">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#6E7682" stroke-width="2"/><path d="M12 11v5M12 8h.01" stroke="#6E7682" stroke-width="2" stroke-linecap="round"/></svg>
+          Demo form, not yet wired up. <span class="ph">PLACEHOLDER: connect to email/CRM</span>
+        </div>
+        <!-- PLACEHOLDER: wire this form to the shop's email or CRM -->
+        <label for="cn">Name</label>
+        <input id="cn" type="text" placeholder="Your name" autocomplete="name" />
+        <label for="cp">Phone</label>
+        <input id="cp" type="tel" placeholder="(215) 000-0000" autocomplete="tel" />
+        <label for="ce">Email</label>
+        <input id="ce" type="email" placeholder="you@email.com" autocomplete="email" />
+        <label for="cm">What is it doing?</label>
+        <textarea id="cm" placeholder="Noise, light, leak, slow start. Tell us what you are noticing."></textarea>
+        <button class="btn" type="submit">Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" aria-label="Get started">
+  <div class="bgrid" aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(127,182,224,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(127,182,224,.07) 1px,transparent 1px);background-size:46px 46px"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="final-inner">
+      <div class="reveal">
+        <span class="tag on-dark"><span class="num">08</span>&nbsp;Get Started</span>
+        <h2 style="margin-top:14px">Ready when you are</h2>
+        <p>Tell us what your car is doing and we will give you a straight answer and a fair quote. No pressure.</p>
+      </div>
+      <a class="btn reveal" href="#contact" style="align-self:center">Get a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (title block) ============ -->
+<footer>
+  <div class="wrap" style="padding-top:48px">
+    <div class="titleblock">
+      <div class="tb-top">
+        <div class="tb-cell">
+          <div class="lbl">Project · Shop</div>
+          <div class="big">Mark's Auto Repair<small>Car Repair · Abington, PA</small></div>
+          <p style="margin-top:14px;font-size:.9rem;color:#9aa4b2;max-width:380px">Honest car repair for Abington and the towns around it. Family owned and operated.</p>
+        </div>
+        <div class="tb-cell">
+          <div class="lbl">Contact</div>
+          <a class="tel" href="tel:+12156590322" aria-label="Call Mark's Auto Repair" style="margin-bottom:14px">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L17 14l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            (215) 659-0322
+          </a>
+          <div style="font-size:.86rem;color:#9aa4b2;line-height:1.7;margin-top:4px">
+            206 Cedar Ave #2503<br>Willow Grove, PA 19090<br>
+            <span style="color:#7f8a99">Mon–Fri 8AM–5PM</span> <span class="ph">PLACEHOLDER</span>
+          </div>
+          <!-- PLACEHOLDER: confirm hours -->
+        </div>
+        <div class="tb-cell">
+          <div class="lbl">Find Us</div>
+          <a class="flink" href="https://www.google.com/maps?cid=1110407012266976880" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg>
+            Find us on Google
+          </a>
+          <div style="margin-top:18px;display:flex;gap:8px">
+            <span class="stars" aria-label="5.0 stars on Google" style="color:#7FB6E0">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.6 7.1l5.8-.8L10 1z"/></svg>
+            </span>
+            <span style="font-family:var(--mono);font-size:.74rem;color:#9aa4b2">5.0 · 15 reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="tb-bottom">
+        <small>© <span id="yr">2026</span> Mark's Auto Repair · Willow Grove, PA</small>
+        <small>Family owned &amp; operated · Serving Abington and surrounding areas</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky bar -->
+<div class="mobar" aria-label="Quick contact">
+  <a class="tel" href="tel:+12156590322">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L17 14l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    (215) 659-0322
+  </a>
+  <a class="btn" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile drawer
+  var drawer=document.getElementById('drawer'), mb=document.getElementById('menuBtn'), cb=document.getElementById('closeb');
+  function open(){drawer.classList.add('open');mb.setAttribute('aria-expanded','true');}
+  function close(){drawer.classList.remove('open');mb.setAttribute('aria-expanded','false');}
+  mb&&mb.addEventListener('click',open); cb&&cb.addEventListener('click',close);
+  drawer&&drawer.addEventListener('click',function(e){if(e.target===drawer)close();});
+  document.querySelectorAll('[data-close]').forEach(function(a){a.addEventListener('click',close);});
+
+  // FAQ accordion
+  document.querySelectorAll('.faq button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.closest('.faq'); var open=f.getAttribute('aria-expanded')==='true';
+      var ans=f.querySelector('.ans');
+      f.setAttribute('aria-expanded', open?'false':'true');
+      ans.style.maxHeight = open ? '0px' : ans.scrollHeight+'px';
+    });
+  });
+
+  // reveal on scroll
+  if(rm){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(en,i){
+        if(en.isIntersecting){
+          var el=en.target;
+          setTimeout(function(){el.classList.add('in');}, Math.min(i*70,210));
+          io.unobserve(el);
+        }
+      });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+
+    // count up
+    var cu=document.querySelector('.countup');
+    if(cu){
+      var done=false;
+      var io2=new IntersectionObserver(function(es){
+        es.forEach(function(en){
+          if(en.isIntersecting&&!done){
+            done=true; var t=parseFloat(cu.dataset.target), dec=parseInt(cu.dataset.dec||'0'), s=null;
+            function step(ts){ if(!s)s=ts; var p=Math.min((ts-s)/750,1); cu.textContent=(t*p).toFixed(dec); if(p<1)requestAnimationFrame(step); else cu.textContent=t.toFixed(dec);}
+            requestAnimationFrame(step);
+          }
+        });
+      },{threshold:.5});
+      io2.observe(cu);
+    }
+  }
+})();
+</script>
+</body>
+</html>

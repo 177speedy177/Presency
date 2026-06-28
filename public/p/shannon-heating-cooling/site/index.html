@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shannon Heating &amp; Cooling · General Contractor in Blue Bell, PA</title>
+<meta name="description" content="Family owned general contractor serving Blue Bell, PA and surrounding Montgomery County towns. Kitchen and bath remodels, additions, decks, basements and repairs. Rated 5.0 on Google.">
+<!-- Google Fonts: Bricolage Grotesque (display), Hanken Grotesk (body), Space Mono (labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SHANNON HEATING & COOLING  ·  "Squared & Level"
+   Bespoke system. Light-dominant paper base, deep evergreen
+   rhythm bands, burnt-amber signature accent (light surfaces
+   ONLY · never amber-on-green or green-on-amber).
+   ============================================================ */
+:root{
+  --paper:#F7F4EF;
+  --sand:#EFE9DF;
+  --sand-2:#E7DFD1;
+  --ink:#1C1D18;
+  --ink-soft:#4A4C44;
+  --forest:#1E3A2F;
+  --forest-deep:#162C23;
+  --forest-line:#33513f;
+  --cream:#F2EDE2;          /* light accent used ON evergreen */
+  --cream-dim:#C7D2C7;      /* muted sage-cream hairline on evergreen */
+  --amber:#C8772E;          /* signature fill · light surfaces only */
+  --amber-deep:#9A5618;     /* text-safe amber on light */
+  --line:#DCD3C4;
+  --line-2:#CBC0AD;
+  --white:#ffffff;
+  --maxw:1240px;
+  --gut:clamp(20px,5vw,72px);
+  --r:3px;
+  --shadow:0 18px 50px -22px rgba(28,29,24,.30);
+  --shadow-sm:0 8px 24px -14px rgba(28,29,24,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Hanken Grotesk",-apple-system,sans-serif;
+  font-size:clamp(1rem,1.05vw,1.0625rem);line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",serif;font-weight:700;line-height:.99;letter-spacing:-.02em;margin:0}
+p{margin:0 0 1rem}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--amber);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:var(--r);z-index:200;transition:top .2s}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+/* ---------- MONO SPEC-TAG SYSTEM (motif primitive #1) ---------- */
+.tag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:.55em;color:var(--amber-deep)}
+.tag svg{flex:none}
+.tag--ondark{color:var(--cream)}
+.tag .ix{color:var(--ink);opacity:.45}
+.tag--ondark .ix{color:var(--cream);opacity:.55}
+
+/* ---------- amber double-tick underline on key phrases ---------- */
+.uline{position:relative;white-space:nowrap}
+.uline svg{position:absolute;left:-2%;bottom:-.32em;width:104%;height:.42em;overflow:visible}
+.uline path{stroke:var(--amber);stroke-width:5;fill:none;stroke-linecap:round;
+  stroke-dasharray:340;stroke-dashoffset:340;transition:stroke-dashoffset 1.1s .25s cubic-bezier(.7,0,.2,1)}
+.in .uline path,.uline.in path{stroke-dashoffset:0}
+
+/* ---------- buttons ---------- */
+.btn{font-family:"Space Mono",monospace;font-weight:700;font-size:.82rem;letter-spacing:.05em;
+  display:inline-flex;align-items:center;gap:.7em;padding:.95em 1.5em;border-radius:var(--r);
+  border:1.5px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .2s;text-transform:uppercase;white-space:nowrap}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-amber{background:var(--amber);color:#fff;box-shadow:0 12px 26px -12px rgba(200,119,46,.85)}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 18px 34px -12px rgba(200,119,46,.9)}
+.btn-cream{background:var(--cream);color:var(--forest-deep);box-shadow:0 12px 26px -14px rgba(0,0,0,.5)}
+.btn-cream:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+
+/* ---------- phone tel: sticker (3 places only) ---------- */
+.tel{font-family:"Space Mono",monospace;font-weight:700;font-size:.84rem;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:.6em;color:var(--ink);padding:.5em .2em;transition:color .2s}
+.tel svg{flex:none}
+.tel:hover{color:var(--amber-deep)}
+.tel small{display:block;font-size:.6rem;letter-spacing:.16em;color:var(--ink-soft);font-weight:400}
+.tel--ondark{color:var(--cream)}
+.tel--ondark small{color:var(--cream-dim)}
+.tel--ondark:hover{color:#fff}
+
+/* ---------- placeholder pill (.ph · strip to finalize) ---------- */
+.ph{display:inline-flex;align-items:center;gap:.45em;font-family:"Space Mono",monospace;font-size:.62rem;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--amber-deep);
+  background:rgba(200,119,46,.10);border:1px dashed rgba(200,119,46,.55);padding:.25em .55em;border-radius:2px;
+  vertical-align:middle;line-height:1.2}
+.ph::before{content:"";width:6px;height:6px;background:var(--amber);border-radius:50%;flex:none}
+.ph--ondark{color:var(--cream);background:rgba(242,237,226,.10);border-color:rgba(242,237,226,.5)}
+.ph--ondark::before{background:var(--cream)}
+
+/* ---------- framed image w/ corner registration ticks (motif #2) ---------- */
+.frame{position:relative;background:var(--sand);border:1px solid var(--line)}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame::before,.frame::after,.frame>.tk1,.frame>.tk2{content:"";position:absolute;width:18px;height:18px;z-index:3;pointer-events:none}
+.frame::before{top:9px;left:9px;border-top:2px solid var(--amber);border-left:2px solid var(--amber)}
+.frame::after{top:9px;right:9px;border-top:2px solid var(--amber);border-right:2px solid var(--amber)}
+.frame>.tk1{bottom:9px;left:9px;border-bottom:2px solid var(--amber);border-left:2px solid var(--amber)}
+.frame>.tk2{bottom:9px;right:9px;border-bottom:2px solid var(--amber);border-right:2px solid var(--amber)}
+.frame .cap{position:absolute;left:0;bottom:0;z-index:4;background:var(--ink);color:var(--cream);
+  font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.45em .8em}
+
+/* ---------- watermark for owner's real-photo slots ---------- */
+.real{position:relative;overflow:hidden}
+.real .wm{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:.16;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='150'%3E%3Ctext x='8' y='90' fill='%231E3A2F' font-family='monospace' font-size='22' font-weight='700' transform='rotate(-30 120 75)'%3EPLACEHOLDER%3C/text%3E%3C/svg%3E")}
+.real .slotlabel{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;
+  font-family:"Space Mono",monospace;color:var(--forest);background:rgba(247,244,239,.82);
+  border:1px dashed var(--forest);padding:.7em 1em;font-size:.7rem;letter-spacing:.08em;line-height:1.5;max-width:80%}
+
+/* ---------- dimension-line divider (motif #3) ---------- */
+.dim{display:flex;align-items:center;gap:14px;color:var(--line-2)}
+.dim .lab{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.16em;color:var(--ink-soft);text-transform:uppercase;white-space:nowrap;font-weight:700}
+.dim svg{flex:1;height:12px;overflow:visible}
+.dim .ln{stroke:var(--line-2);stroke-width:1.5;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.3s cubic-bezier(.6,0,.2,1)}
+.dim.in .ln{stroke-dashoffset:0}
+
+/* ============================ HEADER ============================ */
+header{position:sticky;top:0;z-index:120;background:rgba(247,244,239,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 10px 30px -22px rgba(0,0,0,.5)}
+.nav{display:flex;align-items:center;gap:24px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .wm-txt{line-height:1}
+.brand .nm{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.08rem;letter-spacing:-.02em;display:block}
+.brand .sb{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-deep)}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{font-size:.92rem;font-weight:500;position:relative;padding:4px 0;color:var(--ink-soft);transition:color .2s}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--amber);transition:width .28s}
+.navlinks a:hover{color:var(--ink)}.navlinks a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.nav .tel-divider{width:1px;height:30px;background:var(--line)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;overflow:hidden;background:var(--sand-2)}
+.hero-photo{position:absolute;inset:0;z-index:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+/* LIGHT scrim · paper opaque on left, clears to reveal photo on right */
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(100deg,var(--paper) 0%,var(--paper) 30%,rgba(247,244,239,.86) 46%,rgba(247,244,239,.35) 64%,rgba(247,244,239,0) 82%)}
+.hero-scrim.bot{background:linear-gradient(0deg,rgba(30,58,47,.16),transparent 38%)}
+.hero-wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+  gap:30px;align-items:center;min-height:min(86vh,760px);padding-block:clamp(40px,7vw,90px)}
+.hero-copy{max-width:640px}
+.hero h1{font-size:clamp(2.7rem,7vw,6rem);font-weight:800;margin:.32em 0 .12em}
+.hero h1 .l2{display:block;color:var(--forest)}
+.hero .lead{font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--ink-soft);max-width:42ch;margin-bottom:1.5em}
+.hero .trade-flag{margin-bottom:22px}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-actions .note{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.04em;color:var(--ink-soft);max-width:16ch;line-height:1.4}
+/* floating spec card overlapping the photo */
+.hero-spec{position:relative;z-index:2;justify-self:end;align-self:center;width:min(330px,90%);
+  background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow);padding:24px;border-radius:var(--r)}
+.hero-spec .scorner{position:absolute;top:-1px;right:-1px;width:30px;height:30px;border-top:3px solid var(--amber);border-right:3px solid var(--amber)}
+.hero-spec h4{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin-bottom:14px}
+.hero-spec .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-top:1px solid var(--line)}
+.hero-spec .row .k{font-size:.82rem;color:var(--ink-soft)}
+.hero-spec .row .v{font-family:"Space Mono",monospace;font-size:.82rem;font-weight:700;text-align:right}
+.hero-spec .stars{display:flex;gap:2px;color:var(--amber)}
+.hero-rating{display:flex;align-items:center;gap:8px}
+
+/* ---------- entrance animation ---------- */
+.anim{opacity:0;transform:translateY(26px)}
+.hero-in .anim{animation:rise .85s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-in .d1{animation-delay:.05s}.hero-in .d2{animation-delay:.18s}.hero-in .d3{animation-delay:.31s}
+.hero-in .d4{animation-delay:.44s}.hero-in .d5{animation-delay:.57s}.hero-in .d6{animation-delay:.7s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ============================ TRUST BAR ============================ */
+.trust{background:var(--forest);color:var(--cream);position:relative;overflow:hidden}
+.trust .glow{position:absolute;width:60vw;height:60vw;border-radius:50%;top:-120%;left:-10%;
+  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);animation:drift 16s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(40%,30%)}}
+.trust-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-block:34px}
+.trust-item{display:flex;flex-direction:column;gap:4px;padding-left:18px;border-left:1px solid var(--forest-line)}
+.trust-item .big{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.9rem;line-height:1;display:flex;align-items:center;gap:7px}
+.trust-item .big .stars{display:flex;gap:1px;color:var(--cream)}
+.trust-item .lbl{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cream-dim)}
+.trust-item .ico{color:var(--cream)}
+
+/* ============================ SECTION SHELL ============================ */
+section{position:relative}
+.sec{padding-block:clamp(64px,9vw,118px)}
+.sec-head{display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:end;margin-bottom:clamp(38px,5vw,58px)}
+.sec-head .htext{max-width:36ch}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3.5rem);margin-top:.34em}
+.sec-head .intro{color:var(--ink-soft);margin-top:1em;max-width:46ch}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,border-color .3s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-2)}
+.card .media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
+.card .media img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .media img{transform:scale(1.06)}
+.card .num{position:absolute;top:10px;left:10px;z-index:3;font-family:"Space Mono",monospace;font-weight:700;
+  font-size:.72rem;background:var(--ink);color:var(--cream);padding:.3em .55em;letter-spacing:.06em}
+.card .corner{position:absolute;top:9px;right:9px;width:16px;height:16px;z-index:3;border-top:2px solid var(--amber);border-right:2px solid var(--amber);transition:.35s}
+.card:hover .corner{width:22px;height:22px}
+.card .body{padding:20px 20px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:1.28rem}
+.card p{color:var(--ink-soft);font-size:.93rem;margin:0}
+.card .svc-ico{color:var(--amber-deep);margin-bottom:2px}
+/* NO-PHOTO styled variant */
+.card--np .media{display:flex;align-items:center;justify-content:center;background:var(--forest);
+  background-image:linear-gradient(135deg,var(--forest) 0%,var(--forest-deep) 100%)}
+.card--np .media .np-art{color:var(--cream);opacity:.92}
+.card--np .media::after{content:"";position:absolute;inset:14px;border:1px dashed var(--forest-line)}
+.card--np .num{background:var(--cream);color:var(--forest-deep)}
+.card--np .corner{border-color:var(--cream)}
+.card--np .np-tag{position:absolute;bottom:12px;left:14px;font-family:"Space Mono",monospace;font-size:.6rem;
+  letter-spacing:.14em;color:var(--cream-dim);text-transform:uppercase}
+
+/* ---------- why-us ---------- */
+.why{background:var(--sand)}
+.why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(34px,5vw,72px);align-items:center}
+.why-visual{position:relative}
+.why-visual .frame{aspect-ratio:4/5}
+.why-badge{position:absolute;right:-18px;bottom:30px;z-index:6;background:var(--white);border:1px solid var(--line);
+  box-shadow:var(--shadow);padding:16px 20px;border-radius:var(--r);max-width:210px}
+.why-badge .bt{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.05rem;margin-bottom:3px}
+.why-badge .bs{font-size:.78rem;color:var(--ink-soft);line-height:1.45}
+.specs{display:flex;flex-direction:column}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:18px 20px;padding:22px 0;border-top:1px solid var(--line-2);align-items:start}
+.spec:last-child{border-bottom:1px solid var(--line-2)}
+.spec .sn{font-family:"Space Mono",monospace;font-weight:700;font-size:.78rem;color:var(--amber-deep);padding-top:5px}
+.spec .si{display:flex;align-items:center;gap:14px}
+.spec h3{font-size:1.22rem;display:flex;align-items:center;gap:12px}
+.spec .ico{color:var(--ink)}
+.spec p{margin:.45em 0 0;color:var(--ink-soft);font-size:.95rem;grid-column:2}
+
+/* ---------- reviews CTA band (THE one CTA band) ---------- */
+.rev{background:var(--forest);color:var(--cream);position:relative;overflow:hidden;text-align:center}
+.rev .glow{position:absolute;width:50vw;height:50vw;border-radius:50%;bottom:-90%;right:-5%;
+  background:radial-gradient(circle,rgba(255,255,255,.07),transparent 60%);animation:drift 18s ease-in-out infinite alternate}
+.rev-inner{position:relative;max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px}
+.rev .stars{display:flex;gap:4px;color:var(--cream)}
+.rev .rating-line{font-family:"Space Mono",monospace;font-size:.8rem;letter-spacing:.1em;color:var(--cream-dim);text-transform:uppercase}
+.rev h2{font-size:clamp(2rem,4.6vw,3.6rem)}
+.rev p{color:var(--cream-dim);max-width:48ch}
+.rev .uline path{stroke:var(--cream)}
+
+/* ---------- process ---------- */
+.proc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(40px,6vw,90px)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:30px 0;border-top:1px solid var(--line)}
+.step .pn{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2.4rem,4vw,3.4rem);color:var(--sand-2);line-height:.8;
+  -webkit-text-stroke:1px var(--line-2)}
+.step.act .pn,.step:hover .pn{color:var(--amber);-webkit-text-stroke:0}
+.step h3{font-size:1.3rem;margin-bottom:.4em;display:flex;align-items:center;gap:10px}
+.step p{color:var(--ink-soft);font-size:.95rem;margin:0}
+.step .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex:none}
+
+/* ---------- service area ---------- */
+.area{background:var(--sand)}
+.area-grid{display:grid;grid-template-columns:1fr .85fr;gap:clamp(34px,5vw,70px);align-items:center}
+.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.town{font-family:"Space Mono",monospace;font-size:.82rem;font-weight:700;background:var(--white);
+  border:1px solid var(--line);padding:.55em .9em;border-radius:2px;display:flex;align-items:center;gap:.5em;transition:.25s}
+.town:hover{border-color:var(--amber);color:var(--amber-deep);transform:translateY(-2px)}
+.town .pin{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:none}
+.town.home{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.town.home .pin{background:var(--cream)}
+.area-visual .frame{aspect-ratio:1/1}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,64px)}
+.cform{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,38px);box-shadow:var(--shadow-sm)}
+.cform .formnote{display:flex;gap:10px;align-items:flex-start;background:var(--sand);border:1px dashed var(--line-2);
+  padding:12px 14px;border-radius:var(--r);font-size:.8rem;color:var(--ink-soft);margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--ink-soft);margin-bottom:7px}
+.field input,.field textarea{width:100%;font-family:inherit;font-size:.98rem;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line-2);border-radius:var(--r);padding:.8em .9em;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(200,119,46,.16)}
+.field textarea{resize:vertical;min-height:108px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cform button{width:100%;justify-content:center;margin-top:4px}
+.cinfo{display:flex;flex-direction:column;gap:24px}
+.cinfo .blk{border-top:1px solid var(--line-2);padding-top:18px}
+.cinfo .blk h4{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber-deep);font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.cinfo address{font-style:normal;color:var(--ink-soft);line-height:1.6}
+.cinfo .hours{font-family:"Space Mono",monospace;font-size:.86rem;color:var(--ink-soft)}
+
+/* ============================ FOOTER (title-block artifact) ============================ */
+footer{background:var(--forest-deep);color:var(--cream)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-block:clamp(44px,5vw,68px);border-bottom:1px solid var(--forest-line)}
+.foot-brand .mark{width:42px;height:42px;margin-bottom:14px}
+.foot-brand .nm{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem}
+.foot-brand p{color:var(--cream-dim);font-size:.9rem;max-width:34ch;margin-top:8px}
+.foot-col h5{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream-dim);margin:0 0 14px;font-weight:700}
+.foot-col a,.foot-col address,.foot-col .ln{display:block;color:var(--cream);font-size:.92rem;margin-bottom:9px;font-style:normal;line-height:1.5;transition:color .2s}
+.foot-col a:hover{color:var(--amber)}
+.foot-col .google{font-family:"Space Mono",monospace;font-size:.78rem;display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid var(--forest-line);padding-bottom:3px;margin-top:4px}
+/* title-block grid (the artifact) */
+.titleblock{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--forest-line);
+  font-family:"Space Mono",monospace;font-size:.64rem;letter-spacing:.08em}
+.titleblock div{padding:14px 16px;border-right:1px solid var(--forest-line);color:var(--cream-dim)}
+.titleblock div:last-child{border-right:0}
+.titleblock div b{display:block;color:var(--cream);font-size:.74rem;letter-spacing:.06em;margin-top:3px;text-transform:none}
+.foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-block:20px;color:var(--cream-dim);font-size:.74rem}
+.foot-legal .ph{vertical-align:baseline}
+
+/* ============================ MOBILE STICKY BAR ============================ */
+.mobar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:130;background:var(--ink);color:var(--cream);
+  padding:11px 18px calc(11px + env(safe-area-inset-bottom));align-items:center;justify-content:space-between;
+  box-shadow:0 -10px 30px -18px rgba(0,0,0,.7)}
+.mobar .ml{font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim)}
+.mobar .tel{color:var(--cream)}.mobar .tel small{display:none}
+
+/* ============================ SCROLL REVEAL ============================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(1){transition-delay:.04s}
+.stagger.in>*:nth-child(2){transition-delay:.12s}
+.stagger.in>*:nth-child(3){transition-delay:.2s}
+.stagger.in>*:nth-child(4){transition-delay:.28s}
+.stagger.in>*:nth-child(5){transition-delay:.36s}
+.stagger.in>*:nth-child(6){transition-delay:.44s}
+
+/* ============================ RESPONSIVE ============================ */
+@media(max-width:1000px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:1fr}
+  .why-grid,.area-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .why-visual{max-width:440px}
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-spec{justify-self:start;margin-top:8px}
+  .hero-scrim{background:linear-gradient(180deg,rgba(247,244,239,.92),rgba(247,244,239,.7) 60%,rgba(247,244,239,.55))}
+}
+@media(max-width:760px){
+  .navlinks,.nav .tel-divider,.nav-cta .tel{display:none}
+  .burger{display:flex}
+  .nav-cta .btn{padding:.7em 1.05em;font-size:.74rem}
+  .mobar{display:flex}
+  body{padding-bottom:64px}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:22px}
+  .sec-head{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr;gap:34px}
+  .titleblock{grid-template-columns:1fr 1fr}
+  .why-badge{right:0}
+  /* mobile nav panel */
+  .navlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:6px 0}
+  .navlinks.open a{padding:14px var(--gut);border-top:1px solid var(--line)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .anim,.reveal,.stagger>*{opacity:1!important;transform:none!important}
+  .uline path{stroke-dashoffset:0!important}
+  .dim .ln{stroke-dashoffset:0!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Shannon Heating and Cooling, home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="3" stroke="#1C1D18" stroke-width="2"/>
+        <path d="M11 29V11h12" stroke="#1E3A2F" stroke-width="3.4" stroke-linecap="square"/>
+        <path d="M29 11v18H17" stroke="#C8772E" stroke-width="3.4" stroke-linecap="square"/>
+        <circle cx="20" cy="20" r="2.4" fill="#C8772E"/>
+      </svg>
+      <span class="wm-txt">
+        <span class="nm">Shannon Heating &amp; Cooling</span>
+        <span class="sb">General Contractor · Blue Bell, PA</span>
+      </span>
+    </a>
+    <nav class="navlinks" id="navlinks" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="tel" href="tel:+12676903490" aria-label="Call Shannon Heating and Cooling at (267) 690-3490">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span>(267) 690-3490<small>Call the shop</small></span>
+      </a>
+      <span class="tel-divider" aria-hidden="true"></span>
+      <a class="btn btn-amber" href="#contact">Get a Free Quote <span class="arr" aria-hidden="true">→</span></a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-photo"><img src="assets/hero.jpg" alt="Home renovation and construction work in progress" fetchpriority="high" width="1600" height="1067"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-scrim bot" aria-hidden="true"></div>
+  <div class="wrap hero-wrap" id="hero">
+    <div class="hero-copy">
+      <span class="tag anim d1"><svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M1 1h5M1 1v5" stroke="#9A5618" stroke-width="2"/></svg><span class="ix">SHC-01</span> &nbsp;Family owned · Blue Bell, PA</span>
+      <h1 id="hero-h1" class="anim d2">General Contractor<span class="l2">in <span class="uline">Blue Bell, PA<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q150 1 298 6"/></svg></span></span></h1>
+      <p class="lead anim d3">Kitchens, baths, additions and the punch-list jobs that keep a house solid. One local crew, square corners, and a price you see before we start.</p>
+      <!-- TRADE MISMATCH FLAG near hero -->
+      <p class="trade-flag anim d3"><span class="ph"><!-- confirm primary trade: name says HVAC, Google category says general contractor -->Placeholder: confirm this is your main trade (general contractor vs. HVAC)</span></p>
+      <div class="hero-actions anim d4">
+        <a class="btn btn-amber" href="#contact">Get a Free Quote <span class="arr" aria-hidden="true">→</span></a>
+        <span class="note">No-pressure on-site estimate, usually within 24 hours.</span>
+      </div>
+    </div>
+    <aside class="hero-spec anim d5" aria-label="At a glance">
+      <span class="scorner" aria-hidden="true"></span>
+      <h4>Job Ticket · At a glance</h4>
+      <div class="hero-rating row">
+        <span class="k">Google rating</span>
+        <span class="v"><span class="hero-rating">
+          <span class="stars" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+          </span> 5.0</span></span>
+      </div>
+      <div class="row"><span class="k">Verified reviews</span><span class="v">2 on Google</span></div>
+      <div class="row"><span class="k">Service area</span><span class="v">Blue Bell +</span></div>
+      <div class="row"><span class="k">Licensed &amp; insured</span><span class="v"><span class="ph">Confirm</span></span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust" aria-label="Why homeowners trust us">
+  <span class="glow" aria-hidden="true"></span>
+  <div class="wrap trust-grid stagger reveal">
+    <div class="trust-item">
+      <span class="big"><span class="stars" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+      </span><span class="count" data-to="5" data-dec="1">0.0</span></span>
+      <span class="lbl">Rated on Google</span>
+    </div>
+    <div class="trust-item">
+      <span class="big"><span class="count" data-to="2">0</span></span>
+      <span class="lbl">Verified 5-star reviews</span>
+    </div>
+    <div class="trust-item">
+      <span class="big"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5l8-3z" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="lbl">Licensed &amp; Insured <span class="ph ph--ondark">Confirm</span></span>
+    </div>
+    <div class="trust-item">
+      <span class="big"><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="lbl">Local crew · Fast response</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="htext">
+        <span class="tag"><span class="ix">02</span> · What we build</span>
+        <h2 id="svc-h">Whole-home work, <br>done by one crew.</h2>
+      </div>
+      <p class="intro">From a full kitchen tear-out to the small repairs that never make the list, you get the same crew and the same standard. <span class="ph"><!-- confirm exact service list -->Confirm service list</span></p>
+    </div>
+    <div class="svc-grid stagger reveal">
+      <!-- 1 -->
+      <article class="card">
+        <div class="media frame"><span class="tk1"></span><span class="tk2"></span>
+          <span class="num">01</span><span class="corner"></span>
+          <img src="assets/kitchen.jpg" alt="Modern remodeled kitchen with island and cabinetry" loading="lazy">
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M9 9v12" stroke="currentColor" stroke-width="1.7"/></svg>
+          <h3>Kitchen Remodels</h3>
+          <p>Layouts that work, cabinets that close right, and finishes that hold up to real family use.</p>
+        </div>
+      </article>
+      <!-- 2 -->
+      <article class="card">
+        <div class="media frame"><span class="tk1"></span><span class="tk2"></span>
+          <span class="num">02</span><span class="corner"></span>
+          <img src="assets/bath.jpg" alt="Renovated modern bathroom with tile and vanity" loading="lazy">
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3z" stroke="currentColor" stroke-width="1.7"/><path d="M7 12V6a2 2 0 0 1 2-2h1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <h3>Bathroom Remodels</h3>
+          <p>Waterproofed right the first time. Tile, vanities, lighting and fixtures that last.</p>
+        </div>
+      </article>
+      <!-- 3 -->
+      <article class="card">
+        <div class="media frame"><span class="tk1"></span><span class="tk2"></span>
+          <span class="num">03</span><span class="corner"></span>
+          <img src="assets/deck.jpg" alt="Backyard deck and patio with seating" loading="lazy">
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 20V9l9-5 9 5v11" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 14h18M9 20v-6h6v6" stroke="currentColor" stroke-width="1.7"/></svg>
+          <h3>Decks &amp; Patios</h3>
+          <p>Outdoor space built to sit level for years. Framing, decking, railings and stairs.</p>
+        </div>
+      </article>
+      <!-- 4 -->
+      <article class="card">
+        <div class="media frame"><span class="tk1"></span><span class="tk2"></span>
+          <span class="num">04</span><span class="corner"></span>
+          <img src="assets/basement.jpg" alt="Finished basement living space" loading="lazy">
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 14h18M12 14v6" stroke="currentColor" stroke-width="1.7"/></svg>
+          <h3>Basement Finishing</h3>
+          <p>Turn the space under your feet into a real room. Framing, insulation, egress and trim.</p>
+        </div>
+      </article>
+      <!-- 5  NO-PHOTO styled variant -->
+      <article class="card card--np">
+        <div class="media">
+          <span class="num">05</span><span class="corner"></span>
+          <svg class="np-art" width="58" height="58" viewBox="0 0 24 24" fill="none"><path d="M3 21V11l9-7 9 7v10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.5"/><path d="M14 4l5 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="np-tag">Photo from your job goes here</span>
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-6 8 6v12" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 21v-7h-4v7" stroke="currentColor" stroke-width="1.7"/></svg>
+          <h3>Additions</h3>
+          <p>More square footage, tied into the existing house so it looks like it was always there.</p>
+        </div>
+      </article>
+      <!-- 6  NO-PHOTO styled variant -->
+      <article class="card card--np">
+        <div class="media">
+          <span class="num">06</span><span class="corner"></span>
+          <svg class="np-art" width="58" height="58" viewBox="0 0 24 24" fill="none"><path d="M14 6a4 4 0 0 0-5 5l-6 6 3 3 6-6a4 4 0 0 0 5-5l-2.5 2.5L12 14l-1-3 2.5-2.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span class="np-tag">Photo from your job goes here</span>
+        </div>
+        <div class="body">
+          <svg class="svc-ico" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <h3>General Repairs</h3>
+          <p>The punch-list jobs other crews skip. Doors, drywall, rot, trim and the odd fix that bugs you.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="sec why" id="why" aria-labelledby="why-h">
+  <div class="wrap why-grid">
+    <div class="why-visual reveal">
+      <!-- owner's real-photo slot, watermarked -->
+      <div class="frame real">
+        <span class="tk1"></span><span class="tk2"></span>
+        <span class="cap">SHC · YOUR CREW</span>
+        <div class="wm" aria-hidden="true"></div>
+        <div class="slotlabel">REAL PHOTO SLOT<br>Drop in a shot of the crew, the truck,<br>or a finished job. Stock shown for layout.</div>
+        <img src="assets/crew.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="why-badge reveal">
+        <div class="bt">Family owned &amp; operated</div>
+        <div class="bs">Local people you can reach, on a job you can drive past.</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-head" style="display:block;margin-bottom:26px">
+        <span class="tag"><span class="ix">03</span> · Why homeowners pick us</span>
+        <h2 id="why-h" style="margin-top:.34em">Built square. <br>Priced straight.</h2>
+      </div>
+      <div class="specs stagger reveal">
+        <div class="spec">
+          <span class="sn">01</span>
+          <div>
+            <h3><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>Fast, real response</h3>
+            <p>You call, a person answers. Estimates usually scheduled within 24 hours, not next week.</p>
+          </div>
+        </div>
+        <div class="spec">
+          <span class="sn">02</span>
+          <div>
+            <h3><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Upfront written pricing</h3>
+            <p>A clear scope and a fixed number before a single tool comes out. No surprise line items.</p>
+          </div>
+        </div>
+        <div class="spec">
+          <span class="sn">03</span>
+          <div>
+            <h3><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Local to Blue Bell</h3>
+            <p>We work where we live. Serving Blue Bell and the surrounding Montgomery County towns.</p>
+          </div>
+        </div>
+        <div class="spec">
+          <span class="sn">04</span>
+          <div>
+            <h3><svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Workmanship you can stand on <span class="ph">Confirm warranty</span></h3>
+            <p>We finish with a walkthrough and a punch list, and we stand behind the work. <span class="ph"><!-- confirm warranty terms -->Confirm terms</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS CTA BAND (the single CTA band) ============ -->
+<section class="sec rev" id="reviews" aria-labelledby="rev-h">
+  <span class="glow" aria-hidden="true"></span>
+  <div class="wrap rev-inner reveal">
+    <span class="stars" aria-label="5 out of 5 stars">
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.8 4.8 17l1-5.8L1.5 7.1l5.9-.8z"/></svg>
+    </span>
+    <span class="rating-line">5.0 on Google · 2 verified reviews</span>
+    <h2 id="rev-h">Ready to get it <span class="uline">done right<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q150 1 298 6"/></svg></span>?</h2>
+    <p>Tell us about the project. You get a straight answer, a clear scope, and a price before any work starts.</p>
+    <a class="btn btn-cream" href="#contact">Get a Free Quote <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="htext">
+        <span class="tag"><span class="ix">04</span> · How it works</span>
+        <h2 id="proc-h">No mystery. <br>Five clear steps.</h2>
+      </div>
+      <p class="intro">You always know what is happening next and what it costs. That is the whole point.</p>
+    </div>
+    <div class="dim reveal" style="margin-bottom:8px">
+      <span class="lab">Start</span>
+      <svg viewBox="0 0 1000 12" preserveAspectRatio="none" aria-hidden="true"><path class="ln" d="M2 6h996M2 1v10M998 1v10"/></svg>
+      <span class="lab">Finish</span>
+    </div>
+    <div class="proc-grid stagger reveal">
+      <div class="step">
+        <span class="pn">01</span>
+        <div><h3><span class="dot"></span>Free on-site estimate</h3><p>We walk the space with you, talk through what you want, and measure it up. No charge, no pressure.</p></div>
+      </div>
+      <div class="step">
+        <span class="pn">02</span>
+        <div><h3><span class="dot"></span>Clear written scope &amp; price</h3><p>You get the work spelled out and a fixed number, so there are no surprises later.</p></div>
+      </div>
+      <div class="step">
+        <span class="pn">03</span>
+        <div><h3><span class="dot"></span>Schedule &amp; permits</h3><p>We lock a start date and handle the permit paperwork where the job calls for it. <span class="ph">Confirm</span></p></div>
+      </div>
+      <div class="step">
+        <span class="pn">04</span>
+        <div><h3><span class="dot"></span>Build, clean as we go</h3><p>One crew on your job, tidied up at the end of every day. We respect that you live there.</p></div>
+      </div>
+      <div class="step">
+        <span class="pn">05</span>
+        <div><h3><span class="dot"></span>Walkthrough &amp; punch list</h3><p>We finish together, fix anything on the list, and leave it the way you would want it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="sec area" id="area" aria-labelledby="area-h">
+  <div class="wrap area-grid">
+    <div class="reveal">
+      <span class="tag"><span class="ix">05</span> · Where we work</span>
+      <h2 id="area-h" style="margin-top:.34em;margin-bottom:.5em">Serving Blue Bell <br>&amp; the towns around it.</h2>
+      <p style="color:var(--ink-soft);max-width:46ch">Based in Blue Bell, working across Montgomery County. If you are nearby and not on the list, just ask. <span class="ph"><!-- confirm exact towns served -->Confirm towns</span></p>
+      <div class="towns stagger reveal">
+        <span class="town home"><span class="pin"></span>Blue Bell</span>
+        <span class="town"><span class="pin"></span>Plymouth Meeting</span>
+        <span class="town"><span class="pin"></span>Whitpain</span>
+        <span class="town"><span class="pin"></span>Ambler</span>
+        <span class="town"><span class="pin"></span>Lower Gwynedd</span>
+        <span class="town"><span class="pin"></span>North Wales</span>
+        <span class="town"><span class="pin"></span>Fort Washington</span>
+        <span class="town"><span class="pin"></span>Lansdale</span>
+        <span class="town"><span class="pin"></span>Conshohocken</span>
+        <span class="town"><span class="pin"></span>Norristown</span>
+        <span class="town"><span class="pin"></span>Spring House</span>
+        <span class="town"><span class="pin"></span>Gwynedd Valley</span>
+      </div>
+    </div>
+    <div class="area-visual reveal">
+      <div class="frame"><span class="tk1"></span><span class="tk2"></span>
+        <span class="cap">MONTGOMERY CO · PA</span>
+        <img src="assets/area.jpg" alt="Suburban home exterior in the Blue Bell area" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="htext">
+        <span class="tag"><span class="ix">06</span> · Get a free quote</span>
+        <h2 id="contact-h">Tell us about <br>the project.</h2>
+      </div>
+      <p class="intro">Send the details and we will get back to you with next steps. Prefer to talk? The number is right here.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="cform reveal" id="quoteForm" novalidate>
+        <div class="formnote">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="9" stroke="#9A5618" stroke-width="1.7"/><path d="M12 8h.01M11 12h1v4h1" stroke="#9A5618" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Placeholder form.</strong> This sends nowhere yet. Wire it to email or a CRM before launch (about 10 minutes).</span>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="First and last"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(267) 690-3490"></div>
+        </div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+        <div class="field"><label for="f-msg">What can we build or fix?</label><textarea id="f-msg" name="message" placeholder="Kitchen remodel, deck, a list of repairs..."></textarea></div>
+        <button class="btn btn-amber" type="submit">Send my request <span class="arr" aria-hidden="true">→</span></button>
+        <p id="formMsg" role="status" style="margin:14px 0 0;font-family:'Space Mono',monospace;font-size:.78rem;color:var(--amber-deep);display:none">Thanks. This is a demo form, so nothing was sent yet. Call (267) 690-3490 to reach us today.</p>
+      </form>
+      <aside class="cinfo reveal">
+        <div class="blk" style="border-top:0;padding-top:0">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L17 13l2 5v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Call the shop</h4>
+          <a class="tel" href="tel:+12676903490" style="padding-left:0"><span>(267) 690-3490</span></a>
+        </div>
+        <div class="blk">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Based in</h4>
+          <address>1542 Sylvan Dr<br>Blue Bell, PA 19422</address>
+        </div>
+        <div class="blk">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Hours</h4>
+          <p class="hours">Mon–Fri, 7am–6pm <span class="ph"><!-- confirm business hours -->Confirm hours</span><br>Weekend &amp; emergency <span class="ph">Confirm</span></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (title-block artifact) ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="37" height="37" rx="3" stroke="#F2EDE2" stroke-width="2"/>
+          <path d="M11 29V11h12" stroke="#C7D2C7" stroke-width="3.4" stroke-linecap="square"/>
+          <path d="M29 11v18H17" stroke="#C8772E" stroke-width="3.4" stroke-linecap="square"/>
+          <circle cx="20" cy="20" r="2.4" fill="#C8772E"/>
+        </svg>
+        <div class="nm">Shannon Heating &amp; Cooling</div>
+        <p>Family owned general contractor. Square corners, straight prices, and one crew from start to punch list. Serving Blue Bell and the surrounding area.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Site</h5>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Get a Free Quote</a>
+      </div>
+      <div class="foot-col">
+        <h5>Reach us</h5>
+        <a class="tel tel--ondark" href="tel:+12676903490" style="padding-left:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L17 13l2 5v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>(267) 690-3490</span></a>
+        <address>1542 Sylvan Dr<br>Blue Bell, PA 19422</address>
+        <a class="google" href="https://www.google.com/maps?cid=15642075216410417183" target="_blank" rel="noopener">Find us on Google →</a>
+      </div>
+    </div>
+    <div class="titleblock">
+      <div>PROJECT<b>Shannon Heating &amp; Cooling</b></div>
+      <div>LOCATION<b>Blue Bell, PA 19422</b></div>
+      <div>SCOPE<b>General Contracting</b></div>
+      <div>RATING<b>5.0 ★ · Google</b></div>
+    </div>
+    <div class="foot-legal">
+      <span>© <span id="yr">2026</span> Shannon Heating &amp; Cooling. All rights reserved.</span>
+      <span>Family owned &amp; operated · Licensed &amp; insured <span class="ph ph--ondark">Confirm</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR (tel: sticker) ============ -->
+<div class="mobar" aria-label="Call us">
+  <span class="ml">Talk to the shop</span>
+  <a class="tel" href="tel:+12676903490">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L19 13l2 5v3a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <span>(267) 690-3490</span>
+  </a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header shadow on scroll
+  var hdr = document.getElementById('top');
+  var onScroll = function(){ hdr.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile nav
+  var burger = document.getElementById('burger'), nav = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if(e.target.tagName==='A') nav.classList.remove('open'); });
+
+  // hero entrance
+  if(reduce){ document.querySelectorAll('.anim').forEach(function(n){n.style.opacity=1;n.style.transform='none';}); }
+  else { requestAnimationFrame(function(){ document.getElementById('hero').closest('.hero').classList.add('hero-in'); }); }
+
+  // count-up
+  function countUp(el){
+    var to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec||'0',10), t0=null, dur=1300;
+    function tick(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+      el.textContent=(to*e).toFixed(dec); if(p<1)requestAnimationFrame(tick); else el.textContent=to.toFixed(dec); }
+    requestAnimationFrame(tick);
+  }
+
+  // intersection reveal
+  if(reduce){
+    document.querySelectorAll('.reveal,.stagger,.dim,.uline').forEach(function(n){n.classList.add('in');});
+    document.querySelectorAll('.count').forEach(function(n){n.textContent=parseFloat(n.dataset.to).toFixed(parseInt(n.dataset.dec||'0',10));});
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          en.target.querySelectorAll && en.target.querySelectorAll('.count').forEach(countUp);
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:.18, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.reveal,.dim').forEach(function(n){io.observe(n);});
+  }
+
+  // demo form
+  var form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formMsg').style.display='block';
+  });
+})();
+</script>
+</body>
+</html>

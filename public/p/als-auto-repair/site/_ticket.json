@@ -1,0 +1,31 @@
+{
+  "slug": "als-auto-repair",
+  "business_name": "Als Auto Repair",
+  "trade": "car repair",
+  "city": "Bensalem",
+  "phone": "(215) 752-7511",
+  "rating": "4.9",
+  "reviews": "211",
+  "show_star_rating": "Y",
+  "palette_name": "Steel Blue",
+  "palette": {
+    "ink": "#14181F",
+    "base": "#F4F6F9",
+    "surface": "#E4E9F0",
+    "band": "#1A2330",
+    "accent": "#1C6FB0",
+    "accent2": "#6E7682"
+  },
+  "hero_style": "an asymmetric hero with a left CTA card overlapping a tall photo on the right",
+  "section_order": "hero > stats > reviews-cta > services > why-us > guarantee > contact",
+  "services_placeholder": "Service 1, Service 2, Service 3, Service 4",
+  "pexels_queries": [
+    "auto mechanic working",
+    "car engine repair",
+    "clean auto shop",
+    "car maintenance"
+  ],
+  "google_link": "https://www.google.com/maps?cid=8788184463530390728",
+  "address_bar_url": "www.alsautorepair.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Als Auto Repair offers (the list is a guess from 'car repair', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

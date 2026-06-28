@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bertrands Auto | Car Repair in Langhorne, PA</title>
+<meta name="description" content="Bertrands Auto is a family owned car repair shop serving Langhorne, PA. Honest diagnostics, upfront pricing, and fast turnaround. Rated 4.2 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161616; --base:#F4F4F5; --surface:#E6E6E8; --band:#1A1A1D;
+  --accent:#B5232B; --accent2:#8A8D91;
+  --accent-deep:#8E1A21;       /* AA-safe red for small text/links on light */
+  --line:#161616;
+  --grid:rgba(22,22,22,.06);
+  --gridband:rgba(255,255,255,.06);
+  --maxw:1240px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--base);
+  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.mono{font-family:'Space Mono',monospace}
+
+/* ---------- blueprint grid backdrop ---------- */
+.gridbg{
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:46px 46px;
+}
+
+/* ---------- reusable primitives ---------- */
+/* eyebrow: number + plain label */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Space Mono',monospace;
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:22px}
+.eyebrow .num{color:var(--ink);background:var(--surface);border:1px solid var(--ink);
+  padding:3px 8px;font-weight:700;letter-spacing:.05em}
+.eyebrow.light{color:#F4D2D4}
+.eyebrow.light .num{color:#fff;background:transparent;border-color:rgba(255,255,255,.5)}
+
+/* crosshair index mark primitive */
+.xh{width:16px;height:16px;flex:none}
+.xh line{stroke:var(--accent);stroke-width:1.6}
+.xh circle{fill:none;stroke:var(--accent);stroke-width:1.6}
+
+/* ticked corner frame primitive */
+.tickframe{position:relative}
+.tickframe::before,.tickframe::after{content:"";position:absolute;width:16px;height:16px;pointer-events:none;z-index:6}
+.tickframe::before{top:-1px;left:-1px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.tickframe::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+
+h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.02;letter-spacing:-.02em}
+
+/* placeholder pill */
+.ph{display:inline-block;font-family:'Space Mono',monospace;font-size:.62rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent-deep);
+  padding:2px 7px;border-radius:2px;vertical-align:middle;margin-left:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;
+  font-weight:700;font-size:.95rem;letter-spacing:.01em;padding:15px 26px;border:2px solid var(--accent);
+  background:var(--accent);color:#fff;cursor:pointer;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);background:var(--accent-deep);box-shadow:0 12px 26px -12px rgba(181,35,43,.8)}
+.btn svg{transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+
+/* tel sticker */
+.tel{display:inline-flex;align-items:center;gap:9px;font-family:'Space Mono',monospace;font-weight:700;
+  font-size:.9rem;letter-spacing:.02em;color:var(--ink);border:1px solid var(--ink);
+  padding:9px 14px;background:var(--base);transition:background .2s,color .2s}
+.tel svg{flex:none}
+.tel:hover{background:var(--ink);color:#fff}
+.tel:hover svg path{stroke:#fff}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(244,244,245,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{width:42px;height:42px;flex:none}
+.brand .name{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.18rem;letter-spacing:-.02em;line-height:1}
+.brand .sub{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.22em;color:var(--accent-deep);text-transform:uppercase;margin-top:3px}
+.navlinks{display:flex;gap:30px;font-weight:600;font-size:.92rem}
+.navlinks a{position:relative;padding:4px 0;color:var(--ink)}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .25s var(--ease)}
+.navlinks a:hover::after{width:100%}
+.navlinks a:hover{color:var(--accent-deep)}
+.navright{display:flex;align-items:center;gap:14px}
+.menubtn{display:none;background:none;border:1px solid var(--ink);width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:64px 0 96px;overflow:hidden}
+.hero .coord{position:absolute;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--accent2);letter-spacing:.1em}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;position:relative}
+.hero-left{position:relative;z-index:3;padding:30px 46px 30px 0;align-self:center}
+.hero h1{font-size:clamp(3rem,6.4vw,5.6rem);font-weight:900;text-transform:uppercase}
+.hero h1 .red{color:var(--accent);display:block}
+.hero .lead{font-size:1.16rem;max-width:30ch;margin:26px 0 32px;color:#2c2c2c}
+.hero-cta-card{position:relative;background:var(--surface);border:1.5px solid var(--ink);padding:30px 30px 28px;
+  margin-right:-70px;z-index:4;box-shadow:14px 14px 0 rgba(22,22,22,.10)}
+.hero-cta-card .tag{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:14px;display:flex;align-items:center;gap:9px;font-weight:700}
+.hero-cta-card h2{font-family:'Archivo';font-weight:800;font-size:1.34rem;line-height:1.1;margin-bottom:8px}
+.hero-cta-card p{font-size:.92rem;color:#3a3a3a;margin-bottom:20px}
+.hero-photo{position:relative;min-height:520px}
+.hero-photo .frame{position:absolute;inset:0;overflow:hidden;border:1.5px solid var(--ink)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) contrast(1.05)}
+.hero-photo .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,29,.05),rgba(181,35,43,.16))}
+.hero-photo .specchip{position:absolute;bottom:18px;right:18px;background:var(--band);color:#fff;
+  font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.06em;padding:10px 14px;z-index:5;display:flex;align-items:center;gap:9px}
+.hero-photo .specchip b{color:#F4D2D4;font-weight:700}
+
+/* trust bar */
+.trust{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--base)}
+.trust-in{display:flex;flex-wrap:wrap;align-items:center;gap:0;font-family:'Space Mono',monospace}
+.trust-item{display:flex;align-items:center;gap:11px;padding:18px 22px;font-size:.8rem;letter-spacing:.02em;
+  border-right:1px solid var(--surface);flex:1;min-width:200px;justify-content:center;color:#2c2c2c}
+.trust-item:last-child{border-right:none}
+.trust-item svg{flex:none}
+.trust-item .stars{display:inline-flex;gap:2px}
+.trust-item strong{color:var(--ink);font-weight:700}
+
+/* section base */
+section{position:relative}
+.sec{padding:96px 0}
+.sec-head{max-width:640px;margin-bottom:54px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.3rem);font-weight:800;text-transform:uppercase}
+.sec-head p{margin-top:18px;font-size:1.08rem;color:#3a3a3a;max-width:54ch}
+
+/* ---------- services scroller ---------- */
+.svc-wrap{position:relative}
+.svc-scroll{display:flex;gap:24px;overflow-x:auto;padding:8px 28px 30px;scroll-snap-type:x mandatory;
+  margin:0 -28px;scrollbar-width:thin;scrollbar-color:var(--accent) var(--surface)}
+.svc-scroll::-webkit-scrollbar{height:8px}
+.svc-scroll::-webkit-scrollbar-track{background:var(--surface)}
+.svc-scroll::-webkit-scrollbar-thumb{background:var(--accent)}
+.svc-card{flex:0 0 332px;scroll-snap-align:start;background:var(--base);border:1.5px solid var(--ink);
+  display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.svc-card:hover{transform:translateY(-6px);box-shadow:12px 14px 0 rgba(181,35,43,.16)}
+.svc-card .pic{height:178px;overflow:hidden;position:relative;border-bottom:1.5px solid var(--ink)}
+.svc-card .pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.04);transition:transform .5s var(--ease)}
+.svc-card:hover .pic img{transform:scale(1.07)}
+.svc-card .pic .idx{position:absolute;top:0;left:0;background:var(--band);color:#fff;font-family:'Space Mono',monospace;
+  font-size:.7rem;font-weight:700;padding:6px 11px;letter-spacing:.08em;z-index:2}
+.svc-card .pic .idx b{color:#F4D2D4}
+/* no-photo variant */
+.svc-card.nopic .pic{background:var(--band);display:flex;align-items:center;justify-content:center}
+.svc-card.nopic .pic .blueprint{position:absolute;inset:0;background-image:
+  linear-gradient(var(--gridband) 1px,transparent 1px),linear-gradient(90deg,var(--gridband) 1px,transparent 1px);
+  background-size:24px 24px}
+.svc-card.nopic .pic svg{position:relative;z-index:2}
+.svc-card .body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.svc-card .body h3{font-size:1.28rem;font-weight:800;margin-bottom:9px}
+.svc-card .body p{font-size:.93rem;color:#3a3a3a;flex:1}
+.svc-card .body .meta{margin-top:18px;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.08em;
+  color:var(--accent-deep);display:flex;align-items:center;gap:8px;text-transform:uppercase;font-weight:700}
+.scrollhint{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:#5f6063;
+  display:flex;align-items:center;gap:9px;margin-top:6px}
+
+/* ---------- why us ---------- */
+.why{background:var(--surface);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-photo{position:relative}
+.why-photo .holder{aspect-ratio:4/5;overflow:hidden;border:1.5px solid var(--ink);position:relative}
+.why-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.22) contrast(1.05)}
+.why-photo .wm{position:absolute;inset:0;pointer-events:none;overflow:hidden;
+  background-image:repeating-linear-gradient(-30deg,rgba(22,22,22,.14) 0 2px,transparent 2px 150px)}
+.why-photo .wmtxt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:1rem;letter-spacing:.3em;color:rgba(22,22,22,.18);
+  transform:rotate(-30deg);text-transform:uppercase;pointer-events:none;white-space:nowrap}
+.why-photo .cap{position:absolute;bottom:14px;left:14px;background:var(--band);color:#fff;
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.06em;padding:8px 12px;z-index:3}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.why-list li{display:flex;gap:20px;padding:22px 4px;border-top:1px solid var(--ink)}
+.why-list li:last-child{border-bottom:1px solid var(--ink)}
+.why-list .n{font-family:'Space Mono',monospace;font-weight:700;font-size:.9rem;color:var(--accent-deep);flex:none;padding-top:3px}
+.why-list h3{font-size:1.22rem;font-weight:800;margin-bottom:5px}
+.why-list p{font-size:.95rem;color:#333}
+
+/* ---------- guarantee band ---------- */
+.guarantee{background:var(--band);color:#fff;position:relative;overflow:hidden}
+.guarantee .gridoverlay{position:absolute;inset:0;background-image:
+  linear-gradient(var(--gridband) 1px,transparent 1px),linear-gradient(90deg,var(--gridband) 1px,transparent 1px);
+  background-size:46px 46px;pointer-events:none}
+.guarantee .wrap{position:relative;z-index:2}
+.guar-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.guarantee h2{color:#fff;font-size:clamp(2rem,4.4vw,3.3rem);font-weight:800;text-transform:uppercase}
+.guarantee .intro{color:#d6d6d8;margin-top:18px;font-size:1.05rem}
+.guar-steps{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.guar-step{padding:26px;border:1px solid rgba(255,255,255,.16);margin:-0.5px}
+.guar-step .stepno{font-family:'Space Mono',monospace;color:#F4D2D4;font-weight:700;font-size:.78rem;letter-spacing:.14em;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.guar-step h3{color:#fff;font-size:1.18rem;font-weight:700;margin-bottom:8px}
+.guar-step p{color:#c7c7ca;font-size:.92rem}
+
+/* ---------- stats strip ---------- */
+.stats{background:var(--accent);color:#fff;position:relative;overflow:hidden}
+.stats .gridoverlay{position:absolute;inset:0;background-image:
+  linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);
+  background-size:46px 46px;pointer-events:none}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:2}
+.stat{padding:54px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.22)}
+.stat:last-child{border-right:none}
+.stat .num{font-family:'Archivo';font-weight:900;font-size:clamp(2.6rem,5vw,3.8rem);line-height:1}
+.stat .lab{font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;color:#ffe9ea}
+
+/* ---------- reviews CTA band ---------- */
+.revcta{padding:104px 0;text-align:center;background:var(--surface);border-bottom:1px solid var(--ink)}
+.revcta .stars{display:inline-flex;gap:5px;margin-bottom:22px}
+.revcta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;text-transform:uppercase;max-width:18ch;margin:0 auto 14px}
+.revcta h2 .red{color:var(--accent)}
+.revcta p{font-size:1.1rem;color:#3a3a3a;max-width:46ch;margin:0 auto 34px}
+
+/* ---------- contact ---------- */
+.contact{padding:96px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-form{background:var(--base);border:1.5px solid var(--ink);padding:34px}
+.contact-form .formnote{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.04em;color:var(--accent-deep);
+  background:#fbe9ea;border:1px solid var(--accent);padding:9px 12px;margin-bottom:24px;display:flex;align-items:center;gap:9px;font-weight:700}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:7px;font-weight:700}
+.field input,.field textarea{width:100%;font-family:'Inter';font-size:.96rem;padding:12px 14px;border:1.5px solid var(--ink);background:var(--surface);color:var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:#595a5d}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(181,35,43,.18)}
+.field textarea{resize:vertical;min-height:110px}
+.contact-info h3{font-size:1.9rem;font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.contact-info>p{color:#3a3a3a;margin-bottom:28px;max-width:42ch}
+.infoblock{border-top:1px solid var(--ink);padding:20px 0;display:flex;gap:18px;align-items:flex-start}
+.infoblock:last-of-type{border-bottom:1px solid var(--ink)}
+.infoblock svg{flex:none;margin-top:2px}
+.infoblock .k{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;margin-bottom:4px}
+.infoblock .v{font-size:1rem;color:var(--ink);font-weight:500}
+.contact-info .telrow{margin-top:26px}
+
+/* ---------- footer ---------- */
+footer{background:var(--band);color:#fff;padding:70px 0 30px;position:relative;overflow:hidden}
+footer .gridoverlay{position:absolute;inset:0;background-image:
+  linear-gradient(var(--gridband) 1px,transparent 1px),linear-gradient(90deg,var(--gridband) 1px,transparent 1px);
+  background-size:46px 46px;pointer-events:none}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;position:relative;z-index:2;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.16)}
+.foot-brand .name{font-family:'Archivo';font-weight:900;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:6px}
+.foot-brand .sub{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:#F4D2D4;text-transform:uppercase;margin-bottom:18px}
+.foot-brand p{color:#c2c2c5;font-size:.92rem;max-width:34ch}
+.foot-brand .logorow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.foot-col h4{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#b8b8bb;margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;color:#dadadc;font-size:.94rem;margin-bottom:11px;transition:color .2s}
+.foot-col a:hover{color:#fff}
+.foot-col .gmaps{display:inline-flex;align-items:center;gap:8px;color:#fff;border-bottom:1px solid var(--accent);padding-bottom:2px}
+.foot-tel{margin-top:4px}
+.footbar{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:24px;
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.04em;color:#a4a4a7}
+.footbar a{color:#a4a4a7}
+
+/* ---------- mobile sticky bar ---------- */
+.mobar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--band);
+  padding:10px 16px;border-top:2px solid var(--accent);align-items:center;justify-content:space-between;gap:12px}
+.mobar .label{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:#c7c7ca;text-transform:uppercase}
+.mobar a{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-weight:700;
+  font-size:.96rem;color:#fff;background:var(--accent);padding:10px 16px}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-left{padding:10px 0 30px}
+  .hero-cta-card{margin-right:0;margin-top:8px}
+  .hero-photo{min-height:380px;margin-top:30px}
+  .why-grid,.guar-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.22)}
+  .navlinks{display:none}
+  .menubtn{display:flex}
+  .navlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--base);border-bottom:1px solid var(--ink)}
+  .navlinks.open a{padding:16px 28px;border-top:1px solid var(--surface)}
+  .navright .tel{display:none}
+  .mobar{display:flex}
+  footer{padding-bottom:90px}
+  .foot-grid{grid-template-columns:1fr;gap:34px}
+  .guar-steps{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.22)}
+  .trust-item{flex:1 1 100%;border-right:none;border-bottom:1px solid var(--surface)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Bertrands Auto home">
+      <!-- LOGO: BA monogram inside a coordinate crosshair frame (custom, not a badge) -->
+      <svg class="logo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" stroke="#161616" stroke-width="1.6"/>
+        <path d="M2 24 H10 M38 24 H46 M24 2 V10 M24 38 V46" stroke="#B5232B" stroke-width="1.6"/>
+        <text x="24" y="31" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#161616" text-anchor="middle">BA</text>
+      </svg>
+      <span>
+        <span class="name">Bertrands Auto</span>
+        <span class="sub">Langhorne, PA</span>
+      </span>
+    </a>
+    <nav class="navlinks" id="navlinks" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#guarantee">What to Expect</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="navright">
+      <a class="tel" href="tel:+12157575589" aria-label="Call Bertrands Auto">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="#161616" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        (215) 757-5589
+      </a>
+      <a class="btn" href="#contact">Get a Free Quote
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="menubtn" id="menubtn" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#161616" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero gridbg" aria-label="Intro">
+  <span class="coord" style="top:18px;left:14px">A1</span>
+  <span class="coord" style="bottom:120px;right:18px">REF 137-LH</span>
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow"><span class="num">01</span> Car Repair / Langhorne, PA</span>
+      <h1 data-anim="hero">Car Repair<br>in Langhorne<span class="red">done right.</span></h1>
+      <p class="lead" data-anim="hero">Family owned and operated. Honest diagnostics, upfront pricing, and your car back on the road fast.</p>
+      <div class="hero-cta-card tickframe" data-anim="hero">
+        <span class="tag">
+          <svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg>
+          Start here
+        </span>
+        <h2>Tell us what is going on with your car.</h2>
+        <p>Send a few details and we will get back to you with a straight answer and a fair price. No pressure, no runaround.</p>
+        <a class="btn" href="#contact">Get a Free Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo tickframe" data-anim="hero">
+      <div class="frame">
+        <img src="assets/hero.jpg" alt="Mechanic working on a vehicle in a service bay" width="700" height="900">
+      </div>
+      <div class="specchip">
+        <svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg>
+        <span><b>4.2</b> on Google / 78 reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust">
+  <div class="wrap"><div class="trust-in">
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.4 8.6-8 11-4.6-2.4-8-6-8-11V5z" stroke="#B5232B" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L16 9.6" stroke="#B5232B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Licensed &amp; Insured<span class="ph">PLACEHOLDER: confirm</span></span>
+      <!-- PLACEHOLDER: confirm license & insurance status -->
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 21V9l9-6 9 6v12" stroke="#B5232B" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="#B5232B" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span><strong>Family Owned</strong> &amp; Operated</span>
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#B5232B" stroke-width="1.8"/><path d="M12 7v5l3.4 2" stroke="#B5232B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span><strong>Fast</strong> Turnaround</span>
+    </div>
+    <div class="trust-item">
+      <span class="stars" aria-label="Rated 4.2 out of 5 on Google">
+        <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+        <svg width="16" height="16" viewBox="0 0 20 20"><defs><linearGradient id="hf"><stop offset="20%" stop-color="#B5232B"/><stop offset="20%" stop-color="#b9b9bc"/></linearGradient></defs><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="url(#hf)"/></svg>
+      </span>
+      <strong>4.2 on Google</strong>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services" aria-label="Services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="num">02</span> Services</span>
+      <h2>What we handle.</h2>
+      <p>From a check-engine light to a full service, here is the kind of work we take on. <span class="ph">PLACEHOLDER: confirm service list</span></p>
+      <!-- PLACEHOLDER: confirm and trim the real service list -->
+    </div>
+  </div>
+  <div class="wrap svc-wrap">
+    <div class="svc-scroll reveal" id="svcScroll">
+      <article class="svc-card">
+        <div class="pic"><span class="idx"><b>01</b> / SVC</span><img src="assets/svc-diag.jpg" alt="Diagnostic equipment connected to a vehicle" loading="lazy"></div>
+        <div class="body">
+          <h3>Diagnostics</h3>
+          <p>Check-engine lights, odd noises, warning messages. We find the real cause before anyone touches a wrench. <span class="ph">PLACEHOLDER: confirm</span></p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Service 1</span>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="pic"><span class="idx"><b>02</b> / SVC</span><img src="assets/svc-brake.jpg" alt="Brake components being serviced" loading="lazy"></div>
+        <div class="body">
+          <h3>Brakes</h3>
+          <p>Pads, rotors, lines, and that grinding sound you have been ignoring. Stopping power you can trust. <span class="ph">PLACEHOLDER: confirm</span></p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Service 2</span>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="pic"><span class="idx"><b>03</b> / SVC</span><img src="assets/svc-engine.jpg" alt="Engine bay during a repair" loading="lazy"></div>
+        <div class="body">
+          <h3>Engine &amp; Repairs</h3>
+          <p>Belts, hoses, leaks, and the bigger jobs. We explain what needs doing now and what can wait. <span class="ph">PLACEHOLDER: confirm</span></p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Service 3</span>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="pic"><span class="idx"><b>04</b> / SVC</span><img src="assets/svc-maint.jpg" alt="Routine vehicle maintenance" loading="lazy"></div>
+        <div class="body">
+          <h3>Maintenance</h3>
+          <p>Oil changes, fluids, filters, and the routine work that keeps you off the side of the road. <span class="ph">PLACEHOLDER: confirm</span></p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Service 4</span>
+        </div>
+      </article>
+      <article class="svc-card">
+        <div class="pic"><span class="idx"><b>05</b> / SVC</span><img src="assets/svc-tire.jpg" alt="Tire being inspected" loading="lazy"></div>
+        <div class="body">
+          <h3>Tires &amp; Alignment</h3>
+          <p>Mounting, balancing, rotations, and pulling fixes. <span class="ph">PLACEHOLDER: confirm offered</span></p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Optional</span>
+        </div>
+      </article>
+      <!-- styled NO-PHOTO variant -->
+      <article class="svc-card nopic">
+        <div class="pic"><span class="idx"><b>06</b> / SVC</span><div class="blueprint"></div>
+          <svg width="58" height="58" viewBox="0 0 24 24" fill="none"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.3h10.2A2 2 0 0 1 21 8l2 5v5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H5v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z" stroke="#B5232B" stroke-width="1.4"/><circle cx="6.5" cy="15.5" r="1.4" fill="#B5232B"/><circle cx="17.5" cy="15.5" r="1.4" fill="#B5232B"/></svg>
+        </div>
+        <div class="body">
+          <h3>Something else?</h3>
+          <p>If it has four wheels and a problem, ask us. We will tell you straight whether it is something we can take care of.</p>
+          <span class="meta"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Ask us</span>
+        </div>
+      </article>
+    </div>
+    <div class="scrollhint" aria-hidden="true">
+      <svg width="34" height="10" viewBox="0 0 34 10" fill="none"><path d="M0 5h30M26 1l5 4-5 4" stroke="#5f6063" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Scroll for more
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="why" aria-label="Why choose us">
+  <div class="wrap sec" style="padding-top:90px;padding-bottom:90px">
+    <div class="why-grid">
+      <div class="why-photo reveal">
+        <!-- OWNER/SHOP real-photo slot: watermarked placeholder -->
+        <div class="holder tickframe">
+          <img src="assets/why.jpg" alt="Auto shop interior, stand-in image" loading="lazy">
+          <div class="wm"></div>
+          <div class="wmtxt">PLACEHOLDER&nbsp;&nbsp;PLACEHOLDER</div>
+          <span class="cap">Your shop / crew photo goes here</span>
+        </div>
+        <!-- PLACEHOLDER: replace with the owner's real shop or crew photo -->
+      </div>
+      <div>
+        <div class="sec-head reveal" style="margin-bottom:30px">
+          <span class="eyebrow"><span class="num">03</span> Why choose us</span>
+          <h2>A shop that treats you straight.</h2>
+        </div>
+        <ul class="why-list reveal">
+          <li>
+            <span class="n">01</span>
+            <div><h3>Honest diagnostics</h3><p>We find the actual problem and tell you what it takes to fix it. No padded lists of work you do not need.</p></div>
+          </li>
+          <li>
+            <span class="n">02</span>
+            <div><h3>Upfront pricing</h3><p>You hear the price before we start, not after. If something changes, we call you first.</p></div>
+          </li>
+          <li>
+            <span class="n">03</span>
+            <div><h3>Local and family run</h3><p>Family owned and operated, serving Langhorne and the surrounding towns. We see our customers around.</p></div>
+          </li>
+          <li>
+            <span class="n">04</span>
+            <div><h3>Back on the road fast</h3><p>We respect your time and your schedule, and aim for a quick, clean turnaround. <span class="ph">PLACEHOLDER: confirm typical turnaround</span></p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE / WHAT TO EXPECT BAND ============ -->
+<section class="guarantee" id="guarantee" aria-label="What to expect">
+  <div class="gridoverlay"></div>
+  <div class="wrap sec">
+    <div class="guar-grid">
+      <div class="reveal">
+        <span class="eyebrow light"><span class="num">04</span> What to expect</span>
+        <h2>No surprises. Ever.</h2>
+        <p class="intro">Here is how a job runs at Bertrands, from the first call to the keys back in your hand.</p>
+      </div>
+      <div class="guar-steps reveal">
+        <div class="guar-step">
+          <span class="stepno"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Step 01</span>
+          <h3>Tell us the symptoms</h3>
+          <p>Call or send the form. Describe what the car is doing and we point you in the right direction.</p>
+        </div>
+        <div class="guar-step">
+          <span class="stepno"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Step 02</span>
+          <h3>We diagnose it</h3>
+          <p>We inspect the vehicle and pin down the real cause before we quote a dime of work.</p>
+        </div>
+        <div class="guar-step">
+          <span class="stepno"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Step 03</span>
+          <h3>You approve the price</h3>
+          <p>You get a clear quote up front. Nothing happens until you give the go-ahead.</p>
+        </div>
+        <div class="guar-step">
+          <span class="stepno"><svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg> Step 04</span>
+          <h3>Fixed and back to you</h3>
+          <p>We do the work right, then walk you through exactly what we did. <span class="ph">PLACEHOLDER: confirm warranty</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section class="stats" aria-label="By the numbers">
+  <div class="gridoverlay"></div>
+  <div class="stats-grid">
+    <div class="stat"><div class="num" data-count="4.2" data-dec="1">4.2</div><div class="lab">Google rating</div></div>
+    <div class="stat"><div class="num" data-count="78">78</div><div class="lab">Google reviews</div></div>
+    <div class="stat"><div class="num" data-count="6" data-suffix="+">6+</div><div class="lab">Towns served <span class="ph" style="background:#fff;color:#8E1A21">confirm</span></div></div>
+    <div class="stat"><div class="num">PA</div><div class="lab">Langhorne, 19047</div></div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS CTA BAND ============ -->
+<section class="revcta" aria-label="Reviews">
+  <div class="wrap reveal">
+    <span class="stars" aria-label="4.2 out of 5 on Google">
+      <svg width="22" height="22" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+      <svg width="22" height="22" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+      <svg width="22" height="22" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+      <svg width="22" height="22" viewBox="0 0 20 20"><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="#B5232B"/></svg>
+      <svg width="22" height="22" viewBox="0 0 20 20"><defs><linearGradient id="hf2"><stop offset="20%" stop-color="#B5232B"/><stop offset="20%" stop-color="#c9c9cc"/></linearGradient></defs><path d="M10 1l2.6 5.3 5.9.9-4.2 4.1 1 5.8L10 14.6 4.7 17.1l1-5.8L1.5 7.2l5.9-.9z" fill="url(#hf2)"/></svg>
+    </span>
+    <h2>Rated <span class="red">4.2</span> by Langhorne drivers.</h2>
+    <p>Real reviews from real customers, 78 of them on Google. Ready to get your car looked at?</p>
+    <a class="btn" href="#contact">Get a Free Quote
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" aria-label="Contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:46px">
+      <span class="eyebrow"><span class="num">05</span> Contact</span>
+      <h2>Get a free quote.</h2>
+      <p>Tell us about your car. We will get back to you with a straight answer and a fair price.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form reveal" onsubmit="return false">
+        <div class="formnote">
+          <svg class="xh" viewBox="0 0 16 16"><line x1="8" y1="0" x2="8" y2="16"/><line x1="0" y1="8" x2="16" y2="8"/><circle cx="8" cy="8" r="3.4"/></svg>
+          PLACEHOLDER FORM: not wired up yet. Connect to email or a form service before launch.
+        </div>
+        <!-- PLACEHOLDER: wire this form to the owner's email / form handler -->
+        <div class="field"><label for="nm">Your name</label><input id="nm" type="text" placeholder="First and last"></div>
+        <div class="field"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(215) 000-0000"></div>
+        <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com"></div>
+        <div class="field"><label for="ms">What is going on?</label><textarea id="ms" placeholder="Year, make, model and what the car is doing."></textarea></div>
+        <button class="btn" type="submit" style="width:100%;justify-content:center">Send my request
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <div class="contact-info reveal">
+        <h3>Stop by or call.</h3>
+        <p>Serving Langhorne and the surrounding towns in Bucks County.</p>
+        <div class="infoblock">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="#B5232B" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#B5232B" stroke-width="1.7"/></svg>
+          <div><div class="k">Address</div><div class="v">137 E Lincoln Hwy, Langhorne, PA 19047</div></div>
+        </div>
+        <div class="infoblock">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#B5232B" stroke-width="1.7"/><path d="M12 7v5l3.4 2" stroke="#B5232B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="k">Hours</div><div class="v">Mon&ndash;Fri, hours by appointment <span class="ph">PLACEHOLDER: confirm hours</span></div></div>
+          <!-- PLACEHOLDER: confirm business hours -->
+        </div>
+        <div class="infoblock">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="#B5232B" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <div><div class="k">Phone</div><div class="v">Call during business hours</div></div>
+        </div>
+        <div class="telrow">
+          <a class="tel" href="tel:+12157575589">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="#161616" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            (215) 757-5589
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer aria-label="Footer">
+  <div class="gridoverlay"></div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logorow">
+          <svg width="40" height="40" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="44" height="44" stroke="#fff" stroke-width="1.6"/>
+            <path d="M2 24 H10 M38 24 H46 M24 2 V10 M24 38 V46" stroke="#B5232B" stroke-width="1.6"/>
+            <text x="24" y="31" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#fff" text-anchor="middle">BA</text>
+          </svg>
+          <div><div class="name">Bertrands Auto</div><div class="sub">Langhorne, PA</div></div>
+        </div>
+        <p>Family owned car repair serving Langhorne and the surrounding towns. Honest work, fair prices, fast turnaround.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>137 E Lincoln Hwy<br>Langhorne, PA 19047</p>
+        <a class="gmaps" href="https://www.google.com/maps?cid=18377070981134475563" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="#fff" stroke-width="1.7"/></svg>
+          Find us on Google
+        </a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="#contact">Get a Free Quote</a>
+        <p class="foot-tel">
+          <a class="tel" href="tel:+12157575589" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            (215) 757-5589
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footbar">
+      <span>&copy; <span id="yr">2026</span> Bertrands Auto. All rights reserved.</span>
+      <span>Langhorne, PA / REF 137-LH / Built by Presency</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mobar" aria-label="Quick call">
+  <span class="label">Bertrands Auto</span>
+  <a href="tel:+12157575589">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.6 1 1 0 0 1-.24 1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    (215) 757-5589
+  </a>
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var mb = document.getElementById('menubtn'), nl = document.getElementById('navlinks');
+mb.addEventListener('click', function(){
+  var open = nl.classList.toggle('open');
+  mb.setAttribute('aria-expanded', open);
+});
+nl.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nl.classList.remove('open'); mb.setAttribute('aria-expanded',false); }); });
+
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if(!reduce){
+  var ha = document.querySelectorAll('[data-anim="hero"]');
+  ha.forEach(function(el,i){
+    el.style.opacity=0; el.style.transform='translateY(22px)';
+    el.style.transition='opacity .7s cubic-bezier(.22,.61,.36,1) '+(i*0.12)+'s, transform .7s cubic-bezier(.22,.61,.36,1) '+(i*0.12)+'s';
+  });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    ha.forEach(function(el){ el.style.opacity=1; el.style.transform='none'; });
+  }); });
+}
+
+if(!reduce && 'IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+
+function countUp(el){
+  var target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec||0), suf = el.dataset.suffix||'';
+  var start = null, dur = 1300;
+  function step(ts){
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur,1);
+    var ease = 1-Math.pow(1-p,3);
+    var val = (target*ease);
+    el.textContent = (dec? val.toFixed(dec) : Math.round(val)) + suf;
+    if(p<1) requestAnimationFrame(step);
+    else el.textContent = (dec? target.toFixed(dec) : target) + suf;
+  }
+  requestAnimationFrame(step);
+}
+if(!reduce && 'IntersectionObserver' in window){
+  var sObs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); sObs.unobserve(e.target); } });
+  }, {threshold:.5});
+  document.querySelectorAll('.stat .num[data-count]').forEach(function(el){ sObs.observe(el); });
+}
+</script>
+</body>
+</html>

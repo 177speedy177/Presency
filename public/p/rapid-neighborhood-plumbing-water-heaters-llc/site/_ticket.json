@@ -1,0 +1,32 @@
+{
+  "slug": "rapid-neighborhood-plumbing-water-heaters-llc",
+  "business_name": "Rapid Neighborhood Plumbing & Water Heaters LLC",
+  "trade": "plumber",
+  "city": "Bensalem",
+  "phone": "(215) 383-1926",
+  "rating": "4.8",
+  "reviews": "81",
+  "show_star_rating": "Y",
+  "palette_name": "Graphite",
+  "palette": {
+    "ink": "#1A1C1E",
+    "base": "#F4F5F6",
+    "surface": "#E5E6E8",
+    "band": "#202327",
+    "accent": "#557089",
+    "accent2": "#8A8F96"
+  },
+  "hero_style": "an offset hero with an oversized display headline and a small inset photo lower-right",
+  "section_order": "hero > why-us > area > faq > services > contact",
+  "services_placeholder": "Drain & sewer cleaning, Water heater repair & install, Leak detection & repair, Emergency plumbing, Fixture & faucet installation, Repiping & remodels",
+  "pexels_queries": [
+    "plumber working pipes",
+    "water heater installation",
+    "modern bathroom clean",
+    "plumbing tools",
+    "service van"
+  ],
+  "google_link": "https://www.google.com/maps?cid=5629830501962412424",
+  "address_bar_url": "www.rapidneighborhoodplumbingandwaterheaters.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Rapid Neighborhood Plumbing & Water Heaters LLC offers (the list is a guess from 'plumber', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

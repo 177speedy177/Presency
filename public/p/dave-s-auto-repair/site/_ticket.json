@@ -1,0 +1,31 @@
+{
+  "slug": "dave-s-auto-repair",
+  "business_name": "Dave's Auto Repair",
+  "trade": "car repair",
+  "city": "Horsham",
+  "phone": "(215) 674-5066",
+  "rating": "4.6",
+  "reviews": "51",
+  "show_star_rating": "Y",
+  "palette_name": "Gunmetal Amber",
+  "palette": {
+    "ink": "#15191D",
+    "base": "#F4F5F6",
+    "surface": "#E5E8EA",
+    "band": "#1B2127",
+    "accent": "#C98A2E",
+    "accent2": "#46637A"
+  },
+  "hero_style": "a split hero: bold headline and CTAs on the left, a framed photo on the right",
+  "section_order": "hero > reviews-cta > process > work > services > why-us > contact",
+  "services_placeholder": "Service 1, Service 2, Service 3, Service 4",
+  "pexels_queries": [
+    "auto mechanic working",
+    "car engine repair",
+    "clean auto shop",
+    "car maintenance"
+  ],
+  "google_link": "https://www.google.com/maps?cid=13855490120019681342",
+  "address_bar_url": "www.davesautorepair.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Dave's Auto Repair offers (the list is a guess from 'car repair', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}

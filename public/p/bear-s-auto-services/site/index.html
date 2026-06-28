@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bear's Auto Services | Car Repair in Morrisville, PA</title>
+<meta name="description" content="Honest car repair in Morrisville, PA. Family owned, licensed and insured, fast turnaround. Call Bear's Auto Services or get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#181519; --base:#F5F4F5; --surface:#E6E4E7; --band:#1D1A22;
+    --accent:#9E2A3C; --accent2:#6E7280;
+    --accent-deep:#7E1E2E;      /* AA-safe crimson for small text on light */
+    --slate-deep:#4C4F56;       /* AA-safe slate for small text on light */
+    --line:#D2CFD4;
+    --maxw:1200px;
+    --disp:'Archivo',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--base);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--disp);line-height:1.02;letter-spacing:-.02em}
+
+  /* ---- motif: mono tag ---- */
+  .tag{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.6rem}
+  .tag::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+  .tag.lite{color:#E9C9CE}
+  .tag.lite::before{background:var(--accent)}
+
+  /* ---- buttons ---- */
+  .btn{font-family:var(--disp);font-weight:800;font-size:.92rem;letter-spacing:.02em;display:inline-flex;align-items:center;gap:.55rem;padding:15px 26px;border:none;cursor:pointer;background:var(--accent);color:#fff;transition:transform .2s ease,background .2s ease;border-radius:2px}
+  .btn:hover{background:#871f30;transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .tel{font-family:var(--disp);font-weight:700;font-size:.92rem;letter-spacing:.01em;display:inline-flex;align-items:center;gap:.5rem;color:var(--ink);padding:9px 12px;border:1.5px solid var(--line);border-radius:2px;transition:border-color .2s,color .2s}
+  .tel:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .tel svg{width:16px;height:16px}
+  .tel .lab{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-deep);display:block;line-height:1;margin-bottom:2px}
+
+  /* ---- torque-tick corner frame motif ---- */
+  .ticked{position:relative}
+  .ticked::before,.ticked::after{content:"";position:absolute;width:22px;height:22px;pointer-events:none}
+  .ticked::before{top:-1px;left:-1px;border-top:3px solid var(--accent);border-left:3px solid var(--accent)}
+  .ticked::after{bottom:-1px;right:-1px;border-bottom:3px solid var(--accent);border-right:3px solid var(--accent)}
+
+  /* ---- header ---- */
+  header{position:sticky;top:0;z-index:60;background:rgba(245,244,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:900;font-size:1.18rem;letter-spacing:-.01em}
+  .brand .mark{width:38px;height:38px;flex:0 0 38px}
+  .brand small{display:block;font-size:.56rem;font-weight:700;letter-spacing:.22em;color:var(--slate-deep);text-transform:uppercase;margin-top:1px}
+  nav.main{display:flex;gap:30px;align-items:center}
+  nav.main a{font-family:var(--disp);font-weight:600;font-size:.86rem;letter-spacing:.01em;position:relative;padding:4px 0;color:var(--ink)}
+  nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--accent);transition:width .25s ease}
+  nav.main a:hover::after{width:100%}
+  .hdr-cta{display:flex;align-items:center;gap:14px}
+  .menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:2px;padding:8px;cursor:pointer}
+  .menu-btn svg{width:22px;height:22px;display:block}
+
+  /* ---- hero ---- */
+  .hero{position:relative;padding:64px 0 90px;overflow:hidden}
+  .hero-stripe{position:absolute;top:0;right:7%;width:120px;height:100%;background:linear-gradient(var(--accent),#6f1626);opacity:.10;transform:skewX(-9deg);z-index:0}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-weight:900;font-size:clamp(2.9rem,6vw,5.4rem);text-transform:uppercase}
+  .hero h1 .red{color:var(--accent)}
+  .hero .sub{font-size:1.12rem;color:var(--slate-deep);max-width:430px;margin:22px 0 30px}
+  .hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .hero-actions .telinfo{font-size:.84rem;color:var(--slate-deep)}
+  .hero-actions .telinfo a{font-family:var(--disp);font-weight:800;color:var(--ink);font-size:1.02rem}
+  .hero-fig{position:relative}
+  .hero-fig .imgbox{position:relative;overflow:hidden;border-radius:3px;box-shadow:0 30px 60px -28px rgba(24,21,25,.55);transform:rotate(1.4deg)}
+  .hero-fig img{width:100%;height:430px;object-fit:cover;filter:saturate(1.02) contrast(1.03)}
+  .hero-fig .cap{position:absolute;left:-18px;bottom:26px;background:var(--band);color:#fff;font-family:var(--disp);font-weight:800;font-size:.78rem;letter-spacing:.04em;padding:11px 18px;border-radius:2px;z-index:3;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+  .hero-fig .cap b{color:#E9C9CE}
+  .hero-fig .baytag{position:absolute;top:-16px;right:18px;z-index:3;background:var(--accent);color:#fff;font-family:var(--disp);font-weight:900;font-size:.72rem;letter-spacing:.12em;padding:8px 13px;border-radius:2px}
+
+  /* ---- trust bar ---- */
+  .trust{background:var(--band);color:#fff}
+  .trust .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px;padding:22px 28px}
+  .trust .item{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:700;font-size:.9rem;letter-spacing:.01em}
+  .trust .item svg{width:21px;height:21px;flex:0 0 21px;color:var(--accent)}
+  .trust .stars{display:flex;align-items:center;gap:9px}
+  .trust .stars .num{font-family:var(--disp);font-weight:900;font-size:1.3rem}
+  .trust .stars .stxt{font-size:.74rem;color:#B9B5BD;line-height:1.2}
+  .star{width:15px;height:15px;color:var(--accent)}
+  .trust .starrow{display:flex;gap:2px}
+
+  /* ---- section base ---- */
+  section.blk{padding:88px 0}
+  .shead{max-width:640px;margin-bottom:46px}
+  .shead h2{font-weight:900;font-size:clamp(2rem,4vw,3.1rem);text-transform:uppercase;margin-top:14px}
+  .shead p{color:var(--slate-deep);margin-top:14px;font-size:1.04rem}
+
+  /* ---- why us ---- */
+  .why{background:var(--surface)}
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .why-card{background:var(--base);padding:30px;border-radius:3px;position:relative;border:1px solid var(--line)}
+  .why-card .n{font-family:var(--disp);font-weight:900;font-size:1rem;color:var(--accent);letter-spacing:.14em}
+  .why-card h3{font-size:1.32rem;margin:16px 0 9px;font-weight:800;text-transform:uppercase}
+  .why-card p{color:var(--slate-deep);font-size:.97rem}
+  .why-card .ic{position:absolute;top:26px;right:26px;width:30px;height:30px;color:var(--accent2)}
+  .why-card .ic svg{width:100%;height:100%}
+
+  /* ---- work / gallery ---- */
+  .work-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-auto-rows:200px;gap:18px}
+  .work-cell{position:relative;overflow:hidden;border-radius:3px;background:var(--band)}
+  .work-cell:nth-child(1){grid-row:span 2}
+  .work-cell:nth-child(4){grid-column:span 2}
+  .work-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .work-cell:hover img{transform:scale(1.06)}
+  .work-cell .wlab{position:absolute;left:14px;bottom:12px;z-index:3;font-family:var(--disp);font-weight:800;font-size:.74rem;letter-spacing:.05em;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+  .work-cell .wlab span{display:block;font-size:.6rem;font-weight:700;letter-spacing:.16em;color:#E9C9CE;text-transform:uppercase}
+  /* watermarked owner-photo placeholder */
+  .ownerslot{position:relative;background:repeating-linear-gradient(135deg,#2a2630 0 18px,#231f29 18px 36px);display:flex;align-items:center;justify-content:center;text-align:center;color:#cfcad4}
+  .ownerslot .lbl{position:relative;z-index:2;font-family:var(--disp);font-weight:800;font-size:.82rem;letter-spacing:.04em;padding:0 14px}
+  .ownerslot .lbl span{display:block;font-size:.62rem;letter-spacing:.16em;color:#9c97a3;margin-top:6px;text-transform:uppercase;font-weight:700}
+  .ownerslot .wm{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;opacity:.15;display:flex;align-items:center;justify-content:center}
+  .ownerslot .wm div{font-family:var(--disp);font-weight:900;font-size:1.1rem;letter-spacing:.3em;color:#fff;transform:rotate(-30deg);white-space:nowrap;line-height:2.4;text-align:center}
+
+  /* ---- about ---- */
+  .about{background:var(--surface)}
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+  .about-fig{position:relative}
+  .about-fig .bignum{position:absolute;top:-44px;left:-18px;font-family:var(--disp);font-weight:900;font-size:9rem;color:var(--accent);opacity:.13;z-index:0;line-height:1}
+  .about-fig .ownerslot{height:420px;border-radius:3px}
+  .about-txt h2{font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;margin:14px 0 18px}
+  .about-txt p{color:var(--slate-deep);margin-bottom:16px;font-size:1.03rem}
+  .about-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  .about-specs .sp{border-left:3px solid var(--accent);padding:4px 0 4px 14px}
+  .about-specs .sp b{font-family:var(--disp);font-weight:900;font-size:1.5rem;display:block}
+  .about-specs .sp span{font-size:.82rem;color:var(--slate-deep)}
+
+  /* ---- services ---- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{background:var(--base);border:1px solid var(--line);border-radius:3px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(24,21,25,.5)}
+  .svc .ph-img{height:168px;overflow:hidden;position:relative;background:var(--band)}
+  .svc .ph-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .svc:hover .ph-img img{transform:scale(1.05)}
+  .svc .noimg{height:168px;background:linear-gradient(135deg,#23202a,#1d1a22);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+  .svc .noimg svg{width:54px;height:54px;opacity:.85}
+  .svc .body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .svc .bay{font-family:var(--disp);font-weight:900;font-size:.72rem;letter-spacing:.14em;color:var(--accent-deep)}
+  .svc h3{font-size:1.24rem;margin:9px 0 10px;font-weight:800;text-transform:uppercase}
+  .svc p{color:var(--slate-deep);font-size:.94rem;flex:1}
+
+  /* ---- service area ---- */
+  .area{background:var(--band);color:#fff}
+  .area-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .area h2{color:#fff;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);text-transform:uppercase;margin:14px 0 16px}
+  .area p{color:#B9B5BD}
+  .towns{display:flex;flex-wrap:wrap;gap:11px}
+  .towns .t{font-family:var(--disp);font-weight:700;font-size:.88rem;border:1px solid #3a3642;padding:10px 16px;border-radius:2px;color:#E6E4E7;transition:border-color .2s,color .2s}
+  .towns .t:hover{border-color:var(--accent);color:#fff}
+
+  /* ---- contact / CTA ---- */
+  .contact{background:var(--surface);padding:90px 0}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact h2{font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;margin:14px 0 16px}
+  .contact .lead{color:var(--slate-deep);font-size:1.05rem;margin-bottom:26px}
+  .cinfo{display:flex;flex-direction:column;gap:18px}
+  .cinfo .row{display:flex;gap:14px;align-items:flex-start}
+  .cinfo .row svg{width:22px;height:22px;color:var(--accent);flex:0 0 22px;margin-top:2px}
+  .cinfo .row b{font-family:var(--disp);font-weight:800;display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-deep);margin-bottom:3px}
+  .cinfo .row a,.cinfo .row span{font-size:1.02rem}
+  form{background:var(--base);border:1px solid var(--line);border-radius:4px;padding:32px;position:relative}
+  form .fnote{font-size:.76rem;color:var(--accent-deep);font-weight:600;margin-bottom:20px;display:flex;gap:7px;align-items:center}
+  form label{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-deep);display:block;margin:0 0 6px}
+  form .fld{margin-bottom:17px}
+  form input,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:2px;font-family:var(--body);font-size:.96rem;color:var(--ink);background:var(--base);transition:border-color .2s}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--accent)}
+  form textarea{resize:vertical;min-height:96px}
+  form .btn{width:100%;justify-content:center;margin-top:4px}
+
+  /* ---- final CTA band ---- */
+  .finalcta{background:var(--accent);color:#fff;text-align:center;padding:74px 0;position:relative;overflow:hidden}
+  .finalcta::before{content:"";position:absolute;top:-40%;right:-6%;width:340px;height:340px;border:60px solid rgba(255,255,255,.07);border-radius:50%}
+  .finalcta h2{color:#fff;font-weight:900;font-size:clamp(2rem,5vw,3.4rem);text-transform:uppercase;position:relative}
+  .finalcta p{color:#f4d6da;max-width:520px;margin:16px auto 30px;position:relative}
+  .finalcta .btn{background:#fff;color:var(--accent-deep);position:relative}
+  .finalcta .btn:hover{background:#181519;color:#fff}
+
+  /* ---- footer ---- */
+  footer{background:var(--band);color:#cfcad4;padding:60px 0 30px}
+  .ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .ft-brand .brand{color:#fff}
+  .ft-brand .brand small{color:#9c97a3}
+  .ft-brand p{margin-top:16px;font-size:.92rem;color:#9c97a3;max-width:300px}
+  .ft h4{font-family:var(--disp);font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+  .ft a,.ft span{display:block;font-size:.94rem;margin-bottom:10px;color:#cfcad4}
+  .ft a:hover{color:#fff}
+  .ft .tel{border-color:#3a3642;color:#fff;width:fit-content}
+  .ft .tel .lab{color:#9c97a3}
+  .ft .tel:hover{border-color:var(--accent)}
+  .gmaps{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;color:#B9B5BD;border-bottom:1px solid #3a3642;padding-bottom:2px}
+  .gmaps:hover{color:#fff}
+  .gmaps svg{width:15px;height:15px}
+  .ft-bot{border-top:1px solid #2e2a36;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:#9c97a3}
+
+  /* ---- placeholder pill ---- */
+  .ph{display:inline-flex;align-items:center;gap:5px;font-family:var(--disp);font-weight:700;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(158,42,60,.12);color:var(--accent-deep);padding:2px 8px;border-radius:20px;border:1px solid rgba(158,42,60,.3);vertical-align:middle}
+  .area .ph,.area-grid .ph{background:rgba(255,255,255,.12);color:#E9C9CE;border-color:rgba(233,201,206,.35)}
+
+  /* ---- mobile sticky bar ---- */
+  .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;background:var(--band);border-top:2px solid var(--accent);padding:10px 16px;justify-content:space-between;align-items:center;gap:12px}
+  .mbar a.mtel{display:flex;align-items:center;gap:9px;color:#fff;font-family:var(--disp);font-weight:800;font-size:1rem}
+  .mbar a.mtel svg{width:19px;height:19px;color:var(--accent)}
+  .mbar a.mtel .lab{font-size:.56rem;letter-spacing:.14em;color:#9c97a3;text-transform:uppercase;display:block;line-height:1}
+  .mbar .btn{padding:11px 18px;font-size:.82rem}
+
+  /* ---- reveal ---- */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:920px){
+    nav.main{display:none}
+    .menu-btn{display:block}
+    nav.main.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--base);border-bottom:1px solid var(--line);padding:18px 28px;gap:16px}
+    .hero-grid,.about-grid,.area-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero-fig .imgbox{transform:none}
+    .why-grid,.svc-grid,.work-grid,.ft-grid{grid-template-columns:1fr}
+    .work-grid{grid-auto-rows:200px}
+    .work-cell:nth-child(1){grid-row:auto}
+    .work-cell:nth-child(4){grid-column:auto}
+    .svc-grid{grid-template-columns:1fr}
+    .about-fig .bignum{font-size:6rem;top:-30px}
+    .hdr-cta .tel{display:none}
+    .mbar{display:flex}
+    body{padding-bottom:70px}
+    section.blk{padding:62px 0}
+  }
+  @media(min-width:921px) and (max-width:1080px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .rv{opacity:1;transform:none}
+    .hero-fig .imgbox{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap hdr">
+    <a href="#top" class="brand" aria-label="Bear's Auto Services home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="3" fill="#1D1A22"/>
+        <path d="M11 27c-1.5 0-2.5-1.2-2.5-2.6 0-1 .5-1.9 1.4-2.3l1-3.6c.4-1.5 1.7-2.5 3.2-2.5h11.8c1.5 0 2.8 1 3.2 2.5l1 3.6c.9.4 1.4 1.3 1.4 2.3 0 1.4-1 2.6-2.5 2.6" stroke="#9E2A3C" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="13" cy="27" r="2.3" fill="#9E2A3C"/>
+        <circle cx="27" cy="27" r="2.3" fill="#9E2A3C"/>
+        <path d="M16 13.5c1-1.2 2.4-2 4-2s3 .8 4 2" stroke="#E9C9CE" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>Bear's Auto<small>Morrisville, PA</small></span>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#why">Why Us</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="tel" href="tel:+12152955378" aria-label="Call Bear's Auto Services at 215-295-5378">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <span><span class="lab">Call the shop</span>(215) 295-5378</span>
+      </a>
+      <a class="btn" href="#contact">Get a Free Quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-stripe" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="tag rv">Morrisville, PA · Family Owned</span>
+      <h1 class="rv" style="margin-top:18px">Car Repair in <span class="red">Morrisville</span></h1>
+      <p class="sub rv">Straight answers, honest repairs, and your car back when we say it will be. The local shop that treats your vehicle like it's our own.</p>
+      <div class="hero-actions rv">
+        <a class="btn" href="#contact">Get a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="telinfo">or call the shop<br><a href="tel:+12152955378">(215) 295-5378</a></span>
+      </div>
+    </div>
+    <div class="hero-fig rv">
+      <div class="baytag">Bay 01 · Open</div>
+      <div class="imgbox ticked">
+        <img src="assets/mechanic.jpg" alt="Mechanic working under the hood of a car" width="640" height="430">
+      </div>
+      <div class="cap">Real diagnostics. <b>No guesswork.</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Licensed &amp; Insured <span class="ph">PLACEHOLDER: confirm</span><!-- confirm license & insurance --></div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>Family Owned &amp; Operated</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>Fast Turnaround</div>
+    <div class="stars">
+      <div class="starrow" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      </div>
+      <div><span class="num" id="rateNum" data-target="4.8">4.8</span></div>
+      <div class="stxt">on Google<br>60 reviews</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHY US ============ -->
+<section class="blk why" id="why">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="tag">01 / Why Us</span>
+      <h2>Why drivers keep coming back</h2>
+      <p>You want a shop that tells you the truth, charges what it quoted, and gets you back on the road. That's the whole job.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="n">01</div><h3>Fast Response</h3>
+        <p>Drop it off, get a real timeline, and hear from us the moment we know what's going on. No black hole.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 7h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg></div>
+        <div class="n">02</div><h3>Upfront Pricing</h3>
+        <p>You get the quote before we touch a wrench. The price we say is the price you pay, no surprise add-ons.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="n">03</div><h3>Work Guaranteed</h3>
+        <p>We stand behind every repair. If something isn't right, bring it back and we'll make it right. <span class="ph">PLACEHOLDER: confirm warranty terms</span><!-- confirm warranty --></p>
+      </div>
+      <div class="why-card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="n">04</div><h3>Local &amp; Trusted</h3>
+        <p>Right here on East Bridge Street. We see our customers around town, so we earn the relationship every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / GALLERY ============ -->
+<section class="blk" id="work">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="tag">02 / Our Work</span>
+      <h2>Inside the shop</h2>
+      <p>A look at the kind of work that rolls through the bays. The placeholder slots are reserved for Bear's own before-and-after photos.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-cell rv ownerslot" style="grid-row:span 2">
+        <div class="wm"><div>PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER</div></div>
+        <div class="lbl">Owner photo slot<span>Add a real before / after</span></div>
+        <!-- OWNER REAL PHOTO: before/after of a completed job -->
+      </div>
+      <div class="work-cell rv"><img src="assets/engine.jpg" alt="Close-up of a car engine during repair" loading="lazy"><div class="wlab"><span>Under the hood</span>Engine service</div></div>
+      <div class="work-cell rv"><img src="assets/brakes.jpg" alt="Brake components being serviced" loading="lazy"><div class="wlab"><span>Stopping power</span>Brake work</div></div>
+      <div class="work-cell rv ownerslot">
+        <div class="wm"><div>PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER</div></div>
+        <div class="lbl">Owner photo slot<span>Add a shot of the shop / crew</span></div>
+        <!-- OWNER REAL PHOTO: shop or crew -->
+      </div>
+      <div class="work-cell rv"><img src="assets/diagnostic.jpg" alt="Diagnostic scan tool reading a vehicle" loading="lazy"><div class="wlab"><span>Find the fault</span>Diagnostics</div></div>
+      <div class="work-cell rv"><img src="assets/tools.jpg" alt="Mechanic tools laid out in the shop" loading="lazy"><div class="wlab"><span>Right tools</span>Every job</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="blk about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-fig rv">
+      <div class="bignum" aria-hidden="true">B</div>
+      <div class="ownerslot ticked">
+        <div class="wm"><div>PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER</div></div>
+        <div class="lbl">Owner / crew photo<span>Add a real portrait here</span></div>
+        <!-- OWNER REAL PHOTO: owner or crew portrait -->
+      </div>
+    </div>
+    <div class="about-txt rv">
+      <span class="tag">03 / About</span>
+      <h2>The shop on East Bridge Street</h2>
+      <p>Bear's Auto Services is a family owned and operated repair shop serving Morrisville and the surrounding area. We keep it simple: honest diagnosis, fair pricing, and repairs done right the first time.</p>
+      <p>From a quick fix to a job that takes the whole day, you get the same straight talk and the same care. That's why our neighbors keep trusting us with their cars. <span class="ph">PLACEHOLDER: confirm owner bio &amp; story</span><!-- confirm owner story; no founding year per lead --></p>
+      <div class="about-specs">
+        <div class="sp"><b>4.8<span style="font-size:1rem">★</span></b><span>Google rating, 60 reviews</span></div>
+        <div class="sp"><b>Local</b><span>Serving Morrisville &amp; nearby towns</span></div>
+        <div class="sp"><b>Family</b><span>Owned &amp; operated</span></div>
+        <div class="sp"><b>Free</b><span>No-obligation quotes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="blk" id="services">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="tag">04 / Services</span>
+      <h2>What we fix</h2>
+      <p>The work that comes through the bays most days. Final service list to be confirmed with the shop.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv">
+        <div class="ph-img"><img src="assets/diagnostic.jpg" alt="Vehicle diagnostics" loading="lazy"></div>
+        <div class="body"><div class="bay">Bay 01</div><h3>Diagnostics <span class="ph">PLACEHOLDER</span></h3><p>Check-engine lights and odd noises traced to the real cause before any parts get replaced.</p><!-- confirm service 1 --></div>
+      </div>
+      <div class="svc rv">
+        <div class="ph-img"><img src="assets/brakes.jpg" alt="Brake repair" loading="lazy"></div>
+        <div class="body"><div class="bay">Bay 02</div><h3>Brakes &amp; Repair <span class="ph">PLACEHOLDER</span></h3><p>Pads, rotors, and lines inspected and replaced so you stop short and stay safe.</p><!-- confirm service 2 --></div>
+      </div>
+      <div class="svc rv">
+        <div class="ph-img"><img src="assets/maintenance.jpg" alt="Routine car maintenance" loading="lazy"></div>
+        <div class="body"><div class="bay">Bay 03</div><h3>Maintenance <span class="ph">PLACEHOLDER</span></h3><p>Oil, fluids, filters, and tune-ups that keep small problems from becoming big bills.</p><!-- confirm service 3 --></div>
+      </div>
+      <div class="svc rv">
+        <div class="ph-img"><img src="assets/engine.jpg" alt="Engine repair" loading="lazy"></div>
+        <div class="body"><div class="bay">Bay 04</div><h3>Engine Work <span class="ph">PLACEHOLDER</span></h3><p>From belts and hoses to bigger engine repairs, handled with the right diagnosis up front.</p><!-- confirm service 4 --></div>
+      </div>
+      <div class="svc rv">
+        <div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.1-2.1 2.5-2.4Z"/></svg></div>
+        <div class="body"><div class="bay">Bay 05</div><h3>Suspension <span class="ph">PLACEHOLDER</span></h3><p>Struts, shocks, and steering checked so the ride stays smooth and tracks straight.</p><!-- confirm service 5 --></div>
+      </div>
+      <div class="svc rv">
+        <div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <div class="body"><div class="bay">Bay 06</div><h3>Tires &amp; Alignment <span class="ph">PLACEHOLDER</span></h3><p>Mounting, balancing, and alignment to make tires last and pull the wheel straight.</p><!-- confirm service 6 --></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="blk area">
+  <div class="wrap area-grid">
+    <div class="rv">
+      <span class="tag lite">05 / Service Area</span>
+      <h2>Serving Morrisville &amp; nearby towns</h2>
+      <p>Based on East Bridge Street in Morrisville and happy to help drivers across the surrounding area.</p>
+    </div>
+    <div class="towns rv">
+      <span class="t">Morrisville</span>
+      <span class="t">Yardley <span class="ph">PLACEHOLDER</span></span>
+      <span class="t">Levittown <span class="ph">PLACEHOLDER</span></span>
+      <span class="t">Fairless Hills <span class="ph">PLACEHOLDER</span></span>
+      <span class="t">Newtown <span class="ph">PLACEHOLDER</span></span>
+      <span class="t">Lower Makefield <span class="ph">PLACEHOLDER</span></span>
+      <span class="t">Tullytown <span class="ph">PLACEHOLDER</span></span>
+      <!-- confirm exact service-area towns -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <span class="tag">06 / Contact</span>
+      <h2>Get a free quote</h2>
+      <p class="lead">Tell us what's going on with your car and we'll get you a straight answer. Call the shop or send a message below.</p>
+      <div class="cinfo">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <div><b>Phone</b><a href="tel:+12152955378">(215) 295-5378</a></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Address</b><span>115 East Bridge St, Morrisville, PA 19067</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Hours</b><span>Mon–Fri, hours to confirm <span class="ph">PLACEHOLDER: confirm hours</span></span><!-- confirm hours --></div>
+        </div>
+      </div>
+    </div>
+    <form onsubmit="return false">
+      <div class="fnote">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        Placeholder form. Wire this up to email or a form service before going live.
+      </div>
+      <div class="fld"><label for="nm">Name</label><input id="nm" type="text" placeholder="Your name"></div>
+      <div class="fld"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(215) 555-0000"></div>
+      <div class="fld"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com"></div>
+      <div class="fld"><label for="msg">What's going on with your car?</label><textarea id="msg" placeholder="Tell us the make, model, and what you're noticing..."></textarea></div>
+      <button class="btn" type="submit">Send Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="wrap">
+    <h2>Ready when you are</h2>
+    <p>Get an honest look at what your car needs and a free quote to go with it.</p>
+    <a class="btn" href="#contact">Get a Free Quote</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="#top" class="brand">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="37" height="37" rx="3" fill="#26222e"/>
+            <path d="M11 27c-1.5 0-2.5-1.2-2.5-2.6 0-1 .5-1.9 1.4-2.3l1-3.6c.4-1.5 1.7-2.5 3.2-2.5h11.8c1.5 0 2.8 1 3.2 2.5l1 3.6c.9.4 1.4 1.3 1.4 2.3 0 1.4-1 2.6-2.5 2.6" stroke="#9E2A3C" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="13" cy="27" r="2.3" fill="#9E2A3C"/><circle cx="27" cy="27" r="2.3" fill="#9E2A3C"/>
+            <path d="M16 13.5c1-1.2 2.4-2 4-2s3 .8 4 2" stroke="#E9C9CE" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Bear's Auto<small>Morrisville, PA</small></span>
+        </a>
+        <p>Family owned car repair on East Bridge Street. Honest work, fair prices, your car back when we say.</p>
+      </div>
+      <div class="ft">
+        <h4>Visit / Call</h4>
+        <a class="tel" href="tel:+12152955378">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span><span class="lab">Call the shop</span>(215) 295-5378</span>
+        </a>
+        <span style="margin-top:14px">115 East Bridge St<br>Morrisville, PA 19067</span>
+        <span>Mon–Fri, hours to confirm <span class="ph">PLACEHOLDER</span></span>
+      </div>
+      <div class="ft">
+        <h4>Explore</h4>
+        <a href="#why">Why Us</a>
+        <a href="#work">Our Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Get a Free Quote</a>
+        <a class="gmaps" href="https://www.google.com/maps?cid=17344395922018599083" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find us on Google
+        </a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© <span id="yr">2026</span> Bear's Auto Services. All rights reserved.</span>
+      <span>Site by Presency · placeholder content marked for owner review</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mbar">
+  <a class="mtel" href="tel:+12152955378">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    <span><span class="lab">Call the shop</span>(215) 295-5378</span>
+  </a>
+  <a class="btn" href="#contact">Free Quote</a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // mobile menu
+  var mb=document.getElementById('menuBtn'),nv=document.getElementById('nav');
+  mb.addEventListener('click',function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nv.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nv.classList.remove('open');mb.setAttribute('aria-expanded',false)})});
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){
+        var els=e.target.parentElement.querySelectorAll('.rv:not(.in)');
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }});
+    },{threshold:.14});
+    document.querySelectorAll('.rv').forEach(function(el,i){io.observe(el)});
+    // hero stagger on load
+    window.addEventListener('load',function(){
+      document.querySelectorAll('.hero .rv').forEach(function(el,i){
+        setTimeout(function(){el.classList.add('in')}, 90*i);
+      });
+    });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+  }
+</script>
+</body>
+</html>

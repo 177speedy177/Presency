@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forcina's Auto Repair | Car Repair in Bensalem, PA</title>
+<meta name="description" content="Car repair in Bensalem, PA. Honest diagnostics, straight pricing, and work done to spec. Family owned. 4.8 stars on Google. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1C1E;
+  --base:#F4F5F6;
+  --surface:#E5E6E8;
+  --band:#202327;
+  --accent:#557089;
+  --accent2:#8A8F96;
+  --accent-deep:#3F5266;   /* AA-safe accent for small text on light */
+  --band-text:#A9B6C2;     /* AA-safe muted text on dark band */
+  --line:#D2D5D8;
+  --maxw:1200px;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--base);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Archivo',sans-serif;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.accent{color:var(--accent)}
+
+/* ---- shared primitives ---- */
+/* eyebrow: hex-nut glyph + plain category word + sequential index */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;
+  font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep)}
+.eyebrow .idx{color:var(--ink);opacity:.4;font-variant-numeric:tabular-nums}
+.eyebrow svg{flex:none}
+.eyebrow.on-dark{color:var(--band-text)}
+.eyebrow.on-dark .idx{color:#fff;opacity:.45}
+
+/* gauge tick rule divider */
+.ticks{height:14px;width:100%;display:block;color:var(--accent)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;
+  font-weight:700;font-size:.95rem;letter-spacing:.01em;padding:15px 26px;border-radius:var(--r);
+  background:var(--accent);color:var(--base);border:2px solid var(--accent);cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;text-transform:uppercase}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(85,112,137,.34);background:#4a6379}
+.btn:focus-visible{outline:3px solid var(--accent-deep);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--accent-deep);border-color:var(--line)}
+.btn.ghost:hover{background:var(--surface);box-shadow:none;color:var(--ink)}
+.btn.lg{padding:18px 34px;font-size:1.05rem}
+
+/* tel sticker */
+.tel{display:inline-flex;align-items:center;gap:9px;font-family:'Archivo',sans-serif;font-weight:700;
+  letter-spacing:.01em;color:var(--ink);font-size:.95rem;padding:9px 14px;border:1.5px solid var(--line);
+  border-radius:var(--r);background:var(--base);transition:border-color .18s,color .18s}
+.tel svg{color:var(--accent)}
+.tel:hover{border-color:var(--accent);color:var(--accent-deep)}
+.tel small{display:block;font-family:'Inter';font-weight:600;font-size:.62rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent-deep);line-height:1}
+.tel .num{line-height:1.05}
+
+/* placeholder pill */
+.ph{display:inline-block;font-family:'Inter';font-weight:600;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;color:#fff;background:var(--accent-deep);padding:2px 8px;border-radius:99px;
+  vertical-align:middle;white-space:nowrap}
+
+/* watermarked owner-photo placeholder */
+.owner-ph{position:relative;overflow:hidden;background:
+  repeating-linear-gradient(135deg,#dfe2e5 0 22px,#d6d9dd 22px 44px);
+  border:1px solid var(--line)}
+.owner-ph::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;
+  background-image:repeating-linear-gradient(-30deg,transparent 0 38px,
+    rgba(26,28,30,.0) 38px),
+    repeating-linear-gradient(-30deg,rgba(26,28,30,.55) 0 0);}
+.wm{position:absolute;inset:-30% -10%;pointer-events:none;opacity:.16;transform:rotate(-30deg);
+  display:flex;flex-direction:column;gap:30px;justify-content:center}
+.wm span{font-family:'Archivo';font-weight:800;font-size:1.1rem;letter-spacing:.4em;color:var(--ink);
+  white-space:nowrap}
+.owner-ph .label{position:absolute;left:14px;bottom:14px;z-index:2}
+
+/* ===== header ===== */
+header{position:sticky;top:0;z-index:60;background:rgba(244,245,246,.86);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{flex:none}
+.brand .name{font-family:'Archivo';font-weight:900;font-size:1.18rem;letter-spacing:-.02em;line-height:.92}
+.brand .name span{display:block;font-family:'Inter';font-weight:600;font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent-deep);margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{font-family:'Archivo';font-weight:600;font-size:.92rem;color:var(--ink);position:relative;padding:4px 0}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--accent);
+  transition:width .22s ease}
+.navlinks a:hover::after,.navlinks a:focus-visible::after{width:100%}
+.navactions{display:flex;align-items:center;gap:14px}
+.menutoggle{display:none;background:none;border:1.5px solid var(--line);border-radius:var(--r);
+  width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;color:var(--ink)}
+
+/* ===== hero (split) ===== */
+.hero{position:relative;padding:72px 0 88px;overflow:hidden}
+.hero .field{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(900px 460px at 14% 8%,rgba(85,112,137,.10),transparent 60%)}
+.hero .grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero .lead{max-width:560px}
+.kick{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo';font-weight:700;font-size:.82rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:22px}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.4rem);font-weight:900}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{font-size:1.16rem;color:#41464b;margin:24px 0 34px;max-width:480px}
+.hero .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero .specs{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.hero .specs .s{display:flex;flex-direction:column}
+.hero .specs .n{font-family:'Archivo';font-weight:900;font-size:2.1rem;color:var(--ink);line-height:1;
+  font-variant-numeric:tabular-nums}
+.hero .specs .l{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent-deep);margin-top:7px}
+
+/* framed hero photo as an object */
+.heroframe{position:relative}
+.heroframe .plate{position:relative;border:10px solid var(--ink);border-radius:6px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(26,28,30,.28);transform:rotate(1.4deg)}
+.heroframe .plate img{width:100%;height:540px;object-fit:cover;filter:grayscale(.18) contrast(1.04)}
+.heroframe .cap{position:absolute;left:-14px;bottom:30px;z-index:3;background:var(--accent);color:var(--base);
+  font-family:'Archivo';font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:11px 18px;border-radius:var(--r);box-shadow:0 12px 26px rgba(85,112,137,.4)}
+.heroframe .tag{position:absolute;top:-18px;right:18px;z-index:3;background:var(--base);border:1.5px solid var(--ink);
+  border-radius:99px;font-family:'Archivo';font-weight:800;font-size:.82rem;padding:7px 16px;
+  display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(26,28,30,.16)}
+.heroframe .corner{position:absolute;width:30px;height:30px;border:3px solid var(--accent);z-index:4}
+.heroframe .corner.tl{top:-4px;left:-4px;border-right:0;border-bottom:0}
+.heroframe .corner.br{bottom:-4px;right:-4px;border-left:0;border-top:0}
+
+/* ===== trust band (dark) ===== */
+.trust{background:var(--band);color:var(--base);padding:26px 0}
+.trust .row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.trust .item{display:flex;align-items:center;gap:12px;font-family:'Archivo';font-weight:600;font-size:1rem}
+.trust .item svg{color:var(--accent);flex:none}
+.trust .stars{display:flex;align-items:center;gap:10px}
+.trust .stars .sv{display:flex;gap:3px}
+.trust .stars small{color:var(--band-text);font-size:.82rem}
+
+/* ===== generic section ===== */
+section.block{padding:96px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:800;margin-top:18px}
+.sec-head p{color:#41464b;font-size:1.1rem;margin-top:16px}
+
+/* ===== area ===== */
+.area{background:var(--surface)}
+.area .layout{display:grid;grid-template-columns:1fr 1.25fr;gap:54px;align-items:start}
+.area .map-card{background:var(--base);border:1px solid var(--line);border-radius:8px;padding:30px;
+  position:sticky;top:100px}
+.area .map-card .big{font-family:'Archivo';font-weight:900;font-size:3.4rem;line-height:.9;color:var(--accent)}
+.area .map-card .big span{display:block;font-size:1.1rem;color:var(--ink);margin-top:8px;letter-spacing:0}
+.area .map-card .addr{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:.96rem;color:#41464b}
+.towns{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.town{display:flex;align-items:center;gap:13px;background:var(--base);border:1px solid var(--line);
+  border-radius:var(--r);padding:15px 18px;font-family:'Archivo';font-weight:600;font-size:1.02rem;
+  transition:transform .18s,border-color .18s}
+.town:hover{transform:translateX(5px);border-color:var(--accent)}
+.town .pin{color:var(--accent);flex:none}
+
+/* ===== services horizontal scroller ===== */
+.scroller-wrap{position:relative}
+.scroller{display:flex;gap:22px;overflow-x:auto;padding:8px 24px 28px;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.scroller::-webkit-scrollbar{display:none}
+.scard{flex:0 0 340px;scroll-snap-align:start;background:var(--base);border:1px solid var(--line);
+  border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.scard:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(26,28,30,.14)}
+.scard .pic{height:188px;overflow:hidden;position:relative;background:var(--ink)}
+.scard .pic img{width:100%;height:100%;object-fit:cover;filter:grayscale(.12);transition:transform .4s}
+.scard:hover .pic img{transform:scale(1.06)}
+.scard .pic .no{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#252a30,#2f363d);color:var(--accent)}
+.scard .num{position:absolute;top:14px;left:14px;font-family:'Archivo';font-weight:900;font-size:1.1rem;
+  color:var(--base);background:var(--accent);width:38px;height:38px;border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;z-index:2}
+.scard .body{padding:24px;flex:1;display:flex;flex-direction:column;gap:10px}
+.scard h3{font-size:1.35rem;font-weight:800}
+.scard p{color:#41464b;font-size:.96rem}
+.scroll-hint{display:flex;align-items:center;gap:10px;color:var(--accent-deep);font-family:'Archivo';
+  font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:0 24px;margin-top:6px}
+.scroll-nav{display:flex;gap:10px}
+.scroll-nav button{width:46px;height:46px;border-radius:var(--r);border:1.5px solid var(--line);
+  background:var(--base);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .18s,border-color .18s}
+.scroll-nav button:hover{background:var(--accent);color:var(--base);border-color:var(--accent)}
+
+/* ===== why us (dark band) ===== */
+.why{background:var(--band);color:var(--base)}
+.why .sec-head h2{color:var(--base)}
+.why .sec-head p{color:var(--band-text)}
+.why .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#2c333a;border:1px solid #2c333a;
+  border-radius:8px;overflow:hidden}
+.why .cell{background:var(--band);padding:38px 34px;display:flex;gap:22px;align-items:flex-start}
+.why .cell .ic{flex:none;width:54px;height:54px;border:1.5px solid var(--accent);border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.why .cell h3{font-size:1.3rem;color:var(--base);margin-bottom:8px}
+.why .cell p{color:var(--band-text);font-size:.98rem}
+.why .cell .big{font-family:'Archivo';font-weight:900;font-size:1.05rem;color:var(--accent);
+  letter-spacing:.04em;display:block;margin-bottom:6px}
+
+/* ===== work gallery ===== */
+.work .gal{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.work .g{position:relative;border-radius:8px;overflow:hidden;min-height:230px}
+.work .g.tall{grid-column:span 3;min-height:340px}
+.work .g.wide{grid-column:span 3}
+.work .g.half{grid-column:span 3}
+.work .owner-ph{width:100%;height:100%;position:absolute;inset:0}
+.gcap{position:absolute;left:14px;bottom:14px;background:rgba(26,28,30,.82);color:var(--base);
+  font-family:'Archivo';font-weight:600;font-size:.82rem;padding:7px 13px;border-radius:var(--r);z-index:3}
+
+/* ===== about ===== */
+.about{background:var(--surface)}
+.about .layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+.about .portrait{aspect-ratio:4/5;border-radius:8px}
+.about .copy h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin:18px 0 22px}
+.about .copy p{color:#41464b;font-size:1.06rem;margin-bottom:16px}
+.about .pts{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.about .pt{display:flex;gap:14px;align-items:flex-start}
+.about .pt svg{color:var(--accent);flex:none;margin-top:3px}
+.about .pt b{font-family:'Archivo'}
+
+/* ===== contact ===== */
+.contact{background:var(--base)}
+.contact .layout{display:grid;grid-template-columns:1fr 1fr;gap:54px}
+.contact .info .blk{margin-bottom:30px}
+.contact .info .blk h4{font-family:'Archivo';font-weight:700;font-size:.82rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent-deep);margin-bottom:10px}
+.contact .info .blk p{font-size:1.1rem;color:var(--ink)}
+.contact form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:34px}
+.contact .note{font-size:.84rem;color:var(--accent-deep);margin-bottom:22px;display:flex;gap:8px;align-items:flex-start}
+.field-g{margin-bottom:18px}
+.field-g label{display:block;font-family:'Archivo';font-weight:600;font-size:.84rem;margin-bottom:7px}
+.field-g input,.field-g textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:var(--r);
+  font-family:'Inter';font-size:.98rem;background:var(--base);color:var(--ink)}
+.field-g input:focus,.field-g textarea:focus{outline:none;border-color:var(--accent)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* ===== final CTA band ===== */
+.finalcta{background:var(--band);color:var(--base);padding:96px 0;position:relative;overflow:hidden}
+.finalcta .field{position:absolute;inset:0;background:radial-gradient(700px 360px at 82% 30%,
+  rgba(85,112,137,.22),transparent 62%);pointer-events:none}
+.finalcta .inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap}
+.finalcta h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:900;color:var(--base);max-width:640px}
+.finalcta h2 em{font-style:normal;color:var(--accent)}
+
+/* ===== footer ===== */
+footer{background:#15171a;color:var(--band-text);padding:64px 0 30px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;
+  border-bottom:1px solid #2c333a}
+.foot-brand .name{font-family:'Archivo';font-weight:900;font-size:1.4rem;color:var(--base);letter-spacing:-.02em}
+.foot-brand p{margin-top:14px;font-size:.94rem;max-width:300px}
+.foot-col h5{font-family:'Archivo';font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--base);margin-bottom:16px}
+.foot-col a,.foot-col p{display:block;font-size:.95rem;margin-bottom:10px;color:var(--band-text)}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding-top:26px;font-size:.84rem}
+.gmaps{display:inline-flex;align-items:center;gap:8px;color:var(--band-text)}
+.gmaps:hover{color:var(--accent)}
+
+/* mobile sticky bar */
+.mobar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--band);
+  border-top:1px solid #2c333a;padding:10px 14px;grid-template-columns:1fr 1fr;gap:10px;
+  box-shadow:0 -8px 24px rgba(0,0,0,.28)}
+.mobar a{display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Archivo';font-weight:700;
+  padding:13px;border-radius:var(--r);font-size:.95rem}
+.mobar .call{background:transparent;color:var(--base);border:1.5px solid #3a424a}
+.mobar .call svg{color:var(--accent)}
+.mobar .quote{background:var(--accent);color:var(--base)}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.stagger.in>*{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero .grid{grid-template-columns:1fr;gap:46px}
+  .heroframe{max-width:520px}
+  .area .layout,.about .layout,.contact .layout{grid-template-columns:1fr;gap:36px}
+  .area .map-card{position:static}
+  .why .grid{grid-template-columns:1fr}
+  .work .gal{grid-template-columns:1fr}
+  .work .g.tall,.work .g.wide,.work .g.half{grid-column:span 1}
+}
+@media(max-width:760px){
+  .navlinks{display:none}
+  .navactions .tel{display:none}
+  .menutoggle{display:flex}
+  .navlinks.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;
+    background:var(--base);border-bottom:1px solid var(--line);padding:20px 24px;gap:18px}
+  .trust .row{justify-content:flex-start;gap:18px}
+  .mobar{display:grid}
+  body{padding-bottom:70px}
+  .towns{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .finalcta .inner{flex-direction:column;align-items:flex-start}
+  section.block{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*{opacity:1!important;transform:none!important}
+  .heroframe .plate{transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Forcina's Auto Repair home">
+      <!-- custom monogram mark: F gear-tooth ring -->
+      <svg class="mark" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+        <g fill="none" stroke="#557089" stroke-width="2.2">
+          <path d="M21 3l3.4 1.2L27.8 3l1.9 3.1 3.6.4 0 3.6 3 2 -1.3 3.4 1.9 3.1 -2.6 2.5 .4 3.6 -3.5 .9 -1 3.5 -3.6 -.4 -2.6 2.5 -3.1 -1.9 -3.4 1.3 -2 -3 -3.6 0 -.4 -3.6 -3.1 -1.9 1.3 -3.4 -1.9 -3.1 2.6 -2.5 -.4 -3.6 3.5 -.9z" stroke-linejoin="round"/>
+        </g>
+        <text x="21" y="27" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="900" font-size="17" fill="#1A1C1E">F</text>
+      </svg>
+      <span class="name">FORCINA'S<span>Auto Repair · Bensalem</span></span>
+    </a>
+
+    <nav class="navlinks" id="nav">
+      <a href="#area">Service Area</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="navactions">
+      <a class="tel" href="tel:+12156384440">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="num"><small>Call the shop</small>(215) 638-4440</span>
+      </a>
+      <a class="btn" href="#contact">Get a Free Quote</a>
+      <button class="menutoggle" id="menutoggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO (split) ===================== -->
+<section class="hero">
+  <div class="field" aria-hidden="true"></div>
+  <div class="wrap grid">
+    <div class="lead reveal">
+      <span class="kick">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+        Car Repair · Bensalem, PA
+      </span>
+      <h1>Car Repair<br>Done <em>To Spec.</em><br>No Guesswork.</h1>
+      <p class="sub">Honest diagnostics, straight pricing, and work that holds up. Family owned and run, serving Bensalem and the towns around it.</p>
+      <div class="cta-row">
+        <a class="btn lg" href="#contact">Get a Free Quote</a>
+        <a class="btn ghost lg" href="#services">See What We Fix</a>
+      </div>
+      <div class="specs stagger">
+        <div class="s"><span class="n" data-count="4.8" data-dec="1">4.8</span><span class="l">Google Rating</span></div>
+        <div class="s"><span class="n" data-count="24">24</span><span class="l">Verified Reviews</span></div>
+        <div class="s"><span class="n">All</span><span class="l">Makes &amp; Models</span></div>
+      </div>
+    </div>
+
+    <div class="heroframe reveal">
+      <div class="corner tl" aria-hidden="true"></div>
+      <div class="corner br" aria-hidden="true"></div>
+      <div class="tag">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        4.8 on Google
+      </div>
+      <div class="plate">
+        <img src="assets/hero.jpg" alt="Mechanic working under the hood of a vehicle in a service bay" width="600" height="540">
+      </div>
+      <div class="cap">In the bay, on the bolt</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAND ===================== -->
+<section class="trust">
+  <div class="wrap row">
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+      Licensed &amp; Insured <span class="ph" style="margin-left:6px">PLACEHOLDER: confirm</span>
+    </div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+      Family Owned &amp; Operated
+    </div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+      Fast, Straight Answers
+    </div>
+    <div class="stars">
+      <span class="sv" aria-label="4.8 out of 5 stars on Google">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#557089"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+      </span>
+      <small>4.8 / 5 &middot; 24 reviews on Google</small>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AREA ===================== -->
+<section class="block area" id="area">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg><span class="idx">01</span> Service Area</span>
+      <h2>Right Here in Bensalem.</h2>
+      <p>We work on cars for drivers across lower Bucks County. Drop it off at the shop on Elm Ave, or call ahead and we'll get you scheduled.</p>
+    </div>
+    <div class="layout">
+      <div class="map-card reveal">
+        <div class="big">7<span>towns we cover most</span></div>
+        <div class="addr">
+          <strong style="color:var(--ink);font-family:'Archivo'">Forcina's Auto Repair</strong><br>
+          437 Elm Ave<br>Bensalem, PA 19020
+          <div style="margin-top:18px">
+            <a class="tel" href="tel:+12156384440">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
+              <span class="num">(215) 638-4440</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: confirm exact list of towns served -->
+      <div class="towns reveal stagger">
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Bensalem</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Trevose</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Cornwells Heights</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Andalusia</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Feasterville</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Croydon</span>
+        <span class="town"><svg class="pin" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>Langhorne</span>
+        <span class="town" style="background:var(--surface);border-style:dashed"><span class="ph">PLACEHOLDER: confirm towns</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES (horizontal scroller) ===================== -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none">
+      <div style="max-width:680px">
+        <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2.4-.6-.6-2.4z"/></svg><span class="idx">02</span> Services</span>
+        <h2>What We Fix.</h2>
+        <p>A short list of the work we do most. <span class="ph">PLACEHOLDER: confirm &amp; trim services</span></p>
+      </div>
+      <div class="scroll-nav" aria-hidden="true">
+        <button id="prev" aria-label="Previous services"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button id="next" aria-label="Next services"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroller-wrap reveal">
+    <div class="scroller" id="scroller">
+      <!-- PLACEHOLDER service set, confirm real services -->
+      <article class="scard">
+        <div class="pic"><span class="num">01</span><img src="assets/engine.jpg" alt="Engine diagnostics and repair" loading="lazy"></div>
+        <div class="body"><h3>Diagnostics &amp; Repair</h3><p>Check-engine lights, odd noises, drivability problems. We find the cause first, then fix it. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+      <article class="scard">
+        <div class="pic"><span class="num">02</span><img src="assets/maint.jpg" alt="Routine maintenance service" loading="lazy"></div>
+        <div class="body"><h3>Routine Maintenance</h3><p>Oil changes, filters, fluids, and the scheduled service that keeps a car healthy. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+      <article class="scard">
+        <div class="pic"><span class="num">03</span><img src="assets/shop.jpg" alt="Brakes and suspension work" loading="lazy"></div>
+        <div class="body"><h3>Brakes &amp; Suspension</h3><p>Pads, rotors, struts, and steering. The parts that keep you stopping and steering straight. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+      <article class="scard">
+        <div class="pic"><span class="no"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 17h14M6 17l1.5-5h9L18 17M7 12l1-4h8l1 4M8 21v-4M16 21v-4M9.5 14h.01M14.5 14h.01"/></svg></span><span class="num">04</span></div>
+        <div class="body"><h3>Tires &amp; Alignment</h3><p>Mount, balance, rotate, and align. Even wear, better grip, fewer surprises. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+      <article class="scard">
+        <div class="pic"><span class="no"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 0 1 18 0M3 12a9 9 0 0 0 18 0M12 3v18M7 5l10 14M17 5L7 19"/></svg></span><span class="num">05</span></div>
+        <div class="body"><h3>Heating &amp; A/C</h3><p>Cold air in summer, warm air in winter. We service the whole climate system. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+      <article class="scard">
+        <div class="pic"><span class="no"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 18l3-9 8 0 3 9M7 18a2 2 0 1 0 4 0M13 18a2 2 0 1 0 4 0M9 9V6h6v3"/></svg></span><span class="num">06</span></div>
+        <div class="body"><h3>Pre-Trip &amp; Inspection</h3><p>Going on a road trip or buying used? We give it a thorough look before you commit. <span class="ph">PLACEHOLDER: confirm</span></p></div>
+      </article>
+    </div>
+  </div>
+  <div class="wrap"><div class="scroll-hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg> Scroll for more</div></div>
+</section>
+
+<!-- ===================== WHY US (dark band) ===================== -->
+<section class="block why" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-dark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span class="idx">03</span> Why Choose Us</span>
+      <h2>Why Drivers Stick With Us.</h2>
+      <p>No upsells you didn't ask for. No surprise line items. Just solid work and a number you can call.</p>
+    </div>
+    <div class="grid reveal stagger">
+      <div class="cell">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <div><span class="big">Quick to respond</span><h3>Fast, Honest Answers</h3><p>Call us and you talk to people who actually work on cars. We tell you what's wrong and what it'll cost.</p></div>
+      </div>
+      <div class="cell">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><span class="big">No surprises</span><h3>Upfront Pricing</h3><p>You get the price before we turn a wrench. The estimate you approve is the bill you pay.</p></div>
+      </div>
+      <div class="cell">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg></div>
+        <div><span class="big">Your neighbors</span><h3>Local &amp; Family Run</h3><p>We live and work in the same area you do. A good name in town is the whole point for us.</p></div>
+      </div>
+      <div class="cell">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <div><span class="big">Done to spec</span><h3>Work That Holds Up<span class="ph" style="margin-left:8px">PLACEHOLDER: confirm warranty</span></h3><p>We torque to the right number and double-check the job. If something isn't right, bring it back.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK ===================== -->
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="idx">04</span> Our Work</span>
+      <h2>From the Shop Floor.</h2>
+      <p>These spots are for Forcina's own photos: jobs in progress, the bay, before and afters. Drop your real images in to replace the placeholders.</p>
+    </div>
+    <!-- PLACEHOLDER: replace each slot with Forcina's REAL shop/job photos -->
+    <div class="work gal reveal stagger">
+      <div class="g tall">
+        <div class="owner-ph"><div class="wm"><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span></div><span class="ph label">PLACEHOLDER: your photo</span></div>
+        <span class="gcap">Job in the bay</span>
+      </div>
+      <div class="g half">
+        <div class="owner-ph"><div class="wm"><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span></div><span class="ph label">PLACEHOLDER: your photo</span></div>
+        <span class="gcap">Brake service</span>
+      </div>
+      <div class="g half">
+        <div class="owner-ph"><div class="wm"><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span></div><span class="ph label">PLACEHOLDER: your photo</span></div>
+        <span class="gcap">Diagnostics</span>
+      </div>
+      <div class="g wide">
+        <div class="owner-ph"><div class="wm"><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span></div><span class="ph label">PLACEHOLDER: your photo</span></div>
+        <span class="gcap">Before &amp; after</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="block about" id="about">
+  <div class="wrap layout">
+    <div class="reveal">
+      <!-- PLACEHOLDER: owner/crew real photo -->
+      <div class="owner-ph portrait">
+        <div class="wm"><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span><span>PLACEHOLDER PLACEHOLDER</span></div>
+        <span class="ph label">PLACEHOLDER: owner / crew photo</span>
+      </div>
+    </div>
+    <div class="copy reveal">
+      <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg><span class="idx">05</span> About</span>
+      <h2>A Shop You Can Actually Talk To.</h2>
+      <p>Forcina's Auto Repair is a family owned shop on Elm Ave in Bensalem. We keep it simple: figure out what's actually wrong, tell you straight, and fix it right the first time.</p>
+      <p>We work on all makes and models, from quick oil changes to the stuff other shops shrug at. Drivers in Bensalem keep coming back because they trust the answer they get here.</p>
+      <div class="pts">
+        <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Family owned and operated.</b> Same people, every visit. <span class="ph">PLACEHOLDER: confirm</span></span></div>
+        <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Serving Bensalem and the surrounding towns.</b> Local, not a national chain.</span></div>
+        <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg><span><b>4.8 stars on Google</b> across 24 reviews from real customers.</span></div>
+      </div>
+      <div style="margin-top:30px"><a class="btn" href="#contact">Get a Free Quote</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg><span class="idx">06</span> Contact</span>
+      <h2>Get a Free Quote.</h2>
+      <p>Tell us what your car is doing and we'll get back to you with a straight answer.</p>
+    </div>
+    <div class="layout">
+      <div class="info reveal">
+        <div class="blk">
+          <h4>Call the Shop</h4>
+          <a class="tel" href="tel:+12156384440" style="font-size:1.05rem">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="num">(215) 638-4440</span>
+          </a>
+        </div>
+        <div class="blk">
+          <h4>Visit Us</h4>
+          <p>437 Elm Ave<br>Bensalem, PA 19020</p>
+        </div>
+        <div class="blk">
+          <h4>Hours</h4>
+          <p>Mon–Fri, hours by appointment <span class="ph">PLACEHOLDER: confirm hours</span></p>
+        </div>
+        <div class="blk">
+          <h4>Rating</h4>
+          <p>4.8 / 5 on Google &middot; 24 reviews</p>
+        </div>
+      </div>
+
+      <form class="reveal" onsubmit="return false">
+        <p class="note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          This form is a placeholder. Wire it up to email or a form service before going live.
+        </p>
+        <div class="field-row">
+          <div class="field-g"><label for="nm">Name</label><input id="nm" type="text" placeholder="Your name"></div>
+          <div class="field-g"><label for="ph">Phone</label><input id="ph" type="tel" placeholder="(215) 555-0000"></div>
+        </div>
+        <div class="field-g"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com"></div>
+        <div class="field-g"><label for="ms">What's going on with the car?</label><textarea id="ms" rows="4" placeholder="Year, make, model, and what it's doing."></textarea></div>
+        <button class="btn lg" type="submit" style="width:100%;justify-content:center">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="finalcta">
+  <div class="field" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <h2>Something off with your car? <em>Let's take a look.</em></h2>
+    <a class="btn lg" href="#contact">Get a Free Quote</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">FORCINA'S AUTO REPAIR</div>
+        <p>Family owned car repair on Elm Ave in Bensalem, PA. Honest work, straight pricing, all makes and models.</p>
+        <div style="margin-top:18px">
+          <a class="tel" href="tel:+12156384440">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="num">(215) 638-4440</span>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>The Shop</h5>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Get a Free Quote</a>
+      </div>
+      <div class="foot-col">
+        <h5>Find Us</h5>
+        <p>437 Elm Ave<br>Bensalem, PA 19020</p>
+        <p>Mon–Fri <span class="ph">PLACEHOLDER: hours</span></p>
+        <a class="gmaps" href="https://www.google.com/maps?cid=14654320068460716700" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>
+          Find us on Google
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Forcina's Auto Repair. All rights reserved.</span>
+      <span>Serving Bensalem &amp; surrounding areas.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky bar -->
+<div class="mobar">
+  <a class="call" href="tel:+12156384440">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
+    (215) 638-4440
+  </a>
+  <a class="quote" href="#contact">Get a Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile menu
+  var mt = document.getElementById('menutoggle'), nav = document.getElementById('nav');
+  mt && mt.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
+  });
+  nav && nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); mt.setAttribute('aria-expanded','false'); });
+  });
+
+  // services scroller arrows
+  var sc = document.getElementById('scroller');
+  var step = 362;
+  var prev = document.getElementById('prev'), next = document.getElementById('next');
+  prev && prev.addEventListener('click', function(){ sc.scrollBy({left:-step, behavior: rm?'auto':'smooth'}); });
+  next && next.addEventListener('click', function(){ sc.scrollBy({left: step, behavior: rm?'auto':'smooth'}); });
+
+  if(rm){
+    document.querySelectorAll('.reveal,.stagger').forEach(function(e){e.classList.add('in');});
+    document.querySelectorAll('[data-count]').forEach(function(e){e.textContent=e.getAttribute('data-count');});
+    return;
+  }
+
+  // reveal + stagger
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var el = en.target;
+        if(el.classList.contains('stagger')){
+          Array.prototype.forEach.call(el.children, function(c,i){
+            setTimeout(function(){ c.style.opacity=1; c.style.transform='none'; }, i*90);
+          });
+        }
+        el.classList.add('in');
+        if(el.querySelector){
+          el.querySelectorAll('[data-count]').forEach(runCount);
+        }
+        io.unobserve(el);
+      }
+    });
+  }, {threshold:0.16});
+  document.querySelectorAll('.reveal,.stagger').forEach(function(e){ io.observe(e); });
+
+  // count-ups
+  function runCount(el){
+    if(el.dataset.done) return; el.dataset.done=1;
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+    var start = performance.now(), dur = 1100;
+    function tick(now){
+      var p = Math.min((now-start)/dur,1);
+      var e = 1-Math.pow(1-p,3);
+      el.textContent = (target*e).toFixed(dec);
+      if(p<1) requestAnimationFrame(tick); else el.textContent = target.toFixed(dec);
+    }
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>

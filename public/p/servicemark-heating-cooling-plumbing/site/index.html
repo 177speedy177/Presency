@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceMark Heating Cooling &amp; Plumbing | Norristown, PA</title>
+<meta name="description" content="ServiceMark Heating Cooling &amp; Plumbing keeps Norristown comfortable. Heating, cooling, and plumbing service, 24/7. Family owned and operated. Rated 4.9 on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17191C;
+  --base:#F5F5F6;
+  --surface:#E6E7E9;
+  --band:#1A1C20;
+  --accent:#3D5066;
+  --accent2:#80868F;
+
+  --display:"Familjen Grotesk",sans-serif;
+  --body:"Inter",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+
+  --maxw:1200px;
+  --gut:clamp(20px,5vw,64px);
+  --line:rgba(23,25,28,.12);
+  --line-soft:rgba(23,25,28,.07);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--base);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.02;margin:0}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(72px,11vw,140px)}
+
+/* ---------- mono label primitive ---------- */
+.label{
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.label::before{
+  content:"";
+  width:26px;height:1px;
+  background:var(--accent);
+  display:inline-block;
+}
+.label.on-dark{color:#aeb7c4}
+.label.on-dark::before{background:var(--accent2)}
+
+/* ---------- airflow line primitive (the comfort-system motif) ---------- */
+.flow{display:block;width:100%;height:auto;color:var(--accent)}
+.flow path{fill:none;stroke:currentColor;stroke-width:1.5;vector-effect:non-scaling-stroke}
+
+/* ---------- buttons ---------- */
+.btn{
+  font-family:var(--mono);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  padding:15px 24px;
+  background:var(--accent);
+  color:#fff;
+  border:1px solid var(--accent);
+  border-radius:2px;
+  cursor:pointer;
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(61,80,102,.7);background:#314158}
+.btn svg{width:15px;height:15px;color:#fff}
+.btn .arr{transition:transform .25s ease}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* phone sticker */
+.phone{
+  font-family:var(--mono);
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.02em;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--ink);
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+  padding:11px 16px;
+  border-radius:2px;
+  transition:border-color .25s ease,color .25s ease;
+}
+.phone svg{width:14px;height:14px;color:var(--accent)}
+.phone:hover{border-color:var(--accent);color:var(--accent)}
+.phone .dot{width:6px;height:6px;border-radius:50%;background:#3aa76d;box-shadow:0 0 0 0 rgba(58,167,109,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(58,167,109,.5)}70%{box-shadow:0 0 0 7px rgba(58,167,109,0)}100%{box-shadow:0 0 0 0 rgba(58,167,109,0)}}
+
+/* ---------- placeholder pill ---------- */
+.ph{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#8a5a16;
+  background:#f7eddb;
+  border:1px dashed #cda35a;
+  border-radius:2px;
+  padding:2px 7px;
+  line-height:1.5;
+  vertical-align:middle;
+}
+.ph.on-dark{color:#e7c485;background:rgba(231,196,133,.08);border-color:rgba(231,196,133,.4)}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.site-head{
+  position:sticky;top:0;z-index:60;
+  background:rgba(245,245,246,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.head-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em}
+.brand-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin-top:4px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding-block:4px}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--accent);transition:width .28s ease}
+.nav a:hover::after{width:100%}
+.head-cta{display:flex;align-items:center;gap:14px}
+@media(max-width:980px){.nav{display:none}.head-cta .phone{display:none}}
+
+/* =========================================================
+   HERO  (offset, oversized headline, inset photo lower-right)
+   ========================================================= */
+.hero{position:relative;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(60px,8vw,110px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:end}
+.hero-lede{max-width:680px}
+.hero h1{
+  font-size:clamp(3.2rem,9vw,7rem);
+  letter-spacing:-.035em;
+  margin-top:26px;
+}
+.hero h1 .soft{color:var(--accent2);font-style:italic;font-weight:400}
+.hero h1 .acc{color:var(--accent)}
+.hero-sub{margin-top:28px;font-size:clamp(17px,2vw,20px);color:#3a3d42;max-width:520px}
+.hero-actions{margin-top:34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.trade-flag{margin-top:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+/* inset photo lower-right */
+.hero-photo{position:relative;align-self:end}
+.frame{
+  position:relative;
+  border:1px solid var(--line);
+  background:var(--surface);
+  padding:10px;
+  border-radius:3px;
+}
+.frame::before,.frame::after{
+  content:"";position:absolute;width:13px;height:13px;border:1.5px solid var(--accent);
+}
+.frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.frame img{width:100%;height:340px;object-fit:cover;border-radius:1px;filter:grayscale(.32) contrast(1.04)}
+.frame-cap{
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent2);margin-top:9px;display:flex;justify-content:space-between;
+}
+/* hero ambient flow lines */
+.hero-flow{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5}
+.hero-flow svg{position:absolute;right:-4%;top:8%;width:62%;height:auto;color:var(--accent2)}
+.hero-flow path{fill:none;stroke:currentColor;stroke-width:1;opacity:.5}
+
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-photo{max-width:440px}
+  .frame img{height:280px}
+}
+
+/* big metric ribbon under hero */
+.ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ribbon .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.metric{padding:26px 0;border-right:1px solid var(--line-soft);display:flex;flex-direction:column;gap:5px}
+.metric:last-child{border-right:0}
+.metric .m-k{font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:600;letter-spacing:-.03em}
+.metric .m-k .star{color:#d9a521}
+.metric .m-l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
+@media(max-width:720px){.ribbon .wrap{grid-template-columns:1fr 1fr}.metric{padding-inline:0}.metric:nth-child(2){border-right:0}.metric:nth-child(1),.metric:nth-child(2){border-bottom:1px solid var(--line-soft)}}
+
+/* =========================================================
+   REVIEWS-CTA BAND  (dark)
+   ========================================================= */
+.reviews-band{background:var(--band);color:#eceef1;position:relative;overflow:hidden}
+.reviews-band .flow-bg{position:absolute;inset:0;opacity:.16;pointer-events:none;color:var(--accent2)}
+.reviews-band .flow-bg svg{width:100%;height:100%}
+.reviews-band .flow-bg path{fill:none;stroke:currentColor;stroke-width:1}
+.rb-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative}
+.rb-stars{display:flex;gap:6px;margin-bottom:18px}
+.rb-stars svg{width:26px;height:26px;color:#d9a521}
+.rb-line{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.9rem);font-weight:500;letter-spacing:-.02em;max-width:680px;line-height:1.08}
+.rb-line b{color:#fff}
+.rb-meta{margin-top:18px;font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:#aeb7c4}
+.rb-meta .big{color:#fff;font-size:15px}
+@media(max-width:760px){.rb-grid{grid-template-columns:1fr}}
+
+/* =========================================================
+   PROCESS  (numbered steps)
+   ========================================================= */
+.proc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;flex-wrap:wrap}
+.proc-head h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+.proc-head p{max-width:360px;color:#4a4d52;margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:30px 26px 36px 0;border-right:1px solid var(--line-soft);position:relative}
+.step:last-child{border-right:0}
+.step .s-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:30px}
+.step .s-flow{height:30px;margin-bottom:20px;color:var(--accent)}
+.step h3{font-size:1.35rem;margin-bottom:10px}
+.step p{font-size:15px;color:#4a4d52;margin:0}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{padding-right:24px;border-bottom:1px solid var(--line-soft)}.step:nth-child(2){border-right:0}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0}}
+
+/* =========================================================
+   SERVICES  (2-col list, line icons)
+   ========================================================= */
+.services{background:var(--surface)}
+.svc-head{margin-bottom:48px;max-width:640px}
+.svc-head h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-top:18px}
+.svc-head p{color:#4a4d52;margin-top:16px}
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.svc{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:20px;
+  padding:26px 0;border-top:1px solid var(--line);position:relative;
+}
+.svc-ic{width:40px;height:40px;border:1px solid var(--line);border-radius:3px;display:grid;place-items:center;color:var(--accent);transition:background .3s ease,border-color .3s ease}
+.svc-ic svg{width:21px;height:21px}
+.svc:hover .svc-ic{background:var(--accent);border-color:var(--accent);color:#fff}
+.svc-body h3{font-size:1.18rem;margin-bottom:5px}
+.svc-body p{font-size:14.5px;color:#4a4d52;margin:0}
+.svc-no{font-family:var(--mono);font-size:12px;color:var(--accent2);padding-top:3px}
+@media(max-width:760px){.svc-list{grid-template-columns:1fr}}
+
+.svc-foot{margin-top:42px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px;color:#4a4d52}
+
+/* =========================================================
+   WHY-US  (asymmetric: sticky intro + spec rows + photo)
+   ========================================================= */
+.why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,6vw,80px);align-items:start}
+.why-intro{position:sticky;top:104px}
+.why-intro h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-top:18px}
+.why-intro p{color:#4a4d52;margin-top:18px;max-width:380px}
+.why-photo{margin-top:30px;position:relative}
+.why-photo .frame img{height:230px;filter:grayscale(.3) contrast(1.04)}
+
+.specs{display:flex;flex-direction:column}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+.spec:last-child{border-bottom:1px solid var(--line)}
+.spec .sp-no{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:4px}
+.spec h3{font-size:1.3rem;margin-bottom:8px}
+.spec p{font-size:15px;color:#4a4d52;margin:0}
+
+/* owner / crew watermarked slot */
+.crew-slot{margin-top:30px;position:relative;border:1px dashed var(--line);background:var(--base);border-radius:3px;height:170px;overflow:hidden;display:grid;place-items:center}
+.crew-slot .wm{position:absolute;inset:0;pointer-events:none;opacity:.13;background:repeating-linear-gradient(-30deg,transparent 0 38px,rgba(23,25,28,.0) 38px);display:grid;place-items:center}
+.crew-slot .wm span{font-family:var(--mono);font-size:15px;letter-spacing:.3em;color:var(--ink);transform:rotate(-30deg);white-space:nowrap;text-transform:uppercase}
+.crew-slot .cs-label{position:relative;text-align:center;color:var(--accent2);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:0 20px}
+.crew-slot .cs-label svg{width:26px;height:26px;color:var(--accent2);margin:0 auto 10px}
+
+@media(max-width:820px){.why-grid{grid-template-columns:1fr}.why-intro{position:static}}
+
+/* service area */
+.area{border-top:1px solid var(--line);margin-top:60px;padding-top:42px}
+.area .label{margin-bottom:18px}
+.towns{display:flex;flex-wrap:wrap;gap:10px 12px}
+.town{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:#3a3d42;border:1px solid var(--line);border-radius:2px;padding:7px 13px;transition:border-color .25s ease,color .25s ease}
+.town:hover{border-color:var(--accent);color:var(--accent)}
+
+/* =========================================================
+   CONTACT  (form + details)
+   ========================================================= */
+.contact{background:var(--band);color:#eceef1;position:relative;overflow:hidden}
+.contact .flow-bg{position:absolute;inset:0;opacity:.14;pointer-events:none;color:var(--accent2)}
+.contact .flow-bg svg{width:100%;height:100%}
+.contact .flow-bg path{fill:none;stroke:currentColor;stroke-width:1}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);position:relative}
+.c-left h2{font-size:clamp(2.2rem,5.4vw,3.8rem);color:#fff;margin-top:18px}
+.c-left .c-lede{color:#b9c0c9;margin-top:20px;max-width:400px}
+.c-detail{margin-top:38px;display:flex;flex-direction:column;gap:18px}
+.c-row{display:flex;align-items:center;gap:14px;font-size:15px;color:#d4d9df}
+.c-row svg{width:18px;height:18px;color:var(--accent2);flex:none}
+.c-row .phone{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.16);color:#fff}
+.c-row .phone svg{color:#aeb7c4}
+.c-row .phone:hover{border-color:var(--accent2);color:#fff}
+
+.c-form{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:clamp(22px,3vw,34px)}
+.form-note{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#d9a521;margin-bottom:22px;display:flex;gap:8px;align-items:flex-start}
+.form-note svg{width:14px;height:14px;flex:none;margin-top:2px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aeb7c4;margin-bottom:7px}
+.field input,.field textarea{
+  width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);
+  border-radius:2px;padding:12px 13px;color:#fff;font-family:var(--body);font-size:15px;
+  transition:border-color .25s ease,background .25s ease;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent2);background:rgba(255,255,255,.07)}
+.field textarea{resize:vertical;min-height:96px}
+.c-form .btn{width:100%;justify-content:center;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.c-grid{grid-template-columns:1fr}}
+@media(max-width:460px){.two{grid-template-columns:1fr}}
+
+/* =========================================================
+   FOOTER  (themed artifact)
+   ========================================================= */
+.foot{background:#101215;color:#9aa1aa;padding-block:clamp(50px,7vw,76px) 30px;position:relative}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:40px}
+.foot-brand .brand-name{color:#fff;font-size:21px}
+.foot-brand p{margin-top:16px;max-width:300px;font-size:14px;line-height:1.7}
+.foot-brand .flow{width:140px;margin-top:22px;color:var(--accent2);opacity:.7}
+.foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6f7680;margin:0 0 16px}
+.foot-col a,.foot-col span{display:block;font-size:14px;color:#c2c8d0;margin-bottom:10px}
+.foot-col a:hover{color:#fff}
+.foot-col .phone{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);color:#fff;margin-bottom:12px}
+.foot-col .phone svg{color:#aeb7c4}
+.hours-fact{font-family:var(--mono);font-size:13px;color:#3aa76d;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.hours-fact .dot{width:6px;height:6px;border-radius:50%;background:#3aa76d}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:#6f7680}
+.foot-bottom a{color:#9aa1aa}
+.foot-bottom a:hover{color:#fff}
+@media(max-width:760px){.foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+
+/* =========================================================
+   MOBILE STICKY BAR
+   ========================================================= */
+.mobar{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  background:rgba(26,28,32,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.1);
+  padding:10px 14px;gap:10px;align-items:center;justify-content:space-between;
+}
+.mobar .phone{flex:1;justify-content:center;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff}
+.mobar .phone svg{color:#aeb7c4}
+.mobar .btn{padding:13px 18px}
+@media(max-width:980px){.mobar{display:flex}body{padding-bottom:64px}}
+
+/* =========================================================
+   MOTION
+   ========================================================= */
+/* CSS-only reveal: animate in on load, no JS dependency, content always ends visible */
+.reveal{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:.05s}
+[data-d="1"]{animation-delay:.12s}
+[data-d="2"]{animation-delay:.19s}
+[data-d="3"]{animation-delay:.26s}
+[data-d="4"]{animation-delay:.33s}
+.step::before{content:"";position:absolute;top:-1px;left:0;width:0;height:2px;background:var(--accent);animation:growline .6s ease .3s forwards}
+@keyframes growline{to{width:46px}}
+
+.hero-lede>*{opacity:0;transform:translateY(18px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-lede>*:nth-child(1){animation-delay:.05s}
+.hero-lede>*:nth-child(2){animation-delay:.15s}
+.hero-lede>*:nth-child(3){animation-delay:.25s}
+.hero-lede>*:nth-child(4){animation-delay:.35s}
+.hero-lede>*:nth-child(5){animation-delay:.45s}
+.hero-photo{opacity:0;transform:translateY(24px) scale(.98);animation:rise .9s cubic-bezier(.2,.7,.2,1) .4s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero-lede>*,.hero-photo{opacity:1!important;transform:none!important}
+  .step::before{width:46px!important}
+  .phone .dot{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="ServiceMark home">
+      <!-- logo mark: comfort-system airflow over a charcoal block -->
+      <svg class="brand-mark" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="36" height="36" rx="4" stroke="#17191C" stroke-width="1.5"/>
+        <path d="M8 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3" stroke="#3D5066" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M8 20c3 0 3-3 6-3s3 3 6 3 3-3 6-3" stroke="#80868F" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M8 26c3 0 3-3 6-3s3 3 6 3 3-3 6-3" stroke="#17191C" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">ServiceMark</span>
+        <span class="brand-sub">Heating · Cooling · Plumbing</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="head-cta">
+      <a class="phone" href="tel:+16103371465"><span class="dot"></span>(610) 337-1465</a>
+      <a class="btn" href="#contact">Get a Free Quote
+        <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-flow" aria-hidden="true">
+    <svg viewBox="0 0 600 300" preserveAspectRatio="none">
+      <path d="M0 60 C120 60 120 20 240 20 S360 60 480 60 600 20 720 20"/>
+      <path d="M0 120 C120 120 120 80 240 80 S360 120 480 120 600 80 720 80"/>
+      <path d="M0 180 C120 180 120 140 240 140 S360 180 480 180 600 140 720 140"/>
+      <path d="M0 240 C120 240 120 200 240 200 S360 240 480 240 600 200 720 200"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-lede">
+      <span class="label">Norristown, PA · Family owned</span>
+      <h1>The whole<br>house, <span class="soft">comfortable.</span><br><span class="acc">Year round.</span></h1>
+      <p class="hero-sub">Heating, cooling, and plumbing that runs quiet and stays fixed. We size the system to the house, not the invoice. Serving Norristown and surrounding areas.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Get a Free Quote
+          <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="label" href="#process" style="cursor:pointer">How it works</a>
+      </div>
+      <!-- TRADE MISMATCH: Google category says "general contractor", the name says HVAC/plumbing. Confirm the real primary trade first. -->
+      <div class="trade-flag">
+        <span class="ph">PLACEHOLDER: confirm this is your main trade (HVAC &amp; plumbing)</span>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <figure class="frame" style="margin:0">
+        <img src="assets/home-renovation.jpg" alt="Technician working on a home comfort system" loading="eager" width="500" height="340">
+        <figcaption class="frame-cap"><span>Comfort system service</span><span>Reference photo only</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- metric ribbon -->
+<div class="ribbon">
+  <div class="wrap">
+    <div class="metric reveal"><span class="m-k"><span class="star">★</span> 4.9</span><span class="m-l">Google rating</span></div>
+    <div class="metric reveal" data-d="1"><span class="m-k">170</span><span class="m-l">Verified reviews</span></div>
+    <div class="metric reveal" data-d="2"><span class="m-k">24/7</span><span class="m-l">Service availability</span></div>
+    <div class="metric reveal" data-d="3"><span class="m-k">3</span><span class="m-l">Trades, one call</span></div>
+  </div>
+</div>
+
+<!-- ============ REVIEWS-CTA BAND ============ -->
+<section class="reviews-band section">
+  <div class="flow-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 320" preserveAspectRatio="none">
+      <path d="M0 80 C200 80 200 30 400 30 S600 80 800 80 1000 30 1200 30"/>
+      <path d="M0 160 C200 160 200 110 400 110 S600 160 800 160 1000 110 1200 110"/>
+      <path d="M0 240 C200 240 200 190 400 190 S600 240 800 240 1000 190 1200 190"/>
+    </svg>
+  </div>
+  <div class="wrap rb-grid">
+    <div class="reveal">
+      <div class="rb-stars" aria-label="4.9 out of 5 stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+      </div>
+      <p class="rb-line">Neighbors in Norristown rate us <b>4.9 out of 5</b> across <b>170 reviews.</b> Real heat, real cold, real water pressure, no runaround.</p>
+      <p class="rb-meta"><span class="big">★ 4.9</span> &nbsp;·&nbsp; 170 Google reviews &nbsp;·&nbsp; Family owned and operated</p>
+    </div>
+    <div class="reveal" data-d="2" style="text-align:right">
+      <a class="btn" href="#contact">Get a Free Quote
+        <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="proc-head">
+      <div>
+        <span class="label reveal">Our Process</span>
+        <h2 class="reveal" data-d="1" style="margin-top:16px">Four steps from<br>broken to comfortable.</h2>
+      </div>
+      <p class="reveal" data-d="2">No mystery, no upsell theater. You know the plan and the price before a single tool comes out.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="s-no">01</div>
+        <svg class="s-flow flow" viewBox="0 0 90 30"><path d="M0 15 C18 15 18 5 36 5 S63 25 90 25"/></svg>
+        <h3>Call &amp; diagnose</h3>
+        <p>Tell us what is going on. We ask the right questions and book a visit that fits your day.</p>
+      </div>
+      <div class="step reveal" data-d="1">
+        <div class="s-no">02</div>
+        <svg class="s-flow flow" viewBox="0 0 90 30"><path d="M0 22 C22 22 22 8 45 8 S68 22 90 14"/></svg>
+        <h3>Flat quote</h3>
+        <p>We measure the system, walk you through options, and put one clear price in writing.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="s-no">03</div>
+        <svg class="s-flow flow" viewBox="0 0 90 30"><path d="M0 12 C20 12 20 24 42 24 S66 8 90 18"/></svg>
+        <h3>We do the work</h3>
+        <p>Clean install or repair, drop cloths down, tested twice, and your space left tidy.</p>
+      </div>
+      <div class="step reveal" data-d="3">
+        <div class="s-no">04</div>
+        <svg class="s-flow flow" viewBox="0 0 90 30"><path d="M0 18 C20 18 20 6 45 6 S70 18 90 10"/></svg>
+        <h3>Comfort check</h3>
+        <p>We confirm it runs right, show you how it works, and stand behind the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services section" id="services">
+  <div class="wrap">
+    <div class="svc-head">
+      <span class="label reveal">Services</span>
+      <h2 class="reveal" data-d="1">Heating, cooling, and<br>plumbing under one roof.</h2>
+      <!-- SERVICES PLACEHOLDER: list inferred from trade + business name. Confirm and trim. -->
+      <p class="reveal" data-d="2">The work below covers what an HVAC and plumbing shop usually handles. <span class="ph">PLACEHOLDER: confirm exact services and trim</span></p>
+    </div>
+
+    <div class="svc-list">
+      <!-- HEATING -->
+      <div class="svc reveal">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c2 3-1 4 0 7m0 0c1 3-2 4 0 7m-4-9c1 2-1 3 0 5m8-5c-1 2 1 3 0 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <div class="svc-body"><h3>Heating repair &amp; install</h3><p>Furnaces, heat pumps, and boilers. Sized right so you are warm without burning fuel.</p></div>
+        <span class="svc-no">01</span>
+      </div>
+      <!-- COOLING -->
+      <div class="svc reveal" data-d="1">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4 7l16 10M20 7L4 17M12 6l-2.5-2.5M12 6l2.5-2.5M12 18l-2.5 2.5M12 18l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="svc-body"><h3>Air conditioning</h3><p>Central AC and mini-splits installed, tuned, and recharged for quiet, even cooling.</p></div>
+        <span class="svc-no">02</span>
+      </div>
+      <!-- PLUMBING -->
+      <div class="svc reveal" data-d="2">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3v6a3 3 0 003 3h4a3 3 0 013 3v6M5 9h4M15 21h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="svc-body"><h3>Plumbing repair</h3><p>Leaks, fixtures, drains, and pressure problems handled clean and handled once.</p></div>
+        <span class="svc-no">03</span>
+      </div>
+      <!-- WATER HEATERS -->
+      <div class="svc reveal" data-d="3">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="3" width="10" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 7c1.5 1.5 1.5 3 0 4.5S10.5 14 12 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+        <div class="svc-body"><h3>Water heaters</h3><p>Tank and tankless swaps with steady hot water and a tidy, code-safe hookup.</p></div>
+        <span class="svc-no">04</span>
+      </div>
+      <!-- MAINTENANCE -->
+      <div class="svc reveal" data-d="2">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M14 6a3.5 3.5 0 00-4.9 4.4L4 15.5 8.5 20l5.1-5.1A3.5 3.5 0 0018 10l-2.5 2.5L13 11l-1-2.5L14.5 6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+        <div class="svc-body"><h3>Tune-ups &amp; maintenance</h3><p>Seasonal checks that catch small faults before they become a cold morning.</p></div>
+        <span class="svc-no">05</span>
+      </div>
+      <!-- EMERGENCY (no-photo styled by accent, 24/7 fact) -->
+      <div class="svc reveal" data-d="3">
+        <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="svc-body"><h3>24/7 emergency service</h3><p>No heat, no AC, or water where it should not be. We answer around the clock, every day.</p></div>
+        <span class="svc-no">06</span>
+      </div>
+    </div>
+
+    <div class="svc-foot reveal">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="#3D5066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Licensed &amp; insured <span class="ph">PLACEHOLDER: confirm license &amp; insurance</span> · Up-front pricing on every job.
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY-US ============ -->
+<section class="section" id="why">
+  <div class="wrap why-grid">
+    <div class="why-intro">
+      <span class="label reveal">Why Choose Us</span>
+      <h2 class="reveal" data-d="1">A local crew that<br>shows up and<br>finishes clean.</h2>
+      <p class="reveal" data-d="2">Family owned and operated, working out of Audubon and serving Norristown and surrounding areas. The same people answer the phone, do the work, and stand behind it.</p>
+
+      <figure class="why-photo reveal frame" data-d="2" style="margin:30px 0 0">
+        <img src="assets/construction-contractor.jpg" alt="Comfort system technician on site" loading="lazy" width="500" height="230">
+        <figcaption class="frame-cap"><span>On the job</span><span>Reference photo only</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="specs">
+      <div class="spec reveal">
+        <span class="sp-no">01</span>
+        <div><h3>Fast response</h3><p>One number reaches a real person, and 24/7 means we pick up when the heat or the water quits at the worst time.</p></div>
+      </div>
+      <div class="spec reveal" data-d="1">
+        <span class="sp-no">02</span>
+        <div><h3>Up-front pricing</h3><p>You see the price before we start. No surprise line items, no clock-watching, no pressure.</p></div>
+      </div>
+      <div class="spec reveal" data-d="2">
+        <span class="sp-no">03</span>
+        <div><h3>Three trades, one call</h3><p>Heating, cooling, and plumbing from one crew, so a job that crosses trades does not turn into three appointments.</p></div>
+      </div>
+      <div class="spec reveal" data-d="3">
+        <span class="sp-no">04</span>
+        <div><h3>Work that holds up</h3><p>We size it right and test it twice. The fix lasts, and we stand behind it. <span class="ph">PLACEHOLDER: confirm warranty terms</span></p></div>
+      </div>
+
+      <!-- owner / crew real-photo slot, watermarked -->
+      <div class="crew-slot reveal" data-d="2">
+        <div class="wm"><span>PLACEHOLDER · PLACEHOLDER · PLACEHOLDER</span></div>
+        <div class="cs-label">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Your real crew / van photo goes here
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- service area -->
+  <div class="wrap area">
+    <span class="label">Service Area</span>
+    <p style="margin:0 0 18px;color:#4a4d52;max-width:520px">Based in Audubon, serving Norristown and the towns around it. <span class="ph">PLACEHOLDER: confirm service-area towns</span></p>
+    <div class="towns">
+      <span class="town">Norristown</span>
+      <span class="town">Audubon</span>
+      <span class="town">King of Prussia</span>
+      <span class="town">Plymouth Meeting</span>
+      <span class="town">Conshohocken</span>
+      <span class="town">East Norriton</span>
+      <span class="town">West Norriton</span>
+      <span class="town">Bridgeport</span>
+      <span class="town">Eagleville</span>
+      <span class="town">Collegeville</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section" id="contact">
+  <div class="flow-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+      <path d="M0 100 C200 100 200 40 400 40 S600 100 800 100 1000 40 1200 40"/>
+      <path d="M0 200 C200 200 200 140 400 140 S600 200 800 200 1000 140 1200 140"/>
+      <path d="M0 300 C200 300 200 240 400 240 S600 300 800 300 1000 240 1200 240"/>
+    </svg>
+  </div>
+  <div class="wrap c-grid">
+    <div class="c-left">
+      <span class="label on-dark reveal">Contact</span>
+      <h2 class="reveal" data-d="1">Get a free quote<br>this week.</h2>
+      <p class="c-lede reveal" data-d="2">Tell us what is going on with the heat, the AC, or the plumbing. We will give you a straight answer and a real price.</p>
+
+      <div class="c-detail reveal" data-d="2">
+        <div class="c-row">
+          <a class="phone" href="tel:+16103371465"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(610) 337-1465</a>
+        </div>
+        <div class="c-row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/></svg>
+          900 Adams Ave B, Audubon, PA 19403
+        </div>
+        <div class="c-row">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Open 24 hours, 7 days a week
+        </div>
+      </div>
+    </div>
+
+    <form class="c-form reveal" data-d="2" onsubmit="return false">
+      <div class="form-note">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 4.3l-7 12A2 2 0 005 19.5h14a2 2 0 001.7-3.2l-7-12a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Placeholder form. Wire this to email or a CRM before launch.
+      </div>
+      <div class="two">
+        <div class="field"><label for="n">Name</label><input id="n" type="text" placeholder="Your name" autocomplete="name"></div>
+        <div class="field"><label for="p">Phone</label><input id="p" type="tel" placeholder="(610) 000-0000" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="e">Email</label><input id="e" type="email" placeholder="you@email.com" autocomplete="email"></div>
+      <div class="field"><label for="m">What do you need?</label><textarea id="m" placeholder="No heat upstairs, AC not cooling, leak under the sink..."></textarea></div>
+      <button class="btn" type="submit">Get a Free Quote
+        <svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-name">ServiceMark</span>
+        <p>Heating, cooling, and plumbing for Norristown and surrounding areas. Family owned and operated.</p>
+        <svg class="flow" viewBox="0 0 140 26" fill="none" aria-hidden="true">
+          <path d="M0 8 C28 8 28 2 56 2 S84 14 112 14 140 8 168 8" stroke="#80868F" stroke-width="1.2"/>
+          <path d="M0 18 C28 18 28 12 56 12 S84 24 112 24 140 18 168 18" stroke="#3D5066" stroke-width="1.2"/>
+        </svg>
+      </div>
+
+      <div class="foot-col">
+        <h4>Reach us</h4>
+        <a class="phone" href="tel:+16103371465"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(610) 337-1465</a>
+        <span>900 Adams Ave B<br>Audubon, PA 19403</span>
+        <!-- REAL HOURS from profile: Open 24 hours. Stated as fact, not a placeholder. -->
+        <span class="hours-fact"><span class="dot"></span>Open 24 hours, every day</span>
+      </div>
+
+      <div class="foot-col">
+        <h4>Service</h4>
+        <a href="#process">Our process</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why choose us</a>
+        <a href="#contact">Get a free quote</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 ServiceMark Heating Cooling &amp; Plumbing · Norristown, PA</span>
+      <a href="https://www.google.com/maps?cid=17085764617020445960" target="_blank" rel="noopener">Find us on Google →</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mobar">
+  <a class="phone" href="tel:+16103371465"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>(610) 337-1465</a>
+  <a class="btn" href="#contact">Free Quote</a>
+</div>
+</body>
+</html>

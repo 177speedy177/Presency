@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Michael's Landscaping | General Contractor in Bensalem, PA</title>
+<meta name="description" content="General contractor serving Bensalem and surrounding areas. Kitchen and bath remodels, additions, decks, basements, and repairs. Licensed and insured, 5.0 on Google." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter+Tight:wght@400;500;600&family=Spline+Sans+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============ MICHAEL'S LANDSCAPING — "THE SITE SET" ============
+   Concept: a contractor's project folder — ruled, tabbed, numbered.
+   Palette: assigned 'Steel Blue'. One blue with intent on neutral ground. */
+:root{
+  --ink:#14181F;
+  --base:#F4F6F9;
+  --surface:#E4E9F0;
+  --band:#1A2330;
+  --accent:#1C6FB0;
+  --accent-bright:#4FA3DD;     /* accent text ON dark band, AA */
+  --accent-deep:#155A92;       /* accent text on light, AA */
+  --accent2:#6E7682;           /* sparing neutral detail */
+  --line:#C9D2DE;
+  --paper:#FFFFFF;
+  --ink-soft:#3A4250;
+  --maxw:1240px;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--base);color:var(--ink);
+  font-family:"Inter Tight",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:clamp(1rem,.55vw + .85rem,1.0625rem);line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;font-weight:800;line-height:1.0;letter-spacing:-.02em;margin:0}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.6rem)}
+
+/* ---- spec / mono tag system (coherent labels) ---- */
+.tag{font-family:"Spline Sans Mono",monospace;font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.7em}
+.tag .num{color:var(--accent2)}
+.tag .rule{width:30px;height:0;border-top:1.5px solid var(--accent);display:inline-block;position:relative}
+.tag .rule::before,.tag .rule::after{content:"";position:absolute;top:-3px;width:1.5px;height:7px;background:var(--accent)}
+.tag .rule::before{left:0}.tag .rule::after{right:0}
+.tag.on-dark{color:var(--accent-bright)}
+.tag.on-dark .num{color:#8893A4}
+.tag.on-dark .rule{border-top-color:var(--accent-bright)}
+.tag.on-dark .rule::before,.tag.on-dark .rule::after{background:var(--accent-bright)}
+
+/* ---- dimension line caption motif ---- */
+.dim{font-family:"Spline Sans Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--accent2);
+  display:flex;align-items:center;gap:.7em;text-transform:uppercase}
+.dim::before,.dim::after{content:"";flex:1;height:0;border-top:1.5px solid var(--line);position:relative}
+.dim::before{background:
+   linear-gradient(var(--accent),var(--accent)) left/1.5px 8px no-repeat;}
+
+/* ---- buttons ---- */
+.btn{font-family:"Spline Sans Mono",monospace;font-weight:600;font-size:.82rem;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:.7em;padding:.95em 1.5em;border-radius:9px;border:1.5px solid transparent;
+  cursor:pointer;text-decoration:none;transition:transform .18s,box-shadow .18s,background .18s,color .18s}
+.btn svg{transition:transform .18s}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 14px 30px -14px rgba(28,111,176,.85)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(28,111,176,.95)}
+.btn-accent:hover svg{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep);transform:translateY(-2px)}
+
+/* ---- tel sticker ---- */
+.tel{font-family:"Spline Sans Mono",monospace;font-weight:600;font-size:.84rem;letter-spacing:.01em;
+  display:inline-flex;align-items:center;gap:.6em;color:var(--ink);text-decoration:none;padding:.45em .2em;transition:color .18s}
+.tel svg{color:var(--accent)}
+.tel:hover{color:var(--accent-deep)}
+.tel small{font-family:"Inter Tight";font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);display:block;line-height:1}
+
+/* ---- placeholder pill ---- */
+.ph{display:inline-flex;align-items:center;gap:.45em;font-family:"Spline Sans Mono",monospace;font-size:.6rem;
+  font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);
+  background:rgba(28,111,176,.1);border:1px dashed rgba(28,111,176,.5);border-radius:6px;padding:.28em .55em;line-height:1;vertical-align:middle}
+.ph::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:1px;flex:none;transform:rotate(45deg)}
+.ph.on-dark{color:var(--accent-bright);background:rgba(79,163,221,.14);border-color:rgba(79,163,221,.5)}
+.ph.on-dark::before{background:var(--accent-bright)}
+
+/* ---- manila spec-tab corner motif (reusable card) ---- */
+.tabcard{position:relative;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s}
+.tabcard::before{content:"";position:absolute;top:0;left:26px;width:62px;height:13px;background:var(--surface);
+  border:1.5px solid var(--line);border-top:none;border-radius:0 0 8px 8px;z-index:2}
+.tabcard::after{content:"";position:absolute;top:4px;left:50px;width:6px;height:6px;border-radius:50%;
+  background:var(--paper);border:1.5px solid var(--accent2);z-index:3}
+
+/* ========== HEADER ========== */
+header.site{position:sticky;top:0;z-index:60;background:rgba(244,246,249,.86);backdrop-filter:blur(12px);
+  border-bottom:1.5px solid var(--line)}
+.hrow{display:flex;align-items:center;gap:1.4rem;height:74px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand .mark{flex:none}
+.brand b{font-family:"Archivo";font-weight:800;font-size:1.06rem;letter-spacing:-.02em;line-height:1}
+.brand span{font-family:"Spline Sans Mono",monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);display:block;margin-top:3px}
+nav.main{margin-left:auto;display:flex;align-items:center;gap:1.7rem}
+nav.main a.nl{font-family:"Spline Sans Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;text-decoration:none;color:var(--ink-soft);position:relative;padding:.3em 0;transition:color .18s}
+nav.main a.nl .n{color:var(--accent2);margin-right:.4em}
+nav.main a.nl::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--accent);transition:width .22s}
+nav.main a.nl:hover{color:var(--ink)}nav.main a.nl:hover::after{width:100%}
+.htel{margin-left:.3rem}
+.hcta{display:inline-flex}
+@media(max-width:980px){nav.main a.nl,.htel small{display:none}.htel{margin-left:auto}}
+@media(max-width:560px){.hcta .lbl{display:none}.hcta{padding:.8em}}
+
+/* ========== HERO ========== */
+.hero{position:relative;padding:clamp(2.6rem,6vw,5rem) 0 0;overflow:hidden}
+.hero-band{position:absolute;inset:0 0 auto;height:78%;background:
+   radial-gradient(120% 90% at 12% 0%, #E9EEF5 0%, var(--base) 60%);z-index:-2}
+.hero-glow{position:absolute;top:-10%;right:-8%;width:60vw;height:60vw;max-width:820px;max-height:820px;
+  background:radial-gradient(circle,rgba(28,111,176,.16),transparent 62%);z-index:-1;filter:blur(8px);
+  animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-5%,4%)}}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3.4rem);align-items:end}
+.hero-left .tag{margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.6rem);font-weight:900;letter-spacing:-.035em;margin:0 0 .2em}
+.hero h1 .blue{color:var(--accent-deep);position:relative;white-space:nowrap}
+.hero h1 .uline{position:absolute;left:0;right:0;bottom:-.06em;height:.3em}
+.hero h1 .uline path{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round}
+.hero-sub{font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--ink-soft);max-width:34ch;margin:1.3rem 0 1.7rem;line-height:1.5}
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:.9rem 1.1rem;align-items:center}
+.hero-flag{margin-top:1.7rem;display:flex;align-items:flex-start;gap:.7rem;background:var(--paper);
+  border:1.5px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:.8rem 1rem;max-width:40ch}
+.hero-flag .ico{flex:none;margin-top:1px;color:var(--accent)}
+.hero-flag p{margin:0;font-size:.86rem;line-height:1.45;color:var(--ink-soft)}
+.hero-flag strong{color:var(--ink);font-weight:600}
+
+/* hero photo card */
+.hero-card{position:relative}
+.hero-card .frame{position:relative;border-radius:var(--r);overflow:hidden;border:1.5px solid var(--line);
+  box-shadow:0 34px 60px -34px rgba(20,24,31,.5)}
+.hero-card .frame img{width:100%;height:clamp(280px,38vw,440px);object-fit:cover}
+.hero-card .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,24,31,.28))}
+.hero-card .chip{position:absolute;left:-14px;bottom:26px;z-index:4;background:var(--paper);border:1.5px solid var(--line);
+  border-radius:12px;padding:.7rem .95rem;box-shadow:0 20px 36px -20px rgba(20,24,31,.5);display:flex;align-items:center;gap:.7rem}
+.hero-card .chip .stars{color:#E6A817;font-size:.95rem;letter-spacing:1px;line-height:1}
+.hero-card .chip b{font-family:"Archivo";font-size:1.15rem;line-height:1}
+.hero-card .chip small{font-family:"Spline Sans Mono",monospace;font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent2);display:block;margin-top:2px}
+.hero-card .tab-corner{position:absolute;top:-1px;right:18px;z-index:4}
+.hero-cap{margin-top:.9rem}
+
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:2.2rem}.hero-card{order:-1}.hero-sub{max-width:46ch}}
+
+/* photo strip below hero */
+.strip{padding:clamp(2rem,4vw,3rem) 0 clamp(2.6rem,5vw,4rem)}
+.strip-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}
+.strip-rail .cell{position:relative;border-radius:10px;overflow:hidden;border:1.5px solid var(--line);height:128px}
+.strip-rail .cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.strip-rail .cell:hover img{transform:scale(1.07)}
+.strip-rail .cell .lab{position:absolute;left:0;bottom:0;font-family:"Spline Sans Mono",monospace;font-size:.58rem;
+  letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(20,24,31,.6);padding:.3em .55em;backdrop-filter:blur(3px)}
+@media(max-width:680px){.strip-rail{grid-template-columns:repeat(2,1fr)}}
+
+/* ========== SECTION SCAFFOLD ========== */
+section{position:relative}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3.1rem);font-weight:800;letter-spacing:-.025em;max-width:18ch}
+.sec-head .lead{max-width:38ch;color:var(--ink-soft);font-size:1.02rem}
+.pad{padding:clamp(3.4rem,7vw,6rem) 0}
+
+/* ---- WHY US (numbered spec rows) ---- */
+.why{background:var(--paper);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.spec-row{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;padding:1.9rem;border:1px solid var(--line);margin:-0.75px}
+.spec-row .idx{font-family:"Archivo";font-weight:800;font-size:2.4rem;color:var(--surface);
+  -webkit-text-stroke:1.5px var(--accent);line-height:.85}
+.spec-row h3{font-size:1.18rem;font-weight:700;margin:0 0 .4em;letter-spacing:-.01em}
+.spec-row p{margin:0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr}}
+
+/* ---- GUARANTEE BAND ---- */
+.guarantee{background:var(--band);color:#E7ECF3;position:relative;overflow:hidden}
+.guarantee::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:radial-gradient(80% 120% at 85% 0%,rgba(28,111,176,.3),transparent 60%)}
+.g-grid{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+.guarantee h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem)}
+.g-list{display:grid;gap:1.1rem}
+.g-item{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start;
+  padding:1.1rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:11px;
+  transition:background .2s,border-color .2s}
+.g-item:hover{background:rgba(28,111,176,.14);border-color:rgba(79,163,221,.4)}
+.g-item .tick{flex:none;width:30px;height:30px;border-radius:8px;background:rgba(28,111,176,.28);
+  display:grid;place-items:center;color:var(--accent-bright)}
+.g-item h4{font-size:1.04rem;color:#fff;margin:0 0 .25em;font-weight:700}
+.g-item p{margin:0;color:#AAB4C2;font-size:.9rem;line-height:1.5}
+@media(max-width:760px){.g-grid{grid-template-columns:1fr}}
+
+/* ---- STATS LEDGER ---- */
+.stats .led{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--line);border-radius:var(--r);
+  overflow:hidden;background:var(--paper)}
+.stat{padding:2rem 1.6rem;border-right:1.5px solid var(--line);position:relative}
+.stat:last-child{border-right:none}
+.stat .k{font-family:"Spline Sans Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent2);margin-bottom:.7rem;display:flex;align-items:center;gap:.5em}
+.stat .k .d{width:7px;height:7px;background:var(--accent);transform:rotate(45deg)}
+.stat .v{font-family:"Archivo";font-weight:800;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-.03em;line-height:.9;color:var(--ink)}
+.stat .v .suf{color:var(--accent-deep)}
+.stat .cap{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem}
+@media(max-width:760px){.stats .led{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1.5px solid var(--line)}}
+
+/* ---- REVIEWS CTA BAND ---- */
+.revcta{background:var(--surface);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+.revcta-in{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.4rem,4vw,3rem);align-items:center}
+.revcta .score{display:flex;flex-direction:column;gap:.3rem}
+.revcta .score .big{font-family:"Archivo";font-weight:900;font-size:3.4rem;line-height:.85;letter-spacing:-.03em}
+.revcta .score .stars{color:#E6A817;letter-spacing:2px;font-size:1.05rem}
+.revcta .score small{font-family:"Spline Sans Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2)}
+.revcta .mid h3{font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.02em;max-width:22ch}
+.revcta .mid p{margin:.5rem 0 0;color:var(--ink-soft);font-size:.95rem;max-width:40ch}
+@media(max-width:820px){.revcta-in{grid-template-columns:1fr;justify-items:start;gap:1.4rem}}
+
+/* ---- SERVICES TILE GRID (broken widths) ---- */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.svc{grid-column:span 2;position:relative;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 26px 46px -28px rgba(20,24,31,.4);border-color:var(--accent)}
+.svc.wide{grid-column:span 3}
+.svc.tall .ph-photo,.svc.tall .svc-img{min-height:200px}
+.svc-img{position:relative;height:158px;overflow:hidden}
+.svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc:hover .svc-img img{transform:scale(1.06)}
+.svc-img .num{position:absolute;top:.6rem;right:.7rem;font-family:"Spline Sans Mono",monospace;font-size:.62rem;
+  font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(20,24,31,.62);padding:.32em .55em;border-radius:6px;backdrop-filter:blur(3px)}
+.svc-body{padding:1.25rem 1.3rem 1.4rem;flex:1;display:flex;flex-direction:column}
+.svc-body h3{font-size:1.14rem;font-weight:700;letter-spacing:-.01em;margin:0 0 .4em;display:flex;align-items:center;gap:.5em}
+.svc-body p{margin:0;color:var(--ink-soft);font-size:.92rem;line-height:1.5;flex:1}
+.svc-body .arrow{margin-top:1rem;font-family:"Spline Sans Mono",monospace;font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.5em;transition:gap .2s}
+.svc:hover .svc-body .arrow{gap:.9em}
+/* styled NO-PHOTO variant */
+.svc .noimg{height:158px;position:relative;background:
+   repeating-linear-gradient(135deg,var(--surface),var(--surface) 11px,#DCE3EC 11px,#DCE3EC 22px);
+   display:grid;place-items:center;border-bottom:1.5px solid var(--line)}
+.svc .noimg .blue{width:54px;height:54px;border-radius:12px;background:var(--paper);border:1.5px solid var(--line);
+  display:grid;place-items:center;color:var(--accent)}
+.svc.tall{grid-row:span 2}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc,.svc.wide{grid-column:span 1}.svc.tall{grid-row:auto}}
+@media(max-width:540px){.svc-grid{grid-template-columns:1fr}}
+
+/* ---- PROCESS (numbered, inside services area) ---- */
+.proc{margin-top:clamp(3rem,6vw,5rem)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:p}
+.proc-step{position:relative;padding:1.6rem 1.4rem;background:var(--paper);border:1.5px solid var(--line);border-radius:12px}
+.proc-step .pn{font-family:"Archivo";font-weight:800;font-size:1.5rem;color:var(--accent);line-height:1}
+.proc-step h4{font-size:1.04rem;margin:.7rem 0 .4em;font-weight:700}
+.proc-step p{margin:0;font-size:.88rem;color:var(--ink-soft);line-height:1.5}
+.proc-step::after{content:"";position:absolute;top:50%;right:-1.2rem;width:1.2rem;height:1.5px;background:var(--line)}
+.proc-step:last-child::after{display:none}
+@media(max-width:820px){.proc-grid{grid-template-columns:repeat(2,1fr)}.proc-step::after{display:none}}
+@media(max-width:480px){.proc-grid{grid-template-columns:1fr}}
+
+/* ---- SERVICE AREA + CREW ---- */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:center}
+.crew-photo{position:relative;border-radius:var(--r);overflow:hidden;border:1.5px solid var(--line)}
+.crew-photo img{width:100%;height:clamp(260px,32vw,360px);object-fit:cover}
+.wm{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.wm::before{content:"PLACEHOLDER  ·  OWNER PHOTO  ·  ";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) rotate(-30deg);white-space:nowrap;font-family:"Spline Sans Mono",monospace;
+  font-size:1.2rem;font-weight:700;letter-spacing:.2em;color:rgba(20,24,31,.16);
+  text-shadow:0 0 1px rgba(255,255,255,.3);width:240%;text-align:center;line-height:2.6}
+.crew-photo .lab{position:absolute;left:0;bottom:0;background:rgba(28,111,176,.92);color:#fff;
+  font-family:"Spline Sans Mono",monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:.4em .7em}
+.towns{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
+.town{font-family:"Spline Sans Mono",monospace;font-size:.74rem;letter-spacing:.02em;color:var(--ink-soft);
+  background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:.5em .85em;transition:.18s}
+.town:hover{border-color:var(--accent);color:var(--accent-deep)}
+.town.here{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media(max-width:760px){.area-grid{grid-template-columns:1fr}}
+
+/* ---- CONTACT ---- */
+.contact{background:var(--paper);border-top:1.5px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.8rem,4vw,3.4rem)}
+.contact-info .tel{font-size:1.1rem;margin:.4rem 0 1.4rem}
+.info-row{display:grid;grid-template-columns:auto 1fr;gap:.9rem;padding:1rem 0;border-top:1.5px solid var(--line);align-items:start}
+.info-row:last-child{border-bottom:1.5px solid var(--line)}
+.info-row .ico{flex:none;color:var(--accent);margin-top:2px}
+.info-row .k{font-family:"Spline Sans Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:.2em}
+.info-row .vv{font-size:.96rem;color:var(--ink)}
+form{background:var(--base);border:1.5px solid var(--line);border-radius:var(--r);padding:clamp(1.4rem,3vw,2rem)}
+.form-note{display:flex;align-items:center;gap:.6rem;margin-bottom:1.3rem;font-size:.8rem;color:var(--ink-soft)}
+.field{margin-bottom:1rem}
+.field label{font-family:"Spline Sans Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent2);display:block;margin-bottom:.45em}
+.field input,.field textarea{width:100%;font-family:"Inter Tight";font-size:.96rem;color:var(--ink);
+  background:var(--paper);border:1.5px solid var(--line);border-radius:9px;padding:.8em .9em;transition:border-color .18s,box-shadow .18s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(28,111,176,.16)}
+.field textarea{resize:vertical;min-height:104px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+
+/* ---- FINAL CTA ---- */
+.final{background:var(--band);color:#fff;position:relative;overflow:hidden;text-align:center}
+.final::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(60% 120% at 50% -10%,rgba(28,111,176,.35),transparent 60%)}
+.final-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.final h2{color:#fff;font-size:clamp(2.1rem,5vw,3.8rem);font-weight:900;letter-spacing:-.03em;max-width:16ch}
+.final p{color:#AEB8C6;max-width:42ch;margin:0}
+
+/* ---- FOOTER (title-block artifact) ---- */
+footer.site{background:#10151D;color:#9AA4B2;border-top:3px solid var(--accent)}
+.tb{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.1fr;border:1.5px solid rgba(255,255,255,.1)}
+.tb .cell{padding:1.5rem 1.5rem;border-right:1.5px solid rgba(255,255,255,.1)}
+.tb .cell:last-child{border-right:none}
+.tb .k{font-family:"Spline Sans Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#5C6675;margin-bottom:.7rem}
+.tb .brandblock b{font-family:"Archivo";color:#fff;font-size:1.2rem;letter-spacing:-.02em;display:block}
+.tb .brandblock span{font-family:"Spline Sans Mono",monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#5C6675}
+.tb .tel{color:#E7ECF3}.tb .tel:hover{color:var(--accent-bright)}.tb .tel small{color:#5C6675}
+.tb a.gl{color:#9AA4B2;font-family:"Spline Sans Mono",monospace;font-size:.76rem;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.5em;transition:color .18s}
+.tb a.gl:hover{color:var(--accent-bright)}
+.tb .v{font-size:.86rem;line-height:1.6}
+.foot-base{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:"Spline Sans Mono",monospace;font-size:.66rem;letter-spacing:.04em;color:#5C6675;padding:1.1rem 0}
+@media(max-width:860px){.tb{grid-template-columns:1fr 1fr}.tb .cell{border-bottom:1.5px solid rgba(255,255,255,.1)}.tb .cell:nth-child(2){border-right:none}}
+@media(max-width:520px){.tb{grid-template-columns:1fr}.tb .cell{border-right:none}}
+
+/* ---- MOBILE STICKY TEL BAR ---- */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  background:rgba(16,21,29,.96);backdrop-filter:blur(10px);border-top:1.5px solid rgba(255,255,255,.12);
+  padding:.6rem .9rem;align-items:center;justify-content:space-between;gap:.8rem}
+.mbar .tel{color:#fff}.mbar .tel small{color:#7C8696}.mbar .tel svg{color:var(--accent-bright)}
+.mbar .btn{padding:.7em 1.1em;font-size:.74rem}
+@media(max-width:720px){.mbar{display:flex}body{padding-bottom:68px}}
+
+/* ---- reveal animation ---- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.07s}.rv[data-d="2"]{transition-delay:.14s}
+.rv[data-d="3"]{transition-delay:.21s}.rv[data-d="4"]{transition-delay:.28s}.rv[data-d="5"]{transition-delay:.35s}
+.draw{stroke-dasharray:260;stroke-dashoffset:260;transition:stroke-dashoffset 1s ease .2s}
+.draw.in{stroke-dashoffset:0}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important;transition:none!important}
+  .draw{stroke-dashoffset:0!important;transition:none!important}
+  .hero-glow{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ========================= HEADER ========================= -->
+<header class="site">
+  <div class="wrap hrow">
+    <a class="brand" href="#top" aria-label="Michael's Landscaping home">
+      <span class="mark" aria-hidden="true">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <rect x="1.2" y="1.2" width="35.6" height="35.6" rx="8" stroke="#1C6FB0" stroke-width="1.6"/>
+          <path d="M9 26 L19 11 L29 26" stroke="#1C6FB0" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M13.5 26 L19 17.7 L24.5 26" stroke="#14181F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="19" cy="29.4" r="1.5" fill="#1C6FB0"/>
+        </svg>
+      </span>
+      <span>
+        <b>Michael's Landscaping</b>
+        <span>General Contractor</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a class="nl" href="#why"><span class="n">01</span>Why us</a>
+      <a class="nl" href="#services"><span class="n">02</span>Services</a>
+      <a class="nl" href="#area"><span class="n">03</span>Area</a>
+      <a class="nl" href="#contact"><span class="n">04</span>Contact</a>
+    </nav>
+    <a class="tel htel" href="tel:+12157782450" aria-label="Call (215) 778-2450">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span>(215) 778-2450<small>Mon–Sat</small></span>
+    </a>
+    <a class="btn btn-accent hcta" href="#contact">
+      <span class="lbl">Get a Free Quote</span>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="hero-band" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="tag rv"><span class="rule"></span><span class="num">00</span> Bensalem, Pennsylvania</div>
+        <h1 class="rv" data-d="1">General Contractor<br>in <span class="blue">Bensalem
+          <svg class="uline" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M4 15 C 80 6, 240 6, 316 14"/></svg>
+        </span></h1>
+        <p class="hero-sub rv" data-d="2">Remodels, additions, decks, and the repairs that never seem to get done. One crew that shows up, prices it straight, and finishes the punch list.</p>
+        <div class="hero-cta-row rv" data-d="3">
+          <a class="btn btn-accent" href="#contact">Get a Free Quote
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#services">See what we build</a>
+        </div>
+        <!-- TRADE MISMATCH FLAG -->
+        <div class="hero-flag rv" data-d="4">
+          <span class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 2 21h20L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v5M12 17.5v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </span>
+          <p><strong>Listed as a general contractor.</strong> The name reads "landscaping," so we lead with remodels and builds. <span class="ph">PLACEHOLDER: confirm your main trade</span></p>
+        </div>
+      </div>
+
+      <div class="hero-card rv" data-d="2">
+        <div class="tab-corner" aria-hidden="true">
+          <svg width="70" height="15" viewBox="0 0 70 15"><path d="M0 0 H70 V8 a7 7 0 0 1-7 7 H7 a7 7 0 0 1-7-7 Z" fill="#E4E9F0" stroke="#C9D2DE" stroke-width="1.5"/><circle cx="35" cy="6.5" r="2.4" fill="#fff" stroke="#6E7682" stroke-width="1.3"/></svg>
+        </div>
+        <div class="frame">
+          <img src="assets/hero.jpg" alt="Home renovation framing and construction in progress" width="900" height="600" />
+        </div>
+        <div class="chip">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <div><b>5.0</b><small>2 reviews · Google</small></div>
+        </div>
+        <div class="hero-cap"><div class="dim">Recent build · Bensalem area</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PHOTO STRIP ========================= -->
+<section class="strip">
+  <div class="wrap">
+    <div class="dim rv" style="margin-bottom:1.1rem">The work · kitchens · baths · decks · additions</div>
+    <div class="strip-rail">
+      <div class="cell rv"><img src="assets/kitchen.jpg" alt="Kitchen remodel" loading="lazy"><span class="lab">Kitchens</span></div>
+      <div class="cell rv" data-d="1"><img src="assets/bath.jpg" alt="Bathroom remodel" loading="lazy"><span class="lab">Baths</span></div>
+      <div class="cell rv" data-d="2"><img src="assets/deck.jpg" alt="Deck and patio" loading="lazy"><span class="lab">Decks</span></div>
+      <div class="cell rv" data-d="3"><img src="assets/reno.jpg" alt="Interior renovation" loading="lazy"><span class="lab">Additions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= WHY US ========================= -->
+<section class="why pad" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="tag rv" style="margin-bottom:1rem"><span class="rule"></span><span class="num">01</span> Why us</div>
+        <h2 class="rv" data-d="1">Hire the crew that<br>finishes what it starts.</h2>
+      </div>
+      <p class="lead rv" data-d="2">No moving target on price, no disappearing act halfway through. Here's what you get when you call.</p>
+    </div>
+    <div class="why-grid">
+      <div class="spec-row rv">
+        <div class="idx">01</div>
+        <div><h3>Fast, real responses</h3><p>You call, we call back. We show up to look at the job and get you a written number, not a vague "maybe next week."</p></div>
+      </div>
+      <div class="spec-row rv" data-d="1">
+        <div class="idx">02</div>
+        <div><h3>Upfront pricing</h3><p>A clear scope and a fixed quote before any work starts. You know the cost going in, and change orders get written down.</p></div>
+      </div>
+      <div class="spec-row rv" data-d="2">
+        <div class="idx">03</div>
+        <div><h3>Local and accountable</h3><p>Family owned and operated, working out of Bensalem. We live where we build, so the work has to hold up.</p></div>
+      </div>
+      <div class="spec-row rv" data-d="3">
+        <div class="idx">04</div>
+        <div><h3>Licensed &amp; insured <span class="ph">PLACEHOLDER: confirm</span></h3><p>Properly covered so your home and our crew are protected from the first day to the final walkthrough.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= GUARANTEE BAND ========================= -->
+<section class="guarantee pad">
+  <div class="wrap">
+    <div class="g-grid">
+      <div>
+        <div class="tag on-dark rv" style="margin-bottom:1rem"><span class="rule"></span><span class="num">02</span> The promise</div>
+        <h2 class="rv" data-d="1">What to expect,<br>start to punch list.</h2>
+        <p class="rv" data-d="2" style="color:#AAB4C2;max-width:34ch;margin-top:1rem">No surprises is the whole pitch. Here's how every job runs.</p>
+      </div>
+      <div class="g-list">
+        <div class="g-item rv">
+          <span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4>A written scope and quote</h4><p>Everything we agreed to, on paper, before we lift a tool.</p></div>
+        </div>
+        <div class="g-item rv" data-d="1">
+          <span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4>A clean, protected jobsite</h4><p>Floors covered, dust controlled, swept down at the end of the day.</p></div>
+        </div>
+        <div class="g-item rv" data-d="2">
+          <span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4>A real walkthrough</h4><p>We finish the punch list with you, not after you stop asking.</p></div>
+        </div>
+        <div class="g-item rv" data-d="3">
+          <span class="tick" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4>Workmanship warranty <span class="ph on-dark">PLACEHOLDER: confirm terms</span></h4><p>We stand behind the build. If something we did isn't right, we fix it.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= STATS LEDGER ========================= -->
+<section class="stats pad" id="stats">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="tag rv" style="margin-bottom:1rem"><span class="rule"></span><span class="num">03</span> By the numbers</div>
+        <h2 class="rv" data-d="1">A record you can check.</h2>
+      </div>
+      <p class="lead rv" data-d="2">Real figures go here once confirmed. Every number below is a placeholder until you give us the actuals.</p>
+    </div>
+    <div class="led rv" data-d="1">
+      <div class="stat"><div class="k"><span class="d"></span>Rating</div><div class="v" data-count="5" data-dec="1">0<span class="suf">.0</span></div><div class="cap">on Google · 2 reviews</div></div>
+      <div class="stat"><div class="k"><span class="d"></span>Projects</div><div class="v" data-count="150"><span class="suf">+</span></div><div class="cap">completed <span class="ph">PLACEHOLDER</span></div></div>
+      <div class="stat"><div class="k"><span class="d"></span>Years serving</div><div class="v" data-count="15"><span class="suf">+</span></div><div class="cap">the area <span class="ph">PLACEHOLDER</span></div></div>
+      <div class="stat"><div class="k"><span class="d"></span>Callback</div><div class="v" data-count="24"><span class="suf">h</span></div><div class="cap">typical response <span class="ph">PLACEHOLDER</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= REVIEWS CTA BAND ========================= -->
+<section class="revcta pad">
+  <div class="wrap revcta-in">
+    <div class="score rv">
+      <div class="big">5.0</div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <small>Rated on Google</small>
+    </div>
+    <div class="mid rv" data-d="1">
+      <h3>Homeowners in Bensalem rate us 5.0.</h3>
+      <p>Two reviews in, a clean sheet. Want to be the next one? Tell us what you're planning.</p>
+    </div>
+    <a class="btn btn-accent rv" data-d="2" href="#contact">Get a Free Quote
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ========================= SERVICES ========================= -->
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="tag rv" style="margin-bottom:1rem"><span class="rule"></span><span class="num">04</span> Services</div>
+        <h2 class="rv" data-d="1">What we build<br>and fix.</h2>
+      </div>
+      <p class="lead rv" data-d="2">A short, honest list. <span class="ph">PLACEHOLDER: confirm &amp; trim services</span> Tell us what you need and we'll tell you straight if it's a fit.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- wide + tall feature: kitchen -->
+      <article class="svc wide tall rv">
+        <div class="svc-img"><img src="assets/kitchen.jpg" alt="Kitchen remodel" loading="lazy"><span class="num">01</span></div>
+        <div class="svc-body">
+          <h3>Kitchen remodels</h3>
+          <p>Layouts that actually work, cabinets that close right, and a finish that lasts. From a refresh to a full gut and rebuild.</p>
+          <span class="arrow">Start a kitchen <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+
+      <article class="svc rv" data-d="1">
+        <div class="svc-img"><img src="assets/bath.jpg" alt="Bathroom remodel" loading="lazy"><span class="num">02</span></div>
+        <div class="svc-body">
+          <h3>Bathroom remodels</h3>
+          <p>Tile, fixtures, and waterproofing done in the right order so it stays dry and looks sharp for years.</p>
+          <span class="arrow">See baths <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+
+      <article class="svc rv" data-d="2">
+        <div class="svc-img"><img src="assets/reno.jpg" alt="Home addition" loading="lazy"><span class="num">03</span></div>
+        <div class="svc-body">
+          <h3>Additions</h3>
+          <p>More room, done right. Foundation to roofline, tied into your home so it looks original, not bolted on.</p>
+          <span class="arrow">Plan an addition <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+
+      <article class="svc wide rv" data-d="1">
+        <div class="svc-img"><img src="assets/deck.jpg" alt="Deck and patio build" loading="lazy"><span class="num">04</span></div>
+        <div class="svc-body">
+          <h3>Decks &amp; patios</h3>
+          <p>Outdoor space built to handle Pennsylvania winters and summer cookouts alike. Framing you can trust underfoot.</p>
+          <span class="arrow">Build outdoors <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+
+      <!-- styled NO-PHOTO variant: basement -->
+      <article class="svc rv" data-d="2">
+        <div class="noimg"><span class="num" style="position:absolute;top:.6rem;right:.7rem;font-family:'Spline Sans Mono',monospace;font-size:.62rem;font-weight:700;color:var(--accent2)">05</span>
+          <span class="blue" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 21V9l9-6 9 6v12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 13h18M9 21v-8h6v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>Basement finishing</h3>
+          <p>Turn the space under your house into a real room. Framing, insulation, egress, and a dry, finished result.</p>
+          <span class="arrow">Finish a basement <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+
+      <!-- styled NO-PHOTO variant: repairs -->
+      <article class="svc rv" data-d="3">
+        <div class="noimg"><span class="num" style="position:absolute;top:.6rem;right:.7rem;font-family:'Spline Sans Mono',monospace;font-size:.62rem;font-weight:700;color:var(--accent2)">06</span>
+          <span class="blue" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 6l4 4-9 9-4 1 1-4 8-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 7l4 4" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        </div>
+        <div class="svc-body">
+          <h3>General repairs</h3>
+          <p>The punch list nobody else will show up for. Rot, trim, doors, drywall, and the small stuff that bugs you daily.</p>
+          <span class="arrow">Book a repair <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </article>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="proc">
+      <div class="tag rv" style="margin-bottom:1.4rem"><span class="rule"></span><span class="num">05</span> How it works</div>
+      <div class="proc-grid">
+        <div class="proc-step rv"><div class="pn">01</div><h4>Call &amp; walkthrough</h4><p>Tell us the project. We come look, measure, and listen.</p></div>
+        <div class="proc-step rv" data-d="1"><div class="pn">02</div><h4>Written quote</h4><p>A clear scope and a fixed price, on paper, no guessing.</p></div>
+        <div class="proc-step rv" data-d="2"><div class="pn">03</div><h4>We build</h4><p>One crew, a clean site, and updates as the work moves.</p></div>
+        <div class="proc-step rv" data-d="3"><div class="pn">04</div><h4>Final walkthrough</h4><p>We finish the punch list with you and stand behind it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SERVICE AREA + CREW ========================= -->
+<section class="pad" id="area" style="background:var(--surface);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line)">
+  <div class="wrap">
+    <div class="area-grid">
+      <div class="crew-photo rv">
+        <img src="assets/crew.jpg" alt="Construction crew on site" loading="lazy" />
+        <div class="wm" aria-hidden="true"></div>
+        <span class="lab">Your photo here · crew / van / job</span>
+      </div>
+      <div class="rv" data-d="1">
+        <div class="tag" style="margin-bottom:1rem"><span class="rule"></span><span class="num">06</span> Service area</div>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem)">Serving Bensalem and the towns around it.</h2>
+        <p style="color:var(--ink-soft);margin-top:1rem;max-width:42ch">Based on Hulmeville Rd in Bensalem. If you're nearby and need it built or fixed, ask. <span class="ph">PLACEHOLDER: confirm towns</span></p>
+        <div class="towns">
+          <span class="town here">Bensalem</span>
+          <span class="town">Levittown</span>
+          <span class="town">Langhorne</span>
+          <span class="town">Feasterville</span>
+          <span class="town">Trevose</span>
+          <span class="town">Croydon</span>
+          <span class="town">Bristol</span>
+          <span class="town">Penndel</span>
+          <span class="town">Newtown</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CONTACT ========================= -->
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="tag rv" style="margin-bottom:1rem"><span class="rule"></span><span class="num">07</span> Contact</div>
+        <h2 class="rv" data-d="1">Tell us what<br>you're building.</h2>
+      </div>
+      <p class="lead rv" data-d="2">Free quotes, straight answers. Send the details and we'll get back to set up a walkthrough.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info rv">
+        <div class="tag" style="margin-bottom:.6rem;color:var(--accent2)"><span class="num">·</span> Call or visit</div>
+        <a class="tel" href="tel:+12157782450">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span>(215) 778-2450<small>Tap to call</small></span>
+        </a>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <div><div class="k">Address</div><div class="vv">5875 Hulmeville Rd<br>Bensalem, PA 19020</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><div class="k">Hours</div><div class="vv">Mon–Sat, by appointment <span class="ph">PLACEHOLDER: confirm hours</span></div></div>
+        </div>
+        <div class="info-row">
+          <span class="ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 8l8 5 8-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <div><div class="k">Serving</div><div class="vv">Bensalem &amp; surrounding areas</div></div>
+        </div>
+      </div>
+
+      <form class="rv" data-d="1" onsubmit="return false" aria-label="Request a free quote">
+        <div class="form-note">
+          <span class="ph">PLACEHOLDER: form not wired up yet</span>
+          <span>Connect to email or a CRM before launch.</span>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="nm">Name</label><input id="nm" type="text" placeholder="Your name" autocomplete="name" /></div>
+          <div class="field"><label for="ph2">Phone</label><input id="ph2" type="tel" placeholder="(215) 000-0000" autocomplete="tel" /></div>
+        </div>
+        <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" autocomplete="email" /></div>
+        <div class="field"><label for="ms">Project details</label><textarea id="ms" placeholder="Kitchen remodel, deck, addition, repair... what are you thinking?"></textarea></div>
+        <button class="btn btn-accent" type="submit" style="width:100%;justify-content:center">Send my request
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FINAL CTA ========================= -->
+<section class="final pad">
+  <div class="wrap final-in">
+    <div class="tag on-dark rv"><span class="rule"></span> Ready when you are</div>
+    <h2 class="rv" data-d="1">Let's get your project<br>off the maybe list.</h2>
+    <p class="rv" data-d="2">One free quote, no pressure. If it's a fit, we'll build it right. If it's not, we'll tell you.</p>
+    <a class="btn btn-accent rv" data-d="3" href="#contact" style="font-size:.92rem;padding:1.1em 1.9em">Get a Free Quote
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================= FOOTER (title block) ========================= -->
+<footer class="site">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="tb">
+      <div class="cell brandblock">
+        <div class="k">Contractor</div>
+        <b>Michael's Landscaping</b>
+        <span>General Contractor · Bensalem, PA</span>
+        <p class="v" style="margin-top:.9rem">Remodels, additions, decks, basements, and repairs. Family owned and operated, serving Bensalem and surrounding areas.</p>
+      </div>
+      <div class="cell">
+        <div class="k">Call</div>
+        <a class="tel" href="tel:+12157782450">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span>(215) 778-2450<small>Mon–Sat</small></span>
+        </a>
+        <div class="k" style="margin-top:1.3rem">Hours</div>
+        <div class="v">Mon–Sat, by appt <span class="ph on-dark">PLACEHOLDER</span></div>
+      </div>
+      <div class="cell">
+        <div class="k">Find us</div>
+        <div class="v">5875 Hulmeville Rd<br>Bensalem, PA 19020</div>
+        <a class="gl" style="margin-top:1rem" href="https://www.google.com/maps?cid=12704408042856549384" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.7-7-11a7 7 0 1 1 14 0c0 5.3-7 11-7 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>
+          Find us on Google
+        </a>
+      </div>
+      <div class="cell">
+        <div class="k">Sections</div>
+        <div class="v" style="display:flex;flex-direction:column;gap:.4rem">
+          <a href="#why" style="text-decoration:none;color:#9AA4B2">01 / Why us</a>
+          <a href="#services" style="text-decoration:none;color:#9AA4B2">02 / Services</a>
+          <a href="#area" style="text-decoration:none;color:#9AA4B2">03 / Service area</a>
+          <a href="#contact" style="text-decoration:none;color:#9AA4B2">04 / Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Michael's Landscaping · General Contractor</span>
+      <span>Bensalem, PA · Licensed &amp; insured <span class="ph on-dark">PLACEHOLDER</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================= MOBILE STICKY TEL BAR ========================= -->
+<div class="mbar">
+  <a class="tel" href="tel:+12157782450">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <span>(215) 778-2450<small>Tap to call</small></span>
+  </a>
+  <a class="btn btn-accent" href="#contact">Free Quote</a>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // scroll reveal + draw + count-up triggers
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        if(e.target.classList.contains('led')) startCounts();
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.draw').forEach(function(el){
+    var d = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); d.unobserve(x.target);} }); }, {threshold:.5});
+    d.observe(el);
+  });
+
+  // count-up
+  var counted=false;
+  function startCounts(){
+    if(counted) return; counted=true;
+    document.querySelectorAll('.v[data-count]').forEach(function(el){
+      var target=parseFloat(el.getAttribute('data-count'));
+      var dec=el.getAttribute('data-dec')?1:0;
+      var suf=el.querySelector('.suf'); var sufHTML=suf?suf.outerHTML:'';
+      if(reduce){ el.firstChild.nodeValue=target.toFixed(dec); return; }
+      var start=null, dur=1300;
+      function step(ts){
+        if(!start)start=ts; var p=Math.min((ts-start)/dur,1);
+        var ease=1-Math.pow(1-p,3);
+        var val=(target*ease).toFixed(dec);
+        el.firstChild.nodeValue=val;
+        if(p<1) requestAnimationFrame(step);
+        else el.firstChild.nodeValue=target.toFixed(dec);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if(reduce){ document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');}); startCounts(); }
+
+  // active nav highlight
+  var secs=['why','services','area','contact'];
+  var links={};
+  document.querySelectorAll('nav.main a.nl').forEach(function(a){ links[a.getAttribute('href').slice(1)]=a; });
+  var spy=new IntersectionObserver(function(en){
+    en.forEach(function(e){ if(e.isIntersecting){ var id=e.target.id;
+      Object.values(links).forEach(function(l){l.style.color='';});
+      if(links[id]) links[id].style.color='var(--accent-deep)';
+    }});
+  },{threshold:.4});
+  secs.forEach(function(id){var s=document.getElementById(id); if(s)spy.observe(s);});
+})();
+</script>
+</body>
+</html>

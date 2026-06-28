@@ -1,0 +1,31 @@
+{
+  "slug": "wheels-and-tires-auto-services",
+  "business_name": "Wheels and Tires Auto Services",
+  "trade": "car repair",
+  "city": "Norristown",
+  "phone": "(484) 370-8146",
+  "rating": "4.3",
+  "reviews": "53",
+  "show_star_rating": "Y",
+  "palette_name": "Charcoal Red",
+  "palette": {
+    "ink": "#161616",
+    "base": "#F4F4F5",
+    "surface": "#E6E6E8",
+    "band": "#1A1A1D",
+    "accent": "#B5232B",
+    "accent2": "#8A8D91"
+  },
+  "hero_style": "a full-bleed photo hero with the H1 over a soft light scrim and a strong Call CTA",
+  "section_order": "hero > services > why-us > faq > guarantee > contact",
+  "services_placeholder": "Service 1, Service 2, Service 3, Service 4",
+  "pexels_queries": [
+    "auto mechanic working",
+    "car engine repair",
+    "clean auto shop",
+    "car maintenance"
+  ],
+  "google_link": "https://www.google.com/maps?cid=17855733537774026120",
+  "address_bar_url": "www.wheelsandtiresautoservices.com",
+  "confirm_checklist": "Their real Google photos, logo, and brand colors (open the profile and match them). | Exact services Wheels and Tires Auto Services offers (the list is a guess from 'car repair', confirm and trim). | Years in business or founding year (none could be verified, ask) | Business hours, correct service area towns, license and insurance details, and the real phone and address to feature."
+}
